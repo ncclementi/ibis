@@ -1930,102 +1930,130 @@
 <!-- prettier-ignore-start -->
 
 
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.config.Options" class="doc doc-heading">
-        <code>
-Options        </code>
-
+        <code>Options</code>
 
 
 <a href="#ibis.config.Options" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
 
+  <div class="doc doc-contents first">
+
+  
       <p>Ibis configuration options.</p>
 
-<p><strong>Attributes:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>interactive</code></td>
-        <td><code>bool</code></td>
-        <td><p>Show the first few rows of computing an expression when in a repl.</p></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-      <tr>
-        <td><code>repr</code></td>
-        <td><code>Repr</code></td>
-        <td><p>Options controlling expression printing.</p></td>
-      </tr>
-      <tr>
-        <td><code>verbose</code></td>
-        <td><code>bool</code></td>
-        <td><p>Run in verbose mode if <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a></p></td>
-      </tr>
-      <tr>
-        <td><code>verbose_log</code></td>
-        <td><code>Callable[[str], None] | None</code></td>
-        <td><p>A callable to use when logging.</p></td>
-      </tr>
-      <tr>
-        <td><code>graphviz_repr</code></td>
-        <td><code>bool</code></td>
-        <td><p>Render expressions as GraphViz PNGs when running in a Jupyter notebook.</p></td>
-      </tr>
-      <tr>
-        <td><code>default_backend</code></td>
-        <td><code>Optional[str], default None</code></td>
-        <td><p>The default backend to use for execution, defaults to DuckDB if not
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>interactive</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Show the first few rows of computing an expression when in a repl.</p></td>
+        </tr>
+        <tr>
+          <td><code>repr</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.config.Repr" href="#ibis.config.Repr">Repr</a></code>
+          </td>
+          <td><p>Options controlling expression printing.</p></td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Run in verbose mode if <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a></p></td>
+        </tr>
+        <tr>
+          <td><code>verbose_log</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], None] | None</code>
+          </td>
+          <td><p>A callable to use when logging.</p></td>
+        </tr>
+        <tr>
+          <td><code>graphviz_repr</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Render expressions as GraphViz PNGs when running in a Jupyter notebook.</p></td>
+        </tr>
+        <tr>
+          <td><code>default_backend</code></td>
+          <td>
+                <code>Optional[str], default None</code>
+          </td>
+          <td><p>The default backend to use for execution, defaults to DuckDB if not
 set.</p></td>
-      </tr>
-      <tr>
-        <td><code>context_adjustment</code></td>
-        <td><code>ContextAdjustment</code></td>
-        <td><p>Options related to time context adjustment.</p></td>
-      </tr>
-      <tr>
-        <td><code>sql</code></td>
-        <td><code>SQL</code></td>
-        <td><p>SQL-related options.</p></td>
-      </tr>
-      <tr>
-        <td><code>clickhouse</code></td>
-        <td><code>Config | None</code></td>
-        <td><p>Clickhouse specific options.</p></td>
-      </tr>
-      <tr>
-        <td><code>dask</code></td>
-        <td><code>Config | None</code></td>
-        <td><p>Dask specific options.</p></td>
-      </tr>
-      <tr>
-        <td><code>impala</code></td>
-        <td><code>Config | None</code></td>
-        <td><p>Impala specific options.</p></td>
-      </tr>
-      <tr>
-        <td><code>pandas</code></td>
-        <td><code>Config | None</code></td>
-        <td><p>Pandas specific options.</p></td>
-      </tr>
-      <tr>
-        <td><code>pyspark</code></td>
-        <td><code>Config | None</code></td>
-        <td><p>PySpark specific options.</p></td>
-      </tr>
-  </tbody>
-</table>
+        </tr>
+        <tr>
+          <td><code>context_adjustment</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.config.ContextAdjustment" href="#ibis.config.ContextAdjustment">ContextAdjustment</a></code>
+          </td>
+          <td><p>Options related to time context adjustment.</p></td>
+        </tr>
+        <tr>
+          <td><code>sql</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.config.SQL" href="#ibis.config.SQL">SQL</a></code>
+          </td>
+          <td><p>SQL-related options.</p></td>
+        </tr>
+        <tr>
+          <td><code>clickhouse</code></td>
+          <td>
+                <code><span title="ibis.config.Config">Config</span> | None</code>
+          </td>
+          <td><p>Clickhouse specific options.</p></td>
+        </tr>
+        <tr>
+          <td><code>dask</code></td>
+          <td>
+                <code><span title="ibis.config.Config">Config</span> | None</code>
+          </td>
+          <td><p>Dask specific options.</p></td>
+        </tr>
+        <tr>
+          <td><code>impala</code></td>
+          <td>
+                <code><span title="ibis.config.Config">Config</span> | None</code>
+          </td>
+          <td><p>Impala specific options.</p></td>
+        </tr>
+        <tr>
+          <td><code>pandas</code></td>
+          <td>
+                <code><span title="ibis.config.Config">Config</span> | None</code>
+          </td>
+          <td><p>Pandas specific options.</p></td>
+        </tr>
+        <tr>
+          <td><code>pyspark</code></td>
+          <td>
+                <code><span title="ibis.config.Config">Config</span> | None</code>
+          </td>
+          <td><p>PySpark specific options.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
 
+
+  
 
   <div class="doc doc-children">
 
@@ -2039,83 +2067,80 @@ set.</p></td>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 
   </div>
 
-    </div>
+</div>
 
-  </div>
-
-
-
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.config.Repr" class="doc doc-heading">
-        <code>
-Repr        </code>
-
+        <code>Repr</code>
 
 
 <a href="#ibis.config.Repr" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
 
+  <div class="doc doc-contents first">
+
+  
       <p>Expression printing options.</p>
 
-<p><strong>Attributes:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>depth</code></td>
-        <td><code>int</code></td>
-        <td><p>The maximum number of expression nodes to print when repring.</p></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-      <tr>
-        <td><code>table_columns</code></td>
-        <td><code>int</code></td>
-        <td><p>The number of columns to show in leaf table expressions.</p></td>
-      </tr>
-      <tr>
-        <td><code>query_text_length</code></td>
-        <td><code>int</code></td>
-        <td><p>The maximum number of characters to show in the <code>query</code> field repr of
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>depth</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>The maximum number of expression nodes to print when repring.</p></td>
+        </tr>
+        <tr>
+          <td><code>table_columns</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>The number of columns to show in leaf table expressions.</p></td>
+        </tr>
+        <tr>
+          <td><code>query_text_length</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>The maximum number of characters to show in the <code>query</code> field repr of
 SQLQueryResult operations.</p></td>
-      </tr>
-      <tr>
-        <td><code>show_types</code></td>
-        <td><code>bool</code></td>
-        <td><p>Show the inferred type of value expressions in the repr.</p></td>
-      </tr>
-      <tr>
-        <td><code>interactive</code></td>
-        <td><code>None</code></td>
-        <td><p>Options controlling the interactive repr.</p></td>
-      </tr>
-  </tbody>
-</table>
+        </tr>
+        <tr>
+          <td><code>show_types</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Show the inferred type of value expressions in the repr.</p></td>
+        </tr>
+        <tr>
+          <td><code>interactive</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Options controlling the interactive repr.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
 
+
+  
 
   <div class="doc doc-children">
 
@@ -2129,60 +2154,59 @@ SQLQueryResult operations.</p></td>
 
 
 
-
-
-
-
+  </div>
 
   </div>
 
-    </div>
+</div>
 
-  </div>
-
-
-
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.config.SQL" class="doc doc-heading">
-        <code>
-SQL        </code>
-
+        <code>SQL</code>
 
 
 <a href="#ibis.config.SQL" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
 
+  <div class="doc doc-contents first">
+
+  
       <p>SQL-related options.</p>
 
-<p><strong>Attributes:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>default_limit</code></td>
-        <td><code>int | None</code></td>
-        <td><p>Number of rows to be retrieved for a table expression without an
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>default_limit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | None</code>
+          </td>
+          <td><p>Number of rows to be retrieved for a table expression without an
 explicit limit. <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#None"><code>None</code></a> means no limit.</p></td>
-      </tr>
-      <tr>
-        <td><code>default_dialect</code></td>
-        <td><code>str</code></td>
-        <td><p>Dialect to use for printing SQL when the backend cannot be determined.</p></td>
-      </tr>
-  </tbody>
-</table>
+        </tr>
+        <tr>
+          <td><code>default_dialect</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Dialect to use for printing SQL when the backend cannot be determined.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
 
+
+  
 
   <div class="doc doc-children">
 
@@ -2196,52 +2220,52 @@ explicit limit. <a class="autorefs autorefs-external" href="https://docs.python.
 
 
 
-
+  </div>
 
   </div>
 
-    </div>
+</div>
 
-  </div>
-
-
-
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.config.ContextAdjustment" class="doc doc-heading">
-        <code>
-ContextAdjustment        </code>
-
+        <code>ContextAdjustment</code>
 
 
 <a href="#ibis.config.ContextAdjustment" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
 
+  <div class="doc doc-contents first">
+
+  
       <p>Options related to time context adjustment.</p>
 
-<p><strong>Attributes:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>time_col</code></td>
-        <td><code>str</code></td>
-        <td><p>Name of the timestamp column for execution with a <code>timecontext</code>. See
-<code>ibis/expr/timecontext.py</code> for details.</p></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>time_col</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Name of the timestamp column for execution with a <code>timecontext</code>. See
+<code>ibis/expr/timecontext.py</code> for details.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
 
+
+  
 
   <div class="doc doc-children">
 
@@ -2255,21 +2279,18 @@ ContextAdjustment        </code>
 
 
 
+  </div>
 
   </div>
 
-    </div>
-
-  </div>
-
-<!-- prettier-ignore-end -->
+</div><!-- prettier-ignore-end -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

@@ -1829,11 +1829,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.core.Expr-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.core.Expr-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1924,25 +1924,27 @@
 <p>These APIs are shared by both table and column expressions.</p>
 
 
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.expr.types.core.Expr" class="doc doc-heading">
-        <code>
-Expr            (<span title="ibis.common.grounds.Immutable">Immutable</span>)
-        </code>
-
+        <code>Expr</code>
 
 
 <a href="#ibis.expr.types.core.Expr" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
 
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="ibis.common.grounds.Immutable">Immutable</span></code></p>
+
+  
       <p>Base expression class.</p>
 
 
 
+  
 
   <div class="doc doc-children">
 
@@ -1952,485 +1954,555 @@ Expr            (<span title="ibis.common.grounds.Immutable">Immutable</span>)
 
 
 
-<h3 id="ibis.expr.types.core.Expr-methods">Methods<a href="#ibis.expr.types.core.Expr-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+<h3 id="ibis.expr.types.core.Expr-functions">Functions<a href="#ibis.expr.types.core.Expr-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.as_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">as_table</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">as_table</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.core.Expr.as_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Convert an expression to a table.</p>
-
-    </div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.compile" class="doc doc-heading">
-<code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.compile" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Compile to an execution target.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>limit</code></td>
-        <td><code>int | None</code></td>
-        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
-        <td><code>None</code></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>timecontext</code></td>
-        <td><code>TimeContext | None</code></td>
-        <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>limit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | None</code>
+          </td>
+          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timecontext</code></td>
+          <td>
+                <code><span title="ibis.expr.typing.TimeContext">TimeContext</span> | None</code>
+          </td>
+          <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
 will only compute result for data inside the time range. The time
 range is inclusive of both endpoints. This is conceptually same as
 a time filter.
 The time column must be named <code>'time'</code> and should preserve
 across the expression. For example, if that column is dropped then
 execute will result in an error.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Value, Any] | None</code></td>
-        <td><p>Mapping of scalar parameter expressions to value</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="generic/#ibis.expr.types.generic.Value">Value</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Mapping of scalar parameter expressions to value</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.execute" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.execute" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Execute an expression against its backend if one exists.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>limit</code></td>
-        <td><code>int | str | None</code></td>
-        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
-        <td><code>&#39;default&#39;</code></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>timecontext</code></td>
-        <td><code>TimeContext | None</code></td>
-        <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>limit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+                <code>&#39;default&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timecontext</code></td>
+          <td>
+                <code><span title="ibis.expr.typing.TimeContext">TimeContext</span> | None</code>
+          </td>
+          <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
 will only compute result for data inside the time range. The time
 range is inclusive of both endpoints. This is conceptually same as
 a time filter.
 The time column must be named <code>'time'</code> and should preserve
 across the expression. For example, if that column is dropped then
 execute will result in an error.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Value, Any] | None</code></td>
-        <td><p>Mapping of scalar parameter expressions to value</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Keyword arguments</p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="generic/#ibis.expr.types.generic.Value">Value</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Mapping of scalar parameter expressions to value</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Keyword arguments</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-
-
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.pipe" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">pipe</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.pipe" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Compose <code>f</code> with <code>self</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>f</code></td>
-        <td><code>None</code></td>
-        <td><p>If the expression needs to be passed as anything other than the
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>f</code></td>
+          <td>
+          </td>
+          <td><p>If the expression needs to be passed as anything other than the
 first argument to the function, pass a tuple with the argument
 name. For example, (f, 'data') if the function f expects a 'data'
 keyword</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>args</code></td>
-        <td><code>Any</code></td>
-        <td><p>Positional arguments to <code>f</code></p></td>
-        <td><code>()</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Keyword arguments to <code>f</code></p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Positional arguments to <code>f</code></p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Keyword arguments to <code>f</code></p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result1</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
-  <span class="n">a</span> <span class="n">int64</span>
-  <span class="n">b</span> <span class="n">string</span>
-<span class="n">a</span><span class="p">:</span> <span class="n">r0</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result1</span>
+<span class="go">r0 := UnboundTable[t]</span>
+<span class="go">  a int64</span>
+<span class="go">  b string</span>
+<span class="go">a: r0.a + 1 * 2</span>
 </code></pre></div>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">result2</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># equivalent to the above</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
-<span class="kc">True</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">result2</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># equivalent to the above</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
+<span class="go">True</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Expr</code></td>
-      <td><p>Result type of passed function</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.core.Expr" href="#ibis.expr.types.core.Expr">Expr</a></code>
+          </td>
+          <td><p>Result type of passed function</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.to_pyarrow" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.to_pyarrow" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Execute expression and return results in as a pyarrow table.</p>
-<div class="admonition warning">
-<p class="admonition-title">This API is experimental and subject to change.</p>
-</div>
 <p>This method is eager and will execute the associated expression
 immediately.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Scalar, Any] | None</code></td>
-        <td><p>Mapping of scalar parameter expressions to value.</p></td>
-        <td><code>None</code></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>int | str | None</code></td>
-        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>limit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
-        <td><code>None</code></td>
-      </tr>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Keyword arguments</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Keyword arguments</p></td>
-        <td><code>{}</code></td>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>pa.Table</code></td>
-      <td><p>A pyarrow table holding the results of the executed expression.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>A pyarrow table holding the results of the executed expression.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Execute expression and return a RecordBatchReader.</p>
-<div class="admonition warning">
-<p class="admonition-title">This API is experimental and subject to change.</p>
-</div>
 <p>This method is eager and will execute the associated expression
 immediately.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>limit</code></td>
-        <td><code>int | str | None</code></td>
-        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>limit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
-        <td><code>None</code></td>
-      </tr>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="generic/#ibis.expr.types.generic.Value">Value</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>chunk_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>Number of rows in each returned record batch.</p></td>
+          <td>
+                <code>1000000</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Keyword arguments</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Value, Any] | None</code></td>
-        <td><p>Mapping of scalar parameter expressions to value.</p></td>
-        <td><code>None</code></td>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-      <tr>
-        <td><code>chunk_size</code></td>
-        <td><code>int</code></td>
-        <td><p>Number of rows in each returned record batch.</p></td>
-        <td><code>1000000</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Keyword arguments</p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>pa.ipc.RecordBatchReader</code></td>
-      <td><p>RecordBatchReader</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>results</code>
+          </td>
+          <td><p>RecordBatchReader</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.unbind" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">unbind</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">unbind</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.core.Expr.unbind" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return an expression built on <code>UnboundTable</code> instead of backend-specific objects.</p>
-
-    </div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.core.Expr.visualize" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">visualize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">label_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">visualize</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">label_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.visualize" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
-      <p>Visualize an expression in the browser.</p>
+  <div class="doc doc-contents ">
+  
+      <p>Visualize an expression as a GraphViz graph in the browser.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>format</code></td>
-        <td><code>str</code></td>
-        <td><p>Image output format. These are specified by the <code>graphviz</code> Python
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>format</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Image output format. These are specified by the <code>graphviz</code> Python
 library.</p></td>
-        <td><code>&#39;svg&#39;</code></td>
-      </tr>
+          <td>
+                <code>&#39;svg&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>label_edges</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Show operation input names as edge labels</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Print the graphviz DOT code to stderr if <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a></p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>label_edges</code></td>
-        <td><code>bool</code></td>
-        <td><p>Show operation input names as edge labels</p></td>
-        <td><code>False</code></td>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-      <tr>
-        <td><code>verbose</code></td>
-        <td><code>bool</code></td>
-        <td><p>Print the graphviz DOT code to stderr if <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a></p></td>
-        <td><code>False</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Exceptions:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>ImportError</code></td>
-        <td><p>If <code>graphviz</code> is not installed.</p></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ImportError">ImportError</a></code>
+          </td>
+          <td><p>If <code>graphviz</code> is not installed.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
-
+</div>
 
 
 
   </div>
 
-    </div>
-
   </div>
+
+</div>
 
   <hr>
 <div class="md-source-file">

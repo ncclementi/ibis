@@ -1323,11 +1323,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.strings.StringValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.strings.StringValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1424,13 +1424,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.ilike" class="md-nav__link">
     ilike()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.strings.StringValue.initcap" class="md-nav__link">
-    initcap()
   </a>
   
 </li>
@@ -1557,13 +1550,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.right" class="md-nav__link">
     right()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.strings.StringValue.rlike" class="md-nav__link">
-    rlike()
   </a>
   
 </li>
@@ -2197,11 +2183,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.strings.StringValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.strings.StringValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2298,13 +2284,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.ilike" class="md-nav__link">
     ilike()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.strings.StringValue.initcap" class="md-nav__link">
-    initcap()
   </a>
   
 </li>
@@ -2436,13 +2415,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.strings.StringValue.rlike" class="md-nav__link">
-    rlike()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.rpad" class="md-nav__link">
     rpad()
   </a>
@@ -2544,24 +2516,25 @@
 <p>All string operations are valid for both scalars and columns.</p>
 
 
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.expr.types.strings.StringValue" class="doc doc-heading">
-        <code>
-StringValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
-        </code>
-
+        <code>StringValue</code>
 
 
 <a href="#ibis.expr.types.strings.StringValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
 
 
 
+  
 
   <div class="doc doc-children">
 
@@ -2571,2307 +2544,2421 @@ StringValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
 
 
 
-<h3 id="ibis.expr.types.strings.StringValue-methods">Methods<a href="#ibis.expr.types.strings.StringValue-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+<h3 id="ibis.expr.types.strings.StringValue-functions">Functions<a href="#ibis.expr.types.strings.StringValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.ascii_str" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">ascii_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">ascii_str</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.ascii_str" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the numeric ASCII code of the first character of a string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>ASCII code of the first character of the input</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>ASCII code of the first character of the input</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.authority" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">authority</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">authority</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.authority" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract authority.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass@example.com:80</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass@example.com:80</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.capitalize" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">capitalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">capitalize</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.capitalize" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Capitalize the input string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Capitalized string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Capitalized string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.concat" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">concat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">concat</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.concat" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Concatenate strings.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>other</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>String to concatenate</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>String to concatenate</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Additional strings to concatenate</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>args</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Additional strings to concatenate</p></td>
-        <td><code>()</code></td>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>All strings concatenated</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>All strings concatenated</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.contains" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substr</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">contains</span><span class="p">(</span><span class="n">substr</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.contains" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return whether the expression contains <code>substr</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>substr</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Substring for which to check</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Boolean indicating the presence of <code>substr</code> in the expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>substr</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Substring for which to check</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Boolean indicating the presence of <code>substr</code> in the expression</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.convert_base" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">convert_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_base</span><span class="p">,</span> <span class="n">to_base</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">convert_base</span><span class="p">(</span><span class="n">from_base</span><span class="p">,</span> <span class="n">to_base</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.convert_base" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Convert a string representing an integer from one base to another.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>from_base</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Numeric base of the expression</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>from_base</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Numeric base of the expression</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>to_base</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>New base</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>to_base</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>New base</p></td>
-        <td><em>required</em></td>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>Converted expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Converted expression</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.endswith" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">endswith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">endswith</span><span class="p">(</span><span class="n">end</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.endswith" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Determine if <code>self</code> ends with <code>end</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>end</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Suffix to check for</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>end</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Suffix to check for</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;project&#39;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;project&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Boolean indicating whether <code>self</code> ends with <code>end</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Boolean indicating whether <code>self</code> ends with <code>end</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.file" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">file</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.file" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract file.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html?name=networking</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html?name=networking</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.find" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">find</span><span class="p">(</span><span class="n">substr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.find" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the position of the first occurence of substring.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>substr</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Substring to search for</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>start</code></td>
-        <td><code>int | ir.IntegerValue | None</code></td>
-        <td><p>Zero based index of where to start the search</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>end</code></td>
-        <td><code>int | ir.IntegerValue | None</code></td>
-        <td><p>Zero based index of where to stop the search. Currently not
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>substr</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Substring to search for</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>start</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a> | None</code>
+          </td>
+          <td><p>Zero based index of where to start the search</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a> | None</code>
+          </td>
+          <td><p>Zero based index of where to stop the search. Currently not
 implemented.</p></td>
-        <td><code>None</code></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>Position of <code>substr</code> in <code>arg</code> starting from <code>start</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Position of <code>substr</code> in <code>arg</code> starting from <code>start</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.find_in_set" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">find_in_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_list</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">find_in_set</span><span class="p">(</span><span class="n">str_list</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.find_in_set" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Find the first occurence of <code>str_list</code> within a list of strings.</p>
 <p>No string in <code>str_list</code> can have a comma.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>str_list</code></td>
-        <td><code>Sequence[str]</code></td>
-        <td><p>Sequence of strings</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>str_list</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td><p>Sequence of strings</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">find_in_set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">find_in_set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>Position of <code>str_list</code> in <code>self</code>. Returns -1 if <code>self</code> isn't found
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Position of <code>str_list</code> in <code>self</code>. Returns -1 if <code>self</code> isn't found
 or if <code>self</code> contains <code>','</code>.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.fragment" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">fragment</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">fragment</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.fragment" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract fragment identifier.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/#DOWNLOADING&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">fragment</span><span class="p">()</span>  <span class="c1"># DOWNLOADING</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/#DOWNLOADING&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">fragment</span><span class="p">()</span>  <span class="c1"># DOWNLOADING</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.hashbytes" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">hashbytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;sha256&#39;</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">hashbytes</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;sha256&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.hashbytes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Compute the binary hash value of the input.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>how</code></td>
-        <td><code>Literal[&#39;md5&#39;, &#39;sha1&#39;, &#39;sha256&#39;, &#39;sha512&#39;]</code></td>
-        <td><p>Hash algorithm to use</p></td>
-        <td><code>&#39;sha256&#39;</code></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BinaryValue</code></td>
-      <td><p>Binary expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>how</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;md5&#39;, &#39;sha1&#39;, &#39;sha256&#39;, &#39;sha512&#39;]</code>
+          </td>
+          <td><p>Hash algorithm to use</p></td>
+          <td>
+                <code>&#39;sha256&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types.binary.BinaryValue">BinaryValue</span></code>
+          </td>
+          <td><p>Binary expression</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.host" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">host</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">host</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.host" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract host.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># example.com</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># example.com</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.ilike" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">ilike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patterns</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">ilike</span><span class="p">(</span><span class="n">patterns</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.ilike" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Match <code>patterns</code> against <code>self</code>, case-insensitive.</p>
 <p>This function is modeled after SQL's <code>ILIKE</code> directive. Use <code>%</code> as a
 multiple-character wildcard or <code>_</code> as a single-character wildcard.</p>
 <p>Use <code>re_search</code> or <code>rlike</code> for regular expression-based matching.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>patterns</code></td>
-        <td><code>str | StringValue | Iterable[str | StringValue]</code></td>
-        <td><p>If <code>pattern</code> is a list, then if any pattern matches the input then
-the corresponding row in the output is <code>True</code>.</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Column indicating matches</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>patterns</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a>]</code>
+          </td>
+          <td><p>If <code>pattern</code> is a list, then if any pattern matches the input then
+the corresponding row in the output is <code>True</code>.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Column indicating matches</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.expr.types.strings.StringValue.initcap" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">initcap</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
-
-<a href="#ibis.expr.types.strings.StringValue.initcap" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Capitalize the input string.</p>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Capitalized string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.join" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strings</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">join</span><span class="p">(</span><span class="n">strings</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.join" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Join a list of strings using <code>self</code> as the separator.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>strings</code></td>
-        <td><code>Sequence[str | StringValue]</code></td>
-        <td><p>Strings to join with <code>arg</code></p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>strings</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a>]</code>
+          </td>
+          <td><p>Strings to join with <code>arg</code></p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sep</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Joined string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Joined string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.left" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nchars</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">left</span><span class="p">(</span><span class="n">nchars</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.left" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the <code>nchars</code> left-most characters.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>nchars</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Maximum number of characters to return</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Characters from the start</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>nchars</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Maximum number of characters to return</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Characters from the start</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.length" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">length</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">length</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.length" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Compute the length of a string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>The length of the input</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>The length of the input</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.like" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">like</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patterns</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">like</span><span class="p">(</span><span class="n">patterns</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.like" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Match <code>patterns</code> against <code>self</code>, case-sensitive.</p>
 <p>This function is modeled after the SQL <code>LIKE</code> directive. Use <code>%</code> as a
 multiple-character wildcard or <code>_</code> as a single-character wildcard.</p>
 <p>Use <code>re_search</code> or <code>rlike</code> for regular expression-based matching.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>patterns</code></td>
-        <td><code>str | StringValue | Iterable[str | StringValue]</code></td>
-        <td><p>If <code>pattern</code> is a list, then if any pattern matches the input then
-the corresponding row in the output is <code>True</code>.</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Column indicating matches</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>patterns</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a>]</code>
+          </td>
+          <td><p>If <code>pattern</code> is a list, then if any pattern matches the input then
+the corresponding row in the output is <code>True</code>.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Column indicating matches</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.lower" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">lower</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">lower</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.lower" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Convert string to all lowercase.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Lowercase string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Lowercase string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.lpad" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">lpad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">lpad</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.lpad" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Pad <code>arg</code> by truncating on the right or padding on the left.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>length</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Length of output string</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>pad</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Pad character</p></td>
-        <td><code>&#39; &#39;</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># ----a</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
-</code></pre></div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>length</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Length of output string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>pad</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Pad character</p></td>
+          <td>
+                <code>&#39; &#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Padded string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Padded string</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># ----a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
+</code></pre></div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.lstrip" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">lstrip</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">lstrip</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.lstrip" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Remove whitespace from the left side of string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Left-stripped string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Left-stripped string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.parse_url" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">parse_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">parse_url</span><span class="p">(</span><span class="n">extract</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.parse_url" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract its components.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>StringValue.parse_url</code> is deprecated as of v4.0; use .protocol(), .authroity(), .userinfo(), .host(), .file(), .path(), .query(), or .fragment().</p>
-</div>
 <p><code>key</code> can be used to extract query values when <code>extract == 'QUERY'</code></p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>extract</code></td>
-        <td><code>Literal[&#39;PROTOCOL&#39;, &#39;AUTHORITY&#39;, &#39;USERINFO&#39;, &#39;HOST&#39;, &#39;FILE&#39;, &#39;PATH&#39;, &#39;QUERY&#39;, &#39;REF&#39;]</code></td>
-        <td><p>Component of URL to extract</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>key</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Query component to extract</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>extract</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;PROTOCOL&#39;, &#39;AUTHORITY&#39;, &#39;USERINFO&#39;, &#39;HOST&#39;, &#39;FILE&#39;, &#39;PATH&#39;, &#39;QUERY&#39;, &#39;REF&#39;]</code>
+          </td>
+          <td><p>Component of URL to extract</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>Query component to extract</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=kEuEcWfewf8&amp;t=10&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">parse_url</span><span class="p">(</span><span class="s1">&#39;QUERY&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>  <span class="c1"># kEuEcWfewf</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=kEuEcWfewf8&amp;t=10&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">parse_url</span><span class="p">(</span><span class="s1">&#39;QUERY&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>  <span class="c1"># kEuEcWfewf</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.path" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">path</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.path" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract path.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.protocol" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">protocol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">protocol</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.protocol" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract protocol.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">protocol</span><span class="p">()</span>  <span class="c1"># https</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">protocol</span><span class="p">()</span>  <span class="c1"># https</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.query" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">query</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.query" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and returns query strring or query string parameter.</p>
 <p>If key is passed, return the value of the query string parameter named.
 If key is absent, return the query string.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>key</code></td>
-        <td><code>str | StringValue | None</code></td>
-        <td><p>Query component to extract</p></td>
-        <td><code>None</code></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a> | None</code>
+          </td>
+          <td><p>Query component to extract</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">query</span><span class="p">()</span>  <span class="c1"># name=networking</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">query_name</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>  <span class="c1"># networking</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">query</span><span class="p">()</span>  <span class="c1"># name=networking</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">query_name</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>  <span class="c1"># networking</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.re_extract" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">re_extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">re_extract</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.re_extract" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the specified match at <code>index</code> from a regex <code>pattern</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">This operation differs between backends.</p>
-<p>Different backends support different regular expression syntax.</p>
-</div>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>pattern</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Reguar expression pattern string</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>index</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>The index of the match group to return.</p>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>pattern</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Reguar expression pattern string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>index</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>The index of the match group to return.</p>
 <p>The behavior of this function follows the behavior of Python's
 <a href="https://docs.python.org/3/library/re.html#match-objects"><code>re.match</code></a>:
 when <code>index</code> is zero and there's a match, return the entire string,
 otherwise return the content of the <code>index</code>-th match group.</p></td>
-        <td><em>required</em></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted match or whole string if <code>index</code> is zero</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted match or whole string if <code>index</code> is zero</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.re_replace" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">re_replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">re_replace</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.re_replace" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Replace match found by regex <code>pattern</code> with <code>replacement</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">This operation differs between backends.</p>
-<p>Different backends support different regular expression syntax.</p>
-</div>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>pattern</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Regular expression string</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>replacement</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Replacement string or regular expression</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>pattern</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Regular expression string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>replacement</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Replacement string or regular expression</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">re_replace</span><span class="p">(</span><span class="s2">&quot;(b+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&lt;\1&gt;&quot;</span><span class="p">)</span>  <span class="c1"># aaa&lt;bbb&gt;aaa</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">re_replace</span><span class="p">(</span><span class="s2">&quot;(b+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&lt;\1&gt;&quot;</span><span class="p">)</span>  <span class="c1"># aaa&lt;bbb&gt;aaa</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Modified string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Modified string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.re_search" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">re_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">re_search</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.re_search" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return whether the values match <code>pattern</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">This operation differs between backends.</p>
-<p>Different backends support different regular expression syntax.</p>
-</div>
 <p>Returns <code>True</code> if the regex matches a string and <code>False</code> otherwise.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>pattern</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Regular expression use for searching</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Indicator of matches</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>pattern</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Regular expression use for searching</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Indicator of matches</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.repeat" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">repeat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">repeat</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.repeat" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Repeat a string <code>n</code> times.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>n</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Number of repetitions</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Repeated string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>n</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Number of repetitions</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Repeated string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.replace" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">replace</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.replace" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Replace each exact match of <code>pattern</code> with <code>replacement</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>pattern</code></td>
-        <td><code>StringValue</code></td>
-        <td><p>String pattern</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>replacement</code></td>
-        <td><code>StringValue</code></td>
-        <td><p>String replacement</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>pattern</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>String pattern</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>replacement</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>String replacement</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;ccc&quot;</span><span class="p">)</span>  <span class="c1"># cccbbbccc</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;ccc&quot;</span><span class="p">)</span>  <span class="c1"># cccbbbccc</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Replaced string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Replaced string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.reverse" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">reverse</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.reverse" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Reverse the characters of a string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Reversed string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Reversed string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.right" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nchars</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">right</span><span class="p">(</span><span class="n">nchars</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.right" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return up to <code>nchars</code> from the end of each string.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>nchars</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Maximum number of characters to return</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Characters from the end</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>nchars</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Maximum number of characters to return</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Characters from the end</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.expr.types.strings.StringValue.rlike" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">rlike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span></code>
-
-
-<a href="#ibis.expr.types.strings.StringValue.rlike" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return whether the values match <code>pattern</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">This operation differs between backends.</p>
-<p>Different backends support different regular expression syntax.</p>
 </div>
-<p>Returns <code>True</code> if the regex matches a string and <code>False</code> otherwise.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>pattern</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Regular expression use for searching</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Indicator of matches</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.rpad" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">rpad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">rpad</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.rpad" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Pad <code>self</code> by truncating or padding on the right.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>self</code></td>
-        <td><code>None</code></td>
-        <td><p>String to pad</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>length</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Length of output string</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>pad</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Pad character</p></td>
-        <td><code>&#39; &#39;</code></td>
-      </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>self</code></td>
+          <td>
+          </td>
+          <td><p>String to pad</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>length</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>Length of output string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>pad</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Pad character</p></td>
+          <td>
+                <code>&#39; &#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># a----</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># a----</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Padded string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Padded string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.rstrip" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">rstrip</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">rstrip</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.rstrip" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Remove whitespace from the right side of string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Right-stripped string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Right-stripped string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.split" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delimiter</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">split</span><span class="p">(</span><span class="n">delimiter</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.split" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Split as string on <code>delimiter</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>delimiter</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>Value to split by</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.ArrayValue</code></td>
-      <td><p>The string split by <code>delimiter</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>delimiter</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Value to split by</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="../collections/#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>The string split by <code>delimiter</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.startswith" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">startswith</span><span class="p">(</span><span class="n">start</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.startswith" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Determine whether <code>self</code> starts with <code>end</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>start</code></td>
-        <td><code>str | StringValue</code></td>
-        <td><p>prefix to check for</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>start</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>prefix to check for</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Ibis&#39;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Ibis&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Boolean indicating whether <code>self</code> starts with <code>start</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Boolean indicating whether <code>self</code> starts with <code>start</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.strip" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">strip</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">strip</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.strip" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Remove whitespace from left and right sides of a string.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Stripped string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Stripped string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.substr" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">substr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">substr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.substr" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Extract a substring.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>start</code></td>
-        <td><code>int | ir.IntegerValue</code></td>
-        <td><p>First character to start splitting, indices start at 0</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>length</code></td>
-        <td><code>int | ir.IntegerValue | None</code></td>
-        <td><p>Maximum length of each substring. If not supplied, searches the
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>start</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>First character to start splitting, indices start at 0</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>length</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a> | None</code>
+          </td>
+          <td><p>Maximum length of each substring. If not supplied, searches the
 entire string</p></td>
-        <td><code>None</code></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Found substring</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Found substring</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.to_timestamp" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_timestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_str</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">to_timestamp</span><span class="p">(</span><span class="n">format_str</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.to_timestamp" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a string and return a timestamp.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>format_str</code></td>
-        <td><code>str</code></td>
-        <td><p>Format string in <code>strptime</code> format</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>format_str</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Format string in <code>strptime</code> format</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">date_as_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;20170206&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">date_as_str</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date_as_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;20170206&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">date_as_str</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.TimestampValue</code></td>
-      <td><p>Parsed timestamp value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimestampValue" href="../timestamps/#ibis.expr.types.temporal.TimestampValue">TimestampValue</a></code>
+          </td>
+          <td><p>Parsed timestamp value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.translate" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_str</span><span class="p">,</span> <span class="n">to_str</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">translate</span><span class="p">(</span><span class="n">from_str</span><span class="p">,</span> <span class="n">to_str</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.translate" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Replace <code>from_str</code> characters in <code>self</code> characters in <code>to_str</code>.</p>
 <p>To avoid unexpected behavior, <code>from_str</code> should be shorter than
 <code>to_str</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>from_str</code></td>
-        <td><code>StringValue</code></td>
-        <td><p>Characters in <code>arg</code> to replace</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>to_str</code></td>
-        <td><code>StringValue</code></td>
-        <td><p>Characters to use for replacement</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-</code></pre></div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>from_str</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Characters in <code>arg</code> to replace</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>to_str</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Characters to use for replacement</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Translated string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Translated string</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</code></pre></div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.upper" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">upper</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">upper</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.upper" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Convert string to all uppercase.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Uppercase string</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Uppercase string</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.strings.StringValue.userinfo" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">userinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">userinfo</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.strings.StringValue.userinfo" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Parse a URL and extract user info.</p>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>StringValue</code></td>
-      <td><p>Extracted string value</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
-
+</div>
 
 
 
   </div>
 
-    </div>
-
   </div>
+
+</div>
 
   <hr>
 <div class="md-source-file">

@@ -1351,11 +1351,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.arrays.ArrayValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.arrays.ArrayValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1425,11 +1425,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.structs.StructValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.structs.StructValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1443,6 +1443,19 @@
   <a href="#ibis.expr.types.structs.StructValue.lift" class="md-nav__link">
     lift()
   </a>
+  
+    <nav class="md-nav" aria-label="lift()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.structs.StructValue.lift--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1465,11 +1478,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.maps.MapValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.maps.MapValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2038,11 +2051,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.arrays.ArrayValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.arrays.ArrayValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2112,11 +2125,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.structs.StructValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.structs.StructValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2130,6 +2143,19 @@
   <a href="#ibis.expr.types.structs.StructValue.lift" class="md-nav__link">
     lift()
   </a>
+  
+    <nav class="md-nav" aria-label="lift()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.structs.StructValue.lift--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2152,11 +2178,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.maps.MapValue-methods" class="md-nav__link">
-    Methods
+  <a href="#ibis.expr.types.maps.MapValue-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2226,24 +2252,25 @@
 <p>These APIs are available on arrays, maps and structs.</p>
 
 
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.expr.types.arrays.ArrayValue" class="doc doc-heading">
-        <code>
-ArrayValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
-        </code>
-
+        <code>ArrayValue</code>
 
 
 <a href="#ibis.expr.types.arrays.ArrayValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
 
 
 
+  
 
   <div class="doc doc-children">
 
@@ -2253,314 +2280,311 @@ ArrayValue            (<a class="autorefs autorefs-internal" title="ibis.expr.ty
 
 
 
-<h3 id="ibis.expr.types.arrays.ArrayValue-methods">Methods<a href="#ibis.expr.types.arrays.ArrayValue-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+<h3 id="ibis.expr.types.arrays.ArrayValue-functions">Functions<a href="#ibis.expr.types.arrays.ArrayValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.arrays.ArrayValue.length" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">length</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">length</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.arrays.ArrayValue.length" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Compute the length of an array.</p>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
-<span class="n">ArrayLength</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</code></pre></div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>The integer length of <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>The integer length of <code>self</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+<span class="go">ArrayLength((1, 2, 3))</span>
+</code></pre></div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.arrays.ArrayValue.unnest" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">unnest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">unnest</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.arrays.ArrayValue.unnest" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Unnest an array.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.Value</code></td>
-      <td><p>Unnested array</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+          </td>
+          <td><p>Unnested array</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
-
+</div>
 
 
 
   </div>
 
-    </div>
-
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.expr.types.structs.StructValue" class="doc doc-heading">
-        <code>
-StructValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
-        </code>
-
+        <code>StructValue</code>
 
 
 <a href="#ibis.expr.types.structs.StructValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
 
 
 
+  
 
   <div class="doc doc-children">
+
 
 
 
 
 <h3 id="ibis.expr.types.structs.StructValue-attributes">Attributes<a href="#ibis.expr.types.structs.StructValue-attributes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h4 id="ibis.expr.types.structs.StructValue.fields" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">fields</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">]</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.expr.types.structs.StructValue.fields" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return a mapping from field name to field type of the struct.</p>
-    </div>
-
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h4 id="ibis.expr.types.structs.StructValue.names" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">names</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.expr.types.structs.StructValue.names" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the field names of the struct.</p>
-    </div>
-
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h4 id="ibis.expr.types.structs.StructValue.types" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">types</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">]</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.expr.types.structs.StructValue.types" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the field types of the struct.</p>
-    </div>
-
   </div>
 
+</div>
 
+<h3 id="ibis.expr.types.structs.StructValue-functions">Functions<a href="#ibis.expr.types.structs.StructValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-
-<h3 id="ibis.expr.types.structs.StructValue-methods">Methods<a href="#ibis.expr.types.structs.StructValue-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.structs.StructValue.destructure" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">destructure</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">destructure</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.structs.StructValue.destructure" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Destructure a <code>StructValue</code> into the corresponding struct fields.</p>
 <p>When assigned, a destruct value will be destructured and assigned to
 multiple columns.</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>list[ir.ValueExpr]</code></td>
-      <td><p>Value expressions corresponding to the struct fields.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[AnyValue]</code>
+          </td>
+          <td><p>Value expressions corresponding to the struct fields.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.structs.StructValue.lift" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">lift</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">lift</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.structs.StructValue.lift" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Project the fields of <code>self</code> into a table.</p>
 <p>This method is useful when analyzing data that has deeply nested
 structs or arrays of structs. <code>lift</code> can be chained to avoid repeating
 column names and table references.</p>
-<p>See also <a class="autorefs autorefs-internal" href="../tables/#ibis.expr.types.relations.Table.unpack"><code>Table.unpack</code></a>.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>A projection with this struct expression's fields.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;struct&lt;b: float, c: string&gt;&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
-<span class="n">UnboundTable</span><span class="p">:</span> <span class="n">t</span>
-  <span class="n">a</span> <span class="n">struct</span><span class="o">&lt;</span><span class="n">b</span><span class="p">:</span> <span class="n">float64</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">string</span><span class="o">&gt;</span>
-  <span class="n">d</span> <span class="n">string</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">lift</span><span class="p">()</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">t</span>
-  <span class="n">a</span> <span class="n">struct</span><span class="o">&lt;</span><span class="n">b</span><span class="p">:</span> <span class="n">float64</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">string</span><span class="o">&gt;</span>
-  <span class="n">d</span> <span class="n">string</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;struct&lt;b: float, c: string&gt;&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">UnboundTable: t</span>
+<span class="go">  a struct&lt;b: float64, c: string&gt;</span>
+<span class="go">  d string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">lift</span><span class="p">()</span>
+<span class="go">r0 := UnboundTable: t</span>
+<span class="go">  a struct&lt;b: float64, c: string&gt;</span>
+<span class="go">  d string</span>
 </code></pre></div>
     <p>Selection[r0]
   selections:
     b: StructField(r0.a, field='b')
     c: StructField(r0.a, field='c')</p>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.Table</code></td>
-      <td><p>A projection with this struct expression's fields.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+      <h6 id="ibis.expr.types.structs.StructValue.lift--see-also">See Also<a class="headerlink" href="#ibis.expr.types.structs.StructValue.lift--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="../tables/#ibis.expr.types.relations.Table.unpack"><code>Table.unpack</code></a>.</p>
 
   </div>
 
-
+</div>
 
 
 
   </div>
 
-    </div>
-
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="ibis.expr.types.maps.MapValue" class="doc doc-heading">
-        <code>
-MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
-        </code>
-
+        <code>MapValue</code>
 
 
 <a href="#ibis.expr.types.maps.MapValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
-    <div class="doc doc-contents first">
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
 
 
 
+  
 
   <div class="doc doc-children">
 
@@ -2570,267 +2594,286 @@ MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.type
 
 
 
-<h3 id="ibis.expr.types.maps.MapValue-methods">Methods<a href="#ibis.expr.types.maps.MapValue-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+<h3 id="ibis.expr.types.maps.MapValue-functions">Functions<a href="#ibis.expr.types.maps.MapValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.maps.MapValue.contains" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">contains</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.maps.MapValue.contains" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return whether the map contains <code>key</code>.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>key</code></td>
-        <td><code>int | str | ir.IntegerValue | ir.StringValue</code></td>
-        <td><p>Mapping key for which to check</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.BooleanValue</code></td>
-      <td><p>Boolean indicating the presence of <code>key</code> in the map expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.StringValue" href="../strings/#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Mapping key for which to check</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Boolean indicating the presence of <code>key</code> in the map expression</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.maps.MapValue.get" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.maps.MapValue.get" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the value for <code>key</code> from <code>expr</code>.</p>
 <p>Return <code>default</code> if <code>key</code> is not in the map.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
       <tr>
-        <td><code>key</code></td>
-        <td><code>ir.Value</code></td>
-        <td><p>Expression to use for key</p></td>
-        <td><em>required</em></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
       </tr>
-      <tr>
-        <td><code>default</code></td>
-        <td><code>ir.Value | None</code></td>
-        <td><p>Expression to return if <code>key</code> is not a key in <code>expr</code></p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="n">MapGet</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">MapGet</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-<span class="n">MapGet</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</code></pre></div>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+          </td>
+          <td><p>Expression to use for key</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>default</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | None</code>
+          </td>
+          <td><p>Expression to return if <code>key</code> is not a key in <code>expr</code></p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.Value</code></td>
-      <td><p>The element type of <code>self</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+          </td>
+          <td><p>The element type of <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">MapGet(frozendict({&#39;a&#39;: 1, &#39;b&#39;: 2}), key=&#39;a&#39;, default=None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">MapGet(frozendict({&#39;a&#39;: 1, &#39;b&#39;: 2}), key=&#39;c&#39;, default=3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+<span class="go">MapGet(frozendict({&#39;a&#39;: 1, &#39;b&#39;: 2}), key=&#39;d&#39;, default=None)</span>
+</code></pre></div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.maps.MapValue.keys" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">keys</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.maps.MapValue.keys" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Extract the keys of a map.</p>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="n">MapKeys</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}))</span>
-</code></pre></div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>The keys of <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.ArrayValue</code></td>
-      <td><p>The keys of <code>self</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">MapKeys(frozendict({&#39;a&#39;: 1, &#39;b&#39;: 2}))</span>
+</code></pre></div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.maps.MapValue.length" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">length</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">length</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.maps.MapValue.length" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Return the number of key-value pairs in the map.</p>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
-<span class="n">MapLength</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}))</span>
-</code></pre></div>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+          </td>
+          <td><p>The number of elements in <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.IntegerValue</code></td>
-      <td><p>The number of elements in <code>self</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+<span class="go">MapLength(frozendict({&#39;a&#39;: 1, &#39;b&#39;: 2}))</span>
+</code></pre></div>
 
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h4 id="ibis.expr.types.maps.MapValue.values" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">values</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.maps.MapValue.values" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+  
       <p>Extract the values of a map.</p>
 
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>The values of <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="n">MapKeys</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">MapKeys(frozendict({&#39;a&#39;: 1, &#39;b&#39;: 2}))</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.ArrayValue</code></td>
-      <td><p>The values of <code>self</code></p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
   </div>
 
-
+</div>
 
 
 
   </div>
 
-    </div>
-
   </div>
+
+</div>
 
   <hr>
 <div class="md-source-file">
