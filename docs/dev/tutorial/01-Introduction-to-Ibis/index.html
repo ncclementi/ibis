@@ -3058,9 +3058,9 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">LsS</span> <span class="o">-</span><span class="n">o</span> <span class="err">$</span><span class="n">TEMPDIR</span><span class="o">/</span><span class="n">geography</span><span class="o">.</span><span class="n">db</span> <span class="s1">&#39;https://storage.googleapis.com/ibis-tutorial-data/geography.db&#39;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">LsS</span> <span class="o">-</span><span class="n">o</span> <span class="n">geography</span><span class="o">.</span><span class="n">db</span> <span class="s1">&#39;https://storage.googleapis.com/ibis-tutorial-data/geography.db&#39;</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">!curl -LsS -o $TEMPDIR/geography.db 'https://storage.googleapis.com/ibis-tutorial-data/geography.db'</div>
+<div id="cell-3" class="clipboard-copy-txt">!curl -LsS -o geography.db 'https://storage.googleapis.com/ibis-tutorial-data/geography.db'</div>
     
         </div>
     </div>
@@ -3094,14 +3094,14 @@ Licensed under the Apache License, Version 2.0.
 <span class="kn">import</span> <span class="nn">tempfile</span>
 
 <span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+    <span class="s1">&#39;geography.db&#39;</span>
 <span class="p">)</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt">import os
 import tempfile
 
 connection = ibis.sqlite.connect(
-    os.path.join(tempfile.gettempdir(), 'geography.db')
+    'geography.db'
 )</div>
     
         </div>
@@ -4094,7 +4094,7 @@ asian_countries</div>
   <small>
     
       Last update:
-      2022-11-03
+      2023-01-05
     
   </small>
 </div>

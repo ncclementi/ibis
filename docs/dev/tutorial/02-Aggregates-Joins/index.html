@@ -2982,9 +2982,9 @@ the <code>countries</code> table as we did previously.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">LsS</span> <span class="o">-</span><span class="n">o</span> <span class="err">$</span><span class="n">TEMPDIR</span><span class="o">/</span><span class="n">geography</span><span class="o">.</span><span class="n">db</span> <span class="s1">&#39;https://storage.googleapis.com/ibis-tutorial-data/geography.db&#39;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">LsS</span> <span class="o">-</span><span class="n">o</span> <span class="n">geography</span><span class="o">.</span><span class="n">db</span> <span class="s1">&#39;https://storage.googleapis.com/ibis-tutorial-data/geography.db&#39;</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">!curl -LsS -o $TEMPDIR/geography.db 'https://storage.googleapis.com/ibis-tutorial-data/geography.db'</div>
+<div id="cell-1" class="clipboard-copy-txt">!curl -LsS -o geography.db 'https://storage.googleapis.com/ibis-tutorial-data/geography.db'</div>
     
         </div>
     </div>
@@ -3022,7 +3022,7 @@ the <code>countries</code> table as we did previously.</p>
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+    <span class="s1">&#39;geography.db&#39;</span>
 <span class="p">)</span>
 <span class="n">countries</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;countries&#39;</span><span class="p">)</span>
 
@@ -3036,7 +3036,7 @@ import ibis
 ibis.options.interactive = True
 
 connection = ibis.sqlite.connect(
-    os.path.join(tempfile.gettempdir(), 'geography.db')
+    'geography.db'
 )
 countries = connection.table('countries')
 
@@ -4392,7 +4392,7 @@ match the <code>country_code</code> column in <code>gdp</code>. This is specifie
   <small>
     
       Last update:
-      2022-09-15
+      2023-01-05
     
   </small>
 </div>
