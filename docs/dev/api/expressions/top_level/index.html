@@ -1441,8 +1441,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.read" class="md-nav__link">
-    read()
+  <a href="#ibis.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.read_parquet" class="md-nav__link">
+    read_parquet()
   </a>
   
 </li>
@@ -2303,8 +2310,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.read" class="md-nav__link">
-    read()
+  <a href="#ibis.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.read_parquet" class="md-nav__link">
+    read_parquet()
   </a>
   
 </li>
@@ -3860,15 +3874,15 @@ value of the order-by expression.</p>
 
 
 
-<h2 id="ibis.read" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<h2 id="ibis.read_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a href="#ibis.read" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+<a href="#ibis.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
   
-      <p>Lazily load a data source located at <code>path</code>.</p>
+      <p>Lazily load a CSV or set of CSVs.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3882,11 +3896,11 @@ value of the order-by expression.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>path</code></td>
+          <td><code>sources</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
           </td>
-          <td><p>A filesystem path or URL. Supports CSV, TSV, and Parquet files.</p></td>
+          <td><p>A filesystem path or URL or list of same.  Supports CSV and TSV files.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3899,6 +3913,82 @@ value of the order-by expression.</p>
           <td><p>DuckDB-specific keyword arguments for the file type.</p>
 <ul>
 <li>CSV/TSV: <a href="https://duckdb.org/docs/data/csv#parameters">https://duckdb.org/docs/data/csv#parameters</a>.</li>
+</ul></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>Table expression representing a file</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">batting</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/batting.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="ibis.read_parquet" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Lazily load a parquet file or set of parquet files.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>sources</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td><p>A filesystem path or URL or list of same.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>DuckDB-specific keyword arguments for the file type.</p>
+<ul>
 <li>Parquet: <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a></li>
 </ul></td>
           <td>
@@ -3927,9 +4017,7 @@ value of the order-by expression.</p>
   </table>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">batting</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/batting.csv&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">diamonds</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/parquet/diamonds/diamonds.parquet&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ft</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parquet://ci/ibis-testing-data/parquet/functional_alltypes/*&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">batting</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/parquet/batting/batting.parquet&quot;</span><span class="p">)</span>
 </code></pre></div>
 
   </div>
@@ -4605,7 +4693,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2022</span>
       
     
   </small>

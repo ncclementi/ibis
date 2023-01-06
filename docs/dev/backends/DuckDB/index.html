@@ -935,6 +935,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="md-nav__link">
+    read_in_memory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_parquet" class="md-nav__link">
+    read_parquet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_postgres" class="md-nav__link">
+    read_postgres()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.register" class="md-nav__link">
     register()
   </a>
@@ -2017,6 +2045,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="md-nav__link">
+    read_in_memory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_parquet" class="md-nav__link">
+    read_parquet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_postgres" class="md-nav__link">
+    read_postgres()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.register" class="md-nav__link">
     register()
   </a>
@@ -2231,6 +2287,311 @@ possible configuration values.</p></td>
 
 
 
+<h5 id="ibis.backends.duckdb.Backend.read_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register a CSV file as a table in the current database.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>source_list</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td><p>The data source(s). May be a path to a file or directory of CSV files, or an
+iterable of CSV files.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Additional keyword arguments passed to DuckDB loading function.
+See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv</a> for more information.</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>The just-registered table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.duckdb.Backend.read_in_memory" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_in_memory</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_in_memory" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register a Pandas DataFrame or pyarrow Table as a table in the current database.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dataframe</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pandas" href="../Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.Table">Table</span></code>
+          </td>
+          <td><p>The data source.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>The just-registered table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.duckdb.Backend.read_parquet" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register a parquet file as a table in the current database.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>source_list</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td><p>The data source(s). May be a path to a file, an iterable of files,
+or directory of parquet files.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Additional keyword arguments passed to DuckDB loading function.
+See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a> for more information.</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>The just-registered table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.duckdb.Backend.read_postgres" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_postgres</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_postgres" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register a table from a postgres instance into a DuckDB table.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>uri</code></td>
+          <td>
+          </td>
+          <td><p>The postgres URI in form 'postgres://user:password@host:port'</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+          </td>
+          <td><p>The table to read</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>The just-registered table.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h5 id="ibis.backends.duckdb.Backend.register" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -2257,9 +2618,9 @@ possible configuration values.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>The data source. May be a path to a file or directory of
-parquet/csv files, a pandas dataframe, or a pyarrow table or
-dataset.</p></td>
+          <td><p>The data source(s). May be a path to a file or directory of
+parquet/csv files, an iterable of parquet or CSV files, a pandas
+dataframe, a pyarrow table or dataset, or a postgres URI.</p></td>
           <td>
               <em>required</em>
           </td>
