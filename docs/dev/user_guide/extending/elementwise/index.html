@@ -3308,7 +3308,7 @@ Selection[r0]
 <span class="nd">@ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">add_operation</span><span class="p">(</span><span class="n">JulianDay</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">_julianday</span><span class="p">(</span><span class="n">translator</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
     <span class="c1"># pull out the arguments to the expression</span>
-    <span class="p">(</span><span class="n">arg</span><span class="p">,)</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">args</span>
+    <span class="p">(</span><span class="n">arg</span><span class="p">,)</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span>
 
     <span class="c1"># compile the argument</span>
     <span class="n">compiled_arg</span> <span class="o">=</span> <span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
@@ -3322,7 +3322,7 @@ Selection[r0]
 @ibis.sqlite.add_operation(JulianDay)
 def _julianday(translator, expr):
     # pull out the arguments to the expression
-    (arg,) = expr.op().args
+    (arg,) = expr.args
 
     # compile the argument
     compiled_arg = translator.translate(arg)
@@ -3687,19 +3687,6 @@ FROM main.independence AS t0
 </div>
 </div>
 
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/tmp/nix-shell.rHgpGg/ipykernel_14602/3192123402.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
-  (arg,) = expr.op().args
-</pre>
-</div>
-</div>
-
 </div>
 
 </div>
@@ -3744,19 +3731,6 @@ result.head()</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/tmp/nix-shell.rHgpGg/ipykernel_14602/3192123402.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
-  (arg,) = expr.op().args
-</pre>
-</div>
-</div>
 
 <div class="jp-OutputArea-child">
 
@@ -3926,19 +3900,6 @@ scalar</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/tmp/nix-shell.rHgpGg/ipykernel_14602/3192123402.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
-  (arg,) = expr.op().args
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
@@ -3965,7 +3926,7 @@ scalar</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
       
     
   </small>
