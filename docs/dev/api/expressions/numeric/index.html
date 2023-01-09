@@ -4037,7 +4037,7 @@ of <code>column</code>.</p></td>
 
 
 <h4 id="ibis.expr.types.numeric.NumericColumn.quantile" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">quantile</span><span class="p">(</span><span class="n">quantile</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">quantile</span><span class="p">(</span><span class="n">quantile</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.numeric.NumericColumn.quantile" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4070,7 +4070,7 @@ of <code>column</code>.</p></td>
         <tr>
           <td><code>interpolation</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;linear&#39;, &#39;lower&#39;, &#39;higher&#39;, &#39;midpoint&#39;, &#39;nearest&#39;]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;linear&#39;, &#39;lower&#39;, &#39;higher&#39;, &#39;midpoint&#39;, &#39;nearest&#39;] | None</code>
           </td>
           <td><div class="admonition warning">
 <p class="admonition-title">This parameter is backend dependent and may have no effect</p>
@@ -4086,7 +4086,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <li>midpoint: (<code>i</code> + <code>j</code>) / 2.</li>
 </ul></td>
           <td>
-                <code>&#39;linear&#39;</code>
+                <code>None</code>
           </td>
         </tr>
         <tr>
