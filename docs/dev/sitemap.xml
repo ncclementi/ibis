@@ -211,6 +211,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/blog/rendered/ci-analysis/</loc>
+         <lastmod>1980-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/community/</loc>
          <lastmod>1980-01-01</lastmod>
          <changefreq>daily</changefreq>
@@ -316,7 +321,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/tutorial/08-Geospatial-Analysis/</loc>
+         <loc>https://ibis-project.org/dev/tutorial/rendered/08-Geospatial-Analysis/</loc>
          <lastmod>1980-01-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
