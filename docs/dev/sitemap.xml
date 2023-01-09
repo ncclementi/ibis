@@ -206,6 +206,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/blog/ibis-version-4.0.0-release/</loc>
+         <lastmod>1980-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/community/</loc>
          <lastmod>1980-01-01</lastmod>
          <changefreq>daily</changefreq>
