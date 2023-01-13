@@ -1583,6 +1583,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.nunique" class="md-nav__link">
+    nunique()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.summary" class="md-nav__link">
     summary()
   </a>
@@ -2496,6 +2503,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.nth" class="md-nav__link">
     nth()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.nunique" class="md-nav__link">
+    nunique()
   </a>
   
 </li>
@@ -4303,6 +4317,66 @@ backend.</li>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Column" href="#ibis.expr.types.generic.Column">Column</a></code>
           </td>
           <td><p>The nth value over a window</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.generic.Column.nunique" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nunique</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.generic.Column.nunique" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Compute the number of distinct rows in an expression.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>where</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+          </td>
+          <td><p>Filter expression</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types.numeric.IntegerScalar">IntegerScalar</span></code>
+          </td>
+          <td><p>Number of distinct elements in an expression</p></td>
         </tr>
     </tbody>
   </table>

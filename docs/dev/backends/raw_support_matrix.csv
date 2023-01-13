@@ -1,7 +1,7 @@
 Backends,bigquery,clickhouse,dask,datafusion,duckdb,impala,mssql,mysql,pandas,polars,postgres,pyspark,snowflake,sqlite,trino
 ibis.expr.operations.analytic.CumeDist,True,False,True,False,True,True,True,True,True,False,True,True,True,True,True
-ibis.expr.operations.analytic.CumulativeAll,False,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-ibis.expr.operations.analytic.CumulativeAny,False,False,True,False,True,False,False,False,True,False,True,False,False,False,False
+ibis.expr.operations.analytic.CumulativeAll,False,False,True,False,False,False,False,False,True,False,True,False,False,False,False
+ibis.expr.operations.analytic.CumulativeAny,False,False,True,False,False,False,False,False,True,False,True,False,False,False,False
 ibis.expr.operations.analytic.CumulativeMax,False,False,True,False,True,False,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.CumulativeMean,False,False,True,False,True,False,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.CumulativeMin,False,False,True,False,True,False,True,True,True,False,True,True,True,True,True
@@ -12,7 +12,7 @@ ibis.expr.operations.analytic.Lag,True,True,True,False,True,True,True,True,True,
 ibis.expr.operations.analytic.LastValue,True,True,True,False,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.Lead,True,True,True,False,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.MinRank,True,True,True,False,True,True,True,True,True,False,True,True,True,True,True
-ibis.expr.operations.analytic.NTile,True,True,False,False,True,True,True,True,False,False,True,True,False,True,True
+ibis.expr.operations.analytic.NTile,True,True,False,False,False,True,True,True,False,False,True,True,False,True,False
 ibis.expr.operations.analytic.NthValue,True,True,False,False,True,False,True,True,False,False,True,True,False,True,True
 ibis.expr.operations.analytic.PercentRank,True,False,True,False,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.RowNumber,True,True,False,False,True,True,True,True,False,False,True,True,True,True,True
@@ -45,7 +45,7 @@ ibis.expr.operations.generic.SimpleCase,True,True,True,False,True,True,True,True
 ibis.expr.operations.generic.TableArrayView,True,True,True,False,True,True,True,True,True,False,True,False,False,True,True
 ibis.expr.operations.generic.TableColumn,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.TimestampNow,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.generic.TypeOf,False,True,True,False,True,False,True,True,True,True,True,False,False,True,True
+ibis.expr.operations.generic.TypeOf,False,True,True,False,False,False,True,True,True,True,True,False,False,True,False
 ibis.expr.operations.generic.ZeroIfNull,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.geospatial.GeoArea,True,False,False,False,False,False,False,True,False,False,True,False,False,False,False
 ibis.expr.operations.geospatial.GeoAsBinary,True,False,False,False,False,False,False,True,False,False,True,False,False,False,False
@@ -105,7 +105,7 @@ ibis.expr.operations.histograms.CategoryLabel,True,False,False,False,True,True,T
 ibis.expr.operations.json.JSONGetItem,True,False,True,False,True,False,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.logical.And,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Equals,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.logical.ExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,False,True,True
+ibis.expr.operations.logical.ExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,False,True,False
 ibis.expr.operations.logical.Greater,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.GreaterEqual,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.IdenticalTo,True,False,True,False,True,True,True,True,True,True,True,False,True,True,True
@@ -114,7 +114,7 @@ ibis.expr.operations.logical.LessEqual,True,True,True,True,True,True,True,True,T
 ibis.expr.operations.logical.Not,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.NotContains,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.NotEquals,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.logical.NotExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,False,True,True
+ibis.expr.operations.logical.NotExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,False,True,False
 ibis.expr.operations.logical.Or,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Where,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Xor,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
@@ -122,7 +122,7 @@ ibis.expr.operations.maps.Map,False,True,True,False,False,False,False,False,True
 ibis.expr.operations.maps.MapContains,False,True,True,False,False,False,False,False,True,False,False,False,False,False,True
 ibis.expr.operations.maps.MapGet,False,True,True,False,False,False,False,False,True,False,False,False,False,False,True
 ibis.expr.operations.maps.MapKeys,False,True,True,False,False,False,False,False,True,True,False,False,False,False,True
-ibis.expr.operations.maps.MapLength,False,False,True,False,False,False,False,False,True,True,False,False,False,False,True
+ibis.expr.operations.maps.MapLength,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.maps.MapMerge,False,True,True,False,False,False,False,False,True,False,False,False,False,False,True
 ibis.expr.operations.maps.MapValues,False,True,True,False,False,False,False,False,True,True,False,False,False,False,True
 ibis.expr.operations.numeric.Abs,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
@@ -185,15 +185,15 @@ ibis.expr.operations.reductions.Max,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Mean,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Min,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Mode,False,False,True,False,True,False,False,False,True,True,True,False,True,False,False
-ibis.expr.operations.reductions.MultiQuantile,False,True,True,False,True,False,False,False,True,True,True,True,False,False,True
+ibis.expr.operations.reductions.MultiQuantile,False,True,True,False,True,False,False,False,True,True,True,True,False,False,False
 ibis.expr.operations.reductions.NotAll,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.NotAny,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.reductions.Quantile,False,True,True,False,True,False,False,False,True,True,True,True,True,False,True
+ibis.expr.operations.reductions.Quantile,False,True,True,False,True,False,False,False,True,True,True,True,True,False,False
 ibis.expr.operations.reductions.StandardDev,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Sum,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Variance,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.sortkeys.SortKey,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.strings.Capitalize,True,False,True,True,True,True,False,True,True,True,True,True,True,True,True
+ibis.expr.operations.strings.Capitalize,True,False,True,True,False,True,False,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.EndsWith,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.ExtractAuthority,True,True,False,False,False,True,False,False,False,False,False,False,True,False,False
 ibis.expr.operations.strings.ExtractFile,True,True,False,False,False,True,False,False,False,False,False,False,True,False,True
@@ -228,7 +228,7 @@ ibis.expr.operations.strings.StringSQLILike,True,True,True,False,True,True,True,
 ibis.expr.operations.strings.StringSplit,True,True,True,False,True,False,False,False,True,True,True,True,False,False,True
 ibis.expr.operations.strings.Strip,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.Substring,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.strings.Translate,True,False,True,False,True,True,False,False,True,False,True,True,True,True,True
+ibis.expr.operations.strings.Translate,True,False,True,False,False,True,False,False,True,False,True,True,True,True,True
 ibis.expr.operations.strings.Uppercase,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.structs.StructColumn,True,True,False,False,True,False,False,False,False,True,False,True,False,False,True
 ibis.expr.operations.structs.StructField,True,True,True,False,True,False,False,False,True,True,False,True,False,False,True
@@ -266,7 +266,7 @@ ibis.expr.operations.temporal.TimeFromHMS,True,False,False,False,True,False,True
 ibis.expr.operations.temporal.TimeSub,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.TimeTruncate,True,True,False,False,False,False,False,False,False,False,False,False,False,False,False
 ibis.expr.operations.temporal.TimestampAdd,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
-ibis.expr.operations.temporal.TimestampDiff,False,True,True,False,True,True,False,True,True,True,True,True,False,False,False
+ibis.expr.operations.temporal.TimestampDiff,False,True,True,False,False,True,False,True,True,True,True,True,False,False,False
 ibis.expr.operations.temporal.TimestampFromUNIX,True,True,True,False,True,True,True,False,True,True,False,True,False,False,True
 ibis.expr.operations.temporal.TimestampFromYMDHMS,True,False,False,False,True,False,True,True,False,True,True,False,False,True,True
 ibis.expr.operations.temporal.TimestampSub,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
