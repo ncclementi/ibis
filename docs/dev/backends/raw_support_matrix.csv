@@ -105,7 +105,7 @@ ibis.expr.operations.histograms.CategoryLabel,True,False,False,False,True,True,T
 ibis.expr.operations.json.JSONGetItem,True,False,True,False,True,False,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.logical.And,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Equals,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.logical.ExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,False,True,False
+ibis.expr.operations.logical.ExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,True,True,True
 ibis.expr.operations.logical.Greater,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.GreaterEqual,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.IdenticalTo,True,False,True,False,True,True,True,True,True,True,True,False,True,True,True
@@ -114,7 +114,7 @@ ibis.expr.operations.logical.LessEqual,True,True,True,True,True,True,True,True,T
 ibis.expr.operations.logical.Not,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.NotContains,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.NotEquals,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.logical.NotExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,False,True,False
+ibis.expr.operations.logical.NotExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,True,True,True
 ibis.expr.operations.logical.Or,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Where,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Xor,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
