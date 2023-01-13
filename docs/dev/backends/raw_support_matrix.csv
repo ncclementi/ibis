@@ -1,4 +1,4 @@
-Backends,bigquery,clickhouse,dask,datafusion,duckdb,impala,mssql,mysql,pandas,polars,postgres,pyspark,snowflake,sqlite,trino
+FullOperation,bigquery,clickhouse,dask,datafusion,duckdb,impala,mssql,mysql,pandas,polars,postgres,pyspark,snowflake,sqlite,trino
 ibis.expr.operations.analytic.CumeDist,True,False,True,False,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.CumulativeAll,False,False,True,False,False,False,False,False,True,False,True,False,False,False,False
 ibis.expr.operations.analytic.CumulativeAny,False,False,True,False,False,False,False,False,True,False,True,False,False,False,False
