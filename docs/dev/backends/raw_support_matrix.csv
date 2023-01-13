@@ -42,7 +42,7 @@ ibis.expr.operations.generic.RandomScalar,True,False,False,False,True,False,True
 ibis.expr.operations.generic.RowID,False,False,False,False,True,False,False,False,False,False,False,False,False,True,False
 ibis.expr.operations.generic.SearchedCase,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.SimpleCase,True,True,True,False,True,True,True,True,True,True,True,False,True,True,True
-ibis.expr.operations.generic.TableArrayView,True,True,True,False,True,True,True,True,True,False,True,False,False,True,True
+ibis.expr.operations.generic.TableArrayView,True,True,True,False,True,True,True,True,True,False,True,False,True,True,True
 ibis.expr.operations.generic.TableColumn,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.TimestampNow,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.TypeOf,False,True,True,False,False,False,True,True,True,True,True,False,False,True,False
