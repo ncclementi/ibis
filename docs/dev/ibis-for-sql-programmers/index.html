@@ -3963,8 +3963,8 @@ t</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `two`, `one`
-FROM my_data
+<pre>SELECT t0.`two`, t0.`one`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -4082,8 +4082,8 @@ print(ibis.impala.compile(proj))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `two`, `one`, `three` * 2 AS `new_col`
-FROM my_data
+<pre>SELECT t0.`two`, t0.`one`, t0.`three` * 2 AS `new_col`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -4196,8 +4196,8 @@ Python keywords to provide the name. Indeed:</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `three` * 2 AS `new_col`
-FROM my_data
+<pre>SELECT t0.*, t0.`three` * 2 AS `new_col`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -4267,8 +4267,8 @@ print(ibis.impala.compile(mutated))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, `two` * 2 AS `two`, `three`
-FROM my_data
+<pre>SELECT t0.`one`, t0.`two` * 2 AS `two`, t0.`three`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -4339,8 +4339,8 @@ print(ibis.impala.compile(proj))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
+<pre>SELECT t0.*
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -4410,8 +4410,8 @@ print(ibis.impala.compile(proj))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `three` * 2 AS `new_col`
-FROM my_data
+<pre>SELECT t0.*, t0.`three` * 2 AS `new_col`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -4710,10 +4710,10 @@ Consider this SQL:</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, avg(abs(`the_sum`)) AS `mad`
+<pre>SELECT t0.`one`, avg(abs(t0.`the_sum`)) AS `mad`
 FROM (
-  SELECT `one`, `three`, sum(`two`) AS `the_sum`
-  FROM my_data
+  SELECT t1.`one`, t1.`three`, sum(t1.`two`) AS `the_sum`
+  FROM my_data t1
   GROUP BY 1, 2
 ) t0
 GROUP BY 1
@@ -4786,9 +4786,9 @@ print(ibis.impala.compile(filtered))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE `two` &gt; 0
+<pre>SELECT t0.*
+FROM my_data t0
+WHERE t0.`two` &gt; 0
 </pre>
 </div>
 </div>
@@ -4858,10 +4858,10 @@ print(ibis.impala.compile(filtered))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE (`two` &gt; 0) AND
-      (`one` IN (&#39;A&#39;, &#39;B&#39;))
+<pre>SELECT t0.*
+FROM my_data t0
+WHERE (t0.`two` &gt; 0) AND
+      (t0.`one` IN (&#39;A&#39;, &#39;B&#39;))
 </pre>
 </div>
 </div>
@@ -4933,9 +4933,9 @@ print(ibis.impala.compile(filtered))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE (`two` &lt; 0) OR ((`two` &gt; 0) OR `one` IN (&#39;A&#39;, &#39;B&#39;))
+<pre>SELECT t0.*
+FROM my_data t0
+WHERE (t0.`two` &lt; 0) OR ((t0.`two` &gt; 0) OR t0.`one` IN (&#39;A&#39;, &#39;B&#39;))
 </pre>
 </div>
 </div>
@@ -5114,8 +5114,8 @@ row with your statistics of interest:</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT sum(`two`) AS `total_two`, avg(`three`) AS `avg_three`
-FROM my_data
+<pre>SELECT sum(t0.`two`) AS `total_two`, avg(t0.`three`) AS `avg_three`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -5187,8 +5187,8 @@ print(ibis.impala.compile(agged3))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, sum(`two`) AS `total_two`, avg(`three`) AS `avg_three`
-FROM my_data
+<pre>SELECT t0.`one`, sum(t0.`two`) AS `total_two`, avg(t0.`three`) AS `avg_three`
+FROM my_data t0
 GROUP BY 1
 </pre>
 </div>
@@ -5362,9 +5362,10 @@ stats = events.group_by(keys).aggregate(
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`,
-       count(1) AS `total`, count(DISTINCT `session_id`) AS `sessions`
-FROM web_events
+<pre>SELECT extract(t0.`ts`, &#39;year&#39;) AS `year`,
+       extract(t0.`ts`, &#39;month&#39;) AS `month`, count(1) AS `total`,
+       count(DISTINCT t0.`session_id`) AS `sessions`
+FROM web_events t0
 GROUP BY 1, 2
 </pre>
 </div>
@@ -5573,10 +5574,10 @@ the SQL expression that is correct for your query engine.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `country`, count(1) AS `num_persons`, avg(`age`) AS `avg_age`,
-       avg(if(`gender` = &#39;M&#39;, `age`, NULL)) AS `avg_male`,
-       avg(if(`gender` = &#39;F&#39;, `age`, NULL)) AS `avg_female`
-FROM population
+<pre>SELECT t0.`country`, count(1) AS `num_persons`, avg(t0.`age`) AS `avg_age`,
+       avg(if(t0.`gender` = &#39;M&#39;, t0.`age`, NULL)) AS `avg_male`,
+       avg(if(t0.`gender` = &#39;F&#39;, t0.`age`, NULL)) AS `avg_female`
+FROM population t0
 GROUP BY 1
 </pre>
 </div>
@@ -5647,9 +5648,9 @@ print(ibis.impala.compile(freqs))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`,
-       count(1) AS `count`
-FROM web_events
+<pre>SELECT extract(t0.`ts`, &#39;year&#39;) AS `year`,
+       extract(t0.`ts`, &#39;month&#39;) AS `month`, count(1) AS `count`
+FROM web_events t0
 GROUP BY 1, 2
 </pre>
 </div>
@@ -5725,10 +5726,10 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `ExtractYear(ts)`, count(1) AS `count`
+<pre>SELECT t0.`ExtractYear(ts)`, count(1) AS `count`
 FROM (
-  SELECT extract(`ts`, &#39;year&#39;) AS `ExtractYear(ts)`
-  FROM web_events
+  SELECT extract(t1.`ts`, &#39;year&#39;) AS `ExtractYear(ts)`
+  FROM web_events t1
 ) t0
 GROUP BY 1
 </pre>
@@ -5816,8 +5817,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, sum(`two`) AS `total`
-FROM my_data
+<pre>SELECT t0.`one`, sum(t0.`two`) AS `total`
+FROM my_data t0
 GROUP BY 1
 HAVING count(1) &gt;= 1000
 </pre>
@@ -5891,9 +5892,9 @@ print(ibis.impala.compile(sorted))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM web_events
-ORDER BY extract(`ts`, &#39;year&#39;) ASC, extract(`ts`, &#39;month&#39;) ASC
+<pre>SELECT t0.*
+FROM web_events t0
+ORDER BY extract(t0.`ts`, &#39;year&#39;) ASC, extract(t0.`ts`, &#39;month&#39;) ASC
 </pre>
 </div>
 </div>
@@ -5970,9 +5971,9 @@ print(ibis.impala.compile(sorted))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM web_events
-ORDER BY `event_type` DESC, extract(`ts`, &#39;month&#39;) DESC
+<pre>SELECT t0.*
+FROM web_events t0
+ORDER BY t0.`event_type` DESC, extract(t0.`ts`, &#39;month&#39;) DESC
 LIMIT 100
 </pre>
 </div>
@@ -6044,8 +6045,8 @@ print(ibis.impala.compile(limited))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
+<pre>SELECT t0.*
+FROM my_data t0
 LIMIT 1000
 </pre>
 </div>
@@ -6116,8 +6117,8 @@ print(ibis.impala.compile(limited))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
+<pre>SELECT t0.*
+FROM my_data t0
 LIMIT 10 OFFSET 10
 </pre>
 </div>
@@ -6194,9 +6195,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, CAST(`one` AS timestamp) AS `date`,
-       CAST(`three` AS double) AS `four`
-FROM my_data
+<pre>SELECT t0.*, CAST(t0.`one` AS timestamp) AS `date`,
+       CAST(t0.`three` AS double) AS `four`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -6295,13 +6296,13 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-  CASE extract(CAST(`one` AS timestamp), &#39;year&#39;)
+<pre>SELECT t0.*,
+  CASE extract(CAST(t0.`one` AS timestamp), &#39;year&#39;)
     WHEN 2015 THEN &#39;This year&#39;
     WHEN 2014 THEN &#39;Last year&#39;
     ELSE &#39;Earlier&#39;
   END AS `year_group`
-FROM my_data
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -6395,13 +6396,13 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
+<pre>SELECT t0.*,
   CASE
-    WHEN `two` &lt; 0 THEN `three` * 2
-    WHEN `two` &gt; 1 THEN `three`
-    ELSE `two`
+    WHEN t0.`two` &lt; 0 THEN t0.`three` * 2
+    WHEN t0.`two` &gt; 1 THEN t0.`three`
+    ELSE t0.`two`
   END AS `cond_value`
-FROM my_data
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -6473,8 +6474,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, if(`two` &lt; 0, &#39;Negative&#39;, &#39;Non-Negative&#39;) AS `group`
-FROM my_data
+<pre>SELECT t0.*, if(t0.`two` &lt; 0, &#39;Negative&#39;, &#39;Non-Negative&#39;) AS `group`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -6546,8 +6547,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, if(`two` &gt; 0, `two`, NULL) AS `two_positive`
-FROM my_data
+<pre>SELECT t0.*, if(t0.`two` &gt; 0, t0.`two`, NULL) AS `two_positive`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -6637,9 +6638,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       if(upper(`country`) IN (&#39;UNITED STATES&#39;, &#39;CANADA&#39;), &#39;North America&#39;, `country`) AS `refined_group`
-FROM population
+<pre>SELECT t0.*,
+       if(upper(t0.`country`) IN (&#39;UNITED STATES&#39;, &#39;CANADA&#39;), &#39;North America&#39;, t0.`country`) AS `refined_group`
+FROM population t0
 </pre>
 </div>
 </div>
@@ -6776,8 +6777,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, &#39;foo&#39; IN (`column1`, `column2`) AS `has_foo`
-FROM `data`
+<pre>SELECT t0.*, &#39;foo&#39; IN (t0.`column1`, t0.`column2`) AS `has_foo`
+FROM `data` t0
 </pre>
 </div>
 </div>
@@ -6848,8 +6849,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, 5 AS `number5`
-FROM `data`
+<pre>SELECT t0.*, 5 AS `number5`
+FROM `data` t0
 </pre>
 </div>
 </div>
@@ -6937,13 +6938,13 @@ print(ibis.impala.compile(agged))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, if(`two` IS NULL, &#39;valid&#39;, &#39;invalid&#39;) AS `is_valid`
-FROM my_data
-SELECT `is_valid`, sum(`three` IS NOT NULL) AS `three_count`
+<pre>SELECT t0.*, if(t0.`two` IS NULL, &#39;valid&#39;, &#39;invalid&#39;) AS `is_valid`
+FROM my_data t0
+SELECT t0.`is_valid`, sum(t0.`three` IS NOT NULL) AS `three_count`
 FROM (
-  SELECT *, if(`two` IS NULL, &#39;valid&#39;, &#39;invalid&#39;) AS `is_valid`
-  FROM my_data
-  WHERE `one` IS NOT NULL
+  SELECT t1.*, if(t1.`two` IS NULL, &#39;valid&#39;, &#39;invalid&#39;) AS `is_valid`
+  FROM my_data t1
+  WHERE t1.`one` IS NOT NULL
 ) t0
 GROUP BY 1
 </pre>
@@ -7016,10 +7017,10 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE (`two` BETWEEN 10 AND 50) AND
-      (`one` IS NOT NULL)
+<pre>SELECT t0.*
+FROM my_data t0
+WHERE (t0.`two` BETWEEN 10 AND 50) AND
+      (t0.`one` IS NOT NULL)
 </pre>
 </div>
 </div>
@@ -8375,11 +8376,11 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM events
-WHERE `user_id` IN (
-  SELECT `user_id`
-  FROM purchases
+<pre>SELECT t0.*
+FROM events t0
+WHERE t0.`user_id` IN (
+  SELECT t1.`user_id`
+  FROM purchases t1
 )
 </pre>
 </div>
@@ -8461,11 +8462,11 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM table1
-WHERE `value1` &gt; (
-  SELECT max(`value2`) AS `Max(value2)`
-  FROM table2
+<pre>SELECT t0.*
+FROM table1 t0
+WHERE t0.`value1` &gt; (
+  SELECT max(t1.`value2`) AS `Max(value2)`
+  FROM table2 t1
 )
 </pre>
 </div>
@@ -8637,8 +8638,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT DISTINCT *
-FROM table1
+<pre>SELECT DISTINCT t0.*
+FROM table1 t0
 </pre>
 </div>
 </div>
@@ -8717,8 +8718,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `user_id`, count(DISTINCT `event_type`) AS `unique_events`
-FROM events
+<pre>SELECT t0.`user_id`, count(DISTINCT t0.`event_type`) AS `unique_events`
+FROM events t0
 GROUP BY 1
 </pre>
 </div>
@@ -8807,8 +8808,8 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `two` - avg(`two`) OVER () AS `two_demean`
-FROM my_data
+<pre>SELECT t0.*, t0.`two` - avg(t0.`two`) OVER () AS `two_demean`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -8880,8 +8881,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `two` - avg(`two`) OVER (PARTITION BY `one`) AS `two_demean`
-FROM my_data
+<pre>SELECT t0.*,
+       t0.`two` - avg(t0.`two`) OVER (PARTITION BY t0.`one`) AS `two_demean`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -8961,9 +8963,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       `two` - lag(`two`) OVER (PARTITION BY `one` ORDER BY `two` ASC) AS `two_first_diff`
-FROM my_data
+<pre>SELECT t0.*,
+       t0.`two` - lag(t0.`two`) OVER (PARTITION BY t0.`one` ORDER BY t0.`two` ASC) AS `two_first_diff`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -9035,9 +9037,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       `two` - avg(`two`) OVER (PARTITION BY `one` ROWS BETWEEN 5 PRECEDING AND 5 FOLLOWING) AS `group_demeaned`
-FROM my_data
+<pre>SELECT t0.*,
+       t0.`two` - avg(t0.`two`) OVER (PARTITION BY t0.`one` ROWS BETWEEN 5 PRECEDING AND 5 FOLLOWING) AS `group_demeaned`
+FROM my_data t0
 </pre>
 </div>
 </div>
@@ -9156,13 +9158,13 @@ dimension by aggregate statistics:</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
+<pre>SELECT t0.*
 FROM (
-  SELECT `key1`, count(`key1`) AS `count`
-  FROM table1
+  SELECT t1.`key1`, count(t1.`key1`) AS `count`
+  FROM table1 t1
   GROUP BY 1
 ) t0
-ORDER BY `count` DESC
+ORDER BY t0.`count` DESC
 LIMIT 10
 </pre>
 </div>
@@ -9236,8 +9238,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`
-FROM events
+<pre>SELECT t0.*, extract(t0.`ts`, &#39;year&#39;) AS `year`,
+       extract(t0.`ts`, &#39;month&#39;) AS `month`
+FROM events t0
 </pre>
 </div>
 </div>
@@ -9310,9 +9313,9 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM events
-WHERE `ts` &gt; date_sub(cast(now() as timestamp), INTERVAL 1 YEAR)
+<pre>SELECT t0.*
+FROM events t0
+WHERE t0.`ts` &gt; date_sub(cast(now() as timestamp), INTERVAL 1 YEAR)
 </pre>
 </div>
 </div>
@@ -9397,12 +9400,12 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM table1
+<pre>SELECT t0.*
+FROM table1 t0
 LIMIT 10
 UNION ALL
-SELECT *
-FROM table1
+SELECT t0.*
+FROM table1 t0
 LIMIT 10 OFFSET 10
 </pre>
 </div>
@@ -9567,20 +9570,20 @@ result = left.join(right, left.region == right.region)[
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>WITH t0 AS (
-  SELECT `region`, `kind`, sum(`amount`) AS `total`
-  FROM purchases
+  SELECT t3.`region`, t3.`kind`, sum(t3.`amount`) AS `total`
+  FROM purchases t3
   GROUP BY 1, 2
 )
 SELECT t1.`region`, t1.`total` - t2.`total` AS `diff`
 FROM (
-  SELECT *
+  SELECT t0.*
   FROM t0
-  WHERE `kind` = &#39;foo&#39;
+  WHERE t0.`kind` = &#39;foo&#39;
 ) t1
   INNER JOIN (
-    SELECT *
+    SELECT t0.*
     FROM t0
-    WHERE `kind` = &#39;bar&#39;
+    WHERE t0.`kind` = &#39;bar&#39;
   ) t2
     ON t1.`region` = t2.`region`
 </pre>
