@@ -45,7 +45,7 @@ ibis.expr.operations.generic.SimpleCase,True,True,True,False,True,True,True,True
 ibis.expr.operations.generic.TableArrayView,True,True,True,False,True,True,True,True,True,False,True,False,True,True,True
 ibis.expr.operations.generic.TableColumn,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.TimestampNow,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.generic.TypeOf,False,True,True,False,False,False,True,True,True,True,True,False,False,True,False
+ibis.expr.operations.generic.TypeOf,True,True,True,False,True,True,False,False,True,True,True,False,False,True,True
 ibis.expr.operations.generic.ZeroIfNull,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.geospatial.GeoArea,True,False,False,False,False,False,False,True,False,False,True,False,False,False,False
 ibis.expr.operations.geospatial.GeoAsBinary,True,False,False,False,False,False,False,True,False,False,True,False,False,False,False
