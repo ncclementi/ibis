@@ -116,6 +116,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/backends/BigQuery/</loc>
+         <lastmod>1980-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/backends/ClickHouse/</loc>
          <lastmod>1980-01-01</lastmod>
          <changefreq>daily</changefreq>
