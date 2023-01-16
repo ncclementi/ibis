@@ -2317,13 +2317,20 @@ to override schema inference for a given SQLite database.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
           </td>
-          <td><p>Path to sqlite3 database file</p></td>
+          <td><p>Path to sqlite3 database files</p></td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;original.db&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;new.db&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con1</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="s2">&quot;new.db&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con1</span><span class="o">.</span><span class="n">list_tables</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;new&quot;</span><span class="p">)</span>
+</code></pre></div>
 
   </div>
 
