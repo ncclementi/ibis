@@ -171,7 +171,7 @@ ibis.expr.operations.reductions.ApproxMedian,True,True,True,False,True,True,Fals
 ibis.expr.operations.reductions.Arbitrary,True,True,True,False,True,False,False,False,True,True,False,True,False,False,True
 ibis.expr.operations.reductions.ArgMax,True,True,True,False,True,False,False,False,True,True,False,False,False,False,True
 ibis.expr.operations.reductions.ArgMin,True,True,True,False,True,False,False,False,True,True,False,False,False,False,True
-ibis.expr.operations.reductions.ArrayCollect,True,True,True,False,True,False,False,False,True,True,True,True,False,False,True
+ibis.expr.operations.reductions.ArrayCollect,True,True,True,False,True,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.reductions.BitAnd,True,True,True,False,True,False,True,True,True,True,True,False,False,True,True
 ibis.expr.operations.reductions.BitOr,True,True,True,False,True,False,True,True,True,True,True,False,False,True,True
 ibis.expr.operations.reductions.BitXor,True,True,True,False,True,False,True,True,True,True,True,False,False,True,True
@@ -225,7 +225,7 @@ ibis.expr.operations.strings.StringJoin,True,True,True,False,True,True,True,True
 ibis.expr.operations.strings.StringLength,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.StringReplace,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.StringSQLILike,True,True,True,False,True,True,True,True,True,False,True,False,True,True,True
-ibis.expr.operations.strings.StringSplit,True,True,True,False,True,False,False,False,True,True,True,True,False,False,True
+ibis.expr.operations.strings.StringSplit,True,True,True,False,True,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.strings.Strip,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.Substring,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.Translate,True,False,True,False,False,True,False,False,True,False,True,True,True,True,True
