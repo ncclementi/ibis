@@ -1361,6 +1361,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.get_backend" class="md-nav__link">
+    get_backend()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.greatest" class="md-nav__link">
     greatest
   </a>
@@ -2262,6 +2269,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.get_backend" class="md-nav__link">
+    get_backend()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.greatest" class="md-nav__link">
     greatest
   </a>
@@ -3003,6 +3017,67 @@ complete case.</p>
 
 
   <div class="doc doc-contents first">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="ibis.get_backend" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_backend</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.get_backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Get the current Ibis backend to use for a given expression.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>expr</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../#ibis.expr.types.core.Expr">Expr</a> | None</code>
+          </td>
+          <td><p>An expression to get the backend from. If not passed, the default
+backend is returned.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.backends.base.BaseBackend" href="../../backends/base/#ibis.backends.base.BaseBackend">BaseBackend</a></code>
+          </td>
+          <td><p>The Ibis backend.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
   </div>
 
 </div>
@@ -4757,7 +4832,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2023</span>
       
     
   </small>
