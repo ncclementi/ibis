@@ -1895,13 +1895,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-test-data" class="md-nav__link">
-    Download Test Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#writing-the-commit" class="md-nav__link">
     Writing the commit
   </a>
@@ -2046,13 +2039,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-test-data" class="md-nav__link">
-    Download Test Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#writing-the-commit" class="md-nav__link">
     Writing the commit
   </a>
@@ -2101,6 +2087,9 @@
 or any specific backends (<code>ibis/backends</code>) this material isn't necessary to
 follow to make a pull request.</p>
 </div>
+<p>First, we need to download example data to run the tests successfully:</p>
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>download-data
+</code></pre></div>
 <p>To run the tests for a specific backend (e.g. sqlite):</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>-m<span class="w"> </span>sqlite
 </code></pre></div>
@@ -2117,10 +2106,6 @@ They can be started with <code>docker-compose</code> directly, or using the <cod
 <p>If anything seems amiss with a backend, you can of course test it locally:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>postgres
 psql<span class="w"> </span>-t<span class="w"> </span>-A<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-d<span class="w"> </span>ibis_testing<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;select &#39;success&#39;&quot;</span>
-</code></pre></div>
-<h2 id="download-test-data">Download Test Data<a class="headerlink" href="#download-test-data" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Backends need to be populated with test data to run the tests successfully:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>download-data
 </code></pre></div>
 <h2 id="writing-the-commit">Writing the commit<a class="headerlink" href="#writing-the-commit" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis follows the <a href="https://www.conventionalcommits.org/">Conventional Commits</a> structure.
@@ -2147,7 +2132,7 @@ In brief, the commit summary should look like:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2023</span>
       
     
   </small>
