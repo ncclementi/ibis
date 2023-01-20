@@ -2542,7 +2542,7 @@ inferred automatically if possible.</p></td>
 
 
 <h4 id="ibis.backends.base.sql.BaseSQLBackend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.sql.BaseSQLBackend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2605,16 +2605,6 @@ immediately.</p>
                 <code>1000000</code>
           </td>
         </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>Keyword arguments</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
     </tbody>
   </table>
 
@@ -2629,9 +2619,9 @@ immediately.</p>
     <tbody>
         <tr>
           <td>
-                <code>results</code>
+                <code>RecordBatchReader</code>
           </td>
-          <td><p>RecordBatchReader</p></td>
+          <td><p>Collection of pyarrow <code>RecordBatch</code>s.</p></td>
         </tr>
     </tbody>
   </table>
