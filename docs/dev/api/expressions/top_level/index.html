@@ -1508,6 +1508,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.set_backend" class="md-nav__link">
+    set_backend()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.struct" class="md-nav__link">
     struct()
   </a>
@@ -2411,6 +2418,13 @@
         <li class="md-nav__item">
   <a href="#ibis.schema" class="md-nav__link">
     schema()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.set_backend" class="md-nav__link">
+    set_backend()
   </a>
   
 </li>
@@ -4295,6 +4309,59 @@ and <code>types</code> arguments.</p></td>
 
 
 
+<h2 id="ibis.set_backend" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span></code>
+
+<a href="#ibis.set_backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Set the default Ibis backend.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>backend</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.backends.base.BaseBackend" href="../../backends/base/#ibis.backends.base.BaseBackend">BaseBackend</a></code>
+          </td>
+          <td><p>May be a backend name or URL, or an existing backend instance.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <p>May pass the backend as a name:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;polars&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Or as a URI:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;postgres://user:password@hostname:5432&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Or as an existing backend instance:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">())</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h2 id="ibis.struct" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">struct</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -4832,7 +4899,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2023</span>
       
     
   </small>

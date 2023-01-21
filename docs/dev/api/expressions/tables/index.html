@@ -1313,6 +1313,26 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table-attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.columns" class="md-nav__link">
+    columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table-functions" class="md-nav__link">
     Functions
   </a>
@@ -1330,6 +1350,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.alias" class="md-nav__link">
     alias()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.as_table" class="md-nav__link">
+    as_table()
   </a>
   
 </li>
@@ -1588,6 +1615,13 @@
   
     <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.groupby.GroupedTable.aggregate" class="md-nav__link">
+    aggregate()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ibis.expr.types.groupby.GroupedTable.count" class="md-nav__link">
@@ -2290,6 +2324,26 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table-attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.columns" class="md-nav__link">
+    columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table-functions" class="md-nav__link">
     Functions
   </a>
@@ -2307,6 +2361,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.alias" class="md-nav__link">
     alias()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.as_table" class="md-nav__link">
+    as_table()
   </a>
   
 </li>
@@ -2567,6 +2628,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.groupby.GroupedTable.aggregate" class="md-nav__link">
+    aggregate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.groupby.GroupedTable.count" class="md-nav__link">
     count()
   </a>
@@ -2692,7 +2760,28 @@
 
 
 
+<h3 id="ibis.expr.types.relations.Table-attributes">Attributes<a href="#ibis.expr.types.relations.Table-attributes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.columns" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">columns</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#ibis.expr.types.relations.Table.columns" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The list of columns in this table.</p>
+  </div>
+
+</div>
 
 <h3 id="ibis.expr.types.relations.Table-functions">Functions<a href="#ibis.expr.types.relations.Table-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
@@ -2869,6 +2958,50 @@ backend for use in the
 <span class="go">  query: &#39;SELECT sum(double_col) FROM my_t&#39;</span>
 <span class="go">  schema:</span>
 <span class="go">    sum(double_col) float64</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.as_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">as_table</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.relations.Table.as_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Promote the expression to a table.</p>
+<p>This method is a no-op for table expressions.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>A table expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">as_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="ow">is</span> <span class="n">s</span>
+<span class="go">True</span>
 </code></pre></div>
 
   </div>
@@ -4945,6 +5078,24 @@ details on using named table expressions in a SQL string.</p>
 
 
 <h3 id="ibis.expr.types.groupby.GroupedTable-functions">Functions<a href="#ibis.expr.types.groupby.GroupedTable-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.groupby.GroupedTable.aggregate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">aggregate</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.groupby.GroupedTable.aggregate" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Compute aggregates over a group by.</p>
+
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 

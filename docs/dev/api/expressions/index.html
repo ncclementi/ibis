@@ -1915,8 +1915,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.equals" class="md-nav__link">
+    equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.core.Expr.execute" class="md-nav__link">
     execute()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.get_name" class="md-nav__link">
+    get_name()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.has_name" class="md-nav__link">
+    has_name()
   </a>
   
 </li>
@@ -2111,6 +2132,58 @@ execute will result in an error.</p></td>
 
 
 
+<h4 id="ibis.expr.types.core.Expr.equals" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">equals</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.core.Expr.equals" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether this expression is <em>structurally</em> equivalent to <code>other</code>.</p>
+<p>If you want to produce an equality expression, use <code>==</code> syntax.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+          </td>
+          <td><p>Another expression</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">False</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h4 id="ibis.expr.types.core.Expr.execute" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -2181,6 +2254,42 @@ execute will result in an error.</p></td>
         </tr>
     </tbody>
   </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.core.Expr.get_name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_name</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.core.Expr.get_name" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the name of this expression.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.core.Expr.has_name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">has_name</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.core.Expr.has_name" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check whether this expression has an explicit name.</p>
 
   </div>
 
