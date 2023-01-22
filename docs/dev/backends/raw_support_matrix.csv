@@ -230,7 +230,7 @@ ibis.expr.operations.strings.Strip,True,True,True,True,True,True,True,True,True,
 ibis.expr.operations.strings.Substring,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.Translate,True,False,True,False,False,True,False,False,True,False,True,True,True,True,True
 ibis.expr.operations.strings.Uppercase,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.structs.StructColumn,True,True,False,False,True,False,False,False,False,True,False,True,False,False,True
+ibis.expr.operations.structs.StructColumn,True,True,False,False,True,False,False,False,False,True,False,True,True,False,True
 ibis.expr.operations.structs.StructField,True,True,True,False,True,False,False,False,True,True,False,True,True,False,True
 ibis.expr.operations.temporal.BetweenTime,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.Date,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
