@@ -1641,6 +1641,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.BaseBackend.table" class="md-nav__link">
+    table()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2260,6 +2267,13 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.register_options" class="md-nav__link">
     register_options()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.BaseBackend.table" class="md-nav__link">
+    table()
   </a>
   
 </li>
@@ -3236,6 +3250,80 @@ or other equivalent entities in a SQL database.</p>
   <div class="doc doc-contents ">
   
       <p>Register custom backend options.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.base.BaseBackend.table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+<a href="#ibis.backends.base.BaseBackend.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct a table expression.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Table name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>database</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>Database name</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Table</code>
+          </td>
+          <td><p>Table expression</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
