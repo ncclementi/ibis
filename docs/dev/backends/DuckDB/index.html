@@ -987,6 +987,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="md-nav__link">
+    to_pyarrow_batches()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2159,6 +2166,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="md-nav__link">
+    to_pyarrow_batches()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2757,6 +2771,83 @@ CSV or parquet.  See <a href="https://duckdb.org/docs/data/csv">https://duckdb.o
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td><p>The just-registered table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.duckdb.Backend.to_pyarrow_batches" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a stream of record batches.</p>
+<p>The returned <code>RecordBatchReader</code> contains a cursor with an unbounded lifetime.</p>
+<p>For analytics use cases this is usually nothing to fret about. In some cases you
+may need to explicit release the cursor.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>expr</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../../api/expressions/#ibis.expr.types.core.Expr">Expr</a></code>
+          </td>
+          <td><p>Ibis expression</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../../api/expressions/generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Bound parameters</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>limit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>Limit the result to this number of rows</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>chunk_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><div class="admonition warning">
+<p class="admonition-title">DuckDB returns 1024 size batches regardless of what argument is passed.</p>
+</div></td>
+          <td>
+                <code>1000000</code>
+          </td>
         </tr>
     </tbody>
   </table>
