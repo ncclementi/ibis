@@ -1454,15 +1454,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.names" class="md-nav__link">
-    names
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.types" class="md-nav__link">
-    types
+  <a href="#ibis.expr.schema.Schema.fields" class="md-nav__link">
+    fields
   </a>
   
 </li>
@@ -2072,15 +2065,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.names" class="md-nav__link">
-    names
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.types" class="md-nav__link">
-    types
+  <a href="#ibis.expr.schema.Schema.fields" class="md-nav__link">
+    fields
   </a>
   
 </li>
@@ -2234,41 +2220,20 @@
 
 
 
-<h4 id="ibis.expr.schema.Schema.names" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">names</span> <span class="o">=</span> <span class="n">tuple_of</span><span class="p">(</span><span class="n">instance_of</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span></code>
+<h4 id="ibis.expr.schema.Schema.fields" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fields</span> <span class="o">=</span> <span class="n">frozendict_of</span><span class="p">(</span><span class="n">instance_of</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">datatype</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
   </span>
 
-<a href="#ibis.expr.schema.Schema.names" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+<a href="#ibis.expr.schema.Schema.fields" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
-      <p>A sequence of <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str"><code>str</code></a> indicating the name of each column.</p>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ibis.expr.schema.Schema.types" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">types</span> <span class="o">=</span> <span class="n">tuple_of</span><span class="p">(</span><span class="n">datatype</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
-  </span>
-
-<a href="#ibis.expr.schema.Schema.types" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>A sequence of <a class="autorefs autorefs-internal" href="../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a> objects
-representing type of each column.</p>
+      <p>A mapping of <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str"><code>str</code></a> to <a class="autorefs autorefs-internal" href="../datatypes/#ibis.expr.datatypes.core.DataType"><code>DataType</code></a> objects
+representing the type of each column.</p>
   </div>
 
 </div>
@@ -2280,7 +2245,7 @@ representing type of each column.</p>
 
 
 <h4 id="ibis.expr.schema.Schema.append" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">append</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.schema.Schema.append" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2301,7 +2266,7 @@ representing type of each column.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>schema</code></td>
+          <td><code>other</code></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
           </td>
