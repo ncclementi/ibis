@@ -2209,7 +2209,7 @@ for connection parameter information.</p>
 
 
 <h4 id="ibis.backends.pandas.BasePandasBackend.do_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pandas.BasePandasBackend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2232,11 +2232,11 @@ for connection parameter information.</p>
         <tr>
           <td><code>dictionary</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.MutableMapping" href="https://docs.python.org/3/library/typing.html#typing.MutableMapping">MutableMapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-internal" title="pandas" href="#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.MutableMapping" href="https://docs.python.org/3/library/typing.html#typing.MutableMapping">MutableMapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-internal" title="pandas" href="#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span>] | None</code>
           </td>
-          <td><p>Mutable mapping of string table names to pandas DataFrames.</p></td>
+          <td><p>An optional mapping of string table names to pandas DataFrames.</p></td>
           <td>
-              <em>required</em>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
