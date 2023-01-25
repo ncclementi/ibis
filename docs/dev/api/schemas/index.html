@@ -1481,8 +1481,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.schema.Schema.delete" class="md-nav__link">
+    delete()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.equals" class="md-nav__link">
     equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.schema.Schema.from_dict" class="md-nav__link">
+    from_dict()
   </a>
   
 </li>
@@ -2078,8 +2092,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.schema.Schema.delete" class="md-nav__link">
+    delete()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.equals" class="md-nav__link">
     equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.schema.Schema.from_dict" class="md-nav__link">
+    from_dict()
   </a>
   
 </li>
@@ -2325,6 +2353,57 @@ we're going to upcast.</p>
 
 
 
+<h4 id="ibis.expr.schema.Schema.delete" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">delete</span><span class="p">(</span><span class="n">names_to_delete</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.schema.Schema.delete" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Remove <code>names_to_delete</code> names from <code>self</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>names_to_delete</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td><p>Iterable of <code>str</code> to remove from the schema.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span><span class="o">.</span><span class="n">delete</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">})</span>
+<span class="go">ibis.Schema {</span>
+<span class="go">  b  string</span>
+<span class="go">}</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h4 id="ibis.expr.schema.Schema.equals" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">equals</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
 
@@ -2366,6 +2445,79 @@ we're going to upcast.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">first</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">third</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;array&lt;int&gt;&quot;</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="ow">not</span> <span class="n">first</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">third</span><span class="p">)</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.schema.Schema.from_dict" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">from_dict</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#ibis.expr.schema.Schema.from_dict" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct a <code>Schema</code> from a <code>Mapping</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dictionary</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a>]</code>
+          </td>
+          <td><p>Mapping from which to construct a <code>Schema</code> instance.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
+          </td>
+          <td><p>A new schema</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
+<span class="go">ibis.Schema {</span>
+<span class="go">  a  int64</span>
+<span class="go">  b  string</span>
+<span class="go">}</span>
 </code></pre></div>
 
   </div>
