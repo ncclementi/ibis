@@ -3073,9 +3073,7 @@ expression to be executed at a later time.</p>
 
 <span class="kn">import</span> <span class="nn">ibis</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="s1">&#39;geography.db&#39;</span>
-<span class="p">)</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
 <span class="n">countries</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;countries&#39;</span><span class="p">)</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import os
@@ -3083,9 +3081,7 @@ import tempfile
 
 import ibis
 
-connection = ibis.sqlite.connect(
-    'geography.db'
-)
+connection = ibis.sqlite.connect('geography.db')
 countries = connection.table('countries')</div>
     
         </div>
@@ -3896,47 +3892,27 @@ log file.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 
 <span class="k">def</span> <span class="nf">log_query_to_file</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Log queries to `data/tutorial_queries.log`.</span>
-
-<span class="sd">    Each file is a query. Line breaks in the query are</span>
-<span class="sd">    represented with the string &#39;\n&#39;.</span>
-
-<span class="sd">    A timestamp of when the query is executed is added.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">dirname</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span>
-    <span class="n">fname</span> <span class="o">=</span> <span class="n">dirname</span> <span class="o">/</span> <span class="s1">&#39;tutorial_queries.log&#39;</span>
-    <span class="n">query_in_a_single_line</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\n&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Log queries to `./tutorial_queries.log`.&quot;&quot;&quot;</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;tutorial_queries.log&#39;</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">fname</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">query_in_a_single_line</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="c1"># log on a single line</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">import datetime
-import os
-import tempfile
-from pathlib import Path
+<div id="cell-11" class="clipboard-copy-txt">from pathlib import Path
 
 
 def log_query_to_file(query: str) -> None:
-    """
-    Log queries to `data/tutorial_queries.log`.
-
-    Each file is a query. Line breaks in the query are
-    represented with the string '\n'.
-
-    A timestamp of when the query is executed is added.
-    """
-    dirname = Path(tempfile.gettempdir())
-    fname = dirname / 'tutorial_queries.log'
-    query_in_a_single_line = query.replace('\n', r'\n')
+    """Log queries to `./tutorial_queries.log`."""
+    fname = Path() / 'tutorial_queries.log'
+    query = query.replace("\n", " ")
     with fname.open(mode='a') as f:
-        f.write(f'{query_in_a_single_line}\n')</div>
+        # log on a single line
+        f.write(f"{query}\n")</div>
     
         </div>
     </div>
@@ -3979,20 +3955,14 @@ wait one second, and execute another query.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-
-<span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">verbose_log</span> <span class="o">=</span> <span class="n">log_query_to_file</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">verbose_log</span> <span class="o">=</span> <span class="n">log_query_to_file</span>
 
 <span class="n">countries</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">population_in_millions</span><span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">import time
-
-ibis.options.verbose_log = log_query_to_file
+<div id="cell-12" class="clipboard-copy-txt">ibis.options.verbose_log = log_query_to_file
 
 countries.execute()
-time.sleep(1.0)
 countries['name', 'continent', population_in_millions].limit(3).execute()</div>
     
         </div>
@@ -4077,7 +4047,7 @@ countries['name', 'continent', population_in_millions].limit(3).execute()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This has created a log file in <code>data/tutorial_queries.log</code> where the executed queries have been logged.</p>
+<p>This has created a log file in <code>$PWD/tutorial_queries.log</code> where the executed queries have been logged.</p>
 
 </div>
 </div>
@@ -4103,9 +4073,9 @@ countries['name', 'continent', population_in_millions].limit(3).execute()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">cat</span> <span class="o">-</span><span class="n">n</span> <span class="n">data</span><span class="o">/</span><span class="n">tutorial_queries</span><span class="o">.</span><span class="n">log</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">cat</span> <span class="o">-</span><span class="n">n</span> <span class="err">$</span><span class="n">PWD</span><span class="o">/</span><span class="n">tutorial_queries</span><span class="o">.</span><span class="n">log</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">!cat -n data/tutorial_queries.log</div>
+<div id="cell-13" class="clipboard-copy-txt">!cat -n $PWD/tutorial_queries.log</div>
     
         </div>
     </div>
@@ -4127,7 +4097,8 @@ countries['name', 'continent', population_in_millions].limit(3).execute()</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>cat: data/tutorial_queries.log: No such file or directory
+<pre>     1	SELECT t0.iso_alpha2, t0.iso_alpha3, t0.iso_numeric, t0.fips, t0.name, t0.capital, t0.area_km2, t0.population, t0.continent  FROM main.countries AS t0
+     2	SELECT t0.name, t0.continent, t0.population / CAST(:param_1 AS REAL) AS population_in_millions  FROM main.countries AS t0  LIMIT :param_2
 </pre>
 </div>
 </div>
@@ -4147,7 +4118,7 @@ countries['name', 'continent', population_in_millions].limit(3).execute()</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
       
     
   </small>
