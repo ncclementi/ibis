@@ -1512,6 +1512,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.parse_url" class="md-nav__link">
+    parse_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.path" class="md-nav__link">
     path()
   </a>
@@ -2406,6 +2413,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.lstrip" class="md-nav__link">
     lstrip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.parse_url" class="md-nav__link">
+    parse_url()
   </a>
   
 </li>
@@ -3759,6 +3773,83 @@ the corresponding row in the output is <code>True</code>.</p></td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
           </td>
           <td><p>Left-stripped string</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.parse_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_url</span><span class="p">(</span><span class="n">extract</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.strings.StringValue.parse_url" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Parse a URL and extract its components.</p>
+<p><code>key</code> can be used to extract query values when <code>extract == 'QUERY'</code></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>extract</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;PROTOCOL&#39;, &#39;AUTHORITY&#39;, &#39;USERINFO&#39;, &#39;HOST&#39;, &#39;FILE&#39;, &#39;PATH&#39;, &#39;QUERY&#39;, &#39;REF&#39;]</code>
+          </td>
+          <td><p>Component of URL to extract</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>Query component to extract</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=kEuEcWfewf8&amp;t=10&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">parse_url</span><span class="p">(</span><span class="s1">&#39;QUERY&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>  <span class="c1"># kEuEcWfewf</span>
+</code></pre></div>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Extracted string value</p></td>
         </tr>
     </tbody>
   </table>
