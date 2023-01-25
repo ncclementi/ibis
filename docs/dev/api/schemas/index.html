@@ -1474,13 +1474,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.append" class="md-nav__link">
-    append()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.apply_to" class="md-nav__link">
     apply_to()
   </a>
@@ -1518,6 +1511,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.items" class="md-nav__link">
     items()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.schema.Schema.merge" class="md-nav__link">
+    merge()
   </a>
   
 </li>
@@ -2085,13 +2085,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.append" class="md-nav__link">
-    append()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.apply_to" class="md-nav__link">
     apply_to()
   </a>
@@ -2129,6 +2122,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.items" class="md-nav__link">
     items()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.schema.Schema.merge" class="md-nav__link">
+    merge()
   </a>
   
 </li>
@@ -2239,79 +2239,6 @@ representing the type of each column.</p>
 </div>
 
 <h3 id="ibis.expr.schema.Schema-functions">Functions<a href="#ibis.expr.schema.Schema-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.expr.schema.Schema.append" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
-
-<a href="#ibis.expr.schema.Schema.append" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Append <code>schema</code> to <code>self</code>.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>other</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
-          </td>
-          <td><p>Schema instance to append to <code>self</code>.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
-          </td>
-          <td><p>A new schema appended with <code>schema</code>.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">second</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="s2">&quot;int16&quot;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
-<span class="go">ibis.Schema {</span>
-<span class="go">  a  int64</span>
-<span class="go">  b  string</span>
-<span class="go">  c  float64</span>
-<span class="go">  d  int16</span>
-<span class="go">}</span>
-</code></pre></div>
-
-  </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -2707,6 +2634,80 @@ we're going to upcast.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">sch</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(&#39;a&#39;, Int64(nullable=True)), (&#39;b&#39;, String(nullable=True))]</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.schema.Schema.merge" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">merge</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.schema.Schema.merge" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Merge <code>other</code> to <code>self</code>.</p>
+<p>Raise an <code>IntegrityError</code> if there are duplicate column names.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
+          </td>
+          <td><p>Schema instance to append to <code>self</code>.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
+          </td>
+          <td><p>A new schema appended with <code>schema</code>.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">second</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="s2">&quot;int16&quot;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+<span class="go">ibis.Schema {</span>
+<span class="go">  a  int64</span>
+<span class="go">  b  string</span>
+<span class="go">  c  float64</span>
+<span class="go">  d  int16</span>
+<span class="go">}</span>
 </code></pre></div>
 
   </div>
