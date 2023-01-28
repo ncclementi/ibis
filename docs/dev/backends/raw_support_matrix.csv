@@ -193,7 +193,7 @@ ibis.expr.operations.reductions.StandardDev,True,True,True,False,True,True,True,
 ibis.expr.operations.reductions.Sum,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Variance,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.sortkeys.SortKey,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.strings.Capitalize,True,False,True,True,False,True,False,True,True,True,True,True,True,True,True
+ibis.expr.operations.strings.Capitalize,True,False,True,True,True,True,False,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.EndsWith,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.ExtractAuthority,False,True,False,False,False,True,False,False,False,False,False,False,True,False,False
 ibis.expr.operations.strings.ExtractFile,False,True,False,False,False,True,False,False,False,False,False,False,True,False,True
@@ -252,11 +252,11 @@ ibis.expr.operations.temporal.ExtractQuarter,True,True,True,False,True,True,True
 ibis.expr.operations.temporal.ExtractSecond,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractWeekOfYear,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractYear,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.temporal.IntervalAdd,False,False,True,False,False,False,False,False,True,True,False,True,False,False,False
+ibis.expr.operations.temporal.IntervalAdd,False,False,True,False,True,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.temporal.IntervalFloorDivide,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.IntervalFromInteger,True,True,True,False,True,True,False,True,True,True,True,True,False,False,False
 ibis.expr.operations.temporal.IntervalMultiply,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
-ibis.expr.operations.temporal.IntervalSubtract,False,False,True,False,False,False,False,False,True,True,False,True,False,False,False
+ibis.expr.operations.temporal.IntervalSubtract,False,False,True,False,True,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.temporal.Strftime,True,True,True,False,True,True,False,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.StringToTimestamp,True,False,False,False,True,False,False,True,False,True,False,True,True,False,True
 ibis.expr.operations.temporal.Time,True,False,True,False,False,False,False,False,True,True,False,False,False,True,False
@@ -266,7 +266,7 @@ ibis.expr.operations.temporal.TimeFromHMS,True,False,False,False,True,False,True
 ibis.expr.operations.temporal.TimeSub,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.TimeTruncate,True,True,False,False,False,False,False,False,False,False,False,False,False,False,False
 ibis.expr.operations.temporal.TimestampAdd,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
-ibis.expr.operations.temporal.TimestampDiff,False,True,True,False,False,True,False,True,True,True,True,True,False,False,False
+ibis.expr.operations.temporal.TimestampDiff,False,True,True,False,True,True,False,True,True,True,True,True,False,False,False
 ibis.expr.operations.temporal.TimestampFromUNIX,True,True,True,False,True,True,True,False,True,True,False,True,True,False,True
 ibis.expr.operations.temporal.TimestampFromYMDHMS,True,False,False,False,True,False,True,True,False,True,True,False,True,True,True
 ibis.expr.operations.temporal.TimestampSub,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
