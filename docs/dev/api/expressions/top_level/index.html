@@ -1349,6 +1349,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.deferred" class="md-nav__link">
+    deferred
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.desc" class="md-nav__link">
     desc()
   </a>
@@ -2278,6 +2285,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.deferred" class="md-nav__link">
+    deferred
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.desc" class="md-nav__link">
     desc()
   </a>
@@ -2952,6 +2966,46 @@ complete case.</p>
     </tbody>
   </table>
 
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="ibis.deferred" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">deferred</span> <span class="o">=</span> <span class="n">Deferred</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#ibis.deferred" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Deferred expression object.</p>
+<p>Use this object to refer to a previous table expression in a chain of
+expressions.</p>
+<div class="admonition note">
+<p class="admonition-title"><code>_</code> may conflict with other idioms in Python</p>
+<p>See <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/ibis-project/ibis/issues/4704" title="GitHub Issue: ibis-project/ibis #4704">ibis-project/ibis#4704</a> for details.</p>
+<p>Use <code>from ibis import deferred as &lt;NAME&gt;</code> to assign a different name to
+the deferred object builder.</p>
+</div>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
+<span class="go">ibis.Schema {</span>
+<span class="go">  key    int64</span>
+<span class="go">  total  float64</span>
+<span class="go">}</span>
+</code></pre></div>
   </div>
 
 </div>
@@ -4915,7 +4969,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>
