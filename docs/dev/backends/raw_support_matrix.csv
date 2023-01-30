@@ -235,7 +235,7 @@ ibis.expr.operations.temporal.BetweenTime,False,False,True,False,False,False,Fal
 ibis.expr.operations.temporal.Date,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.DateAdd,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
 ibis.expr.operations.temporal.DateDiff,False,True,True,False,True,True,False,True,True,True,True,True,True,False,False
-ibis.expr.operations.temporal.DateFromYMD,True,False,False,False,True,False,True,True,False,True,True,False,True,True,True
+ibis.expr.operations.temporal.DateFromYMD,True,True,False,False,True,False,True,True,False,True,True,False,True,True,True
 ibis.expr.operations.temporal.DateSub,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
 ibis.expr.operations.temporal.DateTruncate,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.DayOfWeekIndex,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
@@ -244,7 +244,7 @@ ibis.expr.operations.temporal.ExtractDay,True,True,True,False,True,True,True,Tru
 ibis.expr.operations.temporal.ExtractDayOfYear,True,True,True,False,True,False,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractEpochSeconds,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractHour,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.temporal.ExtractMillisecond,True,False,True,False,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.temporal.ExtractMillisecond,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractMinute,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractMonth,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractQuarter,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
@@ -267,7 +267,7 @@ ibis.expr.operations.temporal.TimeTruncate,True,True,False,False,False,False,Fal
 ibis.expr.operations.temporal.TimestampAdd,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
 ibis.expr.operations.temporal.TimestampDiff,False,True,True,False,True,True,False,True,True,True,True,True,False,False,False
 ibis.expr.operations.temporal.TimestampFromUNIX,True,True,True,False,True,True,True,False,True,True,False,True,True,False,True
-ibis.expr.operations.temporal.TimestampFromYMDHMS,True,False,False,False,True,False,True,True,False,True,True,False,True,True,True
+ibis.expr.operations.temporal.TimestampFromYMDHMS,True,True,False,False,True,False,True,True,False,True,True,False,True,True,True
 ibis.expr.operations.temporal.TimestampSub,True,True,True,False,True,True,False,True,True,True,True,True,True,False,False
 ibis.expr.operations.temporal.TimestampTruncate,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.TimestampUnary,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
