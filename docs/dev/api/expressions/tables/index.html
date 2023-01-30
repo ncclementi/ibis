@@ -1440,20 +1440,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.get_column" class="md-nav__link">
-    get_column()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.get_columns" class="md-nav__link">
-    get_columns()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.group_by" class="md-nav__link">
     group_by()
   </a>
@@ -2460,20 +2446,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.filter" class="md-nav__link">
     filter()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.get_column" class="md-nav__link">
-    get_column()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.get_columns" class="md-nav__link">
-    get_columns()
   </a>
   
 </li>
@@ -3704,132 +3676,6 @@ backend promotes integer replacement values to floats.</p>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td><p>Filtered table expression</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.expr.types.relations.Table.get_column" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_column</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
-
-<a href="#ibis.expr.types.relations.Table.get_column" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get a reference to a single column from the table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>A column name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>
-          </td>
-          <td><p>A column named <code>name</code>.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.expr.types.relations.Table.get_columns" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_columns</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span></code>
-
-<a href="#ibis.expr.types.relations.Table.get_columns" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get multiple columns from the table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>iterable</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
-          </td>
-          <td><p>An iterable of column names</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get_columns</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
-</code></pre></div>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>]</code>
-          </td>
-          <td><p>List of column expressions</p></td>
         </tr>
     </tbody>
   </table>
