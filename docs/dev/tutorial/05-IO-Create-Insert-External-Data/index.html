@@ -3257,7 +3257,7 @@ expr</div>
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> continent_name </span>┃
 ┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩
-│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>         │
 ├───────────┼────────────────┤
 │ EU        │ Europe         │
 │ AS        │ Asia           │
@@ -3373,7 +3373,7 @@ continents</div>
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> continent_name </span>┃
 ┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩
-│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>         │
 ├───────────┼────────────────┤
 │ EU        │ Europe         │
 │ AS        │ Asia           │
@@ -3538,7 +3538,7 @@ students_memtable
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold"> firstname </span>┃<span style="font-weight: bold"> birth_date          </span>┃<span style="font-weight: bold"> math_grade </span>┃
 ┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
-│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">timestamp</span>           │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>    │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">timestamp</span>           │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>    │
 ├───────────┼─────────────────────┼────────────┤
 │ Alice     │ <span style="color: #800080; text-decoration-color: #800080">2021-05-16 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">48.2</span> │
 │ John      │ <span style="color: #800080; text-decoration-color: #800080">2021-03-08 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">67.2</span> │
@@ -3645,7 +3645,7 @@ students.group_by(students.birth_date.month()).aggregate(
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold"> ExtractMonth(birth_date) </span>┃<span style="font-weight: bold"> count </span>┃<span style="font-weight: bold"> avg_math_grade </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━┩
-│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>                    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>        │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int32</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>        │
 ├──────────────────────────┼───────┼────────────────┤
 │                        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">66.300000</span> │
 │                        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">49.900000</span> │
@@ -3883,7 +3883,7 @@ students.count()</div>
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold"> ExtractMonth(birth_date) </span>┃<span style="font-weight: bold"> count </span>┃<span style="font-weight: bold"> avg_math_grade </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━┩
-│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>                    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>        │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int32</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>        │
 ├──────────────────────────┼───────┼────────────────┤
 │                        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1751</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.217133</span> │
 │                        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1539</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.189799</span> │
