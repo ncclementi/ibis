@@ -1867,6 +1867,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.Parametric" class="md-nav__link">
+    Parametric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.Point" class="md-nav__link">
     Point
   </a>
@@ -3093,6 +3100,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.Parametric" class="md-nav__link">
+    Parametric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.Point" class="md-nav__link">
     Point
   </a>
@@ -3430,7 +3444,7 @@ value is <a class="autorefs autorefs-external" href="https://docs.python.org/3/l
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code></p>
 
   
       <p>Array values.</p>
@@ -3733,7 +3747,7 @@ distinct types that have different behavior.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Numeric" href="#ibis.expr.datatypes.core.Numeric">Numeric</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Numeric" href="#ibis.expr.datatypes.core.Numeric">Numeric</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code></p>
 
   
       <p>Fixed-precision decimal values.</p>
@@ -4361,7 +4375,7 @@ distinct types that have different behavior.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code></p>
 
   
       <p>Interval values.</p>
@@ -4584,7 +4598,7 @@ distinct types that have different behavior.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code></p>
 
   
       <p>Associative array values.</p>
@@ -4799,6 +4813,46 @@ distinct types that have different behavior.</p>
 
 
 
+<h4 id="ibis.expr.datatypes.core.Parametric" class="doc doc-heading">
+        <code>Parametric</code>
+
+
+<a href="#ibis.expr.datatypes.core.Parametric" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a></code></p>
+
+  
+      <p>Types that can be parameterized.</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h4 id="ibis.expr.datatypes.core.Point" class="doc doc-heading">
         <code>Point</code>
 
@@ -4914,7 +4968,7 @@ rest represent holes in that shape (internal rings).</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code></p>
 
   
       <p>Set values.</p>
@@ -5058,7 +5112,7 @@ cannot assume that strings are UTF-8 encoded.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a></code>, <code><a class="autorefs autorefs-external" title="collections.abc.Mapping" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping">Mapping</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code>, <code><a class="autorefs autorefs-external" title="collections.abc.Mapping" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping">Mapping</a></code></p>
 
   
       <p>Structured values.</p>
@@ -5272,7 +5326,7 @@ cannot assume that strings are UTF-8 encoded.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Temporal" href="#ibis.expr.datatypes.core.Temporal">Temporal</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Temporal" href="#ibis.expr.datatypes.core.Temporal">Temporal</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Parametric" href="#ibis.expr.datatypes.core.Parametric">Parametric</a></code></p>
 
   
       <p>Timestamp values.</p>
