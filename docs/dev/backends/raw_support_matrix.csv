@@ -139,7 +139,7 @@ ibis.expr.operations.numeric.BitwiseOr,True,True,True,False,True,True,True,True,
 ibis.expr.operations.numeric.BitwiseRightShift,True,True,True,False,True,True,True,True,True,True,True,False,True,True,True
 ibis.expr.operations.numeric.BitwiseXor,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Ceil,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.numeric.Clip,True,True,True,False,True,False,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.numeric.Clip,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Cos,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Cot,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Degrees,True,True,True,False,True,False,True,True,True,True,True,True,True,True,True
