@@ -221,6 +221,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/blog/ibis_substrait_to_duckdb/</loc>
+         <lastmod>1980-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/blog/rendered/ci-analysis/</loc>
          <lastmod>1980-01-01</lastmod>
          <changefreq>daily</changefreq>
