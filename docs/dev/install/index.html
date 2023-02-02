@@ -1984,10 +1984,15 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ibis-framework<span class="w"> </span><span class="c1"># (1)</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[duckdb]&#39;</span><span class="w"> </span><span class="c1"># (1) (2)</span>
 </code></pre></div>
 <ol>
-<li>Note that the <code>ibis-framework</code> package is <em>not</em> the same as the <code>ibis</code> package in PyPI.  These two libraries cannot coexist in the same Python environment, as they are both imported with the <code>ibis</code> module name.</li>
+<li>
+<p>We suggest starting with the DuckDB backend.  It's performant and fully featured.  If you would like to use a different backend, all of the available options are listed below.</p>
+</li>
+<li>
+<p>Note that the <code>ibis-framework</code> package is <em>not</em> the same as the <code>ibis</code> package in PyPI.  These two libraries cannot coexist in the same Python environment, as they are both imported with the <code>ibis</code> module name.</p>
+</li>
 </ol>
 </div>
 <div class="tabbed-block">
@@ -2080,7 +2085,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>

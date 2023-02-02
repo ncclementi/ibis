@@ -4122,6 +4122,8 @@ value of the order-by expression.</p>
   <div class="doc doc-contents first">
   
       <p>Lazily load a CSV or set of CSVs.</p>
+<p>This function delegates to the <code>read_csv</code> method on the current default
+backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4149,7 +4151,8 @@ value of the order-by expression.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>DuckDB-specific keyword arguments for the file type.</p>
+          <td><p>Backend-specific keyword arguments for the file type. For the DuckDB
+backend used by default, please refer to:</p>
 <ul>
 <li>CSV/TSV: <a href="https://duckdb.org/docs/data/csv#parameters">https://duckdb.org/docs/data/csv#parameters</a>.</li>
 </ul></td>
@@ -4199,6 +4202,8 @@ value of the order-by expression.</p>
   <div class="doc doc-contents first">
   
       <p>Lazily load a parquet file or set of parquet files.</p>
+<p>This function delegates to the <code>read_parquet</code> method on the current default
+backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4226,7 +4231,8 @@ value of the order-by expression.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>DuckDB-specific keyword arguments for the file type.</p>
+          <td><p>Backend-specific keyword arguments for the file type. For the DuckDB
+backend used by default, please refer to:</p>
 <ul>
 <li>Parquet: <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a></li>
 </ul></td>
