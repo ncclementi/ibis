@@ -1982,76 +1982,78 @@
 
 <h1 id="how-to-sessionize-a-log-of-events">How to Sessionize a Log of Events<a class="headerlink" href="#how-to-sessionize-a-log-of-events" title="Anchor link to this section for reference">&para;</a></h1>
 <p>Suppose you have entities (users, objects, actions, etc) that have event logs through polling or event triggers.</p>
-<p>You might be interested in partitioning these logs by something called <strong>sessions</strong>, which can be defined as the duration of an event.</p>
-<p>In the case of a user portal, it might be the time spent completing a task or navigating an app.
-For games, it might be a time spent playing the game or remaining logged in.
-For retail, it might be checking out or walking the premises.</p>
-<p>This guide on sessionization is inspired by <a href="https://www.pola.rs/posts/the-expressions-api-in-polars-is-amazing/"><em>The Expressions API in Polars is Amazing</em></a>,
-a blog post in the <a href="https://www.pola.rs/">Polars</a> community demonstrating the strength of polars expressions.</p>
+<p>You might be interested in partitioning these logs by something called <strong>sessions</strong>, which can be defined as groups of consecutive event records without long interruptions for a given entity.</p>
+<p>In the case of a user portal, it might be grouping the navigation events that result in completing a task or or buying a product.
+For online games, it might be a the grouping of activity events of a given user playing the game while remaining logged in.</p>
+<p>Sessionization can also be useful on longer time scales, for instance to reconstruct active subscription data from a raw payment or activity log, so as to model customer churn.</p>
+<p>This guide on sessionization is inspired by <a href="https://www.pola.rs/posts/the-expressions-api-in-polars-is-amazing/"><em>The Expressions API in Polars is Amazing</em></a>, a blog post in the <a href="https://www.pola.rs/">Polars</a> community demonstrating the strength of Polars expressions.</p>
 <h2 id="sessionizing-logs-on-a-cadence">Sessionizing Logs on a Cadence<a class="headerlink" href="#sessionizing-logs-on-a-cadence" title="Anchor link to this section for reference">&para;</a></h2>
-<p>For this example, we have a dataset that contains entities polled on a cadence.
-The data used here can be found at <code>https://storage.googleapis.com/ibis-tutorial-data/wowah_data/wowah_data.csv</code>.
-You can use <code>ibis.read("https://storage.googleapis.com/ibis-tutorial-data/wowah_data/wowah_data.csv")</code> to quickly get it into a table expression.</p>
-<p>Our data contains the following:</p>
+<p>For this example, we use an activity log from the online game "World of Warcraft" with more than 10 million records for 37,354 unique players <a href="https://www.kaggle.com/datasets/mylesoneill/warcraft-avatar-history?select=wowah_data.csv">made available</a> under the CC0 / Public Domain license. A copy of the data can be found at <code>https://storage.googleapis.com/ibis-tutorial-data/wowah_data/wowah_data_raw.parquet</code> (75 MB) under the parquet format to reduce load times. You can use <code>ibis.read_parquet</code> to quickly get it into a table expression via the default <code>DuckDB</code> backend.</p>
+<p>This data contains the following fields:</p>
 <ul>
-<li><code>char</code> : a unique identifier for a character (or a player). This is our entity column</li>
-<li><code>timestamp</code>: a timestamp denoting when a <code>char</code> was polled. This occurs every ~10 minutes</li>
+<li><code>char</code> : a unique identifier for a character (or a player). This is our entity column.</li>
+<li><code>timestamp</code>: a timestamp denoting when a <code>char</code> was polled. This occurs every ~10 minutes.</li>
 </ul>
 <p>We can take this information, along with a definition of what separates two sessions for an entity, and break our dataset up into sessions <strong>without using any joins</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span> <span class="k">as</span> <span class="n">c</span>
+<span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">deferred</span> <span class="k">as</span> <span class="n">c</span>
 
-<span class="c1"># Read files into table expressions with ibis.read:</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;https://storage.googleapis.com/ibis-tutorial-data/wowah_data/wowah_data_raw.parquet&quot;</span><span class="p">)</span>
+<span class="c1"># Read files into table expressions with ibis.read_parquet:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span>
+    <span class="s2">&quot;https://storage.googleapis.com/ibis-tutorial-data/wowah_data/wowah_data_raw.parquet&quot;</span>
+<span class="p">)</span>
 
-<span class="c1"># integer delay in seconds noting if a row should be included in the previous session for an entity</span>
+<span class="c1"># Integer delay in seconds noting if a row should be included in the previous</span>
+<span class="c1"># session for an entity.</span>
 <span class="n">session_boundary_threshold</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">60</span>
 
 <span class="c1"># Window for finding session ids per character</span>
 <span class="n">entity_window</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">cumulative_window</span><span class="p">(</span><span class="n">group_by</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="p">)</span>
 
 <span class="c1"># Take the previous timestamp within a window (by character ordered by timestamp):</span>
-<span class="c1"># Note: the first value in a window will be null</span>
+<span class="c1"># Note: the first value in a window will be null.</span>
 <span class="n">ts_lag</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">lag</span><span class="p">()</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">entity_window</span><span class="p">)</span>
 
-<span class="c1"># Subtract the lag from the current timestamp to get a timedelta</span>
+<span class="c1"># Subtract the lag from the current timestamp to get a timedelta.</span>
 <span class="n">ts_delta</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">-</span> <span class="n">ts_lag</span>
 
 <span class="c1"># Compare timedelta to our session delay in seconds to determine if the</span>
 <span class="c1"># current timestamp falls outside of the session.</span>
-<span class="c1"># Cast as int for aggregation</span>
+<span class="c1"># Cast as int for aggregation.</span>
 <span class="n">is_new_session</span> <span class="o">=</span> <span class="p">(</span><span class="n">ts_delta</span> <span class="o">&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">session_boundary_threshold</span><span class="p">))</span>
 
-<span class="c1"># Window for finding session min/max</span>
+<span class="c1"># Window to compute session min/max and duration.</span>
 <span class="n">session_window</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">group_by</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">session_id</span><span class="p">])</span>
 
 <span class="c1"># Generate all of the data we need to analyze sessions:</span>
 <span class="n">sessionized</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">data</span>
     <span class="c1"># Create a session id for each character by using a cumulative sum</span>
-    <span class="c1"># over the `new_session` column</span>
+    <span class="c1"># over the `new_session` column.</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">new_session</span><span class="o">=</span><span class="n">is_new_session</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
     <span class="c1"># Create a session id for each character by using a cumulative sum</span>
-    <span class="c1"># over the `new_session` column</span>
+    <span class="c1"># over the `new_session` column.</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">session_id</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">new_session</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">entity_window</span><span class="p">))</span>
-    <span class="c1"># Drop `new_session` because it is no longer needed</span>
+    <span class="c1"># Drop `new_session` because it is no longer needed.</span>
     <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;new_session&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span>
-        <span class="c1"># Get session duration using max(timestamp) - min(timestamp) over our window</span>
+        <span class="c1"># Get session duration using max(timestamp) - min(timestamp) over our window.</span>
         <span class="n">session_duration</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">session_window</span><span class="p">)</span> <span class="o">-</span> <span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">session_window</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="c1"># Sort for convenience</span>
+    <span class="c1"># Sort for convenience.</span>
     <span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="p">])</span>
 <span class="p">)</span>
 </code></pre></div>
+<p>Calling <code>ibis.show_sql(sessionized)</code> displays the SQL query and can be used to confirm that this Ibis expression does not rely on any join operations.</p>
+<p>Calling <code>sessionized.execute()</code> should complete in less than a minute, depending on the speed of the internet connection to download the data and the number of CPU cores available to parallelize the processing of this nested query.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>
