@@ -1983,7 +1983,7 @@
 <h1 id="how-to-sessionize-a-log-of-events">How to Sessionize a Log of Events<a class="headerlink" href="#how-to-sessionize-a-log-of-events" title="Anchor link to this section for reference">&para;</a></h1>
 <p>Suppose you have entities (users, objects, actions, etc) that have event logs through polling or event triggers.</p>
 <p>You might be interested in partitioning these logs by something called <strong>sessions</strong>, which can be defined as groups of consecutive event records without long interruptions for a given entity.</p>
-<p>In the case of a user portal, it might be grouping the navigation events that result in completing a task or or buying a product.
+<p>In the case of a user portal, it might be grouping the navigation events that result in completing a task or buying a product.
 For online games, it might be a the grouping of activity events of a given user playing the game while remaining logged in.</p>
 <p>Sessionization can also be useful on longer time scales, for instance to reconstruct active subscription data from a raw payment or activity log, so as to model customer churn.</p>
 <p>This guide on sessionization is inspired by <a href="https://www.pola.rs/posts/the-expressions-api-in-polars-is-amazing/"><em>The Expressions API in Polars is Amazing</em></a>, a blog post in the <a href="https://www.pola.rs/">Polars</a> community demonstrating the strength of Polars expressions.</p>
