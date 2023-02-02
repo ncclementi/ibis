@@ -5835,7 +5835,7 @@ ibis.show_sql(expr)</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT
   t0.&#34;ExtractYear(ts)&#34;,
-  COUNT(*) AS count
+  COUNT(*) AS &#34;ExtractYear(ts)_count&#34;
 FROM (
   SELECT
     CAST(EXTRACT(year FROM t1.ts) AS SMALLINT) AS &#34;ExtractYear(ts)&#34;

@@ -3206,19 +3206,19 @@ countries.continent.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├───────────┼───────┤
-│ AF        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
-│ AN        │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │
-│ AS        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
-│ EU        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
-│ NA        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
-│ OC        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │
-│ SA        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
-└───────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> continent_count </span>┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>           │
+├───────────┼─────────────────┤
+│ AF        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
+│ AN        │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │
+│ AS        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
+│ EU        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
+│ NA        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
+│ OC        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │
+│ SA        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
+└───────────┴─────────────────┘
 </pre>
 
 </div>
@@ -3484,17 +3484,17 @@ freq</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> bucket               </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">category</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├──────────────────────┼───────┤
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span>                    │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>                  │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">93</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>                  │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.0</span>                  │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.0</span>                  │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │
-└──────────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> bucket               </span>┃<span style="font-weight: bold"> bucket_count </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">category</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>        │
+├──────────────────────┼──────────────┤
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span>                    │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>                  │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">93</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>                  │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.0</span>                  │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.0</span>                  │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │
+└──────────────────────┴──────────────┘
 </pre>
 
 </div>
@@ -3570,17 +3570,17 @@ bucketed.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> bucket               </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">category</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├──────────────────────┼───────┤
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">93</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>                    │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │
-│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>                    │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │
-└──────────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> bucket               </span>┃<span style="font-weight: bold"> bucket_count </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">category</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>        │
+├──────────────────────┼──────────────┤
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>                    │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">93</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>                    │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>                    │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>                    │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │
+│ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>                    │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │
+└──────────────────────┴──────────────┘
 </pre>
 
 </div>
@@ -3734,17 +3734,17 @@ expr</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> bucket_name </span>┃<span style="font-weight: bold"> bucket               </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">category</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├─────────────┼──────────────────────┼───────┤
-│ &lt; 1M        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">93</span> │
-│ &gt; 1M        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76</span> │
-│ &gt; 10M       │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> │
-│ &gt; 100M      │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>                    │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │
-│ &gt; 1B        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>                    │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │
-└─────────────┴──────────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> bucket_name </span>┃<span style="font-weight: bold"> bucket               </span>┃<span style="font-weight: bold"> bucket_count </span>┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">category</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>        │
+├─────────────┼──────────────────────┼──────────────┤
+│ &lt; 1M        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>                    │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">93</span> │
+│ &gt; 1M        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>                    │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76</span> │
+│ &gt; 10M       │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>                    │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> │
+│ &gt; 100M      │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>                    │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │
+│ &gt; 1B        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>                    │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │
+└─────────────┴──────────────────────┴──────────────┘
 </pre>
 
 </div>

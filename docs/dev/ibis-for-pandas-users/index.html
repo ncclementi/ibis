@@ -5929,14 +5929,14 @@ expr</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> Greater(sepal_width, 3.8) </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">boolean</span>                   │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├───────────────────────────┼───────┤
-│ False                     │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">144</span> │
-│ True                      │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span> │
-└───────────────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> Greater(sepal_width, 3.8) </span>┃<span style="font-weight: bold"> Greater(sepal_width, 3.8)_count </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">boolean</span>                   │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>                           │
+├───────────────────────────┼─────────────────────────────────┤
+│ False                     │                             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">144</span> │
+│ True                      │                               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span> │
+└───────────────────────────┴─────────────────────────────────┘
 </pre>
 
 </div>
@@ -7584,15 +7584,15 @@ specify an else case to assign a value when the value isn't in the set.</p>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> species    </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>     │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├────────────┼───────┤
-│ setosa     │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
-│ versicolor │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
-│ virginica  │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
-└────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> species    </span>┃<span style="font-weight: bold"> species_count </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>     │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>         │
+├────────────┼───────────────┤
+│ setosa     │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
+│ versicolor │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
+│ virginica  │            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
+└────────────┴───────────────┘
 </pre>
 
 </div>
@@ -7652,14 +7652,14 @@ refined.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> Contains(species) </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">boolean</span>           │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├───────────────────┼───────┤
-│ False             │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
-│ True              │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> │
-└───────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> Contains(species) </span>┃<span style="font-weight: bold"> Contains(species)_count </span>┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">boolean</span>           │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>                   │
+├───────────────────┼─────────────────────────┤
+│ False             │                      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span> │
+│ True              │                     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> │
+└───────────────────┴─────────────────────────┘
 </pre>
 
 </div>

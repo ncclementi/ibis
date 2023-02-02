@@ -3536,19 +3536,19 @@ expr.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> continent_name </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>         │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├────────────────┼───────┤
-│ Africa         │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
-│ Antarctica     │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │
-│ Asia           │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
-│ Europe         │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
-│ North America  │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
-│ Oceania        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │
-│ South America  │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
-└────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent_name </span>┃<span style="font-weight: bold"> continent_name_count </span>┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>         │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>                │
+├────────────────┼──────────────────────┤
+│ Africa         │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
+│ Antarctica     │                    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │
+│ Asia           │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
+│ Europe         │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
+│ North America  │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
+│ Oceania        │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │
+│ South America  │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
+└────────────────┴──────────────────────┘
 </pre>
 
 </div>
@@ -3642,19 +3642,19 @@ expr.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> continent_name_with_nulls </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├───────────────────────────┼───────┤
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span>                         │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │
-│ Africa                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
-│ Asia                      │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
-│ Europe                    │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
-│ North America             │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
-│ Oceania                   │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │
-│ South America             │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
-└───────────────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent_name_with_nulls </span>┃<span style="font-weight: bold"> continent_name_with_nulls_count </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>                           │
+├───────────────────────────┼─────────────────────────────────┤
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span>                         │                               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │
+│ Africa                    │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
+│ Asia                      │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
+│ Europe                    │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
+│ North America             │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
+│ Oceania                   │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │
+│ South America             │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
+└───────────────────────────┴─────────────────────────────────┘
 </pre>
 
 </div>
@@ -3922,14 +3922,14 @@ countries[is_america].continent.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├───────────┼───────┤
-│ NA        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
-│ SA        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
-└───────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> continent_count </span>┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>           │
+├───────────┼─────────────────┤
+│ NA        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │
+│ SA        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
+└───────────┴─────────────────┘
 </pre>
 
 </div>
@@ -4198,14 +4198,14 @@ expr.isnull().value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> IsNull(top_continent_name) </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">boolean</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├────────────────────────────┼───────┤
-│ False                      │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">163</span> │
-│ True                       │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">89</span> │
-└────────────────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> IsNull(top_continent_name) </span>┃<span style="font-weight: bold"> IsNull(top_continent_name)_count </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">boolean</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>                            │
+├────────────────────────────┼──────────────────────────────────┤
+│ False                      │                              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">163</span> │
+│ True                       │                               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">89</span> │
+└────────────────────────────┴──────────────────────────────────┘
 </pre>
 
 </div>
@@ -4277,16 +4277,16 @@ expr2.value_counts()</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> continent       </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>          │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├─────────────────┼───────┤
-│ Africa          │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
-│ Asia            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
-│ Europe          │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
-│ Other continent │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">89</span> │
-└─────────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent       </span>┃<span style="font-weight: bold"> continent_count </span>┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>          │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>           │
+├─────────────────┼─────────────────┤
+│ Africa          │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │
+│ Asia            │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │
+│ Europe          │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │
+│ Other continent │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">89</span> │
+└─────────────────┴─────────────────┘
 </pre>
 
 </div>
@@ -4579,10 +4579,10 @@ metric</div>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;first_letter&#39;</span><span class="p">)</span>
-<span class="n">expr</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">((</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;first_letter_count&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 <div id="cell-18" class="clipboard-copy-txt">expr = countries.name.lower().left(1).name('first_letter')
-expr.value_counts().order_by(('count', False)).limit(10)</div>
+expr.value_counts().order_by(ibis.desc('first_letter_count')).limit(10)</div>
     
         </div>
     </div>
@@ -4605,22 +4605,22 @@ expr.value_counts().order_by(('count', False)).limit(10)</div>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> first_letter </span>┃<span style="font-weight: bold"> count </span>┃
-┡━━━━━━━━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├──────────────┼───────┤
-│ s            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">34</span> │
-│ b            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22</span> │
-│ m            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22</span> │
-│ c            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">21</span> │
-│ g            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span> │
-│ n            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span> │
-│ a            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span> │
-│ t            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
-│ p            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span> │
-│ i            │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span> │
-└──────────────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> first_letter </span>┃<span style="font-weight: bold"> first_letter_count </span>┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>              │
+├──────────────┼────────────────────┤
+│ s            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">34</span> │
+│ b            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22</span> │
+│ m            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22</span> │
+│ c            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">21</span> │
+│ g            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span> │
+│ n            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span> │
+│ a            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span> │
+│ t            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │
+│ p            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span> │
+│ i            │                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span> │
+└──────────────┴────────────────────┘
 </pre>
 
 </div>
@@ -5236,7 +5236,7 @@ independence[projection].limit(10)</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>

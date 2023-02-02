@@ -5257,7 +5257,7 @@ backend.</li>
 
 
 <h4 id="ibis.expr.types.generic.Column.value_counts" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">value_counts</span><span class="p">(</span><span class="n">metric_name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">value_counts</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.generic.Column.value_counts" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5265,30 +5265,6 @@ backend.</li>
   <div class="doc doc-contents ">
   
       <p>Compute a frequency table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>metric_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Output column name of the <code>count()</code> metric</p></td>
-          <td>
-                <code>&#39;count&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5307,6 +5283,37 @@ backend.</li>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;chars&quot;</span><span class="p">:</span> <span class="n">char</span><span class="p">}</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s2">&quot;aabcddd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ chars  ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ a      │</span>
+<span class="go">│ a      │</span>
+<span class="go">│ b      │</span>
+<span class="go">│ c      │</span>
+<span class="go">│ d      │</span>
+<span class="go">│ d      │</span>
+<span class="go">│ d      │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">chars</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━━┓</span>
+<span class="go">┃ chars  ┃ chars_count ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━━┩</span>
+<span class="go">│ string │ int64       │</span>
+<span class="go">├────────┼─────────────┤</span>
+<span class="go">│ a      │           2 │</span>
+<span class="go">│ b      │           1 │</span>
+<span class="go">│ c      │           1 │</span>
+<span class="go">│ d      │           3 │</span>
+<span class="go">└────────┴─────────────┘</span>
+</code></pre></div>
 
   </div>
 
