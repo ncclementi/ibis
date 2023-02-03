@@ -1,3 +1,0 @@
-# Configuration Options
-
-::: ibis.config
