@@ -2912,7 +2912,7 @@ complete case.</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.window.Window">Window</span></code>
+                <code>Window</code>
           </td>
           <td><p>A window frame</p></td>
         </tr>
@@ -3130,31 +3130,9 @@ the deferred object builder.</p>
   <div class="doc doc-contents first">
   
       <p>Get the current Ibis backend to use for a given expression.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../#ibis.expr.types.core.Expr">Expr</a> | None</code>
-          </td>
-          <td><p>An expression to get the backend from. If not passed, the default
-backend is returned.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+<p>expr
+    An expression to get the backend from. If not passed, the default
+    backend is returned.</p>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4094,7 +4072,7 @@ value of the order-by expression.</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.window.Window">Window</span></code>
+                <code>Window</code>
           </td>
           <td><p>A window frame</p></td>
         </tr>
@@ -4766,7 +4744,7 @@ of fixed types)</p></td>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.window.Window">Window</span></code>
+                <code>Window</code>
           </td>
           <td><p>A window frame</p></td>
         </tr>
@@ -4789,7 +4767,7 @@ of fixed types)</p></td>
 
   <div class="doc doc-contents first">
   
-      <p>Create a trailing window for use with aggregate window functions.</p>
+      <p>Create a trailing window for use with window functions.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4843,7 +4821,7 @@ of fixed types)</p></td>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.window.Window">Window</span></code>
+                <code>Window</code>
           </td>
           <td><p>A window frame</p></td>
         </tr>
@@ -4897,7 +4875,7 @@ of fixed types)</p></td>
 
 
 <h2 id="ibis.window" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">window</span><span class="p">(</span><span class="n">preceding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">following</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">window</span><span class="p">(</span><span class="n">preceding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">following</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">between</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.window" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
@@ -4957,6 +4935,33 @@ of fixed types)</p></td>
                 <code>None</code>
           </td>
         </tr>
+        <tr>
+          <td><code>rows</code></td>
+          <td>
+          </td>
+          <td><p>Whether to use the <code>ROWS</code> window clause</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>range</code></td>
+          <td>
+          </td>
+          <td><p>Whether to use the <code>RANGE</code> window clause</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>between</code></td>
+          <td>
+          </td>
+          <td><p>Automatically infer the window kind based on the boundaries</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -4971,7 +4976,7 @@ of fixed types)</p></td>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.window.Window">Window</span></code>
+                <code>Window</code>
           </td>
           <td><p>A window frame</p></td>
         </tr>

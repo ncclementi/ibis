@@ -1,7 +1,7 @@
 FullOperation,bigquery,clickhouse,dask,datafusion,duckdb,impala,mssql,mysql,pandas,polars,postgres,pyspark,snowflake,sqlite,trino
 ibis.expr.operations.analytic.CumeDist,True,False,True,False,True,True,True,True,True,False,True,True,True,True,True
-ibis.expr.operations.analytic.CumulativeAll,False,False,True,False,False,False,False,False,True,False,True,False,False,False,False
-ibis.expr.operations.analytic.CumulativeAny,False,False,True,False,False,False,False,False,True,False,True,False,False,False,False
+ibis.expr.operations.analytic.CumulativeAll,False,False,True,False,False,False,True,True,True,False,True,False,False,True,True
+ibis.expr.operations.analytic.CumulativeAny,False,False,True,False,False,False,True,True,True,False,True,False,False,True,True
 ibis.expr.operations.analytic.CumulativeMax,False,False,True,False,True,False,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.CumulativeMean,False,False,True,False,True,False,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.CumulativeMin,False,False,True,False,True,False,True,True,True,False,True,True,True,True,True
@@ -16,7 +16,6 @@ ibis.expr.operations.analytic.NTile,True,True,False,False,False,True,True,True,F
 ibis.expr.operations.analytic.NthValue,True,True,False,False,True,False,True,True,False,False,True,True,True,True,True
 ibis.expr.operations.analytic.PercentRank,True,False,True,False,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.analytic.RowNumber,True,True,False,False,True,True,True,True,False,False,True,True,True,True,True
-ibis.expr.operations.analytic.Window,True,True,True,False,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.arrays.ArrayColumn,True,True,True,False,True,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayConcat,True,True,True,False,True,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayIndex,True,True,True,False,True,False,False,False,True,False,True,True,True,False,True
@@ -254,7 +253,7 @@ ibis.expr.operations.temporal.ExtractYear,True,True,True,False,True,True,True,Tr
 ibis.expr.operations.temporal.IntervalAdd,False,False,True,False,True,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.temporal.IntervalFloorDivide,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.IntervalFromInteger,True,True,True,False,True,True,False,True,True,True,True,True,False,False,False
-ibis.expr.operations.temporal.IntervalMultiply,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False
+ibis.expr.operations.temporal.IntervalMultiply,True,False,True,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.IntervalSubtract,False,False,True,False,True,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.temporal.Strftime,True,True,True,False,True,True,False,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.StringToTimestamp,True,False,False,False,True,False,False,True,False,True,False,True,True,False,True
@@ -275,3 +274,7 @@ ibis.expr.operations.temporal.ToIntervalUnit,False,False,False,False,False,False
 ibis.expr.operations.vectorized.AnalyticVectorizedUDF,False,False,True,False,False,False,False,False,True,False,False,False,False,False,False
 ibis.expr.operations.vectorized.ElementWiseVectorizedUDF,False,False,True,True,False,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.vectorized.ReductionVectorizedUDF,False,False,True,False,False,False,False,False,True,True,False,True,False,False,False
+ibis.expr.operations.window.RangeWindowFrame,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+ibis.expr.operations.window.RowsWindowFrame,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+ibis.expr.operations.window.WindowBoundary,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+ibis.expr.operations.window.WindowFunction,True,True,True,False,True,True,True,True,True,False,True,True,True,True,True
