@@ -101,6 +101,8 @@ ibis.expr.operations.geospatial.GeoYMax,True,False,False,False,False,False,False
 ibis.expr.operations.geospatial.GeoYMin,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
 ibis.expr.operations.histograms.Bucket,True,False,False,False,True,True,True,True,False,False,True,False,True,True,True
 ibis.expr.operations.json.JSONGetItem,True,False,True,False,True,False,True,True,True,False,True,True,True,True,True
+ibis.expr.operations.json.ToJSONArray,False,False,False,False,True,False,False,False,False,False,True,False,True,False,False
+ibis.expr.operations.json.ToJSONMap,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
 ibis.expr.operations.logical.And,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Equals,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.ExistsSubquery,True,True,False,False,True,True,True,True,False,False,True,False,True,True,True
