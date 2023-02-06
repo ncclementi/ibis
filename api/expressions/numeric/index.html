@@ -1819,6 +1819,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.numeric.IntegerValue.label" class="md-nav__link">
+    label()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.numeric.IntegerValue.to_interval" class="md-nav__link">
     to_interval()
   </a>
@@ -3069,6 +3076,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.numeric.IntegerValue.convert_base" class="md-nav__link">
     convert_base()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.numeric.IntegerValue.label" class="md-nav__link">
+    label()
   </a>
   
 </li>
@@ -4376,7 +4390,7 @@ type:</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types.category.CategoryColumn">CategoryColumn</span></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerColumn" href="#ibis.expr.types.numeric.IntegerColumn">IntegerColumn</a></code>
           </td>
           <td><p>A categorical column expression</p></td>
         </tr>
@@ -5372,6 +5386,94 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         </tr>
     </tbody>
   </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.numeric.IntegerValue.label" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">label</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">nulls</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.numeric.IntegerValue.label" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Label a set of integer values with strings.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>labels</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td><p>An iterable of string labels. Each integer value in <code>self</code> will be mapped to
+a value in <code>labels</code>.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>nulls</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>String label to use for <code>NULL</code> values</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.uuid.StringValue" href="../strings/#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p><code>self</code> labeled with <code>labels</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">labeled</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]))</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ labeled ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━┩</span>
+<span class="go">│ int64 │ string  │</span>
+<span class="go">├───────┼─────────┤</span>
+<span class="go">│     0 │ a       │</span>
+<span class="go">│     1 │ b       │</span>
+<span class="go">│     0 │ a       │</span>
+<span class="go">│     2 │ c       │</span>
+<span class="go">└───────┴─────────┘</span>
+</code></pre></div>
 
   </div>
 
