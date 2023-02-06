@@ -2572,10 +2572,38 @@
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="go">ArrayConcat(left=(1, 2), right=(3, 4, 5))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7]                  │</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayConcat(a, a)    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 7]               │</span>
+<span class="go">│ [3, 3]               │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayConcat(a, (4,)) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 4]               │</span>
+<span class="go">│ [3, 4]               │</span>
+<span class="go">│ [4]                  │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -2647,15 +2675,40 @@ type as the input.</li>
 <p><strong>Examples:</strong></p>
     <p>Extract a single element</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="go">ArrayIndex((1, 2, 3, 4), index=2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayIndex(a, 0) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int8             │</span>
+<span class="go">├──────────────────┤</span>
+<span class="go">│                7 │</span>
+<span class="go">│                3 │</span>
+<span class="go">│                ∅ │</span>
+<span class="go">└──────────────────┘</span>
 </code></pre></div>
     <p>Extract a range of elements</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<span class="go">ArraySlice((1, 2, 3, 4), start=1, stop=3)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">72</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 42, ... +1]      │</span>
+<span class="go">│ [3, 3, ... +3]       │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArraySlice(a, 1, 2)  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [42]                 │</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -2720,9 +2773,28 @@ type as the input.</li>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="go">ArrayRepeat((1, 2), times=2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7]                  │</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayRepeat(a, 2)    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 7]               │</span>
+<span class="go">│ [3, 3]               │</span>
+<span class="go">│ []                   │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -2787,10 +2859,28 @@ type as the input.</li>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">+</span> <span class="n">a</span>
-<span class="go">ArrayConcat(left=(3, 4, 5), right=(1, 2))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7]                  │</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayConcat((4,), a) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [4, 7]               │</span>
+<span class="go">│ [4, 3]               │</span>
+<span class="go">│ [4]                  │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -2855,9 +2945,28 @@ type as the input.</li>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
-<span class="go">ArrayRepeat((1, 2), times=2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7]                  │</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayRepeat(a, 2)    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 7]               │</span>
+<span class="go">│ [3, 3]               │</span>
+<span class="go">│ []                   │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -2891,16 +3000,35 @@ type as the input.</li>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
           </td>
-          <td><p>The integer length of <code>self</code></p></td>
+          <td><p>The integer length of each element of <code>self</code></p></td>
         </tr>
     </tbody>
   </table>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
-<span class="go">ArrayLength((1, 2, 3))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 42]              │</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayLength(a) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64          │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│              2 │</span>
+<span class="go">│              1 │</span>
+<span class="go">│              ∅ │</span>
+<span class="go">└────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -2919,7 +3047,37 @@ type as the input.</li>
 
   <div class="doc doc-contents ">
   
-      <p>Unnest an array.</p>
+      <p>Flatten an array into a column.</p>
+<div class="admonition note">
+<p class="admonition-title">This operation changes the cardinality of the result</p>
+</div>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [7, 42]              │</span>
+<span class="go">│ [3, 3]               │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">unnest</span><span class="p">()</span>
+<span class="go">┏━━━━━━┓</span>
+<span class="go">┃ a    ┃</span>
+<span class="go">┡━━━━━━┩</span>
+<span class="go">│ int8 │</span>
+<span class="go">├──────┤</span>
+<span class="go">│    7 │</span>
+<span class="go">│   42 │</span>
+<span class="go">│    3 │</span>
+<span class="go">│    3 │</span>
+<span class="go">└──────┘</span>
+</code></pre></div>
 
   <p><strong>Returns:</strong></p>
   <table>
