@@ -3997,7 +3997,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
 
 <h4 id="ibis.expr.types.generic.Value.over" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">over</span><span class="p">(</span><span class="n">window</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">over</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.generic.Value.over" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4023,7 +4023,43 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
           </td>
           <td><p>Window specification</p></td>
           <td>
-              <em>required</em>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rows</code></td>
+          <td>
+          </td>
+          <td><p>Whether to use the <code>ROWS</code> window clause</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>range</code></td>
+          <td>
+          </td>
+          <td><p>Whether to use the <code>RANGE</code> window clause</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>group_by</code></td>
+          <td>
+          </td>
+          <td><p>Grouping key</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>order_by</code></td>
+          <td>
+          </td>
+          <td><p>Ordering key</p></td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>

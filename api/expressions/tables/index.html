@@ -5313,7 +5313,7 @@ details on using named table expressions in a SQL string.</p>
 
 
 <h4 id="ibis.expr.types.groupby.GroupedTable.over" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">over</span><span class="p">(</span><span class="n">window</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">over</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.groupby.GroupedTable.over" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5339,7 +5339,43 @@ details on using named table expressions in a SQL string.</p>
           </td>
           <td><p>Window to add to the input</p></td>
           <td>
-              <em>required</em>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rows</code></td>
+          <td>
+          </td>
+          <td><p>Whether to use the <code>ROWS</code> window clause</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>range</code></td>
+          <td>
+          </td>
+          <td><p>Whether to use the <code>RANGE</code> window clause</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>group_by</code></td>
+          <td>
+          </td>
+          <td><p>Grouping key</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>order_by</code></td>
+          <td>
+          </td>
+          <td><p>Ordering key</p></td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
