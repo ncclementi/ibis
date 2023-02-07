@@ -1095,6 +1095,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#default-backend" class="md-nav__link">
+    Default backend
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1986,6 +1993,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#default-backend" class="md-nav__link">
+    Default backend
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2043,13 +2057,30 @@ other logging function:</p>
 
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">verbose_log</span> <span class="o">=</span> <span class="n">cowsay</span>
 </code></pre></div>
+<h2 id="default-backend">Default backend<a class="headerlink" href="#default-backend" title="Anchor link to this section for reference">&para;</a></h2>
+<p><code>ibis.options.default_backend</code> controls which backend is used by table
+expressions returned by top-level functions such as <code>ibis.memtable</code>,
+<code>ibis.read_csv</code> or <code>ibis.read_parquet</code>.</p>
+<p>By default, it points to an instance of DuckDB backend. Assuming the <a href="../../install/">backend
+dependencies have been installed</a>, it can be updated by passing
+the name of the backend to <code>ibis.set_backend</code> as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;column&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="n">ibis</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="c1"># &lt;ibis.backends.duckdb.Backend at 0x12fa0fb50&gt;</span>
+
+<span class="n">ibis</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;sqlite&quot;</span><span class="p">)</span>
+<span class="n">ibis</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="c1"># &lt;ibis.backends.sqlite.Backend at 0x158411d10&gt;</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2023</span>
       
     
   </small>
