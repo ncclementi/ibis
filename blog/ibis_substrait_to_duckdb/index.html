@@ -2118,7 +2118,7 @@ Let's take a quick peek at how we might use it for query execution.</p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Anchor link to this section for reference">&para;</a></h2>
 <p>First, we can create a <code>conda</code> environment using the latest versions of
 <code>duckdb</code>, <code>ibis</code>, and <code>ibis_substrait</code>.</p>
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis_substrait_duckdb<span class="w"> </span>ibis-framework<span class="o">==</span><span class="m">4</span>.1<span class="w"> </span>ibis-substrait<span class="o">==</span><span class="m">2</span>.19<span class="w"> </span>ipython<span class="w"> </span>python-duckdb
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis_substrait_duckdb<span class="w"> </span>ibis-framework<span class="o">==</span><span class="m">4</span>.1<span class="w"> </span>ibis-substrait<span class="o">==</span><span class="m">2</span>.19<span class="w"> </span>ipython<span class="w"> </span>python-duckdb<span class="w"> </span><span class="nv">parsy</span><span class="o">==</span><span class="m">2</span>
 </code></pre></div>
 <p>Next, we'll need to choose a dataset. For this example, we'll use data from IMDB, available through their <a href="https://datasets.imdbws.com/">dataset portal</a>.</p>
 <p>For convenience, I used <a href="https://github.com/saulpw/readysetdata">Ready, Set, Data!</a> to grab the data in <code>parquet</code> format and then insert
@@ -2440,7 +2440,7 @@ of this new standard.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2023</span>
       
     
   </small>
