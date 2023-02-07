@@ -2441,7 +2441,7 @@ keyword</p></td>
 
 
 <h4 id="ibis.expr.types.core.Expr.to_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.to_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2484,17 +2484,6 @@ immediately.</p>
           </td>
         </tr>
         <tr>
-          <td><code>limit</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
           <td><code>**kwargs</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
@@ -2517,7 +2506,7 @@ immediately.</p>
 
 
 <h4 id="ibis.expr.types.core.Expr.to_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.core.Expr.to_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2555,17 +2544,6 @@ immediately.</p>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
           <td><p>Mapping of scalar parameter expressions to value.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>limit</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
           <td>
                 <code>None</code>
           </td>
