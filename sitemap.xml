@@ -296,51 +296,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/tutorial/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/01-Introduction-to-Ibis/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/02-Aggregates-Joins/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/03-Expressions-Lazy-Mode-Logging/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/04-More-Value-Expressions/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/05-IO-Create-Insert-External-Data/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/06-ComplexFiltering/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/07-Analytics-Tools/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/tutorial/rendered/08-Geospatial-Analysis/</loc>
-         <lastmod>1980-01-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ibis-project.org/user_guide/configuration/</loc>
          <lastmod>1980-01-01</lastmod>
          <changefreq>daily</changefreq>
