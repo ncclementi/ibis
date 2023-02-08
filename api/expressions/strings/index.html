@@ -1477,6 +1477,19 @@
     join()
   </a>
   
+    <nav class="md-nav" aria-label="join()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.join--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2405,6 +2418,19 @@
   <a href="#ibis.expr.types.strings.StringValue.join" class="md-nav__link">
     join()
   </a>
+  
+    <nav class="md-nav" aria-label="join()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.join--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3579,7 +3605,7 @@ the corresponding row in the output is <code>True</code>.</p></td>
         <tr>
           <td><code>strings</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a>] | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.ArrayValue" href="../collections/#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
           </td>
           <td><p>Strings to join with <code>arg</code></p></td>
           <td>
@@ -3612,6 +3638,36 @@ the corresponding row in the output is <code>True</code>.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;string&gt;        │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [&#39;a&#39;, &#39;b&#39;, ... +1]   │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [&#39;b&#39;, None]          │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayStringJoin(&#39;|&#39;, arr) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                    │</span>
+<span class="go">├───────────────────────────┤</span>
+<span class="go">│ a|b|c                     │</span>
+<span class="go">│ ∅                         │</span>
+<span class="go">│ ∅                         │</span>
+<span class="go">│ b                         │</span>
+<span class="go">└───────────────────────────┘</span>
+</code></pre></div>
+      <h6 id="ibis.expr.types.strings.StringValue.join--see-also">See Also<a class="headerlink" href="#ibis.expr.types.strings.StringValue.join--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="../collections/#ibis.expr.types.arrays.ArrayValue.join"><code>ArrayValue.join</code></a></p>
 
   </div>
 

@@ -1424,6 +1424,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.join" class="md-nav__link">
+    join()
+  </a>
+  
+    <nav class="md-nav" aria-label="join()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.join--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.length" class="md-nav__link">
     length()
   </a>
@@ -2256,6 +2276,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.join" class="md-nav__link">
+    join()
+  </a>
+  
+    <nav class="md-nav" aria-label="join()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.join--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.length" class="md-nav__link">
     length()
   </a>
@@ -2968,6 +3008,96 @@ type as the input.</li>
 <span class="go">│ []                   │</span>
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.join" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">join</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.join" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Join the elements of this array expression with <code>sep</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>sep</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.StringValue" href="../strings/#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Separator to use for joining array elements</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.uuid.StringValue" href="../strings/#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Elements of <code>self</code> joined with <code>sep</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;string&gt;        │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [&#39;a&#39;, &#39;b&#39;, ... +1]   │</span>
+<span class="go">│ ∅                    │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [&#39;b&#39;, None]          │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayStringJoin(&#39;|&#39;, arr) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                    │</span>
+<span class="go">├───────────────────────────┤</span>
+<span class="go">│ a|b|c                     │</span>
+<span class="go">│ ∅                         │</span>
+<span class="go">│ ∅                         │</span>
+<span class="go">│ b                         │</span>
+<span class="go">└───────────────────────────┘</span>
+</code></pre></div>
+      <h6 id="ibis.expr.types.arrays.ArrayValue.join--see-also">See Also<a class="headerlink" href="#ibis.expr.types.arrays.ArrayValue.join--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="../strings/#ibis.expr.types.strings.StringValue.join"><code>StringValue.join</code></a></p>
 
   </div>
 

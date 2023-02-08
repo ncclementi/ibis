@@ -193,6 +193,7 @@ ibis.expr.operations.reductions.StandardDev,True,True,True,False,True,True,True,
 ibis.expr.operations.reductions.Sum,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Variance,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.sortkeys.SortKey,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.strings.ArrayStringJoin,True,True,False,False,True,False,False,False,False,False,True,True,True,False,True
 ibis.expr.operations.strings.Capitalize,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.EndsWith,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.ExtractAuthority,False,True,False,False,False,True,False,False,False,False,False,False,True,False,False
