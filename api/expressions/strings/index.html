@@ -1191,6 +1191,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.__getitem__" class="md-nav__link">
+    __getitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.__radd__" class="md-nav__link">
     __radd__()
   </a>
@@ -2133,6 +2140,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.__getitem__" class="md-nav__link">
+    __getitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.__radd__" class="md-nav__link">
     __radd__()
   </a>
@@ -2557,6 +2571,157 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ abc    │</span>
+<span class="go">│ bac    │</span>
+<span class="go">│ bca    │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span> <span class="o">+</span> <span class="s2">&quot;z&quot;</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringConcat() ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string         │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│ abcz           │</span>
+<span class="go">│ bacz           │</span>
+<span class="go">│ bcaz           │</span>
+<span class="go">└────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">s</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringConcat() ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string         │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│ abcabc         │</span>
+<span class="go">│ bacbac         │</span>
+<span class="go">│ bcabca         │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.__getitem__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.strings.StringValue.__getitem__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Index or slice a string expression.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#slice">slice</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.IntegerScalar">IntegerScalar</span></code>
+          </td>
+          <td><p><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int"><code>int</code></a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#slice"><code>slice</code></a> or integer scalar expression</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Indexed or sliced string value</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;food&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bread&quot;</span><span class="p">,</span> <span class="s2">&quot;cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;rice&quot;</span><span class="p">],</span> <span class="s2">&quot;idx&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ food   ┃ idx   ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string │ int64 │</span>
+<span class="go">├────────┼───────┤</span>
+<span class="go">│ bread  │     1 │</span>
+<span class="go">│ cheese │     2 │</span>
+<span class="go">│ rice   │     4 │</span>
+<span class="go">└────────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">food</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Substring(food, 0, 1) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ b                     │</span>
+<span class="go">│ c                     │</span>
+<span class="go">│ r                     │</span>
+<span class="go">└───────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">food</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Substring(food, 0, 3) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ bre                   │</span>
+<span class="go">│ che                   │</span>
+<span class="go">│ ric                   │</span>
+<span class="go">└───────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">food</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Substring(food, 3, 2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ ad                    │</span>
+<span class="go">│ es                    │</span>
+<span class="go">│ e                     │</span>
+<span class="go">└───────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">food</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Substring(food, 7, 1) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ ~                     │</span>
+<span class="go">│ ~                     │</span>
+<span class="go">│ ~                     │</span>
+<span class="go">└───────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2617,6 +2782,32 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ abc    │</span>
+<span class="go">│ bac    │</span>
+<span class="go">│ bca    │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;z&quot;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">s</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringConcat() ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string         │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│ zabc           │</span>
+<span class="go">│ zbac           │</span>
+<span class="go">│ zbca           │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2652,6 +2843,22 @@
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;ghi&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">ascii_str</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringAscii(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int32          │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│             97 │</span>
+<span class="go">│            100 │</span>
+<span class="go">│            103 │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -2731,6 +2938,22 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;ghi&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Capitalize(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string        │</span>
+<span class="go">├───────────────┤</span>
+<span class="go">│ Abc           │</span>
+<span class="go">│ Def           │</span>
+<span class="go">│ Ghi           │</span>
+<span class="go">└───────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2801,6 +3024,22 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="s2">&quot;xyz&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringConcat() ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string         │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│ abcxyz         │</span>
+<span class="go">│ bacxyz         │</span>
+<span class="go">│ bcaxyz         │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2860,6 +3099,22 @@
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bab&quot;</span><span class="p">,</span> <span class="s2">&quot;ddd&quot;</span><span class="p">,</span> <span class="s2">&quot;eaf&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringContains(s, &#39;a&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                │</span>
+<span class="go">├────────────────────────┤</span>
+<span class="go">│ True                   │</span>
+<span class="go">│ False                  │</span>
+<span class="go">│ True                   │</span>
+<span class="go">└────────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -2973,12 +3228,6 @@
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;project&#39;</span><span class="p">)</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2996,6 +3245,21 @@
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ibis project&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;project&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ EndsWith(s, &#39;project&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                │</span>
+<span class="go">├────────────────────────┤</span>
+<span class="go">│ True                   │</span>
+<span class="go">│ False                  │</span>
+<span class="go">└────────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3120,6 +3384,32 @@ implemented.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringFind(s, &#39;a&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64              │</span>
+<span class="go">├────────────────────┤</span>
+<span class="go">│                  0 │</span>
+<span class="go">│                  1 │</span>
+<span class="go">│                  2 │</span>
+<span class="go">└────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringFind(s, &#39;z&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64              │</span>
+<span class="go">├────────────────────┤</span>
+<span class="go">│                 -1 │</span>
+<span class="go">│                 -1 │</span>
+<span class="go">│                 -1 │</span>
+<span class="go">└────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3163,12 +3453,6 @@ implemented.</p></td>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">find_in_set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3187,6 +3471,12 @@ or if <code>self</code> contains <code>','</code>.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">find_in_set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+</code></pre></div>
 
   </div>
 
@@ -3396,6 +3686,21 @@ the corresponding row in the output is <code>True</code>.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ibis project&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">ilike</span><span class="p">(</span><span class="s2">&quot;%PROJect&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringSQLILike(s, &#39;%PROJect&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                       │</span>
+<span class="go">├───────────────────────────────┤</span>
+<span class="go">│ True                          │</span>
+<span class="go">│ False                         │</span>
+<span class="go">└───────────────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3437,12 +3742,6 @@ the corresponding row in the output is <code>True</code>.</p></td>
         </tr>
     </tbody>
   </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sep</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
-</code></pre></div>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3552,6 +3851,22 @@ the corresponding row in the output is <code>True</code>.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;defg&quot;</span><span class="p">,</span> <span class="s2">&quot;hijlk&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Substring(s, 0, 2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string             │</span>
+<span class="go">├────────────────────┤</span>
+<span class="go">│ ab                 │</span>
+<span class="go">│ de                 │</span>
+<span class="go">│ hi                 │</span>
+<span class="go">└────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3583,10 +3898,26 @@ the corresponding row in the output is <code>True</code>.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
           </td>
-          <td><p>The length of the input</p></td>
+          <td><p>The length of each string in the expression</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;aa&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringLength(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int32           │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│               3 │</span>
+<span class="go">│               1 │</span>
+<span class="go">│               2 │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3652,6 +3983,21 @@ the corresponding row in the output is <code>True</code>.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ibis project&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s2">&quot;%project&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringSQLLike(s, &#39;%project&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                      │</span>
+<span class="go">├──────────────────────────────┤</span>
+<span class="go">│ True                         │</span>
+<span class="go">│ False                        │</span>
+<span class="go">└──────────────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3687,6 +4033,32 @@ the corresponding row in the output is <code>True</code>.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;AAA&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;AA&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ AAA    │</span>
+<span class="go">│ a      │</span>
+<span class="go">│ AA     │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Lowercase(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string       │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│ aaa          │</span>
+<span class="go">│ a            │</span>
+<span class="go">│ aa           │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3753,17 +4125,25 @@ the corresponding row in the output is <code>True</code>.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
           </td>
-          <td><p>Padded string</p></td>
+          <td><p>Left-padded string</p></td>
         </tr>
     </tbody>
   </table>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># ----a</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;ghij&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ LPad(s, 5, &#39;-&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string          │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│ --abc           │</span>
+<span class="go">│ --def           │</span>
+<span class="go">│ -ghij           │</span>
+<span class="go">└─────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -3783,24 +4163,42 @@ the corresponding row in the output is <code>True</code>.</p></td>
   <div class="doc doc-contents ">
   
       <p>Remove whitespace from the left side of string.</p>
+<div class="highlight"><pre><span></span><code>    Returns
+    -------
+    StringValue
+        Left-stripped string
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
-          </td>
-          <td><p>Left-stripped string</p></td>
-        </tr>
-    </tbody>
-  </table>
+    Examples
+    --------
+    &gt;&gt;&gt; import ibis
+    &gt;&gt;&gt; ibis.options.interactive = True
+    &gt;&gt;&gt; t = ibis.memtable({&quot;s&quot;: [&quot;  a       &quot;, &quot;
+</code></pre></div>
+<p>b
+", "c  "]})
+        &gt;&gt;&gt; t
+        ┏━━━━━━━━┓
+        ┃ s      ┃
+        ┡━━━━━━━━┩
+        │ string │
+        ├────────┤
+        │       a         │
+        │ 
+b
+  │
+        │ c      │
+        └────────┘
+        &gt;&gt;&gt; t.s.lstrip()
+        ┏━━━━━━━━━━━┓
+        ┃ LStrip(s) ┃
+        ┡━━━━━━━━━━━┩
+        │ string    │
+        ├───────────┤
+        │ a            │
+        │ b
+       │
+        │ c            │
+        └───────────┘</p>
 
   </div>
 
@@ -4029,6 +4427,36 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+</code></pre></div>
+    <p>Extract a specific group</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">re_extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(a)bc&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ RegexExtract(s, &#39;^(a)&#39;, 1) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                     │</span>
+<span class="go">├────────────────────────────┤</span>
+<span class="go">│ a                          │</span>
+<span class="go">│ ~                          │</span>
+<span class="go">│ ~                          │</span>
+<span class="go">└────────────────────────────┘</span>
+</code></pre></div>
+    <p>Extract the entire match</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">re_extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(a)bc&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ RegexExtract(s, &#39;^(a)bc&#39;, 0) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                       │</span>
+<span class="go">├──────────────────────────────┤</span>
+<span class="go">│ abc                          │</span>
+<span class="go">│ ~                            │</span>
+<span class="go">│ ~                            │</span>
+<span class="go">└──────────────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4081,12 +4509,6 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">re_replace</span><span class="p">(</span><span class="s2">&quot;(b+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&lt;\1&gt;&quot;</span><span class="p">)</span>  <span class="c1"># aaa&lt;bbb&gt;aaa</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4104,6 +4526,22 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">re_replace</span><span class="p">(</span><span class="s2">&quot;^(a)&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ RegexReplace(s, &#39;^(a)&#39;, &#39;b&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                       │</span>
+<span class="go">├──────────────────────────────┤</span>
+<span class="go">│ bbc                          │</span>
+<span class="go">│ bac                          │</span>
+<span class="go">│ bca                          │</span>
+<span class="go">└──────────────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4166,6 +4604,21 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ibis project&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">re_search</span><span class="p">(</span><span class="s2">&quot;.+Hub&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ RegexSearch(s, &#39;.+Hub&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                 │</span>
+<span class="go">├─────────────────────────┤</span>
+<span class="go">│ False                   │</span>
+<span class="go">│ True                    │</span>
+<span class="go">└─────────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4226,6 +4679,22 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;bb&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Repeat(s, 5) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string       │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│ aaaaa        │</span>
+<span class="go">│ bbbbbbbbbb   │</span>
+<span class="go">│ ccccc        │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4278,12 +4747,6 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;ccc&quot;</span><span class="p">)</span>  <span class="c1"># cccbbbccc</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4301,6 +4764,22 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;bac&quot;</span><span class="p">,</span> <span class="s2">&quot;bca&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringReplace(s, &#39;b&#39;, &#39;z&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                     │</span>
+<span class="go">├────────────────────────────┤</span>
+<span class="go">│ azc                        │</span>
+<span class="go">│ zac                        │</span>
+<span class="go">│ zca                        │</span>
+<span class="go">└────────────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4337,6 +4816,32 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;ghi&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ abc    │</span>
+<span class="go">│ def    │</span>
+<span class="go">│ ghi    │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━┓</span>
+<span class="go">┃ Reverse(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━━┩</span>
+<span class="go">│ string     │</span>
+<span class="go">├────────────┤</span>
+<span class="go">│ cba        │</span>
+<span class="go">│ fed        │</span>
+<span class="go">│ ihg        │</span>
+<span class="go">└────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4397,6 +4902,22 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;defg&quot;</span><span class="p">,</span> <span class="s2">&quot;hijlk&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StrRight(s, 2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string         │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│ bc             │</span>
+<span class="go">│ fg             │</span>
+<span class="go">│ lk             │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4459,14 +4980,6 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># a----</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4480,10 +4993,26 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
           </td>
-          <td><p>Padded string</p></td>
+          <td><p>Right-padded string</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;ghij&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">rpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ RPad(s, 5, &#39;-&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string          │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│ abc--           │</span>
+<span class="go">│ def--           │</span>
+<span class="go">│ ghij-           │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4502,24 +5031,42 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
   <div class="doc doc-contents ">
   
       <p>Remove whitespace from the right side of string.</p>
+<div class="highlight"><pre><span></span><code>    Returns
+    -------
+    StringValue
+        Right-stripped string
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
-          </td>
-          <td><p>Right-stripped string</p></td>
-        </tr>
-    </tbody>
-  </table>
+    Examples
+    --------
+    &gt;&gt;&gt; import ibis
+    &gt;&gt;&gt; ibis.options.interactive = True
+    &gt;&gt;&gt; t = ibis.memtable({&quot;s&quot;: [&quot;  a       &quot;, &quot;
+</code></pre></div>
+<p>b
+", "c  "]})
+        &gt;&gt;&gt; t
+        ┏━━━━━━━━┓
+        ┃ s      ┃
+        ┡━━━━━━━━┩
+        │ string │
+        ├────────┤
+        │       a         │
+        │ 
+b
+  │
+        │ c      │
+        └────────┘
+        &gt;&gt;&gt; t.s.rstrip()
+        ┏━━━━━━━━━━━┓
+        ┃ RStrip(s) ┃
+        ┡━━━━━━━━━━━┩
+        │ string    │
+        ├───────────┤
+        │       a       │
+        │ 
+b       │
+        │ c       │
+        └───────────┘</p>
 
   </div>
 
@@ -4538,6 +5085,9 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
   <div class="doc doc-contents ">
   
       <p>Split as string on <code>delimiter</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">This API only works on backends with array support.</p>
+</div>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4581,6 +5131,32 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;col&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a,b,c&quot;</span><span class="p">,</span> <span class="s2">&quot;d,e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ col    ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ a,b,c  │</span>
+<span class="go">│ d,e    │</span>
+<span class="go">│ f      │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringSplit(col, &#39;,&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;string&gt;         │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ [&#39;a&#39;, &#39;b&#39;, ... +1]    │</span>
+<span class="go">│ [&#39;d&#39;, &#39;e&#39;]            │</span>
+<span class="go">│ [&#39;f&#39;]                 │</span>
+<span class="go">└───────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4623,12 +5199,6 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Ibis&#39;</span><span class="p">)</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4646,6 +5216,21 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ibis project&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Ibis&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StartsWith(s, &#39;Ibis&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean               │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ True                  │</span>
+<span class="go">│ False                 │</span>
+<span class="go">└───────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4682,6 +5267,32 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">a</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">b</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\v</span><span class="s2">c</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ \ta\t  │</span>
+<span class="go">│ \nb\n  │</span>
+<span class="go">│ \vc\t  │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━┓</span>
+<span class="go">┃ Strip(s) ┃</span>
+<span class="go">┡━━━━━━━━━━┩</span>
+<span class="go">│ string   │</span>
+<span class="go">├──────────┤</span>
+<span class="go">│ a        │</span>
+<span class="go">│ b        │</span>
+<span class="go">│ c        │</span>
+<span class="go">└──────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4754,6 +5365,22 @@ entire string</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;defg&quot;</span><span class="p">,</span> <span class="s2">&quot;hijlk&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Substring(s, 2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string          │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│ c               │</span>
+<span class="go">│ fg              │</span>
+<span class="go">│ jlk             │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4796,12 +5423,6 @@ entire string</p></td>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">date_as_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;20170206&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">date_as_str</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4819,6 +5440,20 @@ entire string</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;ts&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;20170206&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StringToTimestamp(ts, &#39;%Y%m%d&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ timestamp(&#39;UTC&#39;)                │</span>
+<span class="go">├─────────────────────────────────┤</span>
+<span class="go">│ 2017-02-06 00:00:00+00:00       │</span>
+<span class="go">└─────────────────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4933,6 +5568,32 @@ entire string</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;aa&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ aaa    │</span>
+<span class="go">│ A      │</span>
+<span class="go">│ aa     │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Uppercase(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string       │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│ AAA          │</span>
+<span class="go">│ A            │</span>
+<span class="go">│ AA           │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
