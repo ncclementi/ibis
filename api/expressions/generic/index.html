@@ -4010,7 +4010,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
   <div class="doc doc-contents ">
   
-      <p>Replace one or more values in a value expression.</p>
+      <p>Replace values given in <code>values</code> with <code>replacement</code>.</p>
+<p>This is similar to the pandas <code>replace</code> method.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4026,9 +4027,9 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
         <tr>
           <td><code>value</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="#ibis.expr.types.generic.Value">Value</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>Expression or mapping</p></td>
+          <td><p>Expression or dict.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -4038,7 +4039,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="#ibis.expr.types.generic.Value">Value</a> | None</code>
           </td>
-          <td><p>Expression. If an expression is passed to value, this must be
+          <td><p>If an expression is passed to value, this must be
 passed.</p></td>
           <td>
                 <code>None</code>
@@ -4049,7 +4050,8 @@ passed.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="#ibis.expr.types.generic.Value">Value</a> | None</code>
           </td>
-          <td><p>Expression</p></td>
+          <td><p>If an original value does not match <code>value</code>, then <code>else_</code> is used.
+The default of <code>None</code> means leave the original value unchanged.</p></td>
           <td>
                 <code>None</code>
           </td>
