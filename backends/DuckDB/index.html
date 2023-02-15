@@ -2407,6 +2407,9 @@ a sequentially generated name.</p></td>
   <div class="doc doc-contents ">
   
       <p>Read newline-delimited JSON into an ibis table.</p>
+<div class="admonition note">
+<p class="admonition-title">This feature requires duckdb&gt;=0.7.0</p>
+</div>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2443,7 +2446,7 @@ a sequentially generated name.</p></td>
           <td><code>kwargs</code></td>
           <td>
           </td>
-          <td><p>Additional keyword arguments passed to DuckDB's <code>read_json_objects</code> function</p></td>
+          <td><p>Additional keyword arguments passed to DuckDB's <code>read_json_auto</code> function</p></td>
           <td>
                 <code>{}</code>
           </td>
