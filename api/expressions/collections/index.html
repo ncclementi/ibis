@@ -1274,6 +1274,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.map" class="md-nav__link">
+    map()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.unnest" class="md-nav__link">
     unnest()
   </a>
@@ -2121,6 +2128,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.length" class="md-nav__link">
     length()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.map" class="md-nav__link">
+    map()
   </a>
   
 </li>
@@ -2982,6 +2996,92 @@ type as the input.</li>
 <span class="go">│              1 │</span>
 <span class="go">│              ∅ │</span>
 <span class="go">└────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.map" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.map" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Apply a callable <code>func</code> to each element of this array expression.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>func</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]</code>
+          </td>
+          <td><p>Function to apply to each element of this array</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p><code>func</code> applied to every element of this array expression.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ a                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [1, None, ... +1]    │</span>
+<span class="go">│ [4]                  │</span>
+<span class="go">│ []                   │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">))</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayMap(a)           ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;float64&gt;        │</span>
+<span class="go">├───────────────────────┤</span>
+<span class="go">│ [101.0, None, ... +1] │</span>
+<span class="go">│ [104.0]               │</span>
+<span class="go">│ []                    │</span>
+<span class="go">└───────────────────────┘</span>
 </code></pre></div>
 
   </div>
