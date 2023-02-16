@@ -142,7 +142,7 @@ ibis.expr.operations.numeric.Ceil,True,True,True,True,True,True,True,True,True,T
 ibis.expr.operations.numeric.Clip,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Cos,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Cot,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.numeric.Degrees,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.numeric.Degrees,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Exp,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Floor,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.FloorDivide,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
@@ -157,7 +157,7 @@ ibis.expr.operations.numeric.Multiply,True,True,True,True,True,True,True,True,Tr
 ibis.expr.operations.numeric.Negate,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.NullIfZero,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Power,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.numeric.Radians,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.numeric.Radians,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Round,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Sign,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Sin,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
