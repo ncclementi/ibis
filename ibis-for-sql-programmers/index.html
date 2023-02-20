@@ -9778,11 +9778,7 @@ result = left.join(right, left.region == right.region)[
   GROUP BY
     1,
     2
-)
-SELECT
-  t1.region,
-  t1.total - t2.total AS diff
-FROM (
+), t2 AS (
   SELECT
     t0.region AS region,
     t0.kind AS kind,
@@ -9790,8 +9786,7 @@ FROM (
   FROM t0
   WHERE
     t0.kind = &#39;foo&#39;
-) AS t1
-JOIN (
+), t1 AS (
   SELECT
     t0.region AS region,
     t0.kind AS kind,
@@ -9799,8 +9794,13 @@ JOIN (
   FROM t0
   WHERE
     t0.kind = &#39;bar&#39;
-) AS t2
-  ON t1.region = t2.region
+)
+SELECT
+  t2.region,
+  t2.total - t1.total AS diff
+FROM t2
+JOIN t1
+  ON t2.region = t1.region
 </pre>
 </div>
 </div>
