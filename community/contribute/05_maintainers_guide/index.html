@@ -1740,6 +1740,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#adding-examples" class="md-nav__link">
+    Adding Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#release" class="md-nav__link">
     Release
   </a>
@@ -1815,6 +1842,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#adding-examples" class="md-nav__link">
+    Adding Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#release" class="md-nav__link">
     Release
   </a>
@@ -1855,6 +1909,21 @@
 <p>Occasionally you may need to lock <a href="https://python-poetry.org"><code>poetry</code></a> dependencies. Edit <code>pyproject.toml</code> as needed, then run:</p>
 <div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>lock<span class="w"> </span>--no-update
 </code></pre></div>
+<h2 id="adding-examples">Adding Examples<a class="headerlink" href="#adding-examples" title="Anchor link to this section for reference">&para;</a></h2>
+<p>If you're not a maintainer, please open an issue asking us to add your example.</p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Anchor link to this section for reference">&para;</a></h3>
+<p>You need the ability to write to the <code>gs://ibis-examples</code> GCS bucket to add an example.</p>
+<h3 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Make sure you're in the root of the ibis git repository.</p>
+<p>Assuming your file is called <code>example.csv</code>:</p>
+<ol>
+<li>Add a gzip-compressed CSV file with the path <code>ibis/examples/data/example.csv.gz</code>.</li>
+<li>Add a file named <code>ibis/examples/descriptions/example</code> that contains a
+   description of your example. One line is best, but not necessary.</li>
+<li>Run one of the following <strong>from the git root of an ibis clone</strong>:</li>
+<li><code>python ibis/examples/gen_registry.py</code> (doesn't include R dependenices)</li>
+<li><code>nix run '.#gen-examples'</code> (includes R dependenices)</li>
+</ol>
 <h2 id="release">Release<a class="headerlink" href="#release" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis is released on <a href="https://pypi.org/project/ibis-framework/">PyPI</a> and <a href="https://github.com/conda-forge/ibis-framework-feedstock">Conda Forge</a>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PyPI</label><label for="__tabbed_1_2"><code>conda-forge</code></label></div>
@@ -1877,7 +1946,7 @@ package.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2023</span>
       
     
   </small>
