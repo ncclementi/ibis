@@ -3747,7 +3747,7 @@ ibis cannot infer the backend dialect.</p></td>
 
 
 <h2 id="ibis.to_sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.to_sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
@@ -3785,6 +3785,15 @@ ibis cannot infer the backend dialect.</p></td>
           <td><p>SQL dialect to use for compilation.</p></td>
           <td>
                 <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+          </td>
+          <td><p>Scalar parameters</p></td>
+          <td>
+                <code>{}</code>
           </td>
         </tr>
     </tbody>
