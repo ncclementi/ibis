@@ -2703,6 +2703,7 @@
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;food&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bread&quot;</span><span class="p">,</span> <span class="s2">&quot;cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;rice&quot;</span><span class="p">],</span> <span class="s2">&quot;idx&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
 <span class="go">┏━━━━━━━━┳━━━━━━━┓</span>
 <span class="go">┃ food   ┃ idx   ┃</span>
 <span class="go">┡━━━━━━━━╇━━━━━━━┩</span>
@@ -4195,42 +4196,50 @@ the corresponding row in the output is <code>True</code>.</p></td>
   <div class="doc doc-contents ">
   
       <p>Remove whitespace from the left side of string.</p>
-<div class="highlight"><pre><span></span><code>    Returns
-    -------
-    StringValue
-        Left-stripped string
 
-    Examples
-    --------
-    &gt;&gt;&gt; import ibis
-    &gt;&gt;&gt; ibis.options.interactive = True
-    &gt;&gt;&gt; t = ibis.memtable({&quot;s&quot;: [&quot;  a       &quot;, &quot;
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Left-stripped string</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">a</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">b</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\v</span><span class="s2">c</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ \ta\t  │</span>
+<span class="go">│ \nb\n  │</span>
+<span class="go">│ \vc\t  │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┓</span>
+<span class="go">┃ LStrip(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━┩</span>
+<span class="go">│ string    │</span>
+<span class="go">├───────────┤</span>
+<span class="go">│ a\t       │</span>
+<span class="go">│ b\n       │</span>
+<span class="go">│ c\t       │</span>
+<span class="go">└───────────┘</span>
 </code></pre></div>
-<p>b
-", "c  "]})
-        &gt;&gt;&gt; t
-        ┏━━━━━━━━┓
-        ┃ s      ┃
-        ┡━━━━━━━━┩
-        │ string │
-        ├────────┤
-        │       a         │
-        │ 
-b
-  │
-        │ c      │
-        └────────┘
-        &gt;&gt;&gt; t.s.lstrip()
-        ┏━━━━━━━━━━━┓
-        ┃ LStrip(s) ┃
-        ┡━━━━━━━━━━━┩
-        │ string    │
-        ├───────────┤
-        │ a            │
-        │ b
-       │
-        │ c            │
-        └───────────┘</p>
 
   </div>
 
@@ -4466,15 +4475,15 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
 </code></pre></div>
     <p>Extract a specific group</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">re_extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(a)bc&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
-<span class="go">┃ RegexExtract(s, &#39;^(a)&#39;, 1) ┃</span>
-<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
-<span class="go">│ string                     │</span>
-<span class="go">├────────────────────────────┤</span>
-<span class="go">│ a                          │</span>
-<span class="go">│ ~                          │</span>
-<span class="go">│ ~                          │</span>
-<span class="go">└────────────────────────────┘</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ RegexExtract(s, &#39;^(a)bc&#39;, 1) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                       │</span>
+<span class="go">├──────────────────────────────┤</span>
+<span class="go">│ a                            │</span>
+<span class="go">│ ~                            │</span>
+<span class="go">│ ~                            │</span>
+<span class="go">└──────────────────────────────┘</span>
 </code></pre></div>
     <p>Extract the entire match</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">re_extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(a)bc&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -5063,42 +5072,50 @@ otherwise return the content of the <code>index</code>-th match group.</p></td>
   <div class="doc doc-contents ">
   
       <p>Remove whitespace from the right side of string.</p>
-<div class="highlight"><pre><span></span><code>    Returns
-    -------
-    StringValue
-        Right-stripped string
 
-    Examples
-    --------
-    &gt;&gt;&gt; import ibis
-    &gt;&gt;&gt; ibis.options.interactive = True
-    &gt;&gt;&gt; t = ibis.memtable({&quot;s&quot;: [&quot;  a       &quot;, &quot;
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.strings.StringValue" href="#ibis.expr.types.strings.StringValue">StringValue</a></code>
+          </td>
+          <td><p>Right-stripped string</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">a</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">b</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\v</span><span class="s2">c</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ s      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ \ta\t  │</span>
+<span class="go">│ \nb\n  │</span>
+<span class="go">│ \vc\t  │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┓</span>
+<span class="go">┃ RStrip(s) ┃</span>
+<span class="go">┡━━━━━━━━━━━┩</span>
+<span class="go">│ string    │</span>
+<span class="go">├───────────┤</span>
+<span class="go">│ \ta       │</span>
+<span class="go">│ \nb       │</span>
+<span class="go">│ \vc       │</span>
+<span class="go">└───────────┘</span>
 </code></pre></div>
-<p>b
-", "c  "]})
-        &gt;&gt;&gt; t
-        ┏━━━━━━━━┓
-        ┃ s      ┃
-        ┡━━━━━━━━┩
-        │ string │
-        ├────────┤
-        │       a         │
-        │ 
-b
-  │
-        │ c      │
-        └────────┘
-        &gt;&gt;&gt; t.s.rstrip()
-        ┏━━━━━━━━━━━┓
-        ┃ RStrip(s) ┃
-        ┡━━━━━━━━━━━┩
-        │ string    │
-        ├───────────┤
-        │       a       │
-        │ 
-b       │
-        │ c       │
-        └───────────┘</p>
 
   </div>
 

@@ -1178,6 +1178,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.__contains__" class="md-nav__link">
+    __contains__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.__getattr__" class="md-nav__link">
+    __getattr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.__getitem__" class="md-nav__link">
+    __getitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.aggregate" class="md-nav__link">
     aggregate()
   </a>
@@ -1252,19 +1273,6 @@
     fillna()
   </a>
   
-    <nav class="md-nav" aria-label="fillna()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.fillna--notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1285,6 +1293,19 @@
   <a href="#ibis.expr.types.relations.Table.head" class="md-nav__link">
     head()
   </a>
+  
+    <nav class="md-nav" aria-label="head()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.head--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1313,6 +1334,19 @@
   <a href="#ibis.expr.types.relations.Table.limit" class="md-nav__link">
     limit()
   </a>
+  
+    <nav class="md-nav" aria-label="limit()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.limit--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2228,6 +2262,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.__contains__" class="md-nav__link">
+    __contains__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.__getattr__" class="md-nav__link">
+    __getattr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.__getitem__" class="md-nav__link">
+    __getitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.aggregate" class="md-nav__link">
     aggregate()
   </a>
@@ -2302,19 +2357,6 @@
     fillna()
   </a>
   
-    <nav class="md-nav" aria-label="fillna()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.fillna--notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2335,6 +2377,19 @@
   <a href="#ibis.expr.types.relations.Table.head" class="md-nav__link">
     head()
   </a>
+  
+    <nav class="md-nav" aria-label="head()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.head--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2363,6 +2418,19 @@
   <a href="#ibis.expr.types.relations.Table.limit" class="md-nav__link">
     limit()
   </a>
+  
+    <nav class="md-nav" aria-label="limit()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.limit--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2636,7 +2704,7 @@
 
 
 <h4 id="ibis.expr.types.relations.Table.columns" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">columns</span></code>
+<code class="highlight language-python"><span class="n">columns</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-property"><code>property</code></small>
@@ -2648,11 +2716,425 @@
   <div class="doc doc-contents ">
   
       <p>The list of columns in this table.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">starwars</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;name&#39;,</span>
+<span class="go"> &#39;height&#39;,</span>
+<span class="go"> &#39;mass&#39;,</span>
+<span class="go"> &#39;hair_color&#39;,</span>
+<span class="go"> &#39;skin_color&#39;,</span>
+<span class="go"> &#39;eye_color&#39;,</span>
+<span class="go"> &#39;birth_year&#39;,</span>
+<span class="go"> &#39;sex&#39;,</span>
+<span class="go"> &#39;gender&#39;,</span>
+<span class="go"> &#39;homeworld&#39;,</span>
+<span class="go"> &#39;species&#39;,</span>
+<span class="go"> &#39;films&#39;,</span>
+<span class="go"> &#39;vehicles&#39;,</span>
+<span class="go"> &#39;starships&#39;]</span>
+</code></pre></div>
   </div>
 
 </div>
 
 <h3 id="ibis.expr.types.relations.Table-functions">Functions<a href="#ibis.expr.types.relations.Table-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.__contains__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__contains__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.__contains__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether <code>name</code> is a column in the table.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Possible column name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Whether <code>name</code> is a column in <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="n">t</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;c&quot;</span> <span class="ow">in</span> <span class="n">t</span>
+<span class="go">False</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.__getattr__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__getattr__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.__getattr__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the column name of a table.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>key</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Column name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>
+          </td>
+          <td><p>Column expression with name <code>key</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">island</span>
+<span class="go">┏━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃</span>
+<span class="go">┡━━━━━━━━━━━┩</span>
+<span class="go">│ string    │</span>
+<span class="go">├───────────┤</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ …         │</span>
+<span class="go">└───────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.__getitem__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__getitem__</span><span class="p">(</span><span class="n">what</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.__getitem__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Select items from a table expression.</p>
+<p>This method implements square bracket syntax for table expressions,
+including various forms of projection and filtering.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>what</code></td>
+          <td>
+          </td>
+          <td><p>Selection object. This can be a variety of types including strings, ints, lists.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>
+          </td>
+          <td><p>The return type depends on the input. For a single string or int
+input a column is returned, otherwise a table is returned.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>Return a column by name</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s2">&quot;island&quot;</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃</span>
+<span class="go">┡━━━━━━━━━━━┩</span>
+<span class="go">│ string    │</span>
+<span class="go">├───────────┤</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ …         │</span>
+<span class="go">└───────────┘</span>
+</code></pre></div>
+    <p>Return the second column, starting from index 0</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;island&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃</span>
+<span class="go">┡━━━━━━━━━━━┩</span>
+<span class="go">│ string    │</span>
+<span class="go">├───────────┤</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ Torgersen │</span>
+<span class="go">│ …         │</span>
+<span class="go">└───────────┘</span>
+</code></pre></div>
+    <p>Extract a range of rows</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>Select columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[[</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ float64        │</span>
+<span class="go">├───────────┼────────────────┤</span>
+<span class="go">│ Torgersen │           39.1 │</span>
+<span class="go">│ Torgersen │           39.5 │</span>
+<span class="go">│ Torgersen │           40.3 │</span>
+<span class="go">│ Torgersen │            nan │</span>
+<span class="go">│ Torgersen │           36.7 │</span>
+<span class="go">└───────────┴────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ float64        │</span>
+<span class="go">├───────────┼────────────────┤</span>
+<span class="go">│ Torgersen │           39.1 │</span>
+<span class="go">│ Torgersen │           39.5 │</span>
+<span class="go">│ Torgersen │           40.3 │</span>
+<span class="go">│ Torgersen │            nan │</span>
+<span class="go">│ Torgersen │           36.7 │</span>
+<span class="go">└───────────┴────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="n">_</span><span class="o">.</span><span class="n">island</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ float64        │</span>
+<span class="go">├───────────┼────────────────┤</span>
+<span class="go">│ Torgersen │           39.1 │</span>
+<span class="go">│ Torgersen │           39.5 │</span>
+<span class="go">│ Torgersen │           40.3 │</span>
+<span class="go">│ Torgersen │            nan │</span>
+<span class="go">│ Torgersen │           36.7 │</span>
+<span class="go">└───────────┴────────────────┘</span>
+</code></pre></div>
+    <p>Filtering</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">island</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;torgersen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Biscoe │           37.8 │          18.3 │               174 │ … │</span>
+<span class="go">│ Adelie  │ Biscoe │           37.7 │          18.7 │               180 │ … │</span>
+<span class="go">│ Adelie  │ Biscoe │           35.9 │          19.2 │               189 │ … │</span>
+<span class="go">│ Adelie  │ Biscoe │           38.2 │          18.1 │               185 │ … │</span>
+<span class="go">│ Adelie  │ Biscoe │           38.8 │          17.2 │               180 │ … │</span>
+<span class="go">└─────────┴────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>Selectors</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">|</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">))]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">:</span><span class="s2">&quot;body_mass_g&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64        │ float64       │ int64             │</span>
+<span class="go">├────────────────┼───────────────┼───────────────────┤</span>
+<span class="go">│           39.1 │          18.7 │               181 │</span>
+<span class="go">│           39.5 │          17.4 │               186 │</span>
+<span class="go">│           40.3 │          18.0 │               195 │</span>
+<span class="go">│            nan │           nan │                 ∅ │</span>
+<span class="go">│           36.7 │          19.3 │               193 │</span>
+<span class="go">└────────────────┴───────────────┴───────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
@@ -2740,6 +3222,33 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;fruit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">],</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━┓</span>
+<span class="go">┃ fruit  ┃ price   ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━┩</span>
+<span class="go">│ string │ float64 │</span>
+<span class="go">├────────┼─────────┤</span>
+<span class="go">│ apple  │    0.50 │</span>
+<span class="go">│ apple  │    0.50 │</span>
+<span class="go">│ banana │    0.25 │</span>
+<span class="go">│ orange │    0.33 │</span>
+<span class="go">└────────┴─────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;fruit&quot;</span><span class="p">],</span> <span class="n">total_cost</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">avg_cost</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">having</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<span class="go">┃ fruit  ┃ total_cost ┃ avg_cost ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━┩</span>
+<span class="go">│ string │ float64    │ float64  │</span>
+<span class="go">├────────┼────────────┼──────────┤</span>
+<span class="go">│ banana │       0.25 │     0.25 │</span>
+<span class="go">│ orange │       0.33 │     0.33 │</span>
+<span class="go">└────────┴────────────┴──────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2810,23 +3319,22 @@ backend for use in the
   </table>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.ddb&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;functional_alltypes&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;my_t&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT sum(double_col) FROM my_t&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;pingüinos&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM &quot;pingüinos&quot; LIMIT 5&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
-<span class="go">r0 := AlchemyTable: functional_alltypes</span>
-<span class="go">  index           int64</span>
-<span class="go">    ⋮</span>
-<span class="go">  month           int32</span>
-<span class="go">r1 := View[r0]: my_t</span>
-<span class="go">  schema:</span>
-<span class="go">    index           int64</span>
-<span class="go">      ⋮</span>
-<span class="go">    month           int32</span>
-<span class="go">SQLStringView[r1]: _ibis_view_0</span>
-<span class="go">  query: &#39;SELECT sum(double_col) FROM my_t&#39;</span>
-<span class="go">  schema:</span>
-<span class="go">    sum(double_col) float64</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 </code></pre></div>
 
   </div>
@@ -3049,19 +3557,24 @@ columns.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;baz&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ a      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ foo    │</span>
+<span class="go">│ bar    │</span>
+<span class="go">│ baz    │</span>
+<span class="go">└────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a int64</span>
-<span class="go">count: CountStar(t)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a int64</span>
-<span class="go">Aggregation[r0]</span>
-<span class="go">  metrics:</span>
-<span class="go">    n:     CountStar(t, where=r0.a &gt; 1)</span>
-<span class="go">    total: Sum(r0.a)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">!=</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="go">&lt;class &#39;ibis.expr.types.numeric.IntegerScalar&#39;&gt;</span>
 </code></pre></div>
 
   </div>
@@ -3157,26 +3670,48 @@ columns.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schemas</span> <span class="o">=</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="s1">&#39;abcde&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="p">[</span>
-<span class="gp">... </span>    <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">schemas</span>
-<span class="gp">... </span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">joined1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">cross_join</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">joined1</span>
-<span class="go">r0 := UnboundTable[e]</span>
-<span class="go">  e int64</span>
-<span class="go">r1 := UnboundTable[d]</span>
-<span class="go">  d int64</span>
-<span class="go">r2 := UnboundTable[c]</span>
-<span class="go">  c int64</span>
-<span class="go">r3 := UnboundTable[b]</span>
-<span class="go">  b int64</span>
-<span class="go">r4 := UnboundTable[a]</span>
-<span class="go">  a int64</span>
-<span class="go">r5 := CrossJoin[r3, r2]</span>
-<span class="go">r6 := CrossJoin[r5, r1]</span>
-<span class="go">r7 := CrossJoin[r6, r0]</span>
-<span class="go">CrossJoin[r4, r7]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">agg</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">cross_join</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm_x ┃ bill_depth_mm_x ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64          │ float64         │ … │</span>
+<span class="go">├─────────┼───────────┼──────────────────┼─────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │             39.1 │            18.7 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             39.5 │            17.4 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             40.3 │            18.0 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │              nan │             nan │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             36.7 │            19.3 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             39.3 │            20.6 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             38.9 │            17.8 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             39.2 │            19.6 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             34.1 │            18.1 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │             42.0 │            20.2 │ … │</span>
+<span class="go">│ …       │ …         │                … │               … │ … │</span>
+<span class="go">└─────────┴───────────┴──────────────────┴─────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="go">[&#39;species&#39;,</span>
+<span class="go"> &#39;island&#39;,</span>
+<span class="go"> &#39;bill_length_mm_x&#39;,</span>
+<span class="go"> &#39;bill_depth_mm_x&#39;,</span>
+<span class="go"> &#39;flipper_length_mm_x&#39;,</span>
+<span class="go"> &#39;body_mass_g_x&#39;,</span>
+<span class="go"> &#39;sex&#39;,</span>
+<span class="go"> &#39;year&#39;,</span>
+<span class="go"> &#39;bill_length_mm_y&#39;,</span>
+<span class="go"> &#39;bill_depth_mm_y&#39;,</span>
+<span class="go"> &#39;flipper_length_mm_y&#39;,</span>
+<span class="go"> &#39;body_mass_g_y&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">344</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">344</span>
 </code></pre></div>
 
   </div>
@@ -3250,6 +3785,39 @@ columns.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     2 │</span>
+<span class="go">│     3 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">└───────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3266,7 +3834,50 @@ columns.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Compute the set of unique rows in the table.</p>
+      <p>Compute the unique rows in <code>self</code>.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>Unique rows of <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │</span>
+<span class="go">├───────┼────────┤</span>
+<span class="go">│     1 │ c      │</span>
+<span class="go">│     1 │ a      │</span>
+<span class="go">│     2 │ a      │</span>
+<span class="go">└───────┴────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3328,6 +3939,48 @@ columns.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …         │              … │             … │                 … │ … │</span>
+<span class="go">└───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3373,41 +4026,15 @@ are considered.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;any&#39;, &#39;all&#39;]</code>
           </td>
-          <td><p>Determine whether a row is removed if there is at least one null
-value in the row ('any'), or if all row values are null ('all').
-Options are 'any' or 'all'. Default is 'any'.</p></td>
+          <td><p>Determine whether a row is removed if there is <strong>at least one null
+value in the row</strong> (<code>'any'</code>), or if <strong>all</strong> row values are null
+(<code>'all'</code>).</p></td>
           <td>
                 <code>&#39;any&#39;</code>
           </td>
         </tr>
     </tbody>
   </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># Drop all rows where any values are null</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a int64</span>
-<span class="go">  b string</span>
-<span class="go">DropNa[r0]</span>
-<span class="go">  how: &#39;any&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>  <span class="c1"># Only drop rows where all values are null</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a int64</span>
-<span class="go">  b string</span>
-<span class="go">r1 := DropNa[r0]</span>
-<span class="go">  how: &#39;all&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>  <span class="c1"># Only drop rows where all values in column &#39;a&#39; are null  # noqa: E501</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a int64</span>
-<span class="go">  b string</span>
-<span class="go">DropNa[r0]</span>
-<span class="go">  how: &#39;all&#39;</span>
-<span class="go">  subset:</span>
-<span class="go">    r0.a</span>
-</code></pre></div>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3427,6 +4054,36 @@ Options are 'any' or 'all'. Default is 'any'.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">344</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">dropna</span><span class="p">([</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">,</span> <span class="s2">&quot;body_mass_g&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">342</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  <span class="c1"># no rows where all columns are null</span>
+<span class="go">344</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3444,6 +4101,11 @@ Options are 'any' or 'all'. Default is 'any'.</p></td>
   <div class="doc doc-contents ">
   
       <p>Fill null values in a table expression.</p>
+<div class="admonition note">
+<p class="admonition-title">There is potential lack of type stability with the <code>fillna</code> API</p>
+<p>For example, different library versions may impact whether a given
+backend promotes integer replacement values to floats.</p>
+</div>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3461,26 +4123,56 @@ Options are 'any' or 'all'. Default is 'any'.</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a> | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>]</code>
           </td>
-          <td><p>Value with which to fill the nulls. If passed as a mapping, the keys
-are column names that map to their replacement value. If passed
-as a scalar, all columns are filled with that value.</p></td>
+          <td><p>Value with which to fill nulls. If <code>replacements</code> is a mapping, the
+keys are column names that map to their replacement value. If
+passed as a scalar all columns are filled with that value.</p></td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
-      <h6 id="ibis.expr.types.relations.Table.fillna--notes">Notes<a class="headerlink" href="#ibis.expr.types.relations.Table.fillna--notes" title="Anchor link to this section for reference">&para;</a></h6>
-<p>There is potential lack of type stability with the <code>fillna</code> API. For
-example, different library versions may impact whether or not a given
-backend promotes integer replacement values to floats.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># Replace nulls in all columns with 0.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">fillna</span><span class="p">({</span><span class="n">c</span><span class="p">:</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="n">dt</span><span class="o">.</span><span class="n">float64</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">sex</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ sex    ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ male   │</span>
+<span class="go">│ female │</span>
+<span class="go">│ female │</span>
+<span class="go">│ ∅      │</span>
+<span class="go">│ female │</span>
+<span class="go">│ male   │</span>
+<span class="go">│ female │</span>
+<span class="go">│ male   │</span>
+<span class="go">│ ∅      │</span>
+<span class="go">│ ∅      │</span>
+<span class="go">│ …      │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">fillna</span><span class="p">({</span><span class="s2">&quot;sex&quot;</span><span class="p">:</span> <span class="s2">&quot;unrecorded&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">sex</span>
+<span class="go">┏━━━━━━━━━━━━┓</span>
+<span class="go">┃ sex        ┃</span>
+<span class="go">┡━━━━━━━━━━━━┩</span>
+<span class="go">│ string     │</span>
+<span class="go">├────────────┤</span>
+<span class="go">│ male       │</span>
+<span class="go">│ female     │</span>
+<span class="go">│ female     │</span>
+<span class="go">│ unrecorded │</span>
+<span class="go">│ female     │</span>
+<span class="go">│ male       │</span>
+<span class="go">│ female     │</span>
+<span class="go">│ male       │</span>
+<span class="go">│ unrecorded │</span>
+<span class="go">│ unrecorded │</span>
+<span class="go">│ …          │</span>
+<span class="go">└────────────┘</span>
 </code></pre></div>
 
   <p><strong>Returns:</strong></p>
@@ -3561,6 +4253,39 @@ backend promotes integer replacement values to floats.</p>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">body_mass_g</span> <span class="o">&gt;</span> <span class="mi">3500</span><span class="p">])</span><span class="o">.</span><span class="n">sex</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━┓</span>
+<span class="go">┃ sex    ┃ sex_count ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━┩</span>
+<span class="go">│ string │ int64     │</span>
+<span class="go">├────────┼───────────┤</span>
+<span class="go">│ male   │        68 │</span>
+<span class="go">│ female │        22 │</span>
+<span class="go">└────────┴───────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3570,7 +4295,7 @@ backend promotes integer replacement values to floats.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.group_by" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">group_by</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">group_exprs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">group_by</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">key_exprs</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.group_by" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -3593,6 +4318,7 @@ backend promotes integer replacement values to floats.</p>
         <tr>
           <td><code>by</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | None</code>
           </td>
           <td><p>Grouping expressions</p></td>
           <td>
@@ -3600,9 +4326,9 @@ backend promotes integer replacement values to floats.</p>
           </td>
         </tr>
         <tr>
-          <td><code>group_exprs</code></td>
+          <td><code>key_exprs</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]</code>
           </td>
           <td><p>Named grouping expressions</p></td>
           <td>
@@ -3611,23 +4337,6 @@ backend promotes integer replacement values to floats.</p>
         </tr>
     </tbody>
   </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;double&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="n">_</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">b</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">sum_of_c</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a int32</span>
-<span class="go">  b timestamp</span>
-<span class="go">  c float64</span>
-<span class="go">Aggregation[r0]</span>
-<span class="go">  metrics:</span>
-<span class="go">    sum_of_c: Sum(r0.c)</span>
-<span class="go">  by:</span>
-<span class="go">    a: r0.a</span>
-<span class="go">    b: r0.b</span>
-</code></pre></div>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3647,6 +4356,34 @@ backend promotes integer replacement values to floats.</p>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;fruit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">],</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━┓</span>
+<span class="go">┃ fruit  ┃ price   ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━┩</span>
+<span class="go">│ string │ float64 │</span>
+<span class="go">├────────┼─────────┤</span>
+<span class="go">│ apple  │    0.50 │</span>
+<span class="go">│ apple  │    0.50 │</span>
+<span class="go">│ banana │    0.25 │</span>
+<span class="go">│ orange │    0.33 │</span>
+<span class="go">└────────┴─────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s2">&quot;fruit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">total_cost</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">avg_cost</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<span class="go">┃ fruit  ┃ total_cost ┃ avg_cost ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━┩</span>
+<span class="go">│ string │ float64    │ float64  │</span>
+<span class="go">├────────┼────────────┼──────────┤</span>
+<span class="go">│ apple  │       1.00 │     0.50 │</span>
+<span class="go">│ banana │       0.25 │     0.25 │</span>
+<span class="go">│ orange │       0.33 │     0.33 │</span>
+<span class="go">└────────┴────────────┴──────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3664,7 +4401,9 @@ backend promotes integer replacement values to floats.</p>
   <div class="doc doc-contents ">
   
       <p>Select the first <code>n</code> rows of a table.</p>
-<p>The result set is not deterministic without a sort.</p>
+<div class="admonition note">
+<p class="admonition-title">The result set is not deterministic without a call to <a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.order_by"><code>order_by</code></a>.</p>
+</div>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3682,7 +4421,7 @@ backend promotes integer replacement values to floats.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Number of rows to include, defaults to 5</p></td>
+          <td><p>Number of rows to include</p></td>
           <td>
                 <code>5</code>
           </td>
@@ -3703,10 +4442,38 @@ backend promotes integer replacement values to floats.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p><code>table</code> limited to <code>n</code> rows</p></td>
+          <td><p><code>self</code> limited to <code>n</code> rows</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │</span>
+<span class="go">├───────┼────────┤</span>
+<span class="go">│     1 │ c      │</span>
+<span class="go">│     1 │ a      │</span>
+<span class="go">│     2 │ a      │</span>
+<span class="go">└───────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │</span>
+<span class="go">├───────┼────────┤</span>
+<span class="go">│     1 │ c      │</span>
+<span class="go">│     1 │ a      │</span>
+<span class="go">└───────┴────────┘</span>
+</code></pre></div>
+      <h6 id="ibis.expr.types.relations.Table.head--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.head--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.limit"><code>Table.limit</code></a>
+<a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.order_by"><code>Table.order_by</code></a></p>
 
   </div>
 
@@ -3725,7 +4492,6 @@ backend promotes integer replacement values to floats.</p>
   <div class="doc doc-contents ">
   
       <p>Show summary information about a table.</p>
-<p>Currently implemented as showing column names, types and null counts.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3750,6 +4516,72 @@ backend promotes integer replacement values to floats.</p>
         </tr>
     </tbody>
   </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td><p>This method prints to a buffer (stdout by default) and returns nothing.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>Default implementation prints to stdout</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="go">                       Summary of penguins</span>
+<span class="go">                             344 rows</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓</span>
+<span class="go">┃ Name              ┃ Type                   ┃ # Nulls ┃ % Nulls ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━┩</span>
+<span class="go">│ species           │ String(nullable=True)  │       0 │    0.00 │</span>
+<span class="go">│ island            │ String(nullable=True)  │       0 │    0.00 │</span>
+<span class="go">│ bill_length_mm    │ Float64(nullable=True) │       2 │    0.58 │</span>
+<span class="go">│ bill_depth_mm     │ Float64(nullable=True) │       2 │    0.58 │</span>
+<span class="go">│ flipper_length_mm │ Int64(nullable=True)   │       2 │    0.58 │</span>
+<span class="go">│ body_mass_g       │ Int64(nullable=True)   │       2 │    0.58 │</span>
+<span class="go">│ sex               │ String(nullable=True)  │      11 │    3.20 │</span>
+<span class="go">│ year              │ Int64(nullable=True)   │       0 │    0.00 │</span>
+<span class="go">└───────────────────┴────────────────────────┴─────────┴─────────┘</span>
+</code></pre></div>
+    <p>Store the info into a buffer</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buf</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Summary of penguins&quot;</span> <span class="ow">in</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="go">True</span>
+</code></pre></div>
 
   </div>
 
@@ -3821,6 +4653,39 @@ backend promotes integer replacement values to floats.</p>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     2 │</span>
+<span class="go">│     3 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3921,7 +4786,10 @@ columns.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Select the first <code>n</code> rows starting at <code>offset</code>.</p>
+      <p>Select <code>n</code> rows from <code>self</code> starting at <code>offset</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">The result set is not deterministic without a call to <a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.order_by"><code>order_by</code></a>.</p>
+</div>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3970,10 +4838,37 @@ columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>The first <code>n</code> rows of <code>table</code> starting at <code>offset</code></p></td>
+          <td><p>The first <code>n</code> rows of <code>self</code> starting at <code>offset</code></p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │</span>
+<span class="go">├───────┼────────┤</span>
+<span class="go">│     1 │ c      │</span>
+<span class="go">│     1 │ a      │</span>
+<span class="go">│     2 │ a      │</span>
+<span class="go">└───────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │</span>
+<span class="go">├───────┼────────┤</span>
+<span class="go">│     1 │ c      │</span>
+<span class="go">│     1 │ a      │</span>
+<span class="go">└───────┴────────┘</span>
+</code></pre></div>
+      <h6 id="ibis.expr.types.relations.Table.limit--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.limit--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.order_by"><code>Table.order_by</code></a></p>
 
   </div>
 
@@ -4046,30 +4941,71 @@ columns.</p></td>
   </table>
 
 <p><strong>Examples:</strong></p>
-    <p>Using keywords arguments to name the new columns</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="p">[(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">)],</span>
-<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">qux</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">foo</span> <span class="o">+</span> <span class="n">table</span><span class="o">.</span><span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
-<span class="go">r0 := UnboundTable[t]</span>
-<span class="go">  foo float64</span>
-<span class="go">  bar float64</span>
-<span class="go">Selection[r0]</span>
-<span class="go">  selections:</span>
-<span class="go">    r0</span>
-<span class="go">    baz: 5</span>
-<span class="go">    qux: r0.foo + r0.bar</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ species ┃ year  ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ int64 │ float64        │</span>
+<span class="go">├─────────┼───────┼────────────────┤</span>
+<span class="go">│ Adelie  │  2007 │           39.1 │</span>
+<span class="go">│ Adelie  │  2007 │           39.5 │</span>
+<span class="go">│ Adelie  │  2007 │           40.3 │</span>
+<span class="go">│ Adelie  │  2007 │            nan │</span>
+<span class="go">│ Adelie  │  2007 │           36.7 │</span>
+<span class="go">│ Adelie  │  2007 │           39.3 │</span>
+<span class="go">│ Adelie  │  2007 │           38.9 │</span>
+<span class="go">│ Adelie  │  2007 │           39.2 │</span>
+<span class="go">│ Adelie  │  2007 │           34.1 │</span>
+<span class="go">│ Adelie  │  2007 │           42.0 │</span>
+<span class="go">│ …       │     … │              … │</span>
+<span class="go">└─────────┴───────┴────────────────┘</span>
 </code></pre></div>
-    <p>Use the <a class="autorefs autorefs-internal" href="../generic/#ibis.expr.types.generic.Value.name"><code>name</code></a> method to name
-the new columns.</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">new_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">,),</span>
-<span class="gp">... </span>               <span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">foo</span> <span class="o">+</span> <span class="n">table</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;qux&#39;</span><span class="p">)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr2</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">new_columns</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expr2</span><span class="p">)</span>
-<span class="go">True</span>
+    <p>Add a new column from a per-element expression</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">next_year</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┓</span>
+<span class="go">┃ species ┃ year  ┃ bill_length_mm ┃ next_year ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ int64 │ float64        │ int64     │</span>
+<span class="go">├─────────┼───────┼────────────────┼───────────┤</span>
+<span class="go">│ Adelie  │  2007 │           39.1 │      2008 │</span>
+<span class="go">│ Adelie  │  2007 │           39.5 │      2008 │</span>
+<span class="go">│ Adelie  │  2007 │           40.3 │      2008 │</span>
+<span class="go">│ Adelie  │  2007 │            nan │      2008 │</span>
+<span class="go">│ Adelie  │  2007 │           36.7 │      2008 │</span>
+<span class="go">└─────────┴───────┴────────────────┴───────────┘</span>
+</code></pre></div>
+    <p>Add a new column based on an aggregation. Note the automatic broadcasting.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">bill_demean</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">-</span> <span class="n">_</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━┓</span>
+<span class="go">┃ species ┃ bill_demean ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ float64     │</span>
+<span class="go">├─────────┼─────────────┤</span>
+<span class="go">│ Adelie  │    -4.82193 │</span>
+<span class="go">│ Adelie  │    -4.42193 │</span>
+<span class="go">│ Adelie  │    -3.62193 │</span>
+<span class="go">│ Adelie  │         nan │</span>
+<span class="go">│ Adelie  │    -7.22193 │</span>
+<span class="go">└─────────┴─────────────┘</span>
+</code></pre></div>
+    <p>Mutate across multiple columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">),</span> <span class="n">_</span> <span class="o">-</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ species ┃ year  ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ int64 │ float64        │</span>
+<span class="go">├─────────┼───────┼────────────────┤</span>
+<span class="go">│ Adelie  │  2007 │       -4.82193 │</span>
+<span class="go">│ Adelie  │  2007 │       -4.42193 │</span>
+<span class="go">│ Adelie  │  2007 │       -3.62193 │</span>
+<span class="go">│ Adelie  │  2007 │            nan │</span>
+<span class="go">│ Adelie  │  2007 │       -7.22193 │</span>
+<span class="go">└─────────┴───────┴────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4106,26 +5042,13 @@ the new columns.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]] | None</code>
           </td>
-          <td><p>An expression (or expressions) to sort the table by.</p></td>
+          <td><p>Expressions to sort the table by.</p></td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)])</span>
-<span class="go">r0 := UnboundTable: unbound_table_0</span>
-<span class="go">  a int64</span>
-<span class="go">  b string</span>
-<span class="go">Selection[r0]</span>
-<span class="go">  sort_keys:</span>
-<span class="go">     asc|r0.a</span>
-<span class="go">    desc|r0.b</span>
-</code></pre></div>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4144,6 +5067,42 @@ the new columns.</p>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃ c     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ int64 │ string │ int64 │</span>
+<span class="go">├───────┼────────┼───────┤</span>
+<span class="go">│     1 │ c      │     4 │</span>
+<span class="go">│     2 │ b      │     6 │</span>
+<span class="go">│     3 │ a      │     5 │</span>
+<span class="go">└───────┴────────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃ c     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ int64 │ string │ int64 │</span>
+<span class="go">├───────┼────────┼───────┤</span>
+<span class="go">│     3 │ a      │     5 │</span>
+<span class="go">│     2 │ b      │     6 │</span>
+<span class="go">│     1 │ c      │     4 │</span>
+<span class="go">└───────┴────────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">))</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b      ┃ c     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ int64 │ string │ int64 │</span>
+<span class="go">├───────┼────────┼───────┤</span>
+<span class="go">│     2 │ b      │     6 │</span>
+<span class="go">│     3 │ a      │     5 │</span>
+<span class="go">│     1 │ c      │     4 │</span>
+<span class="go">└───────┴────────┴───────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4204,10 +5163,66 @@ convention.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A relabeled table expression</p></td>
+          <td><p>A relabeled table expressi</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># first 3 columns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins_raw_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">first3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ studyName ┃ Sample Number ┃ Species                             ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ int64         │ string                              │</span>
+<span class="go">├───────────┼───────────────┼─────────────────────────────────────┤</span>
+<span class="go">│ PAL0708   │             1 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             2 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             3 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             4 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             5 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             6 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             7 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             8 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │             9 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ PAL0708   │            10 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">│ …         │             … │ …                                   │</span>
+<span class="go">└───────────┴───────────────┴─────────────────────────────────────┘</span>
+</code></pre></div>
+    <p>Relabel column names using a mapping from old name to new name</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relabel</span><span class="p">({</span><span class="s2">&quot;studyName&quot;</span><span class="p">:</span> <span class="s2">&quot;study_name&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ study_name ┃ Sample Number ┃ Species                             ┃</span>
+<span class="go">┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string     │ int64         │ string                              │</span>
+<span class="go">├────────────┼───────────────┼─────────────────────────────────────┤</span>
+<span class="go">│ PAL0708    │             1 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">└────────────┴───────────────┴─────────────────────────────────────┘</span>
+</code></pre></div>
+    <p>Relabel column names using a snake_case convention</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s2">&quot;snake_case&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ study_name ┃ sample_number ┃ species                             ┃</span>
+<span class="go">┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string     │ int64         │ string                              │</span>
+<span class="go">├────────────┼───────────────┼─────────────────────────────────────┤</span>
+<span class="go">│ PAL0708    │             1 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">└────────────┴───────────────┴─────────────────────────────────────┘</span>
+</code></pre></div>
+    <p>Relabel column names using a callable</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ STUDYNAME ┃ SAMPLE NUMBER ┃ SPECIES                             ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ int64         │ string                              │</span>
+<span class="go">├───────────┼───────────────┼─────────────────────────────────────┤</span>
+<span class="go">│ PAL0708   │             1 │ Adelie Penguin (Pygoscelis adeliae) │</span>
+<span class="go">└───────────┴───────────────┴─────────────────────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4225,10 +5240,13 @@ convention.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>A unique integer per row, only valid on physical tables.</p>
+      <p>A unique integer per row.</p>
+<div class="admonition note">
+<p class="admonition-title">This operation is only valid on physical tables</p>
 <p>Any further meaning behind this expression is backend dependent.
 Generally this corresponds to some index into the database storage
 (for example, sqlite or duckdb's <code>rowid</code>).</p>
+</div>
 <p>For a monotonically increasing row number, see <code>ibis.row_number</code>.</p>
 
   <p><strong>Returns:</strong></p>
@@ -4265,7 +5283,7 @@ Generally this corresponds to some index into the database storage
 
   <div class="doc doc-contents ">
   
-      <p>Get the schema for this table (if one is known).</p>
+      <p>Return the schema for this table.</p>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4284,6 +5302,29 @@ Generally this corresponds to some index into the database storage
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">starwars</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
+<span class="go">ibis.Schema {</span>
+<span class="go">  name        string</span>
+<span class="go">  height      int64</span>
+<span class="go">  mass        float64</span>
+<span class="go">  hair_color  string</span>
+<span class="go">  skin_color  string</span>
+<span class="go">  eye_color   string</span>
+<span class="go">  birth_year  float64</span>
+<span class="go">  sex         string</span>
+<span class="go">  gender      string</span>
+<span class="go">  homeworld   string</span>
+<span class="go">  species     string</span>
+<span class="go">  films       string</span>
+<span class="go">  vehicles    string</span>
+<span class="go">  starships   string</span>
+<span class="go">}</span>
+</code></pre></div>
 
   </div>
 
@@ -4364,45 +5405,113 @@ strings.</p></td>
   </table>
 
 <p><strong>Examples:</strong></p>
-    <p>Simple projection</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int64&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">proj</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">b_plus_1</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">proj</span>
-<span class="go">r0 := UnboundTable[t]</span>
-<span class="go">  a int64</span>
-<span class="go">  b float64</span>
-<span class="go">Selection[r0]</span>
-<span class="go">  selections:</span>
-<span class="go">    a:        r0.a</span>
-<span class="go">    b_plus_1: r0.b + 1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">proj2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b_plus_1</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">proj</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">proj2</span><span class="p">)</span>
-<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 </code></pre></div>
-    <p>Aggregate projection</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">agg_proj</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">sum_a</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">mean_b</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">agg_proj</span>
-<span class="go">r0 := UnboundTable[t]</span>
-<span class="go">  a int64</span>
-<span class="go">  b float64</span>
-<span class="go">Selection[r0]</span>
-<span class="go">  selections:</span>
-<span class="go">    sum_a:  Window(Sum(r0.a), window=Window(how=&#39;rows&#39;))</span>
-<span class="go">    mean_b: Window(Mean(r0.b), window=Window(how=&#39;rows&#39;))</span>
+    <p>Simple projection</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ float64        │</span>
+<span class="go">├───────────┼────────────────┤</span>
+<span class="go">│ Torgersen │           39.1 │</span>
+<span class="go">│ Torgersen │           39.5 │</span>
+<span class="go">│ Torgersen │           40.3 │</span>
+<span class="go">│ Torgersen │            nan │</span>
+<span class="go">│ Torgersen │           36.7 │</span>
+<span class="go">└───────────┴────────────────┘</span>
 </code></pre></div>
-    <p>Note the <code>Window</code> objects here.</p>
-<p>Their existence means that the result of the aggregation will be
-broadcast across the number of rows in the input column.
-The purpose of this expression rewrite is to make it easy to write
-column/scalar-aggregate operations like</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">demeaned_a</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="go">r0 := UnboundTable[t]</span>
-<span class="go">  a int64</span>
-<span class="go">  b float64</span>
-<span class="go">Selection[r0]</span>
-<span class="go">  selections:</span>
-<span class="go">    demeaned_a: r0.a - Window(Mean(r0.a), window=Window(how=&#39;rows&#39;))</span>
+    <p>Projection by zero-indexed column position</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ species ┃ flipper_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ int64             │</span>
+<span class="go">├─────────┼───────────────────┤</span>
+<span class="go">│ Adelie  │               181 │</span>
+<span class="go">│ Adelie  │               186 │</span>
+<span class="go">│ Adelie  │               195 │</span>
+<span class="go">│ Adelie  │                 ∅ │</span>
+<span class="go">│ Adelie  │               193 │</span>
+<span class="go">└─────────┴───────────────────┘</span>
+</code></pre></div>
+    <p>Projection with renaming and compute in one call</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">next_year</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┓</span>
+<span class="go">┃ next_year ┃</span>
+<span class="go">┡━━━━━━━━━━━┩</span>
+<span class="go">│ int64     │</span>
+<span class="go">├───────────┤</span>
+<span class="go">│      2008 │</span>
+<span class="go">│      2008 │</span>
+<span class="go">│      2008 │</span>
+<span class="go">│      2008 │</span>
+<span class="go">│      2008 │</span>
+<span class="go">└───────────┘</span>
+</code></pre></div>
+    <p>Projection with aggregation expressions</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="n">bill_mean</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃ bill_mean ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ float64   │</span>
+<span class="go">├───────────┼───────────┤</span>
+<span class="go">│ Torgersen │  43.92193 │</span>
+<span class="go">│ Torgersen │  43.92193 │</span>
+<span class="go">│ Torgersen │  43.92193 │</span>
+<span class="go">│ Torgersen │  43.92193 │</span>
+<span class="go">│ Torgersen │  43.92193 │</span>
+<span class="go">└───────────┴───────────┘</span>
+</code></pre></div>
+    <p>Projection with a selector</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓</span>
+<span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64        │ float64       │ int64             │ int64       │</span>
+<span class="go">├────────────────┼───────────────┼───────────────────┼─────────────┤</span>
+<span class="go">│           39.1 │          18.7 │               181 │        3750 │</span>
+<span class="go">│           39.5 │          17.4 │               186 │        3800 │</span>
+<span class="go">│           40.3 │          18.0 │               195 │        3250 │</span>
+<span class="go">│            nan │           nan │                 ∅ │           ∅ │</span>
+<span class="go">│           36.7 │          19.3 │               193 │        3450 │</span>
+<span class="go">└────────────────┴───────────────┴───────────────────┴─────────────┘</span>
+</code></pre></div>
+    <p>Projection + aggregation across multiple columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">),</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓</span>
+<span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64        │ float64       │ float64           │ float64     │</span>
+<span class="go">├────────────────┼───────────────┼───────────────────┼─────────────┤</span>
+<span class="go">│       43.92193 │      17.15117 │        200.915205 │ 4201.754386 │</span>
+<span class="go">│       43.92193 │      17.15117 │        200.915205 │ 4201.754386 │</span>
+<span class="go">│       43.92193 │      17.15117 │        200.915205 │ 4201.754386 │</span>
+<span class="go">│       43.92193 │      17.15117 │        200.915205 │ 4201.754386 │</span>
+<span class="go">│       43.92193 │      17.15117 │        200.915205 │ 4201.754386 │</span>
+<span class="go">└────────────────┴───────────────┴───────────────────┴─────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4495,7 +5604,8 @@ column/scalar-aggregate operations like</p>
 <div class="admonition note">
 <p class="admonition-title">The SQL string is backend specific</p>
 <p><code>query</code> must be valid SQL for the execution backend the expression
-will run against</p>
+will run against.</p>
+<p>This restriction may be lifted in a future version of ibis.</p>
 </div>
 <p>See <a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.alias"><code>Table.alias</code></a> for
 details on using named table expressions in a SQL string.</p>
@@ -4543,18 +5653,20 @@ details on using named table expressions in a SQL string.</p>
   </table>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.ddb&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;functional_alltypes&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT sum(double_col) FROM functional_alltypes&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT island, mean(bill_length_mm) FROM penguins GROUP BY 1 ORDER BY 2 DESC&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
-<span class="go">r0 := AlchemyTable: functional_alltypes</span>
-<span class="go">  index           int64</span>
-<span class="go">    ⋮</span>
-<span class="go">  month           int32</span>
-<span class="go">SQLStringView[r0]: _ibis_view_1</span>
-<span class="go">  query: &#39;SELECT sum(double_col) FROM functional_alltypes&#39;</span>
-<span class="go">  schema:</span>
-<span class="go">    sum(double_col) float64</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ island    ┃ mean(bill_length_mm) ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ float64              │</span>
+<span class="go">├───────────┼──────────────────────┤</span>
+<span class="go">│ Biscoe    │            45.257485 │</span>
+<span class="go">│ Dream     │            44.167742 │</span>
+<span class="go">│ Torgersen │            38.950980 │</span>
+<span class="go">└───────────┴──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4705,6 +5817,52 @@ details on using named table expressions in a SQL string.</p>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     2 │</span>
+<span class="go">│     3 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>  <span class="c1"># union all by default</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">│     2 │</span>
+<span class="go">│     3 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">│     3 │</span>
+<span class="go">└───────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4767,21 +5925,36 @@ details on using named table expressions in a SQL string.</p>
   </table>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;struct&lt;b: float, c: string&gt;&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lines</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">... </span><span class="s1">    {&quot;name&quot;: &quot;a&quot;, &quot;pos&quot;: {&quot;lat&quot;: 10.1, &quot;lon&quot;: 30.3}}</span>
+<span class="gp">... </span><span class="s1">    {&quot;name&quot;: &quot;b&quot;, &quot;pos&quot;: {&quot;lat&quot;: 10.2, &quot;lon&quot;: 30.2}}</span>
+<span class="gp">... </span><span class="s1">    {&quot;name&quot;: &quot;c&quot;, &quot;pos&quot;: {&quot;lat&quot;: 10.3, &quot;lon&quot;: 30.1}}</span>
+<span class="gp">... </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/tmp/lines.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">_</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;/tmp/lines.json&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
-<span class="go">UnboundTable: t</span>
-<span class="go">  a struct&lt;b: float64, c: string&gt;</span>
-<span class="go">  d string</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="go">r0 := UnboundTable: t</span>
-<span class="go">  a struct&lt;b: float64, c: string&gt;</span>
-<span class="go">  d string</span>
-<span class="go">Selection[r0]</span>
-<span class="go">  selections:</span>
-<span class="go">    b: StructField(r0.a, field=&#39;b&#39;)</span>
-<span class="go">    c: StructField(r0.a, field=&#39;c&#39;)</span>
-<span class="go">    d: r0.d</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ name   ┃ pos                                ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string │ struct&lt;lat: float64, lon: float64&gt; │</span>
+<span class="go">├────────┼────────────────────────────────────┤</span>
+<span class="go">│ a      │ {&#39;lat&#39;: 10.1, &#39;lon&#39;: 30.3}         │</span>
+<span class="go">│ b      │ {&#39;lat&#39;: 10.2, &#39;lon&#39;: 30.2}         │</span>
+<span class="go">│ c      │ {&#39;lat&#39;: 10.3, &#39;lon&#39;: 30.1}         │</span>
+<span class="go">└────────┴────────────────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓</span>
+<span class="go">┃ name   ┃ lat     ┃ lon     ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━┩</span>
+<span class="go">│ string │ float64 │ float64 │</span>
+<span class="go">├────────┼─────────┼─────────┤</span>
+<span class="go">│ a      │    10.1 │    30.3 │</span>
+<span class="go">│ b      │    10.2 │    30.2 │</span>
+<span class="go">│ c      │    10.3 │    30.1 │</span>
+<span class="go">└────────┴─────────┴─────────┘</span>
 </code></pre></div>
       <h6 id="ibis.expr.types.relations.Table.unpack--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.unpack--see-also" title="Anchor link to this section for reference">&para;</a></h6>
 <p><a class="autorefs autorefs-internal" href="../collections/#ibis.expr.types.structs.StructValue.lift"><code>StructValue.lift</code></a></p>
@@ -5060,7 +6233,7 @@ details on using named table expressions in a SQL string.</p>
 <span class="gp">... </span>    <span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">),</span>
 <span class="gp">... </span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
-<span class="go">UnboundTable[t]</span>
+<span class="go">UnboundTable: t</span>
 <span class="go">  foo string</span>
 <span class="go">  bar string</span>
 <span class="go">  baz float64</span>
@@ -5068,15 +6241,15 @@ details on using named table expressions in a SQL string.</p>
 <span class="gp">... </span>         <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">))</span>
 <span class="gp">... </span>         <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">qux</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">baz</span><span class="o">.</span><span class="n">lag</span><span class="p">(),</span> <span class="n">qux2</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">baz</span><span class="o">.</span><span class="n">lead</span><span class="p">()))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-<span class="go">r0 := UnboundTable[t]</span>
+<span class="go">r0 := UnboundTable: t</span>
 <span class="go">  foo string</span>
 <span class="go">  bar string</span>
 <span class="go">  baz float64</span>
 <span class="go">Selection[r0]</span>
 <span class="go">  selections:</span>
 <span class="go">    r0</span>
-<span class="go">    qux:  Window(Lag(r0.baz), window=Window(group_by=[r0.foo], order_by=[desc|r0.bar], how=&#39;rows&#39;))</span>
-<span class="go">    qux2: Window(Lead(r0.baz), window=Window(group_by=[r0.foo], order_by=[desc|r0.bar], how=&#39;rows&#39;))</span>
+<span class="go">    qux:  WindowFunction(...)</span>
+<span class="go">    qux2: WindowFunction(...)</span>
 </code></pre></div>
 
   <p><strong>Returns:</strong></p>
