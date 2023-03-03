@@ -262,7 +262,7 @@ ibis.expr.operations.temporal.IntervalMultiply,True,False,True,False,False,False
 ibis.expr.operations.temporal.IntervalSubtract,False,False,True,False,False,True,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.temporal.Strftime,True,True,True,False,False,True,True,False,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.StringToTimestamp,True,False,False,False,False,True,False,False,True,False,True,False,True,True,False,True
-ibis.expr.operations.temporal.Time,True,False,True,False,False,False,False,False,False,True,True,False,False,False,True,False
+ibis.expr.operations.temporal.Time,True,False,True,False,True,True,False,True,True,True,True,True,False,True,True,True
 ibis.expr.operations.temporal.TimeAdd,False,False,True,False,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.TimeDiff,False,False,True,False,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.TimeFromHMS,True,False,False,False,True,True,False,True,True,False,False,True,False,True,True,True
