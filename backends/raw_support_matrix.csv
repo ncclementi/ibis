@@ -153,7 +153,7 @@ ibis.expr.operations.numeric.IsInf,True,True,True,False,False,True,True,False,Fa
 ibis.expr.operations.numeric.IsNan,True,True,True,False,False,True,True,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.numeric.Ln,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Log,True,True,True,False,False,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.numeric.Log10,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.numeric.Log10,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Log2,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Modulus,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.numeric.Multiply,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
