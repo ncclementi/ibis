@@ -3119,17 +3119,17 @@ input a column is returned, otherwise a table is returned.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">:</span><span class="s2">&quot;body_mass_g&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓</span>
-<span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃</span>
-<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩</span>
-<span class="go">│ float64        │ float64       │ int64             │</span>
-<span class="go">├────────────────┼───────────────┼───────────────────┤</span>
-<span class="go">│           39.1 │          18.7 │               181 │</span>
-<span class="go">│           39.5 │          17.4 │               186 │</span>
-<span class="go">│           40.3 │          18.0 │               195 │</span>
-<span class="go">│            nan │           nan │                 ∅ │</span>
-<span class="go">│           36.7 │          19.3 │               193 │</span>
-<span class="go">└────────────────┴───────────────┴───────────────────┘</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓</span>
+<span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64        │ float64       │ int64             │ int64       │</span>
+<span class="go">├────────────────┼───────────────┼───────────────────┼─────────────┤</span>
+<span class="go">│           39.1 │          18.7 │               181 │        3750 │</span>
+<span class="go">│           39.5 │          17.4 │               186 │        3800 │</span>
+<span class="go">│           40.3 │          18.0 │               195 │        3250 │</span>
+<span class="go">│            nan │           nan │                 ∅ │           ∅ │</span>
+<span class="go">│           36.7 │          19.3 │               193 │        3450 │</span>
+<span class="go">└────────────────┴───────────────┴───────────────────┴─────────────┘</span>
 </code></pre></div>
 
   </div>
