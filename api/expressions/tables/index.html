@@ -3911,9 +3911,9 @@ columns.</p></td>
         <tr>
           <td><code>fields</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.selectors.Selector">Selector</span></code>
           </td>
-          <td><p>Fields to drop</p></td>
+          <td><p>Fields to drop. Strings and selectors are accepted.</p></td>
           <td>
                 <code>()</code>
           </td>
@@ -3934,7 +3934,7 @@ columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A table with all columns in <code>fields</code> removed.</p></td>
+          <td><p>A table with all columns matching <code>fields</code> removed.</p></td>
         </tr>
     </tbody>
   </table>
@@ -3961,7 +3961,9 @@ columns.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
 <span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Drop one or more columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
 <span class="go">┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
 <span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
@@ -3972,13 +3974,34 @@ columns.</p></td>
 <span class="go">│ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
 <span class="go">│ Torgersen │            nan │           nan │                 ∅ │ … │</span>
 <span class="go">│ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
-<span class="go">│ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
-<span class="go">│ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
-<span class="go">│ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
-<span class="go">│ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
-<span class="go">│ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
-<span class="go">│ …         │              … │             … │                 … │ … │</span>
 <span class="go">└───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━┓</span>
+<span class="go">┃ island    ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━┩</span>
+<span class="go">│ string    │ float64       │ int64             │ int64       │ string │ … │</span>
+<span class="go">├───────────┼───────────────┼───────────────────┼─────────────┼────────┼───┤</span>
+<span class="go">│ Torgersen │          18.7 │               181 │        3750 │ male   │ … │</span>
+<span class="go">│ Torgersen │          17.4 │               186 │        3800 │ female │ … │</span>
+<span class="go">│ Torgersen │          18.0 │               195 │        3250 │ female │ … │</span>
+<span class="go">│ Torgersen │           nan │                 ∅ │           ∅ │ ∅      │ … │</span>
+<span class="go">│ Torgersen │          19.3 │               193 │        3450 │ female │ … │</span>
+<span class="go">└───────────┴───────────────┴───────────────────┴─────────────┴────────┴───┘</span>
+</code></pre></div>
+    <p>Drop with selectors, mix and match</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;bill_&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ island    ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string    │ int64             │ int64       │ string │ int64 │</span>
+<span class="go">├───────────┼───────────────────┼─────────────┼────────┼───────┤</span>
+<span class="go">│ Torgersen │               181 │        3750 │ male   │  2007 │</span>
+<span class="go">│ Torgersen │               186 │        3800 │ female │  2007 │</span>
+<span class="go">│ Torgersen │               195 │        3250 │ female │  2007 │</span>
+<span class="go">│ Torgersen │                 ∅ │           ∅ │ ∅      │  2007 │</span>
+<span class="go">│ Torgersen │               193 │        3450 │ female │  2007 │</span>
+<span class="go">└───────────┴───────────────────┴─────────────┴────────┴───────┘</span>
 </code></pre></div>
 
   </div>
@@ -4225,7 +4248,7 @@ passed as a scalar all columns are filled with that value.</p></td>
         <tr>
           <td><code>predicates</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>]</code>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | <span title="ibis.expr.selectors.IfAnyAll">IfAnyAll</span></code>
           </td>
           <td><p>Boolean value expressions used to select rows in <code>table</code>.</p></td>
           <td>
