@@ -4507,38 +4507,14 @@ passed as a scalar all columns are filled with that value.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.info" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">info</span><span class="p">(</span><span class="n">buf</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">info</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.relations.Table.info" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
-      <p>Show summary information about a table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>buf</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.IO" href="https://docs.python.org/3/library/typing.html#typing.IO">IO</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
-          </td>
-          <td><p>A writable buffer, defaults to stdout</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      <p>Return summary information about a table.</p>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4551,9 +4527,9 @@ passed as a scalar all columns are filled with that value.</p></td>
     <tbody>
         <tr>
           <td>
-                <code>None</code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>This method prints to a buffer (stdout by default) and returns nothing.</p></td>
+          <td><p>Summary of <code>self</code></p></td>
         </tr>
     </tbody>
   </table>
@@ -4562,48 +4538,21 @@ passed as a scalar all columns are filled with that value.</p></td>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
-<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
-<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
-<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
-<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
-<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
-<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
-<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
-<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
-</code></pre></div>
-    <p>Default implementation prints to stdout</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-<span class="go">                       Summary of penguins</span>
-<span class="go">                             344 rows</span>
-<span class="go">┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓</span>
-<span class="go">┃ Name              ┃ Type                   ┃ # Nulls ┃ % Nulls ┃</span>
-<span class="go">┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━┩</span>
-<span class="go">│ species           │ String(nullable=True)  │       0 │    0.00 │</span>
-<span class="go">│ island            │ String(nullable=True)  │       0 │    0.00 │</span>
-<span class="go">│ bill_length_mm    │ Float64(nullable=True) │       2 │    0.58 │</span>
-<span class="go">│ bill_depth_mm     │ Float64(nullable=True) │       2 │    0.58 │</span>
-<span class="go">│ flipper_length_mm │ Int64(nullable=True)   │       2 │    0.58 │</span>
-<span class="go">│ body_mass_g       │ Int64(nullable=True)   │       2 │    0.58 │</span>
-<span class="go">│ sex               │ String(nullable=True)  │      11 │    3.20 │</span>
-<span class="go">│ year              │ Int64(nullable=True)   │       0 │    0.00 │</span>
-<span class="go">└───────────────────┴────────────────────────┴─────────┴─────────┘</span>
-</code></pre></div>
-    <p>Store the info into a buffer</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">buf</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Summary of penguins&quot;</span> <span class="ow">in</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
-<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ name              ┃ type    ┃ nullable ┃ nulls ┃ non_nulls ┃ null_frac ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string            │ string  │ boolean  │ int64 │ int64     │ float64   │ … │</span>
+<span class="go">├───────────────────┼─────────┼──────────┼───────┼───────────┼───────────┼───┤</span>
+<span class="go">│ species           │ string  │ True     │     0 │       344 │  0.000000 │ … │</span>
+<span class="go">│ island            │ string  │ True     │     0 │       344 │  0.000000 │ … │</span>
+<span class="go">│ bill_length_mm    │ float64 │ True     │     2 │       342 │  0.005814 │ … │</span>
+<span class="go">│ bill_depth_mm     │ float64 │ True     │     2 │       342 │  0.005814 │ … │</span>
+<span class="go">│ flipper_length_mm │ int64   │ True     │     2 │       342 │  0.005814 │ … │</span>
+<span class="go">│ body_mass_g       │ int64   │ True     │     2 │       342 │  0.005814 │ … │</span>
+<span class="go">│ sex               │ string  │ True     │    11 │       333 │  0.031977 │ … │</span>
+<span class="go">│ year              │ int64   │ True     │     0 │       344 │  0.000000 │ … │</span>
+<span class="go">└───────────────────┴─────────┴──────────┴───────┴───────────┴───────────┴───┘</span>
 </code></pre></div>
 
   </div>
