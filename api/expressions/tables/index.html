@@ -1227,6 +1227,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.cache" class="md-nav__link">
+    cache()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.count" class="md-nav__link">
     count()
   </a>
@@ -2306,6 +2313,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.asof_join" class="md-nav__link">
     asof_join()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.cache" class="md-nav__link">
+    cache()
   </a>
   
 </li>
@@ -3494,6 +3508,96 @@ columns.</p></td>
         </tr>
     </tbody>
   </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.cache" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">cache</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.relations.Table.cache" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Cache the provided expression.</p>
+<p>All subsequent operations on the returned expression will be performed on the cached data.
+ You may use the <code>with</code> statement to explicitly clean up the cached expression when it's not needed.</p>
+<div class="admonition note">
+<p class="admonition-title">This method eagerly evaluates the expression prior to caching</p>
+</div>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>Cached table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cached_penguins</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">computation</span><span class="o">=</span><span class="s2">&quot;Heavy Computation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cached_penguins</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>Explicit cache cleanup</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">computation</span><span class="o">=</span><span class="s2">&quot;Heavy Computation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span> <span class="k">as</span> <span class="n">cached_penguins</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">cached_penguins</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
 
   </div>
 
