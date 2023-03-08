@@ -1379,6 +1379,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.pivot_longer" class="md-nav__link">
+    pivot_longer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.relabel" class="md-nav__link">
     relabel()
   </a>
@@ -2472,6 +2479,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.order_by" class="md-nav__link">
     order_by()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.pivot_longer" class="md-nav__link">
+    pivot_longer()
   </a>
   
 </li>
@@ -5309,6 +5323,339 @@ columns.</p></td>
 <span class="go">│     3 │ a      │     5 │</span>
 <span class="go">│     1 │ c      │     4 │</span>
 <span class="go">└───────┴────────┴───────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.pivot_longer" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pivot_longer</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">names_to</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">names_pattern</span><span class="o">=</span><span class="s1">&#39;(.+)&#39;</span><span class="p">,</span> <span class="n">names_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values_to</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">values_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.pivot_longer" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Transform a table from wider to longer.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>cols</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span></code>
+          </td>
+          <td><p>String column names or selectors.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td><p>A string or iterable of strings indicating how to name the new
+pivoted columns.</p></td>
+          <td>
+                <code>&#39;name&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_pattern</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/re.html#module-re">re</a>.<span title="re.Pattern">Pattern</span></code>
+          </td>
+          <td><p>Pattern to use to extract column names from the input. By default
+the entire column name is extracted.</p></td>
+          <td>
+                <code>&#39;(.+)&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_transform</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]] | None</code>
+          </td>
+          <td><p>Function or mapping of a name in <code>names_to</code> to a function to
+transform a column name to a value.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>values_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Name of the pivoted value column.</p></td>
+          <td>
+                <code>&#39;value&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>values_transform</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | <span title="ibis.expr.deferred.Deferred">Deferred</span> | None</code>
+          </td>
+          <td><p>Apply a function to the value column. This can be a lambda or
+deferred expression.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>Pivoted table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <p>Basic usage</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relig_income</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">relig_income_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relig_income</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ religion                ┃ &lt;$10k ┃ $10-20k ┃ $20-30k ┃ $30-40k ┃ $40-50k ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string                  │ int64 │ int64   │ int64   │ int64   │ int64   │ … │</span>
+<span class="go">├─────────────────────────┼───────┼─────────┼─────────┼─────────┼─────────┼───┤</span>
+<span class="go">│ Agnostic                │    27 │      34 │      60 │      81 │      76 │ … │</span>
+<span class="go">│ Atheist                 │    12 │      27 │      37 │      52 │      35 │ … │</span>
+<span class="go">│ Buddhist                │    27 │      21 │      30 │      34 │      33 │ … │</span>
+<span class="go">│ Catholic                │   418 │     617 │     732 │     670 │     638 │ … │</span>
+<span class="go">│ Don’t know/refused      │    15 │      14 │      15 │      11 │      10 │ … │</span>
+<span class="go">│ Evangelical Prot        │   575 │     869 │    1064 │     982 │     881 │ … │</span>
+<span class="go">│ Hindu                   │     1 │       9 │       7 │       9 │      11 │ … │</span>
+<span class="go">│ Historically Black Prot │   228 │     244 │     236 │     238 │     197 │ … │</span>
+<span class="go">│ Jehovah&#39;s Witness       │    20 │      27 │      24 │      24 │      21 │ … │</span>
+<span class="go">│ Jewish                  │    19 │      19 │      25 │      25 │      30 │ … │</span>
+<span class="go">│ …                       │     … │       … │       … │       … │       … │ … │</span>
+<span class="go">└─────────────────────────┴───────┴─────────┴─────────┴─────────┴─────────┴───┘</span>
+</code></pre></div>
+    <p>Here we convert column names not matching the selector for the <code>religion</code> column
+and convert those names into values</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">relig_income</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span><span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;religion&quot;</span><span class="p">),</span> <span class="n">names_to</span><span class="o">=</span><span class="s2">&quot;income&quot;</span><span class="p">,</span> <span class="n">values_to</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ religion ┃ income             ┃ count ┃</span>
+<span class="go">┡━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string   │ string             │ int64 │</span>
+<span class="go">├──────────┼────────────────────┼───────┤</span>
+<span class="go">│ Agnostic │ &lt;$10k              │    27 │</span>
+<span class="go">│ Agnostic │ $10-20k            │    34 │</span>
+<span class="go">│ Agnostic │ $20-30k            │    60 │</span>
+<span class="go">│ Agnostic │ $30-40k            │    81 │</span>
+<span class="go">│ Agnostic │ $40-50k            │    76 │</span>
+<span class="go">│ Agnostic │ $50-75k            │   137 │</span>
+<span class="go">│ Agnostic │ $75-100k           │   122 │</span>
+<span class="go">│ Agnostic │ $100-150k          │   109 │</span>
+<span class="go">│ Agnostic │ &gt;150k              │    84 │</span>
+<span class="go">│ Agnostic │ Don&#39;t know/refused │    96 │</span>
+<span class="go">│ …        │ …                  │     … │</span>
+<span class="go">└──────────┴────────────────────┴───────┘</span>
+</code></pre></div>
+    <p>Simliarly for a different example dataset, we convert names to values
+but using a different selector and the default <code>values_to</code> value.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">world_bank_pop</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">world_bank_pop_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">world_bank_pop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ country ┃ indicator   ┃ 2000         ┃ 2001         ┃ 2002         ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string      │ float64      │ float64      │ float64      │ … │</span>
+<span class="go">├─────────┼─────────────┼──────────────┼──────────────┼──────────────┼───┤</span>
+<span class="go">│ ABW     │ SP.URB.TOTL │ 4.244400e+04 │ 4.304800e+04 │ 4.367000e+04 │ … │</span>
+<span class="go">│ ABW     │ SP.URB.GROW │ 1.182632e+00 │ 1.413021e+00 │ 1.434560e+00 │ … │</span>
+<span class="go">│ ABW     │ SP.POP.TOTL │ 9.085300e+04 │ 9.289800e+04 │ 9.499200e+04 │ … │</span>
+<span class="go">│ ABW     │ SP.POP.GROW │ 2.055027e+00 │ 2.225930e+00 │ 2.229056e+00 │ … │</span>
+<span class="go">│ AFG     │ SP.URB.TOTL │ 4.436299e+06 │ 4.648055e+06 │ 4.892951e+06 │ … │</span>
+<span class="go">└─────────┴─────────────┴──────────────┴──────────────┴──────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">world_bank_pop</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="p">),</span> <span class="n">names_to</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┓</span>
+<span class="go">┃ country ┃ indicator   ┃ year   ┃ value   ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━┩</span>
+<span class="go">│ string  │ string      │ string │ float64 │</span>
+<span class="go">├─────────┼─────────────┼────────┼─────────┤</span>
+<span class="go">│ ABW     │ SP.URB.TOTL │ 2000   │ 42444.0 │</span>
+<span class="go">│ ABW     │ SP.URB.TOTL │ 2001   │ 43048.0 │</span>
+<span class="go">│ ABW     │ SP.URB.TOTL │ 2002   │ 43670.0 │</span>
+<span class="go">│ ABW     │ SP.URB.TOTL │ 2003   │ 44246.0 │</span>
+<span class="go">│ ABW     │ SP.URB.TOTL │ 2004   │ 44669.0 │</span>
+<span class="go">└─────────┴─────────────┴────────┴─────────┘</span>
+</code></pre></div>
+    <p><code>pivot_longer</code> has some preprocessing capabiltiies like stripping a prefix and applying
+a function to column names</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">billboard</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">billboard</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">billboard</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━┓</span>
+<span class="go">┃ artist         ┃ track                   ┃ date_entered ┃ wk1   ┃ wk2   ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━┩</span>
+<span class="go">│ string         │ string                  │ date         │ int64 │ int64 │ … │</span>
+<span class="go">├────────────────┼─────────────────────────┼──────────────┼───────┼───────┼───┤</span>
+<span class="go">│ 2 Pac          │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    87 │    82 │ … │</span>
+<span class="go">│ 2Ge+her        │ The Hardest Part Of ... │ 2000-09-02   │    91 │    87 │ … │</span>
+<span class="go">│ 3 Doors Down   │ Kryptonite              │ 2000-04-08   │    81 │    70 │ … │</span>
+<span class="go">│ 3 Doors Down   │ Loser                   │ 2000-10-21   │    76 │    76 │ … │</span>
+<span class="go">│ 504 Boyz       │ Wobble Wobble           │ 2000-04-15   │    57 │    34 │ … │</span>
+<span class="go">│ 98^0           │ Give Me Just One Nig... │ 2000-08-19   │    51 │    39 │ … │</span>
+<span class="go">│ A*Teens        │ Dancing Queen           │ 2000-07-08   │    97 │    97 │ … │</span>
+<span class="go">│ Aaliyah        │ I Don&#39;t Wanna           │ 2000-01-29   │    84 │    62 │ … │</span>
+<span class="go">│ Aaliyah        │ Try Again               │ 2000-03-18   │    59 │    53 │ … │</span>
+<span class="go">│ Adams, Yolanda │ Open My Heart           │ 2000-08-26   │    76 │    76 │ … │</span>
+<span class="go">│ …              │ …                       │ …            │     … │     … │ … │</span>
+<span class="go">└────────────────┴─────────────────────────┴──────────────┴───────┴───────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">billboard</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;wk&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">names_to</span><span class="o">=</span><span class="s2">&quot;week&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">names_pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;wk(.+)&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">names_transform</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_to</span><span class="o">=</span><span class="s2">&quot;rank&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_transform</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="s2">&quot;rank&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ artist  ┃ track                   ┃ date_entered ┃ week ┃ rank  ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string  │ string                  │ date         │ int8 │ int64 │</span>
+<span class="go">├─────────┼─────────────────────────┼──────────────┼──────┼───────┤</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    1 │    87 │</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    2 │    82 │</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    3 │    72 │</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    4 │    77 │</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    5 │    87 │</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    6 │    94 │</span>
+<span class="go">│ 2 Pac   │ Baby Don&#39;t Cry (Keep... │ 2000-02-26   │    7 │    99 │</span>
+<span class="go">│ 2Ge+her │ The Hardest Part Of ... │ 2000-09-02   │    1 │    91 │</span>
+<span class="go">│ 2Ge+her │ The Hardest Part Of ... │ 2000-09-02   │    2 │    87 │</span>
+<span class="go">│ 2Ge+her │ The Hardest Part Of ... │ 2000-09-02   │    3 │    92 │</span>
+<span class="go">│ …       │ …                       │ …            │    … │     … │</span>
+<span class="go">└─────────┴─────────────────────────┴──────────────┴──────┴───────┘</span>
+</code></pre></div>
+    <p>You can use regular expression capture groups to extract multiple
+variables stored in column names</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">who</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">who</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">who</span>
+<span class="go">┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ country     ┃ iso2   ┃ iso3   ┃ year  ┃ new_sp_m014 ┃ new_sp_m1524 ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string      │ string │ string │ int64 │ int64       │ int64        │ … │</span>
+<span class="go">├─────────────┼────────┼────────┼───────┼─────────────┼──────────────┼───┤</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1981 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1982 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1983 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1984 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1985 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1986 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1987 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1988 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1989 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ …           │ …      │ …      │     … │           … │            … │ … │</span>
+<span class="go">└─────────────┴────────┴────────┴───────┴─────────────┴──────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">who</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="go">60</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">who</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;new_sp_m014&quot;</span><span class="p">:</span><span class="s2">&quot;newrel_f65&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names_to</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;diagnosis&quot;</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names_pattern</span><span class="o">=</span><span class="s2">&quot;new_?(.*)_(.)(.*)&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_to</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ country     ┃ iso2   ┃ iso3   ┃ year  ┃ diagnosis ┃ gender ┃ age    ┃ count ┃</span>
+<span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string      │ string │ string │ int64 │ string    │ string │ string │ int64 │</span>
+<span class="go">├─────────────┼────────┼────────┼───────┼───────────┼────────┼────────┼───────┤</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 014    │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 1524   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 2534   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 3544   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 4554   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 5564   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 65     │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 014    │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 1524   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 2534   │     ∅ │</span>
+<span class="go">│ …           │ …      │ …      │     … │ …         │ …      │ …      │     … │</span>
+<span class="go">└─────────────┴────────┴────────┴───────┴───────────┴────────┴────────┴───────┘</span>
+</code></pre></div>
+    <p><code>names_transform</code> is flexible, and can be:</p>
+<div class="highlight"><pre><span></span><code>1. A mapping of one or more names in `names_to` to callable
+2. A callable that will be applied to every name
+</code></pre></div>
+<p>Let's recode gender and age to numeric values using a mapping</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">who</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;new_sp_m014&quot;</span><span class="p">:</span><span class="s2">&quot;newrel_f65&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names_to</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;diagnosis&quot;</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names_pattern</span><span class="o">=</span><span class="s2">&quot;new_?(.*)_(.)(.*)&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">names_transform</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">gender</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">age</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;014&quot;</span><span class="p">,</span> <span class="s2">&quot;1524&quot;</span><span class="p">,</span> <span class="s2">&quot;2534&quot;</span><span class="p">,</span> <span class="s2">&quot;3544&quot;</span><span class="p">,</span> <span class="s2">&quot;4554&quot;</span><span class="p">,</span> <span class="s2">&quot;5564&quot;</span><span class="p">,</span> <span class="s2">&quot;65&quot;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span><span class="o">.</span><span class="n">get</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span>    <span class="n">values_to</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┳━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ country     ┃ iso2   ┃ iso3   ┃ year  ┃ diagnosis ┃ gender ┃ age  ┃ count ┃</span>
+<span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string      │ string │ string │ int64 │ string    │ int8   │ int8 │ int64 │</span>
+<span class="go">├─────────────┼────────┼────────┼───────┼───────────┼────────┼──────┼───────┤</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    0 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    1 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    2 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    3 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    4 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    5 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    6 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    0 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    1 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    2 │     ∅ │</span>
+<span class="go">│ …           │ …      │ …      │     … │ …         │      … │    … │     … │</span>
+<span class="go">└─────────────┴────────┴────────┴───────┴───────────┴────────┴──────┴───────┘</span>
+</code></pre></div>
+    <p>The number of match groups in <code>names_pattern</code> must match the length of <code>names_to</code></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">who</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;new_sp_m014&quot;</span><span class="p">:</span><span class="s2">&quot;newrel_f65&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names_to</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;diagnosis&quot;</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names_pattern</span><span class="o">=</span><span class="s2">&quot;new_?(.*)_.(.*)&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">  </span><span class="c">...</span>
+<span class="gr">ibis.common.exceptions.IbisInputError</span>: <span class="n">Number of match groups in `names_pattern` ...</span>
+</code></pre></div>
+    <p><code>names_transform</code> must be a mapping or callable</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">who</span><span class="o">.</span><span class="n">pivot_longer</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;new_sp_m014&quot;</span><span class="p">:</span><span class="s2">&quot;newrel_f65&quot;</span><span class="p">],</span> <span class="n">names_transform</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">  </span><span class="c">...</span>
+<span class="gr">ibis.common.exceptions.IbisTypeError</span>: <span class="n">... Got &lt;class &#39;str&#39;&gt;</span>
 </code></pre></div>
 
   </div>
