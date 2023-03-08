@@ -1234,6 +1234,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.cast" class="md-nav__link">
+    cast()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.count" class="md-nav__link">
     count()
   </a>
@@ -2320,6 +2327,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.cache" class="md-nav__link">
     cache()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.cast" class="md-nav__link">
+    cast()
   </a>
   
 </li>
@@ -3597,6 +3611,123 @@ columns.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
 <span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.cast" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">cast</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.cast" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Cast the columns of a table.</p>
+<div class="admonition note">
+<p class="admonition-title">If you need to cast columns to a single type, use <a href="https://ibis-project.org/blog/selectors/">selectors</a>.</p>
+</div>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>schema</code></td>
+          <td>
+                <code><span title="ibis.common.typing.SupportsSchema">SupportsSchema</span></code>
+          </td>
+          <td><p>Mapping, schema or iterable of pairs to use for casting</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>Casted table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
+<span class="go">ibis.Schema {</span>
+<span class="go">  species            string</span>
+<span class="go">  island             string</span>
+<span class="go">  bill_length_mm     float64</span>
+<span class="go">  bill_depth_mm      float64</span>
+<span class="go">  flipper_length_mm  int64</span>
+<span class="go">  body_mass_g        int64</span>
+<span class="go">  sex                string</span>
+<span class="go">  year               int64</span>
+<span class="go">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;body_mass_g&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ body_mass_g ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64       │ float64        │</span>
+<span class="go">├─────────────┼────────────────┤</span>
+<span class="go">│        3750 │           39.1 │</span>
+<span class="go">│        3800 │           39.5 │</span>
+<span class="go">│        3250 │           40.3 │</span>
+<span class="go">│           ∅ │            nan │</span>
+<span class="go">│        3450 │           36.7 │</span>
+<span class="go">└─────────────┴────────────────┘</span>
+</code></pre></div>
+    <p>Columns not present in the input schema will be passed through unchanged</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;species&#39;, &#39;island&#39;, &#39;bill_length_mm&#39;, &#39;bill_depth_mm&#39;, &#39;flipper_length_mm&#39;, &#39;body_mass_g&#39;, &#39;sex&#39;, &#39;year&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">cast</span><span class="p">({</span><span class="s2">&quot;body_mass_g&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">*</span><span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ body_mass_g ┃ bill_length_mm ┃</span>
+<span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │ int64          │</span>
+<span class="go">├─────────────┼────────────────┤</span>
+<span class="go">│      3750.0 │             39 │</span>
+<span class="go">│      3800.0 │             40 │</span>
+<span class="go">│      3250.0 │             40 │</span>
+<span class="go">│         nan │              ∅ │</span>
+<span class="go">│      3450.0 │             37 │</span>
+<span class="go">└─────────────┴────────────────┘</span>
+</code></pre></div>
+    <p>Columns that are in the input <code>schema</code> but not in the table raise an error</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">cast</span><span class="p">({</span><span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ibis.common.exceptions.IbisError</span>: <span class="n">Cast schema has fields that are not in the table: [&#39;foo&#39;]</span>
 </code></pre></div>
 
   </div>
