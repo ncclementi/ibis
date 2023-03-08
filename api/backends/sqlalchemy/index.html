@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../blog/selectors/" class="md-tabs__link">
+      <a href="../../../blog/ibis-examples/" class="md-tabs__link">
         Blog
       </a>
     </li>
@@ -1598,6 +1598,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -1611,6 +1613,20 @@
           Blog
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/ibis-examples/" class="md-nav__link">
+        Ibis Sneak Peek: Examples
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2110,7 +2126,7 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table name to create</p></td>
+          <td><p>Name of the new table.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2120,7 +2136,9 @@
           <td>
                 <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
           </td>
-          <td><p>DataFrame or table expression to use as the data source</p></td>
+          <td><p>An Ibis table expression or pandas table that will be used to
+extract the schema and the data of the new table. If not provided,
+<code>schema</code> must be given.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2130,7 +2148,8 @@
           <td>
                 <code><span title="ibis.expr.schema">sch</span>.<a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="../../schemas/#ibis.expr.schema.Schema">Schema</a> | None</code>
           </td>
-          <td><p>An ibis schema</p></td>
+          <td><p>The schema for the new table. Only one of <code>schema</code> or <code>obj</code> can be
+provided.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2140,7 +2159,8 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>A database</p></td>
+          <td><p>Name of the database where the table will be created, if not the
+default.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2164,6 +2184,24 @@
           <td>
                 <code>False</code>
           </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Table</code>
+          </td>
+          <td><p>The table that was created.</p></td>
         </tr>
     </tbody>
   </table>
