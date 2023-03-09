@@ -3570,10 +3570,16 @@ columns.</p></td>
   <div class="doc doc-contents ">
   
       <p>Cache the provided expression.</p>
-<p>All subsequent operations on the returned expression will be performed on the cached data.
- You may use the <code>with</code> statement to explicitly clean up the cached expression when it's not needed.</p>
+<p>All subsequent operations on the returned expression will be performed
+on the cached data. Use the
+<a href="https://docs.python.org/3/reference/compound_stmts.html#with"><code>with</code></a>
+statement to limit the lifetime of a cached table.</p>
+<p>This method is idempotent: calling it multiple times in succession will
+return the same value as the first call.</p>
 <div class="admonition note">
 <p class="admonition-title">This method eagerly evaluates the expression prior to caching</p>
+<p>Subsequent evaluations will not recompute the expression so method
+chaining will not incur the overhead of caching more than once.</p>
 </div>
 
   <p><strong>Returns:</strong></p>
@@ -3619,10 +3625,7 @@ columns.</p></td>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 </code></pre></div>
     <p>Explicit cache cleanup</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">computation</span><span class="o">=</span><span class="s2">&quot;Heavy Computation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span> <span class="k">as</span> <span class="n">cached_penguins</span><span class="p">:</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">computation</span><span class="o">=</span><span class="s2">&quot;Heavy Computation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span> <span class="k">as</span> <span class="n">cached_penguins</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">cached_penguins</span>
 <span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
 <span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
