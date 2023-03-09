@@ -2292,6 +2292,7 @@ possible configuration values.</p></td>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;database.ddb&quot;</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">memory_limit</span><span class="o">=</span><span class="s2">&quot;1GB&quot;</span><span class="p">)</span>
+<span class="go">&lt;ibis.backends.duckdb.Backend object at ...&gt;</span>
 </code></pre></div>
 
   </div>
@@ -2799,8 +2800,14 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb://&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">read_sqlite</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.db&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">read_sqlite</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.db&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;diamonds&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="go">        carat      cut color clarity  depth  table  price     x     y     z</span>
+<span class="go">    0   0.23    Ideal     E     SI2   61.5   55.0    326  3.95  3.98  2.43</span>
+<span class="go">    1   0.21  Premium     E     SI1   59.8   61.0    326  3.89  3.84  2.31</span>
+<span class="go">    2   0.23     Good     E     VS1   56.9   65.0    327  4.05  4.07  2.31</span>
+<span class="go">    3   0.29  Premium     I     VS2   62.4   58.0    334  4.20  4.23  2.63</span>
+<span class="go">    4   0.31     Good     J     SI2   63.3   58.0    335  4.34  4.35  2.75</span>
 </code></pre></div>
 
   </div>
@@ -3048,6 +3055,22 @@ details</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <p>Write out an expression to a single parquet file.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> <span class="s2">&quot;penguins.parquet&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Write out an expression to a hive-partitioned parquet file.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> <span class="s2">&quot;penguins_hive_dir&quot;</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># partition on multiple columns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> <span class="s2">&quot;penguins_hive_dir&quot;</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">))</span>
+</code></pre></div>
 
   </div>
 

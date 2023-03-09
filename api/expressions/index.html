@@ -2450,6 +2450,24 @@ immediately.</p>
   </table>
       
 
+<p><strong>Examples:</strong></p>
+    <p>Write out an expression to a single parquet file.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s2">&quot;penguins.parquet&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Write out an expression to a hive-partitioned parquet file.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># partition on single column</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s2">&quot;penguins_hive_dir&quot;</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># partition on multiple columns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s2">&quot;penguins_hive_dir&quot;</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">))</span>
+</code></pre></div>
+    <div class="admonition note">
+<p class="admonition-title">Hive-partitioned output is currently only supported when using DuckDB</p>
+</div>
+
   </div>
 
 </div>
