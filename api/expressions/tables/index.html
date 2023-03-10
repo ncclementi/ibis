@@ -1259,6 +1259,19 @@
     difference()
   </a>
   
+    <nav class="md-nav" aria-label="difference()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.difference--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1334,6 +1347,19 @@
   <a href="#ibis.expr.types.relations.Table.intersect" class="md-nav__link">
     intersect()
   </a>
+  
+    <nav class="md-nav" aria-label="intersect()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.intersect--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1445,6 +1471,19 @@
   <a href="#ibis.expr.types.relations.Table.union" class="md-nav__link">
     union()
   </a>
+  
+    <nav class="md-nav" aria-label="union()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.union--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2396,6 +2435,19 @@
     difference()
   </a>
   
+    <nav class="md-nav" aria-label="difference()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.difference--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2471,6 +2523,19 @@
   <a href="#ibis.expr.types.relations.Table.intersect" class="md-nav__link">
     intersect()
   </a>
+  
+    <nav class="md-nav" aria-label="intersect()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.intersect--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2582,6 +2647,19 @@
   <a href="#ibis.expr.types.relations.Table.union" class="md-nav__link">
     union()
   </a>
+  
+    <nav class="md-nav" aria-label="union()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.union--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4050,6 +4128,8 @@ columns.</p></td>
         </tr>
     </tbody>
   </table>
+      <h6 id="ibis.expr.types.relations.Table.difference--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.difference--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="../top_level/#ibis.difference"><code>ibis.difference</code></a></p>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4100,6 +4180,30 @@ columns.</p></td>
 <span class="go">├───────┤</span>
 <span class="go">│     1 │</span>
 <span class="go">└───────┘</span>
+</code></pre></div>
+    <p>Passing no arguments to <code>difference</code> returns the table expression</p>
+<p>This can be useful when you have a sequence of tables to process, and
+you don't know the length prior to running your program (for example, user input).</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">difference</span><span class="p">()</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">difference</span><span class="p">()</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="go">True</span>
 </code></pre></div>
 
   </div>
@@ -4909,6 +5013,8 @@ passed as a scalar all columns are filled with that value.</p></td>
         </tr>
     </tbody>
   </table>
+      <h6 id="ibis.expr.types.relations.Table.intersect--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.intersect--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="../top_level/#ibis.intersect"><code>ibis.intersect</code></a></p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4941,6 +5047,30 @@ passed as a scalar all columns are filled with that value.</p></td>
 <span class="go">├───────┤</span>
 <span class="go">│     2 │</span>
 <span class="go">└───────┘</span>
+</code></pre></div>
+    <p>Passing no arguments to <code>intersect</code> returns the table expression.</p>
+<p>This can be useful when you have a sequence of tables to process, and
+you don't know the length prior to running your program (for example, user input).</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">intersect</span><span class="p">()</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">intersect</span><span class="p">()</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="go">True</span>
 </code></pre></div>
 
   </div>
@@ -6405,6 +6535,8 @@ details on using named table expressions in a SQL string.</p>
         </tr>
     </tbody>
   </table>
+      <h6 id="ibis.expr.types.relations.Table.union--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.union--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p><a class="autorefs autorefs-internal" href="../top_level/#ibis.union"><code>ibis.union</code></a></p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6450,6 +6582,30 @@ details on using named table expressions in a SQL string.</p>
 <span class="go">│     2 │</span>
 <span class="go">│     3 │</span>
 <span class="go">└───────┘</span>
+</code></pre></div>
+    <p>Passing no arguments to <code>union</code> returns the table expression</p>
+<p>This can be useful when you have a sequence of tables to process, and
+you don't know the length prior to running your program (for example, user input).</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">union</span><span class="p">()</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     2 │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">union</span><span class="p">()</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="go">True</span>
 </code></pre></div>
 
   </div>
