@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://ibis-project.org/ibis-for-sql-programmers/">
       
+      
+        <link rel="prev" href="../api/config/">
+      
+      
+        <link rel="next" href="../ibis-for-pandas-users/">
+      
       <link rel="icon" href="../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#009485">
-        
       
       
 
@@ -2565,6 +2566,7 @@
                   
 
 
+
 <script>
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -3602,7 +3604,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ibis-for-sql-programmers">Ibis for SQL Programmers<a class="anchor-link" href="#ibis-for-sql-programmers">&#182;</a></h1><p>Ibis provides a full-featured replacement for SQL
+<h1 id="Ibis-for-SQL-Programmers">Ibis for SQL Programmers<a class="anchor-link" href="#Ibis-for-SQL-Programmers">&#182;</a></h1><p>Ibis provides a full-featured replacement for SQL
 <code>SELECT</code> queries, but expressed with Python code that is:</p>
 <ul>
 <li>Type-checked and validated as you go. No more debugging cryptic
@@ -3617,7 +3619,8 @@ tailored for your analysis.</li>
 <p>We intend for all <code>SELECT</code> queries to be fully portable to Ibis.
 Coverage of other DDL statements (e.g. <code>CREATE TABLE</code> or <code>INSERT</code>) may
 vary from engine to engine.</p>
-<blockquote><p><strong>Note</strong>: If you find any SQL idioms or use cases in your work that
+<blockquote>
+<p><strong>Note</strong>: If you find any SQL idioms or use cases in your work that
 are not represented here, please reach out so we can add more to this
 guide!</p>
 </blockquote>
@@ -3668,7 +3671,7 @@ ibis.options.sql.default_limit = None</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="projections-selectaddremove-columns">Projections: select/add/remove columns<a class="anchor-link" href="#projections-selectaddremove-columns">&#182;</a></h2><p>All tables in Ibis are immutable. To select a subset of a table's
+<h2 id="Projections:-select/add/remove-columns">Projections: select/add/remove columns<a class="anchor-link" href="#Projections:-select/add/remove-columns">&#182;</a></h2><p>All tables in Ibis are immutable. To select a subset of a table's
 columns, or to add new columns, you must produce a new table by means of
 a <em>projection</em>.</p>
 
@@ -3718,9 +3721,7 @@ t</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
@@ -3883,9 +3884,7 @@ t</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4004,9 +4003,7 @@ ibis.show_sql(proj)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4033,7 +4030,7 @@ FROM my_data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="mutate-add-or-modify-columns-easily"><code>mutate</code>: Add or modify columns easily<a class="anchor-link" href="#mutate-add-or-modify-columns-easily">&#182;</a></h3><p>Since adding new columns or modifying existing columns is so common,
+<h3 id="mutate:-Add-or-modify-columns-easily"><code>mutate</code>: Add or modify columns easily<a class="anchor-link" href="#mutate:-Add-or-modify-columns-easily">&#182;</a></h3><p>Since adding new columns or modifying existing columns is so common,
 there is a convenience method <code>mutate</code>:</p>
 
 </div>
@@ -4121,9 +4118,7 @@ Python keywords to provide the name. Indeed:</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4196,9 +4191,7 @@ ibis.show_sql(mutated)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4225,7 +4218,7 @@ FROM my_data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="select-equivalent"><code>SELECT *</code> equivalent<a class="anchor-link" href="#select-equivalent">&#182;</a></h3><p>Especially in combination with relational joins, it's convenient to be
+<h3 id="SELECT-*-equivalent"><code>SELECT *</code> equivalent<a class="anchor-link" href="#SELECT-*-equivalent">&#182;</a></h3><p>Especially in combination with relational joins, it's convenient to be
 able to select all columns in a table using the <code>SELECT *</code> construct. To
 do this, use the table expression itself in a projection:</p>
 
@@ -4271,9 +4264,7 @@ ibis.show_sql(proj)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4345,9 +4336,7 @@ ibis.show_sql(proj)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4513,9 +4502,7 @@ joined = t.join(t2, t.one == t2.key)[t, diff]</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4545,8 +4532,8 @@ JOIN dim_table AS t1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="using-functions-in-projections">Using functions in projections<a class="anchor-link" href="#using-functions-in-projections">&#182;</a></h3><p>If you pass a function instead of a string or Ibis expression in any
-projection context, it will be invoked with the "parent" table as its
+<h3 id="Using-functions-in-projections">Using functions in projections<a class="anchor-link" href="#Using-functions-in-projections">&#182;</a></h3><p>If you pass a function instead of a string or Ibis expression in any
+projection context, it will be invoked with the &quot;parent&quot; table as its
 argument. This can help significantly when [composing complex operations.
 Consider this SQL:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="k">abs</span><span class="p">(</span><span class="n">the_sum</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mad</span>
@@ -4653,9 +4640,7 @@ Consider this SQL:</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4692,7 +4677,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="filtering-where">Filtering / <code>WHERE</code><a class="anchor-link" href="#filtering-where">&#182;</a></h2><p>You can add filter clauses to a table expression either by indexing with
+<h2 id="Filtering-/-WHERE">Filtering / <code>WHERE</code><a class="anchor-link" href="#Filtering-/-WHERE">&#182;</a></h2><p>You can add filter clauses to a table expression either by indexing with
 <code>[]</code> (like pandas) or use the <code>filter</code> method:</p>
 
 </div>
@@ -4737,9 +4722,7 @@ ibis.show_sql(filtered)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4813,9 +4796,7 @@ ibis.show_sql(filtered)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4891,9 +4872,7 @@ ibis.show_sql(filtered)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -4922,7 +4901,7 @@ WHERE
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="aggregation-group-by">Aggregation / <code>GROUP BY</code><a class="anchor-link" href="#aggregation-group-by">&#182;</a></h2><p>To aggregate a table, you need:</p>
+<h2 id="Aggregation-/-GROUP-BY">Aggregation / <code>GROUP BY</code><a class="anchor-link" href="#Aggregation-/-GROUP-BY">&#182;</a></h2><p>To aggregate a table, you need:</p>
 <ul>
 <li>Zero or more grouping expressions (these can be column names)</li>
 <li>One or more aggregation expressions</li>
@@ -5016,9 +4995,7 @@ row with your statistics of interest:</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
@@ -5076,9 +5053,7 @@ row with your statistics of interest:</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5151,9 +5126,7 @@ ibis.show_sql(agged3)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5182,7 +5155,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="non-trivial-grouping-keys">Non-trivial grouping keys<a class="anchor-link" href="#non-trivial-grouping-keys">&#182;</a></h3><p>You can use any expression (or function, like in projections) deriving
+<h3 id="Non-trivial-grouping-keys">Non-trivial grouping keys<a class="anchor-link" href="#Non-trivial-grouping-keys">&#182;</a></h3><p>You can use any expression (or function, like in projections) deriving
 from the table you are aggregating. The only constraint is that the
 expressions must be named. Let's look at an example:</p>
 
@@ -5330,9 +5303,7 @@ stats = events.group_by(keys).aggregate(
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5363,7 +5334,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="aggregates-considering-table-subsets">Aggregates considering table subsets<a class="anchor-link" href="#aggregates-considering-table-subsets">&#182;</a></h3><p>In analytics is it common to compare statistics from different subsets
+<h3 id="Aggregates-considering-table-subsets">Aggregates considering table subsets<a class="anchor-link" href="#Aggregates-considering-table-subsets">&#182;</a></h3><p>In analytics is it common to compare statistics from different subsets
 of a table. Let's consider a dataset containing people's name, age,
 gender, and nationality:</p>
 
@@ -5546,9 +5517,7 @@ the SQL expression that is correct for your query engine.</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5581,7 +5550,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="count-convenience-size"><code>count(*)</code> convenience: <code>size()</code><a class="anchor-link" href="#count-convenience-size">&#182;</a></h3><p>Computing group frequencies is so common that, like pandas, we have a
+<h3 id="count(*)-convenience:-size()"><code>count(*)</code> convenience: <code>size()</code><a class="anchor-link" href="#count(*)-convenience:-size()">&#182;</a></h3><p>Computing group frequencies is so common that, like pandas, we have a
 method <code>size</code> that is a shortcut for the <code>count(*)</code> idiom:</p>
 
 </div>
@@ -5626,9 +5595,7 @@ ibis.show_sql(freqs)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5658,7 +5625,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="frequency-table-convenience-value_counts">Frequency table convenience: <code>value_counts</code><a class="anchor-link" href="#frequency-table-convenience-value_counts">&#182;</a></h3><p>Consider the SQL idiom:</p>
+<h3 id="Frequency-table-convenience:-value_counts">Frequency table convenience: <code>value_counts</code><a class="anchor-link" href="#Frequency-table-convenience:-value_counts">&#182;</a></h3><p>Consider the SQL idiom:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">some_column_expression</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">table</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
@@ -5708,9 +5675,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5742,7 +5707,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="having-clause"><code>HAVING</code> clause<a class="anchor-link" href="#having-clause">&#182;</a></h3><p>The SQL <code>HAVING</code> clause enables you to filter the results of an
+<h3 id="HAVING-clause"><code>HAVING</code> clause<a class="anchor-link" href="#HAVING-clause">&#182;</a></h3><p>The SQL <code>HAVING</code> clause enables you to filter the results of an
 aggregation based on some group-wise condition holding true. For
 example, suppose we wanted to limit our analysis to groups containing at
 least 1000 observations:</p>
@@ -5803,9 +5768,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5835,7 +5798,7 @@ HAVING
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="sorting-order-by">Sorting / <code>ORDER BY</code><a class="anchor-link" href="#sorting-order-by">&#182;</a></h2><p>To sort a table, use the <code>order_by</code> method along with either column names
+<h2 id="Sorting-/-ORDER-BY">Sorting / <code>ORDER BY</code><a class="anchor-link" href="#Sorting-/-ORDER-BY">&#182;</a></h2><p>To sort a table, use the <code>order_by</code> method along with either column names
 or expressions that indicate the sorting keys:</p>
 
 </div>
@@ -5882,9 +5845,7 @@ ibis.show_sql(sorted)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5966,9 +5927,7 @@ ibis.show_sql(sorted)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -5999,7 +5958,7 @@ LIMIT 100
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="limit-and-offset"><code>LIMIT</code> and <code>OFFSET</code><a class="anchor-link" href="#limit-and-offset">&#182;</a></h2><p>This one is easy. The table <code>limit</code> function truncates a table to the
+<h2 id="LIMIT-and-OFFSET"><code>LIMIT</code> and <code>OFFSET</code><a class="anchor-link" href="#LIMIT-and-OFFSET">&#182;</a></h2><p>This one is easy. The table <code>limit</code> function truncates a table to the
 indicates number of rows. So if you only want the first 1000 rows (which
 may not be deterministic depending on the SQL engine), you can do:</p>
 
@@ -6045,9 +6004,7 @@ ibis.show_sql(limited)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6120,9 +6077,7 @@ ibis.show_sql(limited)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6151,11 +6106,11 @@ OFFSET 10
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="common-column-expressions">Common column expressions<a class="anchor-link" href="#common-column-expressions">&#182;</a></h2><p>See the full <code>API documentation &lt;api&gt;</code>{.interpreted-text role="ref"} for
+<h2 id="Common-column-expressions">Common column expressions<a class="anchor-link" href="#Common-column-expressions">&#182;</a></h2><p>See the full <code>API documentation &lt;api&gt;</code>{.interpreted-text role=&quot;ref&quot;} for
 all of the available value methods and tools for creating value
 expressions. We mention a few common ones here as they relate to common
 SQL queries.</p>
-<h3 id="type-casts">Type casts<a class="anchor-link" href="#type-casts">&#182;</a></h3><p>Ibis's type system is independent of any SQL system. You cast Ibis
+<h3 id="Type-casts">Type casts<a class="anchor-link" href="#Type-casts">&#182;</a></h3><p>Ibis's type system is independent of any SQL system. You cast Ibis
 expressions from one Ibis type to another. For example:</p>
 
 </div>
@@ -6202,9 +6157,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6233,7 +6186,7 @@ FROM my_data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="case-statements"><code>CASE</code> statements<a class="anchor-link" href="#case-statements">&#182;</a></h3><p>SQL dialects typically support one or more kind of <code>CASE</code> statements.
+<h3 id="CASE-statements"><code>CASE</code> statements<a class="anchor-link" href="#CASE-statements">&#182;</a></h3><p>SQL dialects typically support one or more kind of <code>CASE</code> statements.
 The first is the <em>simple case</em> that compares against exact values of an
 expression.</p>
 <div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"> </span><span class="n">expr</span>
@@ -6307,9 +6260,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6412,9 +6363,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6499,9 +6448,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6531,7 +6478,7 @@ FROM my_data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="using-null-in-expressions">Using <code>NULL</code> in expressions<a class="anchor-link" href="#using-null-in-expressions">&#182;</a></h3><p>To use <code>NULL</code> in an expression, either use the special <code>ibis.NA</code> value
+<h3 id="Using-NULL-in-expressions">Using <code>NULL</code> in expressions<a class="anchor-link" href="#Using-NULL-in-expressions">&#182;</a></h3><p>To use <code>NULL</code> in an expression, either use the special <code>ibis.NA</code> value
 or <code>ibis.null()</code>:</p>
 
 </div>
@@ -6578,9 +6525,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6610,8 +6555,8 @@ FROM my_data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="set-membership-in-not-in">Set membership: <code>IN</code> / <code>NOT IN</code><a class="anchor-link" href="#set-membership-in-not-in">&#182;</a></h3><p>Let's look again at the population dataset. Suppose you wanted to
-combine the United States and Canada data into a "North America"
+<h3 id="Set-membership:-IN-/-NOT-IN">Set membership: <code>IN</code> / <code>NOT IN</code><a class="anchor-link" href="#Set-membership:-IN-/-NOT-IN">&#182;</a></h3><p>Let's look again at the population dataset. Suppose you wanted to
+combine the United States and Canada data into a &quot;North America&quot;
 category. Here would be some SQL to do it:</p>
 <div class="highlight"><pre><span></span><span class="k">CASE</span>
 <span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="k">upper</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;UNITED STATES&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CANADA&#39;</span><span class="p">)</span>
@@ -6675,9 +6620,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6713,7 +6656,7 @@ FROM population AS t0
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The opposite of <code>isin</code> is <code>notin</code>.</p>
-<h3 id="constant-and-literal-expressions">Constant and literal expressions<a class="anchor-link" href="#constant-and-literal-expressions">&#182;</a></h3><p>Consider a SQL expression like:</p>
+<h3 id="Constant-and-literal-expressions">Constant and literal expressions<a class="anchor-link" href="#Constant-and-literal-expressions">&#182;</a></h3><p>Consider a SQL expression like:</p>
 <div class="highlight"><pre><span></span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">)</span>
 </pre></div>
 <p>which is equivalent to</p>
@@ -6824,9 +6767,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6900,9 +6841,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -6930,7 +6869,7 @@ FROM data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="is-null-and-is-not-null"><code>IS NULL</code> and <code>IS NOT NULL</code><a class="anchor-link" href="#is-null-and-is-not-null">&#182;</a></h3><p>These are simple: use the <code>isnull</code> and <code>notnull</code> functions respectively,
+<h3 id="IS-NULL-and-IS-NOT-NULL"><code>IS NULL</code> and <code>IS NOT NULL</code><a class="anchor-link" href="#IS-NULL-and-IS-NOT-NULL">&#182;</a></h3><p>These are simple: use the <code>isnull</code> and <code>notnull</code> functions respectively,
 which yield boolean arrays:</p>
 
 </div>
@@ -6977,9 +6916,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7051,9 +6988,7 @@ ibis.show_sql(agged)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7092,7 +7027,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="between"><code>BETWEEN</code><a class="anchor-link" href="#between">&#182;</a></h3><p>The <code>between</code> method on arrays and scalars compiles to the SQL <code>BETWEEN</code>
+<h3 id="BETWEEN"><code>BETWEEN</code><a class="anchor-link" href="#BETWEEN">&#182;</a></h3><p>The <code>between</code> method on arrays and scalars compiles to the SQL <code>BETWEEN</code>
 keyword. The result of <code>between</code> is boolean and can be used with any
 other boolean expression:</p>
 
@@ -7138,9 +7073,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7169,7 +7102,7 @@ WHERE
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="joins">Joins<a class="anchor-link" href="#joins">&#182;</a></h2><p>Ibis supports several kinds of joins between table expressions:</p>
+<h2 id="Joins">Joins<a class="anchor-link" href="#Joins">&#182;</a></h2><p>Ibis supports several kinds of joins between table expressions:</p>
 <ul>
 <li><code>inner_join</code>: maps to SQL <code>INNER JOIN</code></li>
 <li><code>cross_join</code>: a cartesian product join with no keys. Equivalent to
@@ -7285,7 +7218,7 @@ t2 = ibis.table(
 <p>The immediate result of a join does not yet have a set schema. That is
 determined by the next action that you take. There's several ways
 forward from here that address the spectrum of SQL use cases.</p>
-<h3 id="join-projection">Join + projection<a class="anchor-link" href="#join-projection">&#182;</a></h3><p>Consider the SQL:</p>
+<h3 id="Join-+-projection">Join + projection<a class="anchor-link" href="#Join-+-projection">&#182;</a></h3><p>Consider the SQL:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value2</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span>
 <span class="w">  </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span>
@@ -7336,9 +7269,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7413,9 +7344,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7443,7 +7372,7 @@ LEFT OUTER JOIN table2 AS t1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="join-aggregation">Join + aggregation<a class="anchor-link" href="#join-aggregation">&#182;</a></h3><p>You can directly aggregate a join without need for projection, which
+<h3 id="Join-+-aggregation">Join + aggregation<a class="anchor-link" href="#Join-+-aggregation">&#182;</a></h3><p>You can directly aggregate a join without need for projection, which
 also allows you to form statistics that reference any of the joined
 tables.</p>
 <p>Consider this SQL:</p>
@@ -7507,9 +7436,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7539,7 +7466,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="join-with-select">Join with <code>SELECT *</code><a class="anchor-link" href="#join-with-select">&#182;</a></h3><p>If you try to compile or execute a join that has not been projected or
+<h3 id="Join-with-SELECT-*">Join with <code>SELECT *</code><a class="anchor-link" href="#Join-with-SELECT-*">&#182;</a></h3><p>If you try to compile or execute a join that has not been projected or
 aggregated, it will be <em>fully materialized</em>:</p>
 
 </div>
@@ -7584,9 +7511,7 @@ ibis.show_sql(joined)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7618,7 +7543,7 @@ LEFT OUTER JOIN table2 AS t1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="multiple-joins">Multiple joins<a class="anchor-link" href="#multiple-joins">&#182;</a></h3><p>You can join multiple tables together in succession without needing to
+<h3 id="Multiple-joins">Multiple joins<a class="anchor-link" href="#Multiple-joins">&#182;</a></h3><p>You can join multiple tables together in succession without needing to
 address any of the above concerns.</p>
 
 </div>
@@ -7679,9 +7604,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7715,7 +7638,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="self-joins">Self joins<a class="anchor-link" href="#self-joins">&#182;</a></h3><p>What about when you need to join a table on itself? For example:</p>
+<h3 id="Self-joins">Self joins<a class="anchor-link" href="#Self-joins">&#182;</a></h3><p>What about when you need to join a table on itself? For example:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">t0</span><span class="p">.</span><span class="n">two</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">three</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">metric</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t0</span>
 <span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t1</span>
@@ -7781,9 +7704,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -7822,7 +7743,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="overlapping-join-keys">Overlapping join keys<a class="anchor-link" href="#overlapping-join-keys">&#182;</a></h3><p>In many cases the columns being joined between two tables or table
+<h3 id="Overlapping-join-keys">Overlapping join keys<a class="anchor-link" href="#Overlapping-join-keys">&#182;</a></h3><p>In many cases the columns being joined between two tables or table
 expressions have the same name. Consider this example:</p>
 
 </div>
@@ -7949,9 +7870,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8028,9 +7947,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8063,7 +7980,7 @@ JOIN table5 AS t1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="non-equality-join-predicates">Non-equality join predicates<a class="anchor-link" href="#non-equality-join-predicates">&#182;</a></h3><p>You can join tables with boolean clauses that are not equality. Some
+<h3 id="Non-equality-join-predicates">Non-equality join predicates<a class="anchor-link" href="#Non-equality-join-predicates">&#182;</a></h3><p>You can join tables with boolean clauses that are not equality. Some
 query engines support these efficiently, some inefficiently, or some not
 at all. In the latter case, these conditions get moved by Ibis into the
 <code>WHERE</code> part of the <code>SELECT</code> query.</p>
@@ -8110,9 +8027,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8142,7 +8057,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="other-ways-to-specify-join-keys">Other ways to specify join keys<a class="anchor-link" href="#other-ways-to-specify-join-keys">&#182;</a></h3><p>You can also pass a list of column names instead of forming boolean
+<h3 id="Other-ways-to-specify-join-keys">Other ways to specify join keys<a class="anchor-link" href="#Other-ways-to-specify-join-keys">&#182;</a></h3><p>You can also pass a list of column names instead of forming boolean
 expressions:</p>
 
 </div>
@@ -8187,10 +8102,10 @@ expressions:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="subqueries">Subqueries<a class="anchor-link" href="#subqueries">&#182;</a></h2><p>Ibis creates inline views and nested subqueries automatically. This
+<h2 id="Subqueries">Subqueries<a class="anchor-link" href="#Subqueries">&#182;</a></h2><p>Ibis creates inline views and nested subqueries automatically. This
 section concerns more complex subqueries involving foreign references
 and other advanced relational algebra.</p>
-<h3 id="correlated-exists-not-exists-filters">Correlated <code>EXISTS</code> / <code>NOT EXISTS</code> filters<a class="anchor-link" href="#correlated-exists-not-exists-filters">&#182;</a></h3><p>The SQL <code>EXISTS</code> and <code>NOT EXISTS</code> constructs are typically used for
+<h3 id="Correlated-EXISTS-/-NOT-EXISTS-filters">Correlated <code>EXISTS</code> / <code>NOT EXISTS</code> filters<a class="anchor-link" href="#Correlated-EXISTS-/-NOT-EXISTS-filters">&#182;</a></h3><p>The SQL <code>EXISTS</code> and <code>NOT EXISTS</code> constructs are typically used for
 efficient filtering in large many-to-many relationships.</p>
 <p>Let's consider a web dataset involving website session / usage data and
 purchases:</p>
@@ -8374,9 +8289,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8457,9 +8370,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8497,7 +8408,7 @@ WHERE
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="subqueries-with-in-not-in">Subqueries with <code>IN</code> / <code>NOT IN</code><a class="anchor-link" href="#subqueries-with-in-not-in">&#182;</a></h3><p>Subquery filters with <code>IN</code> (and <code>NOT IN</code>) are functionally similar to
+<h3 id="Subqueries-with-IN-/-NOT-IN">Subqueries with <code>IN</code> / <code>NOT IN</code><a class="anchor-link" href="#Subqueries-with-IN-/-NOT-IN">&#182;</a></h3><p>Subquery filters with <code>IN</code> (and <code>NOT IN</code>) are functionally similar to
 <code>EXISTS</code> subqueries. Let's look at some SQL:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">events</span>
@@ -8553,9 +8464,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8592,7 +8501,7 @@ WHERE
 <p>Depending on the query engine, the query planner/optimizer will often
 rewrite <code>IN</code> or <code>EXISTS</code> subqueries into the same set of relational
 algebra operations.</p>
-<h3 id="comparison-with-scalar-aggregates">Comparison with scalar aggregates<a class="anchor-link" href="#comparison-with-scalar-aggregates">&#182;</a></h3><p>Sometime you want to compare a value with an unconditional aggregate
+<h3 id="Comparison-with-scalar-aggregates">Comparison with scalar aggregates<a class="anchor-link" href="#Comparison-with-scalar-aggregates">&#182;</a></h3><p>Sometime you want to compare a value with an unconditional aggregate
 value from a different table. Take the SQL:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
@@ -8645,9 +8554,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8680,7 +8587,7 @@ WHERE
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="conditional-aggregates">Conditional aggregates<a class="anchor-link" href="#conditional-aggregates">&#182;</a></h3><p>Suppose you want to compare a value with the aggregate value for some
+<h3 id="Conditional-aggregates">Conditional aggregates<a class="anchor-link" href="#Conditional-aggregates">&#182;</a></h3><p>Suppose you want to compare a value with the aggregate value for some
 common group values between two tables. Here's some SQL:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span>
@@ -8740,9 +8647,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8777,7 +8682,7 @@ WHERE
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="distinct-expressions"><code>DISTINCT</code> expressions<a class="anchor-link" href="#distinct-expressions">&#182;</a></h2><p>In SQL, the <code>DISTINCT</code> keyword is used in a couple of ways:</p>
+<h2 id="DISTINCT-expressions"><code>DISTINCT</code> expressions<a class="anchor-link" href="#DISTINCT-expressions">&#182;</a></h2><p>In SQL, the <code>DISTINCT</code> keyword is used in a couple of ways:</p>
 <ul>
 <li>Deduplicating identical rows in some <code>SELECT</code> statement</li>
 <li>Aggregating on the distinct values of some column expression</li>
@@ -8832,9 +8737,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8915,9 +8818,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -8945,7 +8846,7 @@ GROUP BY
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="window-functions">Window functions<a class="anchor-link" href="#window-functions">&#182;</a></h2><p>Window functions in SQL allow you to write expressions that involve
+<h2 id="Window-functions">Window functions<a class="anchor-link" href="#Window-functions">&#182;</a></h2><p>Window functions in SQL allow you to write expressions that involve
 possibly-ordered groups of a table. Each window function involves one of
 the following:</p>
 <ul>
@@ -9008,9 +8909,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9085,9 +8984,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9170,9 +9067,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9247,9 +9142,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9277,7 +9170,7 @@ FROM my_data AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="top-k-operations">Top-K operations<a class="anchor-link" href="#top-k-operations">&#182;</a></h2><p>A common SQL idiom is the "top-K" or "top-N" operation: subsetting a
+<h2 id="Top-K-operations">Top-K operations<a class="anchor-link" href="#Top-K-operations">&#182;</a></h2><p>A common SQL idiom is the &quot;top-K&quot; or &quot;top-N&quot; operation: subsetting a
 dimension by aggregate statistics:</p>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">key1</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="k">count</span><span class="o">`</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
@@ -9371,9 +9264,7 @@ dimension by aggregate statistics:</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9409,7 +9300,7 @@ LIMIT 10
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="date-time-data">Date / time data<a class="anchor-link" href="#date-time-data">&#182;</a></h2><p>See <code>Timestamp methods &lt;api.timestamp&gt;</code>{.interpreted-text role="ref"}
+<h2 id="Date-/-time-data">Date / time data<a class="anchor-link" href="#Date-/-time-data">&#182;</a></h2><p>See <code>Timestamp methods &lt;api.timestamp&gt;</code>{.interpreted-text role=&quot;ref&quot;}
 for a table of available date/time methods.</p>
 <p>For example, we can do:</p>
 
@@ -9457,9 +9348,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9489,10 +9378,10 @@ FROM events AS t0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="casting-to-date-time-types">Casting to date / time types<a class="anchor-link" href="#casting-to-date-time-types">&#182;</a></h3><p>In many cases, you can convert string values to datetime / timestamp
+<h3 id="Casting-to-date-/-time-types">Casting to date / time types<a class="anchor-link" href="#Casting-to-date-/-time-types">&#182;</a></h3><p>In many cases, you can convert string values to datetime / timestamp
 with <code>strings.cast('timestamp')</code>, but you may have to do some more
 reconnaissance into the data if this does not work.</p>
-<h3 id="intervals">Intervals<a class="anchor-link" href="#intervals">&#182;</a></h3><p>Ibis has a set of interval APIs that allow you to do date/time
+<h3 id="Intervals">Intervals<a class="anchor-link" href="#Intervals">&#182;</a></h3><p>Ibis has a set of interval APIs that allow you to do date/time
 arithmetic. For example:</p>
 
 </div>
@@ -9537,9 +9426,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9571,8 +9458,8 @@ WHERE
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The implementation of each timedelta offset will depend on the query
 engine.</p>
-<h2 id="buckets-and-histograms">Buckets and histograms<a class="anchor-link" href="#buckets-and-histograms">&#182;</a></h2><p>To appear.</p>
-<h2 id="unions">Unions<a class="anchor-link" href="#unions">&#182;</a></h2><p>SQL dialects often support two kinds of <code>UNION</code> operations:</p>
+<h2 id="Buckets-and-histograms">Buckets and histograms<a class="anchor-link" href="#Buckets-and-histograms">&#182;</a></h2><p>To appear.</p>
+<h2 id="Unions">Unions<a class="anchor-link" href="#Unions">&#182;</a></h2><p>SQL dialects often support two kinds of <code>UNION</code> operations:</p>
 <ul>
 <li><code>UNION</code>: the combination of <em>distinct</em> rows from each table.</li>
 <li><code>UNION ALL</code>: the combination of all rows from each table, whether or
@@ -9629,9 +9516,7 @@ ibis.show_sql(expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9680,10 +9565,10 @@ FROM anon_2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="esoterica">Esoterica<a class="anchor-link" href="#esoterica">&#182;</a></h2><p>This area will be the spillover for miscellaneous SQL concepts and how
+<h2 id="Esoterica">Esoterica<a class="anchor-link" href="#Esoterica">&#182;</a></h2><p>This area will be the spillover for miscellaneous SQL concepts and how
 queries featuring them can be ported to Ibis.</p>
-<h3 id="common-table-expressions-ctes">Common table expressions (CTEs)<a class="anchor-link" href="#common-table-expressions-ctes">&#182;</a></h3><p>The simplest SQL CTE is a SQL statement that is used multiple times in a
-<code>SELECT</code> query, which can be "factored" out using the <code>WITH</code> keyword:</p>
+<h3 id="Common-table-expressions-(CTEs)">Common table expressions (CTEs)<a class="anchor-link" href="#Common-table-expressions-(CTEs)">&#182;</a></h3><p>The simplest SQL CTE is a SQL statement that is used multiple times in a
+<code>SELECT</code> query, which can be &quot;factored&quot; out using the <code>WITH</code> keyword:</p>
 <div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
 <span class="w">   </span><span class="k">SELECT</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span>
 <span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span>
@@ -9818,9 +9703,7 @@ result = left.join(right, left.region == right.region)[
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -9901,42 +9784,6 @@ JOIN t1
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../api/config/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Configuration
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../ibis-for-pandas-users/" class="md-footer__link md-footer__link--next" aria-label="Next: Ibis for pandas Users" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Ibis for pandas Users
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -10002,10 +9849,10 @@ JOIN t1
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
@@ -10013,7 +9860,6 @@ JOIN t1
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-    
     
   </body>
 </html>

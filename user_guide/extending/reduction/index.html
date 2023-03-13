@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://ibis-project.org/user_guide/extending/reduction/">
       
+      
+        <link rel="prev" href="../elementwise/">
+      
+      
+        <link rel="next" href="../../../api/expressions/">
+      
       <link rel="icon" href="../../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#009485">
-        
       
       
 
@@ -1965,6 +1966,7 @@
                   
 
 
+
 <script>
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -3002,7 +3004,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="adding-a-reduction-operation">Adding a Reduction Operation<a class="anchor-link" href="#adding-a-reduction-operation">&#182;</a></h1>
+<h1 id="Adding-a-Reduction-Operation">Adding a Reduction Operation<a class="anchor-link" href="#Adding-a-Reduction-Operation">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -3026,7 +3028,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="description">Description<a class="anchor-link" href="#description">&#182;</a></h2><p>We're going to add a <strong><code>last_date</code></strong> function to ibis. <code>last_date</code> simply returns the latest date of a list of dates.</p>
+<h2 id="Description">Description<a class="anchor-link" href="#Description">&#182;</a></h2><p>We're going to add a <strong><code>last_date</code></strong> function to ibis. <code>last_date</code> simply returns the latest date of a list of dates.</p>
 
 </div>
 </div>
@@ -3038,7 +3040,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="step-1-define-the-operation">Step 1: Define the Operation<a class="anchor-link" href="#step-1-define-the-operation">&#182;</a></h2>
+<h2 id="Step-1:-Define-the-Operation">Step 1: Define the Operation<a class="anchor-link" href="#Step-1:-Define-the-Operation">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3132,7 +3134,7 @@ class LastDate(Reduction):
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="step-2-define-the-api">Step 2: Define the API<a class="anchor-link" href="#step-2-define-the-api">&#182;</a></h2>
+<h2 id="Step-2:-Define-the-API">Step 2: Define the API<a class="anchor-link" href="#Step-2:-Define-the-API">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3205,7 +3207,7 @@ DateColumn.last_date = last_date</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="interlude-create-some-expressions-using-last_date">Interlude: Create some expressions using <code>last_date</code><a class="anchor-link" href="#interlude-create-some-expressions-using-last_date">&#182;</a></h2>
+<h2 id="Interlude:-Create-some-expressions-using-last_date">Interlude: Create some expressions using <code>last_date</code><a class="anchor-link" href="#Interlude:-Create-some-expressions-using-last_date">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3314,9 +3316,7 @@ DateColumn.last_date = last_date</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
@@ -3376,9 +3376,7 @@ LastDate(date_of_birth): LastDate(r0.date_of_birth)</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
@@ -3408,7 +3406,7 @@ LastDate(date_of_birth, Equals(country, &#39;Indonesia&#39;)): LastDate(r0.date_
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="step-3-turn-the-expression-into-sql">Step 3: Turn the Expression into SQL<a class="anchor-link" href="#step-3-turn-the-expression-into-sql">&#182;</a></h2>
+<h2 id="Step-3:-Turn-the-Expression-into-SQL">Step 3: Turn the Expression into SQL<a class="anchor-link" href="#Step-3:-Turn-the-Expression-into-SQL">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3485,7 +3483,7 @@ def _last_date(translator, expr):
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="step-4-putting-it-all-together">Step 4: Putting it all Together<a class="anchor-link" href="#step-4-putting-it-all-together">&#182;</a></h2>
+<h2 id="Step-4:-Putting-it-all-Together">Step 4: Putting it all Together<a class="anchor-link" href="#Step-4:-Putting-it-all-Together">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3574,7 +3572,7 @@ con = ibis.sqlite.connect(db_fname)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="create-and-execute-a-bitwise_and-expression">Create and execute a <code>bitwise_and</code> expression<a class="anchor-link" href="#create-and-execute-a-bitwise_and-expression">&#182;</a></h3>
+<h3 id="Create-and-execute-a-bitwise_and-expression">Create and execute a <code>bitwise_and</code> expression<a class="anchor-link" href="#Create-and-execute-a-bitwise_and-expression">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -3617,9 +3615,7 @@ independence</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
@@ -3692,9 +3688,7 @@ expr</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
@@ -3756,9 +3750,7 @@ print(sql_expr)</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -3769,15 +3761,13 @@ FROM main.independence AS t0
 </pre>
 </div>
 </div>
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/tmp/nix-shell.tmKljm/ipykernel_13667/3120781585.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
+<pre>/tmp/nix-shell.QHAfSw/ipykernel_13561/3120781585.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
   arg, where = expr.op().args
 </pre>
 </div>
@@ -3825,22 +3815,18 @@ FROM main.independence AS t0
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/tmp/nix-shell.tmKljm/ipykernel_13667/3120781585.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
+<pre>/tmp/nix-shell.QHAfSw/ipykernel_13561/3120781585.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
   arg, where = expr.op().args
 </pre>
 </div>
 </div>
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
@@ -3913,9 +3899,7 @@ expr</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
@@ -3977,22 +3961,18 @@ result</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/tmp/nix-shell.tmKljm/ipykernel_13667/3120781585.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
+<pre>/tmp/nix-shell.QHAfSw/ipykernel_13561/3120781585.py:7: FutureWarning: `Node.op` is deprecated as of v4.0; remove intermediate .op() calls
   arg, where = expr.op().args
 </pre>
 </div>
 </div>
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
@@ -4043,42 +4023,6 @@ result</div>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../elementwise/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adding an Elementwise Operation" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Adding an Elementwise Operation
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../api/expressions/" class="md-footer__link md-footer__link--next" aria-label="Next: Base Expression Types" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Base Expression Types
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4145,10 +4089,10 @@ result</div>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
@@ -4156,7 +4100,6 @@ result</div>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-    
     
   </body>
 </html>
