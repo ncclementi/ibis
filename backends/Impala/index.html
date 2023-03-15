@@ -4755,7 +4755,7 @@ find the most methods on <code>ImpalaTable</code>.</p>
 
 
 <h5 id="ibis.backends.impala.Backend.drop_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.drop_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -4776,8 +4776,9 @@ find the most methods on <code>ImpalaTable</code>.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>table_name</code></td>
+          <td><code>name</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td><p>Table name</p></td>
           <td>
@@ -4787,6 +4788,7 @@ find the most methods on <code>ImpalaTable</code>.</p>
         <tr>
           <td><code>database</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
           <td><p>Database name</p></td>
           <td>
@@ -4796,6 +4798,7 @@ find the most methods on <code>ImpalaTable</code>.</p>
         <tr>
           <td><code>force</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>Database may throw exception if table does not exist</p></td>
           <td>
@@ -4820,7 +4823,7 @@ find the most methods on <code>ImpalaTable</code>.</p>
 
 
 <h5 id="ibis.backends.impala.Backend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">like_parquet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">like_parquet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -4842,7 +4845,7 @@ find the most methods on <code>ImpalaTable</code>.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>table_name</code></td>
+          <td><code>name</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
@@ -4881,8 +4884,19 @@ particular schema</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>force</code></td>
+          <td><code>temp</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | None</code>
+          </td>
+          <td><p>Whether a table is temporary</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>Do not create table if table with indicated name already exists</p></td>
           <td>
@@ -4892,6 +4906,7 @@ particular schema</p></td>
         <tr>
           <td><code>external</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>Create an external table; Impala will not delete the underlying
 data when the table is dropped</p></td>
@@ -4939,10 +4954,6 @@ expression.</p></td>
         </tr>
     </tbody>
   </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;new_table_name&#39;</span><span class="p">,</span> <span class="n">table_expr</span><span class="p">)</span>
-</code></pre></div>
 
   </div>
 
@@ -5035,7 +5046,7 @@ for parameters.</p>
 
 
 <h5 id="ibis.backends.impala.Backend.truncate_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">truncate_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">truncate_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.truncate_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -5056,8 +5067,9 @@ for parameters.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>table_name</code></td>
+          <td><code>name</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td><p>Table name</p></td>
           <td>
@@ -5067,6 +5079,7 @@ for parameters.</p>
         <tr>
           <td><code>database</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
           <td><p>Database name</p></td>
           <td>
@@ -5155,7 +5168,7 @@ for parameters.</p>
 
 
 <h5 id="ibis.backends.impala.Backend.cache_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">cache_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">cache_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.cache_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -5982,7 +5995,7 @@ partition</p></td>
 
 
 <h5 id="ibis.backends.impala.Backend.drop_table_or_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table_or_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_table_or_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.drop_table_or_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -6000,7 +6013,7 @@ partition</p></td>
 
 
 <h5 id="ibis.backends.impala.Backend.create_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.create_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -6623,7 +6636,7 @@ top-level client connection or a database object.</p>
 
 
 <h3 id="ibis.backends.impala.Backend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">like_parquet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">like_parquet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.impala.Backend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
@@ -6645,7 +6658,7 @@ top-level client connection or a database object.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>table_name</code></td>
+          <td><code>name</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
@@ -6684,8 +6697,19 @@ particular schema</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>force</code></td>
+          <td><code>temp</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | None</code>
+          </td>
+          <td><p>Whether a table is temporary</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>Do not create table if table with indicated name already exists</p></td>
           <td>
@@ -6695,6 +6719,7 @@ particular schema</p></td>
         <tr>
           <td><code>external</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>Create an external table; Impala will not delete the underlying
 data when the table is dropped</p></td>
@@ -6742,10 +6767,6 @@ expression.</p></td>
         </tr>
     </tbody>
   </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;new_table_name&#39;</span><span class="p">,</span> <span class="n">table_expr</span><span class="p">)</span>
-</code></pre></div>
 
   </div>
 

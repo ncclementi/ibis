@@ -2301,8 +2301,8 @@ required methods.</p>
 <code class="highlight language-python"><span class="n">current_database</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.current_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2415,8 +2415,8 @@ specify the database.</p>
 <code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.version" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2631,7 +2631,11 @@ connected backend instance.</p>
 
 
 <h4 id="ibis.backends.base.BaseBackend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
 
 <a href="#ibis.backends.base.BaseBackend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2639,7 +2643,6 @@ connected backend instance.</p>
   <div class="doc doc-contents ">
   
       <p>Create a new table.</p>
-<p>Not all backends implement this method.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2696,6 +2699,26 @@ default.</p></td>
                 <code>None</code>
           </td>
         </tr>
+        <tr>
+          <td><code>temp</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Whether a table is temporary or not</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Whether to clobber existing data</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -2726,14 +2749,18 @@ default.</p></td>
 
 
 <h4 id="ibis.backends.base.BaseBackend.create_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
 
 <a href="#ibis.backends.base.BaseBackend.create_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
-      <p>Create a view.</p>
+      <p>Create a new view from an expression.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2751,18 +2778,17 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name for the new view.</p></td>
+          <td><p>Name of the new view.</p></td>
           <td>
               <em>required</em>
           </td>
         </tr>
         <tr>
-          <td><code>expr</code></td>
+          <td><code>obj</code></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>An Ibis table expression that will be used to extract the query
-of the view.</p></td>
+          <td><p>An Ibis table expression that will be used to create the view.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2772,10 +2798,20 @@ of the view.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database where the view will be created, if not the
-default.</p></td>
+          <td><p>Name of the database where the view will be created, if not
+provided the database's default is used.</p></td>
           <td>
                 <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Whether to clobber an existing view with the same name</p></td>
+          <td>
+                <code>False</code>
           </td>
         </tr>
     </tbody>
@@ -2868,7 +2904,11 @@ default.</p></td>
 
 
 <h4 id="ibis.backends.base.BaseBackend.drop_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
 
 <a href="#ibis.backends.base.BaseBackend.drop_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2930,7 +2970,11 @@ default.</p></td>
 
 
 <h4 id="ibis.backends.base.BaseBackend.drop_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
 
 <a href="#ibis.backends.base.BaseBackend.drop_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 

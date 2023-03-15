@@ -2666,7 +2666,7 @@ rows, size in bytes).</p></td>
 
 
 <h5 id="ibis.backends.pyspark.Backend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pyspark.Backend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -2687,7 +2687,7 @@ rows, size in bytes).</p></td>
     </thead>
     <tbody>
         <tr>
-          <td><code>table_name</code></td>
+          <td><code>name</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
@@ -2701,7 +2701,7 @@ rows, size in bytes).</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a> | <a class="autorefs autorefs-internal" title="pandas" href="../Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | None</code>
           </td>
-          <td><p>If passed, creates table from select statement results</p></td>
+          <td><p>If passed, creates table from <code>SELECT</code> statement results</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2711,8 +2711,7 @@ rows, size in bytes).</p></td>
           <td>
                 <code><span title="ibis.expr.schema">sch</span>.<a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="../../api/schemas/#ibis.expr.schema.Schema">Schema</a> | None</code>
           </td>
-          <td><p>Mutually exclusive with obj, creates an empty table with a
-schema</p></td>
+          <td><p>Mutually exclusive with <code>obj</code>, creates an empty table with a schema</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2728,11 +2727,21 @@ schema</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>force</code></td>
+          <td><code>temp</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | None</code>
+          </td>
+          <td><p>Whether the new table is temporary</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If true, create table if table with indicated name already exists</p></td>
+          <td><p>If <code>True</code>, overwrite existing data</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -2742,7 +2751,7 @@ schema</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table format</p></td>
+          <td><p>Format of the table on disk</p></td>
           <td>
                 <code>&#39;parquet&#39;</code>
           </td>
@@ -2781,7 +2790,7 @@ schema</p></td>
 
 
 <h5 id="ibis.backends.pyspark.Backend.create_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">can_exist</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">temporary</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pyspark.Backend.create_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -2812,7 +2821,7 @@ schema</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>expr</code></td>
+          <td><code>obj</code></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
@@ -2832,21 +2841,11 @@ schema</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>can_exist</code></td>
+          <td><code>overwrite</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>Replace an existing view of the same name if it exists</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>temporary</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Whether the table is temporary</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -2934,7 +2933,7 @@ database does not exist</p></td>
 
 
 <h5 id="ibis.backends.pyspark.Backend.drop_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pyspark.Backend.drop_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -2952,7 +2951,7 @@ database does not exist</p></td>
 
 
 <h5 id="ibis.backends.pyspark.Backend.drop_table_or_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table_or_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_table_or_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pyspark.Backend.drop_table_or_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -3020,7 +3019,7 @@ database does not exist</p></td>
 
 
 <h5 id="ibis.backends.pyspark.Backend.drop_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pyspark.Backend.drop_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -3152,7 +3151,7 @@ database does not exist</p></td>
 
 
 <h5 id="ibis.backends.pyspark.Backend.truncate_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">truncate_table</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">truncate_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.pyspark.Backend.truncate_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -3173,7 +3172,7 @@ database does not exist</p></td>
     </thead>
     <tbody>
         <tr>
-          <td><code>table_name</code></td>
+          <td><code>name</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
