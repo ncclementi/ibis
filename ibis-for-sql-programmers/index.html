@@ -7997,7 +7997,19 @@ FROM table4 AS t0
 JOIN table5 AS t1
   ON t0.key1 = t1.key1
   AND t0.key2 = t1.key2
-  AND SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1, CAST(4 AS SMALLINT)) = SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1, CAST(4 AS SMALLINT))
+  AND CASE
+    WHEN (
+      CAST(0 AS SMALLINT) + 1 &gt;= 1
+    )
+    THEN SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1, CAST(4 AS SMALLINT))
+    ELSE SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1 + LENGTH(t0.key3), CAST(4 AS SMALLINT))
+  END = CASE
+    WHEN (
+      CAST(0 AS SMALLINT) + 1 &gt;= 1
+    )
+    THEN SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1, CAST(4 AS SMALLINT))
+    ELSE SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1 + LENGTH(t0.key3), CAST(4 AS SMALLINT))
+  END
 </pre>
 </div>
 </div>
