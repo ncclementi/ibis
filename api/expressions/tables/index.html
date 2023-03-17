@@ -3354,7 +3354,9 @@ input a column is returned, otherwise a table is returned.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>] | None</code>
           </td>
-          <td><p>Aggregate expressions</p></td>
+          <td><p>Aggregate expressions. These can be any scalar-producing
+expression, including aggregation functions like <code>sum</code> or literal
+values like <code>ibis.literal(1)</code>.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3364,7 +3366,7 @@ input a column is returned, otherwise a table is returned.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | None</code>
           </td>
-          <td><p>Grouping expressions</p></td>
+          <td><p>Grouping expressions.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3374,7 +3376,8 @@ input a column is returned, otherwise a table is returned.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | None</code>
           </td>
-          <td><p>Post-aggregation filters</p></td>
+          <td><p>Post-aggregation filters. The shape requirements are the same
+<code>metrics</code>, but the output type for <code>having</code> is <code>boolean</code>.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -5191,6 +5194,82 @@ columns.</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.examples</span> <span class="k">as</span> <span class="nn">ex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">movies</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">ml_latest_small_movies</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">movies</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ movieId ┃ title                            ┃ genres                          ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64   │ string                           │ string                          │</span>
+<span class="go">├─────────┼──────────────────────────────────┼─────────────────────────────────┤</span>
+<span class="go">│       1 │ Toy Story (1995)                 │ Adventure|Animation|Children|C… │</span>
+<span class="go">│       2 │ Jumanji (1995)                   │ Adventure|Children|Fantasy      │</span>
+<span class="go">│       3 │ Grumpier Old Men (1995)          │ Comedy|Romance                  │</span>
+<span class="go">│       4 │ Waiting to Exhale (1995)         │ Comedy|Drama|Romance            │</span>
+<span class="go">│       5 │ Father of the Bride Part II (19… │ Comedy                          │</span>
+<span class="go">│       6 │ Heat (1995)                      │ Action|Crime|Thriller           │</span>
+<span class="go">│       7 │ Sabrina (1995)                   │ Comedy|Romance                  │</span>
+<span class="go">│       8 │ Tom and Huck (1995)              │ Adventure|Children              │</span>
+<span class="go">│       9 │ Sudden Death (1995)              │ Action                          │</span>
+<span class="go">│      10 │ GoldenEye (1995)                 │ Action|Adventure|Thriller       │</span>
+<span class="go">│       … │ …                                │ …                               │</span>
+<span class="go">└─────────┴──────────────────────────────────┴─────────────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">links</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">ml_latest_small_links</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">links</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ movieId ┃ imdbId  ┃ tmdbId ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64   │ string  │ int64  │</span>
+<span class="go">├─────────┼─────────┼────────┤</span>
+<span class="go">│       1 │ 0114709 │    862 │</span>
+<span class="go">│       2 │ 0113497 │   8844 │</span>
+<span class="go">│       3 │ 0113228 │  15602 │</span>
+<span class="go">│       4 │ 0114885 │  31357 │</span>
+<span class="go">│       5 │ 0113041 │  11862 │</span>
+<span class="go">│       6 │ 0113277 │    949 │</span>
+<span class="go">│       7 │ 0114319 │  11860 │</span>
+<span class="go">│       8 │ 0112302 │  45325 │</span>
+<span class="go">│       9 │ 0114576 │   9091 │</span>
+<span class="go">│      10 │ 0113189 │    710 │</span>
+<span class="go">│       … │ …       │      … │</span>
+<span class="go">└─────────┴─────────┴────────┘</span>
+</code></pre></div>
+    <p>Implicit inner equality join on the shared <code>movieId</code> column</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">linked</span> <span class="o">=</span> <span class="n">movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="s2">&quot;movieId&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linked</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ movieId ┃ title                  ┃ genres                 ┃ imdbId  ┃ tmdbId ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64   │ string                 │ string                 │ string  │ int64  │</span>
+<span class="go">├─────────┼────────────────────────┼────────────────────────┼─────────┼────────┤</span>
+<span class="go">│       1 │ Toy Story (1995)       │ Adventure|Animation|C… │ 0114709 │    862 │</span>
+<span class="go">│       2 │ Jumanji (1995)         │ Adventure|Children|Fa… │ 0113497 │   8844 │</span>
+<span class="go">│       3 │ Grumpier Old Men (199… │ Comedy|Romance         │ 0113228 │  15602 │</span>
+<span class="go">│       4 │ Waiting to Exhale (19… │ Comedy|Drama|Romance   │ 0114885 │  31357 │</span>
+<span class="go">│       5 │ Father of the Bride P… │ Comedy                 │ 0113041 │  11862 │</span>
+<span class="go">└─────────┴────────────────────────┴────────────────────────┴─────────┴────────┘</span>
+</code></pre></div>
+    <p>Explicit equality join using the default <code>how</code> value of <code>"inner"</code></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">linked</span> <span class="o">=</span> <span class="n">movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">movieId</span> <span class="o">==</span> <span class="n">links</span><span class="o">.</span><span class="n">movieId</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linked</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ movieId ┃ title                  ┃ genres                 ┃ imdbId  ┃ tmdbId ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64   │ string                 │ string                 │ string  │ int64  │</span>
+<span class="go">├─────────┼────────────────────────┼────────────────────────┼─────────┼────────┤</span>
+<span class="go">│       1 │ Toy Story (1995)       │ Adventure|Animation|C… │ 0114709 │    862 │</span>
+<span class="go">│       2 │ Jumanji (1995)         │ Adventure|Children|Fa… │ 0113497 │   8844 │</span>
+<span class="go">│       3 │ Grumpier Old Men (199… │ Comedy|Romance         │ 0113228 │  15602 │</span>
+<span class="go">│       4 │ Waiting to Exhale (19… │ Comedy|Drama|Romance   │ 0114885 │  31357 │</span>
+<span class="go">│       5 │ Father of the Bride P… │ Comedy                 │ 0113041 │  11862 │</span>
+<span class="go">└─────────┴────────────────────────┴────────────────────────┴─────────┴────────┘</span>
+</code></pre></div>
 
   </div>
 
