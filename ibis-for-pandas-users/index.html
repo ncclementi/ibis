@@ -3308,7 +3308,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Ibis-for-pandas-Users">Ibis for pandas Users<a class="anchor-link" href="#Ibis-for-pandas-Users">&#182;</a></h1><p>Much of the syntax and many of the operations in Ibis are inspired
+<h1 id="ibis-for-pandas-users">Ibis for pandas Users<a class="anchor-link" href="#ibis-for-pandas-users">&#182;</a></h1><p>Much of the syntax and many of the operations in Ibis are inspired
 by the pandas DataFrame, however, the primary domain of Ibis is
 SQL so there are some differences in how they operate.</p>
 <p>One primary
@@ -3572,7 +3572,7 @@ t</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-types">Data types<a class="anchor-link" href="#Data-types">&#182;</a></h2><p>The data types of columns in pandas are accessed using the <code>dtypes</code> attribute. This returns
+<h2 id="data-types">Data types<a class="anchor-link" href="#data-types">&#182;</a></h2><p>The data types of columns in pandas are accessed using the <code>dtypes</code> attribute. This returns
 a <code>Series</code> object.</p>
 
 </div>
@@ -3781,7 +3781,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Table-layout">Table layout<a class="anchor-link" href="#Table-layout">&#182;</a></h2><p>In pandas, the layout of the table is contained in the <code>shape</code> attribute which contains the number
+<h2 id="table-layout">Table layout<a class="anchor-link" href="#table-layout">&#182;</a></h2><p>In pandas, the layout of the table is contained in the <code>shape</code> attribute which contains the number
 of rows and number of columns in a tuple. The number of columns in an Ibis table can be gotten 
 from the length of the schema.</p>
 
@@ -4052,7 +4052,7 @@ after <code>count</code> to evaluate the expression returned by <code>count</cod
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Subsetting-columns">Subsetting columns<a class="anchor-link" href="#Subsetting-columns">&#182;</a></h2><p>Selecting columns is very similar to in pandas. In fact, you can use the same syntax.</p>
+<h2 id="subsetting-columns">Subsetting columns<a class="anchor-link" href="#subsetting-columns">&#182;</a></h2><p>Selecting columns is very similar to in pandas. In fact, you can use the same syntax.</p>
 
 </div>
 </div>
@@ -4202,7 +4202,7 @@ after <code>count</code> to evaluate the expression returned by <code>count</cod
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Selecting-columns">Selecting columns<a class="anchor-link" href="#Selecting-columns">&#182;</a></h2><p>Selecting columns is done using the same syntax as in pandas <code>DataFrames</code>. You can use either 
+<h2 id="selecting-columns">Selecting columns<a class="anchor-link" href="#selecting-columns">&#182;</a></h2><p>Selecting columns is done using the same syntax as in pandas <code>DataFrames</code>. You can use either 
 the indexing syntax or attribute syntax.</p>
 
 </div>
@@ -4353,7 +4353,7 @@ the indexing syntax or attribute syntax.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Adding,-removing,-and-modifying-columns">Adding, removing, and modifying columns<a class="anchor-link" href="#Adding,-removing,-and-modifying-columns">&#182;</a></h2><p>Modifying the columns of an Ibis table is a bit different than doing the same operations in
+<h2 id="adding-removing-and-modifying-columns">Adding, removing, and modifying columns<a class="anchor-link" href="#adding-removing-and-modifying-columns">&#182;</a></h2><p>Modifying the columns of an Ibis table is a bit different than doing the same operations in
 a pandas <code>DataFrame</code>. This is primarily due to the fact that in-place operations are not 
 supported on Ibis tables. Each time you do a column modification to a table, a new table
 expression is returned.</p>
@@ -4368,7 +4368,7 @@ expression is returned.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Adding-columns">Adding columns<a class="anchor-link" href="#Adding-columns">&#182;</a></h3><p>Adding columns is done through the <code>mutate</code> method.</p>
+<h3 id="adding-columns">Adding columns<a class="anchor-link" href="#adding-columns">&#182;</a></h3><p>Adding columns is done through the <code>mutate</code> method.</p>
 
 </div>
 </div>
@@ -4753,7 +4753,7 @@ proj</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Removing-columns">Removing columns<a class="anchor-link" href="#Removing-columns">&#182;</a></h3><p>Removing a column is done using the <code>drop</code> method.</p>
+<h3 id="removing-columns">Removing columns<a class="anchor-link" href="#removing-columns">&#182;</a></h3><p>Removing a column is done using the <code>drop</code> method.</p>
 
 </div>
 </div>
@@ -4946,7 +4946,7 @@ subset.columns</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Modifying-columns">Modifying columns<a class="anchor-link" href="#Modifying-columns">&#182;</a></h3><p>Replacing existing columns is done using the <code>mutate</code> method just like adding columns. You simply
+<h3 id="modifying-columns">Modifying columns<a class="anchor-link" href="#modifying-columns">&#182;</a></h3><p>Replacing existing columns is done using the <code>mutate</code> method just like adding columns. You simply
 add a column of the same name to replace it.</p>
 
 </div>
@@ -5087,7 +5087,7 @@ mutated</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Renaming-columns">Renaming columns<a class="anchor-link" href="#Renaming-columns">&#182;</a></h3><p>In addition to replacing columns, you can simply rename them as well. This is done with the <code>relabel</code> method
+<h3 id="renaming-columns">Renaming columns<a class="anchor-link" href="#renaming-columns">&#182;</a></h3><p>In addition to replacing columns, you can simply rename them as well. This is done with the <code>relabel</code> method
 which takes a dictionary containing the name mappings.</p>
 
 </div>
@@ -5171,7 +5171,7 @@ relabeled</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Selecting-rows">Selecting rows<a class="anchor-link" href="#Selecting-rows">&#182;</a></h2><p>There are several methods that can be used to select rows of data in various ways. These are described
+<h2 id="selecting-rows">Selecting rows<a class="anchor-link" href="#selecting-rows">&#182;</a></h2><p>There are several methods that can be used to select rows of data in various ways. These are described
 in the sections below. We'll use the ubiquitous iris dataset for these examples.</p>
 
 </div>
@@ -5394,7 +5394,7 @@ t</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Head,-tail-and-limit">Head, tail and limit<a class="anchor-link" href="#Head,-tail-and-limit">&#182;</a></h3><p>The <code>head</code> method works the same ways as in pandas. Note that some Ibis backends may not have an 
+<h3 id="head-tail-and-limit">Head, tail and limit<a class="anchor-link" href="#head-tail-and-limit">&#182;</a></h3><p>The <code>head</code> method works the same ways as in pandas. Note that some Ibis backends may not have an 
 inherent ordering of their rows and using <code>head</code> may not return deterministic results. In those
 cases, you can use sorting before calling <code>head</code> to ensure a stable result.</p>
 
@@ -5646,7 +5646,7 @@ will cover later.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Filtering-rows">Filtering rows<a class="anchor-link" href="#Filtering-rows">&#182;</a></h3><p>In addition to simply limiting the number of rows that are returned, it is possible to filter the 
+<h3 id="filtering-rows">Filtering rows<a class="anchor-link" href="#filtering-rows">&#182;</a></h3><p>In addition to simply limiting the number of rows that are returned, it is possible to filter the 
 rows using expressions. Expressions are constructed very similarly to the way they are in pandas.
 Ibis expressions are constructed from operations on colunms in a table which return a boolean result.
 This result is then used to filter the table.</p>
@@ -6216,7 +6216,7 @@ filtered</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Modifying-rows">Modifying rows<a class="anchor-link" href="#Modifying-rows">&#182;</a></h3><p>Sometimes you want to modify the values in a column based on some condition.
+<h3 id="modifying-rows">Modifying rows<a class="anchor-link" href="#modifying-rows">&#182;</a></h3><p>Sometimes you want to modify the values in a column based on some condition.
 In pandas, you would do something like <code>df.loc[condition] = new_value</code>.
 In Ibis though, remember that all expressions are immutable, so you need to
 create a new table expression with the modified values. You do this using the
@@ -6308,7 +6308,7 @@ t.mutate(species_modified=species_modified)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Sorting-rows">Sorting rows<a class="anchor-link" href="#Sorting-rows">&#182;</a></h2><p>Sorting rows in Ibis uses a somewhat different API than in pandas. In pandas, you would use the
+<h2 id="sorting-rows">Sorting rows<a class="anchor-link" href="#sorting-rows">&#182;</a></h2><p>Sorting rows in Ibis uses a somewhat different API than in pandas. In pandas, you would use the
 <code>sort_values</code> method to order rows by values in specified columns. Ibis uses a method called
 <code>order_by</code>. To specify ascending or descending orders, pandas uses an <code>ascending=</code> argument
 to <code>sort_values</code> that indicates the order for each sorting column. Ibis allows you to tag the
@@ -6532,7 +6532,7 @@ sorted</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Aggregation">Aggregation<a class="anchor-link" href="#Aggregation">&#182;</a></h2><p>Aggregation in pandas is typically done by computing columns based on an aggregate function.</p>
+<h2 id="aggregation">Aggregation<a class="anchor-link" href="#aggregation">&#182;</a></h2><p>Aggregation in pandas is typically done by computing columns based on an aggregate function.</p>
 
 </div>
 </div>
@@ -6790,7 +6790,7 @@ agged</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Group-by">Group by<a class="anchor-link" href="#Group-by">&#182;</a></h3><p>Aggregations can also be done across groupings using the <code>by=</code> parameter.</p>
+<h3 id="group-by">Group by<a class="anchor-link" href="#group-by">&#182;</a></h3><p>Aggregations can also be done across groupings using the <code>by=</code> parameter.</p>
 
 </div>
 </div>
@@ -6960,7 +6960,7 @@ agged</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Dropping-rows-with-NULLs">Dropping rows with <code>NULL</code>s<a class="anchor-link" href="#Dropping-rows-with-NULLs">&#182;</a></h2><p>Both pandas and Ibis allow you to drop rows from a table based on whether a set of columns
+<h2 id="dropping-rows-with-nulls">Dropping rows with <code>NULL</code>s<a class="anchor-link" href="#dropping-rows-with-nulls">&#182;</a></h2><p>Both pandas and Ibis allow you to drop rows from a table based on whether a set of columns
 contains a <code>NULL</code> value. This method is called <code>dropna</code> in both packages. The common set
 of parameters in the two are <code>subset=</code> and <code>how=</code>. The <code>subset=</code> parameter indicates which
 columns to inspect for <code>NULL</code> values. The <code>how=</code> parameter specifies whether 'any' or 'all'
@@ -7008,7 +7008,7 @@ of the specified columns must be <code>NULL</code> in order for the row to be dr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Filling-NULL-values">Filling <code>NULL</code> values<a class="anchor-link" href="#Filling-NULL-values">&#182;</a></h2><p>Both pandas and Ibis allow you to fill <code>NULL</code> values in a table. In Ibis, the replacement value can only
+<h2 id="filling-null-values">Filling <code>NULL</code> values<a class="anchor-link" href="#filling-null-values">&#182;</a></h2><p>Both pandas and Ibis allow you to fill <code>NULL</code> values in a table. In Ibis, the replacement value can only
 be a scalar value of a dictionary of values. If it is a dictionary, the keys of the dictionary specify
 the column name for the value to apply to.</p>
 
@@ -7054,7 +7054,7 @@ the column name for the value to apply to.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Common-column-expressions">Common column expressions<a class="anchor-link" href="#Common-column-expressions">&#182;</a></h2><p>See the full API documentation for all of the available value methods and tools for creating value expressions. We mention a few common ones here as they relate to common SQL queries.</p>
+<h2 id="common-column-expressions">Common column expressions<a class="anchor-link" href="#common-column-expressions">&#182;</a></h2><p>See the full API documentation for all of the available value methods and tools for creating value expressions. We mention a few common ones here as they relate to common SQL queries.</p>
 
 </div>
 </div>
@@ -7066,7 +7066,7 @@ the column name for the value to apply to.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Type-casts">Type casts<a class="anchor-link" href="#Type-casts">&#182;</a></h2><p>Type casting in pandas is done using the <code>astype</code> method on columns.</p>
+<h2 id="type-casts">Type casts<a class="anchor-link" href="#type-casts">&#182;</a></h2><p>Type casting in pandas is done using the <code>astype</code> method on columns.</p>
 
 </div>
 </div>
@@ -7309,7 +7309,7 @@ casted.schema()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Replacing-NULLs">Replacing <code>NULL</code>s<a class="anchor-link" href="#Replacing-NULLs">&#182;</a></h3><p>Both pandas and Ibis have <code>fillna</code> methods which allow you to specify a replacement value
+<h3 id="replacing-nulls">Replacing <code>NULL</code>s<a class="anchor-link" href="#replacing-nulls">&#182;</a></h3><p>Both pandas and Ibis have <code>fillna</code> methods which allow you to specify a replacement value
 for <code>NULL</code> values.</p>
 
 </div>
@@ -7354,7 +7354,7 @@ for <code>NULL</code> values.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Set-membership">Set membership<a class="anchor-link" href="#Set-membership">&#182;</a></h3><p>pandas set membership uses the <code>in</code> and <code>not in</code> operators such as <code>'a' in df.species</code>. Ibis uses
+<h3 id="set-membership">Set membership<a class="anchor-link" href="#set-membership">&#182;</a></h3><p>pandas set membership uses the <code>in</code> and <code>not in</code> operators such as <code>'a' in df.species</code>. Ibis uses
 <code>isin</code> and <code>notin</code> methods. In addition to testing membership in a set, these methods allow you to
 specify an else case to assign a value when the value isn't in the set.</p>
 
@@ -7497,7 +7497,7 @@ refined.value_counts()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Merging-tables">Merging tables<a class="anchor-link" href="#Merging-tables">&#182;</a></h2><p>While pandas uses the <code>merge</code> method to combine data from multiple <code>DataFrames</code>, Ibis uses the
+<h2 id="merging-tables">Merging tables<a class="anchor-link" href="#merging-tables">&#182;</a></h2><p>While pandas uses the <code>merge</code> method to combine data from multiple <code>DataFrames</code>, Ibis uses the
 <code>join</code> method. They both have similar capabilities. The signature for the <code>join</code> method in Ibis
 is: <code>join(right, predicates=(), how='inner', *, suffixes=('_x', '_y'))</code>. The <code>merge</code> method on
 pandas' <code>DataFrame</code> allows many more parameters, but the signature with the corresponding
@@ -7973,7 +7973,7 @@ This may change in a future version to match the pandas behavior.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Concatenating-tables">Concatenating tables<a class="anchor-link" href="#Concatenating-tables">&#182;</a></h2><p>Concatenating <code>DataFrame</code>s in pandas is done with the <code>concat</code> top-level function. It takes multiple <code>DataFrames</code>
+<h2 id="concatenating-tables">Concatenating tables<a class="anchor-link" href="#concatenating-tables">&#182;</a></h2><p>Concatenating <code>DataFrame</code>s in pandas is done with the <code>concat</code> top-level function. It takes multiple <code>DataFrames</code>
 and concatenates the rows of one <code>DataFrame</code> to the next. If the columns are mis-matched, it extends the
 list of columns to include the full set of columns and inserts <code>NaN</code>s and <code>None</code>s into the missing values.</p>
 <p>Concatenating tables in Ibis can only be done on tables with matching schemas. The concatenation is done
