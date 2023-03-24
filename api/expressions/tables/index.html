@@ -4254,56 +4254,158 @@ you don't know the length prior to running your program (for example, user input
 
 
 <h4 id="ibis.expr.types.relations.Table.distinct" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">distinct</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">distinct</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.distinct" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
-      <p>Compute the unique rows in <code>self</code>.</p>
+      <p>Return a Table with duplicate rows removed.</p>
+<p>Similar to <code>pandas.DataFrame.drop_duplicates()</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Some backends do not support <code>keep='last'</code></p>
+</div>
 
-  <p><strong>Returns:</strong></p>
+  <p><strong>Parameters:</strong></p>
   <table>
     <thead>
       <tr>
+        <th>Name</th>
         <th>Type</th>
         <th>Description</th>
+        <th>Default</th>
       </tr>
     </thead>
     <tbody>
         <tr>
+          <td><code>on</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span> | None</code>
           </td>
-          <td><p>Unique rows of <code>self</code></p></td>
+          <td><p>Only consider certain columns for identifying duplicates.
+By default deduplicate all of the columns.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>keep</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;first&#39;, &#39;last&#39;] | None</code>
+          </td>
+          <td><p>Determines which duplicates to keep.</p>
+<ul>
+<li><code>"first"</code>: Drop duplicates except for the first occurrence.</li>
+<li><code>"last"</code>: Drop duplicates except for the last occurrence.</li>
+<li><code>None</code>: Drop all duplicates</li>
+</ul></td>
+          <td>
+                <code>&#39;first&#39;</code>
+          </td>
         </tr>
     </tbody>
   </table>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.examples</span> <span class="k">as</span> <span class="nn">ex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
-<span class="go">┏━━━━━━━┳━━━━━━━━┓</span>
-<span class="go">┃ a     ┃ b      ┃</span>
-<span class="go">┡━━━━━━━╇━━━━━━━━┩</span>
-<span class="go">│ int64 │ string │</span>
-<span class="go">├───────┼────────┤</span>
-<span class="go">│     1 │ c      │</span>
-<span class="go">│     1 │ a      │</span>
-<span class="go">│     2 │ a      │</span>
-<span class="go">└───────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>Compute the distinct rows of a subset of columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━┓</span>
+<span class="go">┃ species   ┃ island    ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━┩</span>
+<span class="go">│ string    │ string    │</span>
+<span class="go">├───────────┼───────────┤</span>
+<span class="go">│ Adelie    │ Torgersen │</span>
+<span class="go">│ Adelie    │ Biscoe    │</span>
+<span class="go">│ Adelie    │ Dream     │</span>
+<span class="go">│ Gentoo    │ Biscoe    │</span>
+<span class="go">│ Chinstrap │ Dream     │</span>
+<span class="go">└───────────┴───────────┘</span>
+</code></pre></div>
+    <p>Drop all duplicate rows except the first</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━┓</span>
+<span class="go">┃ species   ┃ island    ┃ bill_length_mm ┃ bill_depth_… ┃ flipper_length_mm ┃  ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━┩</span>
+<span class="go">│ string    │ string    │ float64        │ float64      │ int64             │  │</span>
+<span class="go">├───────────┼───────────┼────────────────┼──────────────┼───────────────────┼──┤</span>
+<span class="go">│ Adelie    │ Torgersen │           39.1 │         18.7 │               181 │  │</span>
+<span class="go">│ Adelie    │ Biscoe    │           37.8 │         18.3 │               174 │  │</span>
+<span class="go">│ Adelie    │ Dream     │           39.5 │         16.7 │               178 │  │</span>
+<span class="go">│ Gentoo    │ Biscoe    │           46.1 │         13.2 │               211 │  │</span>
+<span class="go">│ Chinstrap │ Dream     │           46.5 │         17.9 │               192 │  │</span>
+<span class="go">└───────────┴───────────┴────────────────┴──────────────┴───────────────────┴──┘</span>
+</code></pre></div>
+    <p>Drop all duplicate rows except the last</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━┓</span>
+<span class="go">┃ species   ┃ island    ┃ bill_length_mm ┃ bill_depth_… ┃ flipper_length_mm ┃  ┃</span>
+<span class="go">┡━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━┩</span>
+<span class="go">│ string    │ string    │ float64        │ float64      │ int64             │  │</span>
+<span class="go">├───────────┼───────────┼────────────────┼──────────────┼───────────────────┼──┤</span>
+<span class="go">│ Adelie    │ Torgersen │           43.1 │         19.2 │               197 │  │</span>
+<span class="go">│ Adelie    │ Biscoe    │           42.7 │         18.3 │               196 │  │</span>
+<span class="go">│ Adelie    │ Dream     │           41.5 │         18.5 │               201 │  │</span>
+<span class="go">│ Gentoo    │ Biscoe    │           49.9 │         16.1 │               213 │  │</span>
+<span class="go">│ Chinstrap │ Dream     │           50.2 │         18.7 │               198 │  │</span>
+<span class="go">└───────────┴───────────┴────────────────┴──────────────┴───────────────────┴──┘</span>
+</code></pre></div>
+    <p>Drop all duplicated rows</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">273</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">344</span>
+</code></pre></div>
+    <p>You can pass <a class="autorefs autorefs-internal" href="../../selectors/#ibis.expr.selectors"><code>selectors</code></a> to <code>on</code></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="n">on</span><span class="o">=~</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">())</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Biscoe    │           37.8 │          18.3 │               174 │ … │</span>
+<span class="go">│ Adelie  │ Biscoe    │           37.7 │          18.7 │               180 │ … │</span>
+<span class="go">│ Adelie  │ Dream     │           39.5 │          16.7 │               178 │ … │</span>
+<span class="go">│ Adelie  │ Dream     │           37.2 │          18.1 │               178 │ … │</span>
+<span class="go">│ Adelie  │ Dream     │           37.5 │          18.9 │               179 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │           46.1 │          13.2 │               211 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │           50.0 │          16.3 │               230 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+    <p>The only valid values of <code>keep</code> are <code>"first"</code>, <code>"last"</code> and <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#None">`None</a></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;second&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">  </span><span class="c">...</span>
+<span class="gr">ibis.common.exceptions.IbisError</span>: <span class="n">Invalid value for keep: &#39;second&#39; ...</span>
 </code></pre></div>
 
   </div>
