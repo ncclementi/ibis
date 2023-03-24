@@ -215,7 +215,7 @@ ibis.expr.operations.strings.RPad,True,True,True,True,True,True,True,False,True,
 ibis.expr.operations.strings.RStrip,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.RegexExtract,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,True
 ibis.expr.operations.strings.RegexReplace,True,True,True,False,False,True,True,False,False,True,True,True,True,True,True,True
-ibis.expr.operations.strings.RegexSearch,True,True,True,False,False,True,True,False,True,True,True,True,True,True,True,True
+ibis.expr.operations.strings.RegexSearch,True,True,True,False,True,True,True,False,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.Repeat,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.Reverse,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.StartsWith,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
