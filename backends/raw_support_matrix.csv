@@ -21,7 +21,7 @@ ibis.expr.operations.arrays.ArrayConcat,True,True,True,False,False,True,False,Fa
 ibis.expr.operations.arrays.ArrayFilter,False,True,False,False,False,True,False,False,False,False,False,False,True,False,False,True
 ibis.expr.operations.arrays.ArrayIndex,True,True,True,False,False,True,False,False,False,True,False,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayLength,True,True,True,False,False,True,False,False,False,True,True,True,True,True,False,True
-ibis.expr.operations.arrays.ArrayMap,False,True,False,False,False,True,False,False,False,False,False,False,False,False,False,True
+ibis.expr.operations.arrays.ArrayMap,False,True,False,False,False,True,False,False,False,False,False,False,True,False,False,True
 ibis.expr.operations.arrays.ArrayRepeat,True,True,True,False,False,True,False,False,False,True,False,True,True,False,False,True
 ibis.expr.operations.arrays.ArraySlice,True,True,True,False,False,True,False,False,False,True,False,True,True,True,False,True
 ibis.expr.operations.arrays.Unnest,False,True,True,False,False,True,False,False,False,True,True,True,True,True,False,True
