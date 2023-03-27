@@ -1444,6 +1444,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.pivot_wider" class="md-nav__link">
+    pivot_wider()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.relabel" class="md-nav__link">
     relabel()
   </a>
@@ -2635,6 +2642,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.pivot_longer" class="md-nav__link">
     pivot_longer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.pivot_wider" class="md-nav__link">
+    pivot_wider()
   </a>
   
 </li>
@@ -6054,6 +6068,461 @@ variables stored in column names</p>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="w">  </span><span class="c">...</span>
 <span class="gr">ibis.common.exceptions.IbisTypeError</span>: <span class="n">... Got &lt;class &#39;str&#39;&gt;</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.pivot_wider" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pivot_wider</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">id_cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names_from</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">names_prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">names_sep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">names_sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values_from</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">values_fill</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values_agg</span><span class="o">=</span><span class="s1">&#39;arbitrary&#39;</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.pivot_wider" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pivot a table to a wider format.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>id_cols</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span> | None</code>
+          </td>
+          <td><p>A set of columns that uniquely identify each observation.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span></code>
+          </td>
+          <td><p>An argument describing which column or columns to use to get the
+name of the output columns.</p></td>
+          <td>
+                <code>&#39;name&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_prefix</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>String added to the start of every column name.</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_sep</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>If <code>names_from</code> or <code>values_from</code> contains multiple columns, this
+argument will be used to join their values together into a single
+string to use as a column name.</p></td>
+          <td>
+                <code>&#39;_&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names_sort</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>If <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a> columns are sorted. If <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#False"><code>False</code></a> column
+names are ordered by appearance.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
+          </td>
+          <td><p>An explicit sequence of values to look for in columns matching
+<code>names_from</code>.</p>
+<ul>
+<li>When this value is <code>None</code>, the values will be computed from
+<code>names_from</code>.</li>
+<li>When this value is not <code>None</code>, each element's length must match
+the length of <code>names_from</code>.</li>
+</ul>
+<p>See examples below for more detail.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>values_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span></code>
+          </td>
+          <td><p>An argument describing which column or columns to get the cell
+values from.</p></td>
+          <td>
+                <code>&#39;value&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>values_fill</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a> | None</code>
+          </td>
+          <td><p>A scalar value that specifies what each value should be filled with
+when missing.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>values_agg</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>] | <span title="ibis.expr.deferred.Deferred">Deferred</span></code>
+          </td>
+          <td><p>A function applied to the value in each cell in the output.</p></td>
+          <td>
+                <code>&#39;arbitrary&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td><p>Wider pivoted table</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+    <p>Basic usage</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">fish_encounters</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">fish_encounters</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fish_encounters</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ fish  ┃ station ┃ seen  ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ int64 │ string  │ int64 │</span>
+<span class="go">├───────┼─────────┼───────┤</span>
+<span class="go">│  4842 │ Release │     1 │</span>
+<span class="go">│  4842 │ I80_1   │     1 │</span>
+<span class="go">│  4842 │ Lisbon  │     1 │</span>
+<span class="go">│  4842 │ Rstr    │     1 │</span>
+<span class="go">│  4842 │ Base_TD │     1 │</span>
+<span class="go">│  4842 │ BCE     │     1 │</span>
+<span class="go">│  4842 │ BCW     │     1 │</span>
+<span class="go">│  4842 │ BCE2    │     1 │</span>
+<span class="go">│  4842 │ BCW2    │     1 │</span>
+<span class="go">│  4842 │ MAE     │     1 │</span>
+<span class="go">│     … │ …       │     … │</span>
+<span class="go">└───────┴─────────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fish_encounters</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;station&quot;</span><span class="p">,</span> <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;seen&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━┓</span>
+<span class="go">┃ fish  ┃ Release ┃ I80_1 ┃ Lisbon ┃ Rstr  ┃ Base_TD ┃ BCE   ┃ BCW   ┃ … ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━┩</span>
+<span class="go">│ int64 │ int64   │ int64 │ int64  │ int64 │ int64   │ int64 │ int64 │ … │</span>
+<span class="go">├───────┼─────────┼───────┼────────┼───────┼─────────┼───────┼───────┼───┤</span>
+<span class="go">│  4842 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4843 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4844 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4845 │       1 │     1 │      1 │     1 │       1 │     ∅ │     ∅ │ … │</span>
+<span class="go">│  4847 │       1 │     1 │      1 │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
+<span class="go">│  4848 │       1 │     1 │      1 │     1 │       ∅ │     ∅ │     ∅ │ … │</span>
+<span class="go">│  4849 │       1 │     1 │      ∅ │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
+<span class="go">│  4850 │       1 │     1 │      ∅ │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4851 │       1 │     1 │      ∅ │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
+<span class="go">│  4854 │       1 │     1 │      ∅ │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
+<span class="go">│     … │       … │     … │      … │     … │       … │     … │     … │ … │</span>
+<span class="go">└───────┴─────────┴───────┴────────┴───────┴─────────┴───────┴───────┴───┘</span>
+</code></pre></div>
+    <p>Fill missing pivoted values using <code>values_fill</code></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">fish_encounters</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;station&quot;</span><span class="p">,</span> <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;seen&quot;</span><span class="p">,</span> <span class="n">values_fill</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━┓</span>
+<span class="go">┃ fish  ┃ Release ┃ I80_1 ┃ Lisbon ┃ Rstr  ┃ Base_TD ┃ BCE   ┃ BCW   ┃ … ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━┩</span>
+<span class="go">│ int64 │ int64   │ int64 │ int64  │ int64 │ int64   │ int64 │ int64 │ … │</span>
+<span class="go">├───────┼─────────┼───────┼────────┼───────┼─────────┼───────┼───────┼───┤</span>
+<span class="go">│  4842 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4843 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4844 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4845 │       1 │     1 │      1 │     1 │       1 │     0 │     0 │ … │</span>
+<span class="go">│  4847 │       1 │     1 │      1 │     0 │       0 │     0 │     0 │ … │</span>
+<span class="go">│  4848 │       1 │     1 │      1 │     1 │       0 │     0 │     0 │ … │</span>
+<span class="go">│  4849 │       1 │     1 │      0 │     0 │       0 │     0 │     0 │ … │</span>
+<span class="go">│  4850 │       1 │     1 │      0 │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4851 │       1 │     1 │      0 │     0 │       0 │     0 │     0 │ … │</span>
+<span class="go">│  4854 │       1 │     1 │      0 │     0 │       0 │     0 │     0 │ … │</span>
+<span class="go">│     … │       … │     … │      … │     … │       … │     … │     … │ … │</span>
+<span class="go">└───────┴─────────┴───────┴────────┴───────┴─────────┴───────┴───────┴───┘</span>
+</code></pre></div>
+    <p>Compute multiple values columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">us_rent_income</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">us_rent_income</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">us_rent_income</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ geoid  ┃ name       ┃ variable ┃ estimate ┃ moe   ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string │ string     │ string   │ int64    │ int64 │</span>
+<span class="go">├────────┼────────────┼──────────┼──────────┼───────┤</span>
+<span class="go">│ 01     │ Alabama    │ income   │    24476 │   136 │</span>
+<span class="go">│ 01     │ Alabama    │ rent     │      747 │     3 │</span>
+<span class="go">│ 02     │ Alaska     │ income   │    32940 │   508 │</span>
+<span class="go">│ 02     │ Alaska     │ rent     │     1200 │    13 │</span>
+<span class="go">│ 04     │ Arizona    │ income   │    27517 │   148 │</span>
+<span class="go">│ 04     │ Arizona    │ rent     │      972 │     4 │</span>
+<span class="go">│ 05     │ Arkansas   │ income   │    23789 │   165 │</span>
+<span class="go">│ 05     │ Arkansas   │ rent     │      709 │     5 │</span>
+<span class="go">│ 06     │ California │ income   │    29454 │   109 │</span>
+<span class="go">│ 06     │ California │ rent     │     1358 │     3 │</span>
+<span class="go">│ …      │ …          │ …        │        … │     … │</span>
+<span class="go">└────────┴────────────┴──────────┴──────────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">us_rent_income</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">values_from</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;estimate&quot;</span><span class="p">,</span> <span class="s2">&quot;moe&quot;</span><span class="p">])</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ geoid  ┃ name                 ┃ estimate_income ┃ moe_income ┃ … ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string │ string               │ int64           │ int64      │ … │</span>
+<span class="go">├────────┼──────────────────────┼─────────────────┼────────────┼───┤</span>
+<span class="go">│ 01     │ Alabama              │           24476 │        136 │ … │</span>
+<span class="go">│ 02     │ Alaska               │           32940 │        508 │ … │</span>
+<span class="go">│ 04     │ Arizona              │           27517 │        148 │ … │</span>
+<span class="go">│ 05     │ Arkansas             │           23789 │        165 │ … │</span>
+<span class="go">│ 06     │ California           │           29454 │        109 │ … │</span>
+<span class="go">│ 08     │ Colorado             │           32401 │        109 │ … │</span>
+<span class="go">│ 09     │ Connecticut          │           35326 │        195 │ … │</span>
+<span class="go">│ 10     │ Delaware             │           31560 │        247 │ … │</span>
+<span class="go">│ 11     │ District of Columbia │           43198 │        681 │ … │</span>
+<span class="go">│ 12     │ Florida              │           25952 │         70 │ … │</span>
+<span class="go">│ …      │ …                    │               … │          … │ … │</span>
+<span class="go">└────────┴──────────────────────┴─────────────────┴────────────┴───┘</span>
+</code></pre></div>
+    <p>The column name separator can be changed using the <code>names_sep</code> parameter</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">us_rent_income</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">names_sep</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_from</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;estimate&quot;</span><span class="p">,</span> <span class="s2">&quot;moe&quot;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ geoid  ┃ name                 ┃ estimate.income ┃ moe.income ┃ … ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string │ string               │ int64           │ int64      │ … │</span>
+<span class="go">├────────┼──────────────────────┼─────────────────┼────────────┼───┤</span>
+<span class="go">│ 01     │ Alabama              │           24476 │        136 │ … │</span>
+<span class="go">│ 02     │ Alaska               │           32940 │        508 │ … │</span>
+<span class="go">│ 04     │ Arizona              │           27517 │        148 │ … │</span>
+<span class="go">│ 05     │ Arkansas             │           23789 │        165 │ … │</span>
+<span class="go">│ 06     │ California           │           29454 │        109 │ … │</span>
+<span class="go">│ 08     │ Colorado             │           32401 │        109 │ … │</span>
+<span class="go">│ 09     │ Connecticut          │           35326 │        195 │ … │</span>
+<span class="go">│ 10     │ Delaware             │           31560 │        247 │ … │</span>
+<span class="go">│ 11     │ District of Columbia │           43198 │        681 │ … │</span>
+<span class="go">│ 12     │ Florida              │           25952 │         70 │ … │</span>
+<span class="go">│ …      │ …                    │               … │          … │ … │</span>
+<span class="go">└────────┴──────────────────────┴─────────────────┴────────────┴───┘</span>
+</code></pre></div>
+    <p>Supply an alternative function to summarize values</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">warpbreaks</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">warpbreaks</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;wool&quot;</span><span class="p">,</span> <span class="s2">&quot;tension&quot;</span><span class="p">,</span> <span class="s2">&quot;breaks&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warpbreaks</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ wool   ┃ tension ┃ breaks ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ string │ string  │ int64  │</span>
+<span class="go">├────────┼─────────┼────────┤</span>
+<span class="go">│ A      │ L       │     26 │</span>
+<span class="go">│ A      │ L       │     30 │</span>
+<span class="go">│ A      │ L       │     54 │</span>
+<span class="go">│ A      │ L       │     25 │</span>
+<span class="go">│ A      │ L       │     70 │</span>
+<span class="go">│ A      │ L       │     52 │</span>
+<span class="go">│ A      │ L       │     51 │</span>
+<span class="go">│ A      │ L       │     26 │</span>
+<span class="go">│ A      │ L       │     67 │</span>
+<span class="go">│ A      │ M       │     18 │</span>
+<span class="go">│ …      │ …       │      … │</span>
+<span class="go">└────────┴─────────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warpbreaks</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;wool&quot;</span><span class="p">,</span> <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;breaks&quot;</span><span class="p">,</span> <span class="n">values_agg</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓</span>
+<span class="go">┃ tension ┃ A         ┃ B         ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ float64   │ float64   │</span>
+<span class="go">├─────────┼───────────┼───────────┤</span>
+<span class="go">│ L       │ 44.555556 │ 28.222222 │</span>
+<span class="go">│ M       │ 24.000000 │ 28.777778 │</span>
+<span class="go">│ H       │ 24.555556 │ 18.777778 │</span>
+<span class="go">└─────────┴───────────┴───────────┘</span>
+</code></pre></div>
+    <p>Passing <code>Deferred</code> objects to <code>values_agg</code> is supported</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">warpbreaks</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;tension&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;breaks&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_agg</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ wool   ┃ L     ┃ M     ┃ H     ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string │ int64 │ int64 │ int64 │</span>
+<span class="go">├────────┼───────┼───────┼───────┤</span>
+<span class="go">│ A      │   401 │   216 │   221 │</span>
+<span class="go">│ B      │   254 │   259 │   169 │</span>
+<span class="go">└────────┴───────┴───────┴───────┘</span>
+</code></pre></div>
+    <p>Use a custom aggregate function</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">warpbreaks</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">names_from</span><span class="o">=</span><span class="s2">&quot;wool&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;breaks&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">values_agg</span><span class="o">=</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">/</span> <span class="n">col</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<span class="go">┃ tension ┃ A        ┃ B        ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩</span>
+<span class="go">│ string  │ float64  │ float64  │</span>
+<span class="go">├─────────┼──────────┼──────────┤</span>
+<span class="go">│ L       │ 0.406183 │ 0.349325 │</span>
+<span class="go">│ M       │ 0.360844 │ 0.327719 │</span>
+<span class="go">│ H       │ 0.418344 │ 0.260590 │</span>
+<span class="go">└─────────┴──────────┴──────────┘</span>
+</code></pre></div>
+    <p>Generate some random data, setting the random seed for reproducibility</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span>
+<span class="gp">... </span>        <span class="nb">dict</span><span class="p">(</span>
+<span class="gp">... </span>            <span class="n">product</span><span class="o">=</span><span class="n">product</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">country</span><span class="o">=</span><span class="n">country</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">production</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(),</span>
+<span class="gp">... </span>        <span class="p">)</span>
+<span class="gp">... </span>        <span class="k">for</span> <span class="n">product</span> <span class="ow">in</span> <span class="s2">&quot;AB&quot;</span>
+<span class="gp">... </span>        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;AI&quot;</span><span class="p">,</span> <span class="s2">&quot;EI&quot;</span><span class="p">]</span>
+<span class="gp">... </span>        <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">production</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">((</span><span class="n">_</span><span class="o">.</span><span class="n">product</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s2">&quot;AI&quot;</span><span class="p">))</span> <span class="o">|</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">product</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">production</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━┓</span>
+<span class="go">┃ product ┃ country ┃ year  ┃ production ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━┩</span>
+<span class="go">│ string  │ string  │ int64 │ float64    │</span>
+<span class="go">├─────────┼─────────┼───────┼────────────┤</span>
+<span class="go">│ B       │ AI      │  2000 │   0.477010 │</span>
+<span class="go">│ B       │ AI      │  2001 │   0.865310 │</span>
+<span class="go">│ B       │ AI      │  2002 │   0.260492 │</span>
+<span class="go">│ B       │ AI      │  2003 │   0.805028 │</span>
+<span class="go">│ B       │ AI      │  2004 │   0.548699 │</span>
+<span class="go">│ B       │ AI      │  2005 │   0.014042 │</span>
+<span class="go">│ B       │ AI      │  2006 │   0.719705 │</span>
+<span class="go">│ B       │ AI      │  2007 │   0.398824 │</span>
+<span class="go">│ B       │ AI      │  2008 │   0.824845 │</span>
+<span class="go">│ B       │ AI      │  2009 │   0.668153 │</span>
+<span class="go">│ …       │ …       │     … │          … │</span>
+<span class="go">└─────────┴─────────┴───────┴────────────┘</span>
+</code></pre></div>
+    <p>Pivoting with multiple name columns</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">production</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">names_from</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;product&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;production&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<span class="go">┃ year  ┃ B_AI     ┃ B_EI     ┃ A_AI     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩</span>
+<span class="go">│ int64 │ float64  │ float64  │ float64  │</span>
+<span class="go">├───────┼──────────┼──────────┼──────────┤</span>
+<span class="go">│  2000 │ 0.477010 │ 0.870471 │ 0.844422 │</span>
+<span class="go">│  2001 │ 0.865310 │ 0.191067 │ 0.757954 │</span>
+<span class="go">│  2002 │ 0.260492 │ 0.567511 │ 0.420572 │</span>
+<span class="go">│  2003 │ 0.805028 │ 0.238616 │ 0.258917 │</span>
+<span class="go">│  2004 │ 0.548699 │ 0.967540 │ 0.511275 │</span>
+<span class="go">│  2005 │ 0.014042 │ 0.803179 │ 0.404934 │</span>
+<span class="go">│  2006 │ 0.719705 │ 0.447970 │ 0.783799 │</span>
+<span class="go">│  2007 │ 0.398824 │ 0.080446 │ 0.303313 │</span>
+<span class="go">│  2008 │ 0.824845 │ 0.320055 │ 0.476597 │</span>
+<span class="go">│  2009 │ 0.668153 │ 0.507941 │ 0.583382 │</span>
+<span class="go">│     … │        … │        … │        … │</span>
+<span class="go">└───────┴──────────┴──────────┴──────────┘</span>
+</code></pre></div>
+    <p>Select a subset of names. This call incurs no computation when
+constructing the expression.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">production</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">names_from</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;product&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">names</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;AI&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;AI&quot;</span><span class="p">)],</span>
+<span class="gp">... </span>    <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;production&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<span class="go">┃ year  ┃ A_AI     ┃ B_AI     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩</span>
+<span class="go">│ int64 │ float64  │ float64  │</span>
+<span class="go">├───────┼──────────┼──────────┤</span>
+<span class="go">│  2000 │ 0.844422 │ 0.477010 │</span>
+<span class="go">│  2001 │ 0.757954 │ 0.865310 │</span>
+<span class="go">│  2002 │ 0.420572 │ 0.260492 │</span>
+<span class="go">│  2003 │ 0.258917 │ 0.805028 │</span>
+<span class="go">│  2004 │ 0.511275 │ 0.548699 │</span>
+<span class="go">│  2005 │ 0.404934 │ 0.014042 │</span>
+<span class="go">│  2006 │ 0.783799 │ 0.719705 │</span>
+<span class="go">│  2007 │ 0.303313 │ 0.398824 │</span>
+<span class="go">│  2008 │ 0.476597 │ 0.824845 │</span>
+<span class="go">│  2009 │ 0.583382 │ 0.668153 │</span>
+<span class="go">│     … │        … │        … │</span>
+<span class="go">└───────┴──────────┴──────────┘</span>
+</code></pre></div>
+    <p>Sort the new columns' names</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">production</span><span class="o">.</span><span class="n">pivot_wider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">names_from</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;product&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">values_from</span><span class="o">=</span><span class="s2">&quot;production&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">names_sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<span class="go">┃ year  ┃ A_AI     ┃ B_AI     ┃ B_EI     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩</span>
+<span class="go">│ int64 │ float64  │ float64  │ float64  │</span>
+<span class="go">├───────┼──────────┼──────────┼──────────┤</span>
+<span class="go">│  2000 │ 0.844422 │ 0.477010 │ 0.870471 │</span>
+<span class="go">│  2001 │ 0.757954 │ 0.865310 │ 0.191067 │</span>
+<span class="go">│  2002 │ 0.420572 │ 0.260492 │ 0.567511 │</span>
+<span class="go">│  2003 │ 0.258917 │ 0.805028 │ 0.238616 │</span>
+<span class="go">│  2004 │ 0.511275 │ 0.548699 │ 0.967540 │</span>
+<span class="go">│  2005 │ 0.404934 │ 0.014042 │ 0.803179 │</span>
+<span class="go">│  2006 │ 0.783799 │ 0.719705 │ 0.447970 │</span>
+<span class="go">│  2007 │ 0.303313 │ 0.398824 │ 0.080446 │</span>
+<span class="go">│  2008 │ 0.476597 │ 0.824845 │ 0.320055 │</span>
+<span class="go">│  2009 │ 0.583382 │ 0.668153 │ 0.507941 │</span>
+<span class="go">│     … │        … │        … │        … │</span>
+<span class="go">└───────┴──────────┴──────────┴──────────┘</span>
 </code></pre></div>
 
   </div>
