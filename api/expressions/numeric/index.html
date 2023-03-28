@@ -1587,6 +1587,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.numeric.NumericColumn.summary" class="md-nav__link">
+    summary()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.numeric.NumericColumn.var" class="md-nav__link">
     var()
   </a>
@@ -2905,6 +2912,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.numeric.NumericColumn.sum" class="md-nav__link">
     sum()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.numeric.NumericColumn.summary" class="md-nav__link">
+    summary()
   </a>
   
 </li>
@@ -4887,6 +4901,87 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
                 <code><span title="ibis.expr.types.numeric.NumericScalar">NumericScalar</span></code>
           </td>
           <td><p>The sum of the input expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.numeric.NumericColumn.summary" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">summary</span><span class="p">(</span><span class="n">exact_nunique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.numeric.NumericColumn.summary" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Compute summary metrics from the input numeric expression.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>exact_nunique</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Compute the exact number of distinct values. Typically slower if
+<code>True</code>.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>prefix</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>String prefix for metric names</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>suffix</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>String suffix for metric names</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<span title="ibis.expr.types.numeric.NumericScalar">NumericScalar</span>]</code>
+          </td>
+          <td><p>Metrics list</p></td>
         </tr>
     </tbody>
   </table>
