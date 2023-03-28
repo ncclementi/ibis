@@ -2059,13 +2059,12 @@
 <h2 id="the-flexibility-of-python-analytics-with-the-scale-and-performance-of-modern-sql">The flexibility of Python analytics with the scale and performance of modern SQL.<a class="headerlink" href="#the-flexibility-of-python-analytics-with-the-scale-and-performance-of-modern-sql" title="Anchor link to this section for reference">&para;</a></h2>
 <hr />
 <div class="install-tutorial-button">
-<p><a class="md-button md-button--primary" href="install/">Install</a>
-<a class="md-button" href="https://github.com/ibis-project/ibis-examples">Tutorial</a></p>
+<p><a class="md-button md-button--primary" href="getting_started/">Getting Started</a>
+<a class="md-button" href="install/">Install</a></p>
 </div>
 <hr />
 <div class="highlight"><span class="filename">Write high-level Python code</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;movielens.sqlite&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">movies</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">movies</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">movies</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">ml_latest_small_movies</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">rating_by_year</span> <span class="o">=</span> <span class="n">movies</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">avg_rating</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="n">rating_by_year</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">rating_by_year</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span>
 </code></pre></div>
@@ -2100,7 +2099,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2023</span>
       
     
   </small>
