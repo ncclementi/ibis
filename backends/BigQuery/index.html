@@ -752,6 +752,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_database" class="md-nav__link">
+    exists_database()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_table" class="md-nav__link">
+    exists_table()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2054,6 +2068,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_database" class="md-nav__link">
+    exists_database()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_table" class="md-nav__link">
+    exists_table()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2390,6 +2418,46 @@ already set on the expression.</p></td>
         </tr>
     </tbody>
   </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.bigquery.Backend.exists_database" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists_database</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.bigquery.Backend.exists_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether a database name exists in the current connection.</p>
+<p>Deprecated in Ibis 2.0. Use <code>name in client.list_databases()</code>
+instead.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.bigquery.Backend.exists_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.bigquery.Backend.exists_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether a table name exists in the database.</p>
+<p>Deprecated in Ibis 2.0. Use <code>name in client.list_tables()</code>
+instead.</p>
 
   </div>
 
