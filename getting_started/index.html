@@ -2040,10 +2040,10 @@ this case). Only when the query is executed does Ibis then pull back the results
 and convert them into a DataFrame.</p>
 </div>
 <h2 id="interactive-mode">Interactive Mode<a class="headerlink" href="#interactive-mode" title="Anchor link to this section for reference">&para;</a></h2>
-<p>For the rest of this intro, we'll turn on interactive mode, which partially
-executes queries to give users a preview of the results. There is a small
-difference in the way the output is formatted, but otherwise this is the same
-as calling <code>execute()</code> on the expression with a limit of 10 results returned.</p>
+<p>For the rest of this intro, we'll turn on interactive mode, which eagerly executes queries.
+There is a small difference in the way the output is formatted, but otherwise
+this is the same as calling <code>execute()</code> on the expression with a limit of 10
+results returned.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
@@ -2084,7 +2084,7 @@ in a table (or tables).</p>
 <span class="err">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</span>
 </code></pre></div>
 <p>Or filter for Adelie penguins that reside on the island of Torgersen:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">penguins</span><span class="o">.</span><span class="n">island</span> <span class="o">==</span> <span class="s2">&quot;Torgersen&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="n">penguins</span><span class="o">.</span><span class="n">island</span> <span class="o">==</span> <span class="s2">&quot;Torgersen&quot;</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">])</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_length_mm</span> <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">sex</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
@@ -2226,11 +2226,10 @@ trim down the number of columns we're looking at.</p>
 <p>Typing out ALL of the column names <em>except</em> one is a little annoying. Instead of
 doing that again, we can use a <code>selector</code> to quickly select or deselect groups
 of columns.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">bill_length_cm</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
         <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span>
-        <span class="c1"># match every column except `bill_length_mm`</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">sex</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span> <span class="n">bill_length_cm</span> <span class="err">┃</span>
@@ -2342,11 +2341,22 @@ of columns.</p>
 <h3 id="aggregates">Aggregates<a class="headerlink" href="#aggregates" title="Anchor link to this section for reference">&para;</a></h3>
 <p>Ibis has several aggregate functions available to help summarize data.</p>
 <p><code>mean</code>, <code>max</code>, <code>min</code>, <code>count</code>, <code>sum</code> (the list goes on).</p>
-<p>To aggregate an entire column, call the corresponding method on that column.</p>
+<p>To aggregate an entire column, call the corresponding method on that column for
+a quick result:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="mf">200.91520467836258</span>
 </code></pre></div>
-<p>You can compute multiple aggregates at once using the <code>aggregate</code> method:</p>
+<p>Or use the <code>aggregate</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="err">┏━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="err">┃</span> <span class="n">Mean</span><span class="p">(</span><span class="n">flipper_length_mm</span><span class="p">)</span> <span class="err">┃</span>
+<span class="err">┡━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="err">│</span> <span class="n">float64</span>                 <span class="err">│</span>
+<span class="err">├─────────────────────────┤</span>
+<span class="err">│</span>              <span class="mf">200.915205</span> <span class="err">│</span>
+<span class="err">└─────────────────────────┘</span>
+</code></pre></div>
+<p>That's not very useful on its own, but you can compute multiple aggregates at once:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="p">[</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">penguins</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
     <span class="p">)</span>
@@ -2454,7 +2464,7 @@ questions of the data.</p>
 <ul>
 <li>What was the largest female penguin (by body mass) on each island in the year 2008?</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2008</span><span class="p">))</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2008</span><span class="p">])</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span>
         <span class="p">[</span><span class="s2">&quot;island&quot;</span><span class="p">]</span>
     <span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓</span>
@@ -2470,7 +2480,7 @@ questions of the data.</p>
 <ul>
 <li>What about the largest male penguin (by body mass) on each island for each year of data collection?</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;max_body_mass&quot;</span><span class="p">)</span>
     <span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;max_body_mass&quot;</span><span class="p">])</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━┓</span>
@@ -2497,7 +2507,7 @@ questions of the data.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2023</span>
       
     
   </small>
