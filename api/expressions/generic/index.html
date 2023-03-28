@@ -4960,7 +4960,10 @@ backend.</li>
 
   <div class="doc doc-contents ">
   
-      <p>Return the <code>n</code>th value over a window.</p>
+      <p>Return the <code>n</code>th value (0-indexed) over a window.</p>
+<p><code>.nth(0)</code> is equivalent to <code>.first()</code>. Negative will result in <code>NULL</code>.
+If the value of <code>n</code> is greater than the number of rows in the window,
+<code>NULL</code> will be returned.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
