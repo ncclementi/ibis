@@ -3173,7 +3173,7 @@ input a column is returned, otherwise a table is returned.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
@@ -3874,7 +3874,7 @@ chaining will not incur the overhead of caching more than once.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
@@ -4101,7 +4101,7 @@ columns.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
@@ -4311,7 +4311,7 @@ you don't know the length prior to running your program (for example, user input
         <tr>
           <td><code>on</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span> | None</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span> | None</code>
           </td>
           <td><p>Only consider certain columns for identifying duplicates.
 By default deduplicate all of the columns.</p></td>
@@ -4340,7 +4340,7 @@ By default deduplicate all of the columns.</p></td>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.examples</span> <span class="k">as</span> <span class="nn">ex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
@@ -4411,7 +4411,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="go">344</span>
 </code></pre></div>
-    <p>You can pass <a class="autorefs autorefs-internal" href="../../selectors/#ibis.expr.selectors"><code>selectors</code></a> to <code>on</code></p>
+    <p>You can pass <a class="autorefs autorefs-internal" href="../../selectors/#ibis.selectors"><code>selectors</code></a> to <code>on</code></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="n">on</span><span class="o">=~</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">())</span>
 <span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
 <span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
@@ -4470,7 +4470,7 @@ By default deduplicate all of the columns.</p></td>
         <tr>
           <td><code>fields</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.selectors.Selector">Selector</span></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.selectors.Selector">Selector</span></code>
           </td>
           <td><p>Fields to drop. Strings and selectors are accepted.</p></td>
           <td>
@@ -4548,7 +4548,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">└───────────┴───────────────┴───────────────────┴─────────────┴────────┴───┘</span>
 </code></pre></div>
     <p>Drop with selectors, mix and match</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;bill_&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
 <span class="go">┃ island    ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃</span>
@@ -4807,7 +4807,7 @@ passed as a scalar all columns are filled with that value.</p></td>
         <tr>
           <td><code>predicates</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | <span title="ibis.expr.selectors.IfAnyAll">IfAnyAll</span></code>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | <span title="ibis.selectors.IfAnyAll">IfAnyAll</span></code>
           </td>
           <td><p>Boolean value expressions used to select rows in <code>table</code>.</p></td>
           <td>
@@ -5329,7 +5329,7 @@ columns.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.examples</span> <span class="k">as</span> <span class="nn">ex</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -5575,7 +5575,7 @@ columns.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span>
@@ -5769,7 +5769,7 @@ columns.</p></td>
         <tr>
           <td><code>cols</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
           <td><p>String column names or selectors.</p></td>
           <td>
@@ -5854,7 +5854,7 @@ deferred expression.</p></td>
 <p><strong>Examples:</strong></p>
     <p>Basic usage</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">relig_income</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">relig_income_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
@@ -6102,7 +6102,7 @@ variables stored in column names</p>
         <tr>
           <td><code>id_cols</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span> | None</code>
+                <code><a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span> | None</code>
           </td>
           <td><p>A set of columns that uniquely identify each observation.</p></td>
           <td>
@@ -6112,7 +6112,7 @@ variables stored in column names</p>
         <tr>
           <td><code>names_from</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
           <td><p>An argument describing which column or columns to use to get the
 name of the output columns.</p></td>
@@ -6174,7 +6174,7 @@ the length of <code>names_from</code>.</li>
         <tr>
           <td><code>values_from</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.expr.selectors" href="../../selectors/#ibis.expr.selectors">s</a>.<span title="ibis.expr.selectors.Selector">Selector</span></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
           <td><p>An argument describing which column or columns to get the cell
 values from.</p></td>
@@ -6226,7 +6226,7 @@ when missing.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 </code></pre></div>
@@ -6592,7 +6592,7 @@ columns to use a <code>snake_case</code> naming convention.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">first3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># first 3 columns</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins_raw_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">first3</span><span class="p">)</span>
@@ -6916,7 +6916,7 @@ strings.</p></td>
 <span class="go">└───────────┴───────────┘</span>
 </code></pre></div>
     <p>Projection with a selector</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓</span>
 <span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃</span>
