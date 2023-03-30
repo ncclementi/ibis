@@ -1977,7 +1977,7 @@ page</a> for information on how to install other backends.</p>
 <h2 id="download-a-database-file">Download a database file<a class="headerlink" href="#download-a-database-file" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis can work with several file types, but at its core, it connects to existing
 databases and interacts with the data there. We'll use a local database
-(DuckDB) to get the hang of this.</p>
+(DuckDB) to get the hang of this.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <div class="highlight"><span class="filename">Download an example dataset</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span>
         <span class="s2">&quot;https://storage.googleapis.com/ibis-tutorial-data/palmer_penguins.ddb&quot;</span><span class="p">,</span>
@@ -2491,13 +2491,25 @@ questions of the data.</p>
 </code></pre></div>
 <h2 id="learn-more">Learn more<a class="headerlink" href="#learn-more" title="Anchor link to this section for reference">&para;</a></h2>
 <p>That's all for this quick-start guide. If you want to learn more, check out the <a href="https://github.com/ibis-project/ibis-examples">tutorial</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Horst AM, Hill AP, Gorman KB (2020).
+palmerpenguins: Palmer Archipelago (Antarctica) penguin data.
+R package version 0.1.0.
+<a href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a>.
+doi: 10.5281/zenodo.3960218.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 30, 2023</span>
       
     
   </small>
