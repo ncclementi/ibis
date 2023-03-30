@@ -2589,7 +2589,7 @@
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7]                  │</span>
 <span class="go">│ [3]                  │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2599,7 +2599,7 @@
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7, 7]               │</span>
 <span class="go">│ [3, 3]               │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2692,7 +2692,7 @@ type as the input.</li>
 <span class="go">├──────────────────┤</span>
 <span class="go">│                7 │</span>
 <span class="go">│                3 │</span>
-<span class="go">│                ∅ │</span>
+<span class="go">│             NULL │</span>
 <span class="go">└──────────────────┘</span>
 </code></pre></div>
     <p>Extract a range of elements</p>
@@ -2705,7 +2705,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7, 42, ... +1]      │</span>
 <span class="go">│ [3, 3, ... +3]       │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2715,7 +2715,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [42]                 │</span>
 <span class="go">│ [3]                  │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
@@ -2791,7 +2791,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7]                  │</span>
 <span class="go">│ [3]                  │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2877,7 +2877,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7]                  │</span>
 <span class="go">│ [3]                  │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2963,7 +2963,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7]                  │</span>
 <span class="go">│ [3]                  │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -3134,7 +3134,7 @@ type as the input.</li>
 <span class="go">│ array&lt;string&gt;        │</span>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [&#39;a&#39;, &#39;b&#39;, ... +1]   │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">│ []                   │</span>
 <span class="go">│ [&#39;b&#39;, None]          │</span>
 <span class="go">└──────────────────────┘</span>
@@ -3145,8 +3145,8 @@ type as the input.</li>
 <span class="go">│ string                    │</span>
 <span class="go">├───────────────────────────┤</span>
 <span class="go">│ a|b|c                     │</span>
-<span class="go">│ ∅                         │</span>
-<span class="go">│ ∅                         │</span>
+<span class="go">│ NULL                      │</span>
+<span class="go">│ NULL                      │</span>
 <span class="go">│ b                         │</span>
 <span class="go">└───────────────────────────┘</span>
 </code></pre></div>
@@ -3201,7 +3201,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7, 42]              │</span>
 <span class="go">│ [3]                  │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
 <span class="go">┏━━━━━━━━━━━━━━━━┓</span>
@@ -3211,7 +3211,7 @@ type as the input.</li>
 <span class="go">├────────────────┤</span>
 <span class="go">│              2 │</span>
 <span class="go">│              1 │</span>
-<span class="go">│              ∅ │</span>
+<span class="go">│           NULL │</span>
 <span class="go">└────────────────┘</span>
 </code></pre></div>
 
@@ -3334,7 +3334,7 @@ type as the input.</li>
 <span class="go">├──────────────────────┤</span>
 <span class="go">│ [7, 42]              │</span>
 <span class="go">│ [3, 3]               │</span>
-<span class="go">│ ∅                    │</span>
+<span class="go">│ NULL                 │</span>
 <span class="go">└──────────────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">unnest</span><span class="p">()</span>
 <span class="go">┏━━━━━━┓</span>

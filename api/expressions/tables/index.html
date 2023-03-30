@@ -3186,7 +3186,7 @@ input a column is returned, otherwise a table is returned.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -3257,7 +3257,7 @@ input a column is returned, otherwise a table is returned.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -3267,7 +3267,7 @@ input a column is returned, otherwise a table is returned.</p></td>
 <span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
 <span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 </code></pre></div>
@@ -3333,7 +3333,7 @@ input a column is returned, otherwise a table is returned.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">:</span><span class="s2">&quot;body_mass_g&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -3345,7 +3345,7 @@ input a column is returned, otherwise a table is returned.</p></td>
 <span class="go">│           39.1 │          18.7 │               181 │        3750 │</span>
 <span class="go">│           39.5 │          17.4 │               186 │        3800 │</span>
 <span class="go">│           40.3 │          18.0 │               195 │        3250 │</span>
-<span class="go">│            nan │           nan │                 ∅ │           ∅ │</span>
+<span class="go">│            nan │           nan │              NULL │        NULL │</span>
 <span class="go">│           36.7 │          19.3 │               193 │        3450 │</span>
 <span class="go">└────────────────┴───────────────┴───────────────────┴─────────────┘</span>
 </code></pre></div>
@@ -3553,7 +3553,7 @@ backend for use in the
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 </code></pre></div>
@@ -3777,7 +3777,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -3798,7 +3798,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -3898,7 +3898,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="go">│        3750 │           39.1 │</span>
 <span class="go">│        3800 │           39.5 │</span>
 <span class="go">│        3250 │           40.3 │</span>
-<span class="go">│           ∅ │            nan │</span>
+<span class="go">│        NULL │            nan │</span>
 <span class="go">│        3450 │           36.7 │</span>
 <span class="go">└─────────────┴────────────────┘</span>
 </code></pre></div>
@@ -3915,7 +3915,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="go">│      3750.0 │             39 │</span>
 <span class="go">│      3800.0 │             40 │</span>
 <span class="go">│      3250.0 │             40 │</span>
-<span class="go">│         nan │              ∅ │</span>
+<span class="go">│         nan │           NULL │</span>
 <span class="go">│      3450.0 │             37 │</span>
 <span class="go">└─────────────┴────────────────┘</span>
 </code></pre></div>
@@ -4352,7 +4352,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -4420,7 +4420,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Biscoe    │           37.8 │          18.3 │               174 │ … │</span>
 <span class="go">│ Adelie  │ Biscoe    │           37.7 │          18.7 │               180 │ … │</span>
 <span class="go">│ Adelie  │ Dream     │           39.5 │          16.7 │               178 │ … │</span>
@@ -4511,7 +4511,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -4531,7 +4531,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">│ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">└───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -4543,7 +4543,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">│ Torgersen │          18.7 │               181 │        3750 │ male   │ … │</span>
 <span class="go">│ Torgersen │          17.4 │               186 │        3800 │ female │ … │</span>
 <span class="go">│ Torgersen │          18.0 │               195 │        3250 │ female │ … │</span>
-<span class="go">│ Torgersen │           nan │                 ∅ │           ∅ │ ∅      │ … │</span>
+<span class="go">│ Torgersen │           nan │              NULL │        NULL │ NULL   │ … │</span>
 <span class="go">│ Torgersen │          19.3 │               193 │        3450 │ female │ … │</span>
 <span class="go">└───────────┴───────────────┴───────────────────┴─────────────┴────────┴───┘</span>
 </code></pre></div>
@@ -4558,7 +4558,7 @@ By default deduplicate all of the columns.</p></td>
 <span class="go">│ Torgersen │               181 │        3750 │ male   │  2007 │</span>
 <span class="go">│ Torgersen │               186 │        3800 │ female │  2007 │</span>
 <span class="go">│ Torgersen │               195 │        3250 │ female │  2007 │</span>
-<span class="go">│ Torgersen │                 ∅ │           ∅ │ ∅      │  2007 │</span>
+<span class="go">│ Torgersen │              NULL │        NULL │ NULL   │  2007 │</span>
 <span class="go">│ Torgersen │               193 │        3450 │ female │  2007 │</span>
 <span class="go">└───────────┴───────────────────┴─────────────┴────────┴───────┘</span>
 </code></pre></div>
@@ -4649,7 +4649,7 @@ value in the row</strong> (<code>'any'</code>), or if <strong>all</strong> row v
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -4728,13 +4728,13 @@ passed as a scalar all columns are filled with that value.</p></td>
 <span class="go">│ male   │</span>
 <span class="go">│ female │</span>
 <span class="go">│ female │</span>
-<span class="go">│ ∅      │</span>
+<span class="go">│ NULL   │</span>
 <span class="go">│ female │</span>
 <span class="go">│ male   │</span>
 <span class="go">│ female │</span>
 <span class="go">│ male   │</span>
-<span class="go">│ ∅      │</span>
-<span class="go">│ ∅      │</span>
+<span class="go">│ NULL   │</span>
+<span class="go">│ NULL   │</span>
 <span class="go">│ …      │</span>
 <span class="go">└────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">fillna</span><span class="p">({</span><span class="s2">&quot;sex&quot;</span><span class="p">:</span> <span class="s2">&quot;unrecorded&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">sex</span>
@@ -4848,7 +4848,7 @@ passed as a scalar all columns are filled with that value.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -5982,16 +5982,16 @@ variables stored in column names</p>
 <span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━┩</span>
 <span class="go">│ string      │ string │ string │ int64 │ int64       │ int64        │ … │</span>
 <span class="go">├─────────────┼────────┼────────┼───────┼─────────────┼──────────────┼───┤</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1981 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1982 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1983 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1984 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1985 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1986 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1987 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1988 │           ∅ │            ∅ │ … │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1989 │           ∅ │            ∅ │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1981 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1982 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1983 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1984 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1985 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1986 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1987 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1988 │        NULL │         NULL │ … │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1989 │        NULL │         NULL │ … │</span>
 <span class="go">│ …           │ …      │ …      │     … │           … │            … │ … │</span>
 <span class="go">└─────────────┴────────┴────────┴───────┴─────────────┴──────────────┴───┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">who</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -6007,16 +6007,16 @@ variables stored in column names</p>
 <span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
 <span class="go">│ string      │ string │ string │ int64 │ string    │ string │ string │ int64 │</span>
 <span class="go">├─────────────┼────────┼────────┼───────┼───────────┼────────┼────────┼───────┤</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 014    │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 1524   │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 2534   │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 3544   │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 4554   │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 5564   │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 65     │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 014    │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 1524   │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 2534   │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 014    │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 1524   │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 2534   │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 3544   │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 4554   │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 5564   │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ m      │ 65     │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 014    │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 1524   │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │ f      │ 2534   │  NULL │</span>
 <span class="go">│ …           │ …      │ …      │     … │ …         │ …      │ …      │     … │</span>
 <span class="go">└─────────────┴────────┴────────┴───────┴───────────┴────────┴────────┴───────┘</span>
 </code></pre></div>
@@ -6040,16 +6040,16 @@ variables stored in column names</p>
 <span class="go">┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━╇━━━━━━━┩</span>
 <span class="go">│ string      │ string │ string │ int64 │ string    │ int8   │ int8 │ int64 │</span>
 <span class="go">├─────────────┼────────┼────────┼───────┼───────────┼────────┼──────┼───────┤</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    0 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    1 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    2 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    3 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    4 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    5 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    6 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    0 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    1 │     ∅ │</span>
-<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    2 │     ∅ │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    0 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    1 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    2 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    3 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    4 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    5 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      1 │    6 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    0 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    1 │  NULL │</span>
+<span class="go">│ Afghanistan │ AF     │ AFG    │  1980 │ sp        │      2 │    2 │  NULL │</span>
 <span class="go">│ …           │ …      │ …      │     … │ …         │      … │    … │     … │</span>
 <span class="go">└─────────────┴────────┴────────┴───────┴───────────┴────────┴──────┴───────┘</span>
 </code></pre></div>
@@ -6259,13 +6259,13 @@ when missing.</p></td>
 <span class="go">│  4842 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
 <span class="go">│  4843 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
 <span class="go">│  4844 │       1 │     1 │      1 │     1 │       1 │     1 │     1 │ … │</span>
-<span class="go">│  4845 │       1 │     1 │      1 │     1 │       1 │     ∅ │     ∅ │ … │</span>
-<span class="go">│  4847 │       1 │     1 │      1 │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
-<span class="go">│  4848 │       1 │     1 │      1 │     1 │       ∅ │     ∅ │     ∅ │ … │</span>
-<span class="go">│  4849 │       1 │     1 │      ∅ │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
-<span class="go">│  4850 │       1 │     1 │      ∅ │     1 │       1 │     1 │     1 │ … │</span>
-<span class="go">│  4851 │       1 │     1 │      ∅ │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
-<span class="go">│  4854 │       1 │     1 │      ∅ │     ∅ │       ∅ │     ∅ │     ∅ │ … │</span>
+<span class="go">│  4845 │       1 │     1 │      1 │     1 │       1 │  NULL │  NULL │ … │</span>
+<span class="go">│  4847 │       1 │     1 │      1 │  NULL │    NULL │  NULL │  NULL │ … │</span>
+<span class="go">│  4848 │       1 │     1 │      1 │     1 │    NULL │  NULL │  NULL │ … │</span>
+<span class="go">│  4849 │       1 │     1 │   NULL │  NULL │    NULL │  NULL │  NULL │ … │</span>
+<span class="go">│  4850 │       1 │     1 │   NULL │     1 │       1 │     1 │     1 │ … │</span>
+<span class="go">│  4851 │       1 │     1 │   NULL │  NULL │    NULL │  NULL │  NULL │ … │</span>
+<span class="go">│  4854 │       1 │     1 │   NULL │  NULL │    NULL │  NULL │  NULL │ … │</span>
 <span class="go">│     … │       … │     … │      … │     … │       … │     … │     … │ … │</span>
 <span class="go">└───────┴─────────┴───────┴────────┴───────┴─────────┴───────┴───────┴───┘</span>
 </code></pre></div>
@@ -6849,7 +6849,7 @@ strings.</p></td>
 <span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │              NULL │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
 <span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
@@ -6883,7 +6883,7 @@ strings.</p></td>
 <span class="go">│ Adelie  │               181 │</span>
 <span class="go">│ Adelie  │               186 │</span>
 <span class="go">│ Adelie  │               195 │</span>
-<span class="go">│ Adelie  │                 ∅ │</span>
+<span class="go">│ Adelie  │              NULL │</span>
 <span class="go">│ Adelie  │               193 │</span>
 <span class="go">└─────────┴───────────────────┘</span>
 </code></pre></div>
@@ -6926,7 +6926,7 @@ strings.</p></td>
 <span class="go">│           39.1 │          18.7 │               181 │        3750 │</span>
 <span class="go">│           39.5 │          17.4 │               186 │        3800 │</span>
 <span class="go">│           40.3 │          18.0 │               195 │        3250 │</span>
-<span class="go">│            nan │           nan │                 ∅ │           ∅ │</span>
+<span class="go">│            nan │           nan │              NULL │        NULL │</span>
 <span class="go">│           36.7 │          19.3 │               193 │        3450 │</span>
 <span class="go">└────────────────┴───────────────┴───────────────────┴─────────────┘</span>
 </code></pre></div>
