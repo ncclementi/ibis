@@ -3407,7 +3407,10 @@ values like <code>ibis.literal(1)</code>.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | None</code>
           </td>
           <td><p>Post-aggregation filters. The shape requirements are the same
-<code>metrics</code>, but the output type for <code>having</code> is <code>boolean</code>.</p></td>
+<code>metrics</code>, but the output type for <code>having</code> is <code>boolean</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Expressions like <code>x is None</code> return <code>bool</code> and <strong>will not</strong> generate a SQL comparison to <code>NULL</code></p>
+</div></td>
           <td>
                 <code>None</code>
           </td>
@@ -7587,6 +7590,9 @@ you don't know the length prior to running your program (for example, user input
   <div class="doc doc-contents ">
   
       <p>Add a post-aggregation result filter <code>expr</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Expressions like <code>x is None</code> return <code>bool</code> and <strong>will not</strong> generate a SQL comparison to <code>NULL</code></p>
+</div>
 
   <p><strong>Parameters:</strong></p>
   <table>
