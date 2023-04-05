@@ -17,7 +17,7 @@
         <link rel="next" href="../backends/base/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1362,13 +1362,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.merge" class="md-nav__link">
-    merge()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.name_at_position" class="md-nav__link">
     name_at_position()
   </a>
@@ -2036,13 +2029,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.merge" class="md-nav__link">
-    merge()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.name_at_position" class="md-nav__link">
     name_at_position()
   </a>
@@ -2130,7 +2116,7 @@
 
 
 <h4 id="ibis.expr.schema.Schema.fields" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">fields</span> <span class="o">=</span> <span class="n">frozendict_of</span><span class="p">(</span><span class="n">instance_of</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">datatype</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fields</span><span class="p">:</span> <span class="n">FrozenDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">]</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
@@ -2386,80 +2372,6 @@ we're going to upcast.</p>
 
 
 
-<h4 id="ibis.expr.schema.Schema.merge" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">merge</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
-
-<a href="#ibis.expr.schema.Schema.merge" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Merge <code>other</code> to <code>self</code>.</p>
-<p>Raise an <code>IntegrityError</code> if there are duplicate column names.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>other</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
-          </td>
-          <td><p>Schema instance to append to <code>self</code>.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="#ibis.expr.schema.Schema">Schema</a></code>
-          </td>
-          <td><p>A new schema appended with <code>schema</code>.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">second</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="p">({</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="s2">&quot;int16&quot;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
-<span class="go">ibis.Schema {</span>
-<span class="go">  a  int64</span>
-<span class="go">  b  string</span>
-<span class="go">  c  float64</span>
-<span class="go">  d  int16</span>
-<span class="go">}</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
 <h4 id="ibis.expr.schema.Schema.name_at_position" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">name_at_position</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code>
 
@@ -2674,7 +2586,7 @@ we're going to upcast.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

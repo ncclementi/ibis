@@ -17,7 +17,7 @@
         <link rel="next" href="../MSSQL/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -946,13 +946,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.impala.Backend.load_data" class="md-nav__link">
-    load_data()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.impala.Backend.get_options" class="md-nav__link">
     get_options()
   </a>
@@ -1755,32 +1748,6 @@
   <a href="#ibis.backends.impala.Backend" class="md-nav__link">
     Backend
   </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.impala.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.impala.Backend.load_data" class="md-nav__link">
-    load_data()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3271,13 +3238,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.impala.Backend.load_data" class="md-nav__link">
-    load_data()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.impala.Backend.get_options" class="md-nav__link">
     get_options()
   </a>
@@ -4080,32 +4040,6 @@
   <a href="#ibis.backends.impala.Backend" class="md-nav__link">
     Backend
   </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.impala.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.impala.Backend.load_data" class="md-nav__link">
-    load_data()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -5240,24 +5174,6 @@ for parameters.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pool</span> <span class="o">=</span> <span class="s1">&#39;op_4GB_pool&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">cache_table</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">db</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="n">pool</span><span class="p">)</span>
 </code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.impala.Backend.load_data" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">load_data</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.impala.Backend.load_data" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Loads data into an Impala table by physically moving data files.</p>
 
   </div>
 
@@ -7903,25 +7819,7 @@ also deals with file name conflicts so data is not lost in such cases.</p>
 
 
 
-<h4 id="ibis.backends.impala.Backend-functions">Functions<a href="#ibis.backends.impala.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.impala.Backend.load_data" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">load_data</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.impala.Backend.load_data" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Loads data into an Impala table by physically moving data files.</p>
-
-  </div>
-
-</div>
 
 
 
@@ -8772,7 +8670,7 @@ to see the default configuration values for every component of CDH.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

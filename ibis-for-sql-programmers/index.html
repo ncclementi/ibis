@@ -17,7 +17,7 @@
         <link rel="next" href="../ibis-for-pandas-users/">
       
       <link rel="icon" href="../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7a7fce14.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -7761,20 +7761,20 @@ ibis.show_sql(expr)</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT
-  t1.one,
+  t0.one,
   AVG(t1.two - t1.three) AS metric
-FROM my_data AS t1, my_data AS t1, (
+FROM (
   SELECT
-    t1.one AS one_x,
-    t1.two AS two_x,
-    t1.three AS three_x,
-    t2.one AS one_y,
-    t2.two AS two_y,
-    t2.three AS three_y
+    t1.one AS one,
+    t1.two AS two,
+    t1.three AS three,
+    t2.one AS one_right,
+    t2.two AS two_right,
+    t2.three AS three_right
   FROM my_data AS t1
   JOIN my_data AS t2
     ON CAST(t1.three AS TEXT) = t2.one
-) AS t0
+) AS t0, my_data AS t1, my_data AS t1
 GROUP BY
   1
 </pre>
@@ -9586,37 +9586,31 @@ ibis.show_sql(expr)</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>WITH anon_1 AS (
   SELECT
-    t1.value1 AS value1,
-    t1.key1 AS key1,
-    t1.key2 AS key2
-  FROM table1 AS t1
+    t0.value1 AS value1,
+    t0.key1 AS key1,
+    t0.key2 AS key2
+  FROM table1 AS t0
   LIMIT 10
 ), anon_2 AS (
   SELECT
-    t1.value1 AS value1,
-    t1.key1 AS key1,
-    t1.key2 AS key2
-  FROM table1 AS t1
+    t0.value1 AS value1,
+    t0.key1 AS key1,
+    t0.key2 AS key2
+  FROM table1 AS t0
   LIMIT 10
   OFFSET 10
 )
 SELECT
-  t0.value1,
-  t0.key1,
-  t0.key2
-FROM (
-  SELECT
-    anon_1.value1 AS value1,
-    anon_1.key1 AS key1,
-    anon_1.key2 AS key2
-  FROM anon_1
-  UNION ALL
-  SELECT
-    anon_2.value1 AS value1,
-    anon_2.key1 AS key1,
-    anon_2.key2 AS key2
-  FROM anon_2
-) AS t0
+  anon_1.value1,
+  anon_1.key1,
+  anon_1.key2
+FROM anon_1
+UNION ALL
+SELECT
+  anon_2.value1,
+  anon_2.key1,
+  anon_2.key2
+FROM anon_2
 </pre>
 </div>
 </div>
@@ -9928,7 +9922,7 @@ JOIN t1
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.407015b8.min.js"></script>
+      <script src="../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

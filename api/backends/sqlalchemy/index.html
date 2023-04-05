@@ -17,7 +17,7 @@
         <link rel="next" href="../../config/">
       
       <link rel="icon" href="../../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a7fce14.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1464,13 +1464,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.load_data" class="md-nav__link">
-    load_data()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.raw_sql" class="md-nav__link">
     raw_sql()
   </a>
@@ -2052,13 +2045,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.load_data" class="md-nav__link">
-    load_data()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.raw_sql" class="md-nav__link">
     raw_sql()
   </a>
@@ -2458,97 +2444,6 @@ default.</p></td>
 
 
 
-<h4 id="ibis.backends.base.sql.alchemy.BaseAlchemyBackend.load_data" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">load_data</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;fail&#39;</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.load_data" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Load data from a dataframe to the backend.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Name of the table in which to load data</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>data</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td><p>Pandas DataFrame</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database in which the table exists</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>if_exists</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;fail&#39;, &#39;replace&#39;, &#39;append&#39;]</code>
-          </td>
-          <td><p>What to do when data in <code>name</code> already exists</p></td>
-          <td>
-                <code>&#39;fail&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Raises:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError">NotImplementedError</a></code>
-          </td>
-          <td><p>Loading data to a table from a different database is not
-yet implemented</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
 <h4 id="ibis.backends.base.sql.alchemy.BaseAlchemyBackend.raw_sql" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">raw_sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span></code>
 
@@ -2847,7 +2742,7 @@ and types of <code>table</code>.</p></td>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
