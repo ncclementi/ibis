@@ -17,7 +17,7 @@
         <link rel="next" href="../ClickHouse/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -748,6 +748,20 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.bigquery.Backend.execute" class="md-nav__link">
     execute()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_database" class="md-nav__link">
+    exists_database()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_table" class="md-nav__link">
+    exists_table()
   </a>
   
 </li>
@@ -2054,6 +2068,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_database" class="md-nav__link">
+    exists_database()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.bigquery.Backend.exists_table" class="md-nav__link">
+    exists_table()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2395,6 +2423,46 @@ already set on the expression.</p></td>
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.bigquery.Backend.exists_database" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists_database</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.bigquery.Backend.exists_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether a database name exists in the current connection.</p>
+<p>Deprecated in Ibis 2.0. Use <code>name in client.list_databases()</code>
+instead.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.bigquery.Backend.exists_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.bigquery.Backend.exists_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether a table name exists in the database.</p>
+<p>Deprecated in Ibis 2.0. Use <code>name in client.list_tables()</code>
+instead.</p>
+
+  </div>
+
+</div>
+
 
 
   </div>
@@ -2508,7 +2576,7 @@ already set on the expression.</p></td>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
