@@ -787,6 +787,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.create_table" class="md-nav__link">
+    create_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.clickhouse.Backend.execute" class="md-nav__link">
     execute()
   </a>
@@ -2123,6 +2130,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.create_table" class="md-nav__link">
+    create_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.clickhouse.Backend.execute" class="md-nav__link">
     execute()
   </a>
@@ -2467,6 +2481,168 @@ True is equivalent to <code>'lz4'</code>.</p></td>
   <div class="doc doc-contents ">
   
       <p>Close Clickhouse connection and drop any temporary objects.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.clickhouse.Backend.create_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.clickhouse.Backend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a table in a ClickHouse database.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Name of the table to create</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>obj</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pandas" href="../Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
+          </td>
+          <td><p>Optional data to create the table with</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>schema</code></td>
+          <td>
+                <code><span title="ibis.config">ibis</span>.<span title="ibis.config.Schema">Schema</span> | None</code>
+          </td>
+          <td><p>Optional names and types of the table</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>database</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>Database to create the table in</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>temp</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Create a temporary table. This is not yet supported, and exists for
+API compatibility.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Whether to overwrite the table</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>engine</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>The table engine to use. See <a href="https://clickhouse.com/docs/en/sql-reference/statements/create/table">ClickHouse's <code>CREATE TABLE</code> documentation</a>
+for specifics.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>order_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
+          </td>
+          <td><p>String column names to order by. Required for some table engines like <code>MergeTree</code>.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>partition_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
+          </td>
+          <td><p>String column names to partition by</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>String column names to sample by</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>settings</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Key-value pairs of settings for table creation</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Table</code>
+          </td>
+          <td><p>The new table</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
