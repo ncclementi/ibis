@@ -2502,16 +2502,22 @@
   <div class="doc doc-contents first">
   
       <p>Convenient column selectors.</p>
+<div class="admonition tip">
+<p class="admonition-title">Check out the <a href="../../blog/selectors/">blog post on selectors</a> for examples!</p>
+</div>
 <h4 id="ibis.selectors--rationale">Rationale<a class="headerlink" href="#ibis.selectors--rationale" title="Anchor link to this section for reference">&para;</a></h4>
 <p>Column selectors are convenience functions for selecting columns that share some property.</p>
 <h4 id="ibis.selectors--discussion">Discussion<a class="headerlink" href="#ibis.selectors--discussion" title="Anchor link to this section for reference">&para;</a></h4>
 <p>For example, a common task is to be able to select all numeric columns for a
 subsequent computation.</p>
 <p>Without selectors this becomes quite verbose and tedious to write:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">is_numeric</span><span class="p">()])</span>  <span class="c1"># doctest: +SKIP</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">is_numeric</span><span class="p">()])</span>  <span class="c1"># doctest: +SKIP</span>
 </code></pre></div>
 <p>Compare that to the <a class="autorefs autorefs-internal" href="#ibis.selectors.numeric"><code>numeric</code></a> selector:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">())</span>  <span class="c1"># doctest: +SKIP</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">())</span>  <span class="c1"># doctest: +SKIP</span>
 </code></pre></div>
 <p>When there are multiple properties to check it gets worse:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>  <span class="c1"># doctest: +SKIP</span>
@@ -2842,10 +2848,18 @@ subsequent computation.</p>
 
 <p><strong>Examples:</strong></p>
     <p>Select columns that contain either <code>"a"</code> or <code>"b"</code></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">contains</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int64&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="s2">&quot;array&lt;int16&gt;&quot;</span><span class="p">,</span> <span class="n">ab</span><span class="o">=</span><span class="s2">&quot;struct&lt;x: int&gt;&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">contains</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;ab&#39;]</span>
 </code></pre></div>
-    <p>Select columns that contain all of <code>"a"</code> and <code>"b"</code></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">contains</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="nb">all</span><span class="p">))</span>
+    <p>Select columns that contain all of <code>"a"</code> and <code>"b"</code>, that is, both <code>"a"</code> and
+<code>"b"</code> must be in each column's name to match.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">contains</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="nb">all</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;ab&#39;]</span>
 </code></pre></div>
       <h6 id="ibis.selectors.contains--see-also">See Also<a class="headerlink" href="#ibis.selectors.contains--see-also" title="Anchor link to this section for reference">&para;</a></h6>
 <p><a class="autorefs autorefs-internal" href="#ibis.selectors.matches"><code>matches</code></a></p>
@@ -2973,7 +2987,12 @@ subsequent computation.</p>
   </table>
 
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;ab+&quot;</span><span class="p">))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">ab</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">abd</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="n">be</span><span class="o">=</span><span class="s2">&quot;array&lt;string&gt;&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;ab+&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;ab&#39;, &#39;abd&#39;]</span>
 </code></pre></div>
       <h6 id="ibis.selectors.matches--see-also">See Also<a class="headerlink" href="#ibis.selectors.matches--see-also" title="Anchor link to this section for reference">&para;</a></h6>
 <p><a class="autorefs autorefs-internal" href="#ibis.selectors.contains"><code>contains</code></a></p>
@@ -3056,13 +3075,22 @@ subsequent computation.</p>
 
 <p><strong>Examples:</strong></p>
     <p>Select according to a specific <code>DataType</code> instance</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">string</span><span class="p">)))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">siblings</span><span class="o">=</span><span class="s2">&quot;array&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="s2">&quot;array&lt;int64&gt;&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">string</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;siblings&#39;]</span>
 </code></pre></div>
     <p>Strings are also accepted</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="s2">&quot;map&lt;string, float&gt;&quot;</span><span class="p">))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="s2">&quot;array&lt;string&gt;&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;siblings&#39;]</span>
 </code></pre></div>
     <p>Select by category of <code>DataType</code> by passing the <code>DataType</code> class</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">Struct</span><span class="p">))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">[&#39;siblings&#39;, &#39;parents&#39;]</span>
 </code></pre></div>
       <h6 id="ibis.selectors.of_type--see-also">See Also<a class="headerlink" href="#ibis.selectors.of_type--see-also" title="Anchor link to this section for reference">&para;</a></h6>
 <p><a class="autorefs autorefs-internal" href="#ibis.selectors.numeric"><code>numeric</code></a></p>
