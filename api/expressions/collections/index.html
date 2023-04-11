@@ -1313,8 +1313,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.contains" class="md-nav__link">
+    contains()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.filter" class="md-nav__link">
     filter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.index" class="md-nav__link">
+    index()
   </a>
   
 </li>
@@ -1349,6 +1363,34 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.map" class="md-nav__link">
     map()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.remove" class="md-nav__link">
+    remove()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.sort" class="md-nav__link">
+    sort()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.union" class="md-nav__link">
+    union()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.unique" class="md-nav__link">
+    unique()
   </a>
   
 </li>
@@ -2261,8 +2303,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.contains" class="md-nav__link">
+    contains()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.filter" class="md-nav__link">
     filter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.index" class="md-nav__link">
+    index()
   </a>
   
 </li>
@@ -2297,6 +2353,34 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.map" class="md-nav__link">
     map()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.remove" class="md-nav__link">
+    remove()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.sort" class="md-nav__link">
+    sort()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.union" class="md-nav__link">
+    union()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.unique" class="md-nav__link">
+    unique()
   </a>
   
 </li>
@@ -3017,6 +3101,105 @@ type as the input.</li>
 
 
 
+<h4 id="ibis.expr.types.arrays.ArrayValue.contains" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">contains</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.contains" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return whether the array contains <code>other</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+          </td>
+          <td><p>Ibis expression to check for existence of in <code>self</code></p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Whether <code>other</code> is contained in <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [1]                  │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42, 42]             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayContains(arr, 42) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                │</span>
+<span class="go">├────────────────────────┤</span>
+<span class="go">│ False                  │</span>
+<span class="go">│ False                  │</span>
+<span class="go">│ True                   │</span>
+<span class="go">│ NULL                   │</span>
+<span class="go">└────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayContains(arr, None) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                  │</span>
+<span class="go">├──────────────────────────┤</span>
+<span class="go">│ NULL                     │</span>
+<span class="go">│ NULL                     │</span>
+<span class="go">│ NULL                     │</span>
+<span class="go">│ NULL                     │</span>
+<span class="go">└──────────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h4 id="ibis.expr.types.arrays.ArrayValue.filter" class="doc doc-heading">
 <code class="highlight language-python"><span class="nb">filter</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span></code>
 
@@ -3093,6 +3276,116 @@ type as the input.</li>
 <span class="go">│ [4]                  │</span>
 <span class="go">│ []                   │</span>
 <span class="go">└──────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.index" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">index</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.index" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the position of <code>other</code> in an array.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+          </td>
+          <td><p>Ibis expression to existence of in <code>self</code></p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>The position of <code>other</code> in <code>self</code></p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [1]                  │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42, 42]             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayPosition(arr, 42) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                  │</span>
+<span class="go">├────────────────────────┤</span>
+<span class="go">│                     -1 │</span>
+<span class="go">│                     -1 │</span>
+<span class="go">│                      0 │</span>
+<span class="go">│                   NULL │</span>
+<span class="go">└────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayPosition(arr, 800) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                   │</span>
+<span class="go">├─────────────────────────┤</span>
+<span class="go">│                      -1 │</span>
+<span class="go">│                      -1 │</span>
+<span class="go">│                      -1 │</span>
+<span class="go">│                    NULL │</span>
+<span class="go">└─────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayPosition(arr, None) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                    │</span>
+<span class="go">├──────────────────────────┤</span>
+<span class="go">│                     NULL │</span>
+<span class="go">│                     NULL │</span>
+<span class="go">│                     NULL │</span>
+<span class="go">│                     NULL │</span>
+<span class="go">└──────────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -3331,6 +3624,305 @@ type as the input.</li>
 <span class="go">│ [104.0]               │</span>
 <span class="go">│ []                    │</span>
 <span class="go">└───────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.remove" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">remove</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.remove" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Remove <code>other</code> from <code>self</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+          </td>
+          <td><p>Element to remove from <code>self</code>.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [3, 2]               │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42, 2]              │</span>
+<span class="go">│ [2, 2]               │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayRemove(arr, 2)  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [3]                  │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42]                 │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.sort" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">sort</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.sort" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Sort the elements in an array.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>Sorted values in an array</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [3, 2]               │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42, 42]             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArraySort(arr)       ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [2, 3]               │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42, 42]             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.union" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Union two arrays.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>Another array to union with <code>self</code></p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>Unioned arrays</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr1&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">],</span> <span class="s2">&quot;arr2&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr1                 ┃ arr2                 ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┼──────────────────────┤</span>
+<span class="go">│ [3, 2]               │ [1, 3]               │</span>
+<span class="go">│ []                   │ [None]               │</span>
+<span class="go">│ NULL                 │ [5]                  │</span>
+<span class="go">└──────────────────────┴──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayUnion(arr1, arr2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;            │</span>
+<span class="go">├────────────────────────┤</span>
+<span class="go">│ [1, 2, ... +1]         │</span>
+<span class="go">│ []                     │</span>
+<span class="go">│ [5]                    │</span>
+<span class="go">└────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr2</span><span class="p">)</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayContains(ArrayUnion(arr1, arr2), 3) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                                  │</span>
+<span class="go">├──────────────────────────────────────────┤</span>
+<span class="go">│ True                                     │</span>
+<span class="go">│ False                                    │</span>
+<span class="go">│ False                                    │</span>
+<span class="go">└──────────────────────────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.unique" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">unique</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.unique" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the unique values in an array.</p>
+<div class="admonition note">
+<p class="admonition-title">Element ordering in array may not be retained.</p>
+</div>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td><p>Unique values in an array</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr                  ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [1, 3, ... +1]       │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42, 42]             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayDistinct(arr)   ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int8&gt;          │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [3, 1]               │</span>
+<span class="go">│ []                   │</span>
+<span class="go">│ [42]                 │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
