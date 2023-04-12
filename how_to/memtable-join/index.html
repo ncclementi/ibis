@@ -2023,23 +2023,24 @@ two TableExpressions in a backend.</p>
 <p>and joining is the same as joining any two TableExpressions:</p>
 <div class="highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="c1"># Join as you would two table expressions</span>
         <span class="o">...</span><span class="p">:</span> <span class="n">measures</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="o">...</span><span class="p">:</span>     <span class="n">mem_events</span><span class="p">,</span>
-        <span class="o">...</span><span class="p">:</span>     <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mem_events</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span>
+        <span class="o">...</span><span class="p">:</span>     <span class="n">mem_events</span>
+        <span class="o">...</span><span class="p">:</span>     <span class="p">,</span><span class="n">measures</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mem_events</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span>
+        <span class="o">...</span><span class="p">:</span>     <span class="p">,</span><span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;__x&#39;</span><span class="p">)</span>
         <span class="o">...</span><span class="p">:</span> <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
     <span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
-        <span class="n">event_id</span> <span class="n">measured_on</span>  <span class="n">measurement</span>  <span class="n">event_name</span>
-    <span class="mi">0</span>          <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>          <span class="n">NaN</span>          <span class="n">e0</span>
-    <span class="mi">1</span>          <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span>          <span class="mf">5.0</span>          <span class="n">e0</span>
-    <span class="mi">2</span>          <span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">03</span>          <span class="n">NaN</span>          <span class="n">e1</span>
-    <span class="mi">3</span>          <span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">04</span>          <span class="n">NaN</span>          <span class="n">e1</span>
-    <span class="mi">4</span>          <span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">05</span>         <span class="mf">42.0</span>          <span class="n">e1</span>
-    <span class="mi">5</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span>         <span class="mf">42.0</span>          <span class="n">e2</span>
-    <span class="mi">6</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">07</span>          <span class="n">NaN</span>          <span class="n">e2</span>
-    <span class="mi">7</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">08</span>         <span class="mf">11.0</span>          <span class="n">e2</span>
-    <span class="mi">8</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">09</span>          <span class="n">NaN</span>          <span class="n">e2</span>
-    <span class="mi">9</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">10</span>          <span class="n">NaN</span>          <span class="n">e2</span>
-    <span class="mi">10</span>         <span class="mi">3</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">11</span>          <span class="n">NaN</span>          <span class="n">e3</span>
-    <span class="mi">11</span>         <span class="mi">3</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">12</span>          <span class="n">NaN</span>          <span class="n">e3</span>
+        <span class="n">event_id</span> <span class="n">measured_on</span>  <span class="n">measurement</span>  <span class="n">event_id__x</span> <span class="n">event_name</span>
+    <span class="mi">0</span>          <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>          <span class="n">NaN</span>            <span class="mi">0</span>         <span class="n">e0</span>
+    <span class="mi">1</span>          <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span>          <span class="mf">5.0</span>            <span class="mi">0</span>         <span class="n">e0</span>
+    <span class="mi">2</span>          <span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">03</span>          <span class="n">NaN</span>            <span class="mi">1</span>         <span class="n">e1</span>
+    <span class="mi">3</span>          <span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">04</span>          <span class="n">NaN</span>            <span class="mi">1</span>         <span class="n">e1</span>
+    <span class="mi">4</span>          <span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">05</span>         <span class="mf">42.0</span>            <span class="mi">1</span>         <span class="n">e1</span>
+    <span class="mi">5</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span>         <span class="mf">42.0</span>            <span class="mi">2</span>         <span class="n">e2</span>
+    <span class="mi">6</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">07</span>          <span class="n">NaN</span>            <span class="mi">2</span>         <span class="n">e2</span>
+    <span class="mi">7</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">08</span>         <span class="mf">11.0</span>            <span class="mi">2</span>         <span class="n">e2</span>
+    <span class="mi">8</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">09</span>          <span class="n">NaN</span>            <span class="mi">2</span>         <span class="n">e2</span>
+    <span class="mi">9</span>          <span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">10</span>          <span class="n">NaN</span>            <span class="mi">2</span>         <span class="n">e2</span>
+    <span class="mi">10</span>         <span class="mi">3</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">11</span>          <span class="n">NaN</span>            <span class="mi">3</span>         <span class="n">e3</span>
+    <span class="mi">11</span>         <span class="mi">3</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">12</span>          <span class="n">NaN</span>            <span class="mi">3</span>         <span class="n">e3</span>
 </code></pre></div>
 <p>Note that the return result of the <code>join</code> is a TableExpression and that <code>execute</code> returns a pandas DataFrame.</p>
 
@@ -2048,7 +2049,7 @@ two TableExpressions in a backend.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2022</span>
       
     
   </small>
