@@ -7546,12 +7546,7 @@ refined.value_counts()</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="merging-tables">Merging tables<a class="anchor-link" href="#merging-tables">&#182;</a></h2><p>While pandas uses the <code>merge</code> method to combine data from multiple <code>DataFrames</code>, Ibis uses the
-<code>join</code> method. They both have similar capabilities. The signature for the <code>join</code> method in Ibis
-is: <code>join(right, predicates=(), how='inner', *, suffixes=('_x', '_y'))</code>. The <code>merge</code> method on
-pandas' <code>DataFrame</code> allows many more parameters, but the signature with the corresponding
-parameters would be: <code>join(right, on=(), how='inner', *, suffixes=('_x', '_y'))</code>. The valid values
-of the <code>how=</code> parameter will vary depending on the backend, but common values are 'inner', 'outer',
-'left', and 'right'.</p>
+<code>join</code> method. They both have similar capabilities.</p>
 <p>The biggest difference between Ibis' <code>join</code> method and pandas' <code>merge</code> method is that pandas only
 accepts column names or index levels to join on, whereas Ibis can merge on expressions.</p>
 <p>Here are some examples of merging using pandas.</p>
@@ -7940,9 +7935,6 @@ t_right = pd_ibis.table('t_right')</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You may notice that in Ibis joins, even if the predicate is an equality expression and both tables
-have the same column name, you will still get multiple output columns with suffixes added.
-This may change in a future version to match the pandas behavior.</p>
 <p>Below is an outer join where missing values are filled with <code>NaN</code>.</p>
 
 </div>
@@ -7992,17 +7984,17 @@ This may change in a future version to match the pandas behavior.</p>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
-┃<span style="font-weight: bold"> name_x </span>┃<span style="font-weight: bold"> x     </span>┃<span style="font-weight: bold"> y     </span>┃<span style="font-weight: bold"> name_y </span>┃<span style="font-weight: bold"> x_100 </span>┃<span style="font-weight: bold"> y_100 </span>┃
-┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
-│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
-├────────┼───────┼───────┼────────┼───────┼───────┤
-│ <span style="color: #008000; text-decoration-color: #008000">a     </span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │ <span style="color: #008000; text-decoration-color: #008000">a     </span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200</span> │
-│ <span style="color: #008000; text-decoration-color: #008000">b     </span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │ <span style="color: #008000; text-decoration-color: #008000">b     </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │
-│ <span style="color: #008000; text-decoration-color: #008000">c     </span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span> │ <span style="color: #008000; text-decoration-color: #008000">c     </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │
-│ <span style="color: #008000; text-decoration-color: #008000">m     </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │ <span style="color: #008000; text-decoration-color: #008000">m     </span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400</span> │
-│ <span style="color: #008000; text-decoration-color: #008000">n     </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │ <span style="color: #008000; text-decoration-color: #008000">n     </span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">600</span> │
-└────────┴───────┴───────┴────────┴───────┴───────┘
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃<span style="font-weight: bold"> name   </span>┃<span style="font-weight: bold"> x     </span>┃<span style="font-weight: bold"> y     </span>┃<span style="font-weight: bold"> name_right </span>┃<span style="font-weight: bold"> x_100 </span>┃<span style="font-weight: bold"> y_100 </span>┃
+┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>     │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │
+├────────┼───────┼───────┼────────────┼───────┼───────┤
+│ <span style="color: #008000; text-decoration-color: #008000">a     </span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │ <span style="color: #008000; text-decoration-color: #008000">a         </span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">b     </span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │ <span style="color: #008000; text-decoration-color: #008000">b         </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">c     </span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span> │ <span style="color: #008000; text-decoration-color: #008000">c         </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">m     </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │ <span style="color: #008000; text-decoration-color: #008000">m         </span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">n     </span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span> │ <span style="color: #008000; text-decoration-color: #008000">n         </span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">600</span> │
+└────────┴───────┴───────┴────────────┴───────┴───────┘
 </pre>
 
 </div>
@@ -8326,7 +8318,7 @@ unioned</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2023</span>
       
     
   </small>

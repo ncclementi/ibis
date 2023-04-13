@@ -1497,13 +1497,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.set_column" class="md-nav__link">
-    set_column()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.sql" class="md-nav__link">
     sql()
   </a>
@@ -2714,13 +2707,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.set_column" class="md-nav__link">
-    set_column()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.sql" class="md-nav__link">
     sql()
   </a>
@@ -3646,7 +3632,7 @@ backend for use in the
 
 
 <h4 id="ibis.expr.types.relations.Table.asof_join" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">asof_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="p">(),</span> <span class="n">by</span><span class="o">=</span><span class="p">(),</span> <span class="n">tolerance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_x&#39;</span><span class="p">,</span> <span class="s1">&#39;_y&#39;</span><span class="p">))</span></code>
+<code class="highlight language-python"><span class="n">asof_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="p">(),</span> <span class="n">by</span><span class="o">=</span><span class="p">(),</span> <span class="n">tolerance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">lname</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">rname</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">_right&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.asof_join" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -3720,14 +3706,25 @@ rather than equal keys.</p>
           </td>
         </tr>
         <tr>
-          <td><code>suffixes</code></td>
+          <td><code>lname</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Left and right suffixes that will be used to rename overlapping
-columns.</p></td>
+          <td><p>A format string to use to rename overlapping columns in the left
+table (e.g. <code>"left_{name}"</code>).</p></td>
           <td>
-                <code>(&#39;_x&#39;, &#39;_y&#39;)</code>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rname</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>A format string to use to rename overlapping columns in the right
+table (e.g. <code>"right_{name}"</code>).</p></td>
+          <td>
+                <code>&#39;{name}_right&#39;</code>
           </td>
         </tr>
     </tbody>
@@ -4052,7 +4049,7 @@ chaining will not incur the overhead of caching more than once.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.cross_join" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">cross_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_x&#39;</span><span class="p">,</span> <span class="s1">&#39;_y&#39;</span><span class="p">))</span></code>
+<code class="highlight language-python"><span class="n">cross_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">lname</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">rname</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">_right&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.cross_join" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4103,14 +4100,25 @@ chaining will not incur the overhead of caching more than once.</p>
           </td>
         </tr>
         <tr>
-          <td><code>suffixes</code></td>
+          <td><code>lname</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Left and right suffixes that will be used to rename overlapping
-columns.</p></td>
+          <td><p>A format string to use to rename overlapping columns in the left
+table (e.g. <code>"left_{name}"</code>).</p></td>
           <td>
-                <code>(&#39;_x&#39;, &#39;_y&#39;)</code>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rname</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>A format string to use to rename overlapping columns in the right
+table (e.g. <code>"right_{name}"</code>).</p></td>
+          <td>
+                <code>&#39;{name}_right&#39;</code>
           </td>
         </tr>
     </tbody>
@@ -4143,37 +4151,36 @@ columns.</p></td>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">agg</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">cross_join</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
-<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━┓</span>
-<span class="go">┃ species ┃ island    ┃ bill_length_mm_x ┃ bill_depth_mm_x ┃ … ┃</span>
-<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━┩</span>
-<span class="go">│ string  │ string    │ float64          │ float64         │ … │</span>
-<span class="go">├─────────┼───────────┼──────────────────┼─────────────────┼───┤</span>
-<span class="go">│ Adelie  │ Torgersen │             39.1 │            18.7 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             39.5 │            17.4 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             40.3 │            18.0 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │              nan │             nan │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             36.7 │            19.3 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             39.3 │            20.6 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             38.9 │            17.8 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             39.2 │            19.6 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             34.1 │            18.1 │ … │</span>
-<span class="go">│ Adelie  │ Torgersen │             42.0 │            20.2 │ … │</span>
-<span class="go">│ …       │ …         │                … │               … │ … │</span>
-<span class="go">└─────────┴───────────┴──────────────────┴─────────────────┴───┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ int64             │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │            nan │           nan │                 ∅ │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │ … │</span>
+<span class="go">│ …       │ …         │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
 <span class="go">[&#39;species&#39;,</span>
 <span class="go"> &#39;island&#39;,</span>
-<span class="go"> &#39;bill_length_mm_x&#39;,</span>
-<span class="go"> &#39;bill_depth_mm_x&#39;,</span>
-<span class="go"> &#39;flipper_length_mm_x&#39;,</span>
-<span class="go"> &#39;body_mass_g_x&#39;,</span>
+<span class="go"> &#39;bill_length_mm&#39;,</span>
+<span class="go"> &#39;bill_depth_mm&#39;,</span>
+<span class="go"> &#39;flipper_length_mm&#39;,</span>
+<span class="go"> &#39;body_mass_g&#39;,</span>
 <span class="go"> &#39;sex&#39;,</span>
 <span class="go"> &#39;year&#39;,</span>
-<span class="go"> &#39;bill_length_mm_y&#39;,</span>
-<span class="go"> &#39;bill_depth_mm_y&#39;,</span>
-<span class="go"> &#39;flipper_length_mm_y&#39;,</span>
-<span class="go"> &#39;body_mass_g_y&#39;]</span>
+<span class="go"> &#39;bill_length_mm_right&#39;,</span>
+<span class="go"> &#39;bill_depth_mm_right&#39;,</span>
+<span class="go"> &#39;flipper_length_mm_right&#39;,</span>
+<span class="go"> &#39;body_mass_g_right&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="go">344</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -5288,7 +5295,7 @@ you don't know the length prior to running your program (for example, user input
 
 
 <h4 id="ibis.expr.types.relations.Table.join" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="p">(),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_x&#39;</span><span class="p">,</span> <span class="s1">&#39;_y&#39;</span><span class="p">))</span></code>
+<code class="highlight language-python"><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="p">(),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">lname</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">rname</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">_right&#39;</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.join" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5349,14 +5356,25 @@ you don't know the length prior to running your program (for example, user input
           </td>
         </tr>
         <tr>
-          <td><code>suffixes</code></td>
+          <td><code>lname</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Left and right suffixes that will be used to rename overlapping
-columns.</p></td>
+          <td><p>A format string to use to rename overlapping columns in the left
+table (e.g. <code>"left_{name}"</code>).</p></td>
           <td>
-                <code>(&#39;_x&#39;, &#39;_y&#39;)</code>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rname</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>A format string to use to rename overlapping columns in the right
+table (e.g. <code>"right_{name}"</code>).</p></td>
+          <td>
+                <code>&#39;{name}_right&#39;</code>
           </td>
         </tr>
     </tbody>
@@ -6980,76 +6998,6 @@ strings.</p></td>
 <span class="go">│       43.92193 │      17.15117 │        200.915205 │ 4201.754386 │</span>
 <span class="go">└────────────────┴───────────────┴───────────────────┴─────────────┘</span>
 </code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.expr.types.relations.Table.set_column" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">set_column</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span></code>
-
-<a href="#ibis.expr.types.relations.Table.set_column" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Replace an existing column with a new expression.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Column name to replace</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
-          </td>
-          <td><p>New data for column</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>Table expression with new columns</p></td>
-        </tr>
-    </tbody>
-  </table>
 
   </div>
 
