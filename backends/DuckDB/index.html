@@ -834,6 +834,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.attach_sqlite" class="md-nav__link">
+    attach_sqlite()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.read_csv" class="md-nav__link">
     read_csv()
   </a>
@@ -2143,6 +2150,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.attach_sqlite" class="md-nav__link">
+    attach_sqlite()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.read_csv" class="md-nav__link">
     read_csv()
   </a>
@@ -2406,6 +2420,95 @@ possible configuration values.</p></td>
 
 
 <h4 id="ibis.backends.duckdb.Backend-functions">Functions<a href="#ibis.backends.duckdb.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="ibis.backends.duckdb.Backend.attach_sqlite" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">attach_sqlite</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">all_varchar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.attach_sqlite" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Attach a SQLite database to the current DuckDB session.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td><p>The path to the SQLite database.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overwrite</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Allow overwriting any tables or views that already exist in your current
+session with the contents of the SQLite database.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>all_varchar</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Set all SQLite columns to type <code>VARCHAR</code> to avoid type errors on ingestion.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb://&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">attach_sqlite</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.db&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
+<span class="go">[&#39;functional_alltypes&#39;, &#39;awards_players&#39;, &#39;batting&#39;, &#39;diamonds&#39;]</span>
+</code></pre></div>
+
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
