@@ -1842,6 +1842,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__and__" class="md-nav__link">
+    __and__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__invert__" class="md-nav__link">
+    __invert__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__or__" class="md-nav__link">
+    __or__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__xor__" class="md-nav__link">
+    __xor__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.logical.BooleanValue.ifelse" class="md-nav__link">
     ifelse()
   </a>
@@ -3177,6 +3205,34 @@
   
     <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__and__" class="md-nav__link">
+    __and__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__invert__" class="md-nav__link">
+    __invert__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__or__" class="md-nav__link">
+    __or__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.logical.BooleanValue.__xor__" class="md-nav__link">
+    __xor__()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ibis.expr.types.logical.BooleanValue.ifelse" class="md-nav__link">
@@ -5700,6 +5756,376 @@ a value in <code>labels</code>.</p></td>
 
 
 <h3 id="ibis.expr.types.logical.BooleanValue-functions">Functions<a href="#ibis.expr.types.logical.BooleanValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.logical.BooleanValue.__and__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__and__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.logical.BooleanValue.__and__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct a binary AND conditional expression with <code>self</code> and <code>other</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>self</code></td>
+          <td>
+          </td>
+          <td><p>Left operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Right operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>A Boolean expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ And(ArrayContains(arr, 42), ArrayContains(arr, 1)) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                                            │</span>
+<span class="go">├────────────────────────────────────────────────────┤</span>
+<span class="go">│ False                                              │</span>
+<span class="go">│ False                                              │</span>
+<span class="go">│ False                                              │</span>
+<span class="go">│ NULL                                               │</span>
+<span class="go">└────────────────────────────────────────────────────┘</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ And(ArrayContains(arr, 42), ArrayContains(arr, 42)) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                                             │</span>
+<span class="go">├─────────────────────────────────────────────────────┤</span>
+<span class="go">│ False                                               │</span>
+<span class="go">│ False                                               │</span>
+<span class="go">│ True                                                │</span>
+<span class="go">│ NULL                                                │</span>
+<span class="go">└─────────────────────────────────────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.logical.BooleanValue.__invert__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__invert__</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.types.logical.BooleanValue.__invert__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct a unary NOT conditional expression with <code>self</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>self</code></td>
+          <td>
+          </td>
+          <td><p>Operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>A Boolean expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">~</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span>
+<span class="go">┏━━━━━━━━━━┓</span>
+<span class="go">┃ Not(arr) ┃</span>
+<span class="go">┡━━━━━━━━━━┩</span>
+<span class="go">│ boolean  │</span>
+<span class="go">├──────────┤</span>
+<span class="go">│ False    │</span>
+<span class="go">│ True     │</span>
+<span class="go">│ True     │</span>
+<span class="go">│ NULL     │</span>
+<span class="go">└──────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.logical.BooleanValue.__or__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__or__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.logical.BooleanValue.__or__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct a binary OR conditional expression with <code>self</code> and <code>other</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>self</code></td>
+          <td>
+          </td>
+          <td><p>Left operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Right operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>A Boolean expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Or(Greater(arr, 1), Greater(arr, 2)) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                              │</span>
+<span class="go">├──────────────────────────────────────┤</span>
+<span class="go">│ False                                │</span>
+<span class="go">│ True                                 │</span>
+<span class="go">│ True                                 │</span>
+<span class="go">│ NULL                                 │</span>
+<span class="go">└──────────────────────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.logical.BooleanValue.__xor__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__xor__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.logical.BooleanValue.__xor__" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct a binary XOR conditional expression with <code>self</code> and <code>other</code>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>self</code></td>
+          <td>
+          </td>
+          <td><p>Left operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>Right operand</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.logical.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+          </td>
+          <td><p>A Boolean expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Equals(arr, 2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean        │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│ False          │</span>
+<span class="go">│ True           │</span>
+<span class="go">│ False          │</span>
+<span class="go">│ NULL           │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Greater(arr, 2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean         │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│ False           │</span>
+<span class="go">│ False           │</span>
+<span class="go">│ True            │</span>
+<span class="go">│ NULL            │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Xor(Equals(arr, 2), Greater(arr, 2)) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                              │</span>
+<span class="go">├──────────────────────────────────────┤</span>
+<span class="go">│ False                                │</span>
+<span class="go">│ True                                 │</span>
+<span class="go">│ True                                 │</span>
+<span class="go">│ NULL                                 │</span>
+<span class="go">└──────────────────────────────────────┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
