@@ -3504,7 +3504,10 @@ the type of <code>value</code>.</p></td>
 
   <div class="doc doc-contents first">
   
-      <p>Create a map literal from a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict"><code>dict</code></a>, other mapping or two sequences.</p>
+      <p>Create a map expression.</p>
+<p>If the <code>keys</code> and <code>values</code> are Python literals, then the output will be a
+<code>MapScalar</code>. If the <code>keys</code> and <code>values</code> are expressions (<code>ArrayColumn</code>),
+then the the output will be a <code>MapColumn</code>.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3520,6 +3523,7 @@ the type of <code>value</code>.</p></td>
         <tr>
           <td><code>keys</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | <span title="ibis.expr.types.arrays.ArrayColumn">ArrayColumn</span></code>
           </td>
           <td><p>Keys of the map or <code>Mapping</code>. If <code>keys</code> is a <code>Mapping</code>, <code>values</code> must be <code>None</code>.</p></td>
           <td>
@@ -3529,6 +3533,7 @@ the type of <code>value</code>.</p></td>
         <tr>
           <td><code>values</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | <span title="ibis.expr.types.arrays.ArrayColumn">ArrayColumn</span> | None</code>
           </td>
           <td><p>Values of the map or <code>None</code>. If <code>None</code>, the <code>keys</code> argument must be a <code>Mapping</code>.</p></td>
           <td>
@@ -3560,7 +3565,32 @@ array with key/value pairs of fixed types)</p></td>
 <p><strong>Examples:</strong></p>
     <p>Create a map literal from a dict with the type inferred</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">{&#39;a&#39;: 1, &#39;b&#39;: 2}</span>
+</code></pre></div>
+    <p>Create a new map column from columns with keys and values</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s1">&#39;keys&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]],</span> <span class="s1">&#39;values&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ keys                 ┃ values               ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;string&gt;        │ array&lt;int64&gt;         │</span>
+<span class="go">├──────────────────────┼──────────────────────┤</span>
+<span class="go">│ [&#39;a&#39;, &#39;b&#39;]           │ [1, 2]               │</span>
+<span class="go">│ [&#39;b&#39;]                │ [3]                  │</span>
+<span class="go">└──────────────────────┴──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Map(keys, values)    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;b&#39;: 3}             │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4458,7 +4488,11 @@ and <code>types</code> arguments.</p></td>
 
   <div class="doc doc-contents first">
   
-      <p>Create a struct literal from a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict"><code>dict</code></a> or other mapping.</p>
+      <p>Create a struct expression.</p>
+<p>If the input expressions are all column expressions, then the output will be
+a <code>StructColumn</code>.</p>
+<p>If the input expressions are Python literals, then the output will be a
+<code>StructScalar</code>.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4476,7 +4510,8 @@ and <code>types</code> arguments.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <span title="ibis.expr.types.typing.V">V</span>]] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <span title="ibis.expr.types.typing.V">V</span>]</code>
           </td>
-          <td><p>The underlying data for literal struct value</p></td>
+          <td><p>The underlying data for literal struct value or a pairs of field names
+and column expressions.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -4487,7 +4522,8 @@ and <code>types</code> arguments.</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a> | None</code>
           </td>
           <td><p>An instance of <code>ibis.expr.datatypes.DataType</code> or a string indicating
-the ibis type of <code>value</code>.</p></td>
+the ibis type of <code>value</code>. This is only used if all of the input values
+are literals.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -4506,10 +4542,10 @@ the ibis type of <code>value</code>.</p></td>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types.structs.StructScalar">StructScalar</span></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.structs.StructValue" href="../collections/#ibis.expr.types.structs.StructValue">StructValue</a></code>
           </td>
-          <td><p>An expression representing a literal struct (compound type with fields
-of fixed types)</p></td>
+          <td><p>An expression representing a literal or column struct (compound type with
+fields of fixed types)</p></td>
         </tr>
     </tbody>
   </table>
@@ -4521,6 +4557,35 @@ of fixed types)</p></td>
 </code></pre></div>
     <p>Create a struct literal from a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict"><code>dict</code></a> with a specified type</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">struct</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;struct&lt;a: float, b: string&gt;&#39;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Specify a specific type for the struct literal</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">struct</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">40</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;struct&lt;a: float, b: int32&gt;&#39;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Create a struct array from multiple arrays</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">struct</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">b</span><span class="p">)])</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StructColumn()              ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ struct&lt;a: int64, b: string&gt; │</span>
+<span class="go">├─────────────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 2, &#39;b&#39;: &#39;bar&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 3, &#39;b&#39;: &#39;baz&#39;}        │</span>
+<span class="go">└─────────────────────────────┘</span>
+</code></pre></div>
+    <p>Create a struct array from columns and literals</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">struct</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">)])</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ StructColumn()              ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ struct&lt;a: int64, b: string&gt; │</span>
+<span class="go">├─────────────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 2, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 3, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">└─────────────────────────────┘</span>
 </code></pre></div>
 
   </div>

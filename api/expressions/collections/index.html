@@ -4018,6 +4018,47 @@ type as the input.</li>
       <p class="doc doc-class-bases">
         Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
+  
+      <p>A struct literal or column.</p>
+<p>Can be constructed with <a class="autorefs autorefs-internal" href="../top_level/#ibis.struct"><code>ibis.struct()</code></a>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ s                           ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ struct&lt;a: int64, b: string&gt; │</span>
+<span class="go">├─────────────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 3, &#39;b&#39;: None}         │</span>
+<span class="go">│ NULL                        │</span>
+<span class="go">└─────────────────────────────┘</span>
+</code></pre></div>
+    <p>Can use either <code>.</code> or <code>[]</code> to access fields:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">a</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     3 │</span>
+<span class="go">│  NULL │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     3 │</span>
+<span class="go">│  NULL │</span>
+<span class="go">└───────┘</span>
+</code></pre></div>
 
 
 
@@ -4172,9 +4213,38 @@ type as the input.</li>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">struct</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">fruit</span><span class="o">=</span><span class="s2">&quot;pear&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;fruit&#39;</span><span class="p">]</span>
-<span class="go">fruit: StructField(...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ s                           ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ struct&lt;a: int64, b: string&gt; │</span>
+<span class="go">├─────────────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 3, &#39;b&#39;: None}         │</span>
+<span class="go">│ NULL                        │</span>
+<span class="go">└─────────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     3 │</span>
+<span class="go">│  NULL │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ b      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ foo    │</span>
+<span class="go">│ NULL   │</span>
+<span class="go">│ NULL   │</span>
+<span class="go">└────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4214,6 +4284,43 @@ multiple columns.</p>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ s                           ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ struct&lt;a: int64, b: string&gt; │</span>
+<span class="go">├─────────────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: &#39;foo&#39;}        │</span>
+<span class="go">│ {&#39;a&#39;: 3, &#39;b&#39;: None}         │</span>
+<span class="go">│ NULL                        │</span>
+<span class="go">└─────────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">s</span><span class="o">.</span><span class="n">destructure</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">┏━━━━━━━┓</span>
+<span class="go">┃ a     ┃</span>
+<span class="go">┡━━━━━━━┩</span>
+<span class="go">│ int64 │</span>
+<span class="go">├───────┤</span>
+<span class="go">│     1 │</span>
+<span class="go">│     3 │</span>
+<span class="go">│  NULL │</span>
+<span class="go">└───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ b      ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ foo    │</span>
+<span class="go">│ NULL   │</span>
+<span class="go">│ NULL   │</span>
+<span class="go">└────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4316,6 +4423,53 @@ column names and table references.</p>
       <p class="doc doc-class-bases">
         Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
+  
+      <p>A map literal or column expression.</p>
+<p>Can be constructed with <a class="autorefs autorefs-internal" href="../top_level/#ibis.map"><code>ibis.map()</code></a>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyarrow</span> <span class="k">as</span> <span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span>
+<span class="gp">... </span>   <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                 <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">map_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">utf8</span><span class="p">(),</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">()))})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ m                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;a&#39;: 1}             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+</code></pre></div>
+    <p>Can use <code>[]</code> to access values:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapGet(m, &#39;a&#39;, None) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│                    1 │</span>
+<span class="go">│                    1 │</span>
+<span class="go">│                 NULL │</span>
+<span class="go">└──────────────────────┘</span>
+</code></pre></div>
+    <p>To provide default values, use <code>get</code>:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapGet(m, &#39;b&#39;, 0) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64             │</span>
+<span class="go">├───────────────────┤</span>
+<span class="go">│                 2 │</span>
+<span class="go">│                 0 │</span>
+<span class="go">│                 0 │</span>
+<span class="go">└───────────────────┘</span>
+</code></pre></div>
 
 
 
@@ -4389,10 +4543,11 @@ column names and table references.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span>
-<span class="go">MapMerge(...)</span>
+<span class="go">{&#39;c&#39;: 3, &#39;d&#39;: 4, &#39;a&#39;: 1, &#39;b&#39;: 2}</span>
 </code></pre></div>
 
   </div>
@@ -4462,11 +4617,32 @@ the query.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
-<span class="go">MapGet(...)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>  <span class="c1"># note that this does not fail on construction</span>
-<span class="go">MapGet(...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyarrow</span> <span class="k">as</span> <span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span>
+<span class="gp">... </span>   <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                 <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">map_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">utf8</span><span class="p">(),</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">()))})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ m                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;a&#39;: 1}             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapGet(m, &#39;a&#39;, None) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│                    1 │</span>
+<span class="go">│                    1 │</span>
+<span class="go">│                 NULL │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4531,10 +4707,11 @@ the query.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span>
-<span class="go">MapMerge(...)</span>
+<span class="go">{&#39;c&#39;: 3, &#39;d&#39;: 4, &#39;a&#39;: 1, &#39;b&#39;: 2}</span>
 </code></pre></div>
 
   </div>
@@ -4596,6 +4773,36 @@ the query.</p>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyarrow</span> <span class="k">as</span> <span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span>
+<span class="gp">... </span>   <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                 <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">map_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">utf8</span><span class="p">(),</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">()))})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ m                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;a&#39;: 1}             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapContains(m, &#39;b&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean             │</span>
+<span class="go">├─────────────────────┤</span>
+<span class="go">│ True                │</span>
+<span class="go">│ False               │</span>
+<span class="go">│ False               │</span>
+<span class="go">└─────────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4670,13 +4877,52 @@ the query.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="go">MapGet(...)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="go">MapGet(...)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-<span class="go">MapGet(...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyarrow</span> <span class="k">as</span> <span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span>
+<span class="gp">... </span>   <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                 <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">map_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">utf8</span><span class="p">(),</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">()))})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ m                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;a&#39;: 1}             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapGet(m, &#39;a&#39;, None) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│                    1 │</span>
+<span class="go">│                    1 │</span>
+<span class="go">│                 NULL │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapGet(m, &#39;b&#39;, None) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64                │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│                    2 │</span>
+<span class="go">│                 NULL │</span>
+<span class="go">│                 NULL │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapGet(m, &#39;b&#39;, 0) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64             │</span>
+<span class="go">├───────────────────┤</span>
+<span class="go">│                 2 │</span>
+<span class="go">│                 0 │</span>
+<span class="go">│                 0 │</span>
+<span class="go">└───────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4717,9 +4963,32 @@ the query.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="go">MapKeys(...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyarrow</span> <span class="k">as</span> <span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span>
+<span class="gp">... </span>   <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                 <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">map_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">utf8</span><span class="p">(),</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">()))})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ m                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;a&#39;: 1}             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapKeys(m)           ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;string&gt;        │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [&#39;a&#39;, &#39;b&#39;]           │</span>
+<span class="go">│ [&#39;a&#39;]                │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4760,9 +5029,32 @@ the query.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
-<span class="go">MapLength(...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyarrow</span> <span class="k">as</span> <span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span>
+<span class="gp">... </span>   <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                 <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">map_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">utf8</span><span class="p">(),</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">()))})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ m                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ map&lt;string, int64&gt;   │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ {&#39;a&#39;: 1, &#39;b&#39;: 2}     │</span>
+<span class="go">│ {&#39;a&#39;: 1}             │</span>
+<span class="go">│ NULL                 │</span>
+<span class="go">└──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ MapLength(m) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64        │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│            2 │</span>
+<span class="go">│            1 │</span>
+<span class="go">│         NULL │</span>
+<span class="go">└──────────────┘</span>
 </code></pre></div>
 
   </div>
@@ -4803,9 +5095,10 @@ the query.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-<span class="go">MapValues(...)</span>
+<span class="go">[1, 2]</span>
 </code></pre></div>
 
   </div>
