@@ -7793,20 +7793,20 @@ ibis.show_sql(expr)</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT
-  t0.one,
+  t1.one,
   AVG(t1.two - t1.three) AS metric
-FROM (
+FROM my_data AS t1, my_data AS t1, (
   SELECT
-    t1.one AS one,
-    t1.two AS two,
-    t1.three AS three,
-    t2.one AS one_right,
-    t2.two AS two_right,
-    t2.three AS three_right
+    t1.one AS one_x,
+    t1.two AS two_x,
+    t1.three AS three_x,
+    t2.one AS one_y,
+    t2.two AS two_y,
+    t2.three AS three_y
   FROM my_data AS t1
   JOIN my_data AS t2
     ON CAST(t1.three AS TEXT) = t2.one
-) AS t0, my_data AS t1, my_data AS t1
+) AS t0
 GROUP BY
   1
 </pre>
