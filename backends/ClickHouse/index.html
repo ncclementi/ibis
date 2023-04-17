@@ -2523,7 +2523,7 @@ True is equivalent to <code>'lz4'</code>.</p></td>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;File(Native)&#39;</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.clickhouse.Backend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -2612,7 +2612,7 @@ API compatibility.</p></td>
           <td><p>The table engine to use. See <a href="https://clickhouse.com/docs/en/sql-reference/statements/create/table">ClickHouse's <code>CREATE TABLE</code> documentation</a>
 for specifics.</p></td>
           <td>
-              <em>required</em>
+                <code>&#39;File(Native)&#39;</code>
           </td>
         </tr>
         <tr>
