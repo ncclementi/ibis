@@ -6167,7 +6167,7 @@ a value in <code>labels</code>.</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
           </td>
-          <td><p>Expression to return if <code>self</code> evaluates to <code>False</code></p></td>
+          <td><p>Expression to return if <code>self</code> evaluates to <code>False</code> or <code>NULL</code></p></td>
           <td>
               <em>required</em>
           </td>
@@ -6195,11 +6195,19 @@ a value in <code>labels</code>.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s2">&quot;is_person&quot;</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">is_person</span><span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;tmp&quot;</span><span class="p">)))</span>
-<span class="go">SELECT if(t0.`is_person`, &#39;yes&#39;, &#39;no&#39;) AS `tmp`</span>
-<span class="go">FROM t t0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;is_person&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">is_person</span><span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Where(is_person, &#39;yes&#39;, &#39;no&#39;) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ string                        │</span>
+<span class="go">├───────────────────────────────┤</span>
+<span class="go">│ yes                           │</span>
+<span class="go">│ no                            │</span>
+<span class="go">│ yes                           │</span>
+<span class="go">│ no                            │</span>
+<span class="go">└───────────────────────────────┘</span>
 </code></pre></div>
 
   </div>

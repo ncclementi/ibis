@@ -4148,6 +4148,8 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">344</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">agg</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">cross_join</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
@@ -4182,8 +4184,6 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
 <span class="go"> &#39;flipper_length_mm_right&#39;,</span>
 <span class="go"> &#39;body_mass_g_right&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="go">344</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="go">344</span>
 </code></pre></div>
 
