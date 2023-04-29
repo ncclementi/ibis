@@ -5821,7 +5821,7 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.pivot_longer" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">pivot_longer</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">names_to</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">names_pattern</span><span class="o">=</span><span class="s1">&#39;(.+)&#39;</span><span class="p">,</span> <span class="n">names_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values_to</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">values_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">pivot_longer</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">names_to</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">names_pattern</span><span class="o">=</span><span class="s1">&#39;(.+)&#39;</span><span class="p">,</span> <span class="n">names_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values_to</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">values_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.pivot_longer" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5842,11 +5842,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
     </thead>
     <tbody>
         <tr>
-          <td><code>cols</code></td>
+          <td><code>col</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
-          <td><p>String column names or selectors.</p></td>
+          <td><p>String column name or selector.</p></td>
           <td>
               <em>required</em>
           </td>
