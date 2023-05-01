@@ -1592,6 +1592,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.numeric.NumericColumn.median" class="md-nav__link">
+    median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.numeric.NumericColumn.quantile" class="md-nav__link">
     quantile()
   </a>
@@ -2966,6 +2973,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.numeric.NumericColumn.mean" class="md-nav__link">
     mean()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.numeric.NumericColumn.median" class="md-nav__link">
+    median()
   </a>
   
 </li>
@@ -4775,6 +4789,67 @@ of <code>column</code>.</p></td>
                 <code><span title="ibis.expr.types.numeric.NumericScalar">NumericScalar</span></code>
           </td>
           <td><p>The mean of the input expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.numeric.NumericColumn.median" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">median</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.numeric.NumericColumn.median" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the median of the column.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>where</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+          </td>
+          <td><p>Optional boolean expression. If given, only the values where
+<code>where</code> evaluates to true will be considered for the median.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.expr.types.numeric.NumericScalar">NumericScalar</span></code>
+          </td>
+          <td><p>Median of the column</p></td>
         </tr>
     </tbody>
   </table>
