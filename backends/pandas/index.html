@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://ibis-project.org/how_to/topk/">
+        <link rel="canonical" href="https://ibis-project.org/backends/pandas/">
       
       
-        <link rel="prev" href="../sessionize/">
+        <link rel="prev" href="../Trino/">
       
       
-        <link rel="next" href="../../backends/">
+        <link rel="next" href="../../user_guide/configuration/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>How to Compute the Top K Records - Ibis Project</title>
+        <title>Pandas - Ibis Project</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-compute-the-top-k-records" class="md-skip">
+        <a href="#pandas" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to Compute the Top K Records
+              Pandas
             
           </span>
         </div>
@@ -458,16 +458,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
       
       
         
@@ -490,7 +488,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           How To Guide
@@ -503,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chain-expressions/" class="md-nav__link">
+      <a href="../../how_to/chain-expressions/" class="md-nav__link">
         How to Chain Expressions with Underscore
       </a>
     </li>
@@ -517,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../duckdb_register/" class="md-nav__link">
+      <a href="../../how_to/duckdb_register/" class="md-nav__link">
         How to Use `register` to load external data files with the DuckDB backend
       </a>
     </li>
@@ -531,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ffill_bfill_w_window/" class="md-nav__link">
+      <a href="../../how_to/ffill_bfill_w_window/" class="md-nav__link">
         How to `ffill` and `bfill` using Window Functions
       </a>
     </li>
@@ -545,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../memtable-join/" class="md-nav__link">
+      <a href="../../how_to/memtable-join/" class="md-nav__link">
         How to join an in-memory DataFrame to a TableExpression
       </a>
     </li>
@@ -559,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sessionize/" class="md-nav__link">
+      <a href="../../how_to/sessionize/" class="md-nav__link">
         How to Sessionize a Log of Events
       </a>
     </li>
@@ -571,21 +569,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../how_to/topk/" class="md-nav__link">
         How to Compute the Top K Records
       </a>
-      
     </li>
   
 
@@ -602,14 +590,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
       
       
         
@@ -654,7 +644,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../backends/">Execution Backends</a>
+          <a href="../">Execution Backends</a>
           
             <label for="__nav_3_4">
               <span class="md-nav__icon md-icon"></span>
@@ -662,7 +652,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           Execution Backends
@@ -677,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/BigQuery/" class="md-nav__link">
+      <a href="../BigQuery/" class="md-nav__link">
         BigQuery
       </a>
     </li>
@@ -691,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/ClickHouse/" class="md-nav__link">
+      <a href="../ClickHouse/" class="md-nav__link">
         ClickHouse
       </a>
     </li>
@@ -705,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Dask/" class="md-nav__link">
+      <a href="../Dask/" class="md-nav__link">
         Dask
       </a>
     </li>
@@ -719,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Datafusion/" class="md-nav__link">
+      <a href="../Datafusion/" class="md-nav__link">
         Datafusion
       </a>
     </li>
@@ -733,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Druid/" class="md-nav__link">
+      <a href="../Druid/" class="md-nav__link">
         Druid
       </a>
     </li>
@@ -747,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/DuckDB/" class="md-nav__link">
+      <a href="../DuckDB/" class="md-nav__link">
         DuckDB
       </a>
     </li>
@@ -761,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Impala/" class="md-nav__link">
+      <a href="../Impala/" class="md-nav__link">
         Impala
       </a>
     </li>
@@ -775,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/MSSQL/" class="md-nav__link">
+      <a href="../MSSQL/" class="md-nav__link">
         MSSQL
       </a>
     </li>
@@ -789,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/MySQL/" class="md-nav__link">
+      <a href="../MySQL/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -803,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Polars/" class="md-nav__link">
+      <a href="../Polars/" class="md-nav__link">
         Polars
       </a>
     </li>
@@ -817,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/PostgreSQL/" class="md-nav__link">
+      <a href="../PostgreSQL/" class="md-nav__link">
         PostgreSQL
       </a>
     </li>
@@ -831,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/PySpark/" class="md-nav__link">
+      <a href="../PySpark/" class="md-nav__link">
         PySpark
       </a>
     </li>
@@ -845,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/SQLite/" class="md-nav__link">
+      <a href="../SQLite/" class="md-nav__link">
         SQLite
       </a>
     </li>
@@ -859,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Snowflake/" class="md-nav__link">
+      <a href="../Snowflake/" class="md-nav__link">
         Snowflake
       </a>
     </li>
@@ -873,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/Trino/" class="md-nav__link">
+      <a href="../Trino/" class="md-nav__link">
         Trino
       </a>
     </li>
@@ -885,11 +875,153 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../backends/pandas/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pandas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Pandas
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    Connect
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-parameters" class="md-nav__link">
+    Connection Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.do_connect" class="md-nav__link">
+    do_connect()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-api" class="md-nav__link">
+    Backend API
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.Backend" class="md-nav__link">
+    Backend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-defined-functions-udf" class="md-nav__link">
+    User Defined functions (UDF)
+  </a>
+  
+    <nav class="md-nav" aria-label="User Defined functions (UDF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementwise-functions" class="md-nav__link">
+    Elementwise Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduction-functions" class="md-nav__link">
+    Reduction Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytic-functions" class="md-nav__link">
+    Analytic Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-of-pandas-udfs" class="md-nav__link">
+    Details of pandas UDFs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1484,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/support_matrix/" class="md-nav__link">
+      <a href="../support_matrix/" class="md-nav__link">
         Backend Operations Matrix
       </a>
     </li>
@@ -1907,6 +2039,122 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    Connect
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-parameters" class="md-nav__link">
+    Connection Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.do_connect" class="md-nav__link">
+    do_connect()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-api" class="md-nav__link">
+    Backend API
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.Backend" class="md-nav__link">
+    Backend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-defined-functions-udf" class="md-nav__link">
+    User Defined functions (UDF)
+  </a>
+  
+    <nav class="md-nav" aria-label="User Defined functions (UDF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementwise-functions" class="md-nav__link">
+    Elementwise Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduction-functions" class="md-nav__link">
+    Reduction Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytic-functions" class="md-nav__link">
+    Analytic Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-of-pandas-udfs" class="md-nav__link">
+    Details of pandas UDFs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1923,71 +2171,229 @@
                   
 
 
-<h1 id="how-to-compute-the-top-k-records">How to Compute the Top K Records<a class="headerlink" href="#how-to-compute-the-top-k-records" title="Anchor link to this section for reference">&para;</a></h1>
-<!-- prettier-ignore-start -->
-<p>Here we use the <a class="autorefs autorefs-internal" href="../../api/expressions/generic/#ibis.expr.types.generic.Column.topk"><code>topk</code></a> method to compute the top
-5 customers for some generated TPC-H data by:</p>
-<!-- prettier-ignore-end -->
-
-<ul>
-<li>count (the default)</li>
-<li>sum of order totals</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>  <span class="c1"># in-memory duckdb</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span><span class="s2">&quot;CALL dbgen(sf=0.1)&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;orders&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span><span class="o">.</span><span class="n">o_custkey</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># top 5 most frequent customers</span>
-<span class="err">┏━━━━━━━━━━━┳━━━━━━━┓</span>
-<span class="err">┃</span> <span class="n">o_custkey</span> <span class="err">┃</span> <span class="n">count</span> <span class="err">┃</span>
-<span class="err">┡━━━━━━━━━━━╇━━━━━━━┩</span>
-<span class="err">│</span> <span class="err">!</span><span class="n">int32</span>    <span class="err">│</span> <span class="n">int64</span> <span class="err">│</span>
-<span class="err">├───────────┼───────┤</span>
-<span class="err">│</span>      <span class="mi">8761</span> <span class="err">│</span>    <span class="mi">36</span> <span class="err">│</span>
-<span class="err">│</span>     <span class="mi">11998</span> <span class="err">│</span>    <span class="mi">36</span> <span class="err">│</span>
-<span class="err">│</span>      <span class="mi">3151</span> <span class="err">│</span>    <span class="mi">35</span> <span class="err">│</span>
-<span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span>    <span class="mi">35</span> <span class="err">│</span>
-<span class="err">│</span>       <span class="mi">388</span> <span class="err">│</span>    <span class="mi">35</span> <span class="err">│</span>
-<span class="err">└───────────┴───────┘</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">topk</span> <span class="o">=</span> <span class="n">orders</span><span class="o">.</span><span class="n">o_custkey</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">orders</span><span class="o">.</span><span class="n">o_totalprice</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  <span class="c1"># top 5 largest spending customers</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">topk</span>
-<span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
-<span class="err">┃</span> <span class="n">o_custkey</span> <span class="err">┃</span> <span class="nb">sum</span>            <span class="err">┃</span>
-<span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
-<span class="err">│</span> <span class="err">!</span><span class="n">int32</span>    <span class="err">│</span> <span class="n">decimal</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="err">│</span>
-<span class="err">├───────────┼────────────────┤</span>
-<span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span>     <span class="mf">5793605.05</span> <span class="err">│</span>
-<span class="err">│</span>      <span class="mi">6958</span> <span class="err">│</span>     <span class="mf">5370682.19</span> <span class="err">│</span>
-<span class="err">│</span>      <span class="mi">9454</span> <span class="err">│</span>     <span class="mf">5354381.81</span> <span class="err">│</span>
-<span class="err">│</span>       <span class="mi">346</span> <span class="err">│</span>     <span class="mf">5323350.43</span> <span class="err">│</span>
-<span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span>     <span class="mf">5227957.24</span> <span class="err">│</span>
-<span class="err">└───────────┴────────────────┘</span>
+<h1 id="pandas"><a href="https://pandas.pydata.org/">pandas</a><a class="headerlink" href="#pandas" title="Anchor link to this section for reference">&para;</a></h1>
+<p>Ibis's pandas backend is available in core Ibis.</p>
+<h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
+<p>Install ibis and dependencies for the pandas backend:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework&#39;</span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Create a client by passing in a dictionary of paths to <code>ibis.pandas.connect</code>.</p>
 <!-- prettier-ignore-start -->
-<p>You can also use <a class="autorefs autorefs-internal" href="../../api/expressions/generic/#ibis.expr.types.generic.Column.topk"><code>topk</code></a> to retrieve the rows
-from the original table that match the key used, in this case <code>o_custkey</code>. This
-is done with a left semi join:</p>
+<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.pandas.BasePandasBackend.do_connect"><code>ibis.backends.pandas.Backend.do_connect</code></a>
+for connection parameter information.</p>
 <!-- prettier-ignore-end -->
 
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span><span class="o">.</span><span class="n">semi_join</span><span class="p">(</span><span class="n">topk</span><span class="p">,</span> <span class="s2">&quot;o_custkey&quot;</span><span class="p">)</span>
-<span class="err">┏━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
-<span class="err">┃</span> <span class="n">o_orderkey</span> <span class="err">┃</span> <span class="n">o_custkey</span> <span class="err">┃</span> <span class="n">o_orderstatus</span> <span class="err">┃</span> <span class="n">o_totalprice</span>    <span class="err">┃</span> <span class="n">o_orderdate</span> <span class="err">┃</span> <span class="n">o_orderpriority</span> <span class="err">┃</span> <span class="n">o_clerk</span>         <span class="err">┃</span> <span class="n">o_shippriority</span> <span class="err">┃</span> <span class="n">o_comment</span>                                                    <span class="err">┃</span>
-<span class="err">┡━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
-<span class="err">│</span> <span class="err">!</span><span class="n">int32</span>     <span class="err">│</span> <span class="err">!</span><span class="n">int32</span>    <span class="err">│</span> <span class="err">!</span><span class="n">string</span>       <span class="err">│</span> <span class="err">!</span><span class="n">decimal</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="err">│</span> <span class="err">!</span><span class="n">date</span>       <span class="err">│</span> <span class="err">!</span><span class="n">string</span>         <span class="err">│</span> <span class="err">!</span><span class="n">string</span>         <span class="err">│</span> <span class="err">!</span><span class="n">int32</span>         <span class="err">│</span> <span class="err">!</span><span class="n">string</span>                                                      <span class="err">│</span>
-<span class="err">├────────────┼───────────┼───────────────┼─────────────────┼─────────────┼─────────────────┼─────────────────┼────────────────┼──────────────────────────────────────────────────────────────┤</span>
-<span class="err">│</span>       <span class="mi">4000</span> <span class="err">│</span>      <span class="mi">6958</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">115722.85</span> <span class="err">│</span> <span class="mi">1992</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span>  <span class="err">│</span> <span class="mi">5</span><span class="o">-</span><span class="n">LOW</span>           <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000339 │              0 │ le carefully closely even pinto beans. regular, ironic foxe… │</span>
-<span class="err">│</span>      <span class="mi">14402</span> <span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">131557.79</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">15</span>  <span class="err">│</span> <span class="mi">3</span><span class="o">-</span><span class="n">MEDIUM</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000672 │              0 │ azzle slyly. carefully regular instructions affix carefully… │</span>
-<span class="err">│</span>      <span class="mi">14784</span> <span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">216307.34</span> <span class="err">│</span> <span class="mi">1992</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">15</span>  <span class="err">│</span> <span class="mi">3</span><span class="o">-</span><span class="n">MEDIUM</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000479 │              0 │ lyly final theodoli                                          │</span>
-<span class="err">│</span>      <span class="mi">17415</span> <span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span> <span class="n">O</span>             <span class="err">│</span>       <span class="mf">110427.40</span> <span class="err">│</span> <span class="mi">1996</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">18</span>  <span class="err">│</span> <span class="mi">2</span><span class="o">-</span><span class="n">HIGH</span>          <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000148 │              0 │ . furiously even asymptotes wake carefully according to t    │</span>
-<span class="err">│</span>      <span class="mi">17760</span> <span class="err">│</span>      <span class="mi">9454</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">167249.60</span> <span class="err">│</span> <span class="mi">1992</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">05</span>  <span class="err">│</span> <span class="mi">4</span><span class="o">-</span><span class="n">NOT</span> <span class="n">SPECIFIED</span> <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000093 │              0 │ uriously final pinto beans wake furiously                    │</span>
-<span class="err">│</span>      <span class="mi">18853</span> <span class="err">│</span>      <span class="mi">9454</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">163677.19</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">18</span>  <span class="err">│</span> <span class="mi">1</span><span class="o">-</span><span class="n">URGENT</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000046 │              0 │ sts. courts haggle furiously. even, enticing depo            │</span>
-<span class="err">│</span>      <span class="mi">21317</span> <span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span> <span class="n">P</span>             <span class="err">│</span>       <span class="mf">267386.98</span> <span class="err">│</span> <span class="mi">1995</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">10</span>  <span class="err">│</span> <span class="mi">5</span><span class="o">-</span><span class="n">LOW</span>           <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000737 │              0 │ Tiresias. accounts a                                         │</span>
-<span class="err">│</span>      <span class="mi">23138</span> <span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span> <span class="n">O</span>             <span class="err">│</span>       <span class="mf">174882.01</span> <span class="err">│</span> <span class="mi">1997</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span>  <span class="err">│</span> <span class="mi">1</span><span class="o">-</span><span class="n">URGENT</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000253 │              0 │ uctions integrate carefully regular pinto beans. silent acc… │</span>
-<span class="err">│</span>      <span class="mi">23972</span> <span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">129646.66</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">17</span>  <span class="err">│</span> <span class="mi">4</span><span class="o">-</span><span class="n">NOT</span> <span class="n">SPECIFIED</span> <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000001000 │              0 │ s. blithely final packages sleep quickly idle pearls. even,… │</span>
-<span class="err">│</span>      <span class="mi">24064</span> <span class="err">│</span>       <span class="mi">346</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">147095.22</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">26</span>  <span class="err">│</span> <span class="mi">3</span><span class="o">-</span><span class="n">MEDIUM</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000020 │              0 │ ithely final foxes. furiously final instructi                │</span>
-<span class="err">│</span>          <span class="err">…</span> <span class="err">│</span>         <span class="err">…</span> <span class="err">│</span> <span class="err">…</span>             <span class="err">│</span>               <span class="err">…</span> <span class="err">│</span> <span class="err">…</span>           <span class="err">│</span> <span class="err">…</span>               <span class="err">│</span> <span class="err">…</span>               <span class="err">│</span>              <span class="err">…</span> <span class="err">│</span> <span class="err">…</span>                                                            <span class="err">│</span>
-<span class="err">└────────────┴───────────┴───────────────┴─────────────────┴─────────────┴─────────────────┴─────────────────┴────────────────┴──────────────────────────────────────────────────────────────┘</span>
+<!-- prettier-ignore-start -->
+<div class="admonition info">
+<p class="admonition-title"><code>ibis.pandas.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.pandas.BasePandasBackend.do_connect"><code>ibis.backends.pandas.Backend.do_connect</code></a>.</p>
+</div>
+<!-- prettier-ignore-end -->
+
+<h3 id="connection-parameters">Connection Parameters<a class="headerlink" href="#connection-parameters" title="Anchor link to this section for reference">&para;</a></h3>
+<!-- prettier-ignore-start -->
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.pandas.BasePandasBackend.do_connect" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.pandas.BasePandasBackend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Construct a client from a dictionary of pandas DataFrames.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dictionary</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.MutableMapping" href="https://docs.python.org/3/library/typing.html#typing.MutableMapping">MutableMapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-internal" title="pandas" href="#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span>] | None</code>
+          </td>
+          <td><p>An optional mapping of string table names to pandas DataFrames.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">pandas</span><span class="o">.</span><span class="n">connect</span><span class="p">({</span><span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})})</span>
+<span class="go">&lt;ibis.backends.pandas.Backend at 0x...&gt;</span>
+</code></pre></div>
+
+  </div>
+
+</div><!-- prettier-ignore-end -->
+
+<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
+<!-- prettier-ignore-start -->
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="ibis.backends.pandas.Backend" class="doc doc-heading">
+        <code>Backend</code>
+
+
+<a href="#ibis.backends.pandas.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.pandas.BasePandasBackend" href="../../api/backends/pandas/#ibis.backends.pandas.BasePandasBackend">BasePandasBackend</a></code></p>
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div><!-- prettier-ignore-end -->
+
+<h2 id="user-defined-functions-udf">User Defined functions (UDF)<a class="headerlink" href="#user-defined-functions-udf" title="Anchor link to this section for reference">&para;</a></h2>
+<p>Ibis supports defining three kinds of user-defined functions for operations on
+expressions targeting the pandas backend: <strong>element-wise</strong>, <strong>reduction</strong>, and
+<strong>analytic</strong>.</p>
+<h3 id="elementwise-functions">Elementwise Functions<a class="headerlink" href="#elementwise-functions" title="Anchor link to this section for reference">&para;</a></h3>
+<p>An <strong>element-wise</strong> function is a function that takes N rows as input and
+produces N rows of output. <code>log</code>, <code>exp</code>, and <code>floor</code> are examples of
+element-wise functions.</p>
+<p>Here's how to define an element-wise function:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
+
+<span class="nd">@udf</span><span class="o">.</span><span class="n">elementwise</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">],</span> <span class="n">output_type</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span>
+</code></pre></div>
+<h3 id="reduction-functions">Reduction Functions<a class="headerlink" href="#reduction-functions" title="Anchor link to this section for reference">&para;</a></h3>
+<p>A <strong>reduction</strong> is a function that takes N rows as input and produces 1 row
+as output. <code>sum</code>, <code>mean</code> and <code>count</code> are examples of reductions. In
+the context of a <code>GROUP BY</code>, reductions produce 1 row of output <em>per
+group</em>.</p>
+<p>Here's how to define a reduction function:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
+
+<span class="nd">@udf</span><span class="o">.</span><span class="n">reduction</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">],</span> <span class="n">output_type</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">double_mean</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">series</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="analytic-functions">Analytic Functions<a class="headerlink" href="#analytic-functions" title="Anchor link to this section for reference">&para;</a></h3>
+<p>An <strong>analytic</strong> function is like an <strong>element-wise</strong> function in that it takes
+N rows as input and produces N rows of output. The key difference is that
+analytic functions can be applied <em>per group</em> using window functions. Z-score
+is an example of an analytic function.</p>
+<p>Here's how to define an analytic function:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
+
+<span class="nd">@udf</span><span class="o">.</span><span class="n">analytic</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">],</span> <span class="n">output_type</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">zscore</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">series</span> <span class="o">-</span> <span class="n">series</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">series</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="details-of-pandas-udfs">Details of pandas UDFs<a class="headerlink" href="#details-of-pandas-udfs" title="Anchor link to this section for reference">&para;</a></h3>
+<ul>
+<li>Element-wise provide support
+  for applying your UDF to any combination of scalar values and columns.</li>
+<li>Reductions provide support for
+  whole column aggregations, grouped aggregations, and application of your
+  function over a window.</li>
+<li>Analytic functions work in both grouped and non-grouped
+  settings</li>
+<li>The objects you receive as input arguments are either <code>pandas.Series</code> or
+  Python/NumPy scalars.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Keyword arguments must be given a default</p>
+<p>Any keyword arguments must be given a default value or the function <strong>will
+not work</strong>.</p>
+</div>
+<p>A common Python convention is to set the default value to <code>None</code> and
+handle setting it to something not <code>None</code> in the body of the function.</p>
+<p>Using <code>add_one</code> from above as an example, the following call will receive a
+<code>pandas.Series</code> for the <code>x</code> argument:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">pandas</span><span class="o">.</span><span class="n">connect</span><span class="p">({</span><span class="s1">&#39;df&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;df&#39;</span><span class="p">)</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">add_one</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="n">expr</span>
+</code></pre></div>
+<p>And this will receive the <code>int</code> 1:</p>
+<div class="highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="n">add_one</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">expr</span>
+</code></pre></div>
+<p>Since the pandas backend passes around <code>**kwargs</code> you can accept <code>**kwargs</code>
+in your function:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
+
+<span class="nd">@udf</span><span class="o">.</span><span class="n">elementwise</span><span class="p">([</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">],</span> <span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># do stuff with kwargs</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">2.0</span>
+</code></pre></div>
+<p>Or you can leave them out as we did in the example above. You can also
+optionally accept specific keyword arguments.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
+
+<span class="nd">@udf</span><span class="o">.</span><span class="n">elementwise</span><span class="p">([</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">],</span> <span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_two_with_none</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mf">2.0</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div>
 
   <hr>
@@ -1995,7 +2401,7 @@ is done with a left semi join:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2023</span>
       
     
   </small>

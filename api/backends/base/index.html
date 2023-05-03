@@ -791,20 +791,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backends/Pandas/" class="md-nav__link">
-        Pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../backends/Polars/" class="md-nav__link">
         Polars
       </a>
@@ -877,6 +863,20 @@
     <li class="md-nav__item">
       <a href="../../../backends/Trino/" class="md-nav__link">
         Trino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backends/pandas/" class="md-nav__link">
+        Pandas
       </a>
     </li>
   
@@ -1584,7 +1584,7 @@
   
     <li class="md-nav__item">
       <a href="../pandas/" class="md-nav__link">
-        Pandas-like Backend Base Classes
+        pandas-like Backend Base Classes
       </a>
     </li>
   
@@ -2371,8 +2371,8 @@ required methods.</p>
 <code class="highlight language-python"><span class="n">current_database</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.current_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2412,8 +2412,8 @@ required methods.</p>
 <code class="highlight language-python"><span class="n">db_identity</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.db_identity" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2456,8 +2456,8 @@ specify the database.</p>
 <code class="highlight language-python"><span class="n">tables</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.tables" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2485,8 +2485,8 @@ specify the database.</p>
 <code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.version" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2738,7 +2738,7 @@ connected backend instance.</p>
         <tr>
           <td><code>obj</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
+                <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
           </td>
           <td><p>An Ibis table expression or pandas table that will be used to
 extract the schema and the data of the new table. If not provided,

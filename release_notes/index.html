@@ -789,20 +789,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../backends/Pandas/" class="md-nav__link">
-        Pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../backends/Polars/" class="md-nav__link">
         Polars
       </a>
@@ -875,6 +861,20 @@
     <li class="md-nav__item">
       <a href="../backends/Trino/" class="md-nav__link">
         Trino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backends/pandas/" class="md-nav__link">
+        Pandas
       </a>
     </li>
   
@@ -1359,7 +1359,7 @@
   
     <li class="md-nav__item">
       <a href="../api/backends/pandas/" class="md-nav__link">
-        Pandas-like Backend Base Classes
+        pandas-like Backend Base Classes
       </a>
     </li>
   
@@ -4665,7 +4665,7 @@
 <li><strong>deps:</strong> ibis now supports at minimum duckdb 0.3.3. Please upgrade your duckdb install as needed.</li>
 <li><strong>api:</strong> previously <code>ibis.connect</code> would return a <code>Table</code> object when calling <code>connect</code> on a parquet/csv file. This now returns a backend containing a single table created from that file. When possible users may use <code>ibis.read</code> instead to read files into ibis tables.</li>
 <li><strong>api:</strong> <code>histogram()</code>'s <code>closed</code> argument no longer exists because it never had any effect. Remove it from your <code>histogram</code> method calls.</li>
-<li><strong>pandas/dask:</strong> the Pandas and Dask backends now interpret casting ints to/from timestamps as seconds since the unix epoch, matching other backends.</li>
+<li><strong>pandas/dask:</strong> the pandas and Dask backends now interpret casting ints to/from timestamps as seconds since the unix epoch, matching other backends.</li>
 <li><strong>datafusion:</strong> <code>register_csv</code> and <code>register_parquet</code> are removed. Pass filename to <code>register</code> method instead.</li>
 <li><strong>ir:</strong> <code>ops.NodeList</code> and <code>ir.List</code> are removed. Use tuples to represent sequence of expressions instead.</li>
 <li><strong>api:</strong> <code>re_extract</code> now follows <code>re.match</code> behavior. In particular, the <code>0</code>th group is now the entire string if there's a match, otherwise the groups are 1-based.</li>
@@ -5633,18 +5633,18 @@ behavior from UUID datatypes will need to add an explicit cast first.</li>
 <ul>
 <li>Serialization-deserialization of Node via pickle is now byte compatible between different processes (<a href="https://github.com/ibis-project/ibis/issues/2938">#2938</a>)</li>
 <li>Support joining on different columns in ClickHouse backend (<a href="https://github.com/ibis-project/ibis/issues/2916">#2916</a>)</li>
-<li>Support summarization of empty data in Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2908">#2908</a>)</li>
+<li>Support summarization of empty data in pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2908">#2908</a>)</li>
 <li>Unify implementation of fillna and isna in Pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2882">#2882</a>)</li>
 <li>Support binary operation with Timedelta in Pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2873">#2873</a>)</li>
 <li>Add <code>group_concat</code> operation for Clickhouse backend (<a href="https://github.com/ibis-project/ibis/issues/2839">#2839</a>)</li>
 <li>Support comparison of ColumnExpr to timestamp literal (<a href="https://github.com/ibis-project/ibis/issues/2808">#2808</a>)</li>
 <li>Make op schema a cached property (<a href="https://github.com/ibis-project/ibis/issues/2805">#2805</a>)</li>
 <li>Implement <code>.insert()</code> for SQLAlchemy backends (<a href="https://github.com/ibis-project/ibis/issues/2613">#2613</a>, <a href="https://github.com/ibis-project/ibis/issues/2778">#2613</a>)</li>
-<li>Infer categorical and decimal Series to more specific Ibis types in Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2792">#2792</a>)</li>
+<li>Infer categorical and decimal Series to more specific Ibis types in pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2792">#2792</a>)</li>
 <li>Add <code>startswith</code> and <code>endswith</code> operations (<a href="https://github.com/ibis-project/ibis/issues/2790">#2790</a>)</li>
 <li>Allow more flexible return type for UDFs (<a href="https://github.com/ibis-project/ibis/issues/2776">#2776</a>, <a href="https://github.com/ibis-project/ibis/issues/2776">#2797</a>)</li>
 <li>Implement Clip in the Pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2779">#2779</a>)</li>
-<li>Use <code>ndarray</code> as array representation in Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2753">#2753</a>)</li>
+<li>Use <code>ndarray</code> as array representation in pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2753">#2753</a>)</li>
 <li>Support Spark filter with window operation (<a href="https://github.com/ibis-project/ibis/issues/2687">#2687</a>)</li>
 <li>Support context adjustment for udfs for pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2646">#2646</a>)</li>
 <li>Add <code>auth_local_webserver</code>, <code>auth_external_data</code>, and <code>auth_cache</code> parameters to BigQuery connect method. Set <code>auth_local_webserver</code> to use a local server instead of copy-pasting an authorization code. Set <code>auth_external_data</code> to true to request additional scopes required to query Google Drive and Sheets. Set <code>auth_cache</code> to <code>reauth</code> or <code>none</code> to force reauthentication. (<a href="https://github.com/ibis-project/ibis/issues/2655">#2655</a>)</li>
@@ -5665,7 +5665,7 @@ behavior from UUID datatypes will need to add an explicit cast first.</li>
 <li>Fix projection on differences and intersections for SQL backends (<a href="https://github.com/ibis-project/ibis/issues/2845">#2845</a>)</li>
 <li>Backends are loaded in a lazy way, so third-party backends can import Ibis without circular imports (<a href="https://github.com/ibis-project/ibis/issues/2827">#2827</a>)</li>
 <li>Disable aggregation optimization due to N squared performance (<a href="https://github.com/ibis-project/ibis/issues/2830">#2830</a>)</li>
-<li>Fix <code>.cast()</code> to array outputting list instead of np.array in Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2821">#2821</a>)</li>
+<li>Fix <code>.cast()</code> to array outputting list instead of np.array in pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2821">#2821</a>)</li>
 <li>Fix aggregation with mixed reduction datatypes (array + scalar) on Dask backend (<a href="https://github.com/ibis-project/ibis/issues/2820">#2820</a>)</li>
 <li>Fix error when using reduction UDF that returns np.array in a grouped aggregation (<a href="https://github.com/ibis-project/ibis/issues/2770">#2770</a>)</li>
 <li>Fix time context trimming error for multi column udfs in pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2712">#2712</a>)</li>
@@ -5703,9 +5703,9 @@ behavior from UUID datatypes will need to add an explicit cast first.</li>
 <ul>
 <li>Add Struct.from_dict (<a href="https://github.com/ibis-project/ibis/issues/2514">#2514</a>)</li>
 <li>Add hash and hashbytes support for BigQuery backend (<a href="https://github.com/ibis-project/ibis/issues/2310">#2310</a>)</li>
-<li>Support reduction UDF without groupby to return multiple columns for Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2511">#2511</a>)</li>
-<li>Support analytic and reduction UDF to return multiple columns for Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2487">#2487</a>)</li>
-<li>Support elementwise UDF to return multiple columns for Pandas and PySpark backend (<a href="https://github.com/ibis-project/ibis/issues/2473">#2473</a>)</li>
+<li>Support reduction UDF without groupby to return multiple columns for pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2511">#2511</a>)</li>
+<li>Support analytic and reduction UDF to return multiple columns for pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2487">#2487</a>)</li>
+<li>Support elementwise UDF to return multiple columns for pandas and PySpark backend (<a href="https://github.com/ibis-project/ibis/issues/2473">#2473</a>)</li>
 <li>FEAT: Support Ibis interval for window in pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2409">#2409</a>)</li>
 <li>Use Scope class for scope in pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2402">#2402</a>)</li>
 <li>Add PySpark support for ReductionVectorizedUDF (<a href="https://github.com/ibis-project/ibis/issues/2366">#2366</a>)</li>
@@ -5724,36 +5724,36 @@ behavior from UUID datatypes will need to add an explicit cast first.</li>
 <li>ZeroIfNull and NullIfZero implementation for OmniSciDB (<a href="https://github.com/ibis-project/ibis/issues/2186">#2186</a>)</li>
 <li>IsNan implementation for OmniSciDB (<a href="https://github.com/ibis-project/ibis/issues/2093">#2093</a>)</li>
 <li>[OmnisciDB] Support add_columns and drop_columns for OmnisciDB table (<a href="https://github.com/ibis-project/ibis/issues/2094">#2094</a>)</li>
-<li>Create ExtractQuarter operation and add its support to Clickhouse, CSV, Impala, MySQL, OmniSciDB, Pandas, Parquet, PostgreSQL, PySpark, SQLite and Spark (<a href="https://github.com/ibis-project/ibis/issues/2175">#2175</a>)</li>
+<li>Create ExtractQuarter operation and add its support to Clickhouse, CSV, Impala, MySQL, OmniSciDB, pandas, Parquet, PostgreSQL, PySpark, SQLite and Spark (<a href="https://github.com/ibis-project/ibis/issues/2175">#2175</a>)</li>
 <li>Add translation rules for isnull() and notnull() for pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2126">#2126</a>)</li>
 <li>Add window operations support to SQLite (<a href="https://github.com/ibis-project/ibis/issues/2232">#2232</a>)</li>
 <li>Implement read_csv for omniscidb backend (<a href="https://github.com/ibis-project/ibis/issues/2062">#2062</a>)</li>
 <li>[OmniSciDB] Add support to week extraction (<a href="https://github.com/ibis-project/ibis/issues/2171">#2171</a>)</li>
 <li>Date, DateDiff and TimestampDiff implementations for OmniSciDB (<a href="https://github.com/ibis-project/ibis/issues/2097">#2097</a>)</li>
-<li>Create ExtractWeekOfYear operation and add its support to Clickhouse, CSV, MySQL, Pandas, Parquet, PostgreSQL, PySpark and Spark (<a href="https://github.com/ibis-project/ibis/issues/2177">#2177</a>)</li>
+<li>Create ExtractWeekOfYear operation and add its support to Clickhouse, CSV, MySQL, pandas, Parquet, PostgreSQL, PySpark and Spark (<a href="https://github.com/ibis-project/ibis/issues/2177">#2177</a>)</li>
 <li>Add initial support for ibis.random function (<a href="https://github.com/ibis-project/ibis/issues/2060">#2060</a>)</li>
-<li>Added epoch_seconds extraction operation to Clickhouse, CSV, Impala, MySQL, OmniSciDB, Pandas, Parquet, PostgreSQL, PySpark, SQLite, Spark and BigQuery :issue:<code>2273</code> (<a href="https://github.com/ibis-project/ibis/issues/2178">#2178</a>)</li>
+<li>Added epoch_seconds extraction operation to Clickhouse, CSV, Impala, MySQL, OmniSciDB, pandas, Parquet, PostgreSQL, PySpark, SQLite, Spark and BigQuery :issue:<code>2273</code> (<a href="https://github.com/ibis-project/ibis/issues/2178">#2178</a>)</li>
 <li>[OmniSciDB] Add "method" parameter to load_data (<a href="https://github.com/ibis-project/ibis/issues/2165">#2165</a>)</li>
 <li>Add non-nullable info to schema output (<a href="https://github.com/ibis-project/ibis/issues/2117">#2117</a>)</li>
 <li>fillna and nullif implementations for OmnisciDB (<a href="https://github.com/ibis-project/ibis/issues/2083">#2083</a>)</li>
 <li>Add load_data to sqlalchemy's backends and fix database parameter for load/create/drop when database parameter is the same than the current database (<a href="https://github.com/ibis-project/ibis/issues/1981">#1981</a>)</li>
 <li>[OmniSciDB] Add support for within, d_fully_within and point (<a href="https://github.com/ibis-project/ibis/issues/2125">#2125</a>)</li>
 <li>OmniSciDB - Refactor DDL and Client; Add temporary parameter to create_table and "force" parameter to drop_view (<a href="https://github.com/ibis-project/ibis/issues/2086">#2086</a>)</li>
-<li>Create ExtractDayOfYear operation and add its support to Clickhouse, CSV, MySQL, OmniSciDB, Pandas, Parquet, PostgreSQL, PySpark, SQLite and Spark (<a href="https://github.com/ibis-project/ibis/issues/2173">#2173</a>)</li>
+<li>Create ExtractDayOfYear operation and add its support to Clickhouse, CSV, MySQL, OmniSciDB, pandas, Parquet, PostgreSQL, PySpark, SQLite and Spark (<a href="https://github.com/ibis-project/ibis/issues/2173">#2173</a>)</li>
 <li>Implementations of Log Log2 Log10 for OmniSciDB backend (<a href="https://github.com/ibis-project/ibis/issues/2095">#2095</a>)</li>
 </ul>
 <h2 id="bugs_1">Bugs<a class="headerlink" href="#bugs_1" title="Anchor link to this section for reference">&para;</a></h2>
 <ul>
 <li>Table expressions do not recognize inet datatype (Postgres backend) (<a href="https://github.com/ibis-project/ibis/issues/2462">#2462</a>)</li>
 <li>Table expressions do not recognize macaddr datatype (Postgres backend) (<a href="https://github.com/ibis-project/ibis/issues/2461">#2461</a>)</li>
-<li>Fix <code>aggcontext.Summarize</code> not always producing scalar (Pandas backend) (<a href="https://github.com/ibis-project/ibis/issues/2410">#2410</a>)</li>
+<li>Fix <code>aggcontext.Summarize</code> not always producing scalar (pandas backend) (<a href="https://github.com/ibis-project/ibis/issues/2410">#2410</a>)</li>
 <li>Fix same window op with different window size on table lead to incorrect results for pyspark backend (<a href="https://github.com/ibis-project/ibis/issues/2414">#2414</a>)</li>
 <li>Fix same column with multiple aliases not showing properly in repr (<a href="https://github.com/ibis-project/ibis/issues/2229">#2229</a>)</li>
-<li>Fix reduction UDFs over ungrouped, bounded windows on Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2395">#2395</a>)</li>
+<li>Fix reduction UDFs over ungrouped, bounded windows on pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2395">#2395</a>)</li>
 <li>FEAT: Support rolling window UDF with non numeric inputs for pandas backend. (<a href="https://github.com/ibis-project/ibis/issues/2386">#2386</a>)</li>
 <li>Fix scope get to use hashmap lookup instead of list lookup (<a href="https://github.com/ibis-project/ibis/issues/2386">#2386</a>)</li>
 <li>Fix equality behavior for Literal ops (<a href="https://github.com/ibis-project/ibis/issues/2387">#2387</a>)</li>
-<li>Fix analytic ops over ungrouped and unordered windows on Pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2376">#2376</a>)</li>
+<li>Fix analytic ops over ungrouped and unordered windows on pandas backend (<a href="https://github.com/ibis-project/ibis/issues/2376">#2376</a>)</li>
 <li>Fix the covariance operator in the BigQuery backend. (<a href="https://github.com/ibis-project/ibis/issues/2367">#2367</a>)</li>
 <li>Update impala kerberos dependencies (<a href="https://github.com/ibis-project/ibis/issues/2342">#2342</a>)</li>
 <li>Added verbose logging to SQL backends (<a href="https://github.com/ibis-project/ibis/issues/1320">#1320</a>)</li>
@@ -5763,7 +5763,7 @@ behavior from UUID datatypes will need to add an explicit cast first.</li>
 <li>Fix PySpark compiler error when elementwise UDF output_type is Decimal or Timestamp (<a href="https://github.com/ibis-project/ibis/issues/2223">#2223</a>)</li>
 <li>Fix interactive mode returning a expression instead of the value when used in Jupyter (<a href="https://github.com/ibis-project/ibis/issues/2157">#2157</a>)</li>
 <li>Fix PySpark error when doing alias after selection (<a href="https://github.com/ibis-project/ibis/issues/2127">#2127</a>)</li>
-<li>Fix millisecond issue for OmniSciDB :issue:<code>2167</code>, MySQL :issue:<code>2169</code>, PostgreSQL :issue:<code>2166</code>, Pandas :issue:<code>2168</code>, BigQuery :issue:<code>2273</code> backends (<a href="https://github.com/ibis-project/ibis/issues/2170">#2170</a>)</li>
+<li>Fix millisecond issue for OmniSciDB :issue:<code>2167</code>, MySQL :issue:<code>2169</code>, PostgreSQL :issue:<code>2166</code>, pandas :issue:<code>2168</code>, BigQuery :issue:<code>2273</code> backends (<a href="https://github.com/ibis-project/ibis/issues/2170">#2170</a>)</li>
 <li>[OmniSciDB] Fix TopK when used as filter (<a href="https://github.com/ibis-project/ibis/issues/2134">#2134</a>)</li>
 </ul>
 <h2 id="support_1">Support<a class="headerlink" href="#support_1" title="Anchor link to this section for reference">&para;</a></h2>
@@ -5772,7 +5772,7 @@ behavior from UUID datatypes will need to add an explicit cast first.</li>
 <li>Drop support to Python 3.6 (<a href="https://github.com/ibis-project/ibis/issues/2288">#2288</a>)</li>
 <li>Simplifying tests directories structure (<a href="https://github.com/ibis-project/ibis/issues/2351">#2351</a>)</li>
 <li>Update <code>google-cloud-bigquery</code> dependency minimum version to 1.12.0 (<a href="https://github.com/ibis-project/ibis/issues/2304">#2304</a>)</li>
-<li>Remove "experimental" mentions for OmniSciDB and Pandas backends (<a href="https://github.com/ibis-project/ibis/issues/2234">#2234</a>)</li>
+<li>Remove "experimental" mentions for OmniSciDB and pandas backends (<a href="https://github.com/ibis-project/ibis/issues/2234">#2234</a>)</li>
 <li>Use an OmniSciDB image stable on CI (<a href="https://github.com/ibis-project/ibis/issues/2244">#2244</a>)</li>
 <li>Added fragment_size to table creation for OmniSciDB (<a href="https://github.com/ibis-project/ibis/issues/2107">#2107</a>)</li>
 <li>Added round() support for OmniSciDB (<a href="https://github.com/ibis-project/ibis/issues/2096">#2096</a>)</li>
@@ -6086,7 +6086,7 @@ this release.</p>
 <li>Fix precedence of case statement (<a href="https://github.com/ibis-project/ibis/issues/1412">#1412</a>)</li>
 <li>Fix handling of large timestamps (<a href="https://github.com/ibis-project/ibis/issues/1440">#1440</a>)</li>
 <li>Fix <code>identical_to</code> precedence (<a href="https://github.com/ibis-project/ibis/issues/1458">#1458</a>)</li>
-<li>Pandas 0.23 compatibility (<a href="https://github.com/ibis-project/ibis/issues/1458">#1458</a>)</li>
+<li>pandas 0.23 compatibility (<a href="https://github.com/ibis-project/ibis/issues/1458">#1458</a>)</li>
 <li>Preserve timezones in timestamp-typed literals
     (<a href="https://github.com/ibis-project/ibis/issues/1459">#1459</a>)</li>
 <li>Fix incorrect topological ordering of <code>UNION</code> expressions
@@ -6110,7 +6110,7 @@ this release.</p>
 </ul>
 <h1 id="v0130-2018-03-30">v0.13.0 (2018-03-30)<a class="headerlink" href="#v0130-2018-03-30" title="Anchor link to this section for reference">&para;</a></h1>
 <p>This release brings new backends, including support for executing
-against files, MySQL, Pandas user defined scalar and aggregations along
+against files, MySQL, pandas user defined scalar and aggregations along
 with a number of bug fixes and reliability enhancements. We recommend
 that all users upgrade from earlier versions of Ibis.</p>
 <h2 id="new-backends">New Backends<a class="headerlink" href="#new-backends" title="Anchor link to this section for reference">&para;</a></h2>
@@ -6290,7 +6290,7 @@ users upgrade from earlier versions of Ibis.</p>
  1  kwangin
 </code></pre></div>
 <h1 id="0110-2017-06-28">0.11.0 (2017-06-28)<a class="headerlink" href="#0110-2017-06-28" title="Anchor link to this section for reference">&para;</a></h1>
-<p>This release brings initial Pandas backend support along with a number
+<p>This release brings initial pandas backend support along with a number
 of bug fixes and reliability enhancements. We recommend that all users
 upgrade from earlier versions of Ibis.</p>
 <h2 id="new-features_3">New Features<a class="headerlink" href="#new-features_3" title="Anchor link to this section for reference">&para;</a></h2>
@@ -6676,7 +6676,7 @@ improvements, bug fixes, and other new features.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 11, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2023</span>
       
     
   </small>

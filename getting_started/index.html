@@ -931,20 +931,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../backends/Pandas/" class="md-nav__link">
-        Pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../backends/Polars/" class="md-nav__link">
         Polars
       </a>
@@ -1017,6 +1003,20 @@
     <li class="md-nav__item">
       <a href="../backends/Trino/" class="md-nav__link">
         Trino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backends/pandas/" class="md-nav__link">
+        Pandas
       </a>
     </li>
   
@@ -1501,7 +1501,7 @@
   
     <li class="md-nav__item">
       <a href="../api/backends/pandas/" class="md-nav__link">
-        Pandas-like Backend Base Classes
+        pandas-like Backend Base Classes
       </a>
     </li>
   
@@ -2207,7 +2207,7 @@ databases and interacts with the data there. We'll use a local database
 </code></pre></div>
 <p>Ibis is lazily evaluated, so instead of seeing the data, we see the schema of
 the table, instead. To peek at the data, we can call <code>head</code> and then <code>execute</code>
-to get the first few rows of the table as a Pandas DataFrame.</p>
+to get the first few rows of the table as a pandas DataFrame.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
   <span class="n">species</span>     <span class="n">island</span>  <span class="n">bill_length_mm</span>  <span class="n">bill_depth_mm</span>  <span class="n">flipper_length_mm</span>  <span class="n">body_mass_g</span>     <span class="n">sex</span>  <span class="n">year</span>
 <span class="mi">0</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">39.1</span>           <span class="mf">18.7</span>              <span class="mf">181.0</span>       <span class="mf">3750.0</span>    <span class="n">male</span>  <span class="mi">2007</span>
@@ -2233,8 +2233,8 @@ evaluate (when you're ready!).</p>
 <span class="n">Limit</span><span class="p">[</span><span class="n">r0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">]</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">Results in Pandas DataFrame</p>
-<p>Ibis returns results as a Pandas DataFrame by default. It isn't using Pandas to
+<p class="admonition-title">Results in pandas DataFrame</p>
+<p>Ibis returns results as a pandas DataFrame by default. It isn't using pandas to
 perform any of the computation. The query is executed by the backend (DuckDB in
 this case). Only when the query is executed does Ibis then pull back the results
 and convert them into a DataFrame.</p>
@@ -2709,7 +2709,7 @@ doi: 10.5281/zenodo.3960218.&#160;<a class="footnote-backref" href="#fnref:1" ti
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2023</span>
       
     
   </small>
