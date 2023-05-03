@@ -2620,14 +2620,14 @@ See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv<
 
 
 <h5 id="ibis.backends.duckdb.Backend.read_in_memory" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_in_memory</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">read_in_memory</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
 
   <div class="doc doc-contents ">
   
-      <p>Register a Pandas DataFrame or pyarrow Table as a table in the current database.</p>
+      <p>Register a Pandas DataFrame or pyarrow object as a table in the current database.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2641,9 +2641,9 @@ See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv<
     </thead>
     <tbody>
         <tr>
-          <td><code>dataframe</code></td>
+          <td><code>source</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.Table">Table</span></code>
+                <code><a class="autorefs autorefs-internal" title="pandas" href="../Pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.Table">Table</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
           </td>
           <td><p>The data source.</p></td>
           <td>
