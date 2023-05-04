@@ -5141,7 +5141,7 @@ backend.</li>
 
 
 <h4 id="ibis.expr.types.generic.Column.first" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">first</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">first</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.generic.Column.first" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5149,7 +5149,27 @@ backend.</li>
   <div class="doc doc-contents ">
   
       <p>Return the first value of a column.</p>
-<p>Equivalent to SQL's <code>FIRST_VALUE</code> window function.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;chars&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ chars  ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ a      │</span>
+<span class="go">│ b      │</span>
+<span class="go">│ c      │</span>
+<span class="go">│ d      │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">chars</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">chars</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">chars</span> <span class="o">!=</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">&#39;b&#39;</span>
+</code></pre></div>
 
   </div>
 
@@ -5212,7 +5232,7 @@ backend.</li>
 
 
 <h4 id="ibis.expr.types.generic.Column.last" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">last</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">last</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.generic.Column.last" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5220,7 +5240,27 @@ backend.</li>
   <div class="doc doc-contents ">
   
       <p>Return the last value of a column.</p>
-<p>Equivalent to SQL's <code>LAST_VALUE</code> window function.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;chars&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━┓</span>
+<span class="go">┃ chars  ┃</span>
+<span class="go">┡━━━━━━━━┩</span>
+<span class="go">│ string │</span>
+<span class="go">├────────┤</span>
+<span class="go">│ a      │</span>
+<span class="go">│ b      │</span>
+<span class="go">│ c      │</span>
+<span class="go">│ d      │</span>
+<span class="go">└────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">chars</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+<span class="go">&#39;d&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">chars</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">chars</span> <span class="o">!=</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="go">&#39;c&#39;</span>
+</code></pre></div>
 
   </div>
 
