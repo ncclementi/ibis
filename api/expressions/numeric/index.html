@@ -3605,6 +3605,23 @@
   
       <p>Return the absolute value of <code>self</code>.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Abs(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64       │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│           1 │</span>
+<span class="go">│           2 │</span>
+<span class="go">│           3 │</span>
+<span class="go">│           4 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3622,6 +3639,22 @@
   <div class="doc doc-contents ">
   
       <p>Compute the arc cosine of <code>self</code>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">acos</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Acos(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64      │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│     3.141593 │</span>
+<span class="go">│     1.570796 │</span>
+<span class="go">│     0.000000 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3641,6 +3674,22 @@
   
       <p>Compute the arc sine of <code>self</code>.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">asin</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Asin(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64      │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│    -1.570796 │</span>
+<span class="go">│     0.000000 │</span>
+<span class="go">│     1.570796 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3658,6 +3707,22 @@
   <div class="doc doc-contents ">
   
       <p>Compute the arc tangent of <code>self</code>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">atan</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Atan(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64      │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│    -0.785398 │</span>
+<span class="go">│     0.000000 │</span>
+<span class="go">│     0.785398 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3677,6 +3742,22 @@
   
       <p>Compute the two-argument version of arc tangent.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Atan2(values, 0) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64          │</span>
+<span class="go">├──────────────────┤</span>
+<span class="go">│        -1.570796 │</span>
+<span class="go">│         0.000000 │</span>
+<span class="go">│         1.570796 │</span>
+<span class="go">└──────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3694,6 +3775,24 @@
   <div class="doc doc-contents ">
   
       <p>Return the ceiling of <code>self</code>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ceil</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Ceil(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64        │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│            1 │</span>
+<span class="go">│            2 │</span>
+<span class="go">│            2 │</span>
+<span class="go">│            3 │</span>
+<span class="go">│            4 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3765,6 +3864,27 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Clip(values, 3, 6) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64              │</span>
+<span class="go">├────────────────────┤</span>
+<span class="go">│                  3 │</span>
+<span class="go">│                  3 │</span>
+<span class="go">│                  3 │</span>
+<span class="go">│                  3 │</span>
+<span class="go">│                  4 │</span>
+<span class="go">│                  5 │</span>
+<span class="go">│                  6 │</span>
+<span class="go">│                  6 │</span>
+<span class="go">└────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3782,6 +3902,22 @@
   <div class="doc doc-contents ">
   
       <p>Compute the cosine of <code>self</code>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">cos</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Cos(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│    0.540302 │</span>
+<span class="go">│    1.000000 │</span>
+<span class="go">│    0.540302 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3801,6 +3937,22 @@
   
       <p>Compute the cotangent of <code>self</code>.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">cot</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Cot(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│   -0.642093 │</span>
+<span class="go">│         inf │</span>
+<span class="go">│    0.642093 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3818,6 +3970,25 @@
   <div class="doc doc-contents ">
   
       <p>Compute the degrees of <code>self</code> radians.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">degrees</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Degrees(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64         │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│             0.0 │</span>
+<span class="go">│            90.0 │</span>
+<span class="go">│           180.0 │</span>
+<span class="go">│           270.0 │</span>
+<span class="go">│           360.0 │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3855,6 +4026,23 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Exp(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│    1.000000 │</span>
+<span class="go">│    2.718282 │</span>
+<span class="go">│    7.389056 │</span>
+<span class="go">│   20.085537 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3873,6 +4061,24 @@
   
       <p>Return the floor of an expression.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">floor</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Floor(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64         │</span>
+<span class="go">├───────────────┤</span>
+<span class="go">│             1 │</span>
+<span class="go">│             1 │</span>
+<span class="go">│             2 │</span>
+<span class="go">│             2 │</span>
+<span class="go">│             3 │</span>
+<span class="go">└───────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3890,6 +4096,22 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(\ln\left(\texttt{self}\right)\)</span>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.718281828</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ln</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━┓</span>
+<span class="go">┃ Ln(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━┩</span>
+<span class="go">│ float64    │</span>
+<span class="go">├────────────┤</span>
+<span class="go">│   0.000000 │</span>
+<span class="go">│   1.000000 │</span>
+<span class="go">│   1.098612 │</span>
+<span class="go">└────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -3951,6 +4173,38 @@
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">e</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">e</span><span class="p">,</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="o">**</span><span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">log</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Log(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│         1.0 │</span>
+<span class="go">│         2.0 │</span>
+<span class="go">│         3.0 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
+    
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Log(values, 10) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64         │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│             1.0 │</span>
+<span class="go">│             2.0 │</span>
+<span class="go">│             3.0 │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3969,6 +4223,22 @@
   
       <p>Compute <span class="arithmatex">\(\log_{10}\left(\texttt{self}\right)\)</span>.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">log10</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Log10(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64       │</span>
+<span class="go">├───────────────┤</span>
+<span class="go">│           0.0 │</span>
+<span class="go">│           1.0 │</span>
+<span class="go">│           2.0 │</span>
+<span class="go">└───────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -3986,6 +4256,23 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(\log_{2}\left(\texttt{self}\right)\)</span>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">log2</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Log2(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64      │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│          0.0 │</span>
+<span class="go">│          1.0 │</span>
+<span class="go">│          2.0 │</span>
+<span class="go">│          3.0 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4022,6 +4309,22 @@
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Negate(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64          │</span>
+<span class="go">├────────────────┤</span>
+<span class="go">│              1 │</span>
+<span class="go">│              0 │</span>
+<span class="go">│             -1 │</span>
+<span class="go">└────────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4121,6 +4424,24 @@ column.</p>
   
       <p>Compute radians from <code>self</code> degrees.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">360</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">radians</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Radians(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64         │</span>
+<span class="go">├─────────────────┤</span>
+<span class="go">│        0.000000 │</span>
+<span class="go">│        1.570796 │</span>
+<span class="go">│        3.141593 │</span>
+<span class="go">│        4.712389 │</span>
+<span class="go">│        6.283185 │</span>
+<span class="go">└─────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4214,6 +4535,45 @@ type:</p>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.22</span><span class="p">,</span> <span class="mf">1.64</span><span class="p">,</span> <span class="mf">2.15</span><span class="p">,</span> <span class="mf">2.54</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━┓</span>
+<span class="go">┃ values  ┃</span>
+<span class="go">┡━━━━━━━━━┩</span>
+<span class="go">│ float64 │</span>
+<span class="go">├─────────┤</span>
+<span class="go">│    1.22 │</span>
+<span class="go">│    1.64 │</span>
+<span class="go">│    2.15 │</span>
+<span class="go">│    2.54 │</span>
+<span class="go">└─────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Round(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64         │</span>
+<span class="go">├───────────────┤</span>
+<span class="go">│             1 │</span>
+<span class="go">│             2 │</span>
+<span class="go">│             2 │</span>
+<span class="go">│             3 │</span>
+<span class="go">└───────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Round(values, 1) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64          │</span>
+<span class="go">├──────────────────┤</span>
+<span class="go">│              1.2 │</span>
+<span class="go">│              1.6 │</span>
+<span class="go">│              2.2 │</span>
+<span class="go">│              2.5 │</span>
+<span class="go">└──────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4231,6 +4591,23 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Return the sign of the input.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">sign</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Sign(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ int64        │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│           -1 │</span>
+<span class="go">│            1 │</span>
+<span class="go">│           -1 │</span>
+<span class="go">│            1 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
 
   </div>
 
@@ -4250,6 +4627,22 @@ type:</p>
   
       <p>Compute the sine of <code>self</code>.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">sin</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Sin(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│   -0.841471 │</span>
+<span class="go">│    0.000000 │</span>
+<span class="go">│    0.841471 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4268,6 +4661,23 @@ type:</p>
   
       <p>Compute the square root of <code>self</code>.</p>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Sqrt(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64      │</span>
+<span class="go">├──────────────┤</span>
+<span class="go">│          1.0 │</span>
+<span class="go">│          2.0 │</span>
+<span class="go">│          3.0 │</span>
+<span class="go">│          4.0 │</span>
+<span class="go">└──────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -4285,6 +4695,22 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Compute the tangent of <code>self</code>.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tan</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Tan(values) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━┩</span>
+<span class="go">│ float64     │</span>
+<span class="go">├─────────────┤</span>
+<span class="go">│   -1.557408 │</span>
+<span class="go">│    0.000000 │</span>
+<span class="go">│    1.557408 │</span>
+<span class="go">└─────────────┘</span>
+</code></pre></div>
 
   </div>
 
