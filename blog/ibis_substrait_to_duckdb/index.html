@@ -2121,9 +2121,9 @@ communicating consistently with those backends.</p>
 <p><a href="https://substrait.io/">Substrait</a> is a new cross-language serialization format for communicating (among
 other things) query plans. It's still in its early days, but there is already
 nascent support for Substrait in <a href="https://arrow.apache.org/docs/dev/cpp/streaming_execution.html#substrait">Apache Arrow</a>, <a href="https://duckdb.org/docs/extensions/substrait">DuckDB</a>, and <a href="https://engineering.fb.com/2022/08/31/open-source/velox/">Velox</a>.</p>
-<p>Ibis supports producing Substrait plans from Ibis expressions, with the help of
-the <a href="https://github.com/ibis-project/ibis-substrait">ibis-substrait</a> library.
-Let's take a quick peek at how we might use it for query execution.</p>
+<p>Ibis supports producing Substrait plans from Ibis table expressions, with the
+help of the <a href="https://github.com/ibis-project/ibis-substrait">ibis-substrait</a>
+library. Let's take a quick peek at how we might use it for query execution.</p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Anchor link to this section for reference">&para;</a></h2>
 <p>First, we can create a <code>conda</code> environment using the latest versions of
 <code>duckdb</code>, <code>ibis</code>, and <code>ibis_substrait</code>.</p>
@@ -2143,7 +2143,7 @@ it into a DuckDB database.</p>
 </code></pre></div>
 <h2 id="query-creation">Query Creation<a class="headerlink" href="#query-creation" title="Anchor link to this section for reference">&para;</a></h2>
 <p>For our example, we'll build up a query using Ibis but without connecting to our
-execution engine (DuckDB). Once we have an Ibis expression, we'll create a
+execution engine (DuckDB). Once we have an Ibis table expression, we'll create a
 Substrait plan, then execute that plan directly on DuckDB to get results.</p>
 <p>To do this, all we need is some knowledge of the schema of the tables we want to
 interact with. We might get these schema from a metadata store, or possibly a
@@ -2236,10 +2236,11 @@ has to have at least 200,000 votes.</p>
     <span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>Now that we have an Ibis expression, it's time for Substrait to enter the scene.</p>
+<p>Now that we have an Ibis table expression, it's time for Substrait to enter
+the scene.</p>
 <h2 id="substrait-serialization">Substrait Serialization<a class="headerlink" href="#substrait-serialization" title="Anchor link to this section for reference">&para;</a></h2>
-<p>We're going to import <code>ibis_substrait</code> and compile the <code>topfilms</code> expression
-into a Substrait plan.</p>
+<p>We're going to import <code>ibis_substrait</code> and compile the <code>topfilms</code> table
+expression into a Substrait plan.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ibis_substrait.compiler.core</span> <span class="kn">import</span> <span class="n">SubstraitCompiler</span>
 
 <span class="n">compiler</span> <span class="o">=</span> <span class="n">SubstraitCompiler</span><span class="p">()</span>
@@ -2449,7 +2450,7 @@ of this new standard.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
       
     
   </small>

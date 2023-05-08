@@ -2050,7 +2050,7 @@ For online games, it might be a the grouping of activity events of a given user 
     <span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="p">])</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>Calling <code>ibis.show_sql(sessionized)</code> displays the SQL query and can be used to confirm that this Ibis expression does not rely on any join operations.</p>
+<p>Calling <code>ibis.show_sql(sessionized)</code> displays the SQL query and can be used to confirm that this Ibis table expression does not rely on any join operations.</p>
 <p>Calling <code>sessionized.execute()</code> should complete in less than a minute, depending on the speed of the internet connection to download the data and the number of CPU cores available to parallelize the processing of this nested query.</p>
 
   <hr>
@@ -2058,7 +2058,7 @@ For online games, it might be a the grouping of activity events of a given user 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
       
     
   </small>

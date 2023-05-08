@@ -1962,9 +1962,9 @@
 <p>See the <a href="../user_guide/configuration/#default-backend">configuration guide</a>
 to inspect or reconfigure the backend used by default.</p>
 <h2 id="string-generating-backends">String Generating Backends<a class="headerlink" href="#string-generating-backends" title="Anchor link to this section for reference">&para;</a></h2>
-<p>The first category of backend translate Ibis expressions into string queries.</p>
-<p>The compiler turns each expression into a string query and passes that query to the
-database through a driver API for execution.</p>
+<p>The first category of backend translate Ibis table expressions into query strings.</p>
+<p>The compiler turns each table expression into a query string and passes that query
+to the database through a driver API for execution.</p>
 <ul>
 <li><a href="Impala/">Apache Impala</a></li>
 <li><a href="ClickHouse/">ClickHouse</a></li>
@@ -1972,10 +1972,11 @@ database through a driver API for execution.</p>
 <li><a href="https://github.com/heavyai/ibis-heavyai">HeavyAI</a></li>
 </ul>
 <h2 id="expression-generating-backends">Expression Generating Backends<a class="headerlink" href="#expression-generating-backends" title="Anchor link to this section for reference">&para;</a></h2>
-<p>The next category of backends translates ibis expressions into another
-system's expressions, for example, SQLAlchemy.</p>
-<p>Instead of generating strings for each expression these backends produce
-another kind of expression and typically have high-level APIs for execution.</p>
+<p>The next category of backends translates Ibis table expressions into another
+system's table expression objects, for example, SQLAlchemy.</p>
+<p>Instead of generating a query string for each table expression, these backends
+produce another kind of table expression object and typically have high-level APIs
+for execution.</p>
 <ul>
 <li><a href="Datafusion/">Apache Arrow Datafusion</a></li>
 <li><a href="Druid/">Apache Druid</a></li>
@@ -2004,7 +2005,7 @@ backend located in <code>ibis/backends/pandas/core.py</code>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
       
     
   </small>

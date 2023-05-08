@@ -3503,11 +3503,10 @@ SQL so there are some differences in how they operate.</p>
 difference between Ibis tables and pandas <code>DataFrame</code>s are that many
 of the pandas <code>DataFrame</code> operations do in-place operations (they are &quot;mutable&quot;),
 whereas Ibis table operations always return a new table expression (&quot;immutable&quot;).</p>
-<p>Another difference is that Ibis expressions are lazy, meaning
-that as you build up an expression, no computation is actually performed
-until you call an action method such as <code>execute</code>. Only then
-does Ibis compile the expression into SQL and send it to the
-backend.
+<p>Another difference is that Ibis table expressions are lazy, meaning
+that as you build up a table expression, no computation is actually performed
+until you call an action method such as <code>execute</code>. Only then does Ibis
+compile the table expression into SQL and send it to the backend.
 (Note that we'll be using Ibis' interactive mode to automatically execute queries at
 the end of each cell in this notebook. If you are using similar code in a program,
 you will have to add <code>.execute()</code> to each operation that you want to evaluate.)</p>
@@ -5409,7 +5408,7 @@ Ibis has several built-in example datasets that you can access using the <code>i
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file &#39;penguins.csv.gz&#39; from &#39;https://storage.googleapis.com/ibis-examples/data/penguins.csv.gz&#39; to &#39;/home/runner/.cache/ibis-framework/5.1.0&#39;.
-100%|█████████████████████████████████████| 2.96k/2.96k [00:00&lt;00:00, 1.62MB/s]
+100%|█████████████████████████████████████| 2.96k/2.96k [00:00&lt;00:00, 2.00MB/s]
 </pre>
 </div>
 </div>
@@ -5674,7 +5673,7 @@ will cover later.</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="filtering-rows">Filtering rows<a class="anchor-link" href="#filtering-rows">&#182;</a></h3><p>In addition to simply limiting the number of rows that are returned, it is possible to filter the 
 rows using expressions. Expressions are constructed very similarly to the way they are in pandas.
-Ibis expressions are constructed from operations on colunms in a table which return a boolean result.
+Ibis expressions are constructed from operations on columns in a table which return a boolean result.
 This result is then used to filter the table.</p>
 
 </div>
@@ -8431,7 +8430,7 @@ unioned</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
       
     
   </small>

@@ -2232,9 +2232,9 @@ to get the first few rows of the table as a pandas DataFrame.</p>
 <span class="mi">3</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>             <span class="n">NaN</span>            <span class="n">NaN</span>                <span class="n">NaN</span>          <span class="n">NaN</span>    <span class="kc">None</span>  <span class="mi">2007</span>
 <span class="mi">4</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">36.7</span>           <span class="mf">19.3</span>              <span class="mf">193.0</span>       <span class="mf">3450.0</span>  <span class="n">female</span>  <span class="mi">2007</span>
 </code></pre></div>
-<p><code>execute</code> takes the existing lazy expression and evaluates it. If we leave it
-off, you'll see the Ibis representation of the expression that <code>execute</code> will
-evaluate (when you're ready!).</p>
+<p><code>execute</code> takes the existing lazy table expression and evaluates it. If we
+leave it off, you'll see the Ibis representation of the table expression that
+<code>execute</code> will evaluate (when you're ready!).</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">r0</span> <span class="o">:=</span> <span class="n">AlchemyTable</span><span class="p">:</span> <span class="n">penguins</span>
   <span class="n">species</span>           <span class="n">string</span>
@@ -2259,7 +2259,8 @@ and convert them into a DataFrame.</p>
 <p>For the rest of this intro, we'll turn on interactive mode, which partially
 executes queries to give users a preview of the results. There is a small
 difference in the way the output is formatted, but otherwise this is the same
-as calling <code>execute()</code> on the expression with a limit of 10 results returned.</p>
+as calling <code>execute()</code> on the table expression with a limit of 10 result rows
+returned.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
@@ -2725,7 +2726,7 @@ doi: 10.5281/zenodo.3960218.&#160;<a class="footnote-backref" href="#fnref:1" ti
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
       
     
   </small>
