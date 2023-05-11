@@ -3125,9 +3125,14 @@ subsequent computation.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
 <span class="go">[&#39;siblings&#39;]</span>
 </code></pre></div>
-    <p>Select by category of <code>DataType</code> by passing the <code>DataType</code> class</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">columns</span>
+    <p>Abstract/unparametrized types may also be specified by their string name
+(e.g. "integer" for any integer type), or by passing in a <code>DataType</code> class
+instead. The following options are equivalent.</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">expr1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="s2">&quot;array&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expr2</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr2</span><span class="o">.</span><span class="n">columns</span>
 <span class="go">[&#39;siblings&#39;, &#39;parents&#39;]</span>
 </code></pre></div>
       <h6 id="ibis.selectors.of_type--see-also">See Also<a class="headerlink" href="#ibis.selectors.of_type--see-also" title="Anchor link to this section for reference">&para;</a></h6>
