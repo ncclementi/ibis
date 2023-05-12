@@ -863,6 +863,19 @@
     to_pyarrow_batches()
   </a>
   
+    <nav class="md-nav" aria-label="to_pyarrow_batches()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.to_pyarrow_batches--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2248,6 +2261,19 @@
     to_pyarrow_batches()
   </a>
   
+    <nav class="md-nav" aria-label="to_pyarrow_batches()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.to_pyarrow_batches--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2325,7 +2351,7 @@ for connection parameter information.</p>
 
 
 <h4 id="ibis.backends.clickhouse.Backend.do_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">client_name</span><span class="o">=</span><span class="s1">&#39;ibis&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="n">_default_compression</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">client_name</span><span class="o">=</span><span class="s1">&#39;ibis&#39;</span><span class="p">,</span> <span class="n">secure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.clickhouse.Backend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2358,11 +2384,12 @@ for connection parameter information.</p>
         <tr>
           <td><code>port</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | None</code>
           </td>
-          <td><p>Clickhouse server's  port</p></td>
+          <td><p>ClickHouse HTTP server's port. If not passed, the value depends on
+whether <code>secure</code> is <code>True</code> or <code>False</code>.</p></td>
           <td>
-                <code>9000</code>
+                <code>None</code>
           </td>
         </tr>
         <tr>
@@ -2406,24 +2433,25 @@ for connection parameter information.</p>
           </td>
         </tr>
         <tr>
-          <td><code>compression</code></td>
+          <td><code>secure</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;lz4&#39;, &#39;lz4hc&#39;, &#39;quicklz&#39;, &#39;zstd&#39;] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | None</code>
           </td>
-          <td><p>Whether or not to use compression.
-Default is <code>'lz4'</code> if installed else False.
-True is equivalent to <code>'lz4'</code>.</p></td>
+          <td><p>Whether or not to use an authenticated endpoint</p></td>
           <td>
-                <code>_default_compression</code>
+                <code>None</code>
           </td>
         </tr>
         <tr>
-          <td><code>external_tables</code></td>
+          <td><code>compression</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>External tables that can be used in a query.</p></td>
+          <td><p>The kind of compression to use for requests. See
+<a href="https://clickhouse.com/docs/en/integrations/python#compression">https://clickhouse.com/docs/en/integrations/python#compression</a> for
+more information.</p></td>
           <td>
-                <code>None</code>
+                <code>True</code>
           </td>
         </tr>
         <tr>
@@ -2441,10 +2469,7 @@ True is equivalent to <code>'lz4'</code>.</p></td>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">clickhouse_host</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;IBIS_TEST_CLICKHOUSE_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;localhost&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">clickhouse_port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;IBIS_TEST_CLICKHOUSE_PORT&#39;</span><span class="p">,</span> <span class="mi">9000</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">clickhouse</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">clickhouse_host</span><span class="p">,</span>  <span class="n">port</span><span class="o">=</span><span class="n">clickhouse_port</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">clickhouse</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">client</span>
 <span class="go">&lt;ibis.clickhouse.client.ClickhouseClient object at 0x...&gt;</span>
 </code></pre></div>
@@ -2515,13 +2540,6 @@ True is equivalent to <code>'lz4'</code>.</p></td>
     </thead>
     <tbody>
         <tr>
-          <td><code>temp_db</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Database to use for temporary objects.</p></td>
-        </tr>
-        <tr>
           <td><code>bool_type</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
@@ -2566,7 +2584,7 @@ True is equivalent to <code>'lz4'</code>.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Close Clickhouse connection and drop any temporary objects.</p>
+      <p>Close ClickHouse connection.</p>
 
   </div>
 
@@ -2757,7 +2775,7 @@ for specifics.</p></td>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.raw_sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">raw_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">raw_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.clickhouse.Backend.raw_sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -2796,6 +2814,15 @@ for specifics.</p></td>
 external datasources for the query</p></td>
           <td>
                 <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+          </td>
+          <td><p>Backend specific query arguments</p></td>
+          <td>
+                <code>{}</code>
           </td>
         </tr>
     </tbody>
@@ -2898,7 +2925,7 @@ external datasources for the query</p></td>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.clickhouse.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -2952,11 +2979,21 @@ immediately.</p>
           </td>
         </tr>
         <tr>
+          <td><code>external_tables</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>External data</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
           <td><code>chunk_size</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Maximum number of rows in each returned record batch.</p></td>
+          <td><p>Maximum number of row to return in a single chunk</p></td>
           <td>
                 <code>1000000</code>
           </td>
@@ -2981,6 +3018,21 @@ immediately.</p>
         </tr>
     </tbody>
   </table>
+      <h6 id="ibis.backends.clickhouse.Backend.to_pyarrow_batches--notes">Notes<a class="headerlink" href="#ibis.backends.clickhouse.Backend.to_pyarrow_batches--notes" title="Anchor link to this section for reference">&para;</a></h6>
+<p>There are a variety of ways to implement clickhouse -&gt; record batches.</p>
+<ol>
+<li>FORMAT ArrowStream -&gt; record batches via raw_query
+   This has the same type conversion problem(s) as <code>to_pyarrow</code>.
+   It's harder to address due to lack of <code>cast</code> on <code>RecordBatch</code>.
+   However, this is a ClickHouse problem: we should be able to get
+   string data out without a bunch of settings/permissions rigmarole.</li>
+<li>Native -&gt; Python objects -&gt; pyarrow batches
+   This is what is implemented, using <code>query_column_block_stream</code>.</li>
+<li>Native -&gt; Python objects -&gt; DataFrame chunks -&gt; pyarrow batches
+   This is not implemented because it adds an unnecessary pandas step in
+   between Python object -&gt; arrow. We can go directly to record batches
+   without pandas in the middle.</li>
+</ol>
 
   </div>
 
