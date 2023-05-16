@@ -978,13 +978,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#ibis.backends.sqlite.Backend.table" class="md-nav__link">
-    table()
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2147,13 +2140,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#ibis.backends.sqlite.Backend.table" class="md-nav__link">
-    table()
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2374,76 +2360,6 @@ to override schema inference for a given SQLite database.</p></td>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">con1</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="s2">&quot;new.db&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">con1</span><span class="o">.</span><span class="n">list_tables</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;new&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.sqlite.Backend.table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.sqlite.Backend.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Create a table expression from a table in the SQLite database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Table name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Name of the attached database that the table is located in.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Table</code>
-          </td>
-          <td><p>Table expression</p></td>
-        </tr>
-    </tbody>
-  </table>
 
   </div>
 
