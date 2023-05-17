@@ -1442,6 +1442,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.zip" class="md-nav__link">
+    zip()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2442,6 +2449,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.unnest" class="md-nav__link">
     unnest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.zip" class="md-nav__link">
+    zip()
   </a>
   
 </li>
@@ -4041,6 +4055,77 @@ type as the input.</li>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
           </td>
           <td><p>Unnested array</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.zip" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">zip</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.zip" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Zip two or more arrays together.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.Array">Array</span></code>
+          </td>
+          <td><p>Another array to zip with <code>self</code></p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>others</code></td>
+          <td>
+                <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.Array">Array</span></code>
+          </td>
+          <td><p>Additional arrays to zip with <code>self</code></p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Array</code>
+          </td>
+          <td><p>Array of structs where each struct field is an element of each input
+array.</p></td>
         </tr>
     </tbody>
   </table>
