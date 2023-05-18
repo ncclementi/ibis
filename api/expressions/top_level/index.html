@@ -2972,7 +2972,7 @@ complete case.</p>
 
 
 <h2 id="ibis.date" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">date</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">date</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
 <a href="#ibis.date" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
@@ -2996,9 +2996,18 @@ complete case.</p>
           <td><code>value</code></td>
           <td>
           </td>
-          <td><p>Date string</p></td>
+          <td><p>Date string, datetime object or numeric value</p></td>
           <td>
               <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+          </td>
+          <td><p>Month and day if <code>value</code> is a year</p></td>
+          <td>
+                <code>()</code>
           </td>
         </tr>
     </tbody>
@@ -4389,7 +4398,7 @@ backend used by default, please refer to:</p>
     <tbody>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerColumn" href="../numeric/#ibis.expr.types.numeric.IntegerColumn">IntegerColumn</a></code>
+                <code>IntegerColumn</code>
           </td>
           <td><p>A column expression enumerating rows</p></td>
         </tr>
@@ -4749,12 +4758,73 @@ fields of fixed types)</p></td>
 
 
 <h2 id="ibis.time" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">time</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">time</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
 <a href="#ibis.time" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
+  
+      <p>Return a time literal if <code>value</code> is coercible to a time.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>value</code></td>
+          <td>
+          </td>
+          <td><p>Time string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+          </td>
+          <td><p>Minutes, seconds if <code>value</code> is an hour</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>TimeScalar</code>
+          </td>
+          <td><p>A time expression</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="s2">&quot;00:00:00&quot;</span><span class="p">)</span>
+<span class="go">datetime.time(0, 0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="go">datetime.time(12, 15, 30)</span>
+</code></pre></div>
 
   </div>
 
@@ -4772,7 +4842,7 @@ fields of fixed types)</p></td>
 
   <div class="doc doc-contents first">
   
-      <p>Construct a timestamp literal if <code>value</code> is coercible to a timestamp.</p>
+      <p>Return a timestamp literal if <code>value</code> is coercible to a timestamp.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4789,7 +4859,7 @@ fields of fixed types)</p></td>
           <td><code>value</code></td>
           <td>
           </td>
-          <td><p>The value to use for constructing the timestamp</p></td>
+          <td><p>Timestamp string, datetime object or numeric value</p></td>
           <td>
               <em>required</em>
           </td>
@@ -4798,7 +4868,7 @@ fields of fixed types)</p></td>
           <td><code>args</code></td>
           <td>
           </td>
-          <td><p>Additional arguments used when constructing a timestamp</p></td>
+          <td><p>Additional arguments if <code>value</code> is numeric</p></td>
           <td>
                 <code>()</code>
           </td>
@@ -4808,7 +4878,7 @@ fields of fixed types)</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>The timezone of the timestamp</p></td>
+          <td><p>Timezone name</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -4833,6 +4903,13 @@ fields of fixed types)</p></td>
         </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;2021-01-01 00:00:00&quot;</span><span class="p">)</span>
+<span class="go">Timestamp(&#39;2021-01-01 00:00:00&#39;)</span>
+</code></pre></div>
 
   </div>
 
