@@ -5552,8 +5552,8 @@ backend.</li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
 <span class="go">3800</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Gentoo&quot;</span><span class="p">)</span>
-<span class="go">5000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Gentoo&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span><span class="p">))</span>
+<span class="go">5550</span>
 </code></pre></div>
 
   </div>
