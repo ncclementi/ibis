@@ -1442,6 +1442,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.DataType.from_dask" class="md-nav__link">
+    from_dask()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.DataType.from_numpy" class="md-nav__link">
     from_numpy()
   </a>
@@ -1458,6 +1465,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.DataType.from_pyarrow" class="md-nav__link">
     from_pyarrow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.DataType.to_dask" class="md-nav__link">
+    to_dask()
   </a>
   
 </li>
@@ -2808,6 +2822,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.DataType.from_dask" class="md-nav__link">
+    from_dask()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.DataType.from_numpy" class="md-nav__link">
     from_numpy()
   </a>
@@ -2824,6 +2845,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.DataType.from_pyarrow" class="md-nav__link">
     from_pyarrow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.DataType.to_dask" class="md-nav__link">
+    to_dask()
   </a>
   
 </li>
@@ -3733,6 +3761,28 @@ distinct types that have different behavior.</p>
 
 
 
+<h6 id="ibis.expr.datatypes.core.DataType.from_dask" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">from_dask</span><span class="p">(</span><span class="n">dask_type</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#ibis.expr.datatypes.core.DataType.from_dask" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the equivalent ibis datatype.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h6 id="ibis.expr.datatypes.core.DataType.from_numpy" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">from_numpy</span><span class="p">(</span><span class="n">numpy_type</span><span class="p">)</span></code>
   
@@ -3789,7 +3839,25 @@ distinct types that have different behavior.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Return the equivalent pyarrow datatype.</p>
+      <p>Return the equivalent ibis datatype.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="ibis.expr.datatypes.core.DataType.to_dask" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">to_dask</span><span class="p">()</span></code>
+
+<a href="#ibis.expr.datatypes.core.DataType.to_dask" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the equivalent dask datatype.</p>
 
   </div>
 
@@ -4505,8 +4573,8 @@ distinct types that have different behavior.</p>
 <code class="highlight language-python"><span class="n">nbytes</span><span class="p">:</span> <span class="nb">int</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.expr.datatypes.core.Integer.nbytes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
