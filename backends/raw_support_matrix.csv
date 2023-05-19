@@ -185,7 +185,7 @@ ibis.expr.operations.reductions.ArrayCollect,True,True,True,False,False,True,Fal
 ibis.expr.operations.reductions.BitAnd,True,True,True,False,True,True,False,False,True,True,True,False,True,False,True,True,True
 ibis.expr.operations.reductions.BitOr,True,True,True,False,True,True,False,False,True,True,True,False,True,False,True,True,True
 ibis.expr.operations.reductions.BitXor,True,True,True,False,True,True,False,False,True,True,True,False,True,False,True,True,True
-ibis.expr.operations.reductions.Correlation,True,True,True,False,False,True,False,False,False,True,True,False,True,True,True,False,True
+ibis.expr.operations.reductions.Correlation,True,True,True,False,False,True,False,False,False,True,True,True,True,True,True,False,True
 ibis.expr.operations.reductions.Count,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.CountDistinct,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.CountStar,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
