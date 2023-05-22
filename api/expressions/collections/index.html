@@ -4130,6 +4130,43 @@ array.</p></td>
     </tbody>
   </table>
 
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">],</span> <span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ numbers              ┃ strings              ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int64&gt;         │ array&lt;string&gt;        │</span>
+<span class="go">├──────────────────────┼──────────────────────┤</span>
+<span class="go">│ [3, 2]               │ [&#39;a&#39;, &#39;c&#39;]           │</span>
+<span class="go">│ []                   │ NULL                 │</span>
+<span class="go">│ NULL                 │ [&#39;e&#39;]                │</span>
+<span class="go">└──────────────────────┴──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">numbers</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">strings</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayZip()                           ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;struct&lt;f1: int64, f2: string&gt;&gt; │</span>
+<span class="go">├──────────────────────────────────────┤</span>
+<span class="go">│ [{...}, {...}]                       │</span>
+<span class="go">│ []                                   │</span>
+<span class="go">│ [{...}]                              │</span>
+<span class="go">└──────────────────────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">unnest</span><span class="p">()</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayZip()                    ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ struct&lt;f1: int64, f2: string&gt; │</span>
+<span class="go">├───────────────────────────────┤</span>
+<span class="go">│ {&#39;f1&#39;: 3, &#39;f2&#39;: &#39;a&#39;}          │</span>
+<span class="go">│ {&#39;f1&#39;: 2, &#39;f2&#39;: &#39;c&#39;}          │</span>
+<span class="go">│ {&#39;f1&#39;: None, &#39;f2&#39;: &#39;e&#39;}       │</span>
+<span class="go">└───────────────────────────────┘</span>
+</code></pre></div>
+
   </div>
 
 </div>
