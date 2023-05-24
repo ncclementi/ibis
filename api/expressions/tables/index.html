@@ -3010,22 +3010,16 @@
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">starwars</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">columns</span>
-<span class="go">[&#39;name&#39;,</span>
-<span class="go"> &#39;height&#39;,</span>
-<span class="go"> &#39;mass&#39;,</span>
-<span class="go"> &#39;hair_color&#39;,</span>
-<span class="go"> &#39;skin_color&#39;,</span>
-<span class="go"> &#39;eye_color&#39;,</span>
-<span class="go"> &#39;birth_year&#39;,</span>
+<span class="go">[&#39;species&#39;,</span>
+<span class="go"> &#39;island&#39;,</span>
+<span class="go"> &#39;bill_length_mm&#39;,</span>
+<span class="go"> &#39;bill_depth_mm&#39;,</span>
+<span class="go"> &#39;flipper_length_mm&#39;,</span>
+<span class="go"> &#39;body_mass_g&#39;,</span>
 <span class="go"> &#39;sex&#39;,</span>
-<span class="go"> &#39;gender&#39;,</span>
-<span class="go"> &#39;homeworld&#39;,</span>
-<span class="go"> &#39;species&#39;,</span>
-<span class="go"> &#39;films&#39;,</span>
-<span class="go"> &#39;vehicles&#39;,</span>
-<span class="go"> &#39;starships&#39;]</span>
+<span class="go"> &#39;year&#39;]</span>
 </code></pre></div>
   </div>
 
@@ -3852,7 +3846,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cached_penguins</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">computation</span><span class="o">=</span><span class="s2">&quot;Heavy Computation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cached_penguins</span>
 <span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
@@ -5192,7 +5186,7 @@ passed as a scalar all columns are filled with that value.</p></td>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="go">┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━┓</span>
 <span class="go">┃ name              ┃ type    ┃ nullable ┃ nulls ┃ non_nulls ┃ null_frac ┃ … ┃</span>
@@ -6007,7 +6001,7 @@ and convert those names into values</p>
 </code></pre></div>
     <p>Simliarly for a different example dataset, we convert names to values
 but using a different selector and the default <code>values_to</code> value.</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">world_bank_pop</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">world_bank_pop_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">world_bank_pop</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">world_bank_pop_raw</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">world_bank_pop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">┏━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━┓</span>
 <span class="go">┃ country ┃ indicator   ┃ 2000         ┃ 2001         ┃ 2002         ┃ … ┃</span>
@@ -6845,23 +6839,17 @@ Generally this corresponds to some index into the database storage
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">starwars</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
 <span class="go">ibis.Schema {</span>
-<span class="go">  name        string</span>
-<span class="go">  height      int64</span>
-<span class="go">  mass        float64</span>
-<span class="go">  hair_color  string</span>
-<span class="go">  skin_color  string</span>
-<span class="go">  eye_color   string</span>
-<span class="go">  birth_year  float64</span>
-<span class="go">  sex         string</span>
-<span class="go">  gender      string</span>
-<span class="go">  homeworld   string</span>
-<span class="go">  species     string</span>
-<span class="go">  films       string</span>
-<span class="go">  vehicles    string</span>
-<span class="go">  starships   string</span>
+<span class="go">  species            string</span>
+<span class="go">  island             string</span>
+<span class="go">  bill_length_mm     float64</span>
+<span class="go">  bill_depth_mm      float64</span>
+<span class="go">  flipper_length_mm  int64</span>
+<span class="go">  body_mass_g        int64</span>
+<span class="go">  sex                string</span>
+<span class="go">  year               int64</span>
 <span class="go">}</span>
 </code></pre></div>
 
