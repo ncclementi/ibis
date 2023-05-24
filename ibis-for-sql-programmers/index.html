@@ -4250,7 +4250,7 @@ ibis.show_sql(proj)</div>
 <pre>SELECT
   t0.two,
   t0.one,
-  t0.three * CAST(2 AS SMALLINT) AS new_col
+  t0.three * CAST(2 AS TINYINT) AS new_col
 FROM my_data AS t0
 </pre>
 </div>
@@ -4366,7 +4366,7 @@ Python keywords to provide the name. Indeed:</p>
   t0.one,
   t0.two,
   t0.three,
-  t0.three * CAST(2 AS SMALLINT) AS new_col
+  t0.three * CAST(2 AS TINYINT) AS new_col
 FROM my_data AS t0
 </pre>
 </div>
@@ -4437,7 +4437,7 @@ ibis.show_sql(mutated)</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT
   t0.one,
-  t0.two * CAST(2 AS SMALLINT) AS two,
+  t0.two * CAST(2 AS TINYINT) AS two,
   t0.three
 FROM my_data AS t0
 </pre>
@@ -4584,7 +4584,7 @@ ibis.show_sql(proj)</div>
   t0.one,
   t0.two,
   t0.three,
-  t0.three * CAST(2 AS SMALLINT) AS new_col
+  t0.three * CAST(2 AS TINYINT) AS new_col
 FROM my_data AS t0
 </pre>
 </div>
@@ -4972,7 +4972,7 @@ ibis.show_sql(filtered)</div>
   t0.three
 FROM my_data AS t0
 WHERE
-  t0.two &gt; CAST(0 AS SMALLINT)
+  t0.two &gt; CAST(0 AS TINYINT)
 </pre>
 </div>
 </div>
@@ -5046,7 +5046,7 @@ ibis.show_sql(filtered)</div>
   t0.three
 FROM my_data AS t0
 WHERE
-  t0.two &gt; CAST(0 AS SMALLINT) AND t0.one IN (&#39;A&#39;, &#39;B&#39;)
+  t0.two &gt; CAST(0 AS TINYINT) AND t0.one IN (&#39;A&#39;, &#39;B&#39;)
 </pre>
 </div>
 </div>
@@ -5122,7 +5122,7 @@ ibis.show_sql(filtered)</div>
   t0.three
 FROM my_data AS t0
 WHERE
-  t0.two &lt; CAST(0 AS SMALLINT) OR t0.two &gt; CAST(0 AS SMALLINT) OR t0.one IN (&#39;A&#39;, &#39;B&#39;)
+  t0.two &lt; CAST(0 AS TINYINT) OR t0.two &gt; CAST(0 AS TINYINT) OR t0.one IN (&#39;A&#39;, &#39;B&#39;)
 </pre>
 </div>
 </div>
@@ -6624,11 +6624,11 @@ ibis.show_sql(expr)</div>
   t0.three,
   CASE
     WHEN (
-      t0.two &lt; CAST(0 AS SMALLINT)
+      t0.two &lt; CAST(0 AS TINYINT)
     )
-    THEN t0.three * CAST(2 AS SMALLINT)
+    THEN t0.three * CAST(2 AS TINYINT)
     WHEN (
-      t0.two &gt; CAST(1 AS SMALLINT)
+      t0.two &gt; CAST(1 AS TINYINT)
     )
     THEN t0.three
     ELSE t0.two
@@ -6708,7 +6708,7 @@ ibis.show_sql(expr)</div>
   t0.two,
   t0.three,
   CASE WHEN (
-    t0.two &lt; CAST(0 AS SMALLINT)
+    t0.two &lt; CAST(0 AS TINYINT)
   ) THEN &#39;Negative&#39; ELSE &#39;Non-Negative&#39; END AS &#34;group&#34;
 FROM my_data AS t0
 </pre>
@@ -6785,7 +6785,7 @@ ibis.show_sql(expr)</div>
   t0.two,
   t0.three,
   CASE WHEN (
-    t0.two &gt; CAST(0 AS SMALLINT)
+    t0.two &gt; CAST(0 AS TINYINT)
   ) THEN t0.two ELSE NULL END AS two_positive
 FROM my_data AS t0
 </pre>
@@ -7100,7 +7100,7 @@ ibis.show_sql(expr)</div>
   t0.column1,
   t0.column2,
   t0.column3,
-  CAST(5 AS SMALLINT) AS number5
+  CAST(5 AS TINYINT) AS number5
 FROM data AS t0
 </pre>
 </div>
@@ -7334,7 +7334,7 @@ ibis.show_sql(expr)</div>
   t0.three
 FROM my_data AS t0
 WHERE
-  t0.two BETWEEN CAST(10 AS SMALLINT) AND CAST(50 AS SMALLINT) AND NOT t0.one IS NULL
+  t0.two BETWEEN CAST(10 AS TINYINT) AND CAST(50 AS TINYINT) AND NOT t0.one IS NULL
 </pre>
 </div>
 </div>
@@ -8214,16 +8214,16 @@ JOIN table5 AS t1
   AND t0.key2 = t1.key2
   AND CASE
     WHEN (
-      CAST(0 AS SMALLINT) + 1 &gt;= 1
+      CAST(0 AS TINYINT) + 1 &gt;= 1
     )
-    THEN SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1, CAST(4 AS SMALLINT))
-    ELSE SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1 + LENGTH(t0.key3), CAST(4 AS SMALLINT))
+    THEN SUBSTR(t0.key3, CAST(0 AS TINYINT) + 1, CAST(4 AS TINYINT))
+    ELSE SUBSTR(t0.key3, CAST(0 AS TINYINT) + 1 + LENGTH(t0.key3), CAST(4 AS TINYINT))
   END = CASE
     WHEN (
-      CAST(0 AS SMALLINT) + 1 &gt;= 1
+      CAST(0 AS TINYINT) + 1 &gt;= 1
     )
-    THEN SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1, CAST(4 AS SMALLINT))
-    ELSE SUBSTR(t0.key3, CAST(0 AS SMALLINT) + 1 + LENGTH(t0.key3), CAST(4 AS SMALLINT))
+    THEN SUBSTR(t0.key3, CAST(0 AS TINYINT) + 1, CAST(4 AS TINYINT))
+    ELSE SUBSTR(t0.key3, CAST(0 AS TINYINT) + 1 + LENGTH(t0.key3), CAST(4 AS TINYINT))
   END
 </pre>
 </div>
@@ -8565,7 +8565,7 @@ FROM events AS t0
 WHERE
   EXISTS(
     SELECT
-      CAST(1 AS SMALLINT) AS anon_1
+      CAST(1 AS TINYINT) AS anon_1
     FROM purchases AS t1
     WHERE
       t0.user_id = t1.user_id
@@ -8647,7 +8647,7 @@ WHERE
   NOT (
     EXISTS(
       SELECT
-        CAST(1 AS SMALLINT) AS anon_1
+        CAST(1 AS TINYINT) AS anon_1
       FROM purchases AS t1
       WHERE
         t0.user_id = t1.user_id

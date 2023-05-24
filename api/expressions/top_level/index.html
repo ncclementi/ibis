@@ -3956,7 +3956,7 @@ ibis cannot infer the backend dialect.</p></td>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">show_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>  <span class="c1"># duckdb dialect by default</span>
 <span class="go">SELECT</span>
-<span class="go">  t0.a * CAST(2 AS SMALLINT) AS c</span>
+<span class="go">  t0.a * CAST(2 AS TINYINT) AS c</span>
 <span class="go">FROM t AS t0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">show_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s2">&quot;mysql&quot;</span><span class="p">)</span>
 <span class="go">SELECT</span>
