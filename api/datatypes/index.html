@@ -2122,6 +2122,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.dtype" class="md-nav__link">
+    dtype()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3522,6 +3542,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.dtype" class="md-nav__link">
+    dtype()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3802,7 +3842,7 @@ distinct types that have different behavior.</p>
 
 
 <h6 id="ibis.expr.datatypes.core.DataType.from_dask" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">from_dask</span><span class="p">(</span><span class="n">dask_type</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">from_dask</span><span class="p">(</span><span class="n">dask_type</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -3824,7 +3864,7 @@ distinct types that have different behavior.</p>
 
 
 <h6 id="ibis.expr.datatypes.core.DataType.from_numpy" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">from_numpy</span><span class="p">(</span><span class="n">numpy_type</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">from_numpy</span><span class="p">(</span><span class="n">numpy_type</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -3846,7 +3886,7 @@ distinct types that have different behavior.</p>
 
 
 <h6 id="ibis.expr.datatypes.core.DataType.from_pandas" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">from_pandas</span><span class="p">(</span><span class="n">pandas_type</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">from_pandas</span><span class="p">(</span><span class="n">pandas_type</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -3868,7 +3908,7 @@ distinct types that have different behavior.</p>
 
 
 <h6 id="ibis.expr.datatypes.core.DataType.from_pyarrow" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">from_pyarrow</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">from_pyarrow</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -4613,8 +4653,8 @@ distinct types that have different behavior.</p>
 <code class="highlight language-python"><span class="n">nbytes</span><span class="p">:</span> <span class="nb">int</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.expr.datatypes.core.Integer.nbytes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -5979,7 +6019,25 @@ cannot assume that strings are UTF-8 encoded.</p>
   </div>
 
 </div>
+<h3 id="ibis.expr.datatypes.core-functions">Functions<a href="#ibis.expr.datatypes.core-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.datatypes.core.dtype" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">dtype</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.datatypes.core.dtype" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Construct an ibis datatype from a python type.</p>
+
+  </div>
+
+</div>
 
 
 
