@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#google-bigquery" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -691,8 +691,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           BigQuery
@@ -709,8 +707,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -726,16 +722,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect" class="md-nav__link">
-    Connect
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Connect">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibisbigqueryconnect" class="md-nav__link">
+    ibis.bigquery.connect
   </a>
   
 </li>
@@ -760,49 +756,24 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#ibis.backends.bigquery.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.bigquery.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.bigquery.Backend.execute" class="md-nav__link">
-    execute()
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#finding-your-project_id-and-dataset_id" class="md-nav__link">
+    Finding your project_id and dataset_id
+  </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#bigquery-authentication" class="md-nav__link">
+    BigQuery Authentication
+  </a>
   
 </li>
         
@@ -2053,8 +2024,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2070,16 +2039,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect" class="md-nav__link">
-    Connect
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Connect">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibisbigqueryconnect" class="md-nav__link">
+    ibis.bigquery.connect
   </a>
   
 </li>
@@ -2104,49 +2073,24 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#ibis.backends.bigquery.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.bigquery.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.bigquery.Backend.execute" class="md-nav__link">
-    execute()
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#finding-your-project_id-and-dataset_id" class="md-nav__link">
+    Finding your project_id and dataset_id
+  </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#bigquery-authentication" class="md-nav__link">
+    BigQuery Authentication
+  </a>
   
 </li>
         
@@ -2173,13 +2117,14 @@
                   
 
 
-<h1 id="google-bigquery"><a href="https://cloud.google.com/bigquery">Google BigQuery</a><a class="headerlink" href="#google-bigquery" title="Anchor link to this section for reference">&para;</a></h1>
+  <h1>BigQuery</h1>
+
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Install ibis and dependencies for the Google BigQuery backend:</p>
+<p>Install <code>ibis</code> and dependencies for the BigQuery backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[bigquery]&#39;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="err">&#39;</span>ibis-framework<span class="o">[</span>bigquery<span class="o">]</span><span class="sb">`</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2192,14 +2137,13 @@
 </div>
 </div>
 </div>
-<h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
-<p>Create a client by passing in connection parameters to <code>ibis.bigquery.connect</code>.</p>
-<!-- prettier-ignore-start -->
-<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.bigquery.Backend.do_connect"><code>ibis.backends.bigquery.Backend.do_connect</code></a>
-for connection parameter information.</p>
-<!-- prettier-ignore-end -->
-
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="ibisbigqueryconnect"><code>ibis.bigquery.connect</code><a class="headerlink" href="#ibisbigqueryconnect" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">bigquery</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">project_id</span><span class="o">=</span><span class="s2">&quot;ibis-bq-project&quot;</span><span class="p">,</span>
+    <span class="n">dataset_id</span><span class="o">=</span><span class="s2">&quot;testing&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title"><code>ibis.bigquery.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.bigquery.Backend.do_connect"><code>ibis.backends.bigquery.Backend.do_connect</code></a>.</p>
@@ -2222,7 +2166,7 @@ for connection parameter information.</p>
 
   <div class="doc doc-contents first">
   
-      <p>Create a :class:<code>Backend</code> for use with Ibis.</p>
+      <p>Create a <code>Backend</code> for use with Ibis.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2347,7 +2291,7 @@ column. Defaults to <code>'PARTITIONTIME'</code>.</p></td>
     <tbody>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.backends.bigquery.Backend" href="#ibis.backends.bigquery.Backend">Backend</a></code>
+                <code><span title="ibis.backends.bigquery.Backend">Backend</span></code>
           </td>
           <td><p>An instance of the BigQuery backend.</p></td>
         </tr>
@@ -2358,143 +2302,36 @@ column. Defaults to <code>'PARTITIONTIME'</code>.</p></td>
 
 </div><!-- prettier-ignore-end -->
 
-<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="ibisconnect-url-format"><code>ibis.connect</code> URL format<a class="headerlink" href="#ibisconnect-url-format" title="Anchor link to this section for reference">&para;</a></h3>
+<p>In addition to <code>ibis.bigquery.connect</code>, you can also connect to BigQuery by
+passing a properly formatted BigQuery connection URL to <code>ibis.connect</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bigquery://</span><span class="si">{</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">dataset_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 <!-- prettier-ignore-start -->
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="ibis.backends.bigquery.Backend" class="doc doc-heading">
-        <code>Backend</code>
-
-
-<a href="#ibis.backends.bigquery.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-
-  <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.base.sql.BaseSQLBackend" href="../../api/backends/sql/#ibis.backends.base.sql.BaseSQLBackend">BaseSQLBackend</a></code></p>
-
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<h4 id="ibis.backends.bigquery.Backend-functions">Functions<a href="#ibis.backends.bigquery.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.bigquery.Backend.execute" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.bigquery.Backend.execute" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Compile and execute the given Ibis expression.</p>
-<p>Compile and execute Ibis expression using this backend client
-interface, returning results in-memory in the appropriate object type</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-          </td>
-          <td><p>Ibis expression to execute</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>limit</code></td>
-          <td>
-          </td>
-          <td><p>Retrieve at most this number of values/rows. Overrides any limit
-already set on the expression.</p></td>
-          <td>
-                <code>&#39;default&#39;</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-          </td>
-          <td><p>Query parameters</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-          </td>
-          <td><p>Extra arguments specific to the backend</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.Series">Series</span> | scalar</code>
-          </td>
-          <td><p>Output from execution</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
+<div class="admonition info">
+<p class="admonition-title">This assumes you have already authenticated via the <code>gcloud</code> CLI</p>
 </div>
+<!-- prettier-ignore-end -->
 
-
-
-  </div>
-
-  </div>
-
-</div><!-- prettier-ignore-end -->
+<h3 id="finding-your-project_id-and-dataset_id">Finding your <code>project_id</code> and <code>dataset_id</code><a class="headerlink" href="#finding-your-project_id-and-dataset_id" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Log in to the <a href="https://console.cloud.google.com/bigquery">Google Cloud Console</a>
+to see which <code>project_id</code>s and <code>dataset_id</code>s are available to use.</p>
+<p><img alt="bigquery_ids" src="../images/bigquery_connect.png" /></p>
+<h3 id="bigquery-authentication">BigQuery Authentication<a class="headerlink" href="#bigquery-authentication" title="Anchor link to this section for reference">&para;</a></h3>
+<p>The simplest way to authenticate with the BigQuery backend is to use <a href="https://cloud.google.com/sdk/docs/install-sdk">Google's <code>gcloud</code> CLI tool</a>.</p>
+<p>Once you have <code>gcloud</code> installed, you can authenticate to BigQuery (and other Google Cloud services) by running</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>auth<span class="w"> </span>login
+</code></pre></div>
+<p>For any authentication problems, or information on other ways of authenticating,
+see the <a href="https://cloud.google.com/sdk/docs/authorizing"><code>gcloud</code> CLI authorization
+guide</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2023</span>
       
     
   </small>

@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#snowflake" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -887,8 +887,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Snowflake
@@ -905,8 +903,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -922,26 +918,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect" class="md-nav__link">
-    Connect
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Connect">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibissnowflakeconnect" class="md-nav__link">
+    ibis.snowflake.connect
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connection-parameters" class="md-nav__link">
-    Connection Parameters
-  </a>
-  
-    <nav class="md-nav" aria-label="Connection Parameters">
+    <nav class="md-nav" aria-label="ibis.snowflake.connect">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -956,22 +945,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+          <li class="md-nav__item">
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.snowflake.Backend" class="md-nav__link">
-    Backend
+  <a href="#looking-up-your-snowflake-organization-id-and-user-id" class="md-nav__link">
+    Looking up your Snowflake organization ID and user ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-value-for-database" class="md-nav__link">
+    Choosing a value for database
   </a>
   
 </li>
@@ -2027,8 +2017,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2044,26 +2032,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect" class="md-nav__link">
-    Connect
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Connect">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibissnowflakeconnect" class="md-nav__link">
+    ibis.snowflake.connect
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connection-parameters" class="md-nav__link">
-    Connection Parameters
-  </a>
-  
-    <nav class="md-nav" aria-label="Connection Parameters">
+    <nav class="md-nav" aria-label="ibis.snowflake.connect">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2078,22 +2059,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+          <li class="md-nav__item">
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.snowflake.Backend" class="md-nav__link">
-    Backend
+  <a href="#looking-up-your-snowflake-organization-id-and-user-id" class="md-nav__link">
+    Looking up your Snowflake organization ID and user ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-value-for-database" class="md-nav__link">
+    Choosing a value for database
   </a>
   
 </li>
@@ -2121,13 +2103,14 @@
                   
 
 
-<h1 id="snowflake"><a href="https://snowflake.com/">Snowflake</a><a class="headerlink" href="#snowflake" title="Anchor link to this section for reference">&para;</a></h1>
+  <h1>Snowflake</h1>
+
 <div class="admonition experimental">
 <p class="admonition-title">Introduced in v4.0</p>
 <p>The Snowflake backend is experimental and is subject to backwards incompatible changes.</p>
 </div>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Install ibis and dependencies for the Snowflake backend:</p>
+<p>Install <code>ibis</code> and dependencies for the Snowflake backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2144,21 +2127,21 @@
 </div>
 </div>
 </div>
-<h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
-<p>Create a client by passing in a SQLAlchemy connection string to <code>ibis.snowflake.connect</code>.</p>
-<!-- prettier-ignore-start -->
-<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.snowflake.Backend.do_connect"><code>ibis.backends.snowflake.Backend.do_connect</code></a>
-for connection parameter information.</p>
-<!-- prettier-ignore-end -->
-
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="ibissnowflakeconnect"><code>ibis.snowflake.connect</code><a class="headerlink" href="#ibissnowflakeconnect" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">snowflake</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="p">,</span>
+    <span class="n">account</span><span class="o">=</span><span class="s2">&quot;safpqpq-sq55555&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;IBIS_TESTING/IBIS_TESTING&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title"><code>ibis.snowflake.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.snowflake.Backend.do_connect"><code>ibis.backends.snowflake.Backend.do_connect</code></a>.</p>
 </div>
 <!-- prettier-ignore-end -->
 
-<h3 id="connection-parameters">Connection Parameters<a class="headerlink" href="#connection-parameters" title="Anchor link to this section for reference">&para;</a></h3>
 <!-- prettier-ignore-start -->
 
 
@@ -2173,59 +2156,123 @@ for connection parameter information.</p>
 
 
   <div class="doc doc-contents first">
-
-  </div>
-
-</div><!-- prettier-ignore-end -->
-
-<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
-<!-- prettier-ignore-start -->
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="ibis.backends.snowflake.Backend" class="doc doc-heading">
-        <code>Backend</code>
-
-
-<a href="#ibis.backends.snowflake.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-
-  <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.base.sql.alchemy.BaseAlchemyBackend" href="../../api/backends/sqlalchemy/#ibis.backends.base.sql.alchemy.BaseAlchemyBackend">BaseAlchemyBackend</a></code></p>
-
-
-
-
   
+      <p>Connect to Snowflake.</p>
 
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>user</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Username</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>password</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Password</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>account</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>A Snowflake organization ID and a Snowflake user ID, separated by a hyphen.
+Note that a Snowflake user ID is a separate identifier from a username.
+See <a href="https://ibis-project.org/backends/Snowflake/">https://ibis-project.org/backends/Snowflake/</a> for details</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>database</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>A Snowflake database and a Snowflake schema, separated by a <code>/</code>.
+See <a href="https://ibis-project.org/backends/Snowflake/">https://ibis-project.org/backends/Snowflake/</a> for details</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>connect_args</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+          </td>
+          <td><p>Additional arguments passed to the SQLAlchemy engine creation call.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>Additiional arguments passed to the SQLAlchemy URL constructor.
+See <a href="https://docs.snowflake.com/en/developer-guide/python-connector/sqlalchemy#additional-connection-parameters">https://docs.snowflake.com/en/developer-guide/python-connector/sqlalchemy#additional-connection-parameters</a>
+for more details</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
 </div><!-- prettier-ignore-end -->
+
+<h3 id="ibisconnect-url-format"><code>ibis.connect</code> URL format<a class="headerlink" href="#ibisconnect-url-format" title="Anchor link to this section for reference">&para;</a></h3>
+<p>In addition to <code>ibis.snowflake.connect</code>, you can also connect to Snowflake by
+passing a properly formatted Snowflake connection URL to <code>ibis.connect</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;snowflake://</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">account</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">database</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="looking-up-your-snowflake-organization-id-and-user-id">Looking up your Snowflake organization ID and user ID<a class="headerlink" href="#looking-up-your-snowflake-organization-id-and-user-id" title="Anchor link to this section for reference">&para;</a></h3>
+<p>A <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization">Snowflake account
+identifier</a>
+consists of an organization ID and a user ID, separated by a hyphen.</p>
+<div class="admonition info">
+<p class="admonition-title">This user ID is not the same as the username you log in with.</p>
+</div>
+<p>To find your organization ID and user ID, log in to the Snowflake web app, then
+click on the text just to the right of the Snowflake logo (in the
+lower-left-hand corner of the screen).</p>
+<p>The bold text at the top of the little pop-up window is your organization ID.
+The bold blue text with a checkmark next to it is your user ID.</p>
+<p><img alt="Snowflake Organization and User ID" src="../images/snowflake_org_user.png" /></p>
+<h3 id="choosing-a-value-for-database">Choosing a value for <code>database</code><a class="headerlink" href="#choosing-a-value-for-database" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Snowflake refers to a collection of tables as a schema, and a collection of schema as a database.</p>
+<p>You must choose a database and a schema to connect to. You can refer to the
+available databases and schema in the "Data" sidebar item in the Snowflake web
+app.</p>
+<p><img alt="Snowflake Database" src="../images/snowflake_database.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2023</span>
       
     
   </small>
