@@ -179,8 +179,8 @@ ibis.expr.operations.reductions.Any,True,True,True,False,True,True,True,True,Tru
 ibis.expr.operations.reductions.ApproxCountDistinct,True,True,True,False,True,True,True,True,True,True,True,False,True,True,True,True,True
 ibis.expr.operations.reductions.ApproxMedian,True,True,True,False,False,True,True,False,False,True,True,True,True,True,True,False,True
 ibis.expr.operations.reductions.Arbitrary,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,True,True
-ibis.expr.operations.reductions.ArgMax,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,True,True
-ibis.expr.operations.reductions.ArgMin,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,True,True
+ibis.expr.operations.reductions.ArgMax,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,True,True
+ibis.expr.operations.reductions.ArgMin,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.ArrayCollect,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.reductions.BitAnd,True,True,True,False,True,True,False,False,True,True,True,False,True,False,True,True,True
 ibis.expr.operations.reductions.BitOr,True,True,True,False,True,True,False,False,True,True,True,False,True,False,True,True,True
