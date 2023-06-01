@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2013,7 +2015,7 @@ We will save the events to a parquet file and read that as a TableExpression in 
 We will then convert the event names DataFrame to a PandasInMemoryTable (MemTable), which is
 a pandas DataFrame as a TableExpression and join the two expressions together as we would
 two TableExpressions in a backend.</p>
-<div class="highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">ibis</span>
 
     <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
        <span class="o">...</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
@@ -2060,7 +2062,7 @@ two TableExpressions in a backend.</p>
       <span class="n">measurement</span> <span class="n">float64</span>
 </code></pre></div>
 <p>Converting a pandas DataFrame to a MemTable is as simple as feeding it to <code>ibis.memtable</code>:</p>
-<div class="highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="c1"># To join, convert your DataFrame to a memtable</span>
+<div class="language-python highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="c1"># To join, convert your DataFrame to a memtable</span>
        <span class="o">...</span><span class="p">:</span> <span class="n">mem_events</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
 
     <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">mem_events</span>
@@ -2075,7 +2077,7 @@ two TableExpressions in a backend.</p>
           <span class="mi">3</span>         <span class="mi">3</span>         <span class="n">e3</span>
 </code></pre></div>
 <p>and joining is the same as joining any two TableExpressions:</p>
-<div class="highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="c1"># Join as you would two table expressions</span>
+<div class="language-python highlight"><pre><span></span><code>    <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="c1"># Join as you would two table expressions</span>
         <span class="o">...</span><span class="p">:</span> <span class="n">measures</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="o">...</span><span class="p">:</span>     <span class="n">mem_events</span><span class="p">,</span>
         <span class="o">...</span><span class="p">:</span>     <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mem_events</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span>
@@ -2199,7 +2201,7 @@ two TableExpressions in a backend.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

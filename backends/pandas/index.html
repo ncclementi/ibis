@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2210,15 +2212,15 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework&#39;</span>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework&#39;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
 </code></pre></div>
 </div>
 </div>
@@ -2340,7 +2342,7 @@ expressions targeting the pandas backend: <strong>element-wise</strong>, <strong
 produces N rows of output. <code>log</code>, <code>exp</code>, and <code>floor</code> are examples of
 element-wise functions.</p>
 <p>Here's how to define an element-wise function:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
 
 <span class="nd">@udf</span><span class="o">.</span><span class="n">elementwise</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">],</span> <span class="n">output_type</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
@@ -2353,7 +2355,7 @@ as output. <code>sum</code>, <code>mean</code> and <code>count</code> are exampl
 the context of a <code>GROUP BY</code>, reductions produce 1 row of output <em>per
 group</em>.</p>
 <p>Here's how to define a reduction function:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
 
 <span class="nd">@udf</span><span class="o">.</span><span class="n">reduction</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">],</span> <span class="n">output_type</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
@@ -2366,7 +2368,7 @@ N rows as input and produces N rows of output. The key difference is that
 analytic functions can be applied <em>per group</em> using window functions. Z-score
 is an example of an analytic function.</p>
 <p>Here's how to define an analytic function:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
 
 <span class="nd">@udf</span><span class="o">.</span><span class="n">analytic</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">],</span> <span class="n">output_type</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
@@ -2394,7 +2396,7 @@ not work</strong>.</p>
 handle setting it to something not <code>None</code> in the body of the function.</p>
 <p>Using <code>add_one</code> from above as an example, the following call will receive a
 <code>pandas.Series</code> for the <code>x</code> argument:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
 <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">pandas</span><span class="o">.</span><span class="n">connect</span><span class="p">({</span><span class="s1">&#39;df&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
@@ -2403,12 +2405,12 @@ handle setting it to something not <code>None</code> in the body of the function
 <span class="n">expr</span>
 </code></pre></div>
 <p>And this will receive the <code>int</code> 1:</p>
-<div class="highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="n">add_one</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="n">add_one</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">expr</span>
 </code></pre></div>
 <p>Since the pandas backend passes around <code>**kwargs</code> you can accept <code>**kwargs</code>
 in your function:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
 
 <span class="nd">@udf</span><span class="o">.</span><span class="n">elementwise</span><span class="p">([</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">],</span> <span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
@@ -2418,7 +2420,7 @@ in your function:</p>
 <p>Or you can leave them out as we did in the example above. You can also
 optionally accept specific keyword arguments.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">from</span> <span class="nn">ibis.backends.pandas.udf</span> <span class="kn">import</span> <span class="n">udf</span>
 
 <span class="nd">@udf</span><span class="o">.</span><span class="n">elementwise</span><span class="p">([</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">],</span> <span class="n">dt</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
@@ -2530,7 +2532,7 @@ optionally accept specific keyword arguments.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

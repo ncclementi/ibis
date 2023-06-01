@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1957,7 +1959,7 @@
 
 <h1 id="how-to-use-register-to-load-external-data-files-with-the-duckdb-backend">How to Use <code>register</code> to load external data files with the DuckDB backend<a class="headerlink" href="#how-to-use-register-to-load-external-data-files-with-the-duckdb-backend" title="Anchor link to this section for reference">&para;</a></h1>
 <!-- prettier-ignore-start -->
-<p>Here we use the <a class="autorefs autorefs-internal" href="../../backends/DuckDB/#ibis.backends.duckdb.Backend.register"><code>register</code></a> method to load external data files and join them.</p>
+<p>Here we use the <code>register</code> method to load external data files and join them.</p>
 <!-- prettier-ignore-end -->
 
 <p>We're going to download one month of <a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page">NYC Taxi
@@ -1966,14 +1968,14 @@ data</a> in
 <p><a href="https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-01.parquet">https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-01.parquet</a>
 <a href="https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv">https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv</a></p>
 <p>Create an in-memory DuckDB connection via <code>ibis</code></p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>  <span class="c1"># in-memory database</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
 <span class="p">[]</span>
 </code></pre></div>
 <p>Now we call <code>register</code> with the filepath (the <code>table_name</code> argument is optional,
 if it isn't specified, Ibis will use the filename minus the extension)</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;taxi+_zone_lookup.csv&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;taxi_zone_lookup&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;taxi+_zone_lookup.csv&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;taxi_zone_lookup&quot;</span><span class="p">)</span>
 <span class="n">AlchemyTable</span><span class="p">:</span> <span class="n">taxi</span><span class="o">+</span><span class="n">_zone_lookup</span>
   <span class="n">LocationID</span>   <span class="n">int32</span>
   <span class="n">Borough</span>      <span class="n">string</span>
@@ -2009,7 +2011,7 @@ if it isn't specified, Ibis will use the filename minus the extension)</p>
 actually <code>views</code> that are lazily-loaded) are available.</p>
 <p>Now we can interact with these tables just like a table or view in any backend
 connection:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lookup</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;taxi_zone_lookup&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lookup</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;taxi_zone_lookup&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">tripdata</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;tripdata&quot;</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">tripdata</span><span class="o">.</span><span class="n">columns</span>
@@ -2020,7 +2022,7 @@ connection:</p>
 </code></pre></div>
 <p>We can grab a small subset of the <code>tripdata</code> columns and then join them to the
 <code>lookup</code> table to get human-readable values for the pickup locations:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">tripdata</span> <span class="o">=</span> <span class="n">tripdata</span><span class="p">[[</span><span class="s2">&quot;lpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;PULocationID&quot;</span><span class="p">]]</span>
 
@@ -2043,7 +2045,7 @@ connection:</p>
 <p>That's it!</p>
 <p>Ibis+duckdb currently supports registering <code>parquet</code>, <code>csv</code>, and <code>csv.gz</code>.</p>
 <p>You can pass in the filename and the filetype will be inferred from the extension, or you can pass it explicitly using a file URI, e.g.</p>
-<div class="highlight"><pre><span></span><code><span class="n">con</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;csv://some_csv_file_without_an_extension&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;csv://some_csv_file_without_an_extension&quot;</span><span class="p">)</span>
 <span class="n">con</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;csv.gz://a_compressed_csv_file.csv&quot;</span><span class="p">)</span>
 <span class="n">con</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;parquet://a_parquet_file_with_truncated_extension.parq&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -2053,7 +2055,7 @@ connection:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2023</span>
       
     
   </small>
@@ -2150,7 +2152,7 @@ connection:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

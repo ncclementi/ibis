@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pyspark" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -859,8 +861,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           PySpark
@@ -876,8 +876,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -902,8 +900,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibispysparkconnect" class="md-nav__link">
+    ibis.pyspark.connect
   </a>
   
 </li>
@@ -934,145 +932,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+  <a href="#file-support" class="md-nav__link">
+    File Support
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
+    <nav class="md-nav" aria-label="File Support">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend-classes" class="md-nav__link">
-    Classes
-  </a>
-  
-    <nav class="md-nav" aria-label="Classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.Options" class="md-nav__link">
-    Options
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.close" class="md-nav__link">
-    close()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.compile" class="md-nav__link">
-    compile()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.compute_stats" class="md-nav__link">
-    compute_stats()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.create_database" class="md-nav__link">
-    create_database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.create_table" class="md-nav__link">
-    create_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.create_view" class="md-nav__link">
-    create_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_database" class="md-nav__link">
-    drop_database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_table" class="md-nav__link">
-    drop_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_table_or_view" class="md-nav__link">
-    drop_table_or_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_view" class="md-nav__link">
-    drop_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.execute" class="md-nav__link">
-    execute()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.insert" class="md-nav__link">
-    insert()
-  </a>
-  
-    <nav class="md-nav" aria-label="insert()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.insert--completely-overwrite-contents" class="md-nav__link">
-    Completely overwrite contents
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#ibis.backends.pyspark.Backend.read_csv" class="md-nav__link">
@@ -1085,37 +950,6 @@
   <a href="#ibis.backends.pyspark.Backend.read_parquet" class="md-nav__link">
     read_parquet()
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.register" class="md-nav__link">
-    register()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.table" class="md-nav__link">
-    table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.truncate_table" class="md-nav__link">
-    truncate_table()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2198,8 +2032,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2223,8 +2055,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibispysparkconnect" class="md-nav__link">
+    ibis.pyspark.connect
   </a>
   
 </li>
@@ -2255,145 +2087,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+  <a href="#file-support" class="md-nav__link">
+    File Support
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
+    <nav class="md-nav" aria-label="File Support">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend-classes" class="md-nav__link">
-    Classes
-  </a>
-  
-    <nav class="md-nav" aria-label="Classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.Options" class="md-nav__link">
-    Options
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.close" class="md-nav__link">
-    close()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.compile" class="md-nav__link">
-    compile()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.compute_stats" class="md-nav__link">
-    compute_stats()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.create_database" class="md-nav__link">
-    create_database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.create_table" class="md-nav__link">
-    create_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.create_view" class="md-nav__link">
-    create_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_database" class="md-nav__link">
-    drop_database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_table" class="md-nav__link">
-    drop_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_table_or_view" class="md-nav__link">
-    drop_table_or_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.drop_view" class="md-nav__link">
-    drop_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.execute" class="md-nav__link">
-    execute()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.insert" class="md-nav__link">
-    insert()
-  </a>
-  
-    <nav class="md-nav" aria-label="insert()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.insert--completely-overwrite-contents" class="md-nav__link">
-    Completely overwrite contents
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#ibis.backends.pyspark.Backend.read_csv" class="md-nav__link">
@@ -2406,37 +2105,6 @@
   <a href="#ibis.backends.pyspark.Backend.read_parquet" class="md-nav__link">
     read_parquet()
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.register" class="md-nav__link">
-    register()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.table" class="md-nav__link">
-    table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.truncate_table" class="md-nav__link">
-    truncate_table()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2463,36 +2131,41 @@
                   
 
 
-<h1 id="pyspark"><a href="https://spark.apache.org/docs/latest/api/python/">PySpark</a><a class="headerlink" href="#pyspark" title="Anchor link to this section for reference">&para;</a></h1>
+  <h1>PySpark</h1>
+
+<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20Parquet-blue?style=flat-square" /> </p>
+<p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-PyArrow%20|%20Parquet%20|%20CSV%20|%20Pandas-orange?style=flat-square" /> </p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Install ibis and dependencies for the PySpark backend:</p>
+<p>Install <code>ibis</code> and dependencies for the PySpark backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[pyspark]&#39;</span>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="err">&#39;</span>ibis-framework<span class="o">[</span>pyspark<span class="o">]</span><span class="sb">`</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pyspark
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pyspark
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pyspark
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pyspark
 </code></pre></div>
 </div>
 </div>
 </div>
 <h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
-<p>Create a client by passing in PySpark things to <code>ibis.pyspark.connect</code>.</p>
+<h3 id="ibispysparkconnect"><code>ibis.pyspark.connect</code><a class="headerlink" href="#ibispysparkconnect" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">pyspark</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+</code></pre></div>
 <!-- prettier-ignore-start -->
-<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.pyspark.Backend.do_connect"><code>ibis.backends.pyspark.Backend.do_connect</code></a>
-for connection parameter information.</p>
+<div class="admonition info">
+<p class="admonition-title"><code>ibis.pyspark.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.pyspark.Backend.do_connect"><code>ibis.backends.pyspark.Backend.do_connect</code></a>.</p>
+</div>
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <div class="admonition info">
-<p class="admonition-title"><code>ibis.pyspark.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.pyspark.Backend.do_connect"><code>ibis.backends.pyspark.Backend.do_connect</code></a>.</p>
+<p class="admonition-title">The <code>pyspark</code> backend does not create <code>SparkSession</code> objects, you must create a <code>SparkSession</code> and pass that to <code>ibis.pyspark.connect</code>.</p>
 </div>
 <!-- prettier-ignore-end -->
 
@@ -2550,687 +2223,21 @@ for connection parameter information.</p>
 
 </div><!-- prettier-ignore-end -->
 
-<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
+<h2 id="file-support">File Support<a class="headerlink" href="#file-support" title="Anchor link to this section for reference">&para;</a></h2>
 <!-- prettier-ignore-start -->
 
 
-<div class="doc doc-object doc-class">
+<div class="doc doc-object doc-function">
 
 
 
-<h3 id="ibis.backends.pyspark.Backend" class="doc doc-heading">
-        <code>Backend</code>
+<h4 id="ibis.backends.pyspark.Backend.read_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-
-<a href="#ibis.backends.pyspark.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+<a href="#ibis.backends.pyspark.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.base.sql.BaseSQLBackend" href="../../api/backends/sql/#ibis.backends.base.sql.BaseSQLBackend">BaseSQLBackend</a></code></p>
-
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-<h4 id="ibis.backends.pyspark.Backend-classes">Classes<a href="#ibis.backends.pyspark.Backend-classes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.Options" class="doc doc-heading">
-        <code>Options</code>
-
-
-<a href="#ibis.backends.pyspark.Backend.Options" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="ibis.config">ibis</span>.<span title="ibis.config.config">config</span>.<span title="ibis.config.config.Config">Config</span></code></p>
-
-  
-      <p>PySpark options.</p>
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>treat_nan_as_null</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Treat NaNs in floating point expressions as NULL.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-</div>
-<h4 id="ibis.backends.pyspark.Backend-functions">Functions<a href="#ibis.backends.pyspark.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.close" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">close</span><span class="p">()</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.close" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Close Spark connection and drop any temporary objects.</p>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.compile" class="doc doc-heading">
-<code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.compile" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Compile an ibis expression to a PySpark DataFrame object.</p>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.compute_stats" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">compute_stats</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">noscan</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.compute_stats" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Issue a <code>COMPUTE STATISTICS</code> command for a given table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Table name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>noscan</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>If <code>True</code>, collect only basic statistics for the table (number of
-rows, size in bytes).</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.create_database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_database</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.create_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Create a new Spark database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | None</code>
-          </td>
-          <td><p>Path where to store the database data; otherwise uses Spark default</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>force</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Whether to append <code>IF EXISTS</code> to the database creation SQL</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Create a new table in Spark.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Name of the new table.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>obj</code></td>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a> | <a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | None</code>
-          </td>
-          <td><p>If passed, creates table from <code>SELECT</code> statement results</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>schema</code></td>
-          <td>
-                <code><span title="ibis.expr.schema">sch</span>.<a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="../../api/schemas/#ibis.expr.schema.Schema">Schema</a> | None</code>
-          </td>
-          <td><p>Mutually exclusive with <code>obj</code>, creates an empty table with a schema</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>temp</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | None</code>
-          </td>
-          <td><p>Whether the new table is temporary</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>overwrite</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>If <code>True</code>, overwrite existing data</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>format</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Format of the table on disk</p></td>
-          <td>
-                <code>&#39;parquet&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Table</code>
-          </td>
-          <td><p>The newly created table.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;new_table_name&#39;</span><span class="p">,</span> <span class="n">table_expr</span><span class="p">)</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.create_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.create_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Create a Spark view from a table expression.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>View name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>obj</code></td>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>Expression to use for the view</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>overwrite</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Replace an existing view of the same name if it exists</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Table</code>
-          </td>
-          <td><p>The created view</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.drop_database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_database</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.drop_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Drop a Spark database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>force</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>If False, Spark throws exception if database is not empty or
-database does not exist</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.drop_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.drop_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Drop a table.</p>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.drop_table_or_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table_or_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.drop_table_or_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Drop a Spark table or view.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Table or view name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>force</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Database may throw exception if table does not exist</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="s1">&#39;my_table&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;operations&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">drop_table_or_view</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.drop_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.drop_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Drop a view.</p>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.execute" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.execute" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Execute an expression.</p>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.insert" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">insert</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.insert" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Insert data into an existing table.</p>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="s1">&#39;my_table&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">table_expr</span><span class="p">)</span>
-</code></pre></div>
-    <h6 id="ibis.backends.pyspark.Backend.insert--completely-overwrite-contents">Completely overwrite contents<a class="headerlink" href="#ibis.backends.pyspark.Backend.insert--completely-overwrite-contents" title="Anchor link to this section for reference">&para;</a></h6>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">table_expr</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.read_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
   
       <p>Register a CSV file as a table in the current database.</p>
 
@@ -3281,24 +2288,6 @@ a sequentially generated name.</p></td>
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
   </div>
 
 </div>
@@ -3307,13 +2296,13 @@ a sequentially generated name.</p></td>
 
 
 
-<h5 id="ibis.backends.pyspark.Backend.read_parquet" class="doc doc-heading">
+<h4 id="ibis.backends.pyspark.Backend.read_parquet" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a href="#ibis.backends.pyspark.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+<a href="#ibis.backends.pyspark.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
-  <div class="doc doc-contents ">
+  <div class="doc doc-contents first">
   
       <p>Register a parquet file as a table in the current database.</p>
 
@@ -3363,237 +2352,6 @@ a sequentially generated name.</p></td>
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.register" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.register" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a data source as a table in the current database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>source</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>The data source(s). May be a path to a file or directory of
-parquet/csv files, or an iterable of CSV files.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>Additional keyword arguments passed to PySpark loading functions for
-CSV or parquet.</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Return a table expression from a table or view in the database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Table name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database in which the table resides</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Table</code>
-          </td>
-          <td><p>Table named <code>name</code> from <code>database</code></p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.pyspark.Backend.truncate_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">truncate_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.pyspark.Backend.truncate_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Delete all rows from an existing table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td><p>Table name</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>database</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Database name</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
   </div>
 
 </div><!-- prettier-ignore-end -->
@@ -3603,7 +2361,7 @@ CSV or parquet.</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2023</span>
       
     
   </small>
@@ -3700,7 +2458,7 @@ CSV or parquet.</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#duckdb" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -761,8 +763,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           DuckDB
@@ -778,8 +778,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -804,8 +802,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibisduckdbconnect" class="md-nav__link">
+    ibis.duckdb.connect
   </a>
   
 </li>
@@ -830,59 +828,29 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+  <a href="#file-support" class="md-nav__link">
+    File Support
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
+    <nav class="md-nav" aria-label="File Support">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.attach_sqlite" class="md-nav__link">
-    attach_sqlite()
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.read_csv" class="md-nav__link">
     read_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="md-nav__link">
-    read_in_memory()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.read_json" class="md-nav__link">
-    read_json()
   </a>
   
 </li>
@@ -895,8 +863,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.read_postgres" class="md-nav__link">
-    read_postgres()
+  <a href="#ibis.backends.duckdb.Backend.read_json" class="md-nav__link">
+    read_json()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="md-nav__link">
+    read_in_memory()
   </a>
   
 </li>
@@ -909,40 +884,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.register" class="md-nav__link">
-    register()
+  <a href="#ibis.backends.duckdb.Backend.read_postgres" class="md-nav__link">
+    read_postgres()
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.to_csv" class="md-nav__link">
-    to_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.to_parquet" class="md-nav__link">
-    to_parquet()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="md-nav__link">
-    to_pyarrow_batches()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2123,8 +2067,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2148,8 +2090,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibisduckdbconnect" class="md-nav__link">
+    ibis.duckdb.connect
   </a>
   
 </li>
@@ -2174,59 +2116,29 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+  <a href="#file-support" class="md-nav__link">
+    File Support
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
+    <nav class="md-nav" aria-label="File Support">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.attach_sqlite" class="md-nav__link">
-    attach_sqlite()
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.read_csv" class="md-nav__link">
     read_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="md-nav__link">
-    read_in_memory()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.read_json" class="md-nav__link">
-    read_json()
   </a>
   
 </li>
@@ -2239,8 +2151,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.read_postgres" class="md-nav__link">
-    read_postgres()
+  <a href="#ibis.backends.duckdb.Backend.read_json" class="md-nav__link">
+    read_json()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_in_memory" class="md-nav__link">
+    read_in_memory()
   </a>
   
 </li>
@@ -2253,40 +2172,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.register" class="md-nav__link">
-    register()
+  <a href="#ibis.backends.duckdb.Backend.read_postgres" class="md-nav__link">
+    read_postgres()
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.to_csv" class="md-nav__link">
-    to_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.to_parquet" class="md-nav__link">
-    to_parquet()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="md-nav__link">
-    to_pyarrow_batches()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2313,43 +2201,47 @@
                   
 
 
-<h1 id="duckdb"><a href="https://duckdb.org/">DuckDB</a><a class="headerlink" href="#duckdb" title="Anchor link to this section for reference">&para;</a></h1>
-<div class="admonition tip">
-<p class="admonition-title">Introduced in v3.0</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title"><code>duckdb</code> &gt;= 0.5.0 requires <code>duckdb-engine</code> &gt;= 0.6.2</p>
+  <h1>DuckDB</h1>
+
+<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20Parquet%20|%20JSON%20|%20PyArrow%20|%20Pandas%20|%20SQLite%20|%20Postgres-blue?style=flat-square" /> </p>
+<p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-PyArrow%20|%20Parquet%20|%20CSV%20|%20Pandas-orange?style=flat-square" /> </p>
+<details class="danger">
+<summary><code>duckdb</code> &gt;= 0.5.0 requires <code>duckdb-engine</code> &gt;= 0.6.2</summary>
 <p>If you encounter problems when using <code>duckdb</code> &gt;= <strong>0.5.0</strong> you may need to
-upgrade <code>duckdb-engine</code> to at least version <strong>0.6.2</strong>.</p>
+  upgrade <code>duckdb-engine</code> to at least version <strong>0.6.2</strong>.</p>
 <p>See <a href="https://github.com/ibis-project/ibis/issues/4503">this issue</a> for
-more details.</p>
-</div>
+  more details.</p>
+</details>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Install ibis and dependencies for the DuckDB backend:</p>
+<p>Install <code>ibis</code> and dependencies for the DuckDB backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[duckdb]&#39;</span>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="err">&#39;</span>ibis-framework<span class="o">[</span>duckdb<span class="o">]</span><span class="sb">`</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-duckdb
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-duckdb
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-duckdb
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-duckdb
 </code></pre></div>
 </div>
 </div>
 </div>
 <h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
-<p>Create a client by passing in a path to a DuckDB database to <code>ibis.duckdb.connect</code>.</p>
-<!-- prettier-ignore-start -->
-<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.duckdb.Backend.do_connect"><code>ibis.backends.duckdb.Backend.do_connect</code></a>
-for connection parameter information.</p>
-<!-- prettier-ignore-end -->
-
+<h3 id="ibisduckdbconnect"><code>ibis.duckdb.connect</code><a class="headerlink" href="#ibisduckdbconnect" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>  <span class="c1"># (1)</span>
+</code></pre></div>
+<ol>
+<li>Use an ephemeral, in-memory database</li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;mydb.duckdb&quot;</span><span class="p">)</span>  <span class="c1"># (1)</span>
+</code></pre></div>
+<ol>
+<li>Connect to, or create, a local DuckDB file</li>
+</ol>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title"><code>ibis.duckdb.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.duckdb.Backend.do_connect"><code>ibis.backends.duckdb.Backend.do_connect</code></a>.</p>
@@ -2441,140 +2333,31 @@ possible configuration values.</p></td>
 
 </div><!-- prettier-ignore-end -->
 
-<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="ibisconnect-url-format"><code>ibis.connect</code> URL format<a class="headerlink" href="#ibisconnect-url-format" title="Anchor link to this section for reference">&para;</a></h3>
+<p>In addition to <code>ibis.duckdb.connect</code>, you can also connect to DuckDB by
+passing a properly formatted DuckDB connection URL to <code>ibis.connect</code></p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb:///path/to/local/file&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb://&quot;</span><span class="p">)</span> <span class="c1"># (1)</span>
+</code></pre></div>
+<ol>
+<li>ephemeral, in-memory database</li>
+</ol>
+<h2 id="file-support">File Support<a class="headerlink" href="#file-support" title="Anchor link to this section for reference">&para;</a></h2>
 <!-- prettier-ignore-start -->
 
 
-<div class="doc doc-object doc-class">
+<div class="doc doc-object doc-function">
 
 
 
-<h3 id="ibis.backends.duckdb.Backend" class="doc doc-heading">
-        <code>Backend</code>
+<h4 id="ibis.backends.duckdb.Backend.read_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-
-<a href="#ibis.backends.duckdb.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+<a href="#ibis.backends.duckdb.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.base.sql.alchemy.BaseAlchemyBackend" href="../../api/backends/sqlalchemy/#ibis.backends.base.sql.alchemy.BaseAlchemyBackend">BaseAlchemyBackend</a></code></p>
-
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<h4 id="ibis.backends.duckdb.Backend-functions">Functions<a href="#ibis.backends.duckdb.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.attach_sqlite" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">attach_sqlite</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">all_varchar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.attach_sqlite" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Attach a SQLite database to the current DuckDB session.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td><p>The path to the SQLite database.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>overwrite</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Allow overwriting any tables or views that already exist in your current
-session with the contents of the SQLite database.</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>all_varchar</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Set all SQLite columns to type <code>VARCHAR</code> to avoid type errors on ingestion.</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>None</code>
-          </td>
-          <td></td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb://&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">attach_sqlite</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.db&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
-<span class="go">[&#39;functional_alltypes&#39;, &#39;awards_players&#39;, &#39;batting&#39;, &#39;diamonds&#39;]</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.read_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
   
       <p>Register a CSV file as a table in the current database.</p>
 
@@ -2625,24 +2408,6 @@ See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv<
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
   </div>
 
 </div>
@@ -2651,166 +2416,13 @@ See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv<
 
 
 
-<h5 id="ibis.backends.duckdb.Backend.read_in_memory" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_in_memory</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.read_in_memory" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a Pandas DataFrame or pyarrow object as a table in the current database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>source</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.Table">Table</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
-          </td>
-          <td><p>The data source.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.read_json" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_json</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.read_json" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Read newline-delimited JSON into an ibis table.</p>
-<div class="admonition note">
-<p class="admonition-title">This feature requires duckdb&gt;=0.7.0</p>
-</div>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>source_list</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
-          </td>
-          <td><p>File or list of files</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Optional table name</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-          </td>
-          <td><p>Additional keyword arguments passed to DuckDB's <code>read_json_auto</code> function</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Table</code>
-          </td>
-          <td><p>An ibis table expression</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.read_parquet" class="doc doc-heading">
+<h4 id="ibis.backends.duckdb.Backend.read_parquet" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a href="#ibis.backends.duckdb.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+<a href="#ibis.backends.duckdb.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
-  <div class="doc doc-contents ">
+  <div class="doc doc-contents first">
   
       <p>Register a parquet file as a table in the current database.</p>
 
@@ -2861,20 +2473,66 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.duckdb.Backend.read_json" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_json</span><span class="p">(</span><span class="n">source_list</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_json" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Read newline-delimited JSON into an ibis table.</p>
+<div class="admonition note">
+<p class="admonition-title">This feature requires duckdb&gt;=0.7.0</p>
+</div>
+
+  <p><strong>Parameters:</strong></p>
   <table>
     <thead>
       <tr>
+        <th>Name</th>
         <th>Type</th>
         <th>Description</th>
+        <th>Default</th>
       </tr>
     </thead>
     <tbody>
         <tr>
+          <td><code>source_list</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>The just-registered table</p></td>
+          <td><p>File or list of files</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>Optional table name</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+          </td>
+          <td><p>Additional keyword arguments passed to DuckDB's <code>read_json_auto</code> function</p></td>
+          <td>
+                <code>{}</code>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2887,13 +2545,118 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
 
 
 
-<h5 id="ibis.backends.duckdb.Backend.read_postgres" class="doc doc-heading">
+<h4 id="ibis.backends.duckdb.Backend.read_in_memory" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_in_memory</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_in_memory" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Register a Pandas DataFrame or pyarrow object as a table in the current database.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>source</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.Table">Table</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
+          </td>
+          <td><p>The data source.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.duckdb.Backend.read_sqlite" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_sqlite</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_sqlite" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Register a table from a SQLite database into a DuckDB table.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td><p>The path to the SQLite database</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td><p>The table to read</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.duckdb.Backend.read_postgres" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">read_postgres</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;public&#39;</span><span class="p">)</span></code>
 
-<a href="#ibis.backends.duckdb.Backend.read_postgres" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+<a href="#ibis.backends.duckdb.Backend.read_postgres" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
-  <div class="doc doc-contents ">
+  <div class="doc doc-contents first">
   
       <p>Register a table from a postgres instance into a DuckDB table.</p>
 
@@ -2940,453 +2703,6 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.read_sqlite" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_sqlite</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.read_sqlite" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a table from a SQLite database into a DuckDB table.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td><p>The path to the SQLite database</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>The table to read</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb://&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">read_sqlite</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/ibis_testing.db&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;diamonds&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<span class="go">        carat      cut color clarity  depth  table  price     x     y     z</span>
-<span class="go">    0   0.23    Ideal     E     SI2   61.5   55.0    326  3.95  3.98  2.43</span>
-<span class="go">    1   0.21  Premium     E     SI1   59.8   61.0    326  3.89  3.84  2.31</span>
-<span class="go">    2   0.23     Good     E     VS1   56.9   65.0    327  4.05  4.07  2.31</span>
-<span class="go">    3   0.29  Premium     I     VS2   62.4   58.0    334  4.20  4.23  2.63</span>
-<span class="go">    4   0.31     Good     J     SI2   63.3   58.0    335  4.34  4.35  2.75</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.register" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.register" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a data source as a table in the current database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>source</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>The data source(s). May be a path to a file or directory of
-parquet/csv files, an iterable of parquet or CSV files, a pandas
-dataframe, a pyarrow table or dataset, or a postgres URI.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An optional name to use for the created table. This defaults to a
-sequentially generated name.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>Additional keyword arguments passed to DuckDB loading functions for
-CSV or parquet.  See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv</a> and
-<a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a> for more information.</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.to_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.to_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Write the results of executing the given expression to a CSV file.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The ibis expression to execute and persist to CSV.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td><p>The data source. A string or Path to the CSV file.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../../api/expressions/generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>header</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Whether to write the column names as the first line of the CSV file.</p></td>
-          <td>
-                <code>True</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>DuckDB CSV writer arguments. <a href="https://duckdb.org/docs/data/csv.html#parameters">https://duckdb.org/docs/data/csv.html#parameters</a></p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.to_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.to_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Write the results of executing the given expression to a parquet file.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The ibis expression to execute and persist to parquet.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td><p>The data source. A string or Path to the parquet file.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../../api/expressions/generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>DuckDB Parquet writer arguments. See
-<a href="https://duckdb.org/docs/data/parquet#writing-to-parquet-files">https://duckdb.org/docs/data/parquet#writing-to-parquet-files</a> for
-details</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <p>Write out an expression to a single parquet file.</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> <span class="s2">&quot;penguins.parquet&quot;</span><span class="p">)</span>
-</code></pre></div>
-    <p>Write out an expression to a hive-partitioned parquet file.</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> <span class="s2">&quot;penguins_hive_dir&quot;</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># partition on multiple columns</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> <span class="s2">&quot;penguins_hive_dir&quot;</span><span class="p">,</span> <span class="n">partition_by</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">))</span>
-</code></pre></div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.duckdb.Backend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Return a stream of record batches.</p>
-<p>The returned <code>RecordBatchReader</code> contains a cursor with an unbounded lifetime.</p>
-<p>For analytics use cases this is usually nothing to fret about. In some cases you
-may need to explicit release the cursor.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../../api/expressions/#ibis.expr.types.core.Expr">Expr</a></code>
-          </td>
-          <td><p>Ibis expression</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../../api/expressions/generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td><p>Bound parameters</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>limit</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>Limit the result to this number of rows</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>chunk_size</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
-          </td>
-          <td><div class="admonition warning">
-<p class="admonition-title">DuckDB returns 1024 size batches regardless of what argument is passed.</p>
-</div></td>
-          <td>
-                <code>1000000</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
   </div>
 
 </div><!-- prettier-ignore-end -->
@@ -3396,7 +2712,7 @@ may need to explicit release the cursor.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2023</span>
       
     
   </small>
@@ -3493,7 +2809,7 @@ may need to explicit release the cursor.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

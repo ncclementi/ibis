@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2143,12 +2145,12 @@ library. Let's take a quick peek at how we might use it for query execution.</p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Anchor link to this section for reference">&para;</a></h2>
 <p>First, we can create a <code>conda</code> environment using the latest versions of
 <code>duckdb</code>, <code>ibis</code>, and <code>ibis_substrait</code>.</p>
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis_substrait_duckdb<span class="w"> </span>ibis-framework<span class="o">==</span><span class="m">4</span>.1<span class="w"> </span>ibis-substrait<span class="o">==</span><span class="m">2</span>.19<span class="w"> </span>ipython<span class="w"> </span>python-duckdb<span class="w"> </span><span class="nv">parsy</span><span class="o">==</span><span class="m">2</span>
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis_substrait_duckdb<span class="w"> </span>ibis-framework<span class="o">==</span><span class="m">4</span>.1<span class="w"> </span>ibis-substrait<span class="o">==</span><span class="m">2</span>.19<span class="w"> </span>ipython<span class="w"> </span>python-duckdb<span class="w"> </span><span class="nv">parsy</span><span class="o">==</span><span class="m">2</span>
 </code></pre></div>
 <p>Next, we'll need to choose a dataset. For this example, we'll use data from IMDB, available through their <a href="https://datasets.imdbws.com/">dataset portal</a>.</p>
 <p>For convenience, I used <a href="https://github.com/saulpw/readysetdata">Ready, Set, Data!</a> to grab the data in <code>parquet</code> format and then insert
 it into a DuckDB database.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">duckdb</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">duckdb</span>
 <span class="n">con</span> <span class="o">=</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;/home/gil/imdb.ddb&quot;</span><span class="p">)</span>
 <span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
     <span class="s2">&quot;CREATE TABLE ratings AS SELECT * FROM &#39;/home/gil/data/imdb/imdb_ratings.parquet&#39;&quot;</span>
@@ -2166,7 +2168,7 @@ interact with. We might get these schema from a metadata store, or possibly a
 coworker, or a friendly mouse.</p>
 <p>However we arrive at it, if we know the column names and the datatypes, we can
 build up a query in Ibis, so let's do that.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 
 <span class="n">ratings</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
@@ -2197,7 +2199,7 @@ build up a query in Ibis, so let's do that.</p>
 We'll try to recreate the top-ten movies on the IMDB leaderboard. For that,
 we'll need movie titles and their respective ratings.</p>
 <p>We know that the data we have for <code>ratings</code> looks something like the following:</p>
-<div class="highlight"><pre><span></span><code><span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━┓</span>
+<div class="language-python highlight"><pre><span></span><code><span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">tconst</span>    <span class="err">┃</span> <span class="n">averageRating</span> <span class="err">┃</span> <span class="n">numVotes</span> <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━┩</span>
 <span class="err">│</span> <span class="n">string</span>    <span class="err">│</span> <span class="n">string</span>        <span class="err">│</span> <span class="n">string</span>   <span class="err">│</span>
@@ -2212,14 +2214,14 @@ we'll need movie titles and their respective ratings.</p>
 <p>Based on the column names alone, <code>averageRating</code> is almost certainly supposed to
 be a <code>float</code>, and <code>numVotes</code> should be an <code>integer</code>. We can cast those so we
 can make useful comparisons between ratings and vote numbers.</p>
-<div class="highlight"><pre><span></span><code><span class="n">ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
     <span class="n">ratings</span><span class="o">.</span><span class="n">tconst</span><span class="p">,</span>
     <span class="n">avg_rating</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">averageRating</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">),</span>
     <span class="n">num_votes</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">numVotes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">),</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>The first few rows of <code>basics</code> looks like this:</p>
-<div class="highlight"><pre><span></span><code><span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━┳━━━┓</span>
+<div class="language-python highlight"><pre><span></span><code><span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━┳━━━┓</span>
 <span class="err">┃</span> <span class="n">tconst</span>    <span class="err">┃</span> <span class="n">titleType</span> <span class="err">┃</span> <span class="n">primaryTitle</span>           <span class="err">┃</span> <span class="n">originalTitle</span>          <span class="err">┃</span> <span class="n">isAdult</span> <span class="err">┃</span> <span class="n">startYear</span> <span class="err">┃</span> <span class="err">…</span> <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━╇━━━┩</span>
 <span class="err">│</span> <span class="n">string</span>    <span class="err">│</span> <span class="n">string</span>    <span class="err">│</span> <span class="n">string</span>                 <span class="err">│</span> <span class="n">string</span>                 <span class="err">│</span> <span class="n">string</span>  <span class="err">│</span> <span class="n">string</span>    <span class="err">│</span> <span class="err">…</span> <span class="err">│</span>
@@ -2235,7 +2237,7 @@ can make useful comparisons between ratings and vote numbers.</p>
 films. We can filter out any IMDB titles that aren't movies, then select out the
 columns <code>tconst</code> and <code>primaryTitle</code>. And we'll include <code>startYear</code> just in case
 it's interesting.</p>
-<div class="highlight"><pre><span></span><code><span class="n">basics</span> <span class="o">=</span> <span class="n">basics</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="n">basics</span><span class="o">.</span><span class="n">titleType</span> <span class="o">==</span> <span class="s2">&quot;movie&quot;</span><span class="p">,</span> <span class="n">basics</span><span class="o">.</span><span class="n">isAdult</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">basics</span> <span class="o">=</span> <span class="n">basics</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="n">basics</span><span class="o">.</span><span class="n">titleType</span> <span class="o">==</span> <span class="s2">&quot;movie&quot;</span><span class="p">,</span> <span class="n">basics</span><span class="o">.</span><span class="n">isAdult</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
     <span class="s2">&quot;tconst&quot;</span><span class="p">,</span>
     <span class="s2">&quot;primaryTitle&quot;</span><span class="p">,</span>
     <span class="s2">&quot;startYear&quot;</span><span class="p">,</span>
@@ -2245,7 +2247,7 @@ it's interesting.</p>
 We want to join the two tables <code>ratings</code> and <code>basics</code>. Then we'll order them by
 <code>avg_rating</code> and <code>num_votes</code>, and include an additional filter that the movie
 has to have at least 200,000 votes.</p>
-<div class="highlight"><pre><span></span><code><span class="n">topfilms</span> <span class="o">=</span> <span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">topfilms</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">ratings</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basics</span><span class="p">,</span> <span class="s2">&quot;tconst&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="n">_</span><span class="o">.</span><span class="n">avg_rating</span><span class="o">.</span><span class="n">desc</span><span class="p">(),</span> <span class="n">_</span><span class="o">.</span><span class="n">num_votes</span><span class="o">.</span><span class="n">desc</span><span class="p">()])</span>
     <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">num_votes</span> <span class="o">&gt;</span> <span class="mi">200_000</span><span class="p">)</span>
@@ -2257,7 +2259,7 @@ the scene.</p>
 <h2 id="substrait-serialization">Substrait Serialization<a class="headerlink" href="#substrait-serialization" title="Anchor link to this section for reference">&para;</a></h2>
 <p>We're going to import <code>ibis_substrait</code> and compile the <code>topfilms</code> table
 expression into a Substrait plan.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ibis_substrait.compiler.core</span> <span class="kn">import</span> <span class="n">SubstraitCompiler</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ibis_substrait.compiler.core</span> <span class="kn">import</span> <span class="n">SubstraitCompiler</span>
 
 <span class="n">compiler</span> <span class="o">=</span> <span class="n">SubstraitCompiler</span><span class="p">()</span>
 
@@ -2273,7 +2275,7 @@ session, or on another machine, entirely. That's one of the notions of
 Substrait: plans can be serialized and shuttled around between various systems.
 It's similar to Ibis in that it allows a separation of plan creation from plan
 execution.</p>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;topfilms.proto&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;topfilms.proto&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="substrait-plan-execution">Substrait Plan Execution<a class="headerlink" href="#substrait-plan-execution" title="Anchor link to this section for reference">&para;</a></h2>
@@ -2281,7 +2283,7 @@ execution.</p>
 execute it using DuckDB directly. One important point to note here is that our
 plan refers to two tables, named <code>basics</code> and <code>ratings</code>. If those tables don't
 exist in our execution engine, then this isn't going to work.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">duckdb</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">duckdb</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;/home/gil/imdb.ddb&quot;</span><span class="p">)</span>
 
@@ -2305,7 +2307,7 @@ exist in our execution engine, then this isn't going to work.</p>
 
 <p>Luckily, they do exist! Let's install and load the DuckDB Substrait extension,
 then execute the Substrait plan, and finally grab our results.</p>
-<div class="highlight"><pre><span></span><code><span class="n">con</span><span class="o">.</span><span class="n">install_extension</span><span class="p">(</span><span class="s2">&quot;substrait&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span><span class="o">.</span><span class="n">install_extension</span><span class="p">(</span><span class="s2">&quot;substrait&quot;</span><span class="p">)</span>
 <span class="n">con</span><span class="o">.</span><span class="n">load_extension</span><span class="p">(</span><span class="s2">&quot;substrait&quot;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;topfilms.proto&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -2563,7 +2565,7 @@ of this new standard.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

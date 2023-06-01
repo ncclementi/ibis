@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2072,10 +2074,10 @@ You can now use this function to connect to an appropriate backend using a conne
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Initialize a DuckDB instance using <code>'duckdb://:memory:'</code>
-<div class="highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;duckdb://:memory:&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;duckdb://:memory:&#39;</span><span class="p">)</span>
 </code></pre></div>
 And begin registering your tables:
-<div class="highlight"><pre><span></span><code><span class="n">conn</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;csv://farm_data/dates.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;dates&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">conn</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;csv://farm_data/dates.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;dates&#39;</span><span class="p">)</span>
 <span class="n">conn</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;csv://farm_data/farmer_groups.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;farmer_groups&#39;</span><span class="p">)</span>
 <span class="n">conn</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;csv://farm_data/crops.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;crops&#39;</span><span class="p">)</span>
 <span class="n">conn</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;csv://farm_data/farms.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;farms&#39;</span><span class="p">)</span>
@@ -2085,7 +2087,7 @@ And begin registering your tables:
 <span class="n">conn</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;csv://farm_data/fields.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">)</span>
 </code></pre></div>
 You can also do this programmatically:
-<div class="highlight"><pre><span></span><code><span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;farm_data/*.csv&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;farm_data/*.csv&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
     <span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;csv://&#39;</span> <span class="o">+</span> <span class="n">file</span>
@@ -2096,10 +2098,10 @@ This method isn’t limited to <code>csv://</code>.  It works with <code>parquet
 Give it a try!</p>
 </div>
 <div class="tabbed-block">
-<p><div class="highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;postgres://&lt;username&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&#39;</span><span class="p">)</span>
+<p><div class="language-python highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;postgres://&lt;username&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&#39;</span><span class="p">)</span>
 </code></pre></div>
 Or, using a <a href="https://www.postgresql.org/docs/9.3/libpq-pgpass.html">.pgpass file</a>:
-<div class="highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;postgres://&lt;username&gt;@&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;postgres://&lt;username&gt;@&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&#39;</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 </div>
@@ -2113,12 +2115,12 @@ When data is organized in layers, as with arrays, it can sometimes be difficult 
 Ibis 3.1 introduces the <code>unnest</code> function as a way to flatten arrays of data.</p>
 <p>Unnest takes a column containing an array of values and separates the individual values into rows as shown:</p>
 <p>Before Unnest:</p>
-<div class="highlight"><pre><span></span><code>    | col    |
+<div class="language-text highlight"><pre><span></span><code>    | col    |
     | ------ |
     | [1, 2] |
 </code></pre></div>
 <p>After Unnest:</p>
-<div class="highlight"><pre><span></span><code>    | col |
+<div class="language-text highlight"><pre><span></span><code>    | col |
     | --- |
     |  1  |
     |  2  |
@@ -2129,7 +2131,7 @@ Ibis 3.1 introduces the <code>unnest</code> function as a way to flatten arrays 
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">DuckDB</label><label for="__tabbed_2_2">Postgres</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Parquet save path</span>
@@ -2161,7 +2163,7 @@ Ibis 3.1 introduces the <code>unnest</code> function as a way to flatten arrays 
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Postgres connection string for user &#39;ibistutorials&#39; with a valid .pgpass file in ~/</span>
@@ -2220,7 +2222,7 @@ Ibis 3.1 introduces the <code>unnest</code> function as a way to flatten arrays 
 This is useful for chaining expressions to one another and helps reduce total line characters and appearances of lambdas.</p>
 <p>For example, let’s use <code>array_data</code> from above.
 We will unnest <code>array_value</code>, find the weighted average, and then sum in one expression:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 
 <span class="p">(</span>
     <span class="n">array_data</span>
@@ -2355,7 +2357,7 @@ Contributions are welcome and encouraged–drop into the discussions, raise an i
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

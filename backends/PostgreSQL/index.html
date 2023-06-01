@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#postgresql" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -845,8 +847,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           PostgreSQL
@@ -862,8 +862,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -888,8 +886,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibispostgresconnect" class="md-nav__link">
+    ibis.postgres.connect
   </a>
   
 </li>
@@ -914,49 +912,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#ibis.backends.postgres.Backend" class="md-nav__link">
-    Backend
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
   </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.postgres.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.postgres.Backend.udf" class="md-nav__link">
-    udf()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2053,8 +2012,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2078,8 +2035,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibispostgresconnect" class="md-nav__link">
+    ibis.postgres.connect
   </a>
   
 </li>
@@ -2104,49 +2061,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#ibis.backends.postgres.Backend" class="md-nav__link">
-    Backend
+  <a href="#ibisconnect-url-format" class="md-nav__link">
+    ibis.connect URL format
   </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.postgres.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.postgres.Backend.udf" class="md-nav__link">
-    udf()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2173,33 +2091,37 @@
                   
 
 
-<h1 id="postgresql"><a href="https://www.postgresql.org/">PostgreSQL</a><a class="headerlink" href="#postgresql" title="Anchor link to this section for reference">&para;</a></h1>
+  <h1>PostgreSQL</h1>
+
+<p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-PyArrow%20|%20Parquet%20|%20CSV%20|%20Pandas-orange?style=flat-square" /> </p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Install ibis and dependencies for the PostgreSQL backend:</p>
+<p>Install <code>ibis</code> and dependencies for the Postgres backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[postgres]&#39;</span>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="err">&#39;</span>ibis-framework<span class="o">[</span>postgres<span class="o">]</span><span class="sb">`</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-postgres
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-postgres
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-postgres
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-postgres
 </code></pre></div>
 </div>
 </div>
 </div>
 <h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
-<p>Create a client by passing in a SQLAlchemy-style URI to <code>ibis.postgres.connect</code>.</p>
-<!-- prettier-ignore-start -->
-<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.postgres.Backend.do_connect"><code>ibis.backends.postgres.Backend.do_connect</code></a>
-for connection parameter information.</p>
-<!-- prettier-ignore-end -->
-
+<h3 id="ibispostgresconnect"><code>ibis.postgres.connect</code><a class="headerlink" href="#ibispostgresconnect" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;username&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="p">,</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;hostname&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">5432</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;database&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title"><code>ibis.postgres.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.postgres.Backend.do_connect"><code>ibis.backends.postgres.Backend.do_connect</code></a>.</p>
@@ -2319,210 +2241,22 @@ for connection parameter information.</p>
     </tbody>
   </table>
 
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">getpass</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">host</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;IBIS_TEST_POSTGRES_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;localhost&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;IBIS_TEST_POSTGRES_USER&#39;</span><span class="p">,</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;IBIS_TEST_POSTGRES_PASSWORD&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">database</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;IBIS_TEST_POSTGRES_DATABASE&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                          <span class="s1">&#39;ibis_testing&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">password</span><span class="o">=</span><span class="n">password</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
-<span class="go">[...]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
-<span class="go">PostgreSQLTable[table]</span>
-<span class="go">  name: functional_alltypes</span>
-<span class="go">  schema:</span>
-<span class="go">    id : int32</span>
-<span class="go">    bool_col : boolean</span>
-<span class="go">    tinyint_col : int16</span>
-<span class="go">    smallint_col : int16</span>
-<span class="go">    int_col : int32</span>
-<span class="go">    bigint_col : int64</span>
-<span class="go">    float_col : float32</span>
-<span class="go">    double_col : float64</span>
-<span class="go">    date_string_col : string</span>
-<span class="go">    string_col : string</span>
-<span class="go">    timestamp_col : timestamp</span>
-<span class="go">    year : int32</span>
-<span class="go">    month : int32</span>
+  </div>
+
+</div><!-- prettier-ignore-end -->
+
+<h3 id="ibisconnect-url-format"><code>ibis.connect</code> URL format<a class="headerlink" href="#ibisconnect-url-format" title="Anchor link to this section for reference">&para;</a></h3>
+<p>In addition to <code>ibis.postgres.connect</code>, you can also connect to Postgres by
+passing a properly formatted Postgres connection URL to <code>ibis.connect</code></p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;postgres://</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">database</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-  </div>
-
-</div><!-- prettier-ignore-end -->
-
-<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
-<!-- prettier-ignore-start -->
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="ibis.backends.postgres.Backend" class="doc doc-heading">
-        <code>Backend</code>
-
-
-<a href="#ibis.backends.postgres.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-
-  <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.base.sql.alchemy.BaseAlchemyBackend" href="../../api/backends/sqlalchemy/#ibis.backends.base.sql.alchemy.BaseAlchemyBackend">BaseAlchemyBackend</a></code></p>
-
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<h4 id="ibis.backends.postgres.Backend-functions">Functions<a href="#ibis.backends.postgres.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.postgres.Backend.udf" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">udf</span><span class="p">(</span><span class="n">pyfunc</span><span class="p">,</span> <span class="n">in_types</span><span class="p">,</span> <span class="n">out_type</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;plpythonu&#39;</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.postgres.Backend.udf" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Decorator that defines a PL/Python UDF in-database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>pyfunc</code></td>
-          <td>
-          </td>
-          <td><p>Python function</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>in_types</code></td>
-          <td>
-          </td>
-          <td><p>Input types</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>out_type</code></td>
-          <td>
-          </td>
-          <td><p>Output type</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>schema</code></td>
-          <td>
-          </td>
-          <td><p>The postgres schema in which to define the UDF</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>replace</code></td>
-          <td>
-          </td>
-          <td><p>replace UDF in database if already exists</p></td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>name</code></td>
-          <td>
-          </td>
-          <td><p>name for the UDF to be defined in database</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>language</code></td>
-          <td>
-          </td>
-          <td><p>Language extension to use for PL/Python</p></td>
-          <td>
-                <code>&#39;plpythonu&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Callable</code>
-          </td>
-          <td><p>A callable ibis expression</p></td>
-        </tr>
-    </tbody>
-  </table>
-      <p>Function that takes in Column arguments and returns an instance
-inheriting from PostgresUDFNode</p>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div><!-- prettier-ignore-end -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2023</span>
       
     
   </small>
@@ -2619,7 +2353,7 @@ inheriting from PostgresUDFNode</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

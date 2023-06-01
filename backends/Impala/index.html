@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -4344,15 +4346,15 @@ Impala shell.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[impala]&#39;</span>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[impala]&#39;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
 </code></pre></div>
 </div>
 </div>
@@ -5396,8 +5398,8 @@ for parameters.</p>
 <code class="highlight language-python"><span class="n">describe_formatted</span> <span class="o">=</span> <span class="n">metadata</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
 <a href="#ibis.backends.impala.client.ImpalaTable.describe_formatted" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -6512,14 +6514,14 @@ Impala takes ownership of the Parquet file.</p></td>
 <h2 id="the-impala-client-object">The Impala client object<a class="headerlink" href="#the-impala-client-object" title="Anchor link to this section for reference">&para;</a></h2>
 <p>To use Ibis with Impala, you first must connect to a cluster using the
 <code>ibis.impala.connect</code> function, optionally supplying an HDFS connection:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">hdfs</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">hdfs_connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">webhdfs_host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">webhdfs_port</span><span class="p">)</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">impala_host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">impala_port</span><span class="p">,</span> <span class="n">hdfs_client</span><span class="o">=</span><span class="n">hdfs</span><span class="p">)</span>
 </code></pre></div>
 <p>All examples here use the following block of code to connect to impala
 using docker:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">hdfs</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">hdfs_connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">50070</span><span class="p">)</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">hdfs_client</span><span class="o">=</span><span class="n">hdfs</span><span class="p">)</span>
@@ -6603,7 +6605,7 @@ table or database.</p>
 
 <p>The client's <code>table</code> method allows you to create an Ibis table
 expression referencing a physical Impala table:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p><code>ImpalaTable</code> is a Python subclass of the more general Ibis <code>Table</code>
 that has additional Impala-specific methods. So you can use it
@@ -6655,13 +6657,13 @@ you can use to examine its schema:</p>
 
 <p>While the client has a <code>drop_table</code> method you can use to drop tables,
 the table itself has a method <code>drop</code> that you can use:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="expression-execution">Expression execution<a class="headerlink" href="#expression-execution" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis expressions have an <code>execute</code> method with compiles and runs the
 expressions on Impala or whichever backend is being referenced.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fa</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">functional_alltypes</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fa</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">functional_alltypes</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">double_col</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 <span class="mf">331785.00000000006</span>
@@ -6824,7 +6826,7 @@ expression.</p></td>
 <h3 id="creating-tables-from-a-table-expression">Creating tables from a table expression<a class="headerlink" href="#creating-tables-from-a-table-expression" title="Anchor link to this section for reference">&para;</a></h3>
 <p>If you pass an Ibis expression to <code>create_table</code>, Ibis issues a
 <code>CREATE TABLE ... AS SELECT</code> (CTAS) statement:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;string_col&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;string_freqs&#39;</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">)</span>
 
@@ -6858,7 +6860,7 @@ translated to the appopriate Impala schema and data types.</p>
 in the future to include a more fine-grained schema declaration.</p>
 <p>You can use the <code>create_table</code> method either on a database or client
 object.</p>
-<div class="highlight"><pre><span></span><code><span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">)])</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;new_table&#39;</span>
@@ -6866,7 +6868,7 @@ object.</p>
 </code></pre></div>
 <p>By default, this stores the data files in the database default location.
 You can force a particular path with the <code>location</code> option.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getuser</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getuser</span>
 <span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">)])</span>
@@ -6876,7 +6878,7 @@ You can force a particular path with the <code>location</code> option.</p>
 </code></pre></div>
 <p>If the schema matches a known table schema, you can always use the
 <code>schema</code> method to get a schema object:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
 <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span> <span class="p">{</span>
   <span class="nb">id</span>               <span class="n">int32</span>
@@ -6897,7 +6899,7 @@ You can force a particular path with the <code>location</code> option.</p>
 <h3 id="creating-a-partitioned-table">Creating a partitioned table<a class="headerlink" href="#creating-a-partitioned-table" title="Anchor link to this section for reference">&para;</a></h3>
 <p>To create an empty partitioned table, include a list of columns to be
 used as the partition keys.</p>
-<div class="highlight"><pre><span></span><code><span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">)])</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;new_table&#39;</span>
@@ -7054,7 +7056,7 @@ use <code>alter_partition</code> to set them after the fact.</p>
 <p>To address a specific partition in any method that is partition
 specific, you can either use a dict with the partition key names and
 values, or pass a list of the partition values:</p>
-<div class="highlight"><pre><span></span><code><span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span>
                       <span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">)])</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;new_table&#39;</span>
@@ -7072,7 +7074,7 @@ values, or pass a list of the partition values:</p>
 <h2 id="inserting-data-into-tables">Inserting data into tables<a class="headerlink" href="#inserting-data-into-tables" title="Anchor link to this section for reference">&para;</a></h2>
 <p>If the schemas are compatible, you can insert into a table directly from
 an Ibis table expression:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">functional_alltypes</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">functional_alltypes</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;insert_test&#39;</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">target</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;insert_test&#39;</span><span class="p">)</span>
 
@@ -7098,7 +7100,7 @@ an Ibis table expression:</p>
 </code></pre></div>
 <p>If the table is partitioned, you must indicate the partition you are
 inserting into:</p>
-<div class="highlight"><pre><span></span><code><span class="n">part</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2007</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">part</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2007</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 <span class="n">table</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="n">part</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="managing-table-metadata">Managing table metadata<a class="headerlink" href="#managing-table-metadata" title="Anchor link to this section for reference">&para;</a></h2>
@@ -7128,7 +7130,7 @@ metadata.</p>
 
 </div><!-- prettier-ignore-end -->
 
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;ibis_testing.functional_alltypes&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;ibis_testing.functional_alltypes&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">metadata</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">meta</span>
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">ibis</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">TableMetadata</span><span class="s1">&#39;&gt;</span>
@@ -7238,7 +7240,7 @@ data files backing a table:</p>
 
 </div><!-- prettier-ignore-end -->
 
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;tpcds_parquet.store_sales&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;tpcds_parquet.store_sales&#39;</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ss</span><span class="o">.</span><span class="n">files</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
                                                 <span class="n">path</span>      <span class="n">size</span>  \
@@ -7449,7 +7451,7 @@ change partition-specific metadata use <code>alter_partition</code>.</p>
 
 <p>For example, if you wanted to \"point\" an existing table at a directory
 of CSV files, you could run the following command:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getuser</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getuser</span>
 
 <span class="n">csv_props</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;serialization.format&#39;</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span>
@@ -7461,7 +7463,7 @@ of CSV files, you could run the following command:</p>
 </code></pre></div>
 <p>If the table is partitioned, you can modify only the properties of a
 particular partition:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">alter_partition</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">alter_partition</span><span class="p">(</span>
     <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2007</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
     <span class="n">location</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
     <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">,</span>
@@ -7535,11 +7537,11 @@ particular partition:</p>
 computes table, column, and partition-level statistics to assist with
 query planning and optimization. It is standard practice to invoke this
 after creating a table or loading new data:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">compute_stats</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">compute_stats</span><span class="p">()</span>
 </code></pre></div>
 <p>If you are using a recent version of Impala, you can also access the
 <code>COMPUTE INCREMENTAL STATS</code> DDL command:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">compute_stats</span><span class="p">(</span><span class="n">incremental</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">compute_stats</span><span class="p">(</span><span class="n">incremental</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="seeing-table-and-column-statistics">Seeing table and column statistics<a class="headerlink" href="#seeing-table-and-column-statistics" title="Anchor link to this section for reference">&para;</a></h3>
 <!-- prettier-ignore-start -->
@@ -7661,7 +7663,7 @@ after creating a table or loading new data:</p>
 <p>The <code>compute_stats</code> and <code>stats</code> functions return the results of
 <code>SHOW COLUMN STATS</code> and <code>SHOW TABLE STATS</code>, respectively, and their
 output will depend, of course, on the last <code>COMPUTE STATS</code> call.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;tpcds_parquet.store_sales&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;tpcds_parquet.store_sales&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ss</span><span class="o">.</span><span class="n">compute_stats</span><span class="p">(</span><span class="n">incremental</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">stats</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">stats</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
@@ -7888,7 +7890,7 @@ methods:</p>
 <p>You can invalidate the cached metadata for a single table or for all
 tables using <code>invalidate_metadata</code>, and similarly invoke
 <code>REFRESH db_name.table_name</code> using the <code>refresh</code> method.</p>
-<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="o">.</span><span class="n">invalidate_metadata</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">client</span><span class="o">.</span><span class="n">invalidate_metadata</span><span class="p">()</span>
 
 <span class="n">table</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">table_name</span><span class="p">)</span>
 <span class="n">table</span><span class="o">.</span><span class="n">invalidate_metadata</span><span class="p">()</span>
@@ -8052,12 +8054,12 @@ partition</p></td>
 <p>To use these methods, pass the path of a single file or a directory of
 files you want to load. Afterward, you may want to update the table
 statistics (see Impala documentation):</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="n">table</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
 </code></pre></div>
 <p>Like the other methods with support for partitioned tables, you can load
 into a particular partition with the <code>partition</code> keyword argument:</p>
-<div class="highlight"><pre><span></span><code><span class="n">part</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">part</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">table</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="n">part</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="parquet-and-other-session-options">Parquet and other session options<a class="headerlink" href="#parquet-and-other-session-options" title="Anchor link to this section for reference">&para;</a></h2>
@@ -8197,7 +8199,7 @@ codegen, pass False.</p></td>
 </div><!-- prettier-ignore-end -->
 
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
 <span class="p">{</span><span class="s1">&#39;ABORT_ON_ERROR&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
  <span class="s1">&#39;APPX_COUNT_DISTINCT&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
  <span class="s1">&#39;BUFFER_POOL_LIMIT&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -8247,7 +8249,7 @@ codegen, pass False.</p></td>
  <span class="s1">&#39;SYNC_DDL&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">}</span>
 </code></pre></div>
 <p>To enable Snappy compression for Parquet files, you could do either of:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;COMPRESSION_CODEC&#39;</span><span class="p">:</span> <span class="s1">&#39;snappy&#39;</span><span class="p">})</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;COMPRESSION_CODEC&#39;</span><span class="p">:</span> <span class="s1">&#39;snappy&#39;</span><span class="p">})</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">set_compression_codec</span><span class="p">(</span><span class="s1">&#39;snappy&#39;</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">get_options</span><span class="p">()[</span><span class="s1">&#39;COMPRESSION_CODEC&#39;</span><span class="p">]</span>
@@ -8266,7 +8268,7 @@ a major part of the Ibis roadmap).</p>
   CSV as the ingest route.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]})</span>
 
@@ -8294,7 +8296,7 @@ a major part of the Ibis roadmap).</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]})</span>
 
@@ -8323,7 +8325,7 @@ a major part of the Ibis roadmap).</p>
 <h2 id="uploading-downloading-data-from-hdfs">Uploading / downloading data from HDFS<a class="headerlink" href="#uploading-downloading-data-from-hdfs" title="Anchor link to this section for reference">&para;</a></h2>
 <p>If you've set up an HDFS connection, you can use the Ibis HDFS interface
 to look through your data and read and write files to and from HDFS:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">hdfs</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">hdfs</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;README.md&#39;</span><span class="p">,</span>
  <span class="s1">&#39;avro&#39;</span><span class="p">,</span>
@@ -8339,7 +8341,7 @@ to look through your data and read and write files to and from HDFS:</p>
  <span class="s1">&#39;struct_table.avro&#39;</span><span class="p">,</span>
  <span class="s1">&#39;udf&#39;</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/parquet&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/parquet&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">,</span>
  <span class="s1">&#39;tpch_customer&#39;</span><span class="p">,</span>
  <span class="s1">&#39;tpch_lineitem&#39;</span><span class="p">,</span>
@@ -8353,33 +8355,33 @@ to look through your data and read and write files to and from HDFS:</p>
 <p>Suppose we wanted to download
 <code>/__ibis/ibis-testing-data/parquet/functional_alltypes</code>, which is a
 directory. We need only do:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>parquet_dir/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>parquet_dir/
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/parquet/functional_alltypes&#39;</span><span class="p">,</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/parquet/functional_alltypes&#39;</span><span class="p">,</span>
 <span class="o">...</span>          <span class="s1">&#39;parquet_dir&#39;</span><span class="p">,</span>
 <span class="o">...</span>           <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="s1">&#39;/ibis/docs/source/tutorial/parquet_dir&#39;</span>
 </code></pre></div>
 <p>Now we have that directory locally:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>parquet_dir/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>parquet_dir/
 9a41de519352ab07-4e76bc4d9fb5a789_1624886651_data.0.parq
 9a41de519352ab07-4e76bc4d9fb5a78a_778826485_data.0.parq
 9a41de519352ab07-4e76bc4d9fb5a78b_1277612014_data.0.parq
 </code></pre></div>
 <p>Files and directories can be written to HDFS just as easily using <code>put</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/__ibis/dir-write-example&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/__ibis/dir-write-example&#39;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;parquet_dir&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/dir-write-example&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/dir-write-example&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;9a41de519352ab07-4e76bc4d9fb5a789_1624886651_data.0.parq&#39;</span><span class="p">,</span>
  <span class="s1">&#39;9a41de519352ab07-4e76bc4d9fb5a78a_778826485_data.0.parq&#39;</span><span class="p">,</span>
  <span class="s1">&#39;9a41de519352ab07-4e76bc4d9fb5a78b_1277612014_data.0.parq&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>Delete files and directories with <code>rm</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;/__ibis/dir-write-example&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;/__ibis/dir-write-example&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>parquet_dir/
+<div class="language-bash highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>parquet_dir/
 </code></pre></div>
 <h2 id="queries-on-parquet-avro-and-delimited-files-in-hdfs">Queries on Parquet, Avro, and Delimited files in HDFS<a class="headerlink" href="#queries-on-parquet-avro-and-delimited-files-in-hdfs" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis can easily create temporary or persistent Impala tables that
@@ -8391,7 +8393,7 @@ reference data in the following formats:</p>
 </ul>
 <p>Parquet is the easiest because the schema can be read from the data
 files:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/__ibis/ibis-testing-data/parquet/tpch_lineitem&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/__ibis/ibis-testing-data/parquet/tpch_lineitem&#39;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">lineitem</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">parquet_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">lineitem</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
    <span class="n">l_orderkey</span>  <span class="n">l_partkey</span>  <span class="n">l_suppkey</span>  <span class="n">l_linenumber</span> <span class="n">l_quantity</span> <span class="n">l_extendedprice</span>  \
@@ -8410,31 +8412,31 @@ files:</p>
 <span class="mi">0</span>             <span class="n">egular</span> <span class="n">courts</span> <span class="n">above</span> <span class="n">the</span>
 <span class="mi">1</span>  <span class="n">ly</span> <span class="n">final</span> <span class="n">dependencies</span><span class="p">:</span> <span class="n">slyly</span> <span class="n">bold</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lineitem</span><span class="o">.</span><span class="n">l_extendedprice</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lineitem</span><span class="o">.</span><span class="n">l_extendedprice</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;229577310901.20&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>If you want to query a Parquet file and also create a table in Impala
 that remains after your session, you can pass more information to
 <code>parquet_file</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">parquet_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_parquet_table&#39;</span><span class="p">,</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">parquet_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_parquet_table&#39;</span><span class="p">,</span>
 <span class="o">...</span>                          <span class="n">database</span><span class="o">=</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">,</span>
 <span class="o">...</span>                          <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">table</span><span class="o">.</span><span class="n">l_extendedprice</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;229577310901.20&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;my_parquet_table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">l_extendedprice</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;my_parquet_table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">l_extendedprice</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;229577310901.20&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">drop_table</span><span class="p">(</span><span class="s1">&#39;my_parquet_table&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">drop_table</span><span class="p">(</span><span class="s1">&#39;my_parquet_table&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>To query delimited files, you need to write down an Ibis schema. At some
 point we'd like to build some helper tools that will infer the schema
 for you, all in good time.</p>
 <p>There's some CSV files in the test folder, so let's use those:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/csv&#39;</span><span class="p">,</span> <span class="s1">&#39;csv-files&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/csv&#39;</span><span class="p">,</span> <span class="s1">&#39;csv-files&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="s1">&#39;/ibis/docs/source/tutorial/csv-files&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>csv-files/0.csv
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>csv-files/0.csv
 63IEbRheTh,0.679388707915,6
 mG4hlqnjeG,2.80710565922,15
 JTPdX9SZH5,-0.155126406372,55
@@ -8446,10 +8448,10 @@ znsDuKOB1n,-0.566029637098,47
 4SRP9jlo1M,0.331460412318,88
 KsfjPyDf5e,-0.578930506363,70
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>csv-files/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>csv-files/
 </code></pre></div>
 <p>The schema here is pretty simple (see <code>ibis.schema</code> for more):</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
 <span class="o">...</span>                       <span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">),</span>
 <span class="o">...</span>                       <span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">)])</span>
 
@@ -8468,7 +8470,7 @@ KsfjPyDf5e,-0.578930506363,70
 <span class="mi">8</span>  <span class="mi">4</span><span class="n">SRP9jlo1M</span>  <span class="mf">0.331460</span>   <span class="mi">88</span>
 <span class="mi">9</span>  <span class="n">KsfjPyDf5e</span> <span class="o">-</span><span class="mf">0.578931</span>   <span class="mi">70</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
    <span class="n">count</span>  <span class="n">nulls</span>       <span class="nb">min</span>       <span class="nb">max</span>       <span class="nb">sum</span>    <span class="n">mean</span>  <span class="n">approx_nunique</span>
 <span class="mi">0</span>    <span class="mi">100</span>      <span class="mi">0</span> <span class="o">-</span><span class="mf">1.401908</span>  <span class="mf">2.807106</span>  <span class="mf">8.479978</span>  <span class="mf">0.0848</span>              <span class="mi">10</span>
 </code></pre></div>
@@ -8477,7 +8479,7 @@ directory must be passed (we'll add support for S3 and other filesystems
 later) and the directory must contain files all having the same schema.</p>
 <p>If you have Avro data, you can query it too if you have the full avro
 schema:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">avro_schema</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">avro_schema</span> <span class="o">=</span> <span class="p">{</span>
 <span class="o">...</span>     <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
 <span class="o">...</span>         <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">],</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;R_REGIONKEY&quot;</span><span class="p">},</span>
 <span class="o">...</span>         <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">],</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;R_NAME&quot;</span><span class="p">},</span>
@@ -8507,10 +8509,10 @@ pleasant, please let us know.</p>
 <li>Creating and dropping databases</li>
 <li>Getting table schemas</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_databases</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s1">&#39;ibis*&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_databases</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s1">&#39;ibis*&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">,</span> <span class="s1">&#39;ibis_testing_tmp_db&#39;</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">,</span> <span class="n">like</span><span class="o">=</span><span class="s1">&#39;tpch*&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">,</span> <span class="n">like</span><span class="o">=</span><span class="s1">&#39;tpch*&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;tpch_customer&#39;</span><span class="p">,</span>
  <span class="s1">&#39;tpch_lineitem&#39;</span><span class="p">,</span>
  <span class="s1">&#39;tpch_nation&#39;</span><span class="p">,</span>
@@ -8521,7 +8523,7 @@ pleasant, please let us know.</p>
  <span class="s1">&#39;tpch_region_avro&#39;</span><span class="p">,</span>
  <span class="s1">&#39;tpch_supplier&#39;</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">get_schema</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">get_schema</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span>
 <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span> <span class="p">{</span>
   <span class="nb">id</span>               <span class="n">int32</span>
@@ -8541,22 +8543,22 @@ pleasant, please let us know.</p>
 </code></pre></div>
 <p>Databases can be created, too, and you can set the storage path in HDFS
 you want for the data files</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;ibis_testing2&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;ibis_testing2&#39;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">create_database</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/__ibis/my-test-database&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># you may or may not have to give the impala user write and execute permissions to &#39;/__ibis/my-test-database&#39;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="s1">&#39;/__ibis/my-test-database&#39;</span><span class="p">,</span> <span class="mo">0o777</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;example_table&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;example_table&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">),</span>
 <span class="o">...</span>                  <span class="n">database</span><span class="o">=</span><span class="n">db</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <p>Hopefully, there will be data files in the indicated spot in HDFS:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/my-test-database&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;/__ibis/my-test-database&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;example_table&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>To drop a database, including all tables in it, you can use
 <code>drop_database</code> with <code>force=True</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">drop_database</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">drop_database</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="faster-queries-on-small-data-in-impala">Faster queries on small data in Impala<a class="headerlink" href="#faster-queries-on-small-data-in-impala" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Since Impala internally uses LLVM to compile parts of queries (aka
@@ -8564,17 +8566,17 @@ you want for the data files</p>
 amount of overhead with running many kinds of queries, even on small
 datasets. You can disable LLVM code generation when using Ibis, which
 may significantly speed up queries on smaller datasets:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">disable_codegen</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;ibis_testing.functional_alltypes&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
 <span class="m">27</span>.7<span class="w"> </span>ms<span class="w"> </span>±<span class="w"> </span><span class="m">996</span><span class="w"> </span>µs<span class="w"> </span>per<span class="w"> </span>loop<span class="w"> </span><span class="o">(</span>mean<span class="w"> </span>±<span class="w"> </span>std.<span class="w"> </span>dev.<span class="w"> </span>of<span class="w"> </span><span class="m">7</span><span class="w"> </span>runs,<span class="w"> </span><span class="m">10</span><span class="w"> </span>loops<span class="w"> </span>each<span class="o">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Turn codegen back on</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Turn codegen back on</span>
 <span class="n">con</span><span class="o">.</span><span class="n">disable_codegen</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
 <span class="m">27</span><span class="w"> </span>ms<span class="w"> </span>±<span class="w"> </span><span class="m">1</span>.62<span class="w"> </span>ms<span class="w"> </span>per<span class="w"> </span>loop<span class="w"> </span><span class="o">(</span>mean<span class="w"> </span>±<span class="w"> </span>std.<span class="w"> </span>dev.<span class="w"> </span>of<span class="w"> </span><span class="m">7</span><span class="w"> </span>runs,<span class="w"> </span><span class="m">10</span><span class="w"> </span>loops<span class="w"> </span>each<span class="o">)</span>
 </code></pre></div>
 <p>It's important to remember that codegen is a fixed overhead and will
@@ -8588,7 +8590,7 @@ a C++ extension API.</p>
 <p>Let's take an example to illustrate how to make a C++ UDF available to
 Ibis. Here is a function that computes an approximate equality between
 floating point values:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;impala_udf/udf.h&quot;</span>
+<div class="language-c++ highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;impala_udf/udf.h&quot;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cctype&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
@@ -8604,7 +8606,7 @@ floating point values:</p>
 LLVM bitcode with clang (a <code>.ll</code> file). Skipping that step for now (will
 add some more detailed instructions here later, promise).</p>
 <p>To make this function callable, we use <code>ibis.impala.wrap_udf</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">library</span> <span class="o">=</span> <span class="s1">&#39;/ibis/udfs/udftest.ll&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">library</span> <span class="o">=</span> <span class="s1">&#39;/ibis/udfs/udftest.ll&#39;</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;double&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">]</span>
 <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;boolean&#39;</span>
 <span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;FuzzyEquals&#39;</span>
@@ -8618,14 +8620,14 @@ add some more detailed instructions here later, promise).</p>
 <p>In typical workflows, you will set up a UDF in Impala once then use it
 thenceforth. So the <em>first time</em> you do this, you need to create the UDF
 in Impala:</p>
-<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="o">.</span><span class="n">create_function</span><span class="p">(</span><span class="n">fuzzy_equals</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">udf_db</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">client</span><span class="o">.</span><span class="n">create_function</span><span class="p">(</span><span class="n">fuzzy_equals</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">udf_db</span><span class="p">)</span>
 </code></pre></div>
 <p>Now, we must register this function as a new Impala operation in Ibis.
 This must take place each time you load your Ibis session.</p>
-<div class="highlight"><pre><span></span><code><span class="n">func</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">fuzzy_equals</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">udf_db</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">func</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">fuzzy_equals</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">udf_db</span><span class="p">)</span>
 </code></pre></div>
 <p>The object <code>fuzzy_equals</code> is callable and works with Ibis expressions:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">db</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">db</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">functional_alltypes</span>
 
@@ -8652,7 +8654,7 @@ your Ibis session to plug in all your own functions.</p>
 <p>Ibis is compatible with Hadoop clusters that are secured with Kerberos (as well
 as SSL and LDAP). Note that to enable this support, you'll also need to install
 the <code>kerberos</code> package.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>kerberos
+<div class="language-sh highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>kerberos
 </code></pre></div>
 <p>Just like the Impala shell and ODBC/JDBC connectors, Ibis connects to Impala
 through the HiveServer2 interface (using the impyla client). Therefore, the
@@ -8784,7 +8786,7 @@ to see the default configuration values for every component of CDH.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

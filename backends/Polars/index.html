@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#polars" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -831,8 +833,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Polars
@@ -848,8 +848,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -874,8 +872,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibispolarsconnect" class="md-nav__link">
+    ibis.polars.connect
   </a>
   
 </li>
@@ -906,27 +904,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+  <a href="#file-support" class="md-nav__link">
+    File Support
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
+    <nav class="md-nav" aria-label="File Support">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -937,33 +919,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend.read_pandas" class="md-nav__link">
-    read_pandas()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.polars.Backend.read_parquet" class="md-nav__link">
     read_parquet()
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend.register" class="md-nav__link">
-    register()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2074,8 +2032,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2099,8 +2055,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API
+  <a href="#ibispolarsconnect" class="md-nav__link">
+    ibis.polars.connect
   </a>
   
 </li>
@@ -2131,27 +2087,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
-    Backend API
+  <a href="#file-support" class="md-nav__link">
+    File Support
   </a>
   
-    <nav class="md-nav" aria-label="Backend API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend" class="md-nav__link">
-    Backend
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend-functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
+    <nav class="md-nav" aria-label="File Support">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2162,33 +2102,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend.read_pandas" class="md-nav__link">
-    read_pandas()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.polars.Backend.read_parquet" class="md-nav__link">
     read_parquet()
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.polars.Backend.register" class="md-nav__link">
-    register()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2215,37 +2131,36 @@
                   
 
 
-<h1 id="polars"><a href="https://pola-rs.github.io/polars-book/user-guide/index.html">Polars</a><a class="headerlink" href="#polars" title="Anchor link to this section for reference">&para;</a></h1>
+  <h1>Polars</h1>
+
+<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20Parquet%20|%20Pandas-blue?style=flat-square" /> </p>
+<p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-PyArrow%20|%20Parquet%20|%20CSV%20|%20Pandas-orange?style=flat-square" /> </p>
 <div class="admonition experimental">
 <p class="admonition-title">Introduced in v4.0</p>
 <p>The Polars backend is experimental and is subject to backwards incompatible changes.</p>
 </div>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Install ibis and dependencies for the Polars backend:</p>
+<p>Install <code>ibis</code> and dependencies for the Polars backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[polars]&#39;</span>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[polars]&#39;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-polars
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-polars
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-polars
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-polars
 </code></pre></div>
 </div>
 </div>
 </div>
 <h2 id="connect">Connect<a class="headerlink" href="#connect" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="api">API<a class="headerlink" href="#api" title="Anchor link to this section for reference">&para;</a></h3>
-<p>Create a client by passing in connection parameters to <code>ibis.polars.connect</code>.</p>
-<!-- prettier-ignore-start -->
-<p>See <a class="autorefs autorefs-internal" href="#ibis.backends.polars.Backend.do_connect"><code>ibis.backends.polars.Backend.do_connect</code></a>
-for connection parameter information.</p>
-<!-- prettier-ignore-end -->
-
+<h3 id="ibispolarsconnect"><code>ibis.polars.connect</code><a class="headerlink" href="#ibispolarsconnect" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">polars</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+</code></pre></div>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title"><code>ibis.polars.connect</code> is a thin wrapper around <a class="autorefs autorefs-internal" href="#ibis.backends.polars.Backend.do_connect"><code>ibis.backends.polars.Backend.do_connect</code></a>.</p>
@@ -2284,7 +2199,7 @@ for connection parameter information.</p>
         <tr>
           <td><code>tables</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.MutableMapping" href="https://docs.python.org/3/library/typing.html#typing.MutableMapping">MutableMapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-internal" title="polars" href="#polars">pl</a>.<span title="polars.LazyFrame">LazyFrame</span>] | None</code>
+                <code><a class="autorefs autorefs-external" title="typing.MutableMapping" href="https://docs.python.org/3/library/typing.html#typing.MutableMapping">MutableMapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <span title="polars">pl</span>.<span title="polars.LazyFrame">LazyFrame</span>] | None</code>
           </td>
           <td><p>An optional mapping of string table names to polars LazyFrames.</p></td>
           <td>
@@ -2298,51 +2213,21 @@ for connection parameter information.</p>
 
 </div><!-- prettier-ignore-end -->
 
-<h2 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Anchor link to this section for reference">&para;</a></h2>
+<h2 id="file-support">File Support<a class="headerlink" href="#file-support" title="Anchor link to this section for reference">&para;</a></h2>
 <!-- prettier-ignore-start -->
 
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="ibis.backends.polars.Backend" class="doc doc-heading">
-        <code>Backend</code>
-
-
-<a href="#ibis.backends.polars.Backend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-
-  <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.backends.base.BaseBackend" href="../../api/backends/base/#ibis.backends.base.BaseBackend">BaseBackend</a></code></p>
-
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<h4 id="ibis.backends.polars.Backend-functions">Functions<a href="#ibis.backends.polars.Backend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 <div class="doc doc-object doc-function">
 
 
 
-<h5 id="ibis.backends.polars.Backend.read_csv" class="doc doc-heading">
+<h4 id="ibis.backends.polars.Backend.read_csv" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a href="#ibis.backends.polars.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+<a href="#ibis.backends.polars.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
-  <div class="doc doc-contents ">
+  <div class="doc doc-contents first">
   
       <p>Register a CSV file as a table in the current database.</p>
 
@@ -2393,24 +2278,6 @@ for more information.</p></td>
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
   </div>
 
 </div>
@@ -2419,96 +2286,13 @@ for more information.</p></td>
 
 
 
-<h5 id="ibis.backends.polars.Backend.read_pandas" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_pandas</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.polars.Backend.read_pandas" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a Pandas DataFrame or pyarrow Table a table in the current database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>source</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td><p>The data source.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>Additional keyword arguments passed to Polars loading function.
-See <a href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.from_pandas.html">https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.from_pandas.html</a>
-for more information.</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.polars.Backend.read_parquet" class="doc doc-heading">
+<h4 id="ibis.backends.polars.Backend.read_parquet" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a href="#ibis.backends.polars.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+<a href="#ibis.backends.polars.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
-  <div class="doc doc-contents ">
+  <div class="doc doc-contents first">
   
       <p>Register a parquet file as a table in the current database.</p>
 
@@ -2559,118 +2343,6 @@ for more information.</p></td>
     </tbody>
   </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h5 id="ibis.backends.polars.Backend.register" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.polars.Backend.register" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a data source as a table in the current database.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>source</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>The data source(s). May be a path to a file, a parquet directory, or a pandas
-dataframe.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td><p>Additional keyword arguments passed to Polars loading functions for
-CSV or parquet.
-See <a href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.scan_csv.html">https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.scan_csv.html</a>
-and <a href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.scan_parquet.html">https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.scan_parquet.html</a>
-for more information</p></td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
-          </td>
-          <td><p>The just-registered table</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
   </div>
 
 </div><!-- prettier-ignore-end -->
@@ -2680,7 +2352,7 @@ for more information</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2023</span>
       
     
   </small>
@@ -2777,7 +2449,7 @@ for more information</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

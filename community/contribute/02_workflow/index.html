@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2131,7 +2133,7 @@
 <code>/take</code> on the issue. GitHub will then assign the issue to you.</p>
 <h2 id="running-the-test-suite">Running the test suite<a class="headerlink" href="#running-the-test-suite" title="Anchor link to this section for reference">&para;</a></h2>
 <p>To run tests that do not require a backend:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>-m<span class="w"> </span>core
+<div class="language-sh highlight"><pre><span></span><code>pytest<span class="w"> </span>-m<span class="w"> </span>core
 </code></pre></div>
 <h3 id="backend-test-suites">Backend Test Suites<a class="headerlink" href="#backend-test-suites" title="Anchor link to this section for reference">&para;</a></h3>
 <div class="admonition info">
@@ -2141,10 +2143,10 @@ or any specific backends (<code>ibis/backends</code>) this material isn't necess
 follow to make a pull request.</p>
 </div>
 <p>First, we need to download example data to run the tests successfully:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>download-data
+<div class="language-sh highlight"><pre><span></span><code>just<span class="w"> </span>download-data
 </code></pre></div>
 <p>To run the tests for a specific backend (e.g. sqlite):</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>-m<span class="w"> </span>sqlite
+<div class="language-sh highlight"><pre><span></span><code>pytest<span class="w"> </span>-m<span class="w"> </span>sqlite
 </code></pre></div>
 <h2 id="setting-up-non-trivial-backends">Setting up non-trivial backends<a class="headerlink" href="#setting-up-non-trivial-backends" title="Anchor link to this section for reference">&para;</a></h2>
 <p>These client-server backends need to be started before testing them.
@@ -2157,13 +2159,13 @@ They can be started with <code>docker-compose</code> directly, or using the <cod
 </ul>
 <h3 id="test-the-backend-locally">Test the backend locally<a class="headerlink" href="#test-the-backend-locally" title="Anchor link to this section for reference">&para;</a></h3>
 <p>If anything seems amiss with a backend, you can of course test it locally:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>postgres
+<div class="language-sh highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>postgres
 psql<span class="w"> </span>-t<span class="w"> </span>-A<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-d<span class="w"> </span>ibis_testing<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;select &#39;success&#39;&quot;</span>
 </code></pre></div>
 <h2 id="writing-the-commit">Writing the commit<a class="headerlink" href="#writing-the-commit" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis follows the <a href="https://www.conventionalcommits.org/">Conventional Commits</a> structure.
 In brief, the commit summary should look like:</p>
-<div class="highlight"><pre><span></span><code>fix(types): make all floats doubles
+<div class="language-text highlight"><pre><span></span><code>fix(types): make all floats doubles
 </code></pre></div>
 <p>The type (e.g. <code>fix</code>) can be:</p>
 <ul>
@@ -2282,7 +2284,7 @@ In brief, the commit summary should look like:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>

@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2173,7 +2175,7 @@ operations with ibis. Happily this is no longer the case in ibis 5.0.</p>
 set</a> with the <a href="https://ibis-project.org/backends/DuckDB/">DuckDB
 backend</a>.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>In [8]: from ibis.interactive import *
+<div class="language-text highlight"><pre><span></span><code>In [8]: from ibis.interactive import *
 
 In [11]: t = ex.penguins.fetch()
 
@@ -2203,7 +2205,7 @@ Out[12]:
 <a href="https://en.wikipedia.org/wiki/Standard_score">z-score</a> of every numeric column
 and replace the existing data with that normalized value. Here's how you'd do
 that with selectors:</p>
-<div class="highlight"><pre><span></span><code>In [13]: t.mutate(s.across(s.numeric(), (_ - _.mean()) / _.std()))
+<div class="language-text highlight"><pre><span></span><code>In [13]: t.mutate(s.across(s.numeric(), (_ - _.mean()) / _.std()))
 Out[13]:
 ┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┓
 ┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year      ┃
@@ -2228,7 +2230,7 @@ Out[13]:
 <code>int64</code> column (and therefore numeric) but normalizing the year doesn't make
 sense.</p>
 <p>We can exclude <code>year</code> from the normalization using another selector:</p>
-<div class="highlight"><pre><span></span><code>In [14]: t.mutate(s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), (_ - _.mean()) / _.std()))
+<div class="language-text highlight"><pre><span></span><code>In [14]: t.mutate(s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), (_ - _.mean()) / _.std()))
 Out[14]:
 ┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
 ┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
@@ -2254,7 +2256,7 @@ Out[14]:
 <p>The power of this approach comes in when you want the grouped version. Perhaps
 we think some of these columns vary by species.</p>
 <p>With selectors, all you need to do is slap a <code>.group_by("species")</code> onto <code>t</code>:</p>
-<div class="highlight"><pre><span></span><code>In [18]: t.group_by(&quot;species&quot;).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [18]: t.group_by(&quot;species&quot;).mutate(
     ...:     s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), (_ - _.mean()) / _.std())
     ...: )
 Out[18]:
@@ -2282,7 +2284,7 @@ backend to work with these new constructs.</p>
 <p>Let's look at some more examples.</p>
 <h3 id="min-max-normalization">Min-max Normalization<a class="headerlink" href="#min-max-normalization" title="Anchor link to this section for reference">&para;</a></h3>
 <p>Grouped min/max normalization? Easy:</p>
-<div class="highlight"><pre><span></span><code>In [22]: t.group_by(&quot;species&quot;).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [22]: t.group_by(&quot;species&quot;).mutate(
     ...:     s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), (_ - _.min()) / (_.max() - _.min()))
     ...: )
 Out[22]:
@@ -2307,7 +2309,7 @@ Out[22]:
 <h3 id="casting-and-munging">Casting and Munging<a class="headerlink" href="#casting-and-munging" title="Anchor link to this section for reference">&para;</a></h3>
 <p>How about casting every column whose name ends with any of the strings <code>"mm"</code>
 or <code>"g"</code> to a <code>float32</code>? No problem!</p>
-<div class="highlight"><pre><span></span><code>In [23]: t.mutate(s.across(s.endswith((&quot;mm&quot;, &quot;g&quot;)), _.cast(&quot;float32&quot;)))
+<div class="language-text highlight"><pre><span></span><code>In [23]: t.mutate(s.across(s.endswith((&quot;mm&quot;, &quot;g&quot;)), _.cast(&quot;float32&quot;)))
 Out[23]:
 ┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
 ┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
@@ -2328,7 +2330,7 @@ Out[23]:
 └─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘
 </code></pre></div>
 <p>We can make all string columns have the same case too!</p>
-<div class="highlight"><pre><span></span><code>In [35]: t.mutate(s.across(s.of_type(&quot;string&quot;), _.lower()))
+<div class="language-text highlight"><pre><span></span><code>In [35]: t.mutate(s.across(s.of_type(&quot;string&quot;), _.lower()))
 Out[35]:
 ┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
 ┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
@@ -2350,7 +2352,7 @@ Out[35]:
 </code></pre></div>
 <h3 id="multiple-computations-per-column">Multiple Computations per Column<a class="headerlink" href="#multiple-computations-per-column" title="Anchor link to this section for reference">&para;</a></h3>
 <p>What if I want to compute multiple things? Heck yeah!</p>
-<div class="highlight"><pre><span></span><code>In [9]: t.group_by(&quot;sex&quot;).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [9]: t.group_by(&quot;sex&quot;).mutate(
    ...:     s.across(
    ...:         s.numeric() &amp; ~s.c(&quot;year&quot;),
    ...:         dict(centered=_ - _.mean(), zscore=(_ - _.mean()) / _.std()),
@@ -2377,7 +2379,7 @@ Out[9]:
 </code></pre></div>
 <p>Don't like the naming convention?</p>
 <p>Pass a function to make your own name!</p>
-<div class="highlight"><pre><span></span><code>In [12]: t.select(s.startswith(&quot;bill&quot;)).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [12]: t.select(s.startswith(&quot;bill&quot;)).mutate(
     ...:     s.across(
     ...:         s.all(),
     ...:         dict(x=_ - _.mean(), y=_.max()),
@@ -2404,7 +2406,7 @@ Out[12]:
 └────────────────┴───────────────┴───────────────────────────┴──────────────────────────┴───────────────────────────┴──────────────────────────┘
 </code></pre></div>
 <p>Don't like lambda functions? We support a format string too!</p>
-<div class="highlight"><pre><span></span><code>In [5]: t.select(s.startswith(&quot;bill&quot;)).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [5]: t.select(s.startswith(&quot;bill&quot;)).mutate(
    ...:     s.across(
    ...:         s.all(),
    ...:         func=dict(x=_ - _.mean(), y=_.max()),
@@ -2423,7 +2425,7 @@ Out[5]:
 </code></pre></div>
 <h3 id="working-with-other-ibis-apis">Working with other Ibis APIs<a class="headerlink" href="#working-with-other-ibis-apis" title="Anchor link to this section for reference">&para;</a></h3>
 <p>We've seen lots of mutate use, but selectors also work with <code>.agg</code>:</p>
-<div class="highlight"><pre><span></span><code>In [31]: t.group_by(&quot;year&quot;).agg(s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), _.mean())).order_by(&quot;year&quot;)
+<div class="language-text highlight"><pre><span></span><code>In [31]: t.group_by(&quot;year&quot;).agg(s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), _.mean())).order_by(&quot;year&quot;)
 Out[31]:
 ┏━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
 ┃ year  ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃
@@ -2436,7 +2438,7 @@ Out[31]:
 └───────┴────────────────┴───────────────┴───────────────────┴─────────────┘
 </code></pre></div>
 <p>Naturally, selectors work in grouping keys too, for even more convenience:</p>
-<div class="highlight"><pre><span></span><code>In [12]: t.group_by(~s.numeric() | s.c(&quot;year&quot;)).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [12]: t.group_by(~s.numeric() | s.c(&quot;year&quot;)).mutate(
     ...:     s.across(s.numeric() &amp; ~s.c(&quot;year&quot;), dict(centered=_ - _.mean(), std=_.std()))
     ...: ).select(&quot;species&quot;, s.endswith((&quot;_centered&quot;, &quot;_std&quot;)))
 Out[12]:
@@ -2463,7 +2465,7 @@ Out[12]:
 <p>Let's say we only want to keep rows where all the bill size z-score related
 columns' absolute values are greater than 2.</p>
 <!-- prettier-ignore-start -->
-<div class="highlight"><pre><span></span><code>In [78]: t.drop(&quot;year&quot;).group_by(&quot;species&quot;).mutate(
+<div class="language-text highlight"><pre><span></span><code>In [78]: t.drop(&quot;year&quot;).group_by(&quot;species&quot;).mutate(
     ...:     s.across(s.numeric(), dict(zscore=(_ - _.mean()) / _.std()))
     ...: ).filter(s.if_all(s.startswith(&quot;bill&quot;) &amp; s.endswith(&quot;_zscore&quot;), _.abs() &gt; 2))
 Out[78]:
@@ -2482,14 +2484,14 @@ Out[78]:
 
 <h3 id="bonus-generated-sql">Bonus: Generated SQL<a class="headerlink" href="#bonus-generated-sql" title="Anchor link to this section for reference">&para;</a></h3>
 <p>The SQL for that last expression is pretty gnarly:</p>
-<div class="highlight"><pre><span></span><code>In [79]: ibis.show_sql(
+<div class="language-text highlight"><pre><span></span><code>In [79]: ibis.show_sql(
     ...:     t.drop(&quot;year&quot;)
     ...:     .group_by(&quot;species&quot;)
     ...:     .mutate(s.across(s.numeric(), dict(zscore=(_ - _.mean()) / _.std())))
     ...:     .filter(s.if_all(s.startswith(&quot;bill&quot;) &amp; s.endswith(&quot;_zscore&quot;), _.abs() &gt; 2))
     ...: )
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<div class="language-sql highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="k">SELECT</span>
 <span class="w">    </span><span class="n">t2</span><span class="p">.</span><span class="n">species</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">species</span><span class="p">,</span>
 <span class="w">    </span><span class="n">t2</span><span class="p">.</span><span class="n">island</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">island</span><span class="p">,</span>
@@ -2650,7 +2652,7 @@ once and the power of ibis as a composable, expressive library for analytics.</p
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

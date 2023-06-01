@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -6311,7 +6313,7 @@ users upgrade from earlier versions of Ibis.</p>
 </ul>
 <h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Anchor link to this section for reference">&para;</a></h2>
 <p>The following people contributed to the 0.12.0 release :</p>
-<div class="highlight"><pre><span></span><code>$ git shortlog -sn --no-merges v0.11.2..v0.12.0
+<div class="language-text highlight"><pre><span></span><code>$ git shortlog -sn --no-merges v0.11.2..v0.12.0
 63  Phillip Cloud
  8  Jeff Reback
  2  Krisztián Szűcs
@@ -6360,7 +6362,7 @@ upgrade from earlier versions of Ibis.</p>
     function</li>
 </ul>
 <h2 id="contributors_1">Contributors<a class="headerlink" href="#contributors_1" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ git shortlog --summary --numbered v0.10.0..v0.11.0
+<div class="language-text highlight"><pre><span></span><code>$ git shortlog --summary --numbered v0.10.0..v0.11.0
 
   58 Phillip Cloud
    1 Greg Rahn
@@ -6405,7 +6407,7 @@ and SQLite support, along with several critical bug fixes.</p>
     subqueries.</li>
 </ul>
 <p>To explain this last point in more detail, suppose you had:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;flag&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;flag&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
                     <span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">)],</span>
                    <span class="s1">&#39;tbl&#39;</span><span class="p">)</span>
 
@@ -6418,7 +6420,7 @@ and SQLite support, along with several critical bug fixes.</p>
 <span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">fv</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">fv</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">-</span> <span class="p">(</span><span class="n">uv</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">uv</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 </code></pre></div>
 <p>The last expression now generates the correct Impala or SQLite SQL:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span>
+<div class="language-sql highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span>
 <span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="o">`</span><span class="n">value</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="o">`</span><span class="n">value</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="n">tmp</span><span class="o">`</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">tbl</span>
@@ -6450,7 +6452,7 @@ and SQLite support, along with several critical bug fixes.</p>
 </ul>
 <h2 id="contributors_2">Contributors<a class="headerlink" href="#contributors_2" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Thank you to all who contributed patches to this release.</p>
-<div class="highlight"><pre><span></span><code>$ git log v0.6.0..v0.7.0 --pretty=format:%aN | sort | uniq -c | sort -rn
+<div class="language-text highlight"><pre><span></span><code>$ git log v0.6.0..v0.7.0 --pretty=format:%aN | sort | uniq -c | sort -rn
     21 Wes McKinney
      1 Uri Laserson
      1 Kristopher Overholt
@@ -6510,7 +6512,7 @@ correctness. All users should upgrade as soon as possible.</p>
 <li><code>ImpalaTable.rename</code> no longer mutates the calling table expression.</li>
 </ul>
 <h2 id="contributors_3">Contributors<a class="headerlink" href="#contributors_3" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ git log v0.5.0..v0.6.0 --pretty=format:%aN | sort | uniq -c | sort -rn
+<div class="language-text highlight"><pre><span></span><code>$ git log v0.5.0..v0.6.0 --pretty=format:%aN | sort | uniq -c | sort -rn
 46 Wes McKinney
  3 Uri Laserson
  1 Phillip Cloud
@@ -6550,7 +6552,7 @@ improvements, bug fixes, and other new features.</p>
     <code>ibis.make_client</code> has been deprecated</li>
 </ul>
 <h2 id="contributors_4">Contributors<a class="headerlink" href="#contributors_4" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ git log v0.4.0..v0.5.0 --pretty=format:%aN | sort | uniq -c | sort -rn
+<div class="language-text highlight"><pre><span></span><code>$ git log v0.4.0..v0.5.0 --pretty=format:%aN | sort | uniq -c | sort -rn
       55 Wes McKinney
       9 Uri Laserson
       1 Kristopher Overholt
@@ -6587,7 +6589,7 @@ improvements, bug fixes, and other new features.</p>
 <li>Add conda installation recipes</li>
 </ul>
 <h2 id="contributors_5">Contributors<a class="headerlink" href="#contributors_5" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ git log v0.3.0..v0.4.0 --pretty=format:%aN | sort | uniq -c | sort -rn
+<div class="language-text highlight"><pre><span></span><code>$ git log v0.3.0..v0.4.0 --pretty=format:%aN | sort | uniq -c | sort -rn
      38 Wes McKinney
       9 Uri Laserson
       2 Meghana Vuyyuru
@@ -6621,7 +6623,7 @@ improvements, bug fixes, and other new features.</p>
     productivity.</li>
 </ul>
 <h2 id="contributors_6">Contributors<a class="headerlink" href="#contributors_6" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ git log v0.2.0..v0.3.0 --pretty=format:%aN | sort | uniq -c | sort -rn
+<div class="language-text highlight"><pre><span></span><code>$ git log v0.2.0..v0.3.0 --pretty=format:%aN | sort | uniq -c | sort -rn
      59 Wes McKinney
      29 Uri Laserson
       4 Isaac Hodes
@@ -6684,7 +6686,7 @@ improvements, bug fixes, and other new features.</p>
 <li>Numerous expression API bug fixes and rough edges fixed</li>
 </ul>
 <h2 id="contributors_7">Contributors<a class="headerlink" href="#contributors_7" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ git log v0.1.0..v0.2.0 --pretty=format:%aN | sort | uniq -c | sort -rn
+<div class="language-text highlight"><pre><span></span><code>$ git log v0.1.0..v0.2.0 --pretty=format:%aN | sort | uniq -c | sort -rn
      71 Wes McKinney
       1 Juliet Hougland
       1 Isaac Hodes
@@ -6805,7 +6807,7 @@ improvements, bug fixes, and other new features.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>

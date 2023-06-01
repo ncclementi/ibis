@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2202,30 +2204,30 @@
 <h2 id="install-ibis">Install <code>ibis</code><a class="headerlink" href="#install-ibis" title="Anchor link to this section for reference">&para;</a></h2>
 <p>This quick-start guide uses the DuckDB backend. You can check out the <a href="../install/">Install
 page</a> for information on how to install other backends.</p>
-<div class="highlight"><span class="filename">Install Ibis using pip</span><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[duckdb]&#39;</span>
+<div class="language-shell highlight"><span class="filename">Install Ibis using pip</span><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[duckdb]&#39;</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Install Ibis using conda</span><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>ibis-framework
+<div class="language-shell highlight"><span class="filename">Install Ibis using conda</span><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>ibis-framework
 </code></pre></div>
 <h2 id="download-a-database-file">Download a database file<a class="headerlink" href="#download-a-database-file" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis can work with several file types, but at its core, it connects to existing
 databases and interacts with the data there. We'll use a local database
 (DuckDB) to get the hang of this.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<div class="highlight"><span class="filename">Download an example dataset</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
+<div class="language-python highlight"><span class="filename">Download an example dataset</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span>
         <span class="s2">&quot;https://storage.googleapis.com/ibis-tutorial-data/palmer_penguins.ddb&quot;</span><span class="p">,</span>
         <span class="s2">&quot;palmer_penguins.ddb&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></div>
 <h2 id="connect-using-ibis">Connect using Ibis<a class="headerlink" href="#connect-using-ibis" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><span class="filename">Connect to an existing database</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<div class="language-python highlight"><span class="filename">Connect to an existing database</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;palmer_penguins.ddb&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>We're connected! Let's take a look at what tables are available.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
 <span class="p">[</span><span class="s1">&#39;penguins&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>There's one table, called <code>penguins</code>. We can ask Ibis to give us an object that we can interact with.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span>
 <span class="n">AlchemyTable</span><span class="p">:</span> <span class="n">penguins</span>
   <span class="n">species</span>           <span class="n">string</span>
@@ -2240,7 +2242,7 @@ databases and interacts with the data there. We'll use a local database
 <p>Ibis is lazily evaluated, so instead of seeing the data, we see the schema of
 the table, instead. To peek at the data, we can call <code>head</code> and then <code>execute</code>
 to get the first few rows of the table as a pandas DataFrame.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
   <span class="n">species</span>     <span class="n">island</span>  <span class="n">bill_length_mm</span>  <span class="n">bill_depth_mm</span>  <span class="n">flipper_length_mm</span>  <span class="n">body_mass_g</span>     <span class="n">sex</span>  <span class="n">year</span>
 <span class="mi">0</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">39.1</span>           <span class="mf">18.7</span>              <span class="mf">181.0</span>       <span class="mf">3750.0</span>    <span class="n">male</span>  <span class="mi">2007</span>
 <span class="mi">1</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">39.5</span>           <span class="mf">17.4</span>              <span class="mf">186.0</span>       <span class="mf">3800.0</span>  <span class="n">female</span>  <span class="mi">2007</span>
@@ -2251,7 +2253,7 @@ to get the first few rows of the table as a pandas DataFrame.</p>
 <p><code>execute</code> takes the existing lazy table expression and evaluates it. If we
 leave it off, you'll see the Ibis representation of the table expression that
 <code>execute</code> will evaluate (when you're ready!).</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">r0</span> <span class="o">:=</span> <span class="n">AlchemyTable</span><span class="p">:</span> <span class="n">penguins</span>
   <span class="n">species</span>           <span class="n">string</span>
   <span class="n">island</span>            <span class="n">string</span>
@@ -2277,7 +2279,7 @@ executes queries to give users a preview of the results. There is a small
 difference in the way the output is formatted, but otherwise this is the same
 as calling <code>execute()</code> on the table expression with a limit of 10 result rows
 returned.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_length_mm</span> <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">sex</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
@@ -2297,7 +2299,7 @@ in a table (or tables).</p>
 <h3 id="filter">Filter<a class="headerlink" href="#filter" title="Anchor link to this section for reference">&para;</a></h3>
 <p><code>filter</code> allows you to select rows based on a condition or set of conditions.</p>
 <p>We can filter so we only have penguins of the species Adelie:</p>
-<div class="highlight"><pre><span></span><code> <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code> <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_length_mm</span> <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">sex</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
@@ -2317,7 +2319,7 @@ in a table (or tables).</p>
 <span class="err">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</span>
 </code></pre></div>
 <p>Or filter for Adelie penguins that reside on the island of Torgersen:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">penguins</span><span class="o">.</span><span class="n">island</span> <span class="o">==</span> <span class="s2">&quot;Torgersen&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">))</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">penguins</span><span class="o">.</span><span class="n">island</span> <span class="o">==</span> <span class="s2">&quot;Torgersen&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Adelie&quot;</span><span class="p">))</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_length_mm</span> <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">sex</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
@@ -2342,7 +2344,7 @@ something like use <code>&lt;</code> on a string, Ibis will yell at you).</p>
 <p>Your data analysis might not require all the columns present in a given table.
 <code>select</code> lets you pick out only those columns that you want to work with.</p>
 <p>To select a column you can use the name of the column as a string:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━┩</span>
@@ -2363,7 +2365,7 @@ something like use <code>&lt;</code> on a string, Ibis will yell at you).</p>
 </code></pre></div>
 <p>Or you can use column objects directly (this can be convenient when paired with
 tab-completion):</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">island</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">island</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━┩</span>
@@ -2383,7 +2385,7 @@ tab-completion):</p>
 <span class="err">└─────────┴───────────┴───────┘</span>
 </code></pre></div>
 <p>Or you can mix-and-match:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="n">penguins</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━┩</span>
@@ -2405,7 +2407,7 @@ tab-completion):</p>
 <h3 id="mutate">Mutate<a class="headerlink" href="#mutate" title="Anchor link to this section for reference">&para;</a></h3>
 <p><code>mutate</code> lets you add new columns to your table, derived from the values of
 existing columns.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">bill_length_cm</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">bill_length_cm</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span> <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_length_mm</span> <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">sex</span>    <span class="err">┃</span> <span class="err">…</span> <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━┩</span>
@@ -2427,7 +2429,7 @@ existing columns.</p>
 <p>Notice that the table is a little too wide to display all the columns now (depending on your screen-size).
 <code>bill_length</code> is now present in millimeters AND centimeters. Use a <code>select</code> to
 trim down the number of columns we're looking at.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">bill_length_cm</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">bill_length_cm</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
         <span class="s2">&quot;species&quot;</span><span class="p">,</span>
         <span class="s2">&quot;island&quot;</span><span class="p">,</span>
         <span class="s2">&quot;bill_depth_mm&quot;</span><span class="p">,</span>
@@ -2459,7 +2461,7 @@ trim down the number of columns we're looking at.</p>
 <p>Typing out ALL of the column names <em>except</em> one is a little annoying. Instead of
 doing that again, we can use a <code>selector</code> to quickly select or deselect groups
 of columns.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">bill_length_cm</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
         <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">)</span>
@@ -2484,7 +2486,7 @@ of columns.</p>
 <span class="err">└─────────┴───────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┴────────────────┘</span>
 </code></pre></div>
 <p>You can also use a <code>selector</code> alongside a column name.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">())</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">())</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">bill_length_mm</span> <span class="err">┃</span> <span class="n">bill_depth_mm</span> <span class="err">┃</span> <span class="n">flipper_length_mm</span> <span class="err">┃</span> <span class="n">body_mass_g</span> <span class="err">┃</span> <span class="n">year</span>  <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━┩</span>
@@ -2507,7 +2509,7 @@ of columns.</p>
 <h3 id="order_by">order_by<a class="headerlink" href="#order_by" title="Anchor link to this section for reference">&para;</a></h3>
 <p><code>order_by</code> arranges the values of one or more columns in ascending or descending order.</p>
 <p>By default, <code>ibis</code> sorts in ascending order:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
         <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;flipper_length_mm&quot;</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2529,7 +2531,7 @@ of columns.</p>
 <span class="err">└───────────┴───────────┴───────────────────┘</span>
 </code></pre></div>
 <p>You can sort in descending order using the <code>desc</code> method of a column:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
         <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;flipper_length_mm&quot;</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2551,7 +2553,7 @@ of columns.</p>
 <span class="err">└─────────┴───────────┴───────────────────┘</span>
 </code></pre></div>
 <p>Or you can use <code>ibis.desc</code></p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
         <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;flipper_length_mm&quot;</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2576,11 +2578,11 @@ of columns.</p>
 <p>Ibis has several aggregate functions available to help summarize data.</p>
 <p><code>mean</code>, <code>max</code>, <code>min</code>, <code>count</code>, <code>sum</code> (the list goes on).</p>
 <p>To aggregate an entire column, call the corresponding method on that column.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="mf">200.91520467836258</span>
 </code></pre></div>
 <p>You can compute multiple aggregates at once using the <code>aggregate</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="p">[</span><span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">penguins</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2595,7 +2597,7 @@ of columns.</p>
 <h3 id="group_by">group_by<a class="headerlink" href="#group_by" title="Anchor link to this section for reference">&para;</a></h3>
 <p><code>group_by</code> creates groupings of rows that have the same value for one or more columns.</p>
 <p>But it doesn't do much on its own -- you can pair it with <code>aggregate</code> to get a result.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">()</span>
 <span class="err">┏━━━━━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span>   <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━━━┩</span>
@@ -2610,7 +2612,7 @@ of columns.</p>
 The result of that is a column of the unique values in the <code>species</code> column.</p>
 <p>If we add a second column to the <code>group_by</code>, we'll get each unique pairing of the
 values in those columns.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">()</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span>   <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━┩</span>
@@ -2624,7 +2626,7 @@ values in those columns.</p>
 <span class="err">└───────────┴───────────┘</span>
 </code></pre></div>
 <p>Now, if we add an aggregation function to that, we start to really open things up.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
 <span class="err">┃</span> <span class="n">species</span>   <span class="err">┃</span> <span class="n">island</span>    <span class="err">┃</span> <span class="n">Mean</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="p">)</span> <span class="err">┃</span>
 <span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
@@ -2640,7 +2642,7 @@ values in those columns.</p>
 <p>By adding that <code>mean</code> to the <code>aggregate</code>, we now have a concise way to calculate
 aggregates over each of the distinct groups in the <code>group_by</code>. And we can
 calculate as many aggregates as we need.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="p">[</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2656,7 +2658,7 @@ calculate as many aggregates as we need.</p>
 <span class="err">└───────────┴───────────┴──────────────────────┴────────────────────────┘</span>
 </code></pre></div>
 <p>If we need more specific groups, we can add to the <code>group_by</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="p">[</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">penguins</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
     <span class="p">)</span>
 <span class="err">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
@@ -2687,7 +2689,7 @@ questions of the data.</p>
 <ul>
 <li>What was the largest female penguin (by body mass) on each island in the year 2008?</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2008</span><span class="p">))</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2008</span><span class="p">))</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span>
         <span class="p">[</span><span class="s2">&quot;island&quot;</span><span class="p">]</span>
     <span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓</span>
@@ -2703,7 +2705,7 @@ questions of the data.</p>
 <ul>
 <li>What about the largest male penguin (by body mass) on each island for each year of data collection?</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;max_body_mass&quot;</span><span class="p">)</span>
     <span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;max_body_mass&quot;</span><span class="p">])</span>
 <span class="err">┏━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━┓</span>
@@ -2841,7 +2843,7 @@ doi: 10.5281/zenodo.3960218.&#160;<a class="footnote-backref" href="#fnref:1" ti
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>

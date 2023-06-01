@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/code_select.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2020,18 +2022,18 @@
 <p>So, we’ve gone ahead and fixed that for Ibis 5.0.</p>
 <h2 id="files-in-files-out">Files in, Files out<a class="headerlink" href="#files-in-files-out" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Before we can write a file, we need data — so let’s read in a file, to start this off:</p>
-<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">&quot;https://storage.googleapis.com/ibis-examples/data/penguins.csv.gz&quot;</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>Of course, we could just write out, but let’s do an operation first — how about using selectors, which you can read more about <a href="https://ibis-project.org/blog/selectors/">here</a>? Self-promotion aside, here’s an operation:</p>
-<div class="highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
      <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span> <span class="o">-</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">_</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>Now, finally, time to do the exciting part:</p>
-<div class="highlight"><pre><span></span><code><span class="n">expr</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s2">&quot;normalized.parquet&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">expr</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s2">&quot;normalized.parquet&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Like many things in Ibis, this is as simple and plain-looking as it is important. Being able to create files from Ibis instead of redirecting into other libraries first enables operation at larger scales and fewer steps. Where desired, you can address a backend directly to use its native export functionality — we want to make sure you have the flexibility to use Ibis or the backend as you see fit.</p>
 <h2 id="wrapping-up">Wrapping Up<a class="headerlink" href="#wrapping-up" title="Anchor link to this section for reference">&para;</a></h2>
@@ -2154,7 +2156,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.tabs.link", "content.code.copy", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
