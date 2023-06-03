@@ -1434,6 +1434,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.selectors.across" class="md-nav__link">
+    across()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.selectors.all" class="md-nav__link">
     all()
   </a>
@@ -2345,6 +2352,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.selectors.across" class="md-nav__link">
+    across()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.selectors.all" class="md-nav__link">
     all()
   </a>
@@ -2781,6 +2795,117 @@ subsequent computation.</p>
 
 </div>
 <h3 id="ibis.selectors-functions">Functions<a href="#ibis.selectors-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.selectors.across" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">across</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ibis.selectors.across" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Applies the same data transformation function across multiple columns.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>selector</code></td>
+          <td>
+                <code><span title="ibis.selectors.Selector">Selector</span></code>
+          </td>
+          <td><p>An expression that selects columns on which the transformation function will be applied.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>func</code></td>
+          <td>
+                <code><span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None, <span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>]]</code>
+          </td>
+          <td><p>A function (or a dictionary of functions) to use to transform the data.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>names</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
+          </td>
+          <td><p>A lambda function or a format string to name the columns created by the transformation function.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.selectors.Across">Across</span></code>
+          </td>
+          <td><p>An <code>Across</code> selector object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;bill&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span>
+<span class="gp">... </span>        <span class="nb">dict</span><span class="p">(</span><span class="n">centered</span> <span class="o">=</span><span class="n">_</span> <span class="o">-</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+<span class="gp">... </span>        <span class="n">names</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{fn}</span><span class="s2">_</span><span class="si">{col}</span><span class="s2">&quot;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ bill_length_mm ┃ bill_depth_mm ┃ centered_bill_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ float64        │ float64       │ float64                 │ … │</span>
+<span class="go">├────────────────┼───────────────┼─────────────────────────┼───┤</span>
+<span class="go">│           39.1 │          18.7 │                -4.82193 │ … │</span>
+<span class="go">│           39.5 │          17.4 │                -4.42193 │ … │</span>
+<span class="go">│           40.3 │          18.0 │                -3.62193 │ … │</span>
+<span class="go">│            nan │           nan │                     nan │ … │</span>
+<span class="go">│           36.7 │          19.3 │                -7.22193 │ … │</span>
+<span class="go">│           39.3 │          20.6 │                -4.62193 │ … │</span>
+<span class="go">│           38.9 │          17.8 │                -5.02193 │ … │</span>
+<span class="go">│           39.2 │          19.6 │                -4.72193 │ … │</span>
+<span class="go">│           34.1 │          18.1 │                -9.82193 │ … │</span>
+<span class="go">│           42.0 │          20.2 │                -1.92193 │ … │</span>
+<span class="go">│              … │             … │                       … │ … │</span>
+<span class="go">└────────────────┴───────────────┴─────────────────────────┴───┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
