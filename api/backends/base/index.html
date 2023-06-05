@@ -2405,8 +2405,8 @@ required methods.</p>
 <code class="highlight language-python"><span class="n">current_database</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.current_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2430,7 +2430,11 @@ required methods.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the current database.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the current database.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2474,7 +2478,11 @@ specify the database.</p>
           <td>
                 <code>Hashable</code>
           </td>
-          <td><p>Database identity</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Database identity</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2519,8 +2527,8 @@ specify the database.</p>
 <code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.version" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2546,7 +2554,11 @@ underlying library or application.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>The backend version</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The backend version</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2632,8 +2644,12 @@ string <code>"NULL"</code>.</p>
           <td><code>*args</code></td>
           <td>
           </td>
-          <td><p>Mandatory connection parameters, see the docstring of <code>do_connect</code>
-for details.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mandatory connection parameters, see the docstring of <code>do_connect</code>
+for details.</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -2642,8 +2658,12 @@ for details.</p></td>
           <td><code>**kwargs</code></td>
           <td>
           </td>
-          <td><p>Extra connection parameters, see the docstring of <code>do_connect</code> for
-details.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Extra connection parameters, see the docstring of <code>do_connect</code> for
+details.</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2668,7 +2688,11 @@ connected backend instance.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.backends.base.BaseBackend" href="#ibis.backends.base.BaseBackend">BaseBackend</a></code>
           </td>
-          <td><p>An instance of the backend</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An instance of the backend</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2708,7 +2732,11 @@ connected backend instance.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the new database.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the new database.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2718,7 +2746,11 @@ connected backend instance.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If <code>False</code>, an exception is raised if the database already exists.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>False</code>, an exception is raised if the database already exists.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2764,7 +2796,11 @@ connected backend instance.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the new table.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the new table.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2774,9 +2810,13 @@ connected backend instance.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
           </td>
-          <td><p>An Ibis table expression or pandas table that will be used to
+          <td>
+            <div class="doc-md-description">
+              <p>An Ibis table expression or pandas table that will be used to
 extract the schema and the data of the new table. If not provided,
-<code>schema</code> must be given.</p></td>
+<code>schema</code> must be given.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2786,8 +2826,12 @@ extract the schema and the data of the new table. If not provided,
           <td>
                 <code><span title="ibis.config">ibis</span>.<span title="ibis.config.Schema">Schema</span> | None</code>
           </td>
-          <td><p>The schema for the new table. Only one of <code>schema</code> or <code>obj</code> can be
-provided.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The schema for the new table. Only one of <code>schema</code> or <code>obj</code> can be
+provided.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2797,8 +2841,12 @@ provided.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database where the table will be created, if not the
-default.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the database where the table will be created, if not the
+default.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2808,7 +2856,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Whether a table is temporary or not</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether a table is temporary or not</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2818,7 +2870,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Whether to clobber existing data</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether to clobber existing data</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2839,7 +2895,11 @@ default.</p></td>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>The table that was created.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The table that was created.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2882,7 +2942,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the new view.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the new view.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2892,7 +2956,11 @@ default.</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>An Ibis table expression that will be used to create the view.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An Ibis table expression that will be used to create the view.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2902,8 +2970,12 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database where the view will be created, if not
-provided the database's default is used.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the database where the view will be created, if not
+provided the database's default is used.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2913,7 +2985,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Whether to clobber an existing view with the same name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether to clobber an existing view with the same name</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2934,7 +3010,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>The view that was created.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The view that was created.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2973,7 +3053,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database to return the object for.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the database to return the object for.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2994,7 +3078,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><span title="ibis.backends.base.Database">Database</span></code>
           </td>
-          <td><p>A database object for the specified database.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A database object for the specified database.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3037,7 +3125,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the table to drop.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the table to drop.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3047,7 +3139,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database where the table exists, if not the default.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the database where the table exists, if not the default.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3057,7 +3153,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If <code>False</code>, an exception is raised if the table does not exist.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>False</code>, an exception is raised if the table does not exist.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -3103,7 +3203,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the view to drop.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the view to drop.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3113,7 +3217,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database where the view exists, if not the default.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the database where the view exists, if not the default.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3123,7 +3231,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If <code>False</code>, an exception is raised if the view does not exist.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>False</code>, an exception is raised if the view does not exist.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -3187,7 +3299,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>[<span title="ibis.expr.operations">ops</span>.<span title="ibis.expr.operations.Value">Value</span>]</code>
           </td>
-          <td><p>A class corresponding to an operation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A class corresponding to an operation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3208,7 +3324,11 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Whether the backend implements the operation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether the backend implements the operation.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3260,8 +3380,12 @@ provided the database's default is used.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A pattern in Python's regex format to filter returned database
-names.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A pattern in Python's regex format to filter returned database
+names.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3282,8 +3406,12 @@ names.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>The database names that exist in the current connection, that match
-the <code>like</code> pattern if provided.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The database names that exist in the current connection, that match
+the <code>like</code> pattern if provided.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3328,7 +3456,11 @@ or other equivalent entities in a SQL database.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, optional</code>
           </td>
-          <td><p>A pattern in Python's regex format.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A pattern in Python's regex format.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3338,7 +3470,11 @@ or other equivalent entities in a SQL database.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, optional</code>
           </td>
-          <td><p>The database to list tables of, if not the current one.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The database to list tables of, if not the current one.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3359,7 +3495,11 @@ or other equivalent entities in a SQL database.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>The list of the table names that match the pattern <code>like</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The list of the table names that match the pattern <code>like</code>.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3424,7 +3564,11 @@ or other equivalent entities in a SQL database.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3434,7 +3578,11 @@ or other equivalent entities in a SQL database.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Database name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Database name</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3455,7 +3603,11 @@ or other equivalent entities in a SQL database.</p>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>

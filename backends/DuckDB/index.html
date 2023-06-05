@@ -2282,7 +2282,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
           </td>
-          <td><p>Path to a duckdb database.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path to a duckdb database.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;:memory:&#39;</code>
           </td>
@@ -2292,7 +2296,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Whether the database is read-only.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether the database is read-only.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2302,8 +2310,12 @@
           <td>
                 <code><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Directory to use for spilling to disk. Only set by default for
-in-memory connections.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Directory to use for spilling to disk. Only set by default for
+in-memory connections.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2313,9 +2325,13 @@ in-memory connections.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>DuckDB configuration parameters. See the <a href="https://duckdb.org/docs/sql/configuration">DuckDB configuration
+          <td>
+            <div class="doc-md-description">
+              <p>DuckDB configuration parameters. See the <a href="https://duckdb.org/docs/sql/configuration">DuckDB configuration
 documentation</a> for
-possible configuration values.</p></td>
+possible configuration values.</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2377,8 +2393,12 @@ passing a properly formatted DuckDB connection URL to <code>ibis.connect</code><
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>The data source(s). May be a path to a file or directory of CSV files, or an
-iterable of CSV files.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source(s). May be a path to a file or directory of CSV files, or an
+iterable of CSV files.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2388,8 +2408,12 @@ iterable of CSV files.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2399,8 +2423,12 @@ a sequentially generated name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Additional keyword arguments passed to DuckDB loading function.
-See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv</a> for more information.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to DuckDB loading function.
+See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv</a> for more information.</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2442,8 +2470,12 @@ See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv<
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>The data source(s). May be a path to a file, an iterable of files,
-or directory of parquet files.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source(s). May be a path to a file, an iterable of files,
+or directory of parquet files.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2453,8 +2485,12 @@ or directory of parquet files.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2464,8 +2500,12 @@ a sequentially generated name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Additional keyword arguments passed to DuckDB loading function.
-See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a> for more information.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to DuckDB loading function.
+See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a> for more information.</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2510,7 +2550,11 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>File or list of files</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>File or list of files</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2520,7 +2564,11 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Optional table name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional table name</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2529,7 +2577,11 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
           <td><code>kwargs</code></td>
           <td>
           </td>
-          <td><p>Additional keyword arguments passed to DuckDB's <code>read_json_auto</code> function</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to DuckDB's <code>read_json_auto</code> function</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2571,7 +2623,11 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
           <td>
                 <code><a class="autorefs autorefs-internal" title="pandas" href="../pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.Table">Table</span> | <span title="pyarrow">pa</span>.<span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
           </td>
-          <td><p>The data source.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2581,8 +2637,12 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2624,7 +2684,11 @@ a sequentially generated name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
           </td>
-          <td><p>The path to the SQLite database</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The path to the SQLite database</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2634,7 +2698,11 @@ a sequentially generated name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>The table to read</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The table to read</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2675,7 +2743,11 @@ a sequentially generated name.</p></td>
           <td><code>uri</code></td>
           <td>
           </td>
-          <td><p>The postgres URI in form 'postgres://user:password@host:port'</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The postgres URI in form 'postgres://user:password@host:port'</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2685,7 +2757,11 @@ a sequentially generated name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>The table to read</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The table to read</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2695,7 +2771,11 @@ a sequentially generated name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>PostgreSQL schema where <code>table_name</code> resides</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>PostgreSQL schema where <code>table_name</code> resides</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;public&#39;</code>
           </td>

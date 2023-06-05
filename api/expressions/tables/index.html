@@ -3059,7 +3059,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Possible column name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Possible column name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3080,7 +3084,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Whether <code>name</code> is a column in <code>self</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether <code>name</code> is a column in <code>self</code></p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3127,7 +3135,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Column name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Column name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3148,7 +3160,11 @@
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>
           </td>
-          <td><p>Column expression with name <code>key</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Column expression with name <code>key</code></p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3212,7 +3228,11 @@ including various forms of projection and filtering.</p>
           <td><code>what</code></td>
           <td>
           </td>
-          <td><p>Selection object. This can be a variety of types including strings, ints, lists.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Selection object. This can be a variety of types including strings, ints, lists.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3233,8 +3253,12 @@ including various forms of projection and filtering.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>
           </td>
-          <td><p>The return type depends on the input. For a single string or int
-input a column is returned, otherwise a table is returned.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The return type depends on the input. For a single string or int
+input a column is returned, otherwise a table is returned.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3452,9 +3476,13 @@ input a column is returned, otherwise a table is returned.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>] | None</code>
           </td>
-          <td><p>Aggregate expressions. These can be any scalar-producing
+          <td>
+            <div class="doc-md-description">
+              <p>Aggregate expressions. These can be any scalar-producing
 expression, including aggregation functions like <code>sum</code> or literal
-values like <code>ibis.literal(1)</code>.</p></td>
+values like <code>ibis.literal(1)</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3464,7 +3492,11 @@ values like <code>ibis.literal(1)</code>.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | None</code>
           </td>
-          <td><p>Grouping expressions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Grouping expressions.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3474,11 +3506,15 @@ values like <code>ibis.literal(1)</code>.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | None</code>
           </td>
-          <td><p>Post-aggregation filters. The shape requirements are the same
+          <td>
+            <div class="doc-md-description">
+              <p>Post-aggregation filters. The shape requirements are the same
 <code>metrics</code>, but the output type for <code>having</code> is <code>boolean</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Expressions like <code>x is None</code> return <code>bool</code> and <strong>will not</strong> generate a SQL comparison to <code>NULL</code></p>
-</div></td>
+</div>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3488,7 +3524,11 @@ values like <code>ibis.literal(1)</code>.</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
           </td>
-          <td><p>Named aggregate expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Named aggregate expressions</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -3509,7 +3549,11 @@ values like <code>ibis.literal(1)</code>.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>An aggregate table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An aggregate table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3584,7 +3628,11 @@ backend for use in the
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the child expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the child expression</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3605,7 +3653,11 @@ backend for use in the
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>An table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3661,7 +3713,11 @@ backend for use in the
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3710,7 +3766,11 @@ rather than equal keys.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3720,7 +3780,11 @@ rather than equal keys.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3730,7 +3794,11 @@ rather than equal keys.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.BooleanColumn">BooleanColumn</span> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.BooleanColumn">BooleanColumn</span>]</code>
           </td>
-          <td><p>Join expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Join expressions</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -3740,7 +3808,11 @@ rather than equal keys.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>]</code>
           </td>
-          <td><p>column to group by before joining</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>column to group by before joining</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -3750,7 +3822,11 @@ rather than equal keys.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.IntervalScalar">IntervalScalar</span> | None</code>
           </td>
-          <td><p>Amount of time to look behind when joining</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Amount of time to look behind when joining</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3760,8 +3836,12 @@ rather than equal keys.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A format string to use to rename overlapping columns in the left
-table (e.g. <code>"left_{name}"</code>).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A format string to use to rename overlapping columns in the left
+table (e.g. <code>"left_{name}"</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -3771,8 +3851,12 @@ table (e.g. <code>"left_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A format string to use to rename overlapping columns in the right
-table (e.g. <code>"right_{name}"</code>).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A format string to use to rename overlapping columns in the right
+table (e.g. <code>"right_{name}"</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;{name}_right&#39;</code>
           </td>
@@ -3793,7 +3877,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3840,7 +3928,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Cached table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Cached table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3928,7 +4020,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><span title="ibis.common.typing.SupportsSchema">SupportsSchema</span></code>
           </td>
-          <td><p>Mapping, schema or iterable of pairs to use for casting</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping, schema or iterable of pairs to use for casting</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3949,7 +4045,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Casted table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Casted table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4042,7 +4142,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
           </td>
-          <td><p>Optional boolean expression to filter rows when counting.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional boolean expression to filter rows when counting.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -4063,7 +4167,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><span title="ibis.expr.types.numeric.IntegerScalar">IntegerScalar</span></code>
           </td>
-          <td><p>Number of rows in the table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows in the table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4124,7 +4232,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Left table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Left table</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4134,7 +4246,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Right table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Right table</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4144,7 +4260,11 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Additional tables to cross join</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional tables to cross join</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -4154,8 +4274,12 @@ chaining will not incur the overhead of caching more than once.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A format string to use to rename overlapping columns in the left
-table (e.g. <code>"left_{name}"</code>).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A format string to use to rename overlapping columns in the left
+table (e.g. <code>"left_{name}"</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -4165,8 +4289,12 @@ table (e.g. <code>"left_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A format string to use to rename overlapping columns in the right
-table (e.g. <code>"right_{name}"</code>).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A format string to use to rename overlapping columns in the right
+table (e.g. <code>"right_{name}"</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;{name}_right&#39;</code>
           </td>
@@ -4187,7 +4315,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Cross join of <code>left</code>, <code>right</code> and <code>rest</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Cross join of <code>left</code>, <code>right</code> and <code>rest</code></p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4272,7 +4404,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>One or more table expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>One or more table expressions</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -4282,7 +4418,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Only diff distinct rows not occurring in the calling table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Only diff distinct rows not occurring in the calling table</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -4305,7 +4445,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>The rows present in <code>self</code> that are not present in <code>tables</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The rows present in <code>self</code> that are not present in <code>tables</code>.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4405,8 +4549,12 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span> | None</code>
           </td>
-          <td><p>Only consider certain columns for identifying duplicates.
-By default deduplicate all of the columns.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Only consider certain columns for identifying duplicates.
+By default deduplicate all of the columns.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -4416,12 +4564,16 @@ By default deduplicate all of the columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;first&#39;, &#39;last&#39;] | None</code>
           </td>
-          <td><p>Determines which duplicates to keep.</p>
+          <td>
+            <div class="doc-md-description">
+              <p>Determines which duplicates to keep.</p>
 <ul>
 <li><code>"first"</code>: Drop duplicates except for the first occurrence.</li>
 <li><code>"last"</code>: Drop duplicates except for the last occurrence.</li>
 <li><code>None</code>: Drop all duplicates</li>
-</ul></td>
+</ul>
+            </div>
+          </td>
           <td>
                 <code>&#39;first&#39;</code>
           </td>
@@ -4564,7 +4716,11 @@ By default deduplicate all of the columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.selectors.Selector">Selector</span></code>
           </td>
-          <td><p>Fields to drop. Strings and selectors are accepted.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Fields to drop. Strings and selectors are accepted.</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -4585,7 +4741,11 @@ By default deduplicate all of the columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A table with all columns matching <code>fields</code> removed.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A table with all columns matching <code>fields</code> removed.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4689,8 +4849,12 @@ By default deduplicate all of the columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Columns names to consider when dropping nulls. By default all columns
-are considered.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Columns names to consider when dropping nulls. By default all columns
+are considered.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -4700,9 +4864,13 @@ are considered.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;any&#39;, &#39;all&#39;]</code>
           </td>
-          <td><p>Determine whether a row is removed if there is <strong>at least one null
+          <td>
+            <div class="doc-md-description">
+              <p>Determine whether a row is removed if there is <strong>at least one null
 value in the row</strong> (<code>'any'</code>), or if <strong>all</strong> row values are null
-(<code>'all'</code>).</p></td>
+(<code>'all'</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;any&#39;</code>
           </td>
@@ -4723,7 +4891,11 @@ value in the row</strong> (<code>'any'</code>), or if <strong>all</strong> row v
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4797,9 +4969,13 @@ backend promotes integer replacement values to floats.</p>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a> | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>]</code>
           </td>
-          <td><p>Value with which to fill nulls. If <code>replacements</code> is a mapping, the
+          <td>
+            <div class="doc-md-description">
+              <p>Value with which to fill nulls. If <code>replacements</code> is a mapping, the
 keys are column names that map to their replacement value. If
-passed as a scalar all columns are filled with that value.</p></td>
+passed as a scalar all columns are filled with that value.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4862,7 +5038,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4901,7 +5081,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>] | <span title="ibis.selectors.IfAnyAll">IfAnyAll</span></code>
           </td>
-          <td><p>Boolean value expressions used to select rows in <code>table</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Boolean value expressions used to select rows in <code>table</code>.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4922,7 +5106,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Filtered table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Filtered table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -4994,7 +5182,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | None</code>
           </td>
-          <td><p>Grouping expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Grouping expressions</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -5004,7 +5196,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]</code>
           </td>
-          <td><p>Named grouping expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Named grouping expressions</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -5025,7 +5221,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.groupby.GroupedTable" href="#ibis.expr.types.groupby.GroupedTable">GroupedTable</a></code>
           </td>
-          <td><p>A grouped table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A grouped table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5095,7 +5295,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Number of rows to include</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows to include</p>
+            </div>
+          </td>
           <td>
                 <code>5</code>
           </td>
@@ -5116,7 +5320,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p><code>self</code> limited to <code>n</code> rows</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p><code>self</code> limited to <code>n</code> rows</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5180,7 +5388,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Summary of <code>self</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Summary of <code>self</code></p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5241,7 +5453,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>One or more table expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>One or more table expressions</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -5251,7 +5467,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Only return distinct rows</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Only return distinct rows</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -5272,7 +5492,11 @@ passed as a scalar all columns are filled with that value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A new table containing the intersection of all input tables.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new table containing the intersection of all input tables.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5370,7 +5594,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Left table to join</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Left table to join</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5380,7 +5608,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Right table to join</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Right table to join</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5390,7 +5622,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>] | <span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.BooleanColumn">BooleanColumn</span>]</code>
           </td>
-          <td><p>Boolean or column names to join on</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Boolean or column names to join on</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -5400,7 +5636,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;inner&#39;, &#39;left&#39;, &#39;outer&#39;, &#39;right&#39;, &#39;semi&#39;, &#39;anti&#39;, &#39;any_inner&#39;, &#39;any_left&#39;, &#39;left_semi&#39;]</code>
           </td>
-          <td><p>Join method</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Join method</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;inner&#39;</code>
           </td>
@@ -5410,8 +5650,12 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A format string to use to rename overlapping columns in the left
-table (e.g. <code>"left_{name}"</code>).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A format string to use to rename overlapping columns in the left
+table (e.g. <code>"left_{name}"</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -5421,8 +5665,12 @@ table (e.g. <code>"left_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A format string to use to rename overlapping columns in the right
-table (e.g. <code>"right_{name}"</code>).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A format string to use to rename overlapping columns in the right
+table (e.g. <code>"right_{name}"</code>).</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;{name}_right&#39;</code>
           </td>
@@ -5543,7 +5791,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Number of rows to include</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows to include</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5553,7 +5805,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Number of rows to skip first</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows to skip first</p>
+            </div>
+          </td>
           <td>
                 <code>0</code>
           </td>
@@ -5574,7 +5830,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>The first <code>n</code> rows of <code>self</code> starting at <code>offset</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The first <code>n</code> rows of <code>self</code> starting at <code>offset</code></p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5640,7 +5900,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../#ibis.expr.types.core.Expr">Expr</a>] | None</code>
           </td>
-          <td><p>List of named expressions to add as columns</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of named expressions to add as columns</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -5650,7 +5914,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
           </td>
-          <td><p>Named expressions using keyword arguments</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Named expressions using keyword arguments</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -5671,7 +5939,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression with additional columns</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression with additional columns</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5778,7 +6050,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]] | None</code>
           </td>
-          <td><p>Expressions to sort the table by.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Expressions to sort the table by.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5799,7 +6075,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Sorted table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Sorted table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5874,7 +6154,11 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
-          <td><p>String column name or selector.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>String column name or selector.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5884,8 +6168,12 @@ table (e.g. <code>"right_{name}"</code>).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>A string or iterable of strings indicating how to name the new
-pivoted columns.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A string or iterable of strings indicating how to name the new
+pivoted columns.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;name&#39;</code>
           </td>
@@ -5895,8 +6183,12 @@ pivoted columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/re.html#module-re">re</a>.<span title="re.Pattern">Pattern</span></code>
           </td>
-          <td><p>Pattern to use to extract column names from the input. By default
-the entire column name is extracted.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pattern to use to extract column names from the input. By default
+the entire column name is extracted.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;(.+)&#39;</code>
           </td>
@@ -5906,8 +6198,12 @@ the entire column name is extracted.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]] | None</code>
           </td>
-          <td><p>Function or mapping of a name in <code>names_to</code> to a function to
-transform a column name to a value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Function or mapping of a name in <code>names_to</code> to a function to
+transform a column name to a value.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -5917,7 +6213,11 @@ transform a column name to a value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the pivoted value column.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the pivoted value column.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;value&#39;</code>
           </td>
@@ -5927,8 +6227,12 @@ transform a column name to a value.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>] | <span title="ibis.expr.deferred.Deferred">Deferred</span> | None</code>
           </td>
-          <td><p>Apply a function to the value column. This can be a lambda or
-deferred expression.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Apply a function to the value column. This can be a lambda or
+deferred expression.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -5949,7 +6253,11 @@ deferred expression.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Pivoted table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pivoted table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -6207,7 +6515,11 @@ variables stored in column names</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span> | None</code>
           </td>
-          <td><p>A set of columns that uniquely identify each observation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A set of columns that uniquely identify each observation.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -6217,8 +6529,12 @@ variables stored in column names</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
-          <td><p>An argument describing which column or columns to use to get the
-name of the output columns.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An argument describing which column or columns to use to get the
+name of the output columns.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;name&#39;</code>
           </td>
@@ -6228,7 +6544,11 @@ name of the output columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>String added to the start of every column name.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>String added to the start of every column name.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -6238,9 +6558,13 @@ name of the output columns.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>If <code>names_from</code> or <code>values_from</code> contains multiple columns, this
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>names_from</code> or <code>values_from</code> contains multiple columns, this
 argument will be used to join their values together into a single
-string to use as a column name.</p></td>
+string to use as a column name.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;_&#39;</code>
           </td>
@@ -6250,8 +6574,12 @@ string to use as a column name.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a> columns are sorted. If <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#False"><code>False</code></a> column
-names are ordered by appearance.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a> columns are sorted. If <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#False"><code>False</code></a> column
+names are ordered by appearance.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -6261,7 +6589,9 @@ names are ordered by appearance.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
           </td>
-          <td><p>An explicit sequence of values to look for in columns matching
+          <td>
+            <div class="doc-md-description">
+              <p>An explicit sequence of values to look for in columns matching
 <code>names_from</code>.</p>
 <ul>
 <li>When this value is <code>None</code>, the values will be computed from
@@ -6269,7 +6599,9 @@ names are ordered by appearance.</p></td>
 <li>When this value is not <code>None</code>, each element's length must match
 the length of <code>names_from</code>.</li>
 </ul>
-<p>See examples below for more detail.</p></td>
+<p>See examples below for more detail.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -6279,8 +6611,12 @@ the length of <code>names_from</code>.</li>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-internal" title="ibis.selectors" href="../../selectors/#ibis.selectors">s</a>.<span title="ibis.selectors.Selector">Selector</span></code>
           </td>
-          <td><p>An argument describing which column or columns to get the cell
-values from.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An argument describing which column or columns to get the cell
+values from.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;value&#39;</code>
           </td>
@@ -6290,8 +6626,12 @@ values from.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a> | None</code>
           </td>
-          <td><p>A scalar value that specifies what each value should be filled with
-when missing.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A scalar value that specifies what each value should be filled with
+when missing.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -6301,7 +6641,11 @@ when missing.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>] | <span title="ibis.expr.deferred.Deferred">Deferred</span></code>
           </td>
-          <td><p>A function applied to the value in each cell in the output.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A function applied to the value in each cell in the output.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;arbitrary&#39;</code>
           </td>
@@ -6322,7 +6666,11 @@ when missing.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Wider pivoted table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Wider pivoted table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -6662,12 +7010,16 @@ constructing the expression.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;snake_case&#39;]</code>
           </td>
-          <td><p>A mapping, function, or format string mapping old to new column
+          <td>
+            <div class="doc-md-description">
+              <p>A mapping, function, or format string mapping old to new column
 names. If a column isn't in the mapping (or if the callable returns
 None) it is left with its original name. May also pass a format
 string to rename all columns, like <code>"prefix_{name}"</code>. Also
 accepts the literal string <code>"snake_case"</code>, which will relabel all
-columns to use a <code>snake_case</code> naming convention.</p></td>
+columns to use a <code>snake_case</code> naming convention.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -6688,7 +7040,11 @@ columns to use a <code>snake_case</code> naming convention.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A relabeled table expressi</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A relabeled table expressi</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -6797,7 +7153,11 @@ Generally this corresponds to some index into the database storage
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerColumn" href="../numeric/#ibis.expr.types.numeric.IntegerColumn">IntegerColumn</a></code>
           </td>
-          <td><p>An integer column</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An integer column</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -6833,7 +7193,11 @@ Generally this corresponds to some index into the database storage
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.api.Schema" href="../../schemas/#ibis.expr.schema.Schema">Schema</a></code>
           </td>
-          <td><p>The table's schema.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The table's schema.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -6896,8 +7260,12 @@ in v4.</p>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
-          <td><p>Column expression, string, or list of column expressions and
-strings.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Column expression, string, or list of column expressions and
+strings.</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -6907,7 +7275,11 @@ strings.</p></td>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Column expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Column expressions</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -6928,7 +7300,11 @@ strings.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7085,7 +7461,11 @@ details on using named table expressions in a SQL string.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Query string</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Query string</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -7106,7 +7486,11 @@ details on using named table expressions in a SQL string.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>An opaque table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An opaque table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7159,7 +7543,11 @@ details on using named table expressions in a SQL string.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
           </td>
-          <td><p>A single column view of a table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A single column view of a table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7197,7 +7585,11 @@ details on using named table expressions in a SQL string.</p>
           <td><code>kwargs</code></td>
           <td>
           </td>
-          <td><p>Same as keyword arguments to <a class="autorefs autorefs-internal" href="../#ibis.expr.types.core.Expr.execute"><code>execute</code></a></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Same as keyword arguments to <a class="autorefs autorefs-internal" href="../#ibis.expr.types.core.Expr.execute"><code>execute</code></a></p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -7240,7 +7632,11 @@ details on using named table expressions in a SQL string.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>One or more table expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>One or more table expressions</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -7250,7 +7646,11 @@ details on using named table expressions in a SQL string.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Only return distinct rows</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Only return distinct rows</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -7271,7 +7671,11 @@ details on using named table expressions in a SQL string.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A new table containing the union of all input tables.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new table containing the union of all input tables.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7383,7 +7787,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>String column names to project into <code>self</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>String column names to project into <code>self</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -7404,7 +7812,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>The child table with struct fields of each of <code>columns</code> projected.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The child table with struct fields of each of <code>columns</code> projected.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7476,7 +7888,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7571,7 +7987,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name to use for the row count metric</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name to use for the row count metric</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;count&#39;</code>
           </td>
@@ -7592,7 +8012,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>The aggregated table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The aggregated table</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7634,7 +8058,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.BooleanScalar">BooleanScalar</span></code>
           </td>
-          <td><p>An expression that filters based on an aggregate value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An expression that filters based on an aggregate value.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -7655,7 +8083,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.groupby.GroupedTable" href="#ibis.expr.types.groupby.GroupedTable">GroupedTable</a></code>
           </td>
-          <td><p>A grouped table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A grouped table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7695,7 +8127,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]</code>
           </td>
-          <td><p>List of expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of expressions</p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -7705,7 +8141,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
           </td>
-          <td><p>Expressions</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Expressions</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -7753,7 +8193,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A table expression with window functions applied</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A table expression with window functions applied</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7794,7 +8238,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]</code>
           </td>
-          <td><p>Expressions to order the results by</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Expressions to order the results by</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -7815,7 +8263,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.groupby.GroupedTable" href="#ibis.expr.types.groupby.GroupedTable">GroupedTable</a></code>
           </td>
-          <td><p>A sorted grouped GroupedTable</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A sorted grouped GroupedTable</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -7853,7 +8305,11 @@ you don't know the length prior to running your program (for example, user input
           <td><code>window</code></td>
           <td>
           </td>
-          <td><p>Window to add to the input</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Window to add to the input</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -7862,7 +8318,11 @@ you don't know the length prior to running your program (for example, user input
           <td><code>rows</code></td>
           <td>
           </td>
-          <td><p>Whether to use the <code>ROWS</code> window clause</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether to use the <code>ROWS</code> window clause</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -7871,7 +8331,11 @@ you don't know the length prior to running your program (for example, user input
           <td><code>range</code></td>
           <td>
           </td>
-          <td><p>Whether to use the <code>RANGE</code> window clause</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether to use the <code>RANGE</code> window clause</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -7880,7 +8344,11 @@ you don't know the length prior to running your program (for example, user input
           <td><code>group_by</code></td>
           <td>
           </td>
-          <td><p>Grouping key</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Grouping key</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -7889,7 +8357,11 @@ you don't know the length prior to running your program (for example, user input
           <td><code>order_by</code></td>
           <td>
           </td>
-          <td><p>Ordering key</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Ordering key</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -7910,7 +8382,11 @@ you don't know the length prior to running your program (for example, user input
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.groupby.GroupedTable" href="#ibis.expr.types.groupby.GroupedTable">GroupedTable</a></code>
           </td>
-          <td><p>A new grouped table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new grouped table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>

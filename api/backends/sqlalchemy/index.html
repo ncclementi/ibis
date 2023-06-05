@@ -2268,7 +2268,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the new table.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the new table.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2278,9 +2282,13 @@
           <td>
                 <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
           </td>
-          <td><p>An Ibis table expression or pandas table that will be used to
+          <td>
+            <div class="doc-md-description">
+              <p>An Ibis table expression or pandas table that will be used to
 extract the schema and the data of the new table. If not provided,
-<code>schema</code> must be given.</p></td>
+<code>schema</code> must be given.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2290,8 +2298,12 @@ extract the schema and the data of the new table. If not provided,
           <td>
                 <code><span title="ibis.expr.schema">sch</span>.<a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="../../schemas/#ibis.expr.schema.Schema">Schema</a> | None</code>
           </td>
-          <td><p>The schema for the new table. Only one of <code>schema</code> or <code>obj</code> can be
-provided.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The schema for the new table. Only one of <code>schema</code> or <code>obj</code> can be
+provided.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2301,8 +2313,12 @@ provided.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the database where the table will be created, if not the
-default.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the database where the table will be created, if not the
+default.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2312,7 +2328,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Should the table be temporary for the session.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Should the table be temporary for the session.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2322,7 +2342,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Clobber existing data</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Clobber existing data</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2343,7 +2367,11 @@ default.</p></td>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>The table that was created.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The table that was created.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2382,7 +2410,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table to drop</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table to drop</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2392,7 +2424,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Database to drop table from</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Database to drop table from</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2402,7 +2438,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Check for existence before dropping</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Check for existence before dropping</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2444,7 +2484,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>The name of the table to which data needs will be inserted</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the table to which data needs will be inserted</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2454,7 +2498,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="pandas" href="../../../backends/pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>The source data or expression to insert</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The source data or expression to insert</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2464,7 +2512,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Name of the attached database that the table is located in.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the attached database that the table is located in.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2474,7 +2526,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If <code>True</code> then replace existing contents of table</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>True</code> then replace existing contents of table</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2495,13 +2551,21 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError">NotImplementedError</a></code>
           </td>
-          <td><p>If inserting data from a different database</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If inserting data from a different database</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code>
           </td>
-          <td><p>If the type of <code>obj</code> isn't supported</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If the type of <code>obj</code> isn't supported</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2560,7 +2624,11 @@ default.</p></td>
           <td><code>query</code></td>
           <td>
           </td>
-          <td><p>DDL or DML statement</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DDL or DML statement</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2602,7 +2670,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2623,7 +2695,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.api.Schema" href="../../schemas/#ibis.expr.schema.Schema">Schema</a></code>
           </td>
-          <td><p>The ibis schema of <code>name</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The ibis schema of <code>name</code></p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2662,7 +2738,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2672,7 +2752,11 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>The database the table resides in</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The database the table resides in</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2682,12 +2766,16 @@ default.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>The schema inside <code>database</code> where the table resides.</p>
+          <td>
+            <div class="doc-md-description">
+              <p>The schema inside <code>database</code> where the table resides.</p>
 <div class="admonition warning">
 <p class="admonition-title"><code>schema</code> refers to database organization</p>
 </div>
 <p>The <code>schema</code> parameter does <strong>not</strong> refer to the column names
-and types of <code>table</code>.</p></td>
+and types of <code>table</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2708,7 +2796,11 @@ and types of <code>table</code>.</p></td>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>

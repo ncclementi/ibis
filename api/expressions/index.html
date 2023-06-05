@@ -2158,8 +2158,12 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | None</code>
           </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2169,13 +2173,17 @@
           <td>
                 <code><span title="ibis.expr.types.core.TimeContext">TimeContext</span> | None</code>
           </td>
-          <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
+          <td>
+            <div class="doc-md-description">
+              <p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
 will only compute result for data inside the time range. The time
 range is inclusive of both endpoints. This is conceptually same as
 a time filter.
 The time column must be named <code>'time'</code> and should preserve
 across the expression. For example, if that column is dropped then
-execute will result in an error.</p></td>
+execute will result in an error.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2185,7 +2193,11 @@ execute will result in an error.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="generic/#ibis.expr.types.generic.Value">Value</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2227,7 +2239,11 @@ execute will result in an error.</p></td>
           <td><code>other</code></td>
           <td>
           </td>
-          <td><p>Another expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Another expression</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2280,8 +2296,12 @@ execute will result in an error.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;default&#39;</code>
           </td>
@@ -2291,13 +2311,17 @@ execute will result in an error.</p></td>
           <td>
                 <code><span title="ibis.expr.types.core.TimeContext">TimeContext</span> | None</code>
           </td>
-          <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
+          <td>
+            <div class="doc-md-description">
+              <p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
 will only compute result for data inside the time range. The time
 range is inclusive of both endpoints. This is conceptually same as
 a time filter.
 The time column must be named <code>'time'</code> and should preserve
 across the expression. For example, if that column is dropped then
-execute will result in an error.</p></td>
+execute will result in an error.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2307,7 +2331,11 @@ execute will result in an error.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="generic/#ibis.expr.types.generic.Value">Value</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2317,7 +2345,11 @@ execute will result in an error.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Keyword arguments</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Keyword arguments</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2394,10 +2426,14 @@ execute will result in an error.</p></td>
           <td><code>f</code></td>
           <td>
           </td>
-          <td><p>If the expression needs to be passed as anything other than the
+          <td>
+            <div class="doc-md-description">
+              <p>If the expression needs to be passed as anything other than the
 first argument to the function, pass a tuple with the argument
 name. For example, (f, 'data') if the function f expects a 'data'
-keyword</p></td>
+keyword</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2407,7 +2443,11 @@ keyword</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Positional arguments to <code>f</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Positional arguments to <code>f</code></p>
+            </div>
+          </td>
           <td>
                 <code>()</code>
           </td>
@@ -2417,7 +2457,11 @@ keyword</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Keyword arguments to <code>f</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Keyword arguments to <code>f</code></p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2455,7 +2499,11 @@ keyword</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.core.Expr" href="#ibis.expr.types.core.Expr">Expr</a></code>
           </td>
-          <td><p>Result type of passed function</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Result type of passed function</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2496,7 +2544,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | Path</code>
           </td>
-          <td><p>The data source. A string or Path to the CSV file.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source. A string or Path to the CSV file.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2506,7 +2558,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2516,7 +2572,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Additional keyword arguments passed to pyarrow.csv.CSVWriter</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to pyarrow.csv.CSVWriter</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2561,7 +2621,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | Path</code>
           </td>
-          <td><p>The data source. A string or Path to the parquet file.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source. A string or Path to the parquet file.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2571,7 +2635,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2581,7 +2649,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Additional keyword arguments passed to pyarrow.parquet.ParquetWriter</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to pyarrow.parquet.ParquetWriter</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2644,7 +2716,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2654,8 +2730,12 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2665,7 +2745,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Keyword arguments</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Keyword arguments</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2686,7 +2770,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
-          <td><p>A pyarrow table holding the results of the executed expression.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A pyarrow table holding the results of the executed expression.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2727,8 +2815,12 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2738,7 +2830,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="generic/#ibis.expr.types.generic.Value">Value</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2748,7 +2844,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Maximum number of rows in each returned record batch.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum number of rows in each returned record batch.</p>
+            </div>
+          </td>
           <td>
                 <code>1000000</code>
           </td>
@@ -2758,7 +2858,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Keyword arguments</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Keyword arguments</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2779,7 +2883,11 @@ immediately.</p>
           <td>
                 <code>results</code>
           </td>
-          <td><p>RecordBatchReader</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>RecordBatchReader</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2836,8 +2944,12 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Image output format. These are specified by the <code>graphviz</code> Python
-library.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Image output format. These are specified by the <code>graphviz</code> Python
+library.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;svg&#39;</code>
           </td>
@@ -2847,7 +2959,11 @@ library.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Show operation input names as edge labels</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Show operation input names as edge labels</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2857,7 +2973,11 @@ library.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Print the graphviz DOT code to stderr if <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Print the graphviz DOT code to stderr if <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#True"><code>True</code></a></p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2878,7 +2998,11 @@ library.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ImportError">ImportError</a></code>
           </td>
-          <td><p>If <code>graphviz</code> is not installed.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>graphviz</code> is not installed.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>

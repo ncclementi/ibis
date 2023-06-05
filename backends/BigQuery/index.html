@@ -2187,7 +2187,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>A BigQuery project id.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A BigQuery project id.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2197,8 +2201,12 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>A dataset id that lives inside of the project indicated by
-<code>project_id</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dataset id that lives inside of the project indicated by
+<code>project_id</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -2208,7 +2216,11 @@
           <td>
                 <code><span title="google.auth.credentials">google</span>.<span title="google.auth.credentials.auth">auth</span>.<span title="google.auth.credentials.auth.credentials">credentials</span>.<span title="google.auth.credentials.auth.credentials.Credentials">Credentials</span> | None</code>
           </td>
-          <td><p>Optional credentials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional credentials.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2218,7 +2230,11 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>A string identifying your application to Google API endpoints.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A string identifying your application to Google API endpoints.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2228,10 +2244,14 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Use a local webserver for the user authentication.  Binds a
+          <td>
+            <div class="doc-md-description">
+              <p>Use a local webserver for the user authentication.  Binds a
 webserver to an open port on localhost between 8080 and 8089,
 inclusive, to receive authentication token. If not set, defaults to
-False, which requests a token via the console.</p></td>
+False, which requests a token via the console.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2241,12 +2261,16 @@ False, which requests a token via the console.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Authenticate using additional scopes required to <code>query external
+          <td>
+            <div class="doc-md-description">
+              <p>Authenticate using additional scopes required to <code>query external
 data sources
 &lt;https://cloud.google.com/bigquery/external-data-sources&gt;</code>_,
 such as Google Sheets, files in Google Cloud Storage, or files in
 Google Drive. If not set, defaults to False, which requests the
-default BigQuery scopes.</p></td>
+default BigQuery scopes.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2256,7 +2280,9 @@ default BigQuery scopes.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Selects the behavior of the credentials cache.</p>
+          <td>
+            <div class="doc-md-description">
+              <p>Selects the behavior of the credentials cache.</p>
 <p><code>'default'</code>
 Reads credentials from disk if available, otherwise
 authenticates and caches credentials to disk.</p>
@@ -2264,7 +2290,9 @@ authenticates and caches credentials to disk.</p>
 Authenticates and caches credentials to disk.</p>
 <p><code>'none'</code>
 Authenticates and does <strong>not</strong> cache credentials.</p>
-<p>Defaults to <code>'default'</code>.</p></td>
+<p>Defaults to <code>'default'</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;default&#39;</code>
           </td>
@@ -2274,8 +2302,12 @@ Authenticates and does <strong>not</strong> cache credentials.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Identifier to use instead of default <code>_PARTITIONTIME</code> partition
-column. Defaults to <code>'PARTITIONTIME'</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Identifier to use instead of default <code>_PARTITIONTIME</code> partition
+column. Defaults to <code>'PARTITIONTIME'</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;PARTITIONTIME&#39;</code>
           </td>
@@ -2285,8 +2317,12 @@ column. Defaults to <code>'PARTITIONTIME'</code>.</p></td>
           <td>
                 <code><span title="google.cloud.bigquery">bq</span>.<span title="google.cloud.bigquery.Client">Client</span> | None</code>
           </td>
-          <td><p>A <code>Client</code> from the <code>google.cloud.bigquery</code> package. If not
-set, one is created using the <code>project_id</code> and <code>credentials</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A <code>Client</code> from the <code>google.cloud.bigquery</code> package. If not
+set, one is created using the <code>project_id</code> and <code>credentials</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2296,9 +2332,13 @@ set, one is created using the <code>project_id</code> and <code>credentials</cod
           <td>
                 <code><span title="google.cloud.bigquery_storage_v1">bqstorage</span>.<span title="google.cloud.bigquery_storage_v1.BigQueryReadClient">BigQueryReadClient</span> | None</code>
           </td>
-          <td><p>A <code>BigQueryReadClient</code> from the
+          <td>
+            <div class="doc-md-description">
+              <p>A <code>BigQueryReadClient</code> from the
 <code>google.cloud.bigquery_storage_v1</code> package. If not set, one is
-created using the <code>project_id</code> and <code>credentials</code>.</p></td>
+created using the <code>project_id</code> and <code>credentials</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2319,7 +2359,11 @@ created using the <code>project_id</code> and <code>credentials</code>.</p></td>
           <td>
                 <code><span title="ibis.backends.bigquery.Backend">Backend</span></code>
           </td>
-          <td><p>An instance of the BigQuery backend.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An instance of the BigQuery backend.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>

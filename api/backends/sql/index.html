@@ -2207,7 +2207,11 @@
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a></code>
           </td>
-          <td><p>Ibis expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Ibis expression</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2217,8 +2221,12 @@
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>For expressions yielding result sets; retrieve at most this number
-of values/rows. Overrides any limit already set on the expression.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>For expressions yielding result sets; retrieve at most this number
+of values/rows. Overrides any limit already set on the expression.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2228,7 +2236,11 @@ of values/rows. Overrides any limit already set on the expression.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Named unbound parameters</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Named unbound parameters</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2238,7 +2250,11 @@ of values/rows. Overrides any limit already set on the expression.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-internal" title="pandas" href="../../../backends/pandas/#pandas">pd</a>.<span title="pandas.Timestamp">Timestamp</span>, <a class="autorefs autorefs-internal" title="pandas" href="../../../backends/pandas/#pandas">pd</a>.<span title="pandas.Timestamp">Timestamp</span>] | None</code>
           </td>
-          <td><p>Additional information about data source time boundaries</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional information about data source time boundaries</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2259,8 +2275,12 @@ of values/rows. Overrides any limit already set on the expression.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>The output of compilation. The type of this value depends on the
-backend.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The output of compilation. The type of this value depends on the
+backend.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2301,7 +2321,11 @@ interface, returning results in-memory in the appropriate object type</p>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a></code>
           </td>
-          <td><p>Ibis expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Ibis expression</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2311,8 +2335,12 @@ interface, returning results in-memory in the appropriate object type</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>For expressions yielding result sets; retrieve at most this number
-of values/rows. Overrides any limit already set on the expression.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>For expressions yielding result sets; retrieve at most this number
+of values/rows. Overrides any limit already set on the expression.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;default&#39;</code>
           </td>
@@ -2322,7 +2350,11 @@ of values/rows. Overrides any limit already set on the expression.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../../expressions/generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Named unbound parameters</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Named unbound parameters</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2332,9 +2364,13 @@ of values/rows. Overrides any limit already set on the expression.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
-          <td><p>Backend specific arguments. For example, the clickhouse backend
+          <td>
+            <div class="doc-md-description">
+              <p>Backend specific arguments. For example, the clickhouse backend
 uses this to receive <code>external_tables</code> as a dictionary of pandas
-DataFrames.</p></td>
+DataFrames.</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -2355,11 +2391,15 @@ DataFrames.</p></td>
           <td>
                 <code>DataFrame | Series | Scalar</code>
           </td>
-          <td><ul>
+          <td>
+            <div class="doc-md-description">
+              <ul>
 <li><code>Table</code>: pandas.DataFrame</li>
 <li><code>Column</code>: pandas.Series</li>
 <li><code>Scalar</code>: Python scalar value</li>
-</ul></td>
+</ul>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2397,7 +2437,11 @@ query.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Query plan</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Query plan</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2439,7 +2483,11 @@ query.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>DDL or DML statement</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DDL or DML statement</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2481,7 +2529,11 @@ query.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>SQL string</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>SQL string</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2491,8 +2543,12 @@ query.</p>
           <td>
                 <code><span title="ibis.expr.schema">sch</span>.<a class="autorefs autorefs-internal" title="ibis.expr.schema.Schema" href="../../schemas/#ibis.expr.schema.Schema">Schema</a> | None</code>
           </td>
-          <td><p>The expected schema for this query. If not provided, will be
-inferred automatically if possible.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The expected schema for this query. If not provided, will be
+inferred automatically if possible.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2513,7 +2569,11 @@ inferred automatically if possible.</p></td>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2552,7 +2612,11 @@ inferred automatically if possible.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Table name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2562,7 +2626,11 @@ inferred automatically if possible.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>Database name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Database name</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2583,7 +2651,11 @@ inferred automatically if possible.</p></td>
           <td>
                 <code>Table</code>
           </td>
-          <td><p>Table expression</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table expression</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2624,7 +2696,11 @@ immediately.</p>
           <td>
                 <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a></code>
           </td>
-          <td><p>Ibis expression to export to pyarrow</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Ibis expression to export to pyarrow</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2634,8 +2710,12 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
-          <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2645,7 +2725,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Scalar" href="../../expressions/generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
           </td>
-          <td><p>Mapping of scalar parameter expressions to value.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of scalar parameter expressions to value.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2655,7 +2739,11 @@ immediately.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Maximum number of rows in each returned record batch.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum number of rows in each returned record batch.</p>
+            </div>
+          </td>
           <td>
                 <code>1000000</code>
           </td>
@@ -2676,7 +2764,11 @@ immediately.</p>
           <td>
                 <code>RecordBatchReader</code>
           </td>
-          <td><p>Collection of pyarrow <code>RecordBatch</code>s.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Collection of pyarrow <code>RecordBatch</code>s.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
