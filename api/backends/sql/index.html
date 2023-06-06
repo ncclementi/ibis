@@ -2504,7 +2504,7 @@ query.</p>
 
 
 <h4 id="ibis.backends.base.sql.BaseSQLBackend.sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.sql.BaseSQLBackend.sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2547,6 +2547,21 @@ query.</p>
             <div class="doc-md-description">
               <p>The expected schema for this query. If not provided, will be
 inferred automatically if possible.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dialect</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional string indicating the dialect of <code>query</code>. The default
+value of <code>None</code> will use the backend's native dialect.</p>
             </div>
           </td>
           <td>

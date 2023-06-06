@@ -7428,7 +7428,7 @@ strings.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -7436,12 +7436,6 @@ strings.</p>
   <div class="doc doc-contents ">
   
       <p>Run a SQL query against a table expression.</p>
-<div class="admonition note">
-<p class="admonition-title">The SQL string is backend specific</p>
-<p><code>query</code> must be valid SQL for the execution backend the expression
-will run against.</p>
-<p>This restriction may be lifted in a future version of ibis.</p>
-</div>
 <p>See <a class="autorefs autorefs-internal" href="#ibis.expr.types.relations.Table.alias"><code>Table.alias</code></a> for
 details on using named table expressions in a SQL string.</p>
 
@@ -7468,6 +7462,21 @@ details on using named table expressions in a SQL string.</p>
           </td>
           <td>
               <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dialect</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional string indicating the dialect of <code>query</code>. The default
+value of <code>None</code> will use the backend's native dialect.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
