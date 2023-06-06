@@ -1401,13 +1401,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.apply_to" class="md-nav__link">
-    apply_to()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.equals" class="md-nav__link">
     equals()
   </a>
@@ -2138,13 +2131,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.schema.Schema.apply_to" class="md-nav__link">
-    apply_to()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.schema.Schema.equals" class="md-nav__link">
     equals()
   </a>
@@ -2306,123 +2292,6 @@ representing the type of each column.</p>
 </div>
 
 <h3 id="ibis.expr.schema.Schema-functions">Functions<a href="#ibis.expr.schema.Schema-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.expr.schema.Schema.apply_to" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">df</span><span class="p">)</span></code>
-
-<a href="#ibis.expr.schema.Schema.apply_to" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Apply the schema <code>self</code> to a pandas <code>DataFrame</code>.</p>
-<p>This method mutates the input <code>DataFrame</code>.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>df</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../../backends/pandas/#pandas">pd</a>.<span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Input DataFrame</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>DataFrame</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Type-converted DataFrame</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<p><strong>Examples:</strong></p>
-    <p>Import the necessary modules</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
-</code></pre></div>
-    <p>Construct a DataFrame with string timestamps and an <code>int8</code> column that
-we're going to upcast.</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">times</span><span class="o">=</span><span class="p">[</span>
-<span class="gp">... </span>        <span class="s2">&quot;2022-01-01 12:00:00&quot;</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="s2">&quot;2022-01-01 13:00:01&quot;</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="s2">&quot;2022-01-01 14:00:02&quot;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="p">],</span>
-<span class="gp">... </span>    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;int8&quot;</span><span class="p">)</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
-<span class="go">                 times  x</span>
-<span class="go">0  2022-01-01 12:00:00 -1</span>
-<span class="go">1  2022-01-01 13:00:01  0</span>
-<span class="go">2  2022-01-01 14:00:02  1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-<span class="go">times    object</span>
-<span class="go">x          int8</span>
-<span class="go">dtype: object</span>
-</code></pre></div>
-    <p>Construct an ibis Schema that we want to cast to.</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;times&quot;</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;int16&quot;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span>
-<span class="go">ibis.Schema {</span>
-<span class="go">  times  timestamp</span>
-<span class="go">  x      int16</span>
-<span class="go">}</span>
-</code></pre></div>
-    <p>Apply the schema</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="go">                times  x</span>
-<span class="go">0 2022-01-01 12:00:00 -1</span>
-<span class="go">1 2022-01-01 13:00:01  0</span>
-<span class="go">2 2022-01-01 14:00:02  1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>  <span class="c1"># `df` is mutated by the method</span>
-<span class="go">times    datetime64[ns]</span>
-<span class="go">x                 int16</span>
-<span class="go">dtype: object</span>
-</code></pre></div>
-
-  </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
