@@ -4378,7 +4378,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.difference" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4400,13 +4400,27 @@ table (e.g. <code>"right_{name}"</code>).</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>tables</code></td>
+          <td><code>table</code></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>One or more table expressions</p>
+              <p>A table expression</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>*rest</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional table expressions</p>
             </div>
           </td>
           <td>
@@ -4485,30 +4499,6 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="go">├───────┤</span>
 <span class="go">│     1 │</span>
 <span class="go">└───────┘</span>
-</code></pre></div>
-    <p>Passing no arguments to <code>difference</code> returns the table expression</p>
-<p>This can be useful when you have a sequence of tables to process, and
-you don't know the length prior to running your program (for example, user input).</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">difference</span><span class="p">()</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">difference</span><span class="p">()</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
-<span class="go">True</span>
 </code></pre></div>
 
   </div>
@@ -5427,7 +5417,7 @@ passed as a scalar all columns are filled with that value.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5449,13 +5439,27 @@ passed as a scalar all columns are filled with that value.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>*tables</code></td>
+          <td><code>table</code></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>One or more table expressions</p>
+              <p>A table expression</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>*rest</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional table expressions</p>
             </div>
           </td>
           <td>
@@ -5534,30 +5538,6 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="go">├───────┤</span>
 <span class="go">│     2 │</span>
 <span class="go">└───────┘</span>
-</code></pre></div>
-    <p>Passing no arguments to <code>intersect</code> returns the table expression.</p>
-<p>This can be useful when you have a sequence of tables to process, and
-you don't know the length prior to running your program (for example, user input).</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">intersect</span><span class="p">()</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">intersect</span><span class="p">()</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
-<span class="go">True</span>
 </code></pre></div>
 
   </div>
@@ -7615,7 +7595,7 @@ value of <code>None</code> will use the backend's native dialect.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#ibis.expr.types.relations.Table.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -7637,13 +7617,27 @@ value of <code>None</code> will use the backend's native dialect.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>*tables</code></td>
+          <td><code>table</code></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>One or more table expressions</p>
+              <p>A table expression</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>*rest</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional table expressions</p>
             </div>
           </td>
           <td>
@@ -7735,30 +7729,6 @@ value of <code>None</code> will use the backend's native dialect.</p>
 <span class="go">│     2 │</span>
 <span class="go">│     3 │</span>
 <span class="go">└───────┘</span>
-</code></pre></div>
-    <p>Passing no arguments to <code>union</code> returns the table expression</p>
-<p>This can be useful when you have a sequence of tables to process, and
-you don't know the length prior to running your program (for example, user input).</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">union</span><span class="p">()</span>
-<span class="go">┏━━━━━━━┓</span>
-<span class="go">┃ a     ┃</span>
-<span class="go">┡━━━━━━━┩</span>
-<span class="go">│ int64 │</span>
-<span class="go">├───────┤</span>
-<span class="go">│     1 │</span>
-<span class="go">│     2 │</span>
-<span class="go">└───────┘</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">union</span><span class="p">()</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
-<span class="go">True</span>
 </code></pre></div>
 
   </div>
