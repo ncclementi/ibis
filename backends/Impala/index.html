@@ -1972,8 +1972,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-configuation-values-for-cdh-components" class="md-nav__link">
-    Default Configuation Values for CDH Components
+  <a href="#default-configuration-values-for-cdh-components" class="md-nav__link">
+    Default Configuration Values for CDH Components
   </a>
   
 </li>
@@ -4313,8 +4313,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-configuation-values-for-cdh-components" class="md-nav__link">
-    Default Configuation Values for CDH Components
+  <a href="#default-configuration-values-for-cdh-components" class="md-nav__link">
+    Default Configuration Values for CDH Components
   </a>
   
 </li>
@@ -5562,8 +5562,8 @@ for parameters.</p>
 <code class="highlight language-python"><span class="n">describe_formatted</span> <span class="o">=</span> <span class="n">metadata</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
 <a href="#ibis.backends.impala.client.ImpalaTable.describe_formatted" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -7259,7 +7259,7 @@ expression.</p>
 below).</p>
 <h3 id="creating-an-empty-table">Creating an empty table<a class="headerlink" href="#creating-an-empty-table" title="Anchor link to this section for reference">&para;</a></h3>
 <p>To create an empty table, you must declare an Ibis schema that will be
-translated to the appopriate Impala schema and data types.</p>
+translated to the appropriate Impala schema and data types.</p>
 <p>As Ibis types are simplified compared with Impala types, this may expand
 in the future to include a more fine-grained schema declaration.</p>
 <p>You can use the <code>create_table</code> method either on a database or client
@@ -9133,7 +9133,7 @@ through the HiveServer2 interface (using the impyla client). Therefore, the
 connection semantics are similar to the other access methods for working with
 secure clusters.</p>
 <p>Specifically, after authenticating yourself against Kerberos (e.g., by issuing
-the appropriate <code>kinit</code> commmand), simply pass <code>auth_mechanism='GSSAPI'</code> or
+the appropriate <code>kinit</code> command), simply pass <code>auth_mechanism='GSSAPI'</code> or
 <code>auth_mechanism='LDAP'</code> (and set <code>kerberos_service_name</code> if necessary along
 with <code>user</code> and <code>password</code> if necessary) to the
 <code>ibis.impala_connect(...)</code> method when instantiating an <code>ImpalaConnection</code>.
@@ -9148,7 +9148,7 @@ certificates (which may be helpful in testing). Ibis will assume <code>https</co
 when connecting to a Kerberized cluster. Because some Ibis commands create HDFS
 directories as well as new Impala databases and/or tables, your user will
 require the necessary privileges.</p>
-<h2 id="default-configuation-values-for-cdh-components">Default Configuation Values for CDH Components<a class="headerlink" href="#default-configuation-values-for-cdh-components" title="Anchor link to this section for reference">&para;</a></h2>
+<h2 id="default-configuration-values-for-cdh-components">Default Configuration Values for CDH Components<a class="headerlink" href="#default-configuration-values-for-cdh-components" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Cloudera CDH ships with HDFS, Impala, Hive and many other components.
 Sometimes it's not obvious what default configuration values these tools are
 using or should be using.</p>
@@ -9161,7 +9161,7 @@ to see the default configuration values for every component of CDH.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2023</span>
       
     
   </small>
