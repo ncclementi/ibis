@@ -884,6 +884,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_delta" class="md-nav__link">
+    read_delta()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.read_json" class="md-nav__link">
     read_json()
   </a>
@@ -2173,6 +2180,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.duckdb.Backend.read_delta" class="md-nav__link">
+    read_delta()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.duckdb.Backend.read_json" class="md-nav__link">
     read_json()
   </a>
@@ -2225,8 +2239,8 @@
 
   <h1>DuckDB</h1>
 
-<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20Parquet%20|%20JSON%20|%20PyArrow%20|%20Pandas%20|%20SQLite%20|%20Postgres-blue?style=flat-square" /> </p>
-<p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-PyArrow%20|%20Parquet%20|%20CSV%20|%20Pandas-orange?style=flat-square" /> </p>
+<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20Delta Lake%20|%20JSON%20|%20Pandas%20|%20Parquet%20|%20Postgres%20|%20PyArrow%20|%20SQLite-blue?style=flat-square" /> </p>
+<p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-CSV%20|%20Delta Lake%20|%20Pandas%20|%20Parquet%20|%20PyArrow-orange?style=flat-square" /> </p>
 <details class="danger">
 <summary><code>duckdb</code> &gt;= 0.5.0 requires <code>duckdb-engine</code> &gt;= 0.6.2</summary>
 <p>If you encounter problems when using <code>duckdb</code> &gt;= <strong>0.5.0</strong> you may need to
@@ -2441,7 +2455,7 @@ a sequentially generated name.</p>
           </td>
         </tr>
         <tr>
-          <td><code>kwargs</code></td>
+          <td><code>**kwargs</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
@@ -2518,7 +2532,7 @@ a sequentially generated name.</p>
           </td>
         </tr>
         <tr>
-          <td><code>kwargs</code></td>
+          <td><code>**kwargs</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
@@ -2526,6 +2540,82 @@ a sequentially generated name.</p>
             <div class="doc-md-description">
               <p>Additional keyword arguments passed to DuckDB loading function.
 See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a> for more information.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.duckdb.Backend.read_delta" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_delta</span><span class="p">(</span><span class="n">source_table</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.duckdb.Backend.read_delta" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Register a Delta Lake table as a table in the current database.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>source_table</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source. Must be a directory
+containing a Delta Lake table.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to deltalake.DeltaTable.</p>
             </div>
           </td>
           <td>
@@ -2596,7 +2686,7 @@ See <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/
           </td>
         </tr>
         <tr>
-          <td><code>kwargs</code></td>
+          <td><code>**kwargs</code></td>
           <td>
           </td>
           <td>
@@ -2814,7 +2904,7 @@ a sequentially generated name.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2023</span>
       
     
   </small>
