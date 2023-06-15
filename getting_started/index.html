@@ -2262,9 +2262,9 @@ databases and interacts with the data there. We'll use a local database
   <span class="n">year</span>              <span class="n">int64</span>
 </code></pre></div>
 <p>Ibis is lazily evaluated, so instead of seeing the data, we see the schema of
-the table, instead. To peek at the data, we can call <code>head</code> and then <code>execute</code>
+the table, instead. To peek at the data, we can call <code>head</code> and then <code>to_pandas</code>
 to get the first few rows of the table as a pandas DataFrame.</p>
-<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
   <span class="n">species</span>     <span class="n">island</span>  <span class="n">bill_length_mm</span>  <span class="n">bill_depth_mm</span>  <span class="n">flipper_length_mm</span>  <span class="n">body_mass_g</span>     <span class="n">sex</span>  <span class="n">year</span>
 <span class="mi">0</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">39.1</span>           <span class="mf">18.7</span>              <span class="mf">181.0</span>       <span class="mf">3750.0</span>    <span class="n">male</span>  <span class="mi">2007</span>
 <span class="mi">1</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">39.5</span>           <span class="mf">17.4</span>              <span class="mf">186.0</span>       <span class="mf">3800.0</span>  <span class="n">female</span>  <span class="mi">2007</span>
@@ -2272,9 +2272,9 @@ to get the first few rows of the table as a pandas DataFrame.</p>
 <span class="mi">3</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>             <span class="n">NaN</span>            <span class="n">NaN</span>                <span class="n">NaN</span>          <span class="n">NaN</span>    <span class="kc">None</span>  <span class="mi">2007</span>
 <span class="mi">4</span>  <span class="n">Adelie</span>  <span class="n">Torgersen</span>            <span class="mf">36.7</span>           <span class="mf">19.3</span>              <span class="mf">193.0</span>       <span class="mf">3450.0</span>  <span class="n">female</span>  <span class="mi">2007</span>
 </code></pre></div>
-<p><code>execute</code> takes the existing lazy table expression and evaluates it. If we
+<p><code>to_pandas</code> takes the existing lazy table expression and evaluates it. If we
 leave it off, you'll see the Ibis representation of the table expression that
-<code>execute</code> will evaluate (when you're ready!).</p>
+<code>to_pandas</code> will evaluate (when you're ready!).</p>
 <div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">r0</span> <span class="o">:=</span> <span class="n">AlchemyTable</span><span class="p">:</span> <span class="n">penguins</span>
   <span class="n">species</span>           <span class="n">string</span>
@@ -2290,16 +2290,16 @@ leave it off, you'll see the Ibis representation of the table expression that
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Results in pandas DataFrame</p>
-<p>Ibis returns results as a pandas DataFrame by default. It isn't using pandas to
+<p>Ibis returns results as a pandas DataFrame using <code>to_pandas</code>, but isn't using pandas to
 perform any of the computation. The query is executed by the backend (DuckDB in
-this case). Only when the query is executed does Ibis then pull back the results
+this case). Only when <code>to_pandas</code> is called does Ibis then pull back the results
 and convert them into a DataFrame.</p>
 </div>
 <h2 id="interactive-mode">Interactive Mode<a class="headerlink" href="#interactive-mode" title="Anchor link to this section for reference">&para;</a></h2>
 <p>For the rest of this intro, we'll turn on interactive mode, which partially
 executes queries to give users a preview of the results. There is a small
 difference in the way the output is formatted, but otherwise this is the same
-as calling <code>execute()</code> on the table expression with a limit of 10 result rows
+as calling <code>to_pandas</code> on the table expression with a limit of 10 result rows
 returned.</p>
 <div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">penguins</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2766,7 +2766,7 @@ doi: 10.5281/zenodo.3960218.&#160;<a class="footnote-backref" href="#fnref:1" ti
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
     
   </small>

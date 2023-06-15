@@ -3545,11 +3545,11 @@ of the pandas <code>DataFrame</code> operations do in-place operations (they are
 whereas Ibis table operations always return a new table expression (&quot;immutable&quot;).</p>
 <p>Another difference is that Ibis table expressions are lazy, meaning
 that as you build up a table expression, no computation is actually performed
-until you call an action method such as <code>execute</code>. Only then does Ibis
+until you call an action method such as <code>to_pandas</code>. Only then does Ibis
 compile the table expression into SQL and send it to the backend.
 (Note that we'll be using Ibis' interactive mode to automatically execute queries at
 the end of each cell in this notebook. If you are using similar code in a program,
-you will have to add <code>.execute()</code> to each operation that you want to evaluate.)</p>
+you will have to add <code>.to_pandas()</code> to each operation that you want to evaluate.)</p>
 
 </div>
 </div>
@@ -4150,7 +4150,7 @@ from the length of the schema.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To mimic pandas' behavior, you would use the following code. Note that you need to use the <code>execute</code> method
+<p>To mimic pandas' behavior, you would use the following code. Note that you need to use the <code>to_pandas</code> method
 after <code>count</code> to evaluate the expression returned by <code>count</code>.</p>
 
 </div>
@@ -4177,9 +4177,9 @@ after <code>count</code> to evaluate the expression returned by <code>count</cod
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()))</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">()))</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">(t.count().execute(), len(t.schema()))</div>
+<div id="cell-9" class="clipboard-copy-txt">(t.count().to_pandas(), len(t.schema()))</div>
         
         </div>
     </div>
@@ -5448,7 +5448,7 @@ Ibis has several built-in example datasets that you can access using the <code>i
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file &#39;penguins.csv.gz&#39; from &#39;https://storage.googleapis.com/ibis-examples/data/penguins.csv.gz&#39; to &#39;/home/runner/.cache/ibis-framework/5.1.0&#39;.
-100%|█████████████████████████████████████| 2.96k/2.96k [00:00&lt;00:00, 1.45MB/s]
+100%|█████████████████████████████████████| 2.96k/2.96k [00:00&lt;00:00, 2.04MB/s]
 </pre>
 </div>
 </div>
@@ -8470,7 +8470,7 @@ unioned</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
     
   </small>

@@ -2091,14 +2091,14 @@ For online games, it might be a the grouping of activity events of a given user 
 <span class="p">)</span>
 </code></pre></div>
 <p>Calling <code>ibis.show_sql(sessionized)</code> displays the SQL query and can be used to confirm that this Ibis table expression does not rely on any join operations.</p>
-<p>Calling <code>sessionized.execute()</code> should complete in less than a minute, depending on the speed of the internet connection to download the data and the number of CPU cores available to parallelize the processing of this nested query.</p>
+<p>Calling <code>sessionized.to_pandas()</code> should complete in less than a minute, depending on the speed of the internet connection to download the data and the number of CPU cores available to parallelize the processing of this nested query.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
     
   </small>

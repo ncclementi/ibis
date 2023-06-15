@@ -3235,7 +3235,7 @@ In fact, some Ibis features were even inspired by similar features in the <a hre
 <ul>
 <li><strong>No pipe:</strong> The handy <a href="https://magrittr.tidyverse.org/">magrittr pipe</a> (<code>%&gt;%</code>) or R's newer native pipe (<code>|&gt;</code>) don't exist in Python so you instead have to chain sequences of operations together with a period (<code>.</code>). The <code>.</code> in Python is analogous to R's <code>$</code> which lets you access attributes and methods on objects.</li>
 <li><strong>No unquoted column names:</strong> Non-standard evaluation is common in R but not present in Python. To reference a column in Ibis, you can pass a string, property on a table (e.g., <code>tbl.some_column</code>), or you can make use of <a href="https://ibis-project.org/api/selectors/">selectors</a>.</li>
-<li><strong>Ibis is lazy by default:</strong> Similar to <a href="https://dbplyr.tidyverse.org/">dbplyr</a> and its <code>collect()</code> method, Ibis does not evaluate our queries until we call <code>.execute()</code>. For the purposes of this document, we set <code>ibis.options.interactive = True</code> which limits results to 10 rows, calls <code>execute</code> automatically, and prints a nicely-formatted table.</li>
+<li><strong>Ibis is lazy by default:</strong> Similar to <a href="https://dbplyr.tidyverse.org/">dbplyr</a> and its <code>collect()</code> method, Ibis does not evaluate our queries until we call <code>.to_pandas()</code>. For the purposes of this document, we set <code>ibis.options.interactive = True</code> which limits results to 10 rows, executes automatically, and prints a nicely-formatted table.</li>
 </ul>
 
 </div>
@@ -3468,7 +3468,7 @@ from ibis import _</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file &#39;starwars.csv.gz&#39; from &#39;https://storage.googleapis.com/ibis-examples/data/starwars.csv.gz&#39; to &#39;/home/runner/.cache/ibis-framework/5.1.0&#39;.
-100%|█████████████████████████████████████| 2.31k/2.31k [00:00&lt;00:00, 2.87MB/s]
+100%|█████████████████████████████████████| 2.31k/2.31k [00:00&lt;00:00, 2.54MB/s]
 </pre>
 </div>
 </div>
@@ -3569,7 +3569,7 @@ from ibis import _</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In addition to printing a nicely-formatted table and automatically calling <code>execute()</code>, setting <code>ibis.options.interactive</code> to <code>True</code> also causes our query to be limited to 10 rows. To get Ibis to give us all rows, we can directly call <code>execute()</code> and even save the result as a pandas DataFrame:</p>
+<p>In addition to printing a nicely-formatted table and automatically executing, setting <code>ibis.options.interactive</code> to <code>True</code> also causes our query to be limited to 10 rows. To get Ibis to give us all rows, we can directly call <code>to_pandas</code> and save the result as a pandas DataFrame:</p>
 
 </div>
 </div>
@@ -3595,9 +3595,9 @@ from ibis import _</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">starwars_df</span> <span class="o">=</span> <span class="n">starwars</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">starwars_df</span> <span class="o">=</span> <span class="n">starwars</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">starwars_df = starwars.execute()</div>
+<div id="cell-6" class="clipboard-copy-txt">starwars_df = starwars.to_pandas()</div>
         
         </div>
     </div>
@@ -3904,7 +3904,7 @@ from ibis import _</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Directly calling <code>execute()</code> and saving the result to a variable is useful for passing the results of Ibis table expressions to other packages (e.g., matplotlib).</p>
+<p>Directly calling <code>to_pandas</code> and saving the result to a variable is useful for passing the results of Ibis table expressions to other packages (e.g., matplotlib).</p>
 
 </div>
 </div>
@@ -5595,9 +5595,9 @@ band_instruments = ibis.examples.band_instruments.fetch()</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file &#39;band_members.csv.gz&#39; from &#39;https://storage.googleapis.com/ibis-examples/data/band_members.csv.gz&#39; to &#39;/home/runner/.cache/ibis-framework/5.1.0&#39;.
-100%|███████████████████████████████████████| 59.0/59.0 [00:00&lt;00:00, 62.0kB/s]
+100%|████████████████████████████████████████| 59.0/59.0 [00:00&lt;00:00, 102kB/s]
 Downloading file &#39;band_instruments.csv.gz&#39; from &#39;https://storage.googleapis.com/ibis-examples/data/band_instruments.csv.gz&#39; to &#39;/home/runner/.cache/ibis-framework/5.1.0&#39;.
-100%|███████████████████████████████████████| 60.0/60.0 [00:00&lt;00:00, 28.0kB/s]
+100%|███████████████████████████████████████| 60.0/60.0 [00:00&lt;00:00, 35.3kB/s]
 </pre>
 </div>
 </div>
@@ -6005,7 +6005,7 @@ starwars_colors</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
     
   </small>

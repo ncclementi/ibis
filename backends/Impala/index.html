@@ -7042,12 +7042,12 @@ the table itself has a method <code>drop</code> that you can use:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="n">table</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="expression-execution">Expression execution<a class="headerlink" href="#expression-execution" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Ibis expressions have an <code>execute</code> method with compiles and runs the
+<p>Ibis expressions have execution methods like <code>to_pandas</code> that compile and run the
 expressions on Impala or whichever backend is being referenced.</p>
 <p>For example:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fa</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">functional_alltypes</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">double_col</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
 <span class="mf">331785.00000000006</span>
 </code></pre></div>
 <p>For longer-running queries, Ibis will attempt to cancel the query in
@@ -7257,7 +7257,7 @@ expression.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;string_freqs&#39;</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;parquet&#39;</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">freqs</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;string_freqs&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">freqs</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">freqs</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
   <span class="n">string_col</span>  <span class="n">count</span>
 <span class="mi">0</span>          <span class="mi">9</span>    <span class="mi">730</span>
 <span class="mi">1</span>          <span class="mi">3</span>    <span class="mi">730</span>
@@ -7508,7 +7508,7 @@ an Ibis table expression:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">target</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">target</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">target</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">target</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
      <span class="nb">id</span>  <span class="n">bool_col</span>  <span class="n">tinyint_col</span>  <span class="o">...</span>           <span class="n">timestamp_col</span>  <span class="n">year</span>  <span class="n">month</span>
 <span class="mi">0</span>  <span class="mi">5770</span>      <span class="kc">True</span>            <span class="mi">0</span>  <span class="o">...</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.000</span>  <span class="mi">2010</span>      <span class="mi">8</span>
 <span class="mi">1</span>  <span class="mi">5771</span>     <span class="kc">False</span>            <span class="mi">1</span>  <span class="o">...</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span> <span class="mi">00</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">00.000</span>  <span class="mi">2010</span>      <span class="mi">8</span>
@@ -8756,7 +8756,7 @@ a major part of the Ibis roadmap).</p>
 <p>Ibis's Impala tools currently interoperate with pandas in these ways:</p>
 <ul>
 <li>Ibis expressions return pandas objects (i.e. DataFrame or Series)
-  for non-scalar expressions when calling their <code>execute</code> method</li>
+  for non-scalar expressions when calling their <code>to_pandas</code> method</li>
 <li>The <code>create_table</code> and <code>insert</code> methods can accept pandas objects.
   This includes inserting into partitioned tables. It currently uses
   CSV as the ingest route.</li>
@@ -8768,7 +8768,7 @@ a major part of the Ibis roadmap).</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;pandas_table&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">pandas_table</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
   <span class="n">bar</span>  <span class="n">foo</span>
 <span class="mi">0</span>   <span class="n">a</span>    <span class="mi">1</span>
 <span class="mi">1</span>   <span class="n">b</span>    <span class="mi">2</span>
@@ -8781,7 +8781,7 @@ a major part of the Ibis roadmap).</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">empty_for_insert</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
   <span class="n">bar</span>  <span class="n">foo</span>
 <span class="mi">0</span>   <span class="n">a</span>    <span class="mi">1</span>
 <span class="mi">1</span>   <span class="n">b</span>    <span class="mi">2</span>
@@ -8796,7 +8796,7 @@ a major part of the Ibis roadmap).</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;pandas_table&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">pandas_table</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
    <span class="n">foo</span> <span class="n">bar</span>
 <span class="mi">0</span>    <span class="mi">1</span>   <span class="n">a</span>
 <span class="mi">1</span>    <span class="mi">2</span>   <span class="n">b</span>
@@ -8807,7 +8807,7 @@ a major part of the Ibis roadmap).</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;empty_for_insert&#39;</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">empty_for_insert</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_insert</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
    <span class="n">foo</span> <span class="n">bar</span>
 <span class="mi">0</span>    <span class="mi">1</span>   <span class="n">a</span>
 <span class="mi">1</span>    <span class="mi">2</span>   <span class="n">b</span>
@@ -9064,13 +9064,13 @@ may significantly speed up queries on smaller datasets:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">disable_codegen</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;ibis_testing.functional_alltypes&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().to_pandas()&quot;</span>
 <span class="m">27</span>.7<span class="w"> </span>ms<span class="w"> </span>±<span class="w"> </span><span class="m">996</span><span class="w"> </span>µs<span class="w"> </span>per<span class="w"> </span>loop<span class="w"> </span><span class="o">(</span>mean<span class="w"> </span>±<span class="w"> </span>std.<span class="w"> </span>dev.<span class="w"> </span>of<span class="w"> </span><span class="m">7</span><span class="w"> </span>runs,<span class="w"> </span><span class="m">10</span><span class="w"> </span>loops<span class="w"> </span>each<span class="o">)</span>
 </code></pre></div>
 <div class="language-python highlight"><pre><span></span><code><span class="c1"># Turn codegen back on</span>
 <span class="n">con</span><span class="o">.</span><span class="n">disable_codegen</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().to_pandas()&quot;</span>
 <span class="m">27</span><span class="w"> </span>ms<span class="w"> </span>±<span class="w"> </span><span class="m">1</span>.62<span class="w"> </span>ms<span class="w"> </span>per<span class="w"> </span>loop<span class="w"> </span><span class="o">(</span>mean<span class="w"> </span>±<span class="w"> </span>std.<span class="w"> </span>dev.<span class="w"> </span>of<span class="w"> </span><span class="m">7</span><span class="w"> </span>runs,<span class="w"> </span><span class="m">10</span><span class="w"> </span>loops<span class="w"> </span>each<span class="o">)</span>
 </code></pre></div>
 <p>It's important to remember that codegen is a fixed overhead and will
@@ -9127,7 +9127,7 @@ This must take place each time you load your Ibis session.</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">fuzzy_equals</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">float_col</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">double_col</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span><span class="o">.</span><span class="n">execute</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
 <span class="mi">0</span>     <span class="kc">True</span>
 <span class="mi">1</span>    <span class="kc">False</span>
 <span class="mi">2</span>    <span class="kc">False</span>
@@ -9183,7 +9183,7 @@ to see the default configuration values for every component of CDH.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
     
   </small>

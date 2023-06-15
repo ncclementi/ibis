@@ -2064,7 +2064,7 @@ distinct object within Ibis. To do this, use the <code>view</code> function:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prior</span><span class="p">,</span> <span class="p">((</span><span class="n">current</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="n">prior</span><span class="o">.</span><span class="n">region</span><span class="p">)</span> <span class="o">&amp;</span>
 <span class="o">...</span>                                 <span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="p">(</span><span class="n">prior</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))))</span>
 <span class="o">...</span>            <span class="p">[</span><span class="n">current</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="n">current</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">yoy_change</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">df</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">df</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
 </code></pre></div>
 <div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yoy_pretty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">yoy_change</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;$</span><span class="si">%.2f</span><span class="s1">mm&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mf">1000000.</span><span class="p">))</span>
 </code></pre></div>
@@ -2092,7 +2092,7 @@ the join as zero:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
     
   </small>
