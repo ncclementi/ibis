@@ -43,9 +43,9 @@ ibis.expr.operations.generic.HashBytes,True,True,False,False,False,False,True,Fa
 ibis.expr.operations.generic.IfNull,True,True,True,False,False,True,True,False,True,False,True,True,True,True,True,True,True
 ibis.expr.operations.generic.IsNull,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.Least,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.generic.Literal,True,True,False,True,True,True,True,True,True,True,False,True,True,True,True,True,True
 ibis.expr.operations.generic.NotNull,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.NullIf,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.generic.NullLiteral,True,True,False,True,True,True,True,True,True,True,False,True,True,True,True,True,True
 ibis.expr.operations.generic.Pi,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.generic.RandomScalar,True,True,False,True,False,True,True,True,True,True,False,False,True,True,True,True,True
 ibis.expr.operations.generic.RowID,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,True,False

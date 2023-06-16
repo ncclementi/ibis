@@ -2603,15 +2603,7 @@ underlying library or application.</p>
       <p>Add a translation function to the backend for a specific operation.</p>
 <p>Operations are defined in <code>ibis.expr.operations</code>, and a translation
 function receives the translator object and an expression as
-parameters, and returns a value depending on the backend. For example,
-in SQL backends, a NullLiteral operation could be translated to the
-string <code>"NULL"</code>.</p>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nd">@ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">add_operation</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">operations</span><span class="o">.</span><span class="n">NullLiteral</span><span class="p">)</span>
-<span class="gp">... </span><span class="k">def</span> <span class="nf">_null_literal</span><span class="p">(</span><span class="n">translator</span><span class="p">,</span> <span class="n">expression</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">return</span> <span class="s1">&#39;NULL&#39;</span>
-</code></pre></div>
+parameters, and returns a value depending on the backend.</p>
 
   </div>
 
