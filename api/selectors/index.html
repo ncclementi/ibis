@@ -1592,6 +1592,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.selectors.if_all" class="md-nav__link">
+    if_all()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.selectors.if_any" class="md-nav__link">
+    if_any()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.selectors.last" class="md-nav__link">
     last()
   </a>
@@ -2412,6 +2426,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.selectors.if_all" class="md-nav__link">
+    if_all()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.selectors.if_any" class="md-nav__link">
+    if_any()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.selectors.last" class="md-nav__link">
     last()
   </a>
@@ -2688,7 +2716,7 @@ subsequent computation.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Applies the same data transformation function across multiple columns.</p>
+      <p>Apply data transformations across multiple columns.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2704,11 +2732,13 @@ subsequent computation.</p>
         <tr>
           <td><code>selector</code></td>
           <td>
-                <code><span title="ibis.selectors.Selector">Selector</span></code>
+                <code><span title="ibis.selectors.Selector">Selector</span> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>An expression that selects columns on which the transformation function will be applied.</p>
+              <p>An expression that selects columns on which the transformation function
+will be applied, an iterable of <code>str</code> column names or a single <code>str</code>
+column name.</p>
             </div>
           </td>
           <td>
@@ -2722,7 +2752,7 @@ subsequent computation.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A function (or a dictionary of functions) to use to transform the data.</p>
+              <p>A function (or dictionary of functions) to use to transform the data.</p>
             </div>
           </td>
           <td>
@@ -2736,7 +2766,8 @@ subsequent computation.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A lambda function or a format string to name the columns created by the transformation function.</p>
+              <p>A lambda function or a format string to name the columns created by the
+transformation function.</p>
             </div>
           </td>
           <td>
@@ -3023,6 +3054,192 @@ subsequent computation.</p>
 
 
 
+<h4 id="ibis.selectors.if_all" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">if_all</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span></code>
+
+<a href="#ibis.selectors.if_all" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the <strong>conjunction</strong> of <code>predicate</code> applied on all <code>selector</code> columns.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>selector</code></td>
+          <td>
+                <code><span title="ibis.selectors.Selector">Selector</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A column selector</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>predicate</code></td>
+          <td>
+                <code><span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A callable or deferred object defining a predicate to apply to each
+column from <code>selector</code>.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span><span class="p">,</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_mm&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span> <span class="o">-</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">_</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">if_all</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_mm&quot;</span><span class="p">),</span> <span class="n">_</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr_by_hand</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">&amp;</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">&amp;</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expr_by_hand</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string    │ float64        │ float64       │ float64           │ … │</span>
+<span class="go">├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Dream     │      -1.157951 │      1.088129 │         -1.416272 │ … │</span>
+<span class="go">│ Adelie  │ Torgersen │      -1.231217 │      1.138768 │         -1.202926 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │       1.149917 │     -1.443781 │          1.214987 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │       1.040019 │     -1.089314 │          1.072757 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │       1.131601 │     -1.089314 │          1.712792 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │       1.241499 │     -1.089314 │          1.570562 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe    │       1.351398 │     -1.494420 │          1.214987 │ … │</span>
+<span class="go">└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.selectors.if_any" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">if_any</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span></code>
+
+<a href="#ibis.selectors.if_any" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the <strong>disjunction</strong> of <code>predicate</code> applied on all <code>selector</code> columns.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>selector</code></td>
+          <td>
+                <code><span title="ibis.selectors.Selector">Selector</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A column selector</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>predicate</code></td>
+          <td>
+                <code><span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A callable or deferred object defining a predicate to apply to each
+column from <code>selector</code>.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">selectors</span> <span class="k">as</span> <span class="n">s</span><span class="p">,</span> <span class="n">_</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penguins</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">penguins</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">across</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_mm&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span> <span class="o">-</span> <span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">_</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">if_any</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_mm&quot;</span><span class="p">),</span> <span class="n">_</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr_by_hand</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">|</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">|</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">flipper_length_mm</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expr_by_hand</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
+<span class="go">┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━┓</span>
+<span class="go">┃ species ┃ island ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ … ┃</span>
+<span class="go">┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━┩</span>
+<span class="go">│ string  │ string │ float64        │ float64       │ float64           │ … │</span>
+<span class="go">├─────────┼────────┼────────────────┼───────────────┼───────────────────┼───┤</span>
+<span class="go">│ Adelie  │ Biscoe │      -1.103002 │      0.733662 │         -2.056307 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       1.113285 │     -0.431017 │          2.068368 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       2.871660 │     -0.076550 │          2.068368 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       1.900890 │     -0.734846 │          2.139483 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       1.076652 │     -0.177826 │          2.068368 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       0.856855 │     -0.582932 │          2.068368 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       1.497929 │     -0.076550 │          2.068368 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       1.388031 │     -0.431017 │          2.068368 │ … │</span>
+<span class="go">│ Gentoo  │ Biscoe │       2.047422 │     -0.582932 │          2.068368 │ … │</span>
+<span class="go">│ Adelie  │ Dream  │      -2.165354 │     -0.836123 │         -0.918466 │ … │</span>
+<span class="go">│ …       │ …      │              … │             … │                 … │ … │</span>
+<span class="go">└─────────┴────────┴────────────────┴───────────────┴───────────────────┴───┘</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h4 id="ibis.selectors.last" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">last</span><span class="p">()</span></code>
 
@@ -3270,7 +3487,7 @@ instead. The following options are equivalent.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Return columns that satisfy <code>predicate</code>.</p>
+      <p>Select columns that satisfy <code>predicate</code>.</p>
 <p>Use this selector when one of the other selectors does not meet your needs.</p>
 
   <p><strong>Parameters:</strong></p>
