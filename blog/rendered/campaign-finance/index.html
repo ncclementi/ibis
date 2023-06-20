@@ -3337,7 +3337,7 @@ if not csv_path.exists():
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="loading-the-data">Loading the data<a class="anchor-link" href="#loading-the-data">&#182;</a></h2><p>Now that we have our raw data in a .csv format, let's load it into Ibis,
 using the duckdb backend.</p>
-<p>Note that a 4.3 GB .csv would be near the limit of what pandas could 
+<p>Note that a 4.3 GB .csv would be near the limit of what pandas could
 handle on my laptop with 16GB of RAM. In pandas, typically every time
 you perform a transformation on the data, a copy of the data is made.
 I could only do a few transformations before I ran out of memory.</p>
@@ -3656,7 +3656,7 @@ but finding the number of rows took 10 seconds.</p>
 So we only have to read the first few lines to get that preview,
 but we have to read the whole file to get the number of rows.</p>
 <p>Note that this isn't a feature of Ibis, but a feature of Duckdb. This what I think is
-one of the strengths of Ibis: Ibis itself doesn't have to implement any of the 
+one of the strengths of Ibis: Ibis itself doesn't have to implement any of the
 optimimizations or features of the backends. Those backends can focus on what they do
 best, and Ibis can get those things for free.</p>
 <p>So, let's tell duckdb to actually read in the file to its native format so later accesses
@@ -4237,7 +4237,7 @@ made the contribution:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>It looks like the <code>TRANSACTION_DT</code> column was a raw string like &quot;MMDDYYYY&quot;, 
+<p>It looks like the <code>TRANSACTION_DT</code> column was a raw string like &quot;MMDDYYYY&quot;,
 so let's convert that to a proper date type.</p>
 
 </div>
