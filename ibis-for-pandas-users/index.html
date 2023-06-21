@@ -1298,8 +1298,7 @@
     Aggregation
   </a>
   
-    <nav class="md-nav" aria-label="Aggregation">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#group-by" class="md-nav__link">
@@ -1308,10 +1307,13 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#null-values" class="md-nav__link">
+    NULL values
+  </a>
   
-</li>
+    <nav class="md-nav" aria-label="NULL values">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#dropping-rows-with-nulls" class="md-nav__link">
@@ -1328,9 +1330,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-column-expressions" class="md-nav__link">
-    Common column expressions
+  <a href="#replacing-nulls" class="md-nav__link">
+    Replacing NULLs
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1339,25 +1346,12 @@
     Type casts
   </a>
   
-    <nav class="md-nav" aria-label="Type casts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#replacing-nulls" class="md-nav__link">
-    Replacing NULLs
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#set-membership" class="md-nav__link">
     Set membership
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2367,8 +2361,7 @@
     Aggregation
   </a>
   
-    <nav class="md-nav" aria-label="Aggregation">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#group-by" class="md-nav__link">
@@ -2377,10 +2370,13 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#null-values" class="md-nav__link">
+    NULL values
+  </a>
   
-</li>
+    <nav class="md-nav" aria-label="NULL values">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#dropping-rows-with-nulls" class="md-nav__link">
@@ -2397,9 +2393,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-column-expressions" class="md-nav__link">
-    Common column expressions
+  <a href="#replacing-nulls" class="md-nav__link">
+    Replacing NULLs
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2408,25 +2409,12 @@
     Type casts
   </a>
   
-    <nav class="md-nav" aria-label="Type casts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#replacing-nulls" class="md-nav__link">
-    Replacing NULLs
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#set-membership" class="md-nav__link">
     Set membership
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3539,11 +3527,17 @@ Licensed under the Apache License, Version 2.0.
 <h1 id="ibis-for-pandas-users">Ibis for pandas Users<a class="anchor-link" href="#ibis-for-pandas-users">&#182;</a></h1><p>Much of the syntax and many of the operations in Ibis are inspired
 by the pandas <code>DataFrame</code> but the primary domain of Ibis is
 SQL so there are some differences in how they operate.</p>
-<p>One primary
-difference between Ibis tables and pandas <code>DataFrame</code>s are that many
+<p>For one thing, SQL (and therefore Ibis) makes no guarantees about row order,
+which is a key assumption that numpy/pandas users are used to. So two columns
+can't be deterministically &quot;lined up&quot; unless they are actually part of the same Table.
+An outcome of this is that you can't index into Columns by position
+(<code>column.head(5)</code> or <code>column[3:5]</code>). You can only index into Tables
+(<code>table.head(5)</code> or <code>table[3:5]</code>). So if you want the first 5 rows of a column,
+you have to do <code>table.head(5).my_column</code>, <code>table.my_column.head(5)</code> will not work.</p>
+<p>Another difference between Ibis tables and pandas <code>DataFrame</code>s are that many
 of the pandas <code>DataFrame</code> operations do in-place operations (they are &quot;mutable&quot;),
 whereas Ibis table operations always return a new table expression (&quot;immutable&quot;).</p>
-<p>Another difference is that Ibis table expressions are lazy, meaning
+<p>Finally, Ibis table expressions are lazy, meaning
 that as you build up a table expression, no computation is actually performed
 until you call an action method such as <code>to_pandas</code>. Only then does Ibis
 compile the table expression into SQL and send it to the backend.
@@ -5448,7 +5442,7 @@ Ibis has several built-in example datasets that you can access using the <code>i
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file &#39;penguins.csv.gz&#39; from &#39;https://storage.googleapis.com/ibis-examples/data/penguins.csv.gz&#39; to &#39;/home/runner/.cache/ibis-framework/5.1.0&#39;.
-100%|█████████████████████████████████████| 2.96k/2.96k [00:00&lt;00:00, 3.37MB/s]
+100%|█████████████████████████████████████| 2.96k/2.96k [00:00&lt;00:00, 1.42MB/s]
 </pre>
 </div>
 </div>
@@ -6967,7 +6961,8 @@ agged</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="group-by">Group by<a class="anchor-link" href="#group-by">&#182;</a></h3><p>Aggregations can also be done across groupings using the <code>by=</code> parameter.</p>
+<h2 id="group-by">Group by<a class="anchor-link" href="#group-by">&#182;</a></h2><p>Using a similar API as above, aggregations can also be
+done across groupings using the <code>by=</code> parameter.</p>
 
 </div>
 </div>
@@ -7131,23 +7126,21 @@ agged</div>
 
 </div>
 </div>
-<div id="cell-id=ecc585d8-d6b4-40bf-bb77-2a35f2998c8d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2deba0f3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="dropping-rows-with-nulls">Dropping rows with <code>NULL</code>s<a class="anchor-link" href="#dropping-rows-with-nulls">&#182;</a></h2><p>Both pandas and Ibis allow you to drop rows from a table based on whether a set of columns
-contains a <code>NULL</code> value. This method is called <code>dropna</code> in both packages. The common set
-of parameters in the two are <code>subset=</code> and <code>how=</code>. The <code>subset=</code> parameter indicates which
-columns to inspect for <code>NULL</code> values. The <code>how=</code> parameter specifies whether 'any' or 'all'
-of the specified columns must be <code>NULL</code> in order for the row to be dropped.</p>
+<p>You can group over multiple columns too, and rename them if you want.</p>
+<p>If you only need to aggregate over a single column, then you don't
+need to use the <code>.aggregate()</code> method.</p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=170fd8e7-4c2d-4981-8969-e064b2d8b176" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=2d8fee4b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7167,9 +7160,9 @@ of the specified columns must be <code>NULL</code> in order for the row to be dr
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">no_null_peng</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">dropna</span><span class="p">([</span><span class="s1">&#39;bill_depth_mm&#39;</span><span class="p">,</span> <span class="s1">&#39;bill_length_mm&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">],</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;island&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">approx_median</span><span class="p">()</span>
 </pre></div>
-<div id="cell-46" class="clipboard-copy-txt">no_null_peng = penguins.dropna(['bill_depth_mm', 'bill_length_mm'], how='any')</div>
+<div id="cell-46" class="clipboard-copy-txt">penguins.group_by(["species", "sex"], location="island").body_mass_g.approx_median()</div>
         
         </div>
     </div>
@@ -7177,23 +7170,64 @@ of the specified columns must be <code>NULL</code> in order for the row to be dr
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> species </span>┃<span style="font-weight: bold"> sex    </span>┃<span style="font-weight: bold"> location  </span>┃<span style="font-weight: bold"> approx_median(body_mass_g) </span>┃
+┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>  │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>                      │
+├─────────┼────────┼───────────┼────────────────────────────┤
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │ <span style="color: #008000; text-decoration-color: #008000">Torgersen</span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4000</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #008000; text-decoration-color: #008000">female</span> │ <span style="color: #008000; text-decoration-color: #008000">Torgersen</span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3400</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span>   │ <span style="color: #008000; text-decoration-color: #008000">Torgersen</span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3588</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #008000; text-decoration-color: #008000">female</span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe   </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3375</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe   </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4000</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #008000; text-decoration-color: #008000">female</span> │ <span style="color: #008000; text-decoration-color: #008000">Dream    </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3400</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │ <span style="color: #008000; text-decoration-color: #008000">Dream    </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3988</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Adelie </span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">NULL</span>   │ <span style="color: #008000; text-decoration-color: #008000">Dream    </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2975</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">female</span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe   </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4700</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe   </span> │                       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5500</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>         │                          <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└─────────┴────────┴───────────┴────────────────────────────┘
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
-<div id="cell-id=ff5a2ba3-0164-47ef-b687-47c6dd19903c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3fce3fe8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="filling-null-values">Filling <code>NULL</code> values<a class="anchor-link" href="#filling-null-values">&#182;</a></h2><p>Both pandas and Ibis allow you to fill <code>NULL</code> values in a table. In Ibis, the replacement value can only
-be a scalar value of a dictionary of values. If it is a dictionary, the keys of the dictionary specify
-the column name for the value to apply to.</p>
+<p>Instead of aggregating after a group by, you can also transform
+the table so that the output table has the same number of rows
+as the input table. This is analogous to the <code>groupby().transform()</code>
+pattern in pandas. You can pass complex expressions to compute per-group:</p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a5eb4117-c843-401d-8ca6-3b29c00f62da" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=3837f961" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7213,9 +7247,19 @@ the column name for the value to apply to.</p>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">no_null_peng</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">bill_depth_mm</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bill_length_mm</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="c1"># Calculate how much the mass of each penguin deviates from the mean</span>
+<span class="n">penguins</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span>
+    <span class="c1"># This column isn&#39;t needed, but it makes it easier to see what&#39;s going on</span>
+    <span class="n">mass_mean</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="n">mass_deviation</span><span class="o">=</span><span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span> <span class="o">-</span> <span class="n">penguins</span><span class="o">.</span><span class="n">body_mass_g</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-47" class="clipboard-copy-txt">no_null_peng = penguins.fillna(dict(bill_depth_mm=0, bill_length_mm=0))</div>
+<div id="cell-47" class="clipboard-copy-txt"># Calculate how much the mass of each penguin deviates from the mean
+penguins.group_by(["species", "sex"]).mutate(
+    # This column isn't needed, but it makes it easier to see what's going on
+    mass_mean=penguins.body_mass_g.mean(),
+    mass_deviation=penguins.body_mass_g - penguins.body_mass_g.mean(),
+)</div>
         
         </div>
     </div>
@@ -7223,33 +7267,72 @@ the column name for the value to apply to.</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> species </span>┃<span style="font-weight: bold"> island </span>┃<span style="font-weight: bold"> bill_length_mm </span>┃<span style="font-weight: bold"> bill_depth_mm </span>┃<span style="font-weight: bold"> flipper_length_mm </span>┃<span style="font-weight: bold"> body_mass_g </span>┃<span style="font-weight: bold"> sex    </span>┃<span style="font-weight: bold"> year  </span>┃<span style="font-weight: bold"> mass_mean   </span>┃<span style="font-weight: bold"> mass_deviation </span>┃
+┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span>  │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>        │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>             │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">string</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">int64</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>     │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">float64</span>        │
+├─────────┼────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┼─────────────┼────────────────┤
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50.0</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16.3</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">230</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5700</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">215.163934</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">49.9</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16.1</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">213</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5400</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2009</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-84.836066</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">47.6</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14.5</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">215</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5400</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-84.836066</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">46.7</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15.3</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">219</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5200</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-284.836066</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">46.8</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15.4</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">215</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5150</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-334.836066</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">49.0</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16.1</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">216</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5550</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">65.163934</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">48.4</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14.6</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">213</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5850</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">365.163934</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">49.3</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15.7</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">217</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5850</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">365.163934</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">49.2</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15.2</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">221</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6300</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">815.163934</span> │
+│ <span style="color: #008000; text-decoration-color: #008000">Gentoo </span> │ <span style="color: #008000; text-decoration-color: #008000">Biscoe</span> │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">48.7</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15.1</span> │               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">222</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5350</span> │ <span style="color: #008000; text-decoration-color: #008000">male  </span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2007</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5484.836066</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-134.836066</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>      │              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │             <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │                 <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>      │     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└─────────┴────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┴─────────────┴────────────────┘
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
-<div id="cell-id=ea5f0377-5c1f-4b3d-b0ef-6f1e92533171" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ecc585d8-d6b4-40bf-bb77-2a35f2998c8d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="common-column-expressions">Common column expressions<a class="anchor-link" href="#common-column-expressions">&#182;</a></h2><p>See the full API documentation for all of the available value methods and tools for creating value expressions. We mention a few common ones here as they relate to common SQL queries.</p>
+<h2 id="null-values">NULL values<a class="anchor-link" href="#null-values">&#182;</a></h2><p>Ibis has first-class support for <code>NULL</code> values. In pandas and numpy, <code>NULL</code> values are
+represented by <code>NaN</code>. This can be confusing when working with numeric data,
+since <code>NaN</code> is also a valid floating point value (along with <code>+/-inf</code>).</p>
+<p>In Ibis, we try to be more precise: All data types are nullable, and we use
+<code>ibis.NA</code> to represent <code>NULL</code> values, and all datatypes have a <code>.isnull()</code> method.
+For floating point values, we use different values for <code>NaN</code> and <code>+/-inf</code>, and there
+are the additional methods <code>.isnan()</code> and <code>.isinf()</code>.</p>
+<h3 id="dropping-rows-with-nulls">Dropping rows with <code>NULL</code>s<a class="anchor-link" href="#dropping-rows-with-nulls">&#182;</a></h3><p>Both pandas and Ibis allow you to drop rows from a table based on whether a set of columns
+contains a <code>NULL</code> value. This method is called <code>dropna</code> in both packages. The common set
+of parameters in the two are <code>subset=</code> and <code>how=</code>. The <code>subset=</code> parameter indicates which
+columns to inspect for <code>NULL</code> values. The <code>how=</code> parameter specifies whether 'any' or 'all'
+of the specified columns must be <code>NULL</code> in order for the row to be dropped.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=e37b0ef6-9653-46a3-ab30-cffd079f081d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="type-casts">Type casts<a class="anchor-link" href="#type-casts">&#182;</a></h2><p>Type casting in pandas is done using the <code>astype</code> method on columns.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=dc002f3f-efaf-43e5-9f1f-e3a0bf683baf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=170fd8e7-4c2d-4981-8969-e064b2d8b176" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7269,9 +7352,144 @@ the column name for the value to apply to.</p>
                     </div>
                 </clipboard-copy>
             </div>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">no_null_peng</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">dropna</span><span class="p">([</span><span class="s1">&#39;bill_depth_mm&#39;</span><span class="p">,</span> <span class="s1">&#39;bill_length_mm&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span>
+</pre></div>
+<div id="cell-48" class="clipboard-copy-txt">no_null_peng = penguins.dropna(['bill_depth_mm', 'bill_length_mm'], how='any')</div>
+        
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div id="cell-id=ff5a2ba3-0164-47ef-b687-47c6dd19903c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="filling-null-values">Filling <code>NULL</code> values<a class="anchor-link" href="#filling-null-values">&#182;</a></h3><p>Both pandas and Ibis allow you to fill <code>NULL</code> values in a table. In Ibis, the replacement value can only
+be a scalar value of a dictionary of values. If it is a dictionary, the keys of the dictionary specify
+the column name for the value to apply to.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a5eb4117-c843-401d-8ca6-3b29c00f62da" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="zeroclipboard-container">
+                <clipboard-copy for="cell-49">
+                <div>
+                    <span class="notice" hidden>Copied!</span>
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                    </svg>
+                    </div>
+                </clipboard-copy>
+            </div>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">no_null_peng</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">bill_depth_mm</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bill_length_mm</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+<div id="cell-49" class="clipboard-copy-txt">no_null_peng = penguins.fillna(dict(bill_depth_mm=0, bill_length_mm=0))</div>
+        
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div id="cell-id=7768f8f1-44a7-44e6-a433-c33eff2b57cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="replacing-nulls">Replacing <code>NULL</code>s<a class="anchor-link" href="#replacing-nulls">&#182;</a></h3><p>Both pandas and Ibis have <code>fillna</code> methods which allow you to specify a replacement value
+for <code>NULL</code> values.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=1a280ac1-0639-4757-9941-fad657ee04a9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="zeroclipboard-container">
+                <clipboard-copy for="cell-50">
+                <div>
+                    <span class="notice" hidden>Copied!</span>
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                    </svg>
+                    </div>
+                </clipboard-copy>
+            </div>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">bill_length_no_nulls</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<div id="cell-50" class="clipboard-copy-txt">bill_length_no_nulls = penguins.bill_length_mm.fillna(0)</div>
+        
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div id="cell-id=e37b0ef6-9653-46a3-ab30-cffd079f081d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="type-casts">Type casts<a class="anchor-link" href="#type-casts">&#182;</a></h2><p>Type casting in pandas is done using the <code>astype</code> method on columns.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=dc002f3f-efaf-43e5-9f1f-e3a0bf683baf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="zeroclipboard-container">
+                <clipboard-copy for="cell-51">
+                <div>
+                    <span class="notice" hidden>Copied!</span>
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                    </svg>
+                    </div>
+                </clipboard-copy>
+            </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 </pre></div>
-<div id="cell-48" class="clipboard-copy-txt">df.bill_depth_mm.astype(str)</div>
+<div id="cell-51" class="clipboard-copy-txt">df.bill_depth_mm.astype(str)</div>
         
         </div>
     </div>
@@ -7287,7 +7505,7 @@ the column name for the value to apply to.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
 
 
@@ -7332,12 +7550,12 @@ Name: bill_depth_mm, Length: 344, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-49">
+                <clipboard-copy for="cell-52">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7349,7 +7567,7 @@ Name: bill_depth_mm, Length: 344, dtype: object</pre>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-49" class="clipboard-copy-txt">penguins.bill_depth_mm.cast('int')</div>
+<div id="cell-52" class="clipboard-copy-txt">penguins.bill_depth_mm.cast('int')</div>
         
         </div>
     </div>
@@ -7365,7 +7583,7 @@ Name: bill_depth_mm, Length: 344, dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
 
 
@@ -7416,12 +7634,12 @@ Name: bill_depth_mm, Length: 344, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-50">
+                <clipboard-copy for="cell-53">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7437,7 +7655,7 @@ Name: bill_depth_mm, Length: 344, dtype: object</pre>
 <span class="p">)</span>
 <span class="n">casted</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
 </pre></div>
-<div id="cell-50" class="clipboard-copy-txt">casted = penguins.mutate(
+<div id="cell-53" class="clipboard-copy-txt">casted = penguins.mutate(
     bill_depth_mm=penguins.bill_depth_mm.cast('int'),
     bill_length_mm=penguins.bill_length_mm.cast('int'),
 )
@@ -7457,7 +7675,7 @@ casted.schema()</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 
 
 
@@ -7483,58 +7701,13 @@ casted.schema()</div>
 
 </div>
 </div>
-<div id="cell-id=7768f8f1-44a7-44e6-a433-c33eff2b57cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="replacing-nulls">Replacing <code>NULL</code>s<a class="anchor-link" href="#replacing-nulls">&#182;</a></h3><p>Both pandas and Ibis have <code>fillna</code> methods which allow you to specify a replacement value
-for <code>NULL</code> values.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1a280ac1-0639-4757-9941-fad657ee04a9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-51">
-                <div>
-                    <span class="notice" hidden>Copied!</span>
-                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                    </svg>
-                    </div>
-                </clipboard-copy>
-            </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">bill_length_no_nulls</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-<div id="cell-51" class="clipboard-copy-txt">bill_length_no_nulls = penguins.bill_length_mm.fillna(0)</div>
-        
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div>
 <div id="cell-id=090d19c5-b961-49ad-a4e9-ba490521e785" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="set-membership">Set membership<a class="anchor-link" href="#set-membership">&#182;</a></h3><p>pandas set membership uses the <code>in</code> and <code>not in</code> operators such as <code>'a' in df.species</code>. Ibis uses
+<h2 id="set-membership">Set membership<a class="anchor-link" href="#set-membership">&#182;</a></h2><p>pandas set membership uses the <code>in</code> and <code>not in</code> operators such as <code>'a' in df.species</code>. Ibis uses
 <code>isin</code> and <code>notin</code> methods. In addition to testing membership in a set, these methods allow you to
 specify an else case to assign a value when the value isn't in the set.</p>
 
@@ -7547,12 +7720,12 @@ specify an else case to assign a value when the value isn't in the set.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-52">
+                <clipboard-copy for="cell-54">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7564,7 +7737,7 @@ specify an else case to assign a value when the value isn't in the set.</p>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">penguins</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
-<div id="cell-52" class="clipboard-copy-txt">penguins.species.value_counts()</div>
+<div id="cell-54" class="clipboard-copy-txt">penguins.species.value_counts()</div>
         
         </div>
     </div>
@@ -7580,7 +7753,7 @@ specify an else case to assign a value when the value isn't in the set.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
 
 
 
@@ -7611,12 +7784,12 @@ specify an else case to assign a value when the value isn't in the set.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-53">
+                <clipboard-copy for="cell-55">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7629,7 +7802,7 @@ specify an else case to assign a value when the value isn't in the set.</p>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">refined</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;Adelie&#39;</span><span class="p">,</span> <span class="s1">&#39;Chinstrap&#39;</span><span class="p">])</span>
 <span class="n">refined</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
-<div id="cell-53" class="clipboard-copy-txt">refined = penguins.species.isin(['Adelie', 'Chinstrap'])
+<div id="cell-55" class="clipboard-copy-txt">refined = penguins.species.isin(['Adelie', 'Chinstrap'])
 refined.value_counts()</div>
         
         </div>
@@ -7646,7 +7819,7 @@ refined.value_counts()</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 
 
 
@@ -7692,12 +7865,12 @@ accepts column names or index levels to join on, whereas Ibis can merge on expre
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-54">
+                <clipboard-copy for="cell-56">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7725,7 +7898,7 @@ accepts column names or index levels to join on, whereas Ibis can merge on expre
     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;x_100&#39;</span><span class="p">,</span> <span class="s1">&#39;y_100&#39;</span><span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-54" class="clipboard-copy-txt">df_left = pd.DataFrame(
+<div id="cell-56" class="clipboard-copy-txt">df_left = pd.DataFrame(
     [
         ['a', 1, 2],
         ['b', 3, 4],
@@ -7756,12 +7929,12 @@ df_right = pd.DataFrame(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-55">
+                <clipboard-copy for="cell-57">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7773,7 +7946,7 @@ df_right = pd.DataFrame(
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">df_left</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-55" class="clipboard-copy-txt">df_left.merge(df_right, on='name')</div>
+<div id="cell-57" class="clipboard-copy-txt">df_left.merge(df_right, on='name')</div>
         
         </div>
     </div>
@@ -7789,7 +7962,7 @@ df_right = pd.DataFrame(
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
 
 
 
@@ -7846,12 +8019,12 @@ df_right = pd.DataFrame(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-56">
+                <clipboard-copy for="cell-58">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7863,7 +8036,7 @@ df_right = pd.DataFrame(
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">df_left</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-56" class="clipboard-copy-txt">df_left.merge(df_right, on='name', how='outer')</div>
+<div id="cell-58" class="clipboard-copy-txt">df_left.merge(df_right, on='name', how='outer')</div>
         
         </div>
     </div>
@@ -7879,7 +8052,7 @@ df_right = pd.DataFrame(
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 
 
 
@@ -7980,12 +8153,12 @@ df_right = pd.DataFrame(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-57">
+                <clipboard-copy for="cell-59">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -7998,7 +8171,7 @@ df_right = pd.DataFrame(
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">t_left</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">df_left</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t_left&quot;</span><span class="p">)</span>
 <span class="n">t_right</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">df_right</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t_right&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-57" class="clipboard-copy-txt">t_left = ibis.memtable(df_left, name="t_left")
+<div id="cell-59" class="clipboard-copy-txt">t_left = ibis.memtable(df_left, name="t_left")
 t_right = ibis.memtable(df_right, name='t_right')</div>
         
         </div>
@@ -8014,12 +8187,12 @@ t_right = ibis.memtable(df_right, name='t_right')</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-58">
+                <clipboard-copy for="cell-60">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -8031,7 +8204,7 @@ t_right = ibis.memtable(df_right, name='t_right')</div>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">t_left</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t_right</span><span class="p">,</span> <span class="n">t_left</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">t_right</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
-<div id="cell-58" class="clipboard-copy-txt">t_left.join(t_right, t_left.name == t_right.name)</div>
+<div id="cell-60" class="clipboard-copy-txt">t_left.join(t_right, t_left.name == t_right.name)</div>
         
         </div>
     </div>
@@ -8047,7 +8220,7 @@ t_right = ibis.memtable(df_right, name='t_right')</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 
 
 
@@ -8088,12 +8261,12 @@ t_right = ibis.memtable(df_right, name='t_right')</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-59">
+                <clipboard-copy for="cell-61">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -8105,7 +8278,7 @@ t_right = ibis.memtable(df_right, name='t_right')</div>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">t_left</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t_right</span><span class="p">,</span> <span class="n">t_left</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">t_right</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-59" class="clipboard-copy-txt">t_left.join(t_right, t_left.name == t_right.name, how='outer')</div>
+<div id="cell-61" class="clipboard-copy-txt">t_left.join(t_right, t_left.name == t_right.name, how='outer')</div>
         
         </div>
     </div>
@@ -8121,7 +8294,7 @@ t_right = ibis.memtable(df_right, name='t_right')</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
 
 
 
@@ -8171,12 +8344,12 @@ using the top-level <code>union</code> function or the <code>union</code> method
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-60">
+                <clipboard-copy for="cell-62">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -8204,7 +8377,7 @@ using the top-level <code>union</code> function or the <code>union</code> method
     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-60" class="clipboard-copy-txt">df_1 = pd.DataFrame(
+<div id="cell-62" class="clipboard-copy-txt">df_1 = pd.DataFrame(
     [
         ['a', 1, 2],
         ['b', 3, 4],
@@ -8235,12 +8408,12 @@ df_2 = pd.DataFrame(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-61">
+                <clipboard-copy for="cell-63">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -8252,7 +8425,7 @@ df_2 = pd.DataFrame(
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_1</span><span class="p">,</span> <span class="n">df_2</span><span class="p">])</span>
 </pre></div>
-<div id="cell-61" class="clipboard-copy-txt">pd.concat([df_1, df_2])</div>
+<div id="cell-63" class="clipboard-copy-txt">pd.concat([df_1, df_2])</div>
         
         </div>
     </div>
@@ -8268,7 +8441,7 @@ df_2 = pd.DataFrame(
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
 
 
 
@@ -8363,12 +8536,12 @@ df_2 = pd.DataFrame(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-62">
+                <clipboard-copy for="cell-64">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -8381,7 +8554,7 @@ df_2 = pd.DataFrame(
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">t_1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">df_1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t_1&#39;</span><span class="p">)</span>
 <span class="n">t_2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">df_2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t_2&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-62" class="clipboard-copy-txt">t_1 = ibis.memtable(df_1, name='t_1')
+<div id="cell-64" class="clipboard-copy-txt">t_1 = ibis.memtable(df_1, name='t_1')
 t_2 = ibis.memtable(df_2, name='t_2')</div>
         
         </div>
@@ -8397,12 +8570,12 @@ t_2 = ibis.memtable(df_2, name='t_2')</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-63">
+                <clipboard-copy for="cell-65">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -8415,7 +8588,7 @@ t_2 = ibis.memtable(df_2, name='t_2')</div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">unioned</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">t_1</span><span class="p">,</span> <span class="n">t_2</span><span class="p">)</span>
 <span class="n">unioned</span>
 </pre></div>
-<div id="cell-63" class="clipboard-copy-txt">unioned = ibis.union(t_1, t_2)
+<div id="cell-65" class="clipboard-copy-txt">unioned = ibis.union(t_1, t_2)
 unioned</div>
         
         </div>
@@ -8432,7 +8605,7 @@ unioned</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
 
 
 
@@ -8470,7 +8643,7 @@ unioned</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
       
     
   </small>
