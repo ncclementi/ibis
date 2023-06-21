@@ -286,6 +286,7 @@ ibis.expr.operations.temporal.TimestampFromYMDHMS,True,True,False,False,True,Tru
 ibis.expr.operations.temporal.TimestampSub,True,True,True,False,False,True,True,False,True,False,True,True,True,True,True,False,False
 ibis.expr.operations.temporal.TimestampTruncate,True,True,True,False,False,True,True,True,True,False,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.TimestampUnary,False,False,True,False,False,False,False,False,False,False,True,True,False,False,False,False,False
+ibis.expr.operations.udf.ScalarUDF,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
 ibis.expr.operations.vectorized.AnalyticVectorizedUDF,False,False,True,False,False,False,False,False,False,False,True,False,False,False,False,False,False
 ibis.expr.operations.vectorized.ElementWiseVectorizedUDF,False,False,True,True,False,False,False,False,False,False,True,True,False,True,False,False,False
 ibis.expr.operations.vectorized.ReductionVectorizedUDF,False,False,True,False,False,False,False,False,False,False,True,False,False,True,False,False,False
