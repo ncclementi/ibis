@@ -2362,11 +2362,12 @@ for more information.</p>
         <tr>
           <td><code>path</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a> | <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The data source(s). May be a path to a file or directory of parquet files.</p>
+              <p>The data source(s). May be a path to a file, an iterable of files,
+or directory of parquet files.</p>
             </div>
           </td>
           <td>
@@ -2397,7 +2398,8 @@ a sequentially generated name.</p>
             <div class="doc-md-description">
               <p>Additional keyword arguments passed to Polars loading function.
 See <a href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.scan_parquet.html">https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.scan_parquet.html</a>
-for more information.</p>
+for more information (if loading a single file or glob; when loading
+multiple files polars' <code>scan_pyarrow_dataset</code> method is used instead).</p>
             </div>
           </td>
           <td>
