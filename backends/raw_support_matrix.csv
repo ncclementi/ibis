@@ -259,6 +259,7 @@ ibis.expr.operations.temporal.ExtractDay,True,True,True,False,True,True,True,Tru
 ibis.expr.operations.temporal.ExtractDayOfYear,True,True,True,False,False,True,False,True,True,False,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractEpochSeconds,True,True,True,False,False,True,True,True,True,False,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractHour,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.temporal.ExtractMicrosecond,True,True,True,False,False,True,True,True,True,False,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractMillisecond,True,True,True,False,False,True,True,True,True,False,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractMinute,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.ExtractMonth,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
