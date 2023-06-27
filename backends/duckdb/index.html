@@ -780,6 +780,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#motherduck" class="md-nav__link">
+    MotherDuck
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-support" class="md-nav__link">
     File Support
   </a>
@@ -2228,6 +2235,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#motherduck" class="md-nav__link">
+    MotherDuck
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-support" class="md-nav__link">
     File Support
   </a>
@@ -2464,6 +2478,32 @@ passing a properly formatted DuckDB connection URL to <code>ibis.connect</code><
 <ol>
 <li>ephemeral, in-memory database</li>
 </ol>
+<h2 id="motherduck">MotherDuck<a class="headerlink" href="#motherduck" title="Anchor link to this section for reference">&para;</a></h2>
+<p>The DuckDB backend supports <a href="https://motherduck.com">MotherDuck</a>. If you have an
+account, you can connect to MotherDuck by passing in the string <code>md:</code> or
+<code>motherduck:</code>. <code>ibis</code> will trigger the authentication prompt in-browser.</p>
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;md:&quot;</span><span class="p">)</span>
+</code></pre></div>
+<!-- prettier-ignore-start -->
+<div class="admonition info">
+<p class="admonition-title">Authentication to MotherDuck will trigger on the first call that requires retrieving information (in this case <code>list_tables</code>)</p>
+</div>
+<!-- prettier-ignore-end -->
+
+<div class="language-python highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">list_tables</span><span class="p">()</span>
+<span class="n">Attempting</span> <span class="n">to</span> <span class="n">automatically</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">SSO</span> <span class="n">authorization</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">default</span> <span class="n">browser</span><span class="o">.</span>
+<span class="mf">1.</span> <span class="n">Please</span> <span class="nb">open</span> <span class="n">this</span> <span class="n">link</span> <span class="n">to</span> <span class="n">login</span> <span class="n">into</span> <span class="n">your</span> <span class="n">account</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">auth</span><span class="o">.</span><span class="n">motherduck</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">activate</span>
+<span class="mf">2.</span> <span class="n">Enter</span> <span class="n">the</span> <span class="n">following</span> <span class="n">code</span><span class="p">:</span> <span class="n">ZSRQ</span><span class="o">-</span><span class="n">GJQS</span>
+
+
+<span class="n">Token</span> <span class="n">successfully</span> <span class="n">retrieved</span> <span class="err">✅</span>
+<span class="n">You</span> <span class="n">can</span> <span class="n">store</span> <span class="n">it</span> <span class="k">as</span> <span class="n">an</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">having</span> <span class="n">to</span> <span class="n">log</span> <span class="ow">in</span> <span class="n">again</span><span class="p">:</span>
+  <span class="err">$</span> <span class="n">export</span> <span class="n">motherduck_token</span><span class="o">=</span><span class="s1">&#39;****************&#39;</span>
+
+<span class="p">[</span><span class="s1">&#39;penguins&#39;</span><span class="p">]</span>
+</code></pre></div>
 <h2 id="file-support">File Support<a class="headerlink" href="#file-support" title="Anchor link to this section for reference">&para;</a></h2>
 <!-- prettier-ignore-start -->
 
@@ -2973,7 +3013,7 @@ a sequentially generated name.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
       
     
   </small>
