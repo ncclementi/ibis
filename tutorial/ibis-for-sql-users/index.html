@@ -5948,7 +5948,7 @@ ibis.show_sql(freqs)</div>
 <pre>SELECT
   CAST(EXTRACT(year FROM t0.ts) AS SMALLINT) AS year,
   CAST(EXTRACT(month FROM t0.ts) AS SMALLINT) AS month,
-  COUNT(*) AS count
+  COUNT(*) AS &#34;CountStar(web_events)&#34;
 FROM web_events AS t0
 GROUP BY
   1,
@@ -8402,7 +8402,7 @@ ibis.show_sql(expr)</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT
   t0.key1,
-  COUNT(*) AS count
+  COUNT(*) AS &#34;CountStar()&#34;
 FROM table1 AS t0
 JOIN table2 AS t1
   ON t0.value1 &lt; t1.value2
@@ -9639,17 +9639,17 @@ dimension by aggregate statistics:</p>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT
   t0.key1,
-  t0.count
+  t0.&#34;Count(key1)&#34;
 FROM (
   SELECT
     t1.key1 AS key1,
-    COUNT(t1.key1) AS count
+    COUNT(t1.key1) AS &#34;Count(key1)&#34;
   FROM table1 AS t1
   GROUP BY
     1
 ) AS t0
 ORDER BY
-  t0.count DESC
+  t0.&#34;Count(key1)&#34; DESC
 LIMIT 10
 </pre>
 </div>

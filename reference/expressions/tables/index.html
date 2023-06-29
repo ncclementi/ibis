@@ -20586,12 +20586,7 @@ value of <code>None</code> will use the backend's native dialect.</p>
 <span class="normal">310</span>
 <span class="normal">311</span>
 <span class="normal">312</span>
-<span class="normal">313</span>
-<span class="normal">314</span>
-<span class="normal">315</span>
-<span class="normal">316</span>
-<span class="normal">317</span>
-<span class="normal">318</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GroupedTable</span><span class="p">:</span>
+<span class="normal">313</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GroupedTable</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An intermediate table expression to hold grouping information.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -20829,20 +20824,15 @@ value of <code>None</code> will use the backend's native dialect.</p>
             <span class="n">window</span><span class="o">=</span><span class="n">window</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metric_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Computing the number of rows per group.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        metric_name</span>
-<span class="sd">            Name to use for the row count metric</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        Table</span>
 <span class="sd">            The aggregated table</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">metric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">metric_name</span><span class="p">)</span>
+        <span class="n">metric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="n">metric</span><span class="p">],</span> <span class="n">by</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">by</span><span class="p">,</span> <span class="n">having</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_having</span><span class="p">)</span>
 
     <span class="n">size</span> <span class="o">=</span> <span class="n">count</span>
@@ -20893,7 +20883,7 @@ value of <code>None</code> will use the backend's native dialect.</p>
 
 
 <h4 id="ibis.expr.types.groupby.GroupedTable.count" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">count</span><span class="p">(</span><span class="n">metric_name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">count</span><span class="p">()</span></code>
 
 <a href="#ibis.expr.types.groupby.GroupedTable.count" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -20901,34 +20891,6 @@ value of <code>None</code> will use the backend's native dialect.</p>
   <div class="doc doc-contents ">
   
       <p>Computing the number of rows per group.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>metric_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Name to use for the row count metric</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;count&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -20963,25 +20925,15 @@ value of <code>None</code> will use the backend's native dialect.</p>
 <span class="normal">308</span>
 <span class="normal">309</span>
 <span class="normal">310</span>
-<span class="normal">311</span>
-<span class="normal">312</span>
-<span class="normal">313</span>
-<span class="normal">314</span>
-<span class="normal">315</span>
-<span class="normal">316</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metric_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="normal">311</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Computing the number of rows per group.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    metric_name</span>
-<span class="sd">        Name to use for the row count metric</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    Table</span>
 <span class="sd">        The aggregated table</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">metric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">metric_name</span><span class="p">)</span>
+    <span class="n">metric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="n">metric</span><span class="p">],</span> <span class="n">by</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">by</span><span class="p">,</span> <span class="n">having</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_having</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
