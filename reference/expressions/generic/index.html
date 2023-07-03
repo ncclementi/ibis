@@ -11859,188 +11859,27 @@ If the value of <code>n</code> is greater than the number of rows in the window,
             </div>
           </td>
         </tr>
-        <tr>
-          <td>
-                <code>Examples</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>--------</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>&gt;&gt;&gt; import ibis</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>&gt;&gt;&gt; ibis.options.interactive = True</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>&gt;&gt;&gt; t = ibis.memtable({&#34;values&#34;: [1, 2, 1, 2, 3, 2]})</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>&gt;&gt;&gt; t.mutate(rank=t.values.rank())</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>┏━━━━━━━━┳━━━━━━━┓</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>┃ values ┃ rank  ┃</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>┡━━━━━━━━╇━━━━━━━┩</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│ int64  │ int64 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>├────────┼───────┤</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│      1 │     0 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│      1 │     0 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│      2 │     2 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│      2 │     2 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│      2 │     2 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>│      3 │     5 │</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>└────────┴───────┘</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              
-            </div>
-          </td>
-        </tr>
     </tbody>
   </table>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">rank</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">rank</span><span class="p">())</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ values ┃ rank  ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ int64  │ int64 │</span>
+<span class="go">├────────┼───────┤</span>
+<span class="go">│      1 │     0 │</span>
+<span class="go">│      1 │     0 │</span>
+<span class="go">│      2 │     2 │</span>
+<span class="go">│      2 │     2 │</span>
+<span class="go">│      2 │     2 │</span>
+<span class="go">│      3 │     5 │</span>
+<span class="go">└────────┴───────┘</span>
+</code></pre></div>
 
       <details class="quote">
         <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
