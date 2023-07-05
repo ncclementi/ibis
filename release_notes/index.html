@@ -4354,7 +4354,7 @@
 <li><strong>snowflake/postgres:</strong> Postgres UDFs now use the new <code>@udf.scalar.python</code> API. This should be a low-effort replacement for the existing API.</li>
 <li><strong>ir:</strong> <code>ops.NullLiteral</code> is removed</li>
 <li><strong>datatypes:</strong> <code>dt.Interval</code> has no longer a default unit, <code>dt.interval</code> is removed</li>
-<li><strong>deps:</strong> <code>snowflake-connector-python</code>'s lower bound was increased to 3.0.2, the minimum version needed to avoid a high-severity vulernability. Please upgrade <code>snowflake-connector-python</code> to at least version 3.0.2.</li>
+<li><strong>deps:</strong> <code>snowflake-connector-python</code>'s lower bound was increased to 3.0.2, the minimum version needed to avoid a high-severity vulnerability. Please upgrade <code>snowflake-connector-python</code> to at least version 3.0.2.</li>
 <li><strong>api:</strong> <code>Table.difference()</code>, <code>Table.intersection()</code>, and <code>Table.union()</code> now require at least one argument.</li>
 <li><strong>postgres:</strong> Ibis no longer automatically defines <code>first</code>/<code>last</code> reductions on connection to the postgres backend. Use DDL shown in <a href="https://wiki.postgresql.org/wiki/First/last_(aggregate">https://wiki.postgresql.org/wiki/First/last_(aggregate</a>) or one of the <code>pgxn</code> implementations instead.</li>
 <li><strong>api:</strong> <code>ibis.examples.&lt;example-name&gt;.fetch</code> no longer forwards arbitrary keyword arguments to <code>read_csv</code>/<code>read_parquet</code>.</li>
