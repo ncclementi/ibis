@@ -2112,7 +2112,9 @@
 <p>And here's the source code for the application:</p>
 <details class="example">
 <summary>Source code</summary>
-<div class="language-python highlight"><span class="filename">example_streamlit_app.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<div class="language-python highlight"><span class="filename">example_streamlit_app.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 
 <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
