@@ -491,8 +491,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-backend-dependencies" class="md-nav__link">
-    Install backend dependencies
+  <a href="#using-pip" class="md-nav__link">
+    Using pip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-conda-or-mamba" class="md-nav__link">
+    Using conda or mamba
   </a>
   
 </li>
@@ -2125,8 +2132,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-backend-dependencies" class="md-nav__link">
-    Install backend dependencies
+  <a href="#using-pip" class="md-nav__link">
+    Using pip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-conda-or-mamba" class="md-nav__link">
+    Using conda or mamba
   </a>
   
 </li>
@@ -2150,32 +2164,14 @@
 
 
 <h1 id="install-ibis">Install Ibis<a class="headerlink" href="#install-ibis" title="Anchor link to this section for reference">&para;</a></h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[duckdb]&#39;</span><span class="w"> </span><span class="c1"># (1) (2)</span>
+<h2 id="using-pip">Using <code>pip</code><a class="headerlink" href="#using-pip" title="Anchor link to this section for reference">&para;</a></h2>
+<p>We suggest starting with the DuckDB backend. It's performant and fully
+featured.</p>
+<div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[duckdb]&#39;</span>
 </code></pre></div>
-<ol>
-<li>
-<p>We suggest starting with the DuckDB backend.  It's performant and fully featured.  If you would like to use a different backend, all of the available options are listed below.</p>
-</li>
-<li>
-<p>Note that the <code>ibis-framework</code> package is <em>not</em> the same as the <code>ibis</code> package in PyPI.  These two libraries cannot coexist in the same Python environment, as they are both imported with the <code>ibis</code> module name.</p>
-</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
-</code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="install-backend-dependencies">Install backend dependencies<a class="headerlink" href="#install-backend-dependencies" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:17"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><input id="__tabbed_2_11" name="__tabbed_2" type="radio" /><input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><input id="__tabbed_2_13" name="__tabbed_2" type="radio" /><input id="__tabbed_2_14" name="__tabbed_2" type="radio" /><input id="__tabbed_2_15" name="__tabbed_2" type="radio" /><input id="__tabbed_2_16" name="__tabbed_2" type="radio" /><input id="__tabbed_2_17" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">bigquery</label><label for="__tabbed_2_2">clickhouse</label><label for="__tabbed_2_3">dask</label><label for="__tabbed_2_4">datafusion</label><label for="__tabbed_2_5">druid</label><label for="__tabbed_2_6">duckdb</label><label for="__tabbed_2_7">impala</label><label for="__tabbed_2_8">mssql</label><label for="__tabbed_2_9">mysql</label><label for="__tabbed_2_10">oracle</label><label for="__tabbed_2_11">pandas</label><label for="__tabbed_2_12">polars</label><label for="__tabbed_2_13">postgres</label><label for="__tabbed_2_14">pyspark</label><label for="__tabbed_2_15">snowflake</label><label for="__tabbed_2_16">sqlite</label><label for="__tabbed_2_17">trino</label></div>
+<p>If you would like to use a different backend, all of the available options are
+listed below.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:17"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><input id="__tabbed_1_11" name="__tabbed_1" type="radio" /><input id="__tabbed_1_12" name="__tabbed_1" type="radio" /><input id="__tabbed_1_13" name="__tabbed_1" type="radio" /><input id="__tabbed_1_14" name="__tabbed_1" type="radio" /><input id="__tabbed_1_15" name="__tabbed_1" type="radio" /><input id="__tabbed_1_16" name="__tabbed_1" type="radio" /><input id="__tabbed_1_17" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">bigquery</label><label for="__tabbed_1_2">clickhouse</label><label for="__tabbed_1_3">dask</label><label for="__tabbed_1_4">datafusion</label><label for="__tabbed_1_5">druid</label><label for="__tabbed_1_6">duckdb</label><label for="__tabbed_1_7">impala</label><label for="__tabbed_1_8">mssql</label><label for="__tabbed_1_9">mysql</label><label for="__tabbed_1_10">oracle</label><label for="__tabbed_1_11">pandas</label><label for="__tabbed_1_12">polars</label><label for="__tabbed_1_13">postgres</label><label for="__tabbed_1_14">pyspark</label><label for="__tabbed_1_15">snowflake</label><label for="__tabbed_1_16">sqlite</label><label for="__tabbed_1_17">trino</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sh highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[bigquery]&#39;</span>
@@ -2247,6 +2243,178 @@
 </div>
 </div>
 </div>
+<p>Note that the <code>ibis-framework</code> package is <em>not</em> the same as the <code>ibis</code> package
+in PyPI. These two libraries cannot coexist in the same Python environment, as
+they are both imported with the <code>ibis</code> module name.</p>
+<h2 id="using-conda-or-mamba">Using <code>conda</code> or <code>mamba</code><a class="headerlink" href="#using-conda-or-mamba" title="Anchor link to this section for reference">&para;</a></h2>
+<!-- prettier-ignore-start -->
+
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">conda</label><label for="__tabbed_2_2">mamba</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The base <code>ibis-framework</code> package includes support for the <code>duckdb</code>
+backend. This is our recommended backend for local execution.</p>
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
+</code></pre></div>
+<p>If you would like to use a different backend, all of the available options
+are listed below.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:17"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><input id="__tabbed_3_7" name="__tabbed_3" type="radio" /><input id="__tabbed_3_8" name="__tabbed_3" type="radio" /><input id="__tabbed_3_9" name="__tabbed_3" type="radio" /><input id="__tabbed_3_10" name="__tabbed_3" type="radio" /><input id="__tabbed_3_11" name="__tabbed_3" type="radio" /><input id="__tabbed_3_12" name="__tabbed_3" type="radio" /><input id="__tabbed_3_13" name="__tabbed_3" type="radio" /><input id="__tabbed_3_14" name="__tabbed_3" type="radio" /><input id="__tabbed_3_15" name="__tabbed_3" type="radio" /><input id="__tabbed_3_16" name="__tabbed_3" type="radio" /><input id="__tabbed_3_17" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">bigquery</label><label for="__tabbed_3_2">clickhouse</label><label for="__tabbed_3_3">dask</label><label for="__tabbed_3_4">datafusion</label><label for="__tabbed_3_5">druid</label><label for="__tabbed_3_6">duckdb</label><label for="__tabbed_3_7">impala</label><label for="__tabbed_3_8">mssql</label><label for="__tabbed_3_9">mysql</label><label for="__tabbed_3_10">oracle</label><label for="__tabbed_3_11">pandas</label><label for="__tabbed_3_12">polars</label><label for="__tabbed_3_13">postgres</label><label for="__tabbed_3_14">pyspark</label><label for="__tabbed_3_15">snowflake</label><label for="__tabbed_3_16">sqlite</label><label for="__tabbed_3_17">trino</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-bigquery
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-clickhouse
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-dask
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-datafusion
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-druid
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-duckdb
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-mssql
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-mysql
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-oracle
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pandas
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-polars
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-postgres
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pyspark
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-snowflake
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-sqlite
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-trino
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>The base <code>ibis-framework</code> package includes support for the <code>duckdb</code>
+backend. This is our recommended backend for local execution.</p>
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-framework
+</code></pre></div>
+<p>If you would like to use a different backend, all of the available options
+are listed below.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:17"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><input id="__tabbed_4_6" name="__tabbed_4" type="radio" /><input id="__tabbed_4_7" name="__tabbed_4" type="radio" /><input id="__tabbed_4_8" name="__tabbed_4" type="radio" /><input id="__tabbed_4_9" name="__tabbed_4" type="radio" /><input id="__tabbed_4_10" name="__tabbed_4" type="radio" /><input id="__tabbed_4_11" name="__tabbed_4" type="radio" /><input id="__tabbed_4_12" name="__tabbed_4" type="radio" /><input id="__tabbed_4_13" name="__tabbed_4" type="radio" /><input id="__tabbed_4_14" name="__tabbed_4" type="radio" /><input id="__tabbed_4_15" name="__tabbed_4" type="radio" /><input id="__tabbed_4_16" name="__tabbed_4" type="radio" /><input id="__tabbed_4_17" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">bigquery</label><label for="__tabbed_4_2">clickhouse</label><label for="__tabbed_4_3">dask</label><label for="__tabbed_4_4">datafusion</label><label for="__tabbed_4_5">druid</label><label for="__tabbed_4_6">duckdb</label><label for="__tabbed_4_7">impala</label><label for="__tabbed_4_8">mssql</label><label for="__tabbed_4_9">mysql</label><label for="__tabbed_4_10">oracle</label><label for="__tabbed_4_11">pandas</label><label for="__tabbed_4_12">polars</label><label for="__tabbed_4_13">postgres</label><label for="__tabbed_4_14">pyspark</label><label for="__tabbed_4_15">snowflake</label><label for="__tabbed_4_16">sqlite</label><label for="__tabbed_4_17">trino</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-bigquery
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-clickhouse
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-dask
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-datafusion
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-druid
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-duckdb
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-mssql
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-mysql
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-oracle
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pandas
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-polars
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-postgres
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-pyspark
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-snowflake
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-sqlite
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-trino
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- prettier-ignore-end -->
+
 <hr />
 <p>After you've successfully installed Ibis, try going through the tutorial:</p>
 <div class="install-tutorial-button">
@@ -2258,7 +2426,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2023</span>
       
     
   </small>
