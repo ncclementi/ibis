@@ -5517,7 +5517,7 @@
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; import ibis</span>
 <span class="sd">        &gt;&gt;&gt; url = ibis.literal(&quot;https://user:pass@example.com:80/docs/books&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; result = url.authority()  # user:pass</span>
+<span class="sd">        &gt;&gt;&gt; result = url.userinfo()  # user:pass</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -5533,7 +5533,7 @@
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; import ibis</span>
 <span class="sd">        &gt;&gt;&gt; url = ibis.literal(&quot;https://user:pass@example.com:80/docs/books&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; result = url.authority()  # example.com</span>
+<span class="sd">        &gt;&gt;&gt; result = url.host()  # example.com</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -5549,7 +5549,7 @@
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; import ibis</span>
 <span class="sd">        &gt;&gt;&gt; url = ibis.literal(&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; result = url.authority()  # docs/books/tutorial/index.html?name=networking</span>
+<span class="sd">        &gt;&gt;&gt; result = url.file()  # docs/books/tutorial/index.html?name=networking</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -5565,7 +5565,7 @@
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; import ibis</span>
 <span class="sd">        &gt;&gt;&gt; url = ibis.literal(&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; result = url.authority()  # docs/books/tutorial/index.html</span>
+<span class="sd">        &gt;&gt;&gt; result = url.path()  # docs/books/tutorial/index.html</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -6718,7 +6718,7 @@
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html?name=networking</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">file</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html?name=networking</span>
 </code></pre></div>
 
   <p><strong>Returns:</strong></p>
@@ -6766,7 +6766,7 @@
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; import ibis</span>
 <span class="sd">    &gt;&gt;&gt; url = ibis.literal(&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; result = url.authority()  # docs/books/tutorial/index.html?name=networking</span>
+<span class="sd">    &gt;&gt;&gt; result = url.file()  # docs/books/tutorial/index.html?name=networking</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -7336,7 +7336,7 @@ or if <code>self</code> contains <code>','</code>.</p>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># example.com</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">host</span><span class="p">()</span>  <span class="c1"># example.com</span>
 </code></pre></div>
 
   <p><strong>Returns:</strong></p>
@@ -7384,7 +7384,7 @@ or if <code>self</code> contains <code>','</code>.</p>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; import ibis</span>
 <span class="sd">    &gt;&gt;&gt; url = ibis.literal(&quot;https://user:pass@example.com:80/docs/books&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; result = url.authority()  # example.com</span>
+<span class="sd">    &gt;&gt;&gt; result = url.host()  # example.com</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -8683,7 +8683,7 @@ the corresponding row in the output is <code>True</code>.</p>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html</span>
 </code></pre></div>
 
   <p><strong>Returns:</strong></p>
@@ -8731,7 +8731,7 @@ the corresponding row in the output is <code>True</code>.</p>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; import ibis</span>
 <span class="sd">    &gt;&gt;&gt; url = ibis.literal(&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; result = url.authority()  # docs/books/tutorial/index.html</span>
+<span class="sd">    &gt;&gt;&gt; result = url.path()  # docs/books/tutorial/index.html</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -11543,7 +11543,7 @@ entire string</p>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">userinfo</span><span class="p">()</span>  <span class="c1"># user:pass</span>
 </code></pre></div>
 
   <p><strong>Returns:</strong></p>
@@ -11591,7 +11591,7 @@ entire string</p>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; import ibis</span>
 <span class="sd">    &gt;&gt;&gt; url = ibis.literal(&quot;https://user:pass@example.com:80/docs/books&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; result = url.authority()  # user:pass</span>
+<span class="sd">    &gt;&gt;&gt; result = url.userinfo()  # user:pass</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
