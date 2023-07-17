@@ -861,6 +861,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#connecting-to-older-oracle-databases" class="md-nav__link">
+    Connecting to older Oracle databases
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2223,6 +2230,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#connecting-to-older-oracle-databases" class="md-nav__link">
+    Connecting to older Oracle databases
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2392,13 +2406,24 @@
 passing a properly formatted Oracle connection URL to <code>ibis.connect</code></p>
 <div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;oracle://</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">database</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="connecting-to-older-oracle-databases">Connecting to older Oracle databases<a class="headerlink" href="#connecting-to-older-oracle-databases" title="Anchor link to this section for reference">&para;</a></h2>
+<p><code>ibis</code> uses the <code>python-oracledb</code> "thin client" to connect to Oracle databases.
+Because early versions of Oracle did not perform case-sensitive checks in
+passwords, some DBAs disable case sensitivity to avoid requiring users to update
+their passwords. If case-sensitive passwords are disabled, then Ibis will not be
+able to connect to the database.</p>
+<p>To check if case-sensitivity is enforced you can run</p>
+<div class="language-sql highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="n">sec_case_sensitive_logon</span><span class="p">;</span>
+</code></pre></div>
+<p>If the returned value is <code>FALSE</code> then Ibis will <em>not</em> connect.</p>
+<p>For more information, see this <a href="https://github.com/oracle/python-oracledb/issues/26">issue</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2023</span>
       
     
   </small>
