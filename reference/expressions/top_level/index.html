@@ -2950,11 +2950,17 @@ scalar (if the inputs are Python literals)</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="go">[1.0, 2.0, 3.0]</span>
 </code></pre></div>
-    <p>Mixing scalar and column expressions is not allowed</p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
-<span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
-<span class="gr">ibis.common.exceptions.IbisTypeError</span>: <span class="n">To create an array column using `array`, all input values must be column expressions.</span>
+    <p>Mixing scalar and column expressions is allowed</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayColumn()        ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int64&gt;         │</span>
+<span class="go">├──────────────────────┤</span>
+<span class="go">│ [1, 42]              │</span>
+<span class="go">│ [2, 42]              │</span>
+<span class="go">│ [3, 42]              │</span>
+<span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
   </div>
