@@ -2977,21 +2977,20 @@
 
 
 <h2 id="ibis.expr.types.geospatial.GeoSpatialValue" class="doc doc-heading">
-        <code>GeoSpatialValue</code>
+          <code>GeoSpatialValue</code>
 
 
 <a href="#ibis.expr.types.geospatial.GeoSpatialValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="../numeric/#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="../numeric/#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 14</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 14</span>
 <span class="normal"> 15</span>
 <span class="normal"> 16</span>
 <span class="normal"> 17</span>
@@ -4425,7 +4424,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoLineMerge</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -4438,6 +4437,7 @@
 
 
 <h3 id="ibis.expr.types.geospatial.GeoSpatialValue-functions">Functions<a href="#ibis.expr.types.geospatial.GeoSpatialValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4452,6 +4452,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the area of a geospatial value.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4475,9 +4477,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
@@ -4495,10 +4497,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoArea</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4513,6 +4516,8 @@
   <div class="doc doc-contents ">
   
       <p>Get the geometry as well-known bytes (WKB) without the SRID data.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4536,9 +4541,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
@@ -4556,10 +4561,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoAsBinary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4574,6 +4580,8 @@
   <div class="doc doc-contents ">
   
       <p>Get the geometry as well-known bytes (WKB) with the SRID data.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4597,9 +4605,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
@@ -4617,10 +4625,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoAsEWKB</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4635,6 +4644,8 @@
   <div class="doc doc-contents ">
   
       <p>Get the geometry as well-known text (WKT) with the SRID data.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4658,9 +4669,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
@@ -4678,10 +4689,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoAsEWKT</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4696,6 +4708,8 @@
   <div class="doc doc-contents ">
   
       <p>Get the geometry as well-known text (WKT) without the SRID data.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4719,9 +4733,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
@@ -4739,10 +4753,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoAsText</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4758,6 +4773,8 @@
   
       <p>Return the angle in radians from the horizontal of the vector defined by the inputs.</p>
 <p>Angle is computed clockwise from down-to-up on the clock: 12=0; 3=PI/2; 6=PI; 9=3PI/2.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4787,6 +4804,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4809,9 +4828,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">591</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">591</span>
 <span class="normal">592</span>
 <span class="normal">593</span>
 <span class="normal">594</span>
@@ -4843,10 +4862,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoAzimuth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4863,6 +4883,8 @@
       <p>Return all points whose distance from this geometry is less than or equal to <code>radius</code>.</p>
 <p>Calculations are in the Spatial Reference System of this Geometry.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -4877,7 +4899,7 @@
         <tr>
           <td><code>radius</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.FloatingValue" href="../numeric/#ibis.expr.types.numeric.FloatingValue">FloatingValue</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a> | <span title="ibis">ir</span>.<span title="ibis.FloatingValue">FloatingValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4890,6 +4912,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4913,9 +4937,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">539</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">539</span>
 <span class="normal">540</span>
 <span class="normal">541</span>
 <span class="normal">542</span>
@@ -4947,10 +4971,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoBuffer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4965,6 +4990,8 @@
   <div class="doc doc-contents ">
   
       <p>Returns the centroid of the geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4988,9 +5015,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">556</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">556</span>
 <span class="normal">557</span>
 <span class="normal">558</span>
 <span class="normal">559</span>
@@ -5008,10 +5035,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoCentroid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5026,6 +5054,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the geometry contains the <code>right</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5055,6 +5085,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5077,9 +5109,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">66</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span>
@@ -5107,10 +5139,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoContains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5126,6 +5159,8 @@
   
       <p>Check if the first geometry contains the second one.</p>
 <p>Excludes common border points.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5155,6 +5190,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5177,9 +5214,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
 <span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
@@ -5211,10 +5248,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoContainsProperly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5229,6 +5267,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the first geometry is covered by the second one.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5258,6 +5298,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5280,9 +5322,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
@@ -5310,10 +5352,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoCoveredBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5328,6 +5371,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the first geometry covers the second one.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5357,6 +5402,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5379,9 +5426,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
 <span class="normal"> 99</span>
 <span class="normal">100</span>
 <span class="normal">101</span>
@@ -5409,10 +5456,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoCovers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5427,6 +5475,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the geometries have at least one interior point in common.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5456,6 +5506,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5478,9 +5530,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
 <span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
@@ -5508,10 +5560,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoCrosses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5526,6 +5579,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if <code>self</code> is entirely within <code>distance</code> from <code>right</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5555,7 +5610,7 @@
         <tr>
           <td><code>distance</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.FloatingValue" href="../numeric/#ibis.expr.types.numeric.FloatingValue">FloatingValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.FloatingValue">FloatingValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5568,6 +5623,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5591,9 +5648,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">143</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
 <span class="normal">146</span>
@@ -5633,10 +5690,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoDFullyWithin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5651,6 +5709,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if <code>self</code> is partially within <code>distance</code> from <code>right</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5680,7 +5740,7 @@
         <tr>
           <td><code>distance</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.FloatingValue" href="../numeric/#ibis.expr.types.numeric.FloatingValue">FloatingValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.FloatingValue">FloatingValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5693,6 +5753,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5716,9 +5778,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
@@ -5758,10 +5820,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoDWithin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5776,6 +5839,8 @@
   <div class="doc doc-contents ">
   
       <p>Return the difference of two geometries.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5805,6 +5870,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5827,9 +5894,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">623</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">623</span>
 <span class="normal">624</span>
 <span class="normal">625</span>
 <span class="normal">626</span>
@@ -5857,10 +5924,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoDifference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5875,6 +5943,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the geometries have no points in common.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5904,6 +5974,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5926,9 +5998,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
 <span class="normal">167</span>
@@ -5956,10 +6028,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoDisjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5974,6 +6047,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the distance between two geospatial expressions.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6003,6 +6078,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6025,9 +6102,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">313</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">313</span>
 <span class="normal">314</span>
 <span class="normal">315</span>
 <span class="normal">316</span>
@@ -6055,10 +6132,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoDistance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6074,6 +6152,8 @@
   
       <p>Return the last point of a <code>LINESTRING</code> geometry as a <code>POINT</code>.</p>
 <p>Return <code>NULL</code> if the input parameter is not a <code>LINESTRING</code></p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6097,9 +6177,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">461</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">461</span>
 <span class="normal">462</span>
 <span class="normal">463</span>
 <span class="normal">464</span>
@@ -6121,10 +6201,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoEndPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6139,6 +6220,8 @@
   <div class="doc doc-contents ">
   
       <p>Returns a geometry representing the bounding box of <code>self</code>.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6162,9 +6245,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">566</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">566</span>
 <span class="normal">567</span>
 <span class="normal">568</span>
 <span class="normal">569</span>
@@ -6182,10 +6265,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoEnvelope</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6200,6 +6284,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the geometries are equal.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6229,6 +6315,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6251,9 +6339,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">200</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">200</span>
 <span class="normal">201</span>
 <span class="normal">202</span>
 <span class="normal">203</span>
@@ -6281,10 +6369,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoEquals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6300,6 +6389,8 @@
   
       <p>Get the 1-based Nth geometry of a multi geometry.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6314,7 +6405,7 @@
         <tr>
           <td><code>n</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <span title="ibis">ir</span>.<span title="ibis.IntegerValue">IntegerValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6327,6 +6418,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6350,9 +6443,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">215</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">215</span>
 <span class="normal">216</span>
 <span class="normal">217</span>
 <span class="normal">218</span>
@@ -6380,10 +6473,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoGeometryN</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6398,6 +6492,8 @@
   <div class="doc doc-contents ">
   
       <p>Get the type of a geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6421,9 +6517,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
 <span class="normal">231</span>
 <span class="normal">232</span>
 <span class="normal">233</span>
@@ -6441,10 +6537,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoGeometryType</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6459,6 +6556,8 @@
   <div class="doc doc-contents ">
   
       <p>Return the intersection of two geometries.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6488,6 +6587,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6510,9 +6611,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">608</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">608</span>
 <span class="normal">609</span>
 <span class="normal">610</span>
 <span class="normal">611</span>
@@ -6540,10 +6641,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoIntersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6558,6 +6660,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the geometries share any points.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6587,6 +6691,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6609,9 +6715,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
@@ -6639,10 +6745,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoIntersects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6657,6 +6764,8 @@
   <div class="doc doc-contents ">
   
       <p>Check if the geometry is valid.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6680,9 +6789,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">255</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">255</span>
 <span class="normal">256</span>
 <span class="normal">257</span>
 <span class="normal">258</span>
@@ -6700,10 +6809,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoIsValid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6718,6 +6828,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the length of a geospatial expression.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6741,9 +6853,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">328</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">328</span>
 <span class="normal">329</span>
 <span class="normal">330</span>
 <span class="normal">331</span>
@@ -6761,10 +6873,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoLength</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6782,6 +6895,8 @@
 <p>Returns a float between zero and one representing the location of the
 closest point on the linestring to the given point, as a fraction of
 the total 2d line length.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6811,6 +6926,8 @@ the total 2d line length.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6833,9 +6950,9 @@ the total 2d line length.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">674</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">674</span>
 <span class="normal">675</span>
 <span class="normal">676</span>
 <span class="normal">677</span>
@@ -6871,10 +6988,11 @@ the total 2d line length.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoLineLocatePoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6893,6 +7011,8 @@ the total 2d line length.</p>
 constituent line work of a MultiLineString. If a geometry other than
 a LineString or MultiLineString is given, this will return an empty
 geometry collection.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6916,9 +7036,9 @@ geometry collection.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">717</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">717</span>
 <span class="normal">718</span>
 <span class="normal">719</span>
 <span class="normal">720</span>
@@ -6946,10 +7066,11 @@ geometry collection.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoLineMerge</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6969,6 +7090,8 @@ and ending at the given fractions of the total 2d length. The second
 and third arguments are floating point values between zero and one.
 This only works with linestrings.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6983,7 +7106,7 @@ This only works with linestrings.</p>
         <tr>
           <td><code>start</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.FloatingValue" href="../numeric/#ibis.expr.types.numeric.FloatingValue">FloatingValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.FloatingValue">FloatingValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6997,7 +7120,7 @@ This only works with linestrings.</p>
         <tr>
           <td><code>end</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.FloatingValue" href="../numeric/#ibis.expr.types.numeric.FloatingValue">FloatingValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.FloatingValue">FloatingValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -7010,6 +7133,8 @@ This only works with linestrings.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7033,9 +7158,9 @@ This only works with linestrings.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">693</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">693</span>
 <span class="normal">694</span>
 <span class="normal">695</span>
 <span class="normal">696</span>
@@ -7081,10 +7206,11 @@ This only works with linestrings.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoLineSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7102,6 +7228,8 @@ This only works with linestrings.</p>
 <p>If <code>self</code> and <code>right</code> are the same geometry the function will return
 the distance between the two vertices most far from each other in that
 geometry.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -7131,6 +7259,8 @@ geometry.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -7153,9 +7283,9 @@ geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">348</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">348</span>
 <span class="normal">349</span>
 <span class="normal">350</span>
 <span class="normal">351</span>
@@ -7191,10 +7321,11 @@ geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoMaxDistance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7209,6 +7340,8 @@ geometry.</p>
   <div class="doc doc-contents ">
   
       <p>Return the number of points in a geometry. Works for all geometries.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7232,9 +7365,9 @@ geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">492</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">492</span>
 <span class="normal">493</span>
 <span class="normal">494</span>
 <span class="normal">495</span>
@@ -7252,10 +7385,11 @@ geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoNPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7271,6 +7405,8 @@ geometry.</p>
   
       <p>Return the number of rings for polygons and multipolygons.</p>
 <p>Outer rings are counted as well.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7294,9 +7430,9 @@ geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">502</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">502</span>
 <span class="normal">503</span>
 <span class="normal">504</span>
 <span class="normal">505</span>
@@ -7318,10 +7454,11 @@ geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoNRings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7338,6 +7475,8 @@ geometry.</p>
       <p>Check if two geometries are equal and have the same point ordering.</p>
 <p>Returns true if the two geometries are equal and the coordinates
 are in the same order.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -7367,6 +7506,8 @@ are in the same order.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -7389,9 +7530,9 @@ are in the same order.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">265</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">265</span>
 <span class="normal">266</span>
 <span class="normal">267</span>
 <span class="normal">268</span>
@@ -7425,10 +7566,11 @@ are in the same order.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoOrderingEquals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7443,6 +7585,8 @@ are in the same order.</p>
   <div class="doc doc-contents ">
   
       <p>Check if the geometries share space, have the same dimension, and are not completely contained by each other.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -7472,6 +7616,8 @@ are in the same order.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -7494,9 +7640,9 @@ are in the same order.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">283</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">283</span>
 <span class="normal">284</span>
 <span class="normal">285</span>
 <span class="normal">286</span>
@@ -7524,10 +7670,11 @@ are in the same order.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoOverlaps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7542,6 +7689,8 @@ are in the same order.</p>
   <div class="doc doc-contents ">
   
       <p>Compute the perimeter of a geospatial expression.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7565,9 +7714,9 @@ are in the same order.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">338</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">338</span>
 <span class="normal">339</span>
 <span class="normal">340</span>
 <span class="normal">341</span>
@@ -7585,10 +7734,11 @@ are in the same order.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoPerimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7607,6 +7757,8 @@ are in the same order.</p>
 so that -1 is the last point. Returns NULL if there is no linestring in
 the geometry.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -7621,7 +7773,7 @@ the geometry.</p>
         <tr>
           <td><code>n</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.IntegerValue">IntegerValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -7634,6 +7786,8 @@ the geometry.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7657,9 +7811,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">473</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">473</span>
 <span class="normal">474</span>
 <span class="normal">475</span>
 <span class="normal">476</span>
@@ -7695,10 +7849,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoPointN</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7714,6 +7869,8 @@ the geometry.</p>
   
       <p>Set the spatial reference identifier for the <code>ST_Geometry</code>.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -7728,7 +7885,7 @@ the geometry.</p>
         <tr>
           <td><code>srid</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.IntegerValue">IntegerValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -7741,6 +7898,8 @@ the geometry.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7764,9 +7923,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
 <span class="normal">525</span>
 <span class="normal">526</span>
 <span class="normal">527</span>
@@ -7794,10 +7953,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoSetSRID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="n">srid</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7813,6 +7973,8 @@ the geometry.</p>
   
       <p>Simplify a given geometry.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -7827,7 +7989,7 @@ the geometry.</p>
         <tr>
           <td><code>tolerance</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.FloatingValue" href="../numeric/#ibis.expr.types.numeric.FloatingValue">FloatingValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.FloatingValue">FloatingValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -7841,7 +8003,7 @@ the geometry.</p>
         <tr>
           <td><code>preserve_collapsed</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -7854,6 +8016,8 @@ the geometry.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7877,9 +8041,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">638</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">638</span>
 <span class="normal">639</span>
 <span class="normal">640</span>
 <span class="normal">641</span>
@@ -7919,10 +8083,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoSimplify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">preserve_collapsed</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7937,6 +8102,8 @@ the geometry.</p>
   <div class="doc doc-contents ">
   
       <p>Return the spatial reference identifier for the ST_Geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7960,9 +8127,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">514</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">514</span>
 <span class="normal">515</span>
 <span class="normal">516</span>
 <span class="normal">517</span>
@@ -7980,10 +8147,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoSRID</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7999,6 +8167,8 @@ the geometry.</p>
   
       <p>Return the first point of a <code>LINESTRING</code> geometry as a <code>POINT</code>.</p>
 <p>Return <code>NULL</code> if the input parameter is not a <code>LINESTRING</code></p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8022,9 +8192,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">449</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">449</span>
 <span class="normal">450</span>
 <span class="normal">451</span>
 <span class="normal">452</span>
@@ -8046,10 +8216,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoStartPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8064,6 +8235,8 @@ the geometry.</p>
   <div class="doc doc-contents ">
   
       <p>Check if the geometries have at least one point in common, but do not intersect.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -8093,6 +8266,8 @@ the geometry.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8115,9 +8290,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">298</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">298</span>
 <span class="normal">299</span>
 <span class="normal">300</span>
 <span class="normal">301</span>
@@ -8145,10 +8320,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoTouches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8164,6 +8340,8 @@ the geometry.</p>
   
       <p>Transform a geometry into a new SRID.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -8178,7 +8356,7 @@ the geometry.</p>
         <tr>
           <td><code>srid</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.IntegerValue">IntegerValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8191,6 +8369,8 @@ the geometry.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8214,9 +8394,9 @@ the geometry.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">659</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">659</span>
 <span class="normal">660</span>
 <span class="normal">661</span>
 <span class="normal">662</span>
@@ -8244,10 +8424,11 @@ the geometry.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoTransform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srid</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8264,6 +8445,8 @@ the geometry.</p>
       <p>Merge two geometries into a union geometry.</p>
 <p>Returns the pointwise union of the two geometries.
 This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -8293,6 +8476,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8315,9 +8500,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">367</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">367</span>
 <span class="normal">368</span>
 <span class="normal">369</span>
 <span class="normal">370</span>
@@ -8351,10 +8536,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoUnion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8369,6 +8555,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   <div class="doc doc-contents ">
   
       <p>Check if the first geometry is completely inside of the second.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -8398,6 +8586,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8420,9 +8610,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">576</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">576</span>
 <span class="normal">577</span>
 <span class="normal">578</span>
 <span class="normal">579</span>
@@ -8450,10 +8640,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoWithin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8469,6 +8660,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   
       <p>Return the X coordinate of <code>self</code>, or NULL if not available.</p>
 <p>Input must be a point.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8492,9 +8685,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">385</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">385</span>
 <span class="normal">386</span>
 <span class="normal">387</span>
 <span class="normal">388</span>
@@ -8516,10 +8709,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoX</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8534,6 +8728,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   <div class="doc doc-contents ">
   
       <p>Return the X maxima of a geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8557,9 +8753,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">419</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">419</span>
 <span class="normal">420</span>
 <span class="normal">421</span>
 <span class="normal">422</span>
@@ -8577,10 +8773,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoXMax</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8595,6 +8792,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   <div class="doc doc-contents ">
   
       <p>Return the X minima of a geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8618,9 +8817,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">409</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">409</span>
 <span class="normal">410</span>
 <span class="normal">411</span>
 <span class="normal">412</span>
@@ -8638,10 +8837,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoXMin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8657,6 +8857,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   
       <p>Return the Y coordinate of <code>self</code>, or NULL if not available.</p>
 <p>Input must be a point.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8680,9 +8882,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">397</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">397</span>
 <span class="normal">398</span>
 <span class="normal">399</span>
 <span class="normal">400</span>
@@ -8704,10 +8906,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoY</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8722,6 +8925,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   <div class="doc doc-contents ">
   
       <p>Return the Y maxima of a geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8745,9 +8950,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">439</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">439</span>
 <span class="normal">440</span>
 <span class="normal">441</span>
 <span class="normal">442</span>
@@ -8765,10 +8970,11 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoYMax</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8783,6 +8989,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
   <div class="doc doc-contents ">
   
       <p>Return the Y minima of a geometry.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8806,9 +9014,9 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">429</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">429</span>
 <span class="normal">430</span>
 <span class="normal">431</span>
 <span class="normal">432</span>
@@ -8826,7 +9034,7 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoYMin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -8844,21 +9052,20 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 
 
 <h2 id="ibis.expr.types.geospatial.GeoSpatialColumn" class="doc doc-heading">
-        <code>GeoSpatialColumn</code>
+          <code>GeoSpatialColumn</code>
 
 
 <a href="#ibis.expr.types.geospatial.GeoSpatialColumn" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericColumn" href="../numeric/#ibis.expr.types.numeric.NumericColumn">NumericColumn</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.types.geospatial.GeoSpatialValue" href="#ibis.expr.types.geospatial.GeoSpatialValue">GeoSpatialValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericColumn" href="../numeric/#ibis.expr.types.numeric.NumericColumn">NumericColumn</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.types.geospatial.GeoSpatialValue" href="#ibis.expr.types.geospatial.GeoSpatialValue">GeoSpatialValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">738</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">738</span>
 <span class="normal">739</span>
 <span class="normal">740</span>
 <span class="normal">741</span>
@@ -8888,7 +9095,7 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoUnaryUnion</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;union&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -8901,6 +9108,7 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 
 
 <h3 id="ibis.expr.types.geospatial.GeoSpatialColumn-functions">Functions<a href="#ibis.expr.types.geospatial.GeoSpatialColumn-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8918,6 +9126,8 @@ This corresponds to the non-aggregate version the PostGIS ST_Union.</p>
 <p>This corresponds to the aggregate version of the PostGIS ST_Union.
 We give it a different name (following the corresponding method
 in GeoPandas) to avoid name conflicts with the non-aggregate version.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8941,9 +9151,9 @@ in GeoPandas) to avoid name conflicts with the non-aggregate version.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">740</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/geospatial.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">740</span>
 <span class="normal">741</span>
 <span class="normal">742</span>
 <span class="normal">743</span>
@@ -8969,7 +9179,7 @@ in GeoPandas) to avoid name conflicts with the non-aggregate version.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoUnaryUnion</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;union&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>

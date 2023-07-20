@@ -2770,6 +2770,7 @@
 <!-- prettier-ignore-start -->
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2783,6 +2784,8 @@
   <div class="doc doc-contents first">
   
       <p>Combine multiple predicates using <code>&amp;</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2798,7 +2801,7 @@
         <tr>
           <td><code>predicates</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2811,6 +2814,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2839,6 +2844,7 @@ True. If no predicates were provided, returns True.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2863,6 +2869,8 @@ values. This is equivalent to</p>
 <div class="language-python highlight"><pre><span></span><code><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 </code></pre></div>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2892,7 +2900,7 @@ values. This is equivalent to</p>
         <tr>
           <td><code>type</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a> | None</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2906,6 +2914,8 @@ the ibis type of <code>value</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2929,6 +2939,8 @@ scalar (if the inputs are Python literals)</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <p>Create an array column from column expressions</p>
@@ -2967,6 +2979,7 @@ scalar (if the inputs are Python literals)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2980,6 +2993,8 @@ scalar (if the inputs are Python literals)</p>
   <div class="doc doc-contents first">
   
       <p>Create a ascending sort key from <code>asc</code> or column name.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2995,7 +3010,7 @@ scalar (if the inputs are Python literals)</p>
         <tr>
           <td><code>expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Column">Column</span> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3008,6 +3023,8 @@ scalar (if the inputs are Python literals)</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3027,6 +3044,8 @@ scalar (if the inputs are Python literals)</p>
 <span class="go">└─────────┴───────┘</span>
 </code></pre></div>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3038,7 +3057,7 @@ scalar (if the inputs are Python literals)</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.ValueExpr">ValueExpr</span></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.ValueExpr">ValueExpr</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3052,6 +3071,7 @@ scalar (if the inputs are Python literals)</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3069,6 +3089,8 @@ scalar (if the inputs are Python literals)</p>
 <p>Use the <code>.when</code> method on the resulting object followed by <code>.end</code> to create a
 complete case.</p>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cond1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
@@ -3077,6 +3099,8 @@ complete case.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
 <span class="go">SearchedCase(...)</span>
 </code></pre></div>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3104,6 +3128,7 @@ complete case.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3117,6 +3142,8 @@ complete case.</p>
   <div class="doc doc-contents first">
   
       <p>Return the first non-null value from <code>args</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3146,6 +3173,8 @@ complete case.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3168,6 +3197,8 @@ complete case.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
@@ -3177,6 +3208,7 @@ complete case.</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3192,6 +3224,8 @@ complete case.</p>
   
       <p>Create a cumulative window for use with window functions.</p>
 <p>All window frames / ranges are inclusive.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3233,6 +3267,8 @@ complete case.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3259,6 +3295,7 @@ complete case.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3272,6 +3309,8 @@ complete case.</p>
   <div class="doc doc-contents first">
   
       <p>Return a date literal if <code>value</code> is coercible to a date.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3312,6 +3351,8 @@ complete case.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3365,6 +3406,8 @@ expressions.</p>
 the deferred object builder.</p>
 </div>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
@@ -3378,6 +3421,7 @@ the deferred object builder.</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3393,6 +3437,8 @@ the deferred object builder.</p>
   
       <p>Create a descending sort key from <code>expr</code> or column name.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3407,7 +3453,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Column">Column</span> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3420,6 +3466,8 @@ the deferred object builder.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3439,6 +3487,8 @@ the deferred object builder.</p>
 <span class="go">└─────────┴───────┘</span>
 </code></pre></div>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3450,7 +3500,7 @@ the deferred object builder.</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.ValueExpr">ValueExpr</span></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.ValueExpr">ValueExpr</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3464,6 +3514,7 @@ the deferred object builder.</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3480,6 +3531,8 @@ the deferred object builder.</p>
       <p>Compute the set difference of multiple table expressions.</p>
 <p>The input tables must have identical schemas.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3494,7 +3547,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>table</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3508,7 +3561,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>*rest</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3536,6 +3589,8 @@ the deferred object builder.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3557,6 +3612,8 @@ the deferred object builder.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3595,6 +3652,7 @@ the deferred object builder.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3611,6 +3669,8 @@ the deferred object builder.</p>
 <p>expr
     An expression to get the backend from. If not passed, the default
     backend is returned.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3638,6 +3698,7 @@ the deferred object builder.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3651,6 +3712,8 @@ the deferred object builder.</p>
   <div class="doc doc-contents first">
   
       <p>Compute the largest value among the supplied arguments.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3666,7 +3729,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>args</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3679,6 +3742,8 @@ the deferred object builder.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3724,6 +3789,8 @@ the deferred object builder.</p>
   
       <p>Construct a ternary conditional expression.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3738,7 +3805,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>true_expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3752,7 +3819,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>false_expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3766,6 +3833,8 @@ the deferred object builder.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3777,7 +3846,7 @@ the deferred object builder.</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3787,6 +3856,8 @@ the deferred object builder.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3808,6 +3879,7 @@ the deferred object builder.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3823,6 +3895,8 @@ the deferred object builder.</p>
       <p>Compute the set intersection of multiple table expressions.</p>
 <p>The input tables must have identical schemas.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3837,7 +3911,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>table</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3851,7 +3925,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>*rest</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3879,6 +3953,8 @@ the deferred object builder.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3900,6 +3976,8 @@ the deferred object builder.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3938,6 +4016,7 @@ the deferred object builder.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3951,6 +4030,8 @@ the deferred object builder.</p>
   <div class="doc doc-contents first">
   
       <p>Return an interval literal expression.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4148,6 +4229,8 @@ the deferred object builder.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4174,6 +4257,7 @@ the deferred object builder.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4187,6 +4271,8 @@ the deferred object builder.</p>
   <div class="doc doc-contents first">
   
       <p>Compute the smallest value among the supplied arguments.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4202,7 +4288,7 @@ the deferred object builder.</p>
         <tr>
           <td><code>args</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4215,6 +4301,8 @@ the deferred object builder.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4242,6 +4330,7 @@ the deferred object builder.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4267,6 +4356,8 @@ functions:</p>
 <p>Constructing these types using <code>literal</code> will be deprecated in a future
 release.</p>
 </div>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4296,7 +4387,7 @@ release.</p>
         <tr>
           <td><code>type</code></td>
           <td>
-                <code><span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+                <code><span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4312,6 +4403,8 @@ the type of <code>value</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4334,6 +4427,8 @@ the type of <code>value</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <p>Construct an integer literal</p>
@@ -4358,6 +4453,7 @@ the type of <code>value</code>.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4374,6 +4470,8 @@ the type of <code>value</code>.</p>
 <p>If the <code>keys</code> and <code>values</code> are Python literals, then the output will be a
 <code>MapScalar</code>. If the <code>keys</code> and <code>values</code> are expressions (<code>ArrayColumn</code>),
 then the the output will be a <code>MapColumn</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4417,6 +4515,8 @@ then the the output will be a <code>MapColumn</code>.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4439,6 +4539,8 @@ array with key/value pairs of fixed types)</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <p>Create a map literal from a dict with the type inferred</p>
@@ -4475,6 +4577,7 @@ array with key/value pairs of fixed types)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4488,6 +4591,8 @@ array with key/value pairs of fixed types)</p>
   <div class="doc doc-contents first">
   
       <p>Construct an ibis table expression from in-memory data.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4564,6 +4669,8 @@ to infer a schema if not passed.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4585,6 +4692,8 @@ to infer a schema if not passed.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4633,6 +4742,7 @@ generates column names if none are provided.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4646,6 +4756,8 @@ generates column names if none are provided.</p>
   <div class="doc doc-contents first">
   
       <p>Negate a numeric expression.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4668,6 +4780,8 @@ generates column names if none are provided.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4707,6 +4821,8 @@ generates column names if none are provided.</p>
   
       <p>The NULL scalar.</p>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_null</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">NA</span>
@@ -4716,6 +4832,7 @@ generates column names if none are provided.</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4730,6 +4847,8 @@ generates column names if none are provided.</p>
   <div class="doc doc-contents first">
   
       <p>Return an expression that will compute the current timestamp.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4757,6 +4876,7 @@ generates column names if none are provided.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4775,6 +4895,7 @@ generates column names if none are provided.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4788,6 +4909,8 @@ generates column names if none are provided.</p>
   <div class="doc doc-contents first">
   
       <p>Combine multiple predicates using <code>|</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4803,7 +4926,7 @@ generates column names if none are provided.</p>
         <tr>
           <td><code>predicates</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4816,6 +4939,8 @@ generates column names if none are provided.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4844,6 +4969,7 @@ True. If no predicates were provided, returns False.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4857,6 +4983,8 @@ True. If no predicates were provided, returns False.</p>
   <div class="doc doc-contents first">
   
       <p>Create a deferred parameter of a given type.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4872,7 +5000,7 @@ True. If no predicates were provided, returns False.</p>
         <tr>
           <td><code>type</code></td>
           <td>
-                <code><span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a></code>
+                <code><span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4885,6 +5013,8 @@ True. If no predicates were provided, returns False.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4908,6 +5038,8 @@ True. If no predicates were provided, returns False.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
@@ -4930,6 +5062,7 @@ True. If no predicates were provided, returns False.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -4946,6 +5079,8 @@ True. If no predicates were provided, returns False.</p>
 <p>If a dialect cannot be inferred and one was not passed, duckdb
 will be used as the dialect</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -4960,7 +5095,7 @@ will be used as the dialect</p>
         <tr>
           <td><code>expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../#ibis.expr.types.core.Expr">Expr</a></code>
+                <code><span title="ibis">ir</span>.<a class="autorefs autorefs-internal" title="ibis.Expr" href="../#ibis.expr.types.core.Expr">Expr</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5003,6 +5138,8 @@ ibis cannot infer the backend dialect.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
@@ -5022,6 +5159,7 @@ ibis cannot infer the backend dialect.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5035,6 +5173,8 @@ ibis cannot infer the backend dialect.</p>
   <div class="doc doc-contents first">
   
       <p>Return the formatted SQL string for an expression.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5050,7 +5190,7 @@ ibis cannot infer the backend dialect.</p>
         <tr>
           <td><code>expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Expr" href="../#ibis.expr.types.core.Expr">Expr</a></code>
+                <code><span title="ibis">ir</span>.<a class="autorefs autorefs-internal" title="ibis.Expr" href="../#ibis.expr.types.core.Expr">Expr</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5091,6 +5231,8 @@ ibis cannot infer the backend dialect.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5117,6 +5259,7 @@ ibis cannot infer the backend dialect.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5131,6 +5274,8 @@ ibis cannot infer the backend dialect.</p>
   
       <p>Return a random floating point number in the range [0.0, 1.0).</p>
 <p>Similar to <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/random.html#random.random"><code>random.random</code></a> in the Python standard library.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5158,6 +5303,7 @@ ibis cannot infer the backend dialect.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5174,6 +5320,8 @@ ibis cannot infer the backend dialect.</p>
 <p>This RANGE window clause aggregates rows based upon differences in the
 value of the order-by expression.</p>
 <p>All window frames / ranges are inclusive.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5241,6 +5389,8 @@ value of the order-by expression.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5267,6 +5417,7 @@ value of the order-by expression.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5282,6 +5433,8 @@ value of the order-by expression.</p>
       <p>Lazily load a CSV or set of CSVs.</p>
 <p>This function delegates to the <code>read_csv</code> method on the current default
 backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5343,6 +5496,8 @@ backend used by default, please refer to:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5354,7 +5509,7 @@ backend used by default, please refer to:</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5365,6 +5520,8 @@ backend used by default, please refer to:</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;path/to/data.csv&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;my_csv_table&quot;</span><span class="p">)</span>
@@ -5373,6 +5530,7 @@ backend used by default, please refer to:</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5387,6 +5545,8 @@ backend used by default, please refer to:</p>
   <div class="doc doc-contents first">
   
       <p>Lazily load a Delta Lake table.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5444,6 +5604,8 @@ backend used by default, please refer to:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5455,7 +5617,7 @@ backend used by default, please refer to:</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5466,6 +5628,8 @@ backend used by default, please refer to:</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_delta</span><span class="p">(</span><span class="s2">&quot;path/to/delta&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;my_table&quot;</span><span class="p">)</span>
@@ -5474,6 +5638,7 @@ backend used by default, please refer to:</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5490,6 +5655,8 @@ backend used by default, please refer to:</p>
       <p>Lazily load newline-delimited JSON data.</p>
 <p>This function delegates to the <code>read_json</code> method on the current default
 backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5548,6 +5715,8 @@ backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5559,7 +5728,7 @@ backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5569,6 +5738,8 @@ backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5597,6 +5768,7 @@ backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5612,6 +5784,8 @@ backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
       <p>Lazily load a parquet file or set of parquet files.</p>
 <p>This function delegates to the <code>read_parquet</code> method on the current default
 backend (DuckDB or <code>ibis.config.default_backend</code>).</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5673,6 +5847,8 @@ backend used by default, please refer to:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5684,7 +5860,7 @@ backend used by default, please refer to:</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5695,6 +5871,8 @@ backend used by default, please refer to:</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;path/to/data.parquet&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;my_parquet_table&quot;</span><span class="p">)</span>
@@ -5703,6 +5881,7 @@ backend used by default, please refer to:</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5717,6 +5896,8 @@ backend used by default, please refer to:</p>
   <div class="doc doc-contents first">
   
       <p>Return an analytic function expression for the current row number.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5744,6 +5925,7 @@ backend used by default, please refer to:</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5757,6 +5939,8 @@ backend used by default, please refer to:</p>
   <div class="doc doc-contents first">
   
       <p>Validate and return a <a class="autorefs autorefs-internal" href="../../schemas/#ibis.expr.schema.Schema"><code>Schema</code></a> object.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5801,7 +5985,7 @@ and <code>types</code> arguments.</p>
         <tr>
           <td><code>types</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a>] | None</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span>] | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5814,6 +5998,8 @@ and <code>types</code> arguments.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5837,6 +6023,8 @@ and <code>types</code> arguments.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">schema</span><span class="p">,</span> <span class="n">Schema</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
@@ -5852,6 +6040,7 @@ and <code>types</code> arguments.</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -5865,6 +6054,8 @@ and <code>types</code> arguments.</p>
   <div class="doc doc-contents first">
   
       <p>Set the default Ibis backend.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5894,6 +6085,8 @@ and <code>types</code> arguments.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <p>You can pass the backend as a name:</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5909,6 +6102,7 @@ and <code>types</code> arguments.</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5927,6 +6121,8 @@ and <code>types</code> arguments.</p>
 a <code>StructColumn</code>.</p>
 <p>If the input expressions are Python literals, then the output will be a
 <code>StructScalar</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5957,7 +6153,7 @@ and column expressions.</p>
         <tr>
           <td><code>type</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a> | None</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5972,6 +6168,8 @@ are literals.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5995,6 +6193,8 @@ fields of fixed types)</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <p>Create a struct literal from a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict"><code>dict</code></a> with the type inferred</p>
@@ -6038,6 +6238,7 @@ fields of fixed types)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -6051,6 +6252,8 @@ fields of fixed types)</p>
   <div class="doc doc-contents first">
   
       <p>Create a table literal or an abstract table without data.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6094,6 +6297,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6116,6 +6321,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <p>Create a table with no data backing it</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6132,6 +6339,7 @@ fields of fixed types)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -6145,6 +6353,8 @@ fields of fixed types)</p>
   <div class="doc doc-contents first">
   
       <p>Return a time literal if <code>value</code> is coercible to a time.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6186,6 +6396,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6208,6 +6420,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -6220,6 +6434,7 @@ fields of fixed types)</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6234,6 +6449,8 @@ fields of fixed types)</p>
   <div class="doc doc-contents first">
   
       <p>Return a timestamp literal if <code>value</code> is coercible to a timestamp.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6289,6 +6506,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6311,6 +6530,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -6321,6 +6542,7 @@ fields of fixed types)</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6335,6 +6557,8 @@ fields of fixed types)</p>
   <div class="doc doc-contents first">
   
       <p>Create a trailing range window for use with window functions.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6389,6 +6613,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6415,6 +6641,7 @@ fields of fixed types)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -6428,6 +6655,8 @@ fields of fixed types)</p>
   <div class="doc doc-contents first">
   
       <p>Create a trailing window for use with window functions.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6482,6 +6711,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6508,6 +6739,7 @@ fields of fixed types)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -6523,6 +6755,8 @@ fields of fixed types)</p>
       <p>Compute the set union of multiple table expressions.</p>
 <p>The input tables must have identical schemas.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6537,7 +6771,7 @@ fields of fixed types)</p>
         <tr>
           <td><code>table</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6551,7 +6785,7 @@ fields of fixed types)</p>
         <tr>
           <td><code>*rest</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../tables/#ibis.expr.types.relations.Table">Table</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6579,6 +6813,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6600,6 +6836,8 @@ fields of fixed types)</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6669,6 +6907,8 @@ fields of fixed types)</p>
   
       <p>Construct a ternary conditional expression.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6683,7 +6923,7 @@ fields of fixed types)</p>
         <tr>
           <td><code>true_expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6697,7 +6937,7 @@ fields of fixed types)</p>
         <tr>
           <td><code>false_expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6711,6 +6951,8 @@ fields of fixed types)</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6722,7 +6964,7 @@ fields of fixed types)</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6732,6 +6974,8 @@ fields of fixed types)</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6753,6 +6997,7 @@ fields of fixed types)</p>
 
 </div>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -6770,6 +7015,8 @@ fields of fixed types)</p>
 <strong>number</strong> whereas <code>RANGE</code> includes rows based on the differences in row
 <strong>value</strong> of a single <code>order_by</code> expression.</p>
 <p>All window frame bounds are inclusive.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6875,6 +7122,8 @@ fields of fixed types)</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>

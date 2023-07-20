@@ -3143,21 +3143,20 @@
 
 
 <h2 id="ibis.expr.types.numeric.NumericValue" class="doc doc-heading">
-        <code>NumericValue</code>
+          <code>NumericValue</code>
 
 
 <a href="#ibis.expr.types.numeric.NumericValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 19</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 19</span>
 <span class="normal"> 20</span>
 <span class="normal"> 21</span>
 <span class="normal"> 22</span>
@@ -4625,7 +4624,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -4638,6 +4637,7 @@
 
 
 <h3 id="ibis.expr.types.numeric.NumericValue-functions">Functions<a href="#ibis.expr.types.numeric.NumericValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4652,6 +4652,8 @@
   <div class="doc doc-contents ">
   
       <p>Return the absolute value of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4670,9 +4672,9 @@
 <span class="go">└─────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">225</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">225</span>
 <span class="normal">226</span>
 <span class="normal">227</span>
 <span class="normal">228</span>
@@ -4714,10 +4716,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4732,6 +4735,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the arc cosine of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4749,9 +4754,9 @@
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">488</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">488</span>
 <span class="normal">489</span>
 <span class="normal">490</span>
 <span class="normal">491</span>
@@ -4793,10 +4798,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Acos</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4811,6 +4817,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the arc sine of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4828,9 +4836,9 @@
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">510</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">510</span>
 <span class="normal">511</span>
 <span class="normal">512</span>
 <span class="normal">513</span>
@@ -4870,10 +4878,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Asin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4888,6 +4897,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the arc tangent of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4905,9 +4916,9 @@
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">531</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">531</span>
 <span class="normal">532</span>
 <span class="normal">533</span>
 <span class="normal">534</span>
@@ -4947,10 +4958,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Atan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4965,6 +4977,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the two-argument version of arc tangent.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4982,9 +4996,9 @@
 <span class="go">└──────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">552</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">552</span>
 <span class="normal">553</span>
 <span class="normal">554</span>
 <span class="normal">555</span>
@@ -5024,10 +5038,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Atan2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5042,6 +5057,8 @@
   <div class="doc doc-contents ">
   
       <p>Return the ceiling of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5061,9 +5078,9 @@
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">247</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">247</span>
 <span class="normal">248</span>
 <span class="normal">249</span>
 <span class="normal">250</span>
@@ -5107,10 +5124,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Ceil</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5125,6 +5143,8 @@
   <div class="doc doc-contents ">
   
       <p>Trim values outside of <code>lower</code> and <code>upper</code> bounds.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5168,6 +5188,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5190,6 +5212,8 @@
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -5211,9 +5235,9 @@
 <span class="go">└────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">180</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
 <span class="normal">183</span>
@@ -5301,10 +5325,11 @@
 
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Clip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5319,6 +5344,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the cosine of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5336,9 +5363,9 @@
 <span class="go">└─────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">573</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">573</span>
 <span class="normal">574</span>
 <span class="normal">575</span>
 <span class="normal">576</span>
@@ -5378,10 +5405,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Cos</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5396,6 +5424,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the cotangent of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5413,9 +5443,9 @@
 <span class="go">└─────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">594</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">594</span>
 <span class="normal">595</span>
 <span class="normal">596</span>
 <span class="normal">597</span>
@@ -5455,10 +5485,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Cot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5473,6 +5504,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the degrees of <code>self</code> radians.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5493,9 +5526,9 @@
 <span class="go">└─────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">270</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">270</span>
 <span class="normal">271</span>
 <span class="normal">272</span>
 <span class="normal">273</span>
@@ -5541,10 +5574,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Degrees</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5559,6 +5593,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(e^\texttt{self}\)</span>.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5582,6 +5618,8 @@
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -5599,9 +5637,9 @@
 <span class="go">└─────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">296</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">296</span>
 <span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
@@ -5653,10 +5691,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Exp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5671,6 +5710,8 @@
   <div class="doc doc-contents ">
   
       <p>Return the floor of an expression.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5690,9 +5731,9 @@
 <span class="go">└───────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">323</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">323</span>
 <span class="normal">324</span>
 <span class="normal">325</span>
 <span class="normal">326</span>
@@ -5738,10 +5779,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Floor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5756,6 +5798,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(\ln\left(\texttt{self}\right)\)</span>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5773,9 +5817,9 @@
 <span class="go">└────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">390</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">390</span>
 <span class="normal">391</span>
 <span class="normal">392</span>
 <span class="normal">393</span>
@@ -5815,10 +5859,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Ln</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5833,6 +5878,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(\log_{\texttt{base}}\left(\texttt{self}\right)\)</span>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5862,6 +5909,8 @@
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5883,6 +5932,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5916,9 +5967,9 @@
 <span class="go">└─────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
@@ -6010,10 +6061,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6028,6 +6080,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(\log_{10}\left(\texttt{self}\right)\)</span>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6045,9 +6099,9 @@
 <span class="go">└───────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">369</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">369</span>
 <span class="normal">370</span>
 <span class="normal">371</span>
 <span class="normal">372</span>
@@ -6087,10 +6141,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Log10</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6105,6 +6160,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute <span class="arithmatex">\(\log_{2}\left(\texttt{self}\right)\)</span>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6123,9 +6180,9 @@
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">347</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">347</span>
 <span class="normal">348</span>
 <span class="normal">349</span>
 <span class="normal">350</span>
@@ -6167,10 +6224,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Log2</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6185,6 +6243,8 @@
   <div class="doc doc-contents ">
   
       <p>Negate a numeric expression.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6208,6 +6268,8 @@
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -6224,9 +6286,9 @@
 <span class="go">└────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
@@ -6290,10 +6352,11 @@
 
     <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6309,18 +6372,19 @@
   
       <p>Return <code>NULL</code> if an expression is zero.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">480</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">480</span>
 <span class="normal">481</span>
 <span class="normal">482</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">nullifzero</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NumericValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return `NULL` if an expression is zero.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">NullIfZero</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6337,6 +6401,8 @@
       <p>Return a point constructed from the coordinate values.</p>
 <p>Constant coordinates result in construction of a <code>POINT</code> literal or
 column.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6366,6 +6432,8 @@ column.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6388,9 +6456,9 @@ column.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">736</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">736</span>
 <span class="normal">737</span>
 <span class="normal">738</span>
 <span class="normal">739</span>
@@ -6424,10 +6492,11 @@ column.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">GeoPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6442,6 +6511,8 @@ column.</p>
   <div class="doc doc-contents ">
   
       <p>Compute radians from <code>self</code> degrees.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6461,9 +6532,9 @@ column.</p>
 <span class="go">└─────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">411</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">411</span>
 <span class="normal">412</span>
 <span class="normal">413</span>
 <span class="normal">414</span>
@@ -6507,10 +6578,11 @@ column.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Radians</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6525,6 +6597,8 @@ column.</p>
   <div class="doc doc-contents ">
   
       <p>Round values to an indicated number of decimal places.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6587,6 +6661,8 @@ type:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6608,6 +6684,8 @@ type:</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6648,9 +6726,9 @@ type:</p>
 <span class="go">└──────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 69</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 69</span>
 <span class="normal"> 70</span>
 <span class="normal"> 71</span>
 <span class="normal"> 72</span>
@@ -6776,10 +6854,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Round</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">digits</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6794,6 +6873,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Return the sign of the input.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6812,9 +6893,9 @@ type:</p>
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">436</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">436</span>
 <span class="normal">437</span>
 <span class="normal">438</span>
 <span class="normal">439</span>
@@ -6856,10 +6937,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6874,6 +6956,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Compute the sine of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6891,9 +6975,9 @@ type:</p>
 <span class="go">└─────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">615</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">615</span>
 <span class="normal">616</span>
 <span class="normal">617</span>
 <span class="normal">618</span>
@@ -6933,10 +7017,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Sin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6951,6 +7036,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Compute the square root of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6969,9 +7056,9 @@ type:</p>
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">458</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">458</span>
 <span class="normal">459</span>
 <span class="normal">460</span>
 <span class="normal">461</span>
@@ -7013,10 +7100,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7031,6 +7119,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Compute the tangent of <code>self</code>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -7048,9 +7138,9 @@ type:</p>
 <span class="go">└─────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">636</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">636</span>
 <span class="normal">637</span>
 <span class="normal">638</span>
 <span class="normal">639</span>
@@ -7090,10 +7180,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Tan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7109,15 +7200,15 @@ type:</p>
   
       <p>Return zero if an expression is <code>NULL</code>.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">484</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">484</span>
 <span class="normal">485</span>
 <span class="normal">486</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">zeroifnull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NumericValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return zero if an expression is `NULL`.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ZeroIfNull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -7135,21 +7226,20 @@ type:</p>
 
 
 <h2 id="ibis.expr.types.numeric.NumericColumn" class="doc doc-heading">
-        <code>NumericColumn</code>
+          <code>NumericColumn</code>
 
 
 <a href="#ibis.expr.types.numeric.NumericColumn" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 760</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 760</span>
 <span class="normal"> 761</span>
 <span class="normal"> 762</span>
 <span class="normal"> 763</span>
@@ -7725,7 +7815,7 @@ type:</p>
 
         <span class="k">return</span> <span class="p">((</span><span class="bp">self</span> <span class="o">-</span> <span class="n">base</span><span class="p">)</span> <span class="o">/</span> <span class="n">binwidth</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -7738,6 +7828,7 @@ type:</p>
 
 
 <h3 id="ibis.expr.types.numeric.NumericColumn-functions">Functions<a href="#ibis.expr.types.numeric.NumericColumn-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7752,6 +7843,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Compute a discrete binning of a numeric array.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -7841,6 +7934,8 @@ type:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -7863,9 +7958,9 @@ type:</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 959</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 959</span>
 <span class="normal"> 960</span>
 <span class="normal"> 961</span>
 <span class="normal"> 962</span>
@@ -7949,10 +8044,11 @@ type:</p>
         <span class="n">include_over</span><span class="o">=</span><span class="n">include_over</span><span class="p">,</span>
     <span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7967,6 +8063,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Return the correlation of two numeric columns.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -7996,7 +8094,7 @@ type:</p>
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8024,6 +8122,8 @@ type:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8046,9 +8146,9 @@ type:</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">865</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">865</span>
 <span class="normal">866</span>
 <span class="normal">867</span>
 <span class="normal">868</span>
@@ -8094,10 +8194,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Correlation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8112,6 +8213,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Return the covariance of two numeric columns.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -8141,7 +8244,7 @@ type:</p>
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8169,6 +8272,8 @@ type:</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8191,9 +8296,9 @@ type:</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">889</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">889</span>
 <span class="normal">890</span>
 <span class="normal">891</span>
 <span class="normal">892</span>
@@ -8239,10 +8344,11 @@ type:</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Covariance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8258,18 +8364,19 @@ type:</p>
   
       <p>Return the cumulative mean of the input.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">933</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">933</span>
 <span class="normal">934</span>
 <span class="normal">935</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cummean</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NumericColumn</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the cumulative mean of the input.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">CumulativeMean</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8285,18 +8392,19 @@ type:</p>
   
       <p>Return the cumulative sum of the input.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">955</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">955</span>
 <span class="normal">956</span>
 <span class="normal">957</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NumericColumn</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the cumulative sum of the input.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">CumulativeSum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8311,6 +8419,8 @@ type:</p>
   <div class="doc doc-contents ">
   
       <p>Compute a histogram with fixed width bins.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -8383,6 +8493,8 @@ of <code>column</code>.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8405,9 +8517,9 @@ of <code>column</code>.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1002</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1002</span>
 <span class="normal">1003</span>
 <span class="normal">1004</span>
 <span class="normal">1005</span>
@@ -8499,10 +8611,11 @@ of <code>column</code>.</p>
 
     <span class="k">return</span> <span class="p">((</span><span class="bp">self</span> <span class="o">-</span> <span class="n">base</span><span class="p">)</span> <span class="o">/</span> <span class="n">binwidth</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8518,6 +8631,8 @@ of <code>column</code>.</p>
   
       <p>Return the mean of a numeric column.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -8532,7 +8647,7 @@ of <code>column</code>.</p>
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8545,6 +8660,8 @@ of <code>column</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8568,9 +8685,9 @@ of <code>column</code>.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">913</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">913</span>
 <span class="normal">914</span>
 <span class="normal">915</span>
 <span class="normal">916</span>
@@ -8608,10 +8725,11 @@ of <code>column</code>.</p>
     <span class="c1"># of default name generated by ops.Value operations</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8627,6 +8745,8 @@ of <code>column</code>.</p>
   
       <p>Return the median of the column.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -8641,7 +8761,7 @@ of <code>column</code>.</p>
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8655,6 +8775,8 @@ of <code>column</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8678,9 +8800,9 @@ of <code>column</code>.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">762</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">762</span>
 <span class="normal">763</span>
 <span class="normal">764</span>
 <span class="normal">765</span>
@@ -8710,10 +8832,11 @@ of <code>column</code>.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Median</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8728,6 +8851,8 @@ of <code>column</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Return value at the given quantile.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -8768,7 +8893,7 @@ of <code>column</code>.</p>
 desired quantile lies between two data points <code>i</code> and <code>j</code>:</p>
 <ul>
 <li>linear: <code>i + (j - i) * fraction</code>, where <code>fraction</code> is the
-fractional part of the index surrounded by <code>i</code> and <code>j</code>.</li>
+  fractional part of the index surrounded by <code>i</code> and <code>j</code>.</li>
 <li>lower: <code>i</code>.</li>
 <li>higher: <code>j</code>.</li>
 <li>nearest: <code>i</code> or <code>j</code> whichever is nearest.</li>
@@ -8783,7 +8908,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8796,6 +8921,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8819,9 +8946,9 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">778</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">778</span>
 <span class="normal">779</span>
 <span class="normal">780</span>
 <span class="normal">781</span>
@@ -8909,10 +9036,11 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">Quantile</span>
     <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantile</span><span class="p">,</span> <span class="n">interpolation</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8928,6 +9056,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
   
       <p>Return the standard deviation of a numeric column.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -8942,7 +9072,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8970,6 +9100,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -8992,9 +9124,9 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">823</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">823</span>
 <span class="normal">824</span>
 <span class="normal">825</span>
 <span class="normal">826</span>
@@ -9034,10 +9166,11 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">StandardDev</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9053,6 +9186,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
   
       <p>Return the sum of a numeric column.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -9067,7 +9202,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -9080,6 +9215,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -9103,9 +9240,9 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">937</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">937</span>
 <span class="normal">938</span>
 <span class="normal">939</span>
 <span class="normal">940</span>
@@ -9139,10 +9276,11 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9158,6 +9296,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
   
       <p>Return the variance of a numeric column.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -9172,7 +9312,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
         <tr>
           <td><code>where</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="#ibis.expr.types.logical.BooleanValue">BooleanValue</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -9200,6 +9340,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -9222,9 +9364,9 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">844</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">844</span>
 <span class="normal">845</span>
 <span class="normal">846</span>
 <span class="normal">847</span>
@@ -9264,7 +9406,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Variance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -9282,21 +9424,20 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 
 
 <h2 id="ibis.expr.types.numeric.IntegerValue" class="doc doc-heading">
-        <code>IntegerValue</code>
+          <code>IntegerValue</code>
 
 
 <a href="#ibis.expr.types.numeric.IntegerValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1050</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1050</span>
 <span class="normal">1051</span>
 <span class="normal">1052</span>
 <span class="normal">1053</span>
@@ -9443,7 +9584,23 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <span class="normal">1194</span>
 <span class="normal">1195</span>
 <span class="normal">1196</span>
-<span class="normal">1197</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+<span class="normal">1197</span>
+<span class="normal">1198</span>
+<span class="normal">1199</span>
+<span class="normal">1200</span>
+<span class="normal">1201</span>
+<span class="normal">1202</span>
+<span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
+<span class="normal">1207</span>
+<span class="normal">1208</span>
+<span class="normal">1209</span>
+<span class="normal">1210</span>
+<span class="normal">1211</span>
+<span class="normal">1212</span>
+<span class="normal">1213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">IntegerValue</span><span class="p">(</span><span class="n">NumericValue</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">to_timestamp</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -9504,36 +9661,50 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 
     <span class="k">def</span> <span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise and `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseAnd</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
     <span class="fm">__rand__</span> <span class="o">=</span> <span class="fm">__and__</span>
 
     <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise or `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseOr</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
     <span class="fm">__ror__</span> <span class="o">=</span> <span class="fm">__or__</span>
 
     <span class="k">def</span> <span class="fm">__xor__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise xor `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseXor</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
     <span class="fm">__rxor__</span> <span class="o">=</span> <span class="fm">__xor__</span>
 
     <span class="k">def</span> <span class="fm">__lshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise left shift `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseLeftShift</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__rlshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise left shift `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseLeftShift</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__rshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise right shift `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseRightShift</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__rrshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">IntegerValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Bitwise right shift `self` with `other`.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">BitwiseRightShift</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerValue</span><span class="p">:</span>
@@ -9544,6 +9715,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <span class="sd">        IntegerValue</span>
 <span class="sd">            Inverted bits of `self`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr</span> <span class="kn">import</span> <span class="n">operations</span> <span class="k">as</span> <span class="n">ops</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">BitwiseNot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">except</span> <span class="p">(</span><span class="n">IbisTypeError</span><span class="p">,</span> <span class="ne">NotImplementedError</span><span class="p">):</span>
@@ -9592,7 +9765,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
             <span class="o">.</span><span class="n">end</span><span class="p">()</span>
         <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -9605,6 +9778,7 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 
 
 <h3 id="ibis.expr.types.numeric.IntegerValue-functions">Functions<a href="#ibis.expr.types.numeric.IntegerValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9619,6 +9793,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
   <div class="doc doc-contents ">
   
       <p>Convert an integer from one base to another.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -9662,6 +9838,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -9684,9 +9862,9 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1088</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1088</span>
 <span class="normal">1089</span>
 <span class="normal">1090</span>
 <span class="normal">1091</span>
@@ -9726,10 +9904,11 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">BaseConvert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_base</span><span class="p">,</span> <span class="n">to_base</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9744,6 +9923,8 @@ fractional part of the index surrounded by <code>i</code> and <code>j</code>.</l
   <div class="doc doc-contents ">
   
       <p>Label a set of integer values with strings.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -9788,6 +9969,8 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -9810,6 +9993,8 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -9827,25 +10012,9 @@ a value in <code>labels</code>.</p>
 <span class="go">└───────┴─────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1158</span>
-<span class="normal">1159</span>
-<span class="normal">1160</span>
-<span class="normal">1161</span>
-<span class="normal">1162</span>
-<span class="normal">1163</span>
-<span class="normal">1164</span>
-<span class="normal">1165</span>
-<span class="normal">1166</span>
-<span class="normal">1167</span>
-<span class="normal">1168</span>
-<span class="normal">1169</span>
-<span class="normal">1170</span>
-<span class="normal">1171</span>
-<span class="normal">1172</span>
-<span class="normal">1173</span>
-<span class="normal">1174</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1174</span>
 <span class="normal">1175</span>
 <span class="normal">1176</span>
 <span class="normal">1177</span>
@@ -9868,7 +10037,23 @@ a value in <code>labels</code>.</p>
 <span class="normal">1194</span>
 <span class="normal">1195</span>
 <span class="normal">1196</span>
-<span class="normal">1197</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">nulls</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">StringValue</span><span class="p">:</span>
+<span class="normal">1197</span>
+<span class="normal">1198</span>
+<span class="normal">1199</span>
+<span class="normal">1200</span>
+<span class="normal">1201</span>
+<span class="normal">1202</span>
+<span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
+<span class="normal">1207</span>
+<span class="normal">1208</span>
+<span class="normal">1209</span>
+<span class="normal">1210</span>
+<span class="normal">1211</span>
+<span class="normal">1212</span>
+<span class="normal">1213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">nulls</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">StringValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Label a set of integer values with strings.</span>
 
 <span class="sd">    Parameters</span>
@@ -9909,10 +10094,11 @@ a value in <code>labels</code>.</p>
         <span class="o">.</span><span class="n">end</span><span class="p">()</span>
     <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9927,6 +10113,8 @@ a value in <code>labels</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Convert an integer to an interval.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -9956,6 +10144,8 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -9978,9 +10168,9 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1070</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1070</span>
 <span class="normal">1071</span>
 <span class="normal">1072</span>
 <span class="normal">1073</span>
@@ -10014,10 +10204,11 @@ a value in <code>labels</code>.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">IntervalFromInteger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10032,6 +10223,8 @@ a value in <code>labels</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Convert an integral UNIX timestamp to a timestamp expression.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -10061,6 +10254,8 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -10083,9 +10278,9 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1052</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1052</span>
 <span class="normal">1053</span>
 <span class="normal">1054</span>
 <span class="normal">1055</span>
@@ -10119,7 +10314,7 @@ a value in <code>labels</code>.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimestampFromUNIX</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -10137,33 +10332,32 @@ a value in <code>labels</code>.</p>
 
 
 <h2 id="ibis.expr.types.numeric.IntegerColumn" class="doc doc-heading">
-        <code>IntegerColumn</code>
+          <code>IntegerColumn</code>
 
 
 <a href="#ibis.expr.types.numeric.IntegerColumn" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericColumn" href="#ibis.expr.types.numeric.NumericColumn">NumericColumn</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericColumn" href="#ibis.expr.types.numeric.NumericColumn">NumericColumn</a></code>, <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.IntegerValue" href="#ibis.expr.types.numeric.IntegerValue">IntegerValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1205</span>
-<span class="normal">1206</span>
-<span class="normal">1207</span>
-<span class="normal">1208</span>
-<span class="normal">1209</span>
-<span class="normal">1210</span>
-<span class="normal">1211</span>
-<span class="normal">1212</span>
-<span class="normal">1213</span>
-<span class="normal">1214</span>
-<span class="normal">1215</span>
-<span class="normal">1216</span>
-<span class="normal">1217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1221</span>
+<span class="normal">1222</span>
+<span class="normal">1223</span>
+<span class="normal">1224</span>
+<span class="normal">1225</span>
+<span class="normal">1226</span>
+<span class="normal">1227</span>
+<span class="normal">1228</span>
+<span class="normal">1229</span>
+<span class="normal">1230</span>
+<span class="normal">1231</span>
+<span class="normal">1232</span>
+<span class="normal">1233</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">IntegerColumn</span><span class="p">(</span><span class="n">NumericColumn</span><span class="p">,</span> <span class="n">IntegerValue</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">bit_and</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Aggregate the column using the bitwise and operator.&quot;&quot;&quot;</span>
@@ -10177,7 +10371,7 @@ a value in <code>labels</code>.</p>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Aggregate the column using the bitwise exclusive or operator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">BitXor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -10190,6 +10384,7 @@ a value in <code>labels</code>.</p>
 
 
 <h3 id="ibis.expr.types.numeric.IntegerColumn-functions">Functions<a href="#ibis.expr.types.numeric.IntegerColumn-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10205,18 +10400,19 @@ a value in <code>labels</code>.</p>
   
       <p>Aggregate the column using the bitwise and operator.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1207</span>
-<span class="normal">1208</span>
-<span class="normal">1209</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bit_and</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1223</span>
+<span class="normal">1224</span>
+<span class="normal">1225</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bit_and</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate the column using the bitwise and operator.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">BitAnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10232,18 +10428,19 @@ a value in <code>labels</code>.</p>
   
       <p>Aggregate the column using the bitwise or operator.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1211</span>
-<span class="normal">1212</span>
-<span class="normal">1213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bit_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1227</span>
+<span class="normal">1228</span>
+<span class="normal">1229</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bit_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate the column using the bitwise or operator.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">BitOr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10259,15 +10456,15 @@ a value in <code>labels</code>.</p>
   
       <p>Aggregate the column using the bitwise exclusive or operator.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1215</span>
-<span class="normal">1216</span>
-<span class="normal">1217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bit_xor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1231</span>
+<span class="normal">1232</span>
+<span class="normal">1233</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bit_xor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntegerScalar</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate the column using the bitwise exclusive or operator.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">BitXor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -10285,29 +10482,28 @@ a value in <code>labels</code>.</p>
 
 
 <h2 id="ibis.expr.types.numeric.FloatingValue" class="doc doc-heading">
-        <code>FloatingValue</code>
+          <code>FloatingValue</code>
 
 
 <a href="#ibis.expr.types.numeric.FloatingValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1220</span>
-<span class="normal">1221</span>
-<span class="normal">1222</span>
-<span class="normal">1223</span>
-<span class="normal">1224</span>
-<span class="normal">1225</span>
-<span class="normal">1226</span>
-<span class="normal">1227</span>
-<span class="normal">1228</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1236</span>
+<span class="normal">1237</span>
+<span class="normal">1238</span>
+<span class="normal">1239</span>
+<span class="normal">1240</span>
+<span class="normal">1241</span>
+<span class="normal">1242</span>
+<span class="normal">1243</span>
+<span class="normal">1244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">FloatingValue</span><span class="p">(</span><span class="n">NumericValue</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">isnan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the value is NaN.&quot;&quot;&quot;</span>
@@ -10317,7 +10513,7 @@ a value in <code>labels</code>.</p>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the value is infinity.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">IsInf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -10330,6 +10526,7 @@ a value in <code>labels</code>.</p>
 
 
 <h3 id="ibis.expr.types.numeric.FloatingValue-functions">Functions<a href="#ibis.expr.types.numeric.FloatingValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10345,18 +10542,19 @@ a value in <code>labels</code>.</p>
   
       <p>Return whether the value is infinity.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1226</span>
-<span class="normal">1227</span>
-<span class="normal">1228</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isinf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1242</span>
+<span class="normal">1243</span>
+<span class="normal">1244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isinf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether the value is infinity.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">IsInf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10372,15 +10570,15 @@ a value in <code>labels</code>.</p>
   
       <p>Return whether the value is NaN.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1222</span>
-<span class="normal">1223</span>
-<span class="normal">1224</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isnan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1238</span>
+<span class="normal">1239</span>
+<span class="normal">1240</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isnan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether the value is NaN.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">IsNan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -10398,27 +10596,26 @@ a value in <code>labels</code>.</p>
 
 
 <h2 id="ibis.expr.types.numeric.DecimalValue" class="doc doc-heading">
-        <code>DecimalValue</code>
+          <code>DecimalValue</code>
 
 
 <a href="#ibis.expr.types.numeric.DecimalValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1241</span>
-<span class="normal">1242</span>
-<span class="normal">1243</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/numeric.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1257</span>
+<span class="normal">1258</span>
+<span class="normal">1259</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">DecimalValue</span><span class="p">(</span><span class="n">NumericValue</span><span class="p">):</span>
     <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   </div>
 
@@ -10429,21 +10626,20 @@ a value in <code>labels</code>.</p>
 
 
 <h2 id="ibis.expr.types.logical.BooleanValue" class="doc doc-heading">
-        <code>BooleanValue</code>
+          <code>BooleanValue</code>
 
 
 <a href="#ibis.expr.types.logical.BooleanValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/logical.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 15</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/logical.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 15</span>
 <span class="normal"> 16</span>
 <span class="normal"> 17</span>
 <span class="normal"> 18</span>
@@ -10881,7 +11077,7 @@ a value in <code>labels</code>.</p>
     <span class="k">def</span> <span class="nf">__negate_op__</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Not</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -10894,6 +11090,7 @@ a value in <code>labels</code>.</p>
 
 
 <h3 id="ibis.expr.types.logical.BooleanValue-functions">Functions<a href="#ibis.expr.types.logical.BooleanValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -10909,6 +11106,8 @@ a value in <code>labels</code>.</p>
   
       <p>Construct a ternary conditional expression.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -10923,7 +11122,7 @@ a value in <code>labels</code>.</p>
         <tr>
           <td><code>true_expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -10937,7 +11136,7 @@ a value in <code>labels</code>.</p>
         <tr>
           <td><code>false_expr</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -10950,6 +11149,8 @@ a value in <code>labels</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -10973,6 +11174,8 @@ a value in <code>labels</code>.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -10990,9 +11193,9 @@ a value in <code>labels</code>.</p>
 <span class="go">└───────────────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/logical.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/logical.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
@@ -11064,7 +11267,7 @@ a value in <code>labels</code>.</p>
     <span class="c1"># must be used.</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">true_expr</span><span class="p">,</span> <span class="n">false_expr</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
