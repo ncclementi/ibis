@@ -3325,24 +3325,22 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">ibis.expr.rules</span> <span class="k">as</span> <span class="nn">rlz</span>
-<span class="kn">import</span> <span class="nn">ibis.expr.datashape</span> <span class="k">as</span> <span class="nn">ds</span>
-<span class="kn">from</span> <span class="nn">ibis.expr.operations</span> <span class="kn">import</span> <span class="n">Value</span>
+<span class="kn">from</span> <span class="nn">ibis.expr.operations</span> <span class="kn">import</span> <span class="n">ValueOp</span>
 
 
-<span class="k">class</span> <span class="nc">JulianDay</span><span class="p">(</span><span class="n">Value</span><span class="p">):</span>
-    <span class="n">arg</span><span class="p">:</span> <span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span>
+<span class="k">class</span> <span class="nc">JulianDay</span><span class="p">(</span><span class="n">ValueOp</span><span class="p">):</span>
+    <span class="n">arg</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">string</span>
 
     <span class="n">output_dtype</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">float32</span>
     <span class="n">output_shape</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">'arg'</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">import ibis.expr.datatypes as dt
 import ibis.expr.rules as rlz
-import ibis.expr.datashape as ds
-from ibis.expr.operations import Value
+from ibis.expr.operations import ValueOp
 
 
-class JulianDay(Value):
-    arg: Value[dt.String, ds.Any]
+class JulianDay(ValueOp):
+    arg = rlz.string
 
     output_dtype = dt.float32
     output_shape = rlz.shape_like('arg')</div>
@@ -4004,7 +4002,7 @@ scalar</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
       
     
   </small>
