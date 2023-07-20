@@ -3981,7 +3981,7 @@
     <span class="c1"># TODO(kszucs): should rename to dtype</span>
     <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the [DataType] of this expression.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">output_dtype</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">dtype</span>
 
     <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute an integer hash value.</span>
@@ -8516,7 +8516,7 @@ as null or NaN depending on target_type and backend behavior.</p>
 <span class="normal">62</span>
 <span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the [DataType] of this expression.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">output_dtype</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">dtype</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>

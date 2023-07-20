@@ -3346,8 +3346,8 @@ Licensed under the Apache License, Version 2.0.
 <span class="k">class</span> <span class="nc">JulianDay</span><span class="p">(</span><span class="n">Value</span><span class="p">):</span>
     <span class="n">arg</span><span class="p">:</span> <span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span>
 
-    <span class="n">output_dtype</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">float32</span>
-    <span class="n">output_shape</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">float32</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">import ibis.expr.datatypes as dt
 import ibis.expr.rules as rlz
@@ -3358,8 +3358,8 @@ from ibis.expr.operations import Value
 class JulianDay(Value):
     arg: Value[dt.String, ds.Any]
 
-    output_dtype = dt.float32
-    output_shape = rlz.shape_like('arg')</div>
+    dtype = dt.float32
+    shape = rlz.shape_like('arg')</div>
         
         </div>
     </div>
@@ -4175,7 +4175,7 @@ scalar</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
       
     
   </small>

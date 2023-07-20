@@ -3554,7 +3554,7 @@
     <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">Timestamp</span> <span class="o">|</span> <span class="n">dt</span><span class="o">.</span><span class="n">Interval</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract a timestamp or an interval from a timestamp.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">is_timestamp</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">is_timestamp</span><span class="p">():</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimestampDiff</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimestampSub</span>  <span class="c1"># let the operation validate</span>
@@ -3578,7 +3578,7 @@
     <span class="k">def</span> <span class="fm">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">Timestamp</span> <span class="o">|</span> <span class="n">dt</span><span class="o">.</span><span class="n">Interval</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract a timestamp or an interval from a timestamp.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">is_timestamp</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">is_timestamp</span><span class="p">():</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimestampDiff</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimestampSub</span>  <span class="c1"># let the operation validate</span>
@@ -4447,7 +4447,7 @@ information.</p>
     <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">Date</span> <span class="o">|</span> <span class="n">dt</span><span class="o">.</span><span class="n">Interval</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract a date or an interval from a date.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">is_date</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">is_date</span><span class="p">():</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">DateDiff</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">DateSub</span>  <span class="c1"># let the operation validate</span>
@@ -4471,7 +4471,7 @@ information.</p>
     <span class="k">def</span> <span class="fm">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">Date</span> <span class="o">|</span> <span class="n">dt</span><span class="o">.</span><span class="n">Interval</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract a date or an interval from a date.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">is_date</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">is_date</span><span class="p">():</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">DateDiff</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">DateSub</span>  <span class="c1"># let the operation validate</span>
@@ -5100,7 +5100,7 @@ information.</p>
     <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">Interval</span> <span class="o">|</span> <span class="n">dt</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract a time or an interval from a time expression.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">is_time</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">is_time</span><span class="p">():</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimeDiff</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimeSub</span>  <span class="c1"># let the operation validate</span>
@@ -5124,7 +5124,7 @@ information.</p>
     <span class="k">def</span> <span class="fm">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">Value</span><span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">Interval</span> <span class="o">|</span> <span class="n">dt</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract a time or an interval from a time expression.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">is_time</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">is_time</span><span class="p">():</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimeDiff</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">TimeSub</span>  <span class="c1"># let the operation validate</span>
@@ -5837,7 +5837,7 @@ as needed.</p>
         <span class="c1"># TODO(kszucs): should use a separate operation for unit conversion</span>
         <span class="c1"># which we can rewrite/simplify to integer multiplication/division</span>
         <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
-        <span class="n">current_unit</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">unit</span>
+        <span class="n">current_unit</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">unit</span>
         <span class="n">target_unit</span> <span class="o">=</span> <span class="n">IntervalUnit</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">target_unit</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">current_unit</span> <span class="o">==</span> <span class="n">target_unit</span><span class="p">:</span>
@@ -6329,7 +6329,7 @@ as needed.</p>
     <span class="c1"># TODO(kszucs): should use a separate operation for unit conversion</span>
     <span class="c1"># which we can rewrite/simplify to integer multiplication/division</span>
     <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
-    <span class="n">current_unit</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">output_dtype</span><span class="o">.</span><span class="n">unit</span>
+    <span class="n">current_unit</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">unit</span>
     <span class="n">target_unit</span> <span class="o">=</span> <span class="n">IntervalUnit</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">target_unit</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">current_unit</span> <span class="o">==</span> <span class="n">target_unit</span><span class="p">:</span>
