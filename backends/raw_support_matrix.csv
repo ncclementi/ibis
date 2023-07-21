@@ -31,7 +31,7 @@ ibis.expr.operations.arrays.ArraySlice,True,True,True,False,False,True,False,Fal
 ibis.expr.operations.arrays.ArraySort,False,True,False,False,False,True,False,False,False,False,False,False,False,True,False,False,True
 ibis.expr.operations.arrays.ArrayUnion,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
 ibis.expr.operations.arrays.ArrayZip,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
-ibis.expr.operations.arrays.Unnest,False,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
+ibis.expr.operations.arrays.Unnest,False,True,True,False,False,True,False,False,False,False,True,False,True,True,True,False,True
 ibis.expr.operations.core.Alias,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.core.Argument,False,True,False,False,False,True,False,False,False,False,False,False,False,True,False,False,True
 ibis.expr.operations.generic.Cast,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
