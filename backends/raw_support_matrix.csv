@@ -178,7 +178,7 @@ ibis.expr.operations.numeric.Tan,True,True,True,True,True,True,True,True,True,Tr
 ibis.expr.operations.reductions.All,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Any,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.ApproxCountDistinct,True,True,True,False,True,True,True,True,True,True,True,False,True,True,True,True,True
-ibis.expr.operations.reductions.ApproxMedian,True,True,True,False,False,True,True,False,False,True,True,True,True,True,True,False,True
+ibis.expr.operations.reductions.ApproxMedian,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,False,True
 ibis.expr.operations.reductions.Arbitrary,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,True,True
 ibis.expr.operations.reductions.ArgMax,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.ArgMin,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,True,True
@@ -188,7 +188,7 @@ ibis.expr.operations.reductions.BitOr,True,True,True,False,True,True,False,False
 ibis.expr.operations.reductions.BitXor,True,True,True,False,True,True,False,False,True,True,True,False,True,False,True,True,True
 ibis.expr.operations.reductions.Correlation,True,True,True,False,False,True,False,False,False,True,True,True,True,True,True,False,True
 ibis.expr.operations.reductions.Count,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.reductions.CountDistinct,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.reductions.CountDistinct,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.CountStar,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Covariance,True,True,True,False,False,True,False,False,False,True,True,False,True,True,True,False,True
 ibis.expr.operations.reductions.First,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,True,True
@@ -196,16 +196,16 @@ ibis.expr.operations.reductions.GroupConcat,True,True,True,False,True,True,True,
 ibis.expr.operations.reductions.Last,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Max,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Mean,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.reductions.Median,False,True,True,False,False,True,False,False,False,True,True,True,True,False,True,False,False
+ibis.expr.operations.reductions.Median,False,True,True,True,False,True,False,False,False,True,True,True,True,False,True,False,False
 ibis.expr.operations.reductions.Min,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Mode,False,False,True,False,False,True,False,False,False,False,True,True,True,False,True,True,False
 ibis.expr.operations.reductions.MultiQuantile,False,True,True,False,False,True,False,False,False,False,True,False,True,True,False,False,False
 ibis.expr.operations.reductions.NotAll,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.NotAny,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Quantile,False,True,True,False,False,True,False,False,False,False,True,False,True,True,True,False,False
-ibis.expr.operations.reductions.StandardDev,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.reductions.StandardDev,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.reductions.Sum,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.reductions.Variance,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.reductions.Variance,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.sortkeys.SortKey,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.ArrayStringJoin,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
 ibis.expr.operations.strings.Capitalize,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
