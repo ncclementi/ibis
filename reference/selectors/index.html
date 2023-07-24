@@ -2694,7 +2694,7 @@
 
 
 <h2 id="ibis.selectors" class="doc doc-heading">
-            <code>selectors</code>
+          <code>selectors</code>
 
 
 <a href="#ibis.selectors" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -2748,15 +2748,16 @@ subsequent computation.</p>
 
 
 <h4 id="ibis.selectors.Predicate" class="doc doc-heading">
-          <code>Predicate</code>
+        <code>Predicate</code>
 
 
 <a href="#ibis.selectors.Predicate" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="ibis.selectors.Selector">Selector</span></code></p>
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="ibis.selectors.Selector">Selector</span></code></p>
+
 
 
 
@@ -2772,7 +2773,6 @@ subsequent computation.</p>
 
 <h5 id="ibis.selectors.Predicate-functions">Functions<a href="#ibis.selectors.Predicate-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2786,8 +2786,6 @@ subsequent computation.</p>
   <div class="doc doc-contents ">
   
       <p>Evaluate <code>self.predicate</code> on every column of <code>table</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2803,7 +2801,7 @@ subsequent computation.</p>
         <tr>
           <td><code>table</code></td>
           <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2830,7 +2828,6 @@ subsequent computation.</p>
 </div>
 <h3 id="ibis.selectors-functions">Functions<a href="#ibis.selectors-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2844,8 +2841,6 @@ subsequent computation.</p>
   <div class="doc doc-contents ">
   
       <p>Apply data transformations across multiple columns.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2877,7 +2872,7 @@ column name.</p>
         <tr>
           <td><code>func</code></td>
           <td>
-                <code><span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis">ir</span>.<span title="ibis.Value">Value</span>], <span title="ibis">ir</span>.<span title="ibis.Value">Value</span>] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None, <span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis">ir</span>.<span title="ibis.Value">Value</span>], <span title="ibis">ir</span>.<span title="ibis.Value">Value</span>]]</code>
+                <code><span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>] | <a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None, <span title="ibis.expr.deferred.Deferred">Deferred</span> | <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2906,8 +2901,6 @@ transformation function.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2929,8 +2922,6 @@ transformation function.</p>
         </tr>
     </tbody>
   </table>
-
-
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -2967,7 +2958,6 @@ transformation function.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2985,7 +2975,6 @@ transformation function.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -3005,7 +2994,6 @@ transformation function.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3023,7 +3011,6 @@ transformation function.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -3043,7 +3030,6 @@ transformation function.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3057,8 +3043,6 @@ transformation function.</p>
   <div class="doc doc-contents ">
   
       <p>Return columns whose name contains <code>needles</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3096,13 +3080,11 @@ transformation function.</p>
             </div>
           </td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#any">any</a></code>
+                <code>any</code>
           </td>
         </tr>
     </tbody>
   </table>
-
-
 
 <p><strong>Examples:</strong></p>
     <p>Select columns that contain either <code>"a"</code> or <code>"b"</code></p>
@@ -3126,7 +3108,6 @@ transformation function.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3140,8 +3121,6 @@ transformation function.</p>
   <div class="doc doc-contents ">
   
       <p>Select columns whose name ends with one of <code>suffixes</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3177,7 +3156,6 @@ transformation function.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3196,7 +3174,6 @@ transformation function.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3210,8 +3187,6 @@ transformation function.</p>
   <div class="doc doc-contents ">
   
       <p>Return the <strong>conjunction</strong> of <code>predicate</code> applied on all <code>selector</code> columns.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3255,8 +3230,6 @@ column from <code>selector</code>.</p>
         </tr>
     </tbody>
   </table>
-
-
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3292,7 +3265,6 @@ column from <code>selector</code>.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3306,8 +3278,6 @@ column from <code>selector</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Return the <strong>disjunction</strong> of <code>predicate</code> applied on all <code>selector</code> columns.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3351,8 +3321,6 @@ column from <code>selector</code>.</p>
         </tr>
     </tbody>
   </table>
-
-
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3392,7 +3360,6 @@ column from <code>selector</code>.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3411,7 +3378,6 @@ column from <code>selector</code>.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3425,8 +3391,6 @@ column from <code>selector</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Return columns whose name matches the regular expression <code>regex</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3456,8 +3420,6 @@ column from <code>selector</code>.</p>
     </tbody>
   </table>
 
-
-
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
@@ -3473,7 +3435,6 @@ column from <code>selector</code>.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3487,8 +3448,6 @@ column from <code>selector</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Return numeric columns.</p>
-
-
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -3510,7 +3469,6 @@ column from <code>selector</code>.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3524,8 +3482,6 @@ column from <code>selector</code>.</p>
   <div class="doc doc-contents ">
   
       <p>Select columns of type <code>dtype</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3541,7 +3497,7 @@ column from <code>selector</code>.</p>
         <tr>
           <td><code>dtype</code></td>
           <td>
-                <code><span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>[<span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span>]</code>
+                <code><span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>[<span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3554,8 +3510,6 @@ column from <code>selector</code>.</p>
         </tr>
     </tbody>
   </table>
-
-
 
 <p><strong>Examples:</strong></p>
     <p>Select according to a specific <code>DataType</code> instance</p>
@@ -3588,7 +3542,6 @@ instead. The following options are equivalent.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3602,8 +3555,6 @@ instead. The following options are equivalent.</p>
   <div class="doc doc-contents ">
   
       <p>Select columns whose name starts with one of <code>prefixes</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3633,8 +3584,6 @@ instead. The following options are equivalent.</p>
     </tbody>
   </table>
 
-
-
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
@@ -3649,7 +3598,6 @@ instead. The following options are equivalent.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -3666,8 +3614,6 @@ instead. The following options are equivalent.</p>
       <p>Select columns that satisfy <code>predicate</code>.</p>
 <p>Use this selector when one of the other selectors does not meet your needs.</p>
 
-
-
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3682,7 +3628,7 @@ instead. The following options are equivalent.</p>
         <tr>
           <td><code>predicate</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis">ir</span>.<span title="ibis.Value">Value</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../expressions/generic/#ibis.expr.types.generic.Value">Value</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3695,8 +3641,6 @@ instead. The following options are equivalent.</p>
         </tr>
     </tbody>
   </table>
-
-
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>

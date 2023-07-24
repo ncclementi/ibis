@@ -1755,20 +1755,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.read_csv" class="md-nav__link">
-    read_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.read_parquet" class="md-nav__link">
-    read_parquet()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.register_options" class="md-nav__link">
     register_options()
   </a>
@@ -1778,48 +1764,6 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.table" class="md-nav__link">
     table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_csv" class="md-nav__link">
-    to_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_delta" class="md-nav__link">
-    to_delta()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_parquet" class="md-nav__link">
-    to_parquet()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_pyarrow" class="md-nav__link">
-    to_pyarrow()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_pyarrow_batches" class="md-nav__link">
-    to_pyarrow_batches()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_torch" class="md-nav__link">
-    to_torch()
   </a>
   
 </li>
@@ -2520,20 +2464,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.read_csv" class="md-nav__link">
-    read_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.read_parquet" class="md-nav__link">
-    read_parquet()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.register_options" class="md-nav__link">
     register_options()
   </a>
@@ -2543,48 +2473,6 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.table" class="md-nav__link">
     table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_csv" class="md-nav__link">
-    to_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_delta" class="md-nav__link">
-    to_delta()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_parquet" class="md-nav__link">
-    to_parquet()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_pyarrow" class="md-nav__link">
-    to_pyarrow()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_pyarrow_batches" class="md-nav__link">
-    to_pyarrow_batches()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.to_torch" class="md-nav__link">
-    to_torch()
   </a>
   
 </li>
@@ -2626,20 +2514,21 @@
 
 
 <h2 id="ibis.backends.base.BaseBackend" class="doc doc-heading">
-          <code>BaseBackend</code>
+        <code>BaseBackend</code>
 
 
 <a href="#ibis.backends.base.BaseBackend" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/abc.html#module-abc">abc</a>.<a class="autorefs autorefs-external" title="abc.ABC" href="https://docs.python.org/3/library/abc.html#abc.ABC">ABC</a></code>, <code><span title="ibis.backends.base._FileIOHandler">_FileIOHandler</span></code></p>
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/abc.html#module-abc">abc</a>.<a class="autorefs autorefs-external" title="abc.ABC" href="https://docs.python.org/3/library/abc.html#abc.ABC">ABC</a></code>, <code><span title="ibis.backends.base._FileIOHandler">_FileIOHandler</span></code></p>
 
   
       <p>Base backend class.</p>
 <p>All Ibis backends must subclass this class and implement all the
 required methods.</p>
+
 
 
   
@@ -2660,8 +2549,8 @@ required methods.</p>
 <code class="highlight language-python"><span class="n">current_database</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.current_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2671,8 +2560,6 @@ required methods.</p>
   
       <p>Return the name of the current database.</p>
 <p>Backends that don't support different databases will return None.</p>
-
-
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2707,8 +2594,8 @@ required methods.</p>
 <code class="highlight language-python"><span class="n">db_identity</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.db_identity" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2721,8 +2608,6 @@ required methods.</p>
 database will return the same value for <code>db_identity</code>.</p>
 <p>The default implementation assumes connection parameters uniquely
 specify the database.</p>
-
-
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2757,8 +2642,8 @@ specify the database.</p>
 <code class="highlight language-python"><span class="n">tables</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.tables" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2768,8 +2653,6 @@ specify the database.</p>
   
       <p>An accessor for tables in the database.</p>
 <p>Tables may be accessed by name using either index or attribute access:</p>
-
-
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;example.db&quot;</span><span class="p">)</span>
@@ -2788,8 +2671,8 @@ specify the database.</p>
 <code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
   </span>
 
 <a href="#ibis.backends.base.BaseBackend.version" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2801,8 +2684,6 @@ specify the database.</p>
 <p>For database servers, return the server version.</p>
 <p>For others such as SQLite and pandas return the version of the
 underlying library or application.</p>
-
-
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2831,7 +2712,6 @@ underlying library or application.</p>
 
 <h3 id="ibis.backends.base.BaseBackend-functions">Functions<a href="#ibis.backends.base.BaseBackend-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2853,7 +2733,6 @@ parameters, and returns a value depending on the backend.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2872,7 +2751,6 @@ parameters, and returns a value depending on the backend.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2886,8 +2764,6 @@ parameters, and returns a value depending on the backend.</p>
   <div class="doc doc-contents ">
   
       <p>Connect to the database.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2935,8 +2811,6 @@ details.</p>
 then calls <code>reconnect</code> and finally returns the newly created and
 connected backend instance.</p>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2963,7 +2837,6 @@ connected backend instance.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2978,8 +2851,6 @@ connected backend instance.</p>
   
       <p>Create a new database.</p>
 <p>Not all backends implement this method.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3027,7 +2898,6 @@ connected backend instance.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3045,8 +2915,6 @@ connected backend instance.</p>
   <div class="doc doc-contents ">
   
       <p>Create a new table.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3076,7 +2944,7 @@ connected backend instance.</p>
         <tr>
           <td><code>obj</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="pandas" href="../../../concept/why_ibis/#pandas">pd</a>.<a class="autorefs autorefs-external" title="pandas.DataFrame" href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame">DataFrame</a> | <span title="pyarrow">pa</span>.<a class="autorefs autorefs-external" title="pyarrow.Table" href="https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table">Table</a> | <span title="ibis">ir</span>.<span title="ibis.Table">Table</span> | None</code>
+                <code><a class="autorefs autorefs-internal" title="pandas" href="../../../concept/why_ibis/#pandas">pd</a>.<a class="autorefs autorefs-external" title="pandas.DataFrame" href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame">DataFrame</a> | <span title="pyarrow">pa</span>.<a class="autorefs autorefs-external" title="pyarrow.Table" href="https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table">Table</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3092,7 +2960,7 @@ extract the schema and the data of the new table. If not provided,
         <tr>
           <td><code>schema</code></td>
           <td>
-                <code>ibis.<a class="autorefs autorefs-internal" title="ibis.Schema" href="../../schemas/#ibis.expr.schema.Schema">Schema</a> | None</code>
+                <code><span title="ibis.config">ibis</span>.<span title="ibis.config.Schema">Schema</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3150,8 +3018,6 @@ default.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3178,7 +3044,6 @@ default.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3196,8 +3061,6 @@ default.</p>
   <div class="doc doc-contents ">
   
       <p>Create a new view from an expression.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3227,7 +3090,7 @@ default.</p>
         <tr>
           <td><code>obj</code></td>
           <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
+                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Table" href="../../expressions/tables/#ibis.expr.types.relations.Table">Table</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3270,8 +3133,6 @@ provided the database's default is used.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3298,7 +3159,6 @@ provided the database's default is used.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3312,8 +3172,6 @@ provided the database's default is used.</p>
   <div class="doc doc-contents ">
   
       <p>Return a <code>Database</code> object for the <code>name</code> database.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3343,8 +3201,6 @@ provided the database's default is used.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3371,7 +3227,6 @@ provided the database's default is used.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3389,8 +3244,6 @@ provided the database's default is used.</p>
   <div class="doc doc-contents ">
   
       <p>Drop a table.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3452,7 +3305,6 @@ provided the database's default is used.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3470,8 +3322,6 @@ provided the database's default is used.</p>
   <div class="doc doc-contents ">
   
       <p>Drop a view.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3533,7 +3383,6 @@ provided the database's default is used.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3551,7 +3400,6 @@ provided the database's default is used.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -3571,8 +3419,6 @@ provided the database's default is used.</p>
   
       <p>Return whether the backend implements support for <code>operation</code>.</p>
 
-
-
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3587,7 +3433,7 @@ provided the database's default is used.</p>
         <tr>
           <td><code>operation</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>[<span title="ibis">ops</span>.<span title="ibis.Value">Value</span>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>[<span title="ibis.expr.operations">ops</span>.<span title="ibis.expr.operations.Value">Value</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3600,8 +3446,6 @@ provided the database's default is used.</p>
         </tr>
     </tbody>
   </table>
-
-
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3625,8 +3469,6 @@ provided the database's default is used.</p>
     </tbody>
   </table>
 
-
-
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.expr.operations</span> <span class="k">as</span> <span class="nn">ops</span>
@@ -3639,7 +3481,6 @@ provided the database's default is used.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -3658,8 +3499,6 @@ provided the database's default is used.</p>
   <div class="doc doc-contents ">
   
       <p>List existing databases in the current connection.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3690,8 +3529,6 @@ names.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3719,7 +3556,6 @@ the <code>like</code> pattern if provided.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -3739,8 +3575,6 @@ the <code>like</code> pattern if provided.</p>
       <p>Return the list of table names in the current database.</p>
 <p>For some backends, the tables may be files in a directory,
 or other equivalent entities in a SQL database.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3784,8 +3618,6 @@ or other equivalent entities in a SQL database.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3812,211 +3644,6 @@ or other equivalent entities in a SQL database.</p>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.read_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a CSV file as a table in the current backend.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The data source. A string or Path to the CSV file.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Additional keyword arguments passed to the backend loading function.</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The just-registered table</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.read_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a parquet file as a table in the current backend.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The data source.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>table_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>An optional name to use for the created table. This defaults to
-a sequentially generated name.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Additional keyword arguments passed to the backend loading function.</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The just-registered table</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
 <div class="doc doc-object doc-function">
 
 
@@ -4039,7 +3666,6 @@ a sequentially generated name.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -4057,8 +3683,6 @@ a sequentially generated name.</p>
   <div class="doc doc-contents ">
   
       <p>Construct a table expression.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4102,8 +3726,6 @@ a sequentially generated name.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -4120,652 +3742,6 @@ a sequentially generated name.</p>
           <td>
             <div class="doc-md-description">
               <p>Table expression</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.to_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.to_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Write the results of executing the given expression to a CSV file.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The ibis expression to execute and persist to CSV.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The data source. A string or Path to the CSV file.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis">ir</span>.<span title="ibis.Scalar">Scalar</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Mapping of scalar parameter expressions to value.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Additional keyword arguments passed to pyarrow.csv.CSVWriter</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-      
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.to_delta" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_delta</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.to_delta" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Write the results of executing the given expression to a Delta Lake table.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The ibis expression to execute and persist to Delta Lake table.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The data source. A string or Path to the Delta Lake table.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis">ir</span>.<span title="ibis.Scalar">Scalar</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Mapping of scalar parameter expressions to value.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Additional keyword arguments passed to deltalake.writer.write_deltalake method</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.to_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.to_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Write the results of executing the given expression to a parquet file.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Table">Table</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The ibis expression to execute and persist to parquet.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>path</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The data source. A string or Path to the parquet file.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis">ir</span>.<span title="ibis.Scalar">Scalar</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Mapping of scalar parameter expressions to value.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>**kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Additional keyword arguments passed to pyarrow.parquet.ParquetWriter</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-      
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.to_pyarrow" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.to_pyarrow" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Execute expression and return results in as a pyarrow table.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis">ir</span>.<a class="autorefs autorefs-internal" title="ibis.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Ibis expression to export to pyarrow</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis">ir</span>.<span title="ibis.Scalar">Scalar</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Mapping of scalar parameter expressions to value.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>limit</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Keyword arguments</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>Table</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A pyarrow table holding the results of the executed expression.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Execute expression and return a RecordBatchReader.</p>
-<p>This method is eager and will execute the associated expression
-immediately.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis">ir</span>.<a class="autorefs autorefs-internal" title="ibis.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Ibis expression to export to pyarrow</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>limit</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis">ir</span>.<span title="ibis.Scalar">Scalar</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Mapping of scalar parameter expressions to value.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>chunk_size</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Maximum number of rows in each returned record batch.</p>
-            </div>
-          </td>
-          <td>
-                <code>1000000</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Keyword arguments</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>results</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>RecordBatchReader</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.to_torch" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_torch</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-<a href="#ibis.backends.base.BaseBackend.to_torch" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Execute an expression and return results as a dictionary of torch tensors.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>expr</code></td>
-          <td>
-                <code><span title="ibis">ir</span>.<a class="autorefs autorefs-internal" title="ibis.Expr" href="../../expressions/#ibis.expr.types.core.Expr">Expr</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Ibis expression to execute.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>params</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a>[<span title="ibis">ir</span>.<span title="ibis.Scalar">Scalar</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Parameters to substitute into the expression.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>limit</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>An integer to effect a specific row limit. A value of <code>None</code> means no limit.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>kwargs</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Keyword arguments passed into the backend's <code>to_torch</code> implementation.</p>
-            </div>
-          </td>
-          <td>
-                <code>{}</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, torch.<span title="torch.Tensor">Tensor</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A dictionary of torch tensors, keyed by column name.</p>
             </div>
           </td>
         </tr>

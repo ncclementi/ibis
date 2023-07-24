@@ -2388,18 +2388,19 @@
 
 
 <h2 id="ibis.expr.schema.Schema" class="doc doc-heading">
-          <code>Schema</code>
+        <code>Schema</code>
 
 
 <a href="#ibis.expr.schema.Schema" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="ibis.common.grounds.Concrete">Concrete</span></code>, <code><span title="ibis.common.validators.Coercible">Coercible</span></code>, <code><span title="ibis.common.collections.MapSet">MapSet</span></code></p>
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="ibis.common.grounds.Concrete">Concrete</span></code>, <code><span title="ibis.common.patterns.Coercible">Coercible</span></code>, <code><span title="ibis.common.collections.MapSet">MapSet</span></code></p>
 
   
       <p>An object for holding table schema information.</p>
+
 
 
   
@@ -2436,7 +2437,6 @@ representing the type of each column.</p>
 
 <h3 id="ibis.expr.schema.Schema-functions">Functions<a href="#ibis.expr.schema.Schema-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2450,8 +2450,6 @@ representing the type of each column.</p>
   <div class="doc doc-contents ">
   
       <p>Return whether <code>other</code> is equal to <code>self</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2481,8 +2479,6 @@ representing the type of each column.</p>
     </tbody>
   </table>
 
-
-
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">})</span>
@@ -2495,7 +2491,6 @@ representing the type of each column.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -2519,7 +2514,6 @@ representing the type of each column.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2541,7 +2535,6 @@ representing the type of each column.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -2565,7 +2558,6 @@ representing the type of each column.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2588,7 +2580,6 @@ representing the type of each column.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2607,8 +2598,6 @@ representing the type of each column.</p>
   
       <p>Construct a <code>Schema</code> from an iterable of pairs.</p>
 
-
-
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2623,7 +2612,7 @@ representing the type of each column.</p>
         <tr>
           <td><code>values</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="collections.abc.Iterable" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">dt</span>.<span title="ibis.DataType">DataType</span>]]</code>
+                <code><a class="autorefs autorefs-external" title="collections.abc.Iterable" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.datatypes">dt</span>.<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.DataType" href="../datatypes/#ibis.expr.datatypes.core.DataType">DataType</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2636,8 +2625,6 @@ representing the type of each column.</p>
         </tr>
     </tbody>
   </table>
-
-
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2661,8 +2648,6 @@ representing the type of each column.</p>
     </tbody>
   </table>
 
-
-
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">)])</span>
@@ -2675,7 +2660,6 @@ representing the type of each column.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -2690,8 +2674,6 @@ representing the type of each column.</p>
   <div class="doc doc-contents ">
   
       <p>Return the name of a schema column at position <code>i</code>.</p>
-
-
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2721,8 +2703,6 @@ representing the type of each column.</p>
     </tbody>
   </table>
 
-
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2745,8 +2725,6 @@ representing the type of each column.</p>
     </tbody>
   </table>
 
-
-
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sch</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">Schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">})</span>
@@ -2759,7 +2737,6 @@ representing the type of each column.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
@@ -2779,7 +2756,6 @@ representing the type of each column.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2798,7 +2774,6 @@ representing the type of each column.</p>
 
 </div>
 
-
 <div class="doc doc-object doc-function">
 
 
@@ -2816,7 +2791,6 @@ representing the type of each column.</p>
   </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
