@@ -2339,9 +2339,9 @@ defines the shape (scalar or column) and element type of the operation.</p>
    <span class="c1"># Optional argument, defaults to None</span>
    <span class="n">base</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">optional</span><span class="p">(</span><span class="n">rlz</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
    <span class="c1"># Output expression&#39;s datatype will correspond to arg&#39;s datatype</span>
-   <span class="n">dtype</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">dtype_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
+   <span class="n">output_dtype</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">dtype_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
    <span class="c1"># Output expression will be scalar if arg is scalar, column otherwise</span>
-   <span class="n">shape</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
+   <span class="n">output_shape</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>This class describes an operation called <code>Log</code> that takes one required
 argument: a double scalar or column, and one optional argument: a double scalar
@@ -2414,7 +2414,7 @@ necessary after the database returns results to the client.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
       
     
   </small>

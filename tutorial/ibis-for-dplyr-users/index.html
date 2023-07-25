@@ -3343,7 +3343,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://www.r-project.org/">R</a> users familiar with <a href="https://dplyr.tidyverse.org/">dplyr</a> and other packages in the <a href="https://www.tidyverse.org/">Tidyverse</a> are likely to find Ibis familiar.
+<p><a href="https://www.r-project.org/">R</a> users familiar with <a href="https://dplyr.tidyverse.org/">dplyr</a>, <a href="https://tidyr.tidyverse.org/">tidyr</a>, and other packages in the <a href="https://www.tidyverse.org/">Tidyverse</a> are likely to find Ibis familiar.
 In fact, some Ibis features were even inspired by similar features in the <a href="https://www.tidyverse.org/">Tidyverse</a>.</p>
 <p>However, due to differences between Python and R and the design and goals of Ibis itself, you may notice some big differences right away:</p>
 <ul>
@@ -3361,7 +3361,7 @@ In fact, some Ibis features were even inspired by similar features in the <a hre
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Using the same example data and similar operations as in <a href="https://dplyr.tidyverse.org/articles/dplyr.html">Introduction to dplyr</a>, below you will find some examples of the more common dplyr operations and their Ibis equivalents.</p>
+<p>Using the same example data and similar operations as in <a href="https://dplyr.tidyverse.org/articles/dplyr.html">Introduction to dplyr</a>, below you will find some examples of the more common dplyr and tidyr operations and their Ibis equivalents.</p>
 </div>
 </div>
 </div>
@@ -3551,7 +3551,7 @@ from ibis import _</div>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file 'starwars.csv.gz' from 'https://storage.googleapis.com/ibis-examples/data/starwars.csv.gz' to '/home/runner/.cache/ibis-framework/6.0.0'.
-100%|█████████████████████████████████████| 2.31k/2.31k [00:00&lt;00:00, 1.18MB/s]
+100%|█████████████████████████████████████| 2.31k/2.31k [00:00&lt;00:00, 2.41MB/s]
 </pre>
 </div>
 </div>
@@ -4104,7 +4104,7 @@ from ibis import _</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ibis, like dplyr, has the <code>filter</code> method to select rows based on conditions.</p>
+<p>Ibis, like dplyr, has <code>filter</code> to select rows based on conditions.</p>
 <p>With dplyr:</p>
 <div class="highlight"><pre><span></span><span class="n">starwars</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">  </span><span class="nf">filter</span><span class="p">(</span><span class="n">skin_color</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"light"</span><span class="p">)</span>
@@ -4351,7 +4351,7 @@ from ibis import _</div>
 <div class="highlight"><pre><span></span><span class="n">starwars</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">   </span><span class="nf">arrange</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
 </pre></div>
-<p>In Ibis:</p>
+<p>Ibis has the <code>order_by</code> method, so to perform the same operation:</p>
 </div>
 </div>
 </div>
@@ -5278,6 +5278,17 @@ from ibis import _</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Note</strong>: Throughout this guide, where dplyr uses R generics, Ibis uses Python methods.  In the previous code cell, <code>aggregate</code> is a method on a <em>table</em> and <code>mean</code> is a method on a <em>column</em>.  If you want to perform aggregations on multiple columns, you can call the method that you want on the column you want to apply it to.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="join-tables-with-left_join">Join tables with left_join()<a class="anchor-link" href="#join-tables-with-left_join">¶</a></h2><p>To demonstrate how to do joins with Ibis, we'll load two more example datasets that also come from the example datasets included in dplyr:</p>
 </div>
 </div>
@@ -5318,9 +5329,9 @@ band_instruments = ibis.examples.band_instruments.fetch()</div>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>Downloading file 'band_members.csv.gz' from 'https://storage.googleapis.com/ibis-examples/data/band_members.csv.gz' to '/home/runner/.cache/ibis-framework/6.0.0'.
-100%|███████████████████████████████████████| 59.0/59.0 [00:00&lt;00:00, 71.2kB/s]
+100%|███████████████████████████████████████| 59.0/59.0 [00:00&lt;00:00, 84.3kB/s]
 Downloading file 'band_instruments.csv.gz' from 'https://storage.googleapis.com/ibis-examples/data/band_instruments.csv.gz' to '/home/runner/.cache/ibis-framework/6.0.0'.
-100%|███████████████████████████████████████| 60.0/60.0 [00:00&lt;00:00, 76.7kB/s]
+100%|███████████████████████████████████████| 60.0/60.0 [00:00&lt;00:00, 37.9kB/s]
 </pre>
 </div>
 </div>
@@ -5655,7 +5666,7 @@ starwars_colors</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
       
     
   </small>
