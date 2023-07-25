@@ -6944,15 +6944,15 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
             <span class="n">step</span> <span class="o">=</span> <span class="n">what</span><span class="o">.</span><span class="n">step</span>
             <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">step</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Slice step can only be 1&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Slice step can only be 1&quot;</span><span class="p">)</span>
             <span class="n">start</span> <span class="o">=</span> <span class="n">what</span><span class="o">.</span><span class="n">start</span> <span class="ow">or</span> <span class="mi">0</span>
             <span class="n">stop</span> <span class="o">=</span> <span class="n">what</span><span class="o">.</span><span class="n">stop</span>
 
             <span class="k">if</span> <span class="n">stop</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;End index must be a positive number&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;End index must be a positive number&quot;</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Start index must be a positive number&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Start index must be a positive number&quot;</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
 
@@ -6969,12 +6969,12 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">what</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-                <span class="s1">&#39;Selection rows or columns with </span><span class="si">{}</span><span class="s1"> objects is not &#39;</span>
-                <span class="s1">&#39;supported&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">what</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+                <span class="s2">&quot;Selection rows or columns with </span><span class="si">{}</span><span class="s2"> objects is not &quot;</span>
+                <span class="s2">&quot;supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">what</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span><span class="s1">&#39;Use .count() instead&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span><span class="s2">&quot;Use .count() instead&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the column name of a table.</span>
@@ -7818,7 +7818,7 @@
         <span class="n">schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span>
-                <span class="s1">&#39;Table must have exactly one column when viewed as array&#39;</span>
+                <span class="s2">&quot;Table must have exactly one column when viewed as array&quot;</span>
             <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">TableArrayView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
@@ -8220,8 +8220,8 @@
                     <span class="k">elif</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;ALL_CAPS&quot;</span><span class="p">:</span>
                         <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
                 <span class="c1"># Handle PascalCase, camelCase, and kebab-case</span>
-                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
                 <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;snake_case&quot;</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -8575,7 +8575,7 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">replacements</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">schema</span><span class="p">:</span>
-                    <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
+                    <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
                     <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisTypeError</span><span class="p">(</span>
                         <span class="sa">f</span><span class="s2">&quot;Column </span><span class="si">{</span><span class="n">col</span><span class="si">!r}</span><span class="s2"> is not found in table. &quot;</span>
                         <span class="sa">f</span><span class="s2">&quot;Existing columns: </span><span class="si">{</span><span class="n">columns_formatted</span><span class="si">}</span><span class="s2">.&quot;</span>
@@ -8723,16 +8723,16 @@
             <span class="nb">str</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanColumn</span>
         <span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
         <span class="n">how</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
-            <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;left&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;outer&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;right&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;semi&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;anti&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;any_inner&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;any_left&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;left_semi&#39;</span><span class="p">,</span>
-        <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;semi&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;anti&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;any_inner&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;any_left&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;left_semi&quot;</span><span class="p">,</span>
+        <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">lname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">rname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{name}</span><span class="s2">_right&quot;</span><span class="p">,</span>
@@ -8836,16 +8836,16 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">_join_classes</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
-            <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
-            <span class="s1">&#39;any_inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
-            <span class="s1">&#39;any_left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
-            <span class="s1">&#39;outer&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
-            <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
-            <span class="s1">&#39;left_semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-            <span class="s1">&#39;semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-            <span class="s1">&#39;anti&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
-            <span class="s1">&#39;cross&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
+            <span class="s2">&quot;inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
+            <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
+            <span class="s2">&quot;any_inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
+            <span class="s2">&quot;any_left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
+            <span class="s2">&quot;outer&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
+            <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
+            <span class="s2">&quot;left_semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+            <span class="s2">&quot;semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+            <span class="s2">&quot;anti&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
+            <span class="s2">&quot;cross&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
         <span class="p">}</span>
 
         <span class="n">klass</span> <span class="o">=</span> <span class="n">_join_classes</span><span class="p">[</span><span class="n">how</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
@@ -13540,7 +13540,7 @@ passed as a scalar all columns are filled with that value.</p>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">replacements</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">schema</span><span class="p">:</span>
-                <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
+                <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisTypeError</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Column </span><span class="si">{</span><span class="n">col</span><span class="si">!r}</span><span class="s2"> is not found in table. &quot;</span>
                     <span class="sa">f</span><span class="s2">&quot;Existing columns: </span><span class="si">{</span><span class="n">columns_formatted</span><span class="si">}</span><span class="s2">.&quot;</span>
@@ -14994,16 +14994,16 @@ table (e.g. <code>"right_{name}"</code>).</p>
         <span class="nb">str</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanColumn</span>
     <span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
     <span class="n">how</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
-        <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;left&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;outer&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;right&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;semi&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;anti&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;any_inner&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;any_left&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;left_semi&#39;</span><span class="p">,</span>
-    <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;semi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;anti&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;any_inner&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;any_left&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;left_semi&quot;</span><span class="p">,</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">lname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">rname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{name}</span><span class="s2">_right&quot;</span><span class="p">,</span>
@@ -15107,16 +15107,16 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_join_classes</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
-        <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
-        <span class="s1">&#39;any_inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
-        <span class="s1">&#39;any_left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
-        <span class="s1">&#39;outer&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
-        <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
-        <span class="s1">&#39;left_semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-        <span class="s1">&#39;semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-        <span class="s1">&#39;anti&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
-        <span class="s1">&#39;cross&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
+        <span class="s2">&quot;inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
+        <span class="s2">&quot;any_inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
+        <span class="s2">&quot;any_left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
+        <span class="s2">&quot;outer&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
+        <span class="s2">&quot;left_semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+        <span class="s2">&quot;semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+        <span class="s2">&quot;anti&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
+        <span class="s2">&quot;cross&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="n">klass</span> <span class="o">=</span> <span class="n">_join_classes</span><span class="p">[</span><span class="n">how</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
@@ -18805,8 +18805,8 @@ naming convention.</p>
                 <span class="k">elif</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;ALL_CAPS&quot;</span><span class="p">:</span>
                     <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
             <span class="c1"># Handle PascalCase, camelCase, and kebab-case</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
             <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;snake_case&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -19876,7 +19876,7 @@ value of <code>None</code> will use the backend's native dialect.</p>
     <span class="n">schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span>
-            <span class="s1">&#39;Table must have exactly one column when viewed as array&#39;</span>
+            <span class="s2">&quot;Table must have exactly one column when viewed as array&quot;</span>
         <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">TableArrayView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
