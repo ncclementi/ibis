@@ -2306,6 +2306,7 @@
 <!-- prettier-ignore-start -->
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2319,6 +2320,8 @@
   <div class="doc doc-contents first">
   
       <p>Create a <code>Backend</code> for use with Ibis.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2363,7 +2366,7 @@
         <tr>
           <td><code>credentials</code></td>
           <td>
-                <code><span title="google.auth.credentials">google</span>.<span title="google.auth.credentials.auth">auth</span>.<span title="google.auth.credentials.auth.credentials">credentials</span>.<span title="google.auth.credentials.auth.credentials.Credentials">Credentials</span> | None</code>
+                <code>google.<span title="google.auth">auth</span>.<span title="google.auth.credentials">credentials</span>.<span title="google.auth.credentials.Credentials">Credentials</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2433,12 +2436,12 @@ default BigQuery scopes.</p>
             <div class="doc-md-description">
               <p>Selects the behavior of the credentials cache.</p>
 <p><code>'default'</code>
-Reads credentials from disk if available, otherwise
-authenticates and caches credentials to disk.</p>
+    Reads credentials from disk if available, otherwise
+    authenticates and caches credentials to disk.</p>
 <p><code>'reauth'</code>
-Authenticates and caches credentials to disk.</p>
+    Authenticates and caches credentials to disk.</p>
 <p><code>'none'</code>
-Authenticates and does <strong>not</strong> cache credentials.</p>
+    Authenticates and does <strong>not</strong> cache credentials.</p>
 <p>Defaults to <code>'default'</code>.</p>
             </div>
           </td>
@@ -2464,7 +2467,7 @@ column. Defaults to <code>'PARTITIONTIME'</code>.</p>
         <tr>
           <td><code>client</code></td>
           <td>
-                <code><span title="google.cloud.bigquery">bq</span>.<span title="google.cloud.bigquery.Client">Client</span> | None</code>
+                <code><span title="google">bq</span>.<span title="google.Client">Client</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2479,7 +2482,7 @@ set, one is created using the <code>project_id</code> and <code>credentials</cod
         <tr>
           <td><code>storage_client</code></td>
           <td>
-                <code><span title="google.cloud.bigquery_storage_v1">bqstorage</span>.<span title="google.cloud.bigquery_storage_v1.BigQueryReadClient">BigQueryReadClient</span> | None</code>
+                <code><span title="google">bqstorage</span>.<span title="google.BigQueryReadClient">BigQueryReadClient</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2494,6 +2497,8 @@ created using the <code>project_id</code> and <code>credentials</code>.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>

@@ -2687,21 +2687,20 @@
 
 
 <h2 id="ibis.expr.types.arrays.ArrayValue" class="doc doc-heading">
-        <code>ArrayValue</code>
+          <code>ArrayValue</code>
 
 
 <a href="#ibis.expr.types.arrays.ArrayValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 18</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 18</span>
 <span class="normal"> 19</span>
 <span class="normal"> 20</span>
 <span class="normal"> 21</span>
@@ -3501,17 +3500,7 @@
 <span class="normal">815</span>
 <span class="normal">816</span>
 <span class="normal">817</span>
-<span class="normal">818</span>
-<span class="normal">819</span>
-<span class="normal">820</span>
-<span class="normal">821</span>
-<span class="normal">822</span>
-<span class="normal">823</span>
-<span class="normal">824</span>
-<span class="normal">825</span>
-<span class="normal">826</span>
-<span class="normal">827</span>
-<span class="normal">828</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+<span class="normal">818</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">ArrayValue</span><span class="p">(</span><span class="n">Value</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the length of an array.</span>
@@ -3924,12 +3913,7 @@
 <span class="sd">        │ []                    │</span>
 <span class="sd">        └───────────────────────┘</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">to_expr</span><span class="p">())</span>
-
-        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">wrapped</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">predicate</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">]</span>
@@ -3972,12 +3956,7 @@
 <span class="sd">        │ []                   │</span>
 <span class="sd">        └──────────────────────┘</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">predicate</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">to_expr</span><span class="p">())</span>
-
-        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">wrapped</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">predicate</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the array contains `other`.</span>
@@ -4323,7 +4302,7 @@
 
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayZip</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">))</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -4336,6 +4315,7 @@
 
 
 <h3 id="ibis.expr.types.arrays.ArrayValue-functions">Functions<a href="#ibis.expr.types.arrays.ArrayValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4351,6 +4331,8 @@
   
       <p>Return whether the array contains <code>other</code>.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -4365,7 +4347,7 @@
         <tr>
           <td><code>other</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4378,6 +4360,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4400,6 +4384,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4440,9 +4426,19 @@
 <span class="go">└──────────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">486</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
 <span class="normal">487</span>
 <span class="normal">488</span>
 <span class="normal">489</span>
@@ -4484,17 +4480,7 @@
 <span class="normal">525</span>
 <span class="normal">526</span>
 <span class="normal">527</span>
-<span class="normal">528</span>
-<span class="normal">529</span>
-<span class="normal">530</span>
-<span class="normal">531</span>
-<span class="normal">532</span>
-<span class="normal">533</span>
-<span class="normal">534</span>
-<span class="normal">535</span>
-<span class="normal">536</span>
-<span class="normal">537</span>
-<span class="normal">538</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+<span class="normal">528</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether the array contains `other`.</span>
 
 <span class="sd">    Parameters</span>
@@ -4548,10 +4534,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayContains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4567,6 +4554,8 @@
   
       <p>Filter array elements using <code>predicate</code>.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -4581,7 +4570,7 @@
         <tr>
           <td><code>predicate</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.BooleanValue" href="../numeric/#ibis.expr.types.logical.BooleanValue">BooleanValue</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis">ir</span>.<span title="ibis.Value">Value</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a> | <span title="ibis">ir</span>.<span title="ibis.BooleanValue">BooleanValue</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4594,6 +4583,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4616,6 +4607,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4643,9 +4636,14 @@
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">438</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
 <span class="normal">439</span>
 <span class="normal">440</span>
 <span class="normal">441</span>
@@ -4681,17 +4679,7 @@
 <span class="normal">471</span>
 <span class="normal">472</span>
 <span class="normal">473</span>
-<span class="normal">474</span>
-<span class="normal">475</span>
-<span class="normal">476</span>
-<span class="normal">477</span>
-<span class="normal">478</span>
-<span class="normal">479</span>
-<span class="normal">480</span>
-<span class="normal">481</span>
-<span class="normal">482</span>
-<span class="normal">483</span>
-<span class="normal">484</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
+<span class="normal">474</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">predicate</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter array elements using `predicate`.</span>
@@ -4732,17 +4720,13 @@
 <span class="sd">    │ []                   │</span>
 <span class="sd">    └──────────────────────┘</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">predicate</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">to_expr</span><span class="p">())</span>
-
-    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">wrapped</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">predicate</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4758,6 +4742,8 @@
   
       <p>Return the position of <code>other</code> in an array.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -4772,7 +4758,7 @@
         <tr>
           <td><code>other</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4785,6 +4771,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -4807,6 +4795,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -4858,9 +4848,19 @@
 <span class="go">└──────────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">540</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
 <span class="normal">541</span>
 <span class="normal">542</span>
 <span class="normal">543</span>
@@ -4913,17 +4913,7 @@
 <span class="normal">590</span>
 <span class="normal">591</span>
 <span class="normal">592</span>
-<span class="normal">593</span>
-<span class="normal">594</span>
-<span class="normal">595</span>
-<span class="normal">596</span>
-<span class="normal">597</span>
-<span class="normal">598</span>
-<span class="normal">599</span>
-<span class="normal">600</span>
-<span class="normal">601</span>
-<span class="normal">602</span>
-<span class="normal">603</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
+<span class="normal">593</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the position of `other` in an array.</span>
 
 <span class="sd">    Parameters</span>
@@ -4988,10 +4978,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayPosition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5007,6 +4998,8 @@
   
       <p>Join the elements of this array expression with <code>sep</code>.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -5021,7 +5014,7 @@
         <tr>
           <td><code>sep</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.StringValue" href="../strings/#ibis.expr.types.strings.StringValue">StringValue</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">ir</span>.<span title="ibis.StringValue">StringValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5034,6 +5027,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5056,6 +5051,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5087,9 +5084,9 @@
       <h6 id="ibis.expr.types.arrays.ArrayValue.join--see-also">See Also<a class="headerlink" href="#ibis.expr.types.arrays.ArrayValue.join--see-also" title="Anchor link to this section for reference">&para;</a></h6>
 <p><a class="autorefs autorefs-internal" href="../strings/#ibis.expr.types.strings.StringValue.join"><code>StringValue.join</code></a></p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">345</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">345</span>
 <span class="normal">346</span>
 <span class="normal">347</span>
 <span class="normal">348</span>
@@ -5181,10 +5178,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayStringJoin</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5199,6 +5197,8 @@
   <div class="doc doc-contents ">
   
       <p>Compute the length of an array.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5221,6 +5221,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5248,9 +5250,9 @@
 <span class="go">└────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
@@ -5320,10 +5322,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayLength</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5339,6 +5342,8 @@
   
       <p>Apply a callable <code>func</code> to each element of this array expression.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -5353,7 +5358,7 @@
         <tr>
           <td><code>func</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>], <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="ibis">ir</span>.<span title="ibis.Value">Value</span>], <span title="ibis">ir</span>.<span title="ibis.Value">Value</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5366,6 +5371,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5388,6 +5395,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5415,9 +5424,9 @@
 <span class="go">└───────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">392</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">392</span>
 <span class="normal">393</span>
 <span class="normal">394</span>
 <span class="normal">395</span>
@@ -5456,12 +5465,7 @@
 <span class="normal">428</span>
 <span class="normal">429</span>
 <span class="normal">430</span>
-<span class="normal">431</span>
-<span class="normal">432</span>
-<span class="normal">433</span>
-<span class="normal">434</span>
-<span class="normal">435</span>
-<span class="normal">436</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">],</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
+<span class="normal">431</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">],</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply a callable `func` to each element of this array expression.</span>
 
 <span class="sd">    Parameters</span>
@@ -5500,17 +5504,13 @@
 <span class="sd">    │ []                    │</span>
 <span class="sd">    └───────────────────────┘</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">to_expr</span><span class="p">())</span>
-
-    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">wrapped</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5526,6 +5526,8 @@
   
       <p>Remove <code>other</code> from <code>self</code>.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -5540,7 +5542,7 @@
         <tr>
           <td><code>other</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5553,6 +5555,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5584,9 +5588,19 @@
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">605</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">595</span>
+<span class="normal">596</span>
+<span class="normal">597</span>
+<span class="normal">598</span>
+<span class="normal">599</span>
+<span class="normal">600</span>
+<span class="normal">601</span>
+<span class="normal">602</span>
+<span class="normal">603</span>
+<span class="normal">604</span>
+<span class="normal">605</span>
 <span class="normal">606</span>
 <span class="normal">607</span>
 <span class="normal">608</span>
@@ -5614,17 +5628,7 @@
 <span class="normal">630</span>
 <span class="normal">631</span>
 <span class="normal">632</span>
-<span class="normal">633</span>
-<span class="normal">634</span>
-<span class="normal">635</span>
-<span class="normal">636</span>
-<span class="normal">637</span>
-<span class="normal">638</span>
-<span class="normal">639</span>
-<span class="normal">640</span>
-<span class="normal">641</span>
-<span class="normal">642</span>
-<span class="normal">643</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
+<span class="normal">633</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove `other` from `self`.</span>
 
 <span class="sd">    Parameters</span>
@@ -5664,10 +5668,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayRemove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5682,6 +5687,8 @@
   <div class="doc doc-contents ">
   
       <p>Sort the elements in an array.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5704,6 +5711,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5733,9 +5742,19 @@
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">685</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">675</span>
+<span class="normal">676</span>
+<span class="normal">677</span>
+<span class="normal">678</span>
+<span class="normal">679</span>
+<span class="normal">680</span>
+<span class="normal">681</span>
+<span class="normal">682</span>
+<span class="normal">683</span>
+<span class="normal">684</span>
+<span class="normal">685</span>
 <span class="normal">686</span>
 <span class="normal">687</span>
 <span class="normal">688</span>
@@ -5761,17 +5780,7 @@
 <span class="normal">708</span>
 <span class="normal">709</span>
 <span class="normal">710</span>
-<span class="normal">711</span>
-<span class="normal">712</span>
-<span class="normal">713</span>
-<span class="normal">714</span>
-<span class="normal">715</span>
-<span class="normal">716</span>
-<span class="normal">717</span>
-<span class="normal">718</span>
-<span class="normal">719</span>
-<span class="normal">720</span>
-<span class="normal">721</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
+<span class="normal">711</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sort the elements in an array.</span>
 
 <span class="sd">    Returns</span>
@@ -5809,10 +5818,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArraySort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5828,6 +5838,8 @@
   
       <p>Union two arrays.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -5842,7 +5854,7 @@
         <tr>
           <td><code>other</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.ArrayValue">ArrayValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5855,6 +5867,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -5877,6 +5891,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -5914,9 +5930,19 @@
 <span class="go">└──────────────────────────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">723</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">713</span>
+<span class="normal">714</span>
+<span class="normal">715</span>
+<span class="normal">716</span>
+<span class="normal">717</span>
+<span class="normal">718</span>
+<span class="normal">719</span>
+<span class="normal">720</span>
+<span class="normal">721</span>
+<span class="normal">722</span>
+<span class="normal">723</span>
 <span class="normal">724</span>
 <span class="normal">725</span>
 <span class="normal">726</span>
@@ -5955,17 +5981,7 @@
 <span class="normal">759</span>
 <span class="normal">760</span>
 <span class="normal">761</span>
-<span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
-<span class="normal">769</span>
-<span class="normal">770</span>
-<span class="normal">771</span>
-<span class="normal">772</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
+<span class="normal">762</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Union two arrays.</span>
 
 <span class="sd">    Parameters</span>
@@ -6016,10 +6032,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayUnion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6037,6 +6054,8 @@
 <div class="admonition note">
 <p class="admonition-title">Element ordering in array may not be retained.</p>
 </div>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6059,6 +6078,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6088,9 +6109,19 @@
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">645</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">635</span>
+<span class="normal">636</span>
+<span class="normal">637</span>
+<span class="normal">638</span>
+<span class="normal">639</span>
+<span class="normal">640</span>
+<span class="normal">641</span>
+<span class="normal">642</span>
+<span class="normal">643</span>
+<span class="normal">644</span>
+<span class="normal">645</span>
 <span class="normal">646</span>
 <span class="normal">647</span>
 <span class="normal">648</span>
@@ -6118,17 +6149,7 @@
 <span class="normal">670</span>
 <span class="normal">671</span>
 <span class="normal">672</span>
-<span class="normal">673</span>
-<span class="normal">674</span>
-<span class="normal">675</span>
-<span class="normal">676</span>
-<span class="normal">677</span>
-<span class="normal">678</span>
-<span class="normal">679</span>
-<span class="normal">680</span>
-<span class="normal">681</span>
-<span class="normal">682</span>
-<span class="normal">683</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">unique</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
+<span class="normal">673</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">unique</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the unique values in an array.</span>
 
 <span class="sd">    !!! note &quot;Element ordering in array may not be retained.&quot;</span>
@@ -6168,10 +6189,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayDistinct</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6189,6 +6211,8 @@
 <div class="admonition note">
 <p class="admonition-title">This operation changes the cardinality of the result</p>
 </div>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6217,6 +6241,8 @@
 <span class="go">└───────┘</span>
 </code></pre></div>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6228,7 +6254,7 @@
     <tbody>
         <tr>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6239,9 +6265,9 @@
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">302</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">302</span>
 <span class="normal">303</span>
 <span class="normal">304</span>
 <span class="normal">305</span>
@@ -6325,10 +6351,11 @@
     <span class="k">except</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">expr</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6344,6 +6371,8 @@
   
       <p>Zip two or more arrays together.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6358,7 +6387,7 @@
         <tr>
           <td><code>other</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.Array">Array</span></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Array">Array</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6372,7 +6401,7 @@
         <tr>
           <td><code>others</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<span title="ibis.expr.types.Array">Array</span></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Array">Array</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6385,6 +6414,8 @@
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -6408,6 +6439,8 @@ array.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6446,9 +6479,19 @@ array.</p>
 <span class="go">└───────────────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">774</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span>
+<span class="normal">767</span>
+<span class="normal">768</span>
+<span class="normal">769</span>
+<span class="normal">770</span>
+<span class="normal">771</span>
+<span class="normal">772</span>
+<span class="normal">773</span>
+<span class="normal">774</span>
 <span class="normal">775</span>
 <span class="normal">776</span>
 <span class="normal">777</span>
@@ -6492,17 +6535,7 @@ array.</p>
 <span class="normal">815</span>
 <span class="normal">816</span>
 <span class="normal">817</span>
-<span class="normal">818</span>
-<span class="normal">819</span>
-<span class="normal">820</span>
-<span class="normal">821</span>
-<span class="normal">822</span>
-<span class="normal">823</span>
-<span class="normal">824</span>
-<span class="normal">825</span>
-<span class="normal">826</span>
-<span class="normal">827</span>
-<span class="normal">828</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="normal">818</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Zip two or more arrays together.</span>
 
 <span class="sd">    Parameters</span>
@@ -6558,7 +6591,7 @@ array.</p>
 
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayZip</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">))</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -6576,19 +6609,21 @@ array.</p>
 
 
 <h2 id="ibis.expr.types.structs.StructValue" class="doc doc-heading">
-        <code>StructValue</code>
+          <code>StructValue</code>
 
 
 <a href="#ibis.expr.types.structs.StructValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
   
       <p>A struct literal or column.</p>
 <p>Can be constructed with <a class="autorefs autorefs-internal" href="../top_level/#ibis.struct"><code>ibis.struct()</code></a>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -6628,10 +6663,9 @@ array.</p>
 <span class="go">└───────┘</span>
 </code></pre></div>
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/structs.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/structs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
@@ -7219,7 +7253,7 @@ array.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">names</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -7296,6 +7330,7 @@ array.</p>
 
 <h3 id="ibis.expr.types.structs.StructValue-functions">Functions<a href="#ibis.expr.types.structs.StructValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -7311,6 +7346,8 @@ array.</p>
       <p>Destructure a <code>StructValue</code> into the corresponding struct fields.</p>
 <p>When assigned, a destruct value will be destructured and assigned to
 multiple columns.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7333,6 +7370,8 @@ multiple columns.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -7371,9 +7410,9 @@ multiple columns.</p>
 <span class="go">└────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/structs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">341</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/structs.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">341</span>
 <span class="normal">342</span>
 <span class="normal">343</span>
 <span class="normal">344</span>
@@ -7471,10 +7510,11 @@ multiple columns.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">names</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -7492,6 +7532,8 @@ multiple columns.</p>
 <p>This method is useful when analyzing data that has deeply nested
 structs or arrays of structs. <code>lift</code> can be chained to avoid repeating
 column names and table references.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -7514,6 +7556,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -7551,9 +7595,9 @@ column names and table references.</p>
       <h6 id="ibis.expr.types.structs.StructValue.lift--see-also">See Also<a class="headerlink" href="#ibis.expr.types.structs.StructValue.lift--see-also" title="Anchor link to this section for reference">&para;</a></h6>
 <p><a class="autorefs autorefs-internal" href="../tables/#ibis.expr.types.relations.Table.unpack"><code>Table.unpack</code></a>.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/structs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">285</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/structs.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">285</span>
 <span class="normal">286</span>
 <span class="normal">287</span>
 <span class="normal">288</span>
@@ -7663,7 +7707,7 @@ column names and table references.</p>
     <span class="n">table</span> <span class="o">=</span> <span class="n">an</span><span class="o">.</span><span class="n">find_first_base_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">())</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">table</span><span class="p">[[</span><span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">]]</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -7681,19 +7725,21 @@ column names and table references.</p>
 
 
 <h2 id="ibis.expr.types.maps.MapValue" class="doc doc-heading">
-        <code>MapValue</code>
+          <code>MapValue</code>
 
 
 <a href="#ibis.expr.types.maps.MapValue" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
 
   <div class="doc doc-contents first">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code></p>
 
   
       <p>A map literal or column expression.</p>
 <p>Can be constructed with <a class="autorefs autorefs-internal" href="../top_level/#ibis.map"><code>ibis.map()</code></a>.</p>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -7739,10 +7785,9 @@ column names and table references.</p>
 <span class="go">└───────────────────┘</span>
 </code></pre></div>
 
-
-        <details class="quote">
-          <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 15</span>
+            <details class="quote">
+              <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 15</span>
 <span class="normal"> 16</span>
 <span class="normal"> 17</span>
 <span class="normal"> 18</span>
@@ -8476,7 +8521,7 @@ column names and table references.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">MapMerge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -8489,6 +8534,7 @@ column names and table references.</p>
 
 
 <h3 id="ibis.expr.types.maps.MapValue-functions">Functions<a href="#ibis.expr.types.maps.MapValue-functions" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8504,6 +8550,8 @@ column names and table references.</p>
   
       <p>Return whether the map contains <code>key</code>.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -8518,7 +8566,7 @@ column names and table references.</p>
         <tr>
           <td><code>key</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.IntegerValue" href="../numeric/#ibis.expr.types.numeric.IntegerValue">IntegerValue</a> | <span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.StringValue" href="../strings/#ibis.expr.types.strings.StringValue">StringValue</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">ir</span>.<span title="ibis.IntegerValue">IntegerValue</span> | <span title="ibis">ir</span>.<span title="ibis.StringValue">StringValue</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8531,6 +8579,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8553,6 +8603,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -8584,9 +8636,9 @@ column names and table references.</p>
 <span class="go">└─────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
 <span class="normal">231</span>
 <span class="normal">232</span>
 <span class="normal">233</span>
@@ -8678,10 +8730,11 @@ column names and table references.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">MapContains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8698,6 +8751,8 @@ column names and table references.</p>
       <p>Return the value for <code>key</code> from <code>expr</code>.</p>
 <p>Return <code>default</code> if <code>key</code> is not in the map.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -8712,7 +8767,7 @@ column names and table references.</p>
         <tr>
           <td><code>key</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a></code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8726,7 +8781,7 @@ column names and table references.</p>
         <tr>
           <td><code>default</code></td>
           <td>
-                <code><span title="ibis.expr.types">ir</span>.<a class="autorefs autorefs-internal" title="ibis.expr.types.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a> | None</code>
+                <code><span title="ibis">ir</span>.<span title="ibis.Value">Value</span> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -8739,6 +8794,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -8761,6 +8818,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -8812,9 +8871,9 @@ column names and table references.</p>
 <span class="go">└───────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
 <span class="normal"> 67</span>
 <span class="normal"> 68</span>
 <span class="normal"> 69</span>
@@ -8960,10 +9019,11 @@ column names and table references.</p>
 
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">MapGet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -8978,6 +9038,8 @@ column names and table references.</p>
   <div class="doc doc-contents ">
   
       <p>Extract the keys of a map.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -9000,6 +9062,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -9031,9 +9095,9 @@ column names and table references.</p>
 <span class="go">└──────────────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">277</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">277</span>
 <span class="normal">278</span>
 <span class="normal">279</span>
 <span class="normal">280</span>
@@ -9111,10 +9175,11 @@ column names and table references.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">MapKeys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9129,6 +9194,8 @@ column names and table references.</p>
   <div class="doc doc-contents ">
   
       <p>Return the number of key-value pairs in the map.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -9151,6 +9218,8 @@ column names and table references.</p>
         </tr>
     </tbody>
   </table>
+
+
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
@@ -9182,9 +9251,9 @@ column names and table references.</p>
 <span class="go">└──────────────┘</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">140</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
 <span class="normal">143</span>
@@ -9262,10 +9331,11 @@ column names and table references.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">MapLength</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -9280,6 +9350,8 @@ column names and table references.</p>
   <div class="doc doc-contents ">
   
       <p>Extract the values of a map.</p>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -9303,6 +9375,8 @@ column names and table references.</p>
     </tbody>
   </table>
 
+
+
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
@@ -9311,9 +9385,9 @@ column names and table references.</p>
 <span class="go">[1, 2]</span>
 </code></pre></div>
 
-      <details class="quote">
-        <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">317</span>
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/maps.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">317</span>
 <span class="normal">318</span>
 <span class="normal">319</span>
 <span class="normal">320</span>
@@ -9347,7 +9421,7 @@ column names and table references.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">MapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
