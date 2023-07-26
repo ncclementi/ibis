@@ -3098,9 +3098,7 @@
 
             <details class="quote">
               <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 103</span>
-<span class="normal"> 104</span>
-<span class="normal"> 105</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 105</span>
 <span class="normal"> 106</span>
 <span class="normal"> 107</span>
 <span class="normal"> 108</span>
@@ -6521,24 +6519,7 @@
 <span class="normal">3523</span>
 <span class="normal">3524</span>
 <span class="normal">3525</span>
-<span class="normal">3526</span>
-<span class="normal">3527</span>
-<span class="normal">3528</span>
-<span class="normal">3529</span>
-<span class="normal">3530</span>
-<span class="normal">3531</span>
-<span class="normal">3532</span>
-<span class="normal">3533</span>
-<span class="normal">3534</span>
-<span class="normal">3535</span>
-<span class="normal">3536</span>
-<span class="normal">3537</span>
-<span class="normal">3538</span>
-<span class="normal">3539</span>
-<span class="normal">3540</span>
-<span class="normal">3541</span>
-<span class="normal">3542</span>
-<span class="normal">3543</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+<span class="normal">3526</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">Table</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="n">_FixedTextJupyterMixin</span><span class="p">):</span>
     <span class="c1"># Higher than numpy &amp; dask objects</span>
     <span class="n">__array_priority__</span> <span class="o">=</span> <span class="mi">20</span>
@@ -6963,15 +6944,15 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
             <span class="n">step</span> <span class="o">=</span> <span class="n">what</span><span class="o">.</span><span class="n">step</span>
             <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">step</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Slice step can only be 1&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Slice step can only be 1&quot;</span><span class="p">)</span>
             <span class="n">start</span> <span class="o">=</span> <span class="n">what</span><span class="o">.</span><span class="n">start</span> <span class="ow">or</span> <span class="mi">0</span>
             <span class="n">stop</span> <span class="o">=</span> <span class="n">what</span><span class="o">.</span><span class="n">stop</span>
 
             <span class="k">if</span> <span class="n">stop</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;End index must be a positive number&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;End index must be a positive number&quot;</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Start index must be a positive number&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Start index must be a positive number&quot;</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
 
@@ -6988,12 +6969,12 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">what</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-                <span class="s1">&#39;Selection rows or columns with </span><span class="si">{}</span><span class="s1"> objects is not &#39;</span>
-                <span class="s1">&#39;supported&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">what</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+                <span class="s2">&quot;Selection rows or columns with </span><span class="si">{}</span><span class="s2"> objects is not &quot;</span>
+                <span class="s2">&quot;supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">what</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span><span class="s1">&#39;Use .count() instead&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span><span class="s2">&quot;Use .count() instead&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the column name of a table.</span>
@@ -7626,13 +7607,7 @@
 
     <span class="k">def</span> <span class="nf">order_by</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">by</span><span class="p">:</span> <span class="nb">str</span>
-        <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span>
-        <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
-        <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-        <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span>
-        <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span>
-        <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">by</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Sort a table by one or more expressions.</span>
 
@@ -7682,11 +7657,6 @@
 <span class="sd">        │     1 │ c      │     4 │</span>
 <span class="sd">        └───────┴────────┴───────┘</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">used_tuple_syntax</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-            <span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="n">by</span><span class="p">]</span>
-            <span class="n">used_tuple_syntax</span> <span class="o">=</span> <span class="kc">True</span>
-
         <span class="n">sort_keys</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">util</span><span class="o">.</span><span class="n">promote_list</span><span class="p">(</span><span class="n">by</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
@@ -7699,14 +7669,6 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">item</span> <span class="o">=</span> <span class="n">bind_expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
             <span class="n">sort_keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">used_tuple_syntax</span><span class="p">:</span>
-            <span class="n">util</span><span class="o">.</span><span class="n">warn_deprecated</span><span class="p">(</span>
-                <span class="s2">&quot;table.order_by((key, True)) and table.order_by((key, False)) syntax&quot;</span><span class="p">,</span>
-                <span class="n">as_of</span><span class="o">=</span><span class="s2">&quot;6.0&quot;</span><span class="p">,</span>
-                <span class="n">removed_in</span><span class="o">=</span><span class="s2">&quot;7.0&quot;</span><span class="p">,</span>
-                <span class="n">instead</span><span class="o">=</span><span class="s2">&quot;Use ibis.desc(key) or ibis.asc(key) instead&quot;</span><span class="p">,</span>
-            <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">sort_keys</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
@@ -7856,7 +7818,7 @@
         <span class="n">schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span>
-                <span class="s1">&#39;Table must have exactly one column when viewed as array&#39;</span>
+                <span class="s2">&quot;Table must have exactly one column when viewed as array&quot;</span>
             <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">TableArrayView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
@@ -8258,8 +8220,8 @@
                     <span class="k">elif</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;ALL_CAPS&quot;</span><span class="p">:</span>
                         <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
                 <span class="c1"># Handle PascalCase, camelCase, and kebab-case</span>
-                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
                 <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;snake_case&quot;</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -8613,7 +8575,7 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">replacements</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">schema</span><span class="p">:</span>
-                    <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
+                    <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
                     <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisTypeError</span><span class="p">(</span>
                         <span class="sa">f</span><span class="s2">&quot;Column </span><span class="si">{</span><span class="n">col</span><span class="si">!r}</span><span class="s2"> is not found in table. &quot;</span>
                         <span class="sa">f</span><span class="s2">&quot;Existing columns: </span><span class="si">{</span><span class="n">columns_formatted</span><span class="si">}</span><span class="s2">.&quot;</span>
@@ -8761,16 +8723,16 @@
             <span class="nb">str</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanColumn</span>
         <span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
         <span class="n">how</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
-            <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;left&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;outer&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;right&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;semi&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;anti&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;any_inner&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;any_left&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;left_semi&#39;</span><span class="p">,</span>
-        <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;semi&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;anti&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;any_inner&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;any_left&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;left_semi&quot;</span><span class="p">,</span>
+        <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">lname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">rname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{name}</span><span class="s2">_right&quot;</span><span class="p">,</span>
@@ -8874,16 +8836,16 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">_join_classes</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
-            <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
-            <span class="s1">&#39;any_inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
-            <span class="s1">&#39;any_left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
-            <span class="s1">&#39;outer&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
-            <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
-            <span class="s1">&#39;left_semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-            <span class="s1">&#39;semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-            <span class="s1">&#39;anti&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
-            <span class="s1">&#39;cross&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
+            <span class="s2">&quot;inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
+            <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
+            <span class="s2">&quot;any_inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
+            <span class="s2">&quot;any_left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
+            <span class="s2">&quot;outer&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
+            <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
+            <span class="s2">&quot;left_semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+            <span class="s2">&quot;semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+            <span class="s2">&quot;anti&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
+            <span class="s2">&quot;cross&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
         <span class="p">}</span>
 
         <span class="n">klass</span> <span class="o">=</span> <span class="n">_join_classes</span><span class="p">[</span><span class="n">how</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
@@ -10180,9 +10142,7 @@ values like <code>ibis.literal(1)</code>.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">839</span>
-<span class="normal">840</span>
-<span class="normal">841</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">841</span>
 <span class="normal">842</span>
 <span class="normal">843</span>
 <span class="normal">844</span>
@@ -10263,7 +10223,9 @@ values like <code>ibis.literal(1)</code>.</p>
 <span class="normal">919</span>
 <span class="normal">920</span>
 <span class="normal">921</span>
-<span class="normal">922</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span>
+<span class="normal">922</span>
+<span class="normal">923</span>
+<span class="normal">924</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">metrics</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Scalar</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">by</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -10454,7 +10416,24 @@ backend for use in the
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2601</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2584</span>
+<span class="normal">2585</span>
+<span class="normal">2586</span>
+<span class="normal">2587</span>
+<span class="normal">2588</span>
+<span class="normal">2589</span>
+<span class="normal">2590</span>
+<span class="normal">2591</span>
+<span class="normal">2592</span>
+<span class="normal">2593</span>
+<span class="normal">2594</span>
+<span class="normal">2595</span>
+<span class="normal">2596</span>
+<span class="normal">2597</span>
+<span class="normal">2598</span>
+<span class="normal">2599</span>
+<span class="normal">2600</span>
+<span class="normal">2601</span>
 <span class="normal">2602</span>
 <span class="normal">2603</span>
 <span class="normal">2604</span>
@@ -10486,24 +10465,7 @@ backend for use in the
 <span class="normal">2630</span>
 <span class="normal">2631</span>
 <span class="normal">2632</span>
-<span class="normal">2633</span>
-<span class="normal">2634</span>
-<span class="normal">2635</span>
-<span class="normal">2636</span>
-<span class="normal">2637</span>
-<span class="normal">2638</span>
-<span class="normal">2639</span>
-<span class="normal">2640</span>
-<span class="normal">2641</span>
-<span class="normal">2642</span>
-<span class="normal">2643</span>
-<span class="normal">2644</span>
-<span class="normal">2645</span>
-<span class="normal">2646</span>
-<span class="normal">2647</span>
-<span class="normal">2648</span>
-<span class="normal">2649</span>
-<span class="normal">2650</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="normal">2633</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a table expression with a specific name `alias`.</span>
 
 <span class="sd">    This method is useful for exposing an ibis expression to the underlying</span>
@@ -10610,9 +10572,7 @@ backend for use in the
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
 <span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
@@ -10627,7 +10587,9 @@ backend for use in the
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
-<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">as_table</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">as_table</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Promote the expression to a table.</span>
 
 <span class="sd">    This method is a no-op for table expressions.</span>
@@ -10811,7 +10773,24 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2461</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2444</span>
+<span class="normal">2445</span>
+<span class="normal">2446</span>
+<span class="normal">2447</span>
+<span class="normal">2448</span>
+<span class="normal">2449</span>
+<span class="normal">2450</span>
+<span class="normal">2451</span>
+<span class="normal">2452</span>
+<span class="normal">2453</span>
+<span class="normal">2454</span>
+<span class="normal">2455</span>
+<span class="normal">2456</span>
+<span class="normal">2457</span>
+<span class="normal">2458</span>
+<span class="normal">2459</span>
+<span class="normal">2460</span>
+<span class="normal">2461</span>
 <span class="normal">2462</span>
 <span class="normal">2463</span>
 <span class="normal">2464</span>
@@ -10842,24 +10821,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">2489</span>
 <span class="normal">2490</span>
 <span class="normal">2491</span>
-<span class="normal">2492</span>
-<span class="normal">2493</span>
-<span class="normal">2494</span>
-<span class="normal">2495</span>
-<span class="normal">2496</span>
-<span class="normal">2497</span>
-<span class="normal">2498</span>
-<span class="normal">2499</span>
-<span class="normal">2500</span>
-<span class="normal">2501</span>
-<span class="normal">2502</span>
-<span class="normal">2503</span>
-<span class="normal">2504</span>
-<span class="normal">2505</span>
-<span class="normal">2506</span>
-<span class="normal">2507</span>
-<span class="normal">2508</span>
-<span class="normal">2509</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asof_join</span><span class="p">(</span>
+<span class="normal">2492</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asof_join</span><span class="p">(</span>
     <span class="n">left</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
     <span class="n">right</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
     <span class="n">predicates</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanColumn</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanColumn</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
@@ -11014,7 +10976,24 @@ chaining will not incur the overhead of caching more than once.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2706</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2689</span>
+<span class="normal">2690</span>
+<span class="normal">2691</span>
+<span class="normal">2692</span>
+<span class="normal">2693</span>
+<span class="normal">2694</span>
+<span class="normal">2695</span>
+<span class="normal">2696</span>
+<span class="normal">2697</span>
+<span class="normal">2698</span>
+<span class="normal">2699</span>
+<span class="normal">2700</span>
+<span class="normal">2701</span>
+<span class="normal">2702</span>
+<span class="normal">2703</span>
+<span class="normal">2704</span>
+<span class="normal">2705</span>
+<span class="normal">2706</span>
 <span class="normal">2707</span>
 <span class="normal">2708</span>
 <span class="normal">2709</span>
@@ -11066,24 +11045,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="normal">2755</span>
 <span class="normal">2756</span>
 <span class="normal">2757</span>
-<span class="normal">2758</span>
-<span class="normal">2759</span>
-<span class="normal">2760</span>
-<span class="normal">2761</span>
-<span class="normal">2762</span>
-<span class="normal">2763</span>
-<span class="normal">2764</span>
-<span class="normal">2765</span>
-<span class="normal">2766</span>
-<span class="normal">2767</span>
-<span class="normal">2768</span>
-<span class="normal">2769</span>
-<span class="normal">2770</span>
-<span class="normal">2771</span>
-<span class="normal">2772</span>
-<span class="normal">2773</span>
-<span class="normal">2774</span>
-<span class="normal">2775</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">2758</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Cache the provided expression.</span>
 
 <span class="sd">    All subsequent operations on the returned expression will be performed</span>
@@ -11289,9 +11251,7 @@ chaining will not incur the overhead of caching more than once.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
@@ -11360,7 +11320,9 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span>
-<span class="normal">239</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="n">SupportsSchema</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="n">SupportsSchema</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Cast the columns of a table.</span>
 
 <span class="sd">    !!! note &quot;If you need to cast columns to a single type, use [selectors](https://ibis-project.org/blog/selectors/).&quot;</span>
@@ -11533,7 +11495,24 @@ chaining will not incur the overhead of caching more than once.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2015</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1998</span>
+<span class="normal">1999</span>
+<span class="normal">2000</span>
+<span class="normal">2001</span>
+<span class="normal">2002</span>
+<span class="normal">2003</span>
+<span class="normal">2004</span>
+<span class="normal">2005</span>
+<span class="normal">2006</span>
+<span class="normal">2007</span>
+<span class="normal">2008</span>
+<span class="normal">2009</span>
+<span class="normal">2010</span>
+<span class="normal">2011</span>
+<span class="normal">2012</span>
+<span class="normal">2013</span>
+<span class="normal">2014</span>
+<span class="normal">2015</span>
 <span class="normal">2016</span>
 <span class="normal">2017</span>
 <span class="normal">2018</span>
@@ -11551,24 +11530,7 @@ chaining will not incur the overhead of caching more than once.</p>
 <span class="normal">2030</span>
 <span class="normal">2031</span>
 <span class="normal">2032</span>
-<span class="normal">2033</span>
-<span class="normal">2034</span>
-<span class="normal">2035</span>
-<span class="normal">2036</span>
-<span class="normal">2037</span>
-<span class="normal">2038</span>
-<span class="normal">2039</span>
-<span class="normal">2040</span>
-<span class="normal">2041</span>
-<span class="normal">2042</span>
-<span class="normal">2043</span>
-<span class="normal">2044</span>
-<span class="normal">2045</span>
-<span class="normal">2046</span>
-<span class="normal">2047</span>
-<span class="normal">2048</span>
-<span class="normal">2049</span>
-<span class="normal">2050</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerScalar</span><span class="p">:</span>
+<span class="normal">2033</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerScalar</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the number of rows in the table.</span>
 
 <span class="sd">    Parameters</span>
@@ -11786,7 +11748,24 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2511</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2494</span>
+<span class="normal">2495</span>
+<span class="normal">2496</span>
+<span class="normal">2497</span>
+<span class="normal">2498</span>
+<span class="normal">2499</span>
+<span class="normal">2500</span>
+<span class="normal">2501</span>
+<span class="normal">2502</span>
+<span class="normal">2503</span>
+<span class="normal">2504</span>
+<span class="normal">2505</span>
+<span class="normal">2506</span>
+<span class="normal">2507</span>
+<span class="normal">2508</span>
+<span class="normal">2509</span>
+<span class="normal">2510</span>
+<span class="normal">2511</span>
 <span class="normal">2512</span>
 <span class="normal">2513</span>
 <span class="normal">2514</span>
@@ -11848,24 +11827,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">2570</span>
 <span class="normal">2571</span>
 <span class="normal">2572</span>
-<span class="normal">2573</span>
-<span class="normal">2574</span>
-<span class="normal">2575</span>
-<span class="normal">2576</span>
-<span class="normal">2577</span>
-<span class="normal">2578</span>
-<span class="normal">2579</span>
-<span class="normal">2580</span>
-<span class="normal">2581</span>
-<span class="normal">2582</span>
-<span class="normal">2583</span>
-<span class="normal">2584</span>
-<span class="normal">2585</span>
-<span class="normal">2586</span>
-<span class="normal">2587</span>
-<span class="normal">2588</span>
-<span class="normal">2589</span>
-<span class="normal">2590</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cross_join</span><span class="p">(</span>
+<span class="normal">2573</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cross_join</span><span class="p">(</span>
     <span class="n">left</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
     <span class="n">right</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
     <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
@@ -12088,9 +12050,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">778</span>
-<span class="normal">779</span>
-<span class="normal">780</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">780</span>
 <span class="normal">781</span>
 <span class="normal">782</span>
 <span class="normal">783</span>
@@ -12147,7 +12107,9 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">834</span>
 <span class="normal">835</span>
 <span class="normal">836</span>
-<span class="normal">837</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">837</span>
+<span class="normal">838</span>
+<span class="normal">839</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the set difference of multiple table expressions.</span>
 
 <span class="sd">    The input tables must have identical schemas.</span>
@@ -12387,9 +12349,7 @@ By default deduplicate all of the columns.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 926</span>
-<span class="normal"> 927</span>
-<span class="normal"> 928</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 928</span>
 <span class="normal"> 929</span>
 <span class="normal"> 930</span>
 <span class="normal"> 931</span>
@@ -12553,7 +12513,9 @@ By default deduplicate all of the columns.</p>
 <span class="normal">1089</span>
 <span class="normal">1090</span>
 <span class="normal">1091</span>
-<span class="normal">1092</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span>
+<span class="normal">1092</span>
+<span class="normal">1093</span>
+<span class="normal">1094</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">on</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -12864,7 +12826,24 @@ By default deduplicate all of the columns.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1863</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1846</span>
+<span class="normal">1847</span>
+<span class="normal">1848</span>
+<span class="normal">1849</span>
+<span class="normal">1850</span>
+<span class="normal">1851</span>
+<span class="normal">1852</span>
+<span class="normal">1853</span>
+<span class="normal">1854</span>
+<span class="normal">1855</span>
+<span class="normal">1856</span>
+<span class="normal">1857</span>
+<span class="normal">1858</span>
+<span class="normal">1859</span>
+<span class="normal">1860</span>
+<span class="normal">1861</span>
+<span class="normal">1862</span>
+<span class="normal">1863</span>
 <span class="normal">1864</span>
 <span class="normal">1865</span>
 <span class="normal">1866</span>
@@ -12939,24 +12918,7 @@ By default deduplicate all of the columns.</p>
 <span class="normal">1935</span>
 <span class="normal">1936</span>
 <span class="normal">1937</span>
-<span class="normal">1938</span>
-<span class="normal">1939</span>
-<span class="normal">1940</span>
-<span class="normal">1941</span>
-<span class="normal">1942</span>
-<span class="normal">1943</span>
-<span class="normal">1944</span>
-<span class="normal">1945</span>
-<span class="normal">1946</span>
-<span class="normal">1947</span>
-<span class="normal">1948</span>
-<span class="normal">1949</span>
-<span class="normal">1950</span>
-<span class="normal">1951</span>
-<span class="normal">1952</span>
-<span class="normal">1953</span>
-<span class="normal">1954</span>
-<span class="normal">1955</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Selector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">1938</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Selector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove fields from a table.</span>
 
 <span class="sd">    Parameters</span>
@@ -13175,7 +13137,24 @@ value in the row</strong> (<code>'any'</code>), or if <strong>all</strong> row v
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2052</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2035</span>
+<span class="normal">2036</span>
+<span class="normal">2037</span>
+<span class="normal">2038</span>
+<span class="normal">2039</span>
+<span class="normal">2040</span>
+<span class="normal">2041</span>
+<span class="normal">2042</span>
+<span class="normal">2043</span>
+<span class="normal">2044</span>
+<span class="normal">2045</span>
+<span class="normal">2046</span>
+<span class="normal">2047</span>
+<span class="normal">2048</span>
+<span class="normal">2049</span>
+<span class="normal">2050</span>
+<span class="normal">2051</span>
+<span class="normal">2052</span>
 <span class="normal">2053</span>
 <span class="normal">2054</span>
 <span class="normal">2055</span>
@@ -13212,24 +13191,7 @@ value in the row</strong> (<code>'any'</code>), or if <strong>all</strong> row v
 <span class="normal">2086</span>
 <span class="normal">2087</span>
 <span class="normal">2088</span>
-<span class="normal">2089</span>
-<span class="normal">2090</span>
-<span class="normal">2091</span>
-<span class="normal">2092</span>
-<span class="normal">2093</span>
-<span class="normal">2094</span>
-<span class="normal">2095</span>
-<span class="normal">2096</span>
-<span class="normal">2097</span>
-<span class="normal">2098</span>
-<span class="normal">2099</span>
-<span class="normal">2100</span>
-<span class="normal">2101</span>
-<span class="normal">2102</span>
-<span class="normal">2103</span>
-<span class="normal">2104</span>
-<span class="normal">2105</span>
-<span class="normal">2106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dropna</span><span class="p">(</span>
+<span class="normal">2089</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dropna</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">subset</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">how</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;any&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;any&quot;</span><span class="p">,</span>
@@ -13412,7 +13374,24 @@ passed as a scalar all columns are filled with that value.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2108</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2091</span>
+<span class="normal">2092</span>
+<span class="normal">2093</span>
+<span class="normal">2094</span>
+<span class="normal">2095</span>
+<span class="normal">2096</span>
+<span class="normal">2097</span>
+<span class="normal">2098</span>
+<span class="normal">2099</span>
+<span class="normal">2100</span>
+<span class="normal">2101</span>
+<span class="normal">2102</span>
+<span class="normal">2103</span>
+<span class="normal">2104</span>
+<span class="normal">2105</span>
+<span class="normal">2106</span>
+<span class="normal">2107</span>
+<span class="normal">2108</span>
 <span class="normal">2109</span>
 <span class="normal">2110</span>
 <span class="normal">2111</span>
@@ -13491,24 +13470,7 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="normal">2184</span>
 <span class="normal">2185</span>
 <span class="normal">2186</span>
-<span class="normal">2187</span>
-<span class="normal">2188</span>
-<span class="normal">2189</span>
-<span class="normal">2190</span>
-<span class="normal">2191</span>
-<span class="normal">2192</span>
-<span class="normal">2193</span>
-<span class="normal">2194</span>
-<span class="normal">2195</span>
-<span class="normal">2196</span>
-<span class="normal">2197</span>
-<span class="normal">2198</span>
-<span class="normal">2199</span>
-<span class="normal">2200</span>
-<span class="normal">2201</span>
-<span class="normal">2202</span>
-<span class="normal">2203</span>
-<span class="normal">2204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fillna</span><span class="p">(</span>
+<span class="normal">2187</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fillna</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">replacements</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Scalar</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">Scalar</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
@@ -13578,7 +13540,7 @@ passed as a scalar all columns are filled with that value.</p>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">replacements</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">schema</span><span class="p">:</span>
-                <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
+                <span class="n">columns_formatted</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisTypeError</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Column </span><span class="si">{</span><span class="n">col</span><span class="si">!r}</span><span class="s2"> is not found in table. &quot;</span>
                     <span class="sa">f</span><span class="s2">&quot;Existing columns: </span><span class="si">{</span><span class="n">columns_formatted</span><span class="si">}</span><span class="s2">.&quot;</span>
@@ -13717,7 +13679,24 @@ passed as a scalar all columns are filled with that value.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1957</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1940</span>
+<span class="normal">1941</span>
+<span class="normal">1942</span>
+<span class="normal">1943</span>
+<span class="normal">1944</span>
+<span class="normal">1945</span>
+<span class="normal">1946</span>
+<span class="normal">1947</span>
+<span class="normal">1948</span>
+<span class="normal">1949</span>
+<span class="normal">1950</span>
+<span class="normal">1951</span>
+<span class="normal">1952</span>
+<span class="normal">1953</span>
+<span class="normal">1954</span>
+<span class="normal">1955</span>
+<span class="normal">1956</span>
+<span class="normal">1957</span>
 <span class="normal">1958</span>
 <span class="normal">1959</span>
 <span class="normal">1960</span>
@@ -13756,24 +13735,7 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="normal">1993</span>
 <span class="normal">1994</span>
 <span class="normal">1995</span>
-<span class="normal">1996</span>
-<span class="normal">1997</span>
-<span class="normal">1998</span>
-<span class="normal">1999</span>
-<span class="normal">2000</span>
-<span class="normal">2001</span>
-<span class="normal">2002</span>
-<span class="normal">2003</span>
-<span class="normal">2004</span>
-<span class="normal">2005</span>
-<span class="normal">2006</span>
-<span class="normal">2007</span>
-<span class="normal">2008</span>
-<span class="normal">2009</span>
-<span class="normal">2010</span>
-<span class="normal">2011</span>
-<span class="normal">2012</span>
-<span class="normal">2013</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
+<span class="normal">1996</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">predicates</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">]</span> <span class="o">|</span> <span class="n">IfAnyAll</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
@@ -13951,9 +13913,7 @@ passed as a scalar all columns are filled with that value.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">692</span>
-<span class="normal">693</span>
-<span class="normal">694</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">694</span>
 <span class="normal">695</span>
 <span class="normal">696</span>
 <span class="normal">697</span>
@@ -14000,7 +13960,9 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="normal">738</span>
 <span class="normal">739</span>
 <span class="normal">740</span>
-<span class="normal">741</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">group_by</span><span class="p">(</span>
+<span class="normal">741</span>
+<span class="normal">742</span>
+<span class="normal">743</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">group_by</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">by</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">key_exprs</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">],</span>
@@ -14160,9 +14122,7 @@ passed as a scalar all columns are filled with that value.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1142</span>
-<span class="normal">1143</span>
-<span class="normal">1144</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1144</span>
 <span class="normal">1145</span>
 <span class="normal">1146</span>
 <span class="normal">1147</span>
@@ -14205,7 +14165,9 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="normal">1184</span>
 <span class="normal">1185</span>
 <span class="normal">1186</span>
-<span class="normal">1187</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">1187</span>
+<span class="normal">1188</span>
+<span class="normal">1189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Select the first `n` rows of a table.</span>
 
 <span class="sd">    !!! note &quot;The result set is not deterministic without a call to [`order_by`][ibis.expr.types.relations.Table.order_by].&quot;</span>
@@ -14321,7 +14283,24 @@ passed as a scalar all columns are filled with that value.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2268</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2251</span>
+<span class="normal">2252</span>
+<span class="normal">2253</span>
+<span class="normal">2254</span>
+<span class="normal">2255</span>
+<span class="normal">2256</span>
+<span class="normal">2257</span>
+<span class="normal">2258</span>
+<span class="normal">2259</span>
+<span class="normal">2260</span>
+<span class="normal">2261</span>
+<span class="normal">2262</span>
+<span class="normal">2263</span>
+<span class="normal">2264</span>
+<span class="normal">2265</span>
+<span class="normal">2266</span>
+<span class="normal">2267</span>
+<span class="normal">2268</span>
 <span class="normal">2269</span>
 <span class="normal">2270</span>
 <span class="normal">2271</span>
@@ -14352,24 +14331,7 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="normal">2296</span>
 <span class="normal">2297</span>
 <span class="normal">2298</span>
-<span class="normal">2299</span>
-<span class="normal">2300</span>
-<span class="normal">2301</span>
-<span class="normal">2302</span>
-<span class="normal">2303</span>
-<span class="normal">2304</span>
-<span class="normal">2305</span>
-<span class="normal">2306</span>
-<span class="normal">2307</span>
-<span class="normal">2308</span>
-<span class="normal">2309</span>
-<span class="normal">2310</span>
-<span class="normal">2311</span>
-<span class="normal">2312</span>
-<span class="normal">2313</span>
-<span class="normal">2314</span>
-<span class="normal">2315</span>
-<span class="normal">2316</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">2299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return summary information about a table.</span>
 
 <span class="sd">    Returns</span>
@@ -14561,7 +14523,24 @@ passed as a scalar all columns are filled with that value.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1349</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1332</span>
+<span class="normal">1333</span>
+<span class="normal">1334</span>
+<span class="normal">1335</span>
+<span class="normal">1336</span>
+<span class="normal">1337</span>
+<span class="normal">1338</span>
+<span class="normal">1339</span>
+<span class="normal">1340</span>
+<span class="normal">1341</span>
+<span class="normal">1342</span>
+<span class="normal">1343</span>
+<span class="normal">1344</span>
+<span class="normal">1345</span>
+<span class="normal">1346</span>
+<span class="normal">1347</span>
+<span class="normal">1348</span>
+<span class="normal">1349</span>
 <span class="normal">1350</span>
 <span class="normal">1351</span>
 <span class="normal">1352</span>
@@ -14603,24 +14582,7 @@ passed as a scalar all columns are filled with that value.</p>
 <span class="normal">1388</span>
 <span class="normal">1389</span>
 <span class="normal">1390</span>
-<span class="normal">1391</span>
-<span class="normal">1392</span>
-<span class="normal">1393</span>
-<span class="normal">1394</span>
-<span class="normal">1395</span>
-<span class="normal">1396</span>
-<span class="normal">1397</span>
-<span class="normal">1398</span>
-<span class="normal">1399</span>
-<span class="normal">1400</span>
-<span class="normal">1401</span>
-<span class="normal">1402</span>
-<span class="normal">1403</span>
-<span class="normal">1404</span>
-<span class="normal">1405</span>
-<span class="normal">1406</span>
-<span class="normal">1407</span>
-<span class="normal">1408</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">1391</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the set intersection of multiple table expressions.</span>
 
 <span class="sd">    The input tables must have identical schemas.</span>
@@ -14883,7 +14845,24 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2318</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2301</span>
+<span class="normal">2302</span>
+<span class="normal">2303</span>
+<span class="normal">2304</span>
+<span class="normal">2305</span>
+<span class="normal">2306</span>
+<span class="normal">2307</span>
+<span class="normal">2308</span>
+<span class="normal">2309</span>
+<span class="normal">2310</span>
+<span class="normal">2311</span>
+<span class="normal">2312</span>
+<span class="normal">2313</span>
+<span class="normal">2314</span>
+<span class="normal">2315</span>
+<span class="normal">2316</span>
+<span class="normal">2317</span>
+<span class="normal">2318</span>
 <span class="normal">2319</span>
 <span class="normal">2320</span>
 <span class="normal">2321</span>
@@ -15007,24 +14986,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">2439</span>
 <span class="normal">2440</span>
 <span class="normal">2441</span>
-<span class="normal">2442</span>
-<span class="normal">2443</span>
-<span class="normal">2444</span>
-<span class="normal">2445</span>
-<span class="normal">2446</span>
-<span class="normal">2447</span>
-<span class="normal">2448</span>
-<span class="normal">2449</span>
-<span class="normal">2450</span>
-<span class="normal">2451</span>
-<span class="normal">2452</span>
-<span class="normal">2453</span>
-<span class="normal">2454</span>
-<span class="normal">2455</span>
-<span class="normal">2456</span>
-<span class="normal">2457</span>
-<span class="normal">2458</span>
-<span class="normal">2459</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">join</span><span class="p">(</span>
+<span class="normal">2442</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">join</span><span class="p">(</span>
     <span class="n">left</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
     <span class="n">right</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
     <span class="n">predicates</span><span class="p">:</span> <span class="nb">str</span>
@@ -15032,16 +14994,16 @@ table (e.g. <code>"right_{name}"</code>).</p>
         <span class="nb">str</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanColumn</span>
     <span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
     <span class="n">how</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
-        <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;left&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;outer&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;right&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;semi&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;anti&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;any_inner&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;any_left&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;left_semi&#39;</span><span class="p">,</span>
-    <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;semi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;anti&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;any_inner&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;any_left&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;left_semi&quot;</span><span class="p">,</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">lname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">rname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{name}</span><span class="s2">_right&quot;</span><span class="p">,</span>
@@ -15145,16 +15107,16 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_join_classes</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
-        <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
-        <span class="s1">&#39;any_inner&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
-        <span class="s1">&#39;any_left&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
-        <span class="s1">&#39;outer&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
-        <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
-        <span class="s1">&#39;left_semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-        <span class="s1">&#39;semi&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
-        <span class="s1">&#39;anti&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
-        <span class="s1">&#39;cross&#39;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
+        <span class="s2">&quot;inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">InnerJoin</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftJoin</span><span class="p">,</span>
+        <span class="s2">&quot;any_inner&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyInnerJoin</span><span class="p">,</span>
+        <span class="s2">&quot;any_left&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">AnyLeftJoin</span><span class="p">,</span>
+        <span class="s2">&quot;outer&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">OuterJoin</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">RightJoin</span><span class="p">,</span>
+        <span class="s2">&quot;left_semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+        <span class="s2">&quot;semi&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftSemiJoin</span><span class="p">,</span>
+        <span class="s2">&quot;anti&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">LeftAntiJoin</span><span class="p">,</span>
+        <span class="s2">&quot;cross&quot;</span><span class="p">:</span> <span class="n">ops</span><span class="o">.</span><span class="n">CrossJoin</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="n">klass</span> <span class="o">=</span> <span class="n">_join_classes</span><span class="p">[</span><span class="n">how</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
@@ -15289,9 +15251,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1094</span>
-<span class="normal">1095</span>
-<span class="normal">1096</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1096</span>
 <span class="normal">1097</span>
 <span class="normal">1098</span>
 <span class="normal">1099</span>
@@ -15335,7 +15295,9 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">1137</span>
 <span class="normal">1138</span>
 <span class="normal">1139</span>
-<span class="normal">1140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">1140</span>
+<span class="normal">1141</span>
+<span class="normal">1142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Select `n` rows from `self` starting at `offset`.</span>
 
 <span class="sd">    !!! note &quot;The result set is not deterministic without a call to [`order_by`][ibis.expr.types.relations.Table.order_by].&quot;</span>
@@ -15543,7 +15505,24 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1426</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1409</span>
+<span class="normal">1410</span>
+<span class="normal">1411</span>
+<span class="normal">1412</span>
+<span class="normal">1413</span>
+<span class="normal">1414</span>
+<span class="normal">1415</span>
+<span class="normal">1416</span>
+<span class="normal">1417</span>
+<span class="normal">1418</span>
+<span class="normal">1419</span>
+<span class="normal">1420</span>
+<span class="normal">1421</span>
+<span class="normal">1422</span>
+<span class="normal">1423</span>
+<span class="normal">1424</span>
+<span class="normal">1425</span>
+<span class="normal">1426</span>
 <span class="normal">1427</span>
 <span class="normal">1428</span>
 <span class="normal">1429</span>
@@ -15628,24 +15607,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">1508</span>
 <span class="normal">1509</span>
 <span class="normal">1510</span>
-<span class="normal">1511</span>
-<span class="normal">1512</span>
-<span class="normal">1513</span>
-<span class="normal">1514</span>
-<span class="normal">1515</span>
-<span class="normal">1516</span>
-<span class="normal">1517</span>
-<span class="normal">1518</span>
-<span class="normal">1519</span>
-<span class="normal">1520</span>
-<span class="normal">1521</span>
-<span class="normal">1522</span>
-<span class="normal">1523</span>
-<span class="normal">1524</span>
-<span class="normal">1525</span>
-<span class="normal">1526</span>
-<span class="normal">1527</span>
-<span class="normal">1528</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span>
+<span class="normal">1511</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Expr</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">mutations</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add columns to a table expression.</span>
@@ -15785,7 +15747,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
         <tr>
           <td><code>by</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">ir</span>.<span title="ibis.Column">Column</span> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">ir</span>.<span title="ibis.Column">Column</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis">ir</span>.<span title="ibis.Column">Column</span>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">ir</span>.<span title="ibis.Column">Column</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]] | None</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis">ir</span>.<span title="ibis.Column">Column</span> | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | <a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<span title="ibis">ir</span>.<span title="ibis.Column">Column</span>] | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -15863,9 +15825,7 @@ table (e.g. <code>"right_{name}"</code>).</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1189</span>
-<span class="normal">1190</span>
-<span class="normal">1191</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1191</span>
 <span class="normal">1192</span>
 <span class="normal">1193</span>
 <span class="normal">1194</span>
@@ -15930,32 +15890,9 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="normal">1253</span>
 <span class="normal">1254</span>
 <span class="normal">1255</span>
-<span class="normal">1256</span>
-<span class="normal">1257</span>
-<span class="normal">1258</span>
-<span class="normal">1259</span>
-<span class="normal">1260</span>
-<span class="normal">1261</span>
-<span class="normal">1262</span>
-<span class="normal">1263</span>
-<span class="normal">1264</span>
-<span class="normal">1265</span>
-<span class="normal">1266</span>
-<span class="normal">1267</span>
-<span class="normal">1268</span>
-<span class="normal">1269</span>
-<span class="normal">1270</span>
-<span class="normal">1271</span>
-<span class="normal">1272</span>
-<span class="normal">1273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">order_by</span><span class="p">(</span>
+<span class="normal">1256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">order_by</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
-    <span class="n">by</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span>
-    <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
-    <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span>
-    <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span>
-    <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">by</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sort a table by one or more expressions.</span>
 
@@ -16005,11 +15942,6 @@ table (e.g. <code>"right_{name}"</code>).</p>
 <span class="sd">    │     1 │ c      │     4 │</span>
 <span class="sd">    └───────┴────────┴───────┘</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">used_tuple_syntax</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-        <span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="n">by</span><span class="p">]</span>
-        <span class="n">used_tuple_syntax</span> <span class="o">=</span> <span class="kc">True</span>
-
     <span class="n">sort_keys</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">util</span><span class="o">.</span><span class="n">promote_list</span><span class="p">(</span><span class="n">by</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
@@ -16022,14 +15954,6 @@ table (e.g. <code>"right_{name}"</code>).</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">item</span> <span class="o">=</span> <span class="n">bind_expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
         <span class="n">sort_keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">used_tuple_syntax</span><span class="p">:</span>
-        <span class="n">util</span><span class="o">.</span><span class="n">warn_deprecated</span><span class="p">(</span>
-            <span class="s2">&quot;table.order_by((key, True)) and table.order_by((key, False)) syntax&quot;</span><span class="p">,</span>
-            <span class="n">as_of</span><span class="o">=</span><span class="s2">&quot;6.0&quot;</span><span class="p">,</span>
-            <span class="n">removed_in</span><span class="o">=</span><span class="s2">&quot;7.0&quot;</span><span class="p">,</span>
-            <span class="n">instead</span><span class="o">=</span><span class="s2">&quot;Use ibis.desc(key) or ibis.asc(key) instead&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
 
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">sort_keys</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
@@ -16404,7 +16328,24 @@ variables stored in column names</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2777</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2760</span>
+<span class="normal">2761</span>
+<span class="normal">2762</span>
+<span class="normal">2763</span>
+<span class="normal">2764</span>
+<span class="normal">2765</span>
+<span class="normal">2766</span>
+<span class="normal">2767</span>
+<span class="normal">2768</span>
+<span class="normal">2769</span>
+<span class="normal">2770</span>
+<span class="normal">2771</span>
+<span class="normal">2772</span>
+<span class="normal">2773</span>
+<span class="normal">2774</span>
+<span class="normal">2775</span>
+<span class="normal">2776</span>
+<span class="normal">2777</span>
 <span class="normal">2778</span>
 <span class="normal">2779</span>
 <span class="normal">2780</span>
@@ -16707,24 +16648,7 @@ variables stored in column names</p>
 <span class="normal">3077</span>
 <span class="normal">3078</span>
 <span class="normal">3079</span>
-<span class="normal">3080</span>
-<span class="normal">3081</span>
-<span class="normal">3082</span>
-<span class="normal">3083</span>
-<span class="normal">3084</span>
-<span class="normal">3085</span>
-<span class="normal">3086</span>
-<span class="normal">3087</span>
-<span class="normal">3088</span>
-<span class="normal">3089</span>
-<span class="normal">3090</span>
-<span class="normal">3091</span>
-<span class="normal">3092</span>
-<span class="normal">3093</span>
-<span class="normal">3094</span>
-<span class="normal">3095</span>
-<span class="normal">3096</span>
-<span class="normal">3097</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pivot_longer</span><span class="p">(</span>
+<span class="normal">3080</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pivot_longer</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
@@ -17551,7 +17475,24 @@ constructing the expression.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3099</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3082</span>
+<span class="normal">3083</span>
+<span class="normal">3084</span>
+<span class="normal">3085</span>
+<span class="normal">3086</span>
+<span class="normal">3087</span>
+<span class="normal">3088</span>
+<span class="normal">3089</span>
+<span class="normal">3090</span>
+<span class="normal">3091</span>
+<span class="normal">3092</span>
+<span class="normal">3093</span>
+<span class="normal">3094</span>
+<span class="normal">3095</span>
+<span class="normal">3096</span>
+<span class="normal">3097</span>
+<span class="normal">3098</span>
+<span class="normal">3099</span>
 <span class="normal">3100</span>
 <span class="normal">3101</span>
 <span class="normal">3102</span>
@@ -17978,24 +17919,7 @@ constructing the expression.</p>
 <span class="normal">3523</span>
 <span class="normal">3524</span>
 <span class="normal">3525</span>
-<span class="normal">3526</span>
-<span class="normal">3527</span>
-<span class="normal">3528</span>
-<span class="normal">3529</span>
-<span class="normal">3530</span>
-<span class="normal">3531</span>
-<span class="normal">3532</span>
-<span class="normal">3533</span>
-<span class="normal">3534</span>
-<span class="normal">3535</span>
-<span class="normal">3536</span>
-<span class="normal">3537</span>
-<span class="normal">3538</span>
-<span class="normal">3539</span>
-<span class="normal">3540</span>
-<span class="normal">3541</span>
-<span class="normal">3542</span>
-<span class="normal">3543</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@util</span><span class="o">.</span><span class="n">experimental</span>
+<span class="normal">3526</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@util</span><span class="o">.</span><span class="n">experimental</span>
 <span class="k">def</span> <span class="nf">pivot_wider</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
@@ -18601,7 +18525,24 @@ naming convention.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1702</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1685</span>
+<span class="normal">1686</span>
+<span class="normal">1687</span>
+<span class="normal">1688</span>
+<span class="normal">1689</span>
+<span class="normal">1690</span>
+<span class="normal">1691</span>
+<span class="normal">1692</span>
+<span class="normal">1693</span>
+<span class="normal">1694</span>
+<span class="normal">1695</span>
+<span class="normal">1696</span>
+<span class="normal">1697</span>
+<span class="normal">1698</span>
+<span class="normal">1699</span>
+<span class="normal">1700</span>
+<span class="normal">1701</span>
+<span class="normal">1702</span>
 <span class="normal">1703</span>
 <span class="normal">1704</span>
 <span class="normal">1705</span>
@@ -18743,24 +18684,7 @@ naming convention.</p>
 <span class="normal">1841</span>
 <span class="normal">1842</span>
 <span class="normal">1843</span>
-<span class="normal">1844</span>
-<span class="normal">1845</span>
-<span class="normal">1846</span>
-<span class="normal">1847</span>
-<span class="normal">1848</span>
-<span class="normal">1849</span>
-<span class="normal">1850</span>
-<span class="normal">1851</span>
-<span class="normal">1852</span>
-<span class="normal">1853</span>
-<span class="normal">1854</span>
-<span class="normal">1855</span>
-<span class="normal">1856</span>
-<span class="normal">1857</span>
-<span class="normal">1858</span>
-<span class="normal">1859</span>
-<span class="normal">1860</span>
-<span class="normal">1861</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">relabel</span><span class="p">(</span>
+<span class="normal">1844</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">relabel</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">substitutions</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
     <span class="o">|</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span>
@@ -18881,8 +18805,8 @@ naming convention.</p>
                 <span class="k">elif</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;ALL_CAPS&quot;</span><span class="p">:</span>
                     <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
             <span class="c1"># Handle PascalCase, camelCase, and kebab-case</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z]+)([A-Z][a-z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([a-z\d])([A-Z])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1_\2&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
             <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">substitutions</span> <span class="o">==</span> <span class="s2">&quot;snake_case&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -18974,9 +18898,7 @@ Generally this corresponds to some index into the database storage
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">743</span>
-<span class="normal">744</span>
-<span class="normal">745</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">745</span>
 <span class="normal">746</span>
 <span class="normal">747</span>
 <span class="normal">748</span>
@@ -18995,7 +18917,9 @@ Generally this corresponds to some index into the database storage
 <span class="normal">761</span>
 <span class="normal">762</span>
 <span class="normal">763</span>
-<span class="normal">764</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rowid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
+<span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rowid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A unique integer per row.</span>
 
 <span class="sd">    !!! note &quot;This operation is only valid on physical tables&quot;</span>
@@ -19083,9 +19007,7 @@ Generally this corresponds to some index into the database storage
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">665</span>
-<span class="normal">666</span>
-<span class="normal">667</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">667</span>
 <span class="normal">668</span>
 <span class="normal">669</span>
 <span class="normal">670</span>
@@ -19108,7 +19030,9 @@ Generally this corresponds to some index into the database storage
 <span class="normal">687</span>
 <span class="normal">688</span>
 <span class="normal">689</span>
-<span class="normal">690</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sch</span><span class="o">.</span><span class="n">Schema</span><span class="p">:</span>
+<span class="normal">690</span>
+<span class="normal">691</span>
+<span class="normal">692</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sch</span><span class="o">.</span><span class="n">Schema</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the schema for this table.</span>
 
 <span class="sd">    Returns</span>
@@ -19345,7 +19269,24 @@ strings.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1530</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1513</span>
+<span class="normal">1514</span>
+<span class="normal">1515</span>
+<span class="normal">1516</span>
+<span class="normal">1517</span>
+<span class="normal">1518</span>
+<span class="normal">1519</span>
+<span class="normal">1520</span>
+<span class="normal">1521</span>
+<span class="normal">1522</span>
+<span class="normal">1523</span>
+<span class="normal">1524</span>
+<span class="normal">1525</span>
+<span class="normal">1526</span>
+<span class="normal">1527</span>
+<span class="normal">1528</span>
+<span class="normal">1529</span>
+<span class="normal">1530</span>
 <span class="normal">1531</span>
 <span class="normal">1532</span>
 <span class="normal">1533</span>
@@ -19496,24 +19437,7 @@ strings.</p>
 <span class="normal">1678</span>
 <span class="normal">1679</span>
 <span class="normal">1680</span>
-<span class="normal">1681</span>
-<span class="normal">1682</span>
-<span class="normal">1683</span>
-<span class="normal">1684</span>
-<span class="normal">1685</span>
-<span class="normal">1686</span>
-<span class="normal">1687</span>
-<span class="normal">1688</span>
-<span class="normal">1689</span>
-<span class="normal">1690</span>
-<span class="normal">1691</span>
-<span class="normal">1692</span>
-<span class="normal">1693</span>
-<span class="normal">1694</span>
-<span class="normal">1695</span>
-<span class="normal">1696</span>
-<span class="normal">1697</span>
-<span class="normal">1698</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">select</span><span class="p">(</span>
+<span class="normal">1681</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">select</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="o">*</span><span class="n">exprs</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span> <span class="o">|</span> <span class="nb">str</span><span class="p">],</span>
     <span class="o">**</span><span class="n">named_exprs</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
@@ -19795,7 +19719,24 @@ value of <code>None</code> will use the backend's native dialect.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2652</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2635</span>
+<span class="normal">2636</span>
+<span class="normal">2637</span>
+<span class="normal">2638</span>
+<span class="normal">2639</span>
+<span class="normal">2640</span>
+<span class="normal">2641</span>
+<span class="normal">2642</span>
+<span class="normal">2643</span>
+<span class="normal">2644</span>
+<span class="normal">2645</span>
+<span class="normal">2646</span>
+<span class="normal">2647</span>
+<span class="normal">2648</span>
+<span class="normal">2649</span>
+<span class="normal">2650</span>
+<span class="normal">2651</span>
+<span class="normal">2652</span>
 <span class="normal">2653</span>
 <span class="normal">2654</span>
 <span class="normal">2655</span>
@@ -19820,24 +19761,7 @@ value of <code>None</code> will use the backend's native dialect.</p>
 <span class="normal">2674</span>
 <span class="normal">2675</span>
 <span class="normal">2676</span>
-<span class="normal">2677</span>
-<span class="normal">2678</span>
-<span class="normal">2679</span>
-<span class="normal">2680</span>
-<span class="normal">2681</span>
-<span class="normal">2682</span>
-<span class="normal">2683</span>
-<span class="normal">2684</span>
-<span class="normal">2685</span>
-<span class="normal">2686</span>
-<span class="normal">2687</span>
-<span class="normal">2688</span>
-<span class="normal">2689</span>
-<span class="normal">2690</span>
-<span class="normal">2691</span>
-<span class="normal">2692</span>
-<span class="normal">2693</span>
-<span class="normal">2694</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dialect</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="normal">2677</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dialect</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Run a SQL query against a table expression.</span>
 
 <span class="sd">    See [`Table.alias`][ibis.expr.types.relations.Table.alias] for</span>
@@ -19927,21 +19851,21 @@ value of <code>None</code> will use the backend's native dialect.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1410</span>
-<span class="normal">1411</span>
-<span class="normal">1412</span>
-<span class="normal">1413</span>
-<span class="normal">1414</span>
-<span class="normal">1415</span>
-<span class="normal">1416</span>
-<span class="normal">1417</span>
-<span class="normal">1418</span>
-<span class="normal">1419</span>
-<span class="normal">1420</span>
-<span class="normal">1421</span>
-<span class="normal">1422</span>
-<span class="normal">1423</span>
-<span class="normal">1424</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_array</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1393</span>
+<span class="normal">1394</span>
+<span class="normal">1395</span>
+<span class="normal">1396</span>
+<span class="normal">1397</span>
+<span class="normal">1398</span>
+<span class="normal">1399</span>
+<span class="normal">1400</span>
+<span class="normal">1401</span>
+<span class="normal">1402</span>
+<span class="normal">1403</span>
+<span class="normal">1404</span>
+<span class="normal">1405</span>
+<span class="normal">1406</span>
+<span class="normal">1407</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_array</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Column</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;View a single column table as an array.</span>
 
 <span class="sd">    Returns</span>
@@ -19952,7 +19876,7 @@ value of <code>None</code> will use the backend's native dialect.</p>
     <span class="n">schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">ExpressionError</span><span class="p">(</span>
-            <span class="s1">&#39;Table must have exactly one column when viewed as array&#39;</span>
+            <span class="s2">&quot;Table must have exactly one column when viewed as array&quot;</span>
         <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">TableArrayView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
@@ -20008,15 +19932,15 @@ value of <code>None</code> will use the backend's native dialect.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2696</span>
-<span class="normal">2697</span>
-<span class="normal">2698</span>
-<span class="normal">2699</span>
-<span class="normal">2700</span>
-<span class="normal">2701</span>
-<span class="normal">2702</span>
-<span class="normal">2703</span>
-<span class="normal">2704</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2679</span>
+<span class="normal">2680</span>
+<span class="normal">2681</span>
+<span class="normal">2682</span>
+<span class="normal">2683</span>
+<span class="normal">2684</span>
+<span class="normal">2685</span>
+<span class="normal">2686</span>
+<span class="normal">2687</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a table expression to a pandas DataFrame.</span>
 
 <span class="sd">    Parameters</span>
@@ -20122,9 +20046,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">243</span>
 <span class="normal">244</span>
 <span class="normal">245</span>
 <span class="normal">246</span>
@@ -20154,7 +20076,9 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">270</span>
 <span class="normal">271</span>
 <span class="normal">272</span>
-<span class="normal">273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">try_cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="n">SupportsSchema</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">try_cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="n">SupportsSchema</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Cast the columns of a table.</span>
 
 <span class="sd">    If the cast fails for a row, the value is returned</span>
@@ -20343,7 +20267,24 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1275</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1258</span>
+<span class="normal">1259</span>
+<span class="normal">1260</span>
+<span class="normal">1261</span>
+<span class="normal">1262</span>
+<span class="normal">1263</span>
+<span class="normal">1264</span>
+<span class="normal">1265</span>
+<span class="normal">1266</span>
+<span class="normal">1267</span>
+<span class="normal">1268</span>
+<span class="normal">1269</span>
+<span class="normal">1270</span>
+<span class="normal">1271</span>
+<span class="normal">1272</span>
+<span class="normal">1273</span>
+<span class="normal">1274</span>
+<span class="normal">1275</span>
 <span class="normal">1276</span>
 <span class="normal">1277</span>
 <span class="normal">1278</span>
@@ -20398,24 +20339,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">1327</span>
 <span class="normal">1328</span>
 <span class="normal">1329</span>
-<span class="normal">1330</span>
-<span class="normal">1331</span>
-<span class="normal">1332</span>
-<span class="normal">1333</span>
-<span class="normal">1334</span>
-<span class="normal">1335</span>
-<span class="normal">1336</span>
-<span class="normal">1337</span>
-<span class="normal">1338</span>
-<span class="normal">1339</span>
-<span class="normal">1340</span>
-<span class="normal">1341</span>
-<span class="normal">1342</span>
-<span class="normal">1343</span>
-<span class="normal">1344</span>
-<span class="normal">1345</span>
-<span class="normal">1346</span>
-<span class="normal">1347</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">1330</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the set union of multiple table expressions.</span>
 
 <span class="sd">    The input tables must have identical schemas.</span>
@@ -20603,7 +20527,24 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2206</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2189</span>
+<span class="normal">2190</span>
+<span class="normal">2191</span>
+<span class="normal">2192</span>
+<span class="normal">2193</span>
+<span class="normal">2194</span>
+<span class="normal">2195</span>
+<span class="normal">2196</span>
+<span class="normal">2197</span>
+<span class="normal">2198</span>
+<span class="normal">2199</span>
+<span class="normal">2200</span>
+<span class="normal">2201</span>
+<span class="normal">2202</span>
+<span class="normal">2203</span>
+<span class="normal">2204</span>
+<span class="normal">2205</span>
+<span class="normal">2206</span>
 <span class="normal">2207</span>
 <span class="normal">2208</span>
 <span class="normal">2209</span>
@@ -20646,24 +20587,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">2246</span>
 <span class="normal">2247</span>
 <span class="normal">2248</span>
-<span class="normal">2249</span>
-<span class="normal">2250</span>
-<span class="normal">2251</span>
-<span class="normal">2252</span>
-<span class="normal">2253</span>
-<span class="normal">2254</span>
-<span class="normal">2255</span>
-<span class="normal">2256</span>
-<span class="normal">2257</span>
-<span class="normal">2258</span>
-<span class="normal">2259</span>
-<span class="normal">2260</span>
-<span class="normal">2261</span>
-<span class="normal">2262</span>
-<span class="normal">2263</span>
-<span class="normal">2264</span>
-<span class="normal">2265</span>
-<span class="normal">2266</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">unpack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">columns</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">2249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">unpack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">columns</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Project the struct fields of each of `columns` into `self`.</span>
 
 <span class="sd">    Existing fields are retained in the projection.</span>
@@ -20772,9 +20696,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">768</span>
 <span class="normal">769</span>
 <span class="normal">770</span>
 <span class="normal">771</span>
@@ -20782,7 +20704,9 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">773</span>
 <span class="normal">774</span>
 <span class="normal">775</span>
-<span class="normal">776</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="normal">776</span>
+<span class="normal">777</span>
+<span class="normal">778</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a new table expression distinct from the current one.</span>
 
 <span class="sd">    Use this API for any self-referencing operations like a self-join.</span>
@@ -21073,8 +20997,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">309</span>
 <span class="normal">310</span>
 <span class="normal">311</span>
-<span class="normal">312</span>
-<span class="normal">313</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GroupedTable</span><span class="p">:</span>
+<span class="normal">312</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GroupedTable</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An intermediate table expression to hold grouping information.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -21218,7 +21141,6 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="sd">        Table</span>
 <span class="sd">            A table expression with window functions applied</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="n">exprs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selectables</span><span class="p">(</span><span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwexprs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">exprs</span><span class="p">)</span>
 
@@ -21408,7 +21330,8 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/groupby.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">302</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">301</span>
+<span class="normal">302</span>
 <span class="normal">303</span>
 <span class="normal">304</span>
 <span class="normal">305</span>
@@ -21416,8 +21339,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">307</span>
 <span class="normal">308</span>
 <span class="normal">309</span>
-<span class="normal">310</span>
-<span class="normal">311</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="normal">310</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Computing the number of rows per group.</span>
 
 <span class="sd">    Returns</span>
@@ -21718,8 +21640,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">206</span>
 <span class="normal">207</span>
 <span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span>
+<span class="normal">209</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">],</span> <span class="o">**</span><span class="n">kwexprs</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a table projection with window functions applied.</span>
@@ -21765,7 +21686,6 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="sd">    Table</span>
 <span class="sd">        A table expression with window functions applied</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">exprs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selectables</span><span class="p">(</span><span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwexprs</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">exprs</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -22022,7 +21942,8 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/groupby.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">257</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
+<span class="normal">257</span>
 <span class="normal">258</span>
 <span class="normal">259</span>
 <span class="normal">260</span>
@@ -22064,8 +21985,7 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 <span class="normal">296</span>
 <span class="normal">297</span>
 <span class="normal">298</span>
-<span class="normal">299</span>
-<span class="normal">300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">over</span><span class="p">(</span>
+<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">over</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
@@ -22134,15 +22054,15 @@ as <code>NULL</code> or <code>NaN</code> depending on backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/groupby.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">212</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">211</span>
+<span class="normal">212</span>
 <span class="normal">213</span>
 <span class="normal">214</span>
 <span class="normal">215</span>
 <span class="normal">216</span>
 <span class="normal">217</span>
 <span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwexprs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="normal">219</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwexprs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Project new columns out of the grouped table.</span>
 
 <span class="sd">    See Also</span>
