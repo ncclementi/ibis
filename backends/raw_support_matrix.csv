@@ -246,7 +246,7 @@ ibis.expr.operations.strings.Translate,True,False,True,True,False,False,True,Fal
 ibis.expr.operations.strings.Uppercase,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.structs.StructColumn,True,True,False,False,False,True,False,False,False,False,False,True,True,True,True,False,True
 ibis.expr.operations.structs.StructField,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
-ibis.expr.operations.temporal.BetweenTime,False,False,True,False,False,False,False,False,False,False,True,True,False,False,False,False,False
+ibis.expr.operations.temporal.BetweenTime,False,True,True,False,False,False,False,False,False,False,True,True,False,False,False,False,False
 ibis.expr.operations.temporal.Date,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.temporal.DateAdd,True,True,True,False,False,True,True,False,True,False,True,True,True,True,True,True,False
 ibis.expr.operations.temporal.DateDiff,False,True,True,False,False,True,True,False,True,False,True,True,True,True,True,True,False
