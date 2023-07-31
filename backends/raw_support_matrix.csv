@@ -18,7 +18,7 @@ ibis.expr.operations.analytic.PercentRank,True,False,True,False,True,True,True,T
 ibis.expr.operations.analytic.RowNumber,True,True,False,False,True,True,True,True,True,True,False,False,True,True,True,True,True
 ibis.expr.operations.arrays.ArrayColumn,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayConcat,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
-ibis.expr.operations.arrays.ArrayContains,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
+ibis.expr.operations.arrays.ArrayContains,False,True,True,False,False,True,False,False,False,False,True,False,False,True,True,False,True
 ibis.expr.operations.arrays.ArrayDistinct,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
 ibis.expr.operations.arrays.ArrayFilter,False,True,False,False,False,True,False,False,False,False,False,False,False,True,False,False,True
 ibis.expr.operations.arrays.ArrayIndex,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,False,True
