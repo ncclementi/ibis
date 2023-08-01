@@ -7,7 +7,6 @@ backend_connection_example: ibis.connect("oracle://user:pass@host:port/service_n
 is_experimental: true
 version_added: "6.0"
 exports: ["PyArrow", "Parquet", "CSV", "Pandas"]
-memtable_impl: fallback
 ---
 
 # Oracle
@@ -17,8 +16,6 @@ memtable_impl: fallback
 !!! experimental "Introduced in v6.0"
 
     The Oracle backend is experimental and is subject to backwards incompatible changes.
-
-{% include 'backends/memtable-template.md' %}
 
 ## Install
 

@@ -8,7 +8,6 @@ intro: |
   without requiring you to switch back and forth between Python code and the
   Impala shell.
 exclude_backend_api: true
-memtable_impl: fallback
 ---
 
 {% include 'backends/template.md' %}
