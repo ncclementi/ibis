@@ -36,7 +36,7 @@
     * [Schemas](reference/schemas.md)
     * [Backend interfaces](reference/backends/)
     * [Configuration](reference/config.md)
-    * [Versioning Policy](versioning.md)
+    * [Supported Python versions](supported_python_versions.md)
     * [Release notes](release_notes.md)
 * Blog
     * [Ibis v6.0.0](blog/rendered/ibis-version-6.0.0-release.ipynb)

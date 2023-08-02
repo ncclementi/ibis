@@ -6,7 +6,6 @@ is_experimental: true
 version_added: "4.0"
 exports: ["PyArrow", "Parquet", "Delta Lake", "CSV", "Pandas"]
 imports: ["CSV", "Parquet", "Delta Lake", "Pandas"]
-memtable_impl: native
 ---
 
 # Polars
@@ -16,8 +15,6 @@ memtable_impl: native
 !!! experimental "Introduced in v4.0"
 
     The Polars backend is experimental and is subject to backwards incompatible changes.
-
-{% include 'backends/memtable-template.md' %}
 
 ## Install
 

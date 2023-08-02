@@ -3,7 +3,6 @@ backend_name: Trino
 backend_url: https://trino.io
 backend_module: trino
 exports: ["PyArrow", "Parquet", "CSV", "Pandas"]
-memtable_impl: fallback
 ---
 
 # Trino
@@ -13,8 +12,6 @@ memtable_impl: fallback
 !!! experimental "Introduced in v4.0"
 
     The Trino backend is experimental and is subject to backwards incompatible changes.
-
-{% include 'backends/memtable-template.md' %}
 
 ## Install
 

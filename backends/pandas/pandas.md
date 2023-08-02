@@ -6,7 +6,6 @@ intro: Ibis's pandas backend is available in core Ibis.
 backend_param_style: a dictionary of paths
 do_connect_base: BasePandasBackend
 is_core: true
-memtable_impl: native
 ---
 
 {% include 'backends/template.md' %}
