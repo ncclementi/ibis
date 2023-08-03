@@ -17,7 +17,7 @@
         <link rel="next" href="../../backends/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -1690,8 +1690,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../versioning/" class="md-nav__link">
-        Versioning Policy
+      <a href="../../supported_python_versions/" class="md-nav__link">
+        Supported Python versions
       </a>
     </li>
   
@@ -2176,15 +2176,15 @@
 
 
 <h1 id="backends">Backends<a class="headerlink" href="#backends" title="Anchor link to this section for reference">&para;</a></h1>
-<p>A backend is where execution of Ibis table expressions occur after compiling into some intermediate representation. A backend is often a database and the intermediate representation often SQL, but several types of backends exist. See the <a href="../../backends/">backends page</a> for specific documentation on each.</p>
+<p>A backend is where execution of Ibis table expressions occur after compiling into some intermediate representation. A backend is often a database and the intermediate representation often SQL, but several types of backends exist. See the <a href="/backends/">backends page</a> for specific documentation on each.</p>
 <h2 id="string-generating-backends">String generating backends<a class="headerlink" href="#string-generating-backends" title="Anchor link to this section for reference">&para;</a></h2>
 <p>The first category of backends translate Ibis table expressions into query strings.</p>
 <p>The compiler turns each table expression into a query string and passes that query
 to the database through a driver API for execution.</p>
 <ul>
-<li><a href="../../backends/impala/">Apache Impala</a></li>
-<li><a href="../../backends/clickhouse/">ClickHouse</a></li>
-<li><a href="../../backends/bigquery/">Google BigQuery</a></li>
+<li><a href="/backends/impala/">Apache Impala</a></li>
+<li><a href="/backends/clickhouse/">ClickHouse</a></li>
+<li><a href="/backends/bigquery/">Google BigQuery</a></li>
 <li><a href="https://github.com/heavyai/ibis-heavyai">HeavyAI</a></li>
 </ul>
 <h2 id="expression-generating-backends">Expression generating backends<a class="headerlink" href="#expression-generating-backends" title="Anchor link to this section for reference">&para;</a></h2>
@@ -2194,26 +2194,26 @@ system's table expression objects, for example, SQLAlchemy.</p>
 produce another kind of table expression object and typically have high-level APIs
 for execution.</p>
 <ul>
-<li><a href="../../backends/datafusion/">Apache Arrow Datafusion</a></li>
-<li><a href="../../backends/druid/">Apache Druid</a></li>
-<li><a href="../../backends/pyspark/">Apache PySpark</a></li>
-<li><a href="../../backends/dask/">Dask</a></li>
-<li><a href="../../backends/duckdb/">DuckDB</a></li>
-<li><a href="../../backends/mssql/">MS SQL Server</a></li>
-<li><a href="../../backends/mysql/">MySQL</a></li>
-<li><a href="../../backends/oracle/">Oracle</a></li>
-<li><a href="../../backends/polars/">Polars</a></li>
-<li><a href="../../backends/postgresql/">PostgreSQL</a></li>
-<li><a href="../../backends/sqlite/">SQLite</a></li>
-<li><a href="../../backends/snowflake/">Snowflake</a></li>
-<li><a href="../../backends/trino/">Trino</a></li>
+<li><a href="/backends/datafusion/">Apache Arrow Datafusion</a></li>
+<li><a href="/backends/druid/">Apache Druid</a></li>
+<li><a href="/backends/pyspark/">Apache PySpark</a></li>
+<li><a href="/backends/dask/">Dask</a></li>
+<li><a href="/backends/duckdb/">DuckDB</a></li>
+<li><a href="/backends/mssql/">MS SQL Server</a></li>
+<li><a href="/backends/mysql/">MySQL</a></li>
+<li><a href="/backends/oracle/">Oracle</a></li>
+<li><a href="/backends/polars/">Polars</a></li>
+<li><a href="/backends/postgresql/">PostgreSQL</a></li>
+<li><a href="/backends/sqlite/">SQLite</a></li>
+<li><a href="/backends/snowflake/">Snowflake</a></li>
+<li><a href="/backends/trino/">Trino</a></li>
 </ul>
 <h2 id="direct-execution-backends">Direct execution backends<a class="headerlink" href="#direct-execution-backends" title="Anchor link to this section for reference">&para;</a></h2>
 <p>The pandas backend is the only direct execution backend. A full description
 of the implementation can be found in the module docstring of the pandas
 backend located in <code>ibis/backends/pandas/core.py</code>.</p>
 <ul>
-<li><a href="../../backends/pandas/">pandas</a></li>
+<li><a href="/backends/pandas/">pandas</a></li>
 </ul>
 
   <hr>
@@ -2221,7 +2221,7 @@ backend located in <code>ibis/backends/pandas/core.py</code>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
       
     
   </small>
