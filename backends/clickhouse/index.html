@@ -17,7 +17,7 @@
         <link rel="next" href="../dask/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -694,6 +694,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ibismemtable-support" class="md-nav__link">
+    ibis.memtable Support
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#install" class="md-nav__link">
@@ -1730,8 +1737,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../supported_python_versions/" class="md-nav__link">
-        Supported Python versions
+      <a href="../../versioning/" class="md-nav__link">
+        Versioning Policy
       </a>
     </li>
   
@@ -2177,6 +2184,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ibismemtable-support" class="md-nav__link">
+    ibis.memtable Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install" class="md-nav__link">
     Install
   </a>
@@ -2257,6 +2271,8 @@
 
 <h1 id="clickhouse">ClickHouse<a class="headerlink" href="#clickhouse" title="Anchor link to this section for reference">&para;</a></h1>
 <p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-CSV%20|%20Pandas%20|%20Parquet%20|%20PyArrow-orange?style=flat-square" /> </p>
+<h2 id="ibismemtable-support"><code>ibis.memtable</code> Support <img alt="memtable" src="https://img.shields.io/badge/native-56ae57" /><a class="headerlink" href="#ibismemtable-support" title="Anchor link to this section for reference">&para;</a></h2>
+<p>The ClickHouse backend supports <code>memtable</code>s  by natively executing queries against the underlying storage (e.g., pyarrow Tables or pandas DataFrames).</p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Install <code>ibis</code> and dependencies for the ClickHouse backend:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
@@ -2480,7 +2496,7 @@ passing a properly formatted ClickHouse connection URL to <code>ibis.connect</co
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 1, 2023</span>
       
     
   </small>
