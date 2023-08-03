@@ -18,7 +18,7 @@ ibis.expr.operations.analytic.PercentRank,True,False,True,False,True,True,True,T
 ibis.expr.operations.analytic.RowNumber,True,True,False,False,True,True,True,True,True,True,False,False,True,True,True,True,True
 ibis.expr.operations.arrays.ArrayColumn,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayConcat,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
-ibis.expr.operations.arrays.ArrayContains,False,True,True,False,False,True,False,False,False,False,True,False,False,True,True,False,True
+ibis.expr.operations.arrays.ArrayContains,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
 ibis.expr.operations.arrays.ArrayDistinct,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
 ibis.expr.operations.arrays.ArrayFilter,False,True,False,False,False,True,False,False,False,False,False,False,False,True,False,False,True
 ibis.expr.operations.arrays.ArrayIndex,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,False,True
@@ -120,11 +120,10 @@ ibis.expr.operations.logical.ExistsSubquery,True,True,False,False,True,True,True
 ibis.expr.operations.logical.Greater,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.GreaterEqual,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.IdenticalTo,True,False,True,False,True,True,True,True,True,True,True,True,True,False,True,True,True
-ibis.expr.operations.logical.InColumn,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True
-ibis.expr.operations.logical.InValues,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Less,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.LessEqual,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.Not,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.logical.NotContains,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.NotEquals,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.logical.NotExistsSubquery,True,True,False,False,True,True,True,True,True,True,False,False,True,False,True,True,True
 ibis.expr.operations.logical.Or,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
