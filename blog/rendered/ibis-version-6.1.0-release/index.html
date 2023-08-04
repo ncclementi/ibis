@@ -3983,7 +3983,7 @@ chart</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="datafusion">DataFusion<a class="anchor-link" href="#datafusion">¶</a></h3><p>The DataFusion backend (and a few others) received several improvements from community member <a href="https://github.com/mesejo">@mesejo</a> with many new operations and memtables now supported. Some highlights include:</p>
+<h3 id="datafusion">DataFusion<a class="anchor-link" href="#datafusion">¶</a></h3><p>The DataFusion backend (and a few others) received several improvements from community member <a href="https://github.com/mesejo">@mesejo</a> with memtables and many new operations now supported. Some highlights include:</p>
 </div>
 </div>
 </div>
@@ -4234,7 +4234,7 @@ con.execute(url.host())</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="bigquery">BigQuery<a class="anchor-link" href="#bigquery">¶</a></h3><p>Some remaining gaps in <code>CREATE TABLE</code> DDL options for BigQuery have been filled in, including the ability to pass in <code>overwrite=True</code>.</p>
+<h3 id="bigquery">BigQuery<a class="anchor-link" href="#bigquery">¶</a></h3><p>Some remaining gaps in <code>CREATE TABLE</code> DDL options for BigQuery have been filled in, including the ability to pass in <code>overwrite=True</code> for table creation.</p>
 </div>
 </div>
 </div>
@@ -4245,7 +4245,7 @@ con.execute(url.host())</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="pyspark">PySpark<a class="anchor-link" href="#pyspark">¶</a></h3><p>The PySpark backend now supports reading/writing Delta Lake tables, in addition to now supporting <code>to_csv</code> and <code>to_parquet</code>. You PySpark session must be configured to use the Delta Lake package, and you must have the <code>delta</code> package installed in your environment.</p>
+<h3 id="pyspark">PySpark<a class="anchor-link" href="#pyspark">¶</a></h3><p>The PySpark backend now supports reading/writing Delta Lake tables. Your PySpark session must be configured to use the Delta Lake package and you must have the <code>delta</code> package installed in your environment.</p>
 <div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read_delta</span><span class="p">(</span><span class="s2">"/path/to/delta"</span><span class="p">)</span>
 
 <span class="o">...</span>
@@ -4262,7 +4262,7 @@ con.execute(url.host())</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="trino">Trino<a class="anchor-link" href="#trino">¶</a></h3><p>The <code>.sql</code> API is now supported in Trino, enabling you to chain Ibis and SQL together for the backend.</p>
+<h3 id="trino">Trino<a class="anchor-link" href="#trino">¶</a></h3><p>The <code>.sql</code> API is now supported in Trino, enabling you to chain Ibis and SQL together.</p>
 </div>
 </div>
 </div>
@@ -5182,7 +5182,7 @@ c</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2023</span>
       
     
   </small>
