@@ -222,6 +222,7 @@ ibis.expr.operations.strings.ExtractUserInfo,False,False,True,True,False,False,T
 ibis.expr.operations.strings.FindInSet,False,True,True,False,False,True,True,False,True,False,True,False,True,False,False,False,False
 ibis.expr.operations.strings.LPad,True,True,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.LStrip,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+ibis.expr.operations.strings.Levenshtein,False,False,False,False,False,True,False,False,False,True,False,False,True,True,True,False,True
 ibis.expr.operations.strings.Lowercase,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.RPad,True,True,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True
 ibis.expr.operations.strings.RStrip,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True
