@@ -360,7 +360,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../blog/rendered/ibis-version-6.0.0-release/" class="md-tabs__link">
+      <a href="../../../blog/rendered/ibis-version-6.1.0-release/" class="md-tabs__link">
         Blog
       </a>
     </li>
@@ -2182,6 +2182,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2195,6 +2197,20 @@
           Blog
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/rendered/ibis-version-6.1.0-release/" class="md-nav__link">
+        Ibis v6.1.0
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3044,8 +3060,7 @@
 
             <details class="quote">
               <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 22</span>
-<span class="normal"> 23</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 23</span>
 <span class="normal"> 24</span>
 <span class="normal"> 25</span>
 <span class="normal"> 26</span>
@@ -3937,7 +3952,15 @@
 <span class="normal">912</span>
 <span class="normal">913</span>
 <span class="normal">914</span>
-<span class="normal">915</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+<span class="normal">915</span>
+<span class="normal">916</span>
+<span class="normal">917</span>
+<span class="normal">918</span>
+<span class="normal">919</span>
+<span class="normal">920</span>
+<span class="normal">921</span>
+<span class="normal">922</span>
+<span class="normal">923</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">Value</span><span class="p">(</span><span class="n">Expr</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for a data generating expression having a known type.&quot;&quot;&quot;</span>
 
@@ -3980,7 +4003,7 @@
     <span class="c1"># TODO(kszucs): should rename to dtype</span>
     <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the [DataType] of this expression.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">output_dtype</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">dtype</span>
 
     <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute an integer hash value.</span>
@@ -4024,7 +4047,7 @@
             <span class="k">return</span> <span class="bp">self</span>
 
         <span class="k">if</span> <span class="n">op</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">is_geospatial</span><span class="p">():</span>
-            <span class="n">from_geotype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">geotype</span> <span class="ow">or</span> <span class="s1">&#39;geometry&#39;</span>
+            <span class="n">from_geotype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">geotype</span> <span class="ow">or</span> <span class="s2">&quot;geometry&quot;</span>
             <span class="n">to_geotype</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">geotype</span>
             <span class="k">if</span> <span class="n">from_geotype</span> <span class="o">==</span> <span class="n">to_geotype</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span>
@@ -4272,7 +4295,7 @@
 <span class="sd">        &gt;&gt;&gt; table.string_col.isin([&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;])</span>
 <span class="sd">        r0 := UnboundTable: t</span>
 <span class="sd">          string_col string</span>
-<span class="sd">        Contains(string_col): Contains(...)</span>
+<span class="sd">        InValues(string_col): InValues(...)</span>
 
 <span class="sd">        Check whether a column&#39;s values are contained in another table&#39;s column</span>
 
@@ -4282,9 +4305,16 @@
 <span class="sd">          string_col string</span>
 <span class="sd">        r1 := UnboundTable: t2</span>
 <span class="sd">          other_string_col string</span>
-<span class="sd">        Contains(string_col, other_string_col): Contains(...)</span>
+<span class="sd">        InColumn(string_col, other_string_col): InColumn(...)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr.types</span> <span class="kn">import</span> <span class="n">ArrayValue</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">ArrayValue</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayContains</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">Column</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">InColumn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">InValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">notin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Check whether this expression&#39;s values are not in `values`.</span>
@@ -4317,19 +4347,19 @@
 <span class="sd">        │          19.3 │</span>
 <span class="sd">        └───────────────┘</span>
 <span class="sd">        &gt;&gt;&gt; t.bill_depth_mm.notin([18.7, 18.1])</span>
-<span class="sd">        ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
-<span class="sd">        ┃ NotContains(bill_depth_mm) ┃</span>
-<span class="sd">        ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
-<span class="sd">        │ boolean                    │</span>
-<span class="sd">        ├────────────────────────────┤</span>
-<span class="sd">        │ False                      │</span>
-<span class="sd">        │ True                       │</span>
-<span class="sd">        │ True                       │</span>
-<span class="sd">        │ NULL                       │</span>
-<span class="sd">        │ True                       │</span>
-<span class="sd">        └────────────────────────────┘</span>
+<span class="sd">        ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="sd">        ┃ Not(InValues(bill_depth_mm)) ┃</span>
+<span class="sd">        ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="sd">        │ boolean                      │</span>
+<span class="sd">        ├──────────────────────────────┤</span>
+<span class="sd">        │ False                        │</span>
+<span class="sd">        │ True                         │</span>
+<span class="sd">        │ True                         │</span>
+<span class="sd">        │ NULL                         │</span>
+<span class="sd">        │ True                         │</span>
+<span class="sd">        └──────────────────────────────┘</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">NotContains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="k">return</span> <span class="o">~</span><span class="bp">self</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">substitute</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -4521,7 +4551,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">NotNull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">case</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">case</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bl</span><span class="o">.</span><span class="n">SimpleCaseBuilder</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a SimpleCaseBuilder to chain multiple if-else statements.</span>
 
 <span class="sd">        Add new search expressions with the `.when()` method. These must be</span>
@@ -4801,9 +4831,9 @@
         <span class="n">roots</span> <span class="o">=</span> <span class="n">find_immediate_parent_tables</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">())</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">RelationError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;Cannot convert </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s1"> expression &#39;</span>
-                <span class="s1">&#39;involving multiple base table references &#39;</span>
-                <span class="s1">&#39;to a projection&#39;</span>
+                <span class="sa">f</span><span class="s2">&quot;Cannot convert </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> expression &quot;</span>
+                <span class="s2">&quot;involving multiple base table references &quot;</span>
+                <span class="s2">&quot;to a projection&quot;</span>
             <span class="p">)</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">roots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">table</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -4897,15 +4927,7 @@
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">865</span>
-<span class="normal">866</span>
-<span class="normal">867</span>
-<span class="normal">868</span>
-<span class="normal">869</span>
-<span class="normal">870</span>
-<span class="normal">871</span>
-<span class="normal">872</span>
-<span class="normal">873</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">873</span>
 <span class="normal">874</span>
 <span class="normal">875</span>
 <span class="normal">876</span>
@@ -4923,7 +4945,15 @@
 <span class="normal">888</span>
 <span class="normal">889</span>
 <span class="normal">890</span>
-<span class="normal">891</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">as_table</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="normal">891</span>
+<span class="normal">892</span>
+<span class="normal">893</span>
+<span class="normal">894</span>
+<span class="normal">895</span>
+<span class="normal">896</span>
+<span class="normal">897</span>
+<span class="normal">898</span>
+<span class="normal">899</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">as_table</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Promote the expression to a table.</span>
 
 <span class="sd">    Returns</span>
@@ -4944,9 +4974,9 @@
     <span class="n">roots</span> <span class="o">=</span> <span class="n">find_immediate_parent_tables</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">())</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">RelationError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;Cannot convert </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s1"> expression &#39;</span>
-            <span class="s1">&#39;involving multiple base table references &#39;</span>
-            <span class="s1">&#39;to a projection&#39;</span>
+            <span class="sa">f</span><span class="s2">&quot;Cannot convert </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> expression &quot;</span>
+            <span class="s2">&quot;involving multiple base table references &quot;</span>
+            <span class="s2">&quot;to a projection&quot;</span>
         <span class="p">)</span>
     <span class="n">table</span> <span class="o">=</span> <span class="n">roots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">table</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -4973,9 +5003,9 @@
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">857</span>
-<span class="normal">858</span>
-<span class="normal">859</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">865</span>
+<span class="normal">866</span>
+<span class="normal">867</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sort an expression ascending.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">SortKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
@@ -5089,8 +5119,7 @@
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">296</span>
-<span class="normal">297</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
 <span class="normal">300</span>
@@ -5126,7 +5155,8 @@
 <span class="normal">330</span>
 <span class="normal">331</span>
 <span class="normal">332</span>
-<span class="normal">333</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">between</span><span class="p">(</span>
+<span class="normal">333</span>
+<span class="normal">334</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">between</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">lower</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
     <span class="n">upper</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
@@ -5230,15 +5260,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">606</span>
-<span class="normal">607</span>
-<span class="normal">608</span>
-<span class="normal">609</span>
-<span class="normal">610</span>
-<span class="normal">611</span>
-<span class="normal">612</span>
-<span class="normal">613</span>
-<span class="normal">614</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">614</span>
 <span class="normal">615</span>
 <span class="normal">616</span>
 <span class="normal">617</span>
@@ -5258,7 +5280,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">631</span>
 <span class="normal">632</span>
 <span class="normal">633</span>
-<span class="normal">634</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">case</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">634</span>
+<span class="normal">635</span>
+<span class="normal">636</span>
+<span class="normal">637</span>
+<span class="normal">638</span>
+<span class="normal">639</span>
+<span class="normal">640</span>
+<span class="normal">641</span>
+<span class="normal">642</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">case</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bl</span><span class="o">.</span><span class="n">SimpleCaseBuilder</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a SimpleCaseBuilder to chain multiple if-else statements.</span>
 
 <span class="sd">    Add new search expressions with the `.when()` method. These must be</span>
@@ -5415,15 +5445,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">636</span>
-<span class="normal">637</span>
-<span class="normal">638</span>
-<span class="normal">639</span>
-<span class="normal">640</span>
-<span class="normal">641</span>
-<span class="normal">642</span>
-<span class="normal">643</span>
-<span class="normal">644</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">644</span>
 <span class="normal">645</span>
 <span class="normal">646</span>
 <span class="normal">647</span>
@@ -5472,7 +5494,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">690</span>
 <span class="normal">691</span>
 <span class="normal">692</span>
-<span class="normal">693</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cases</span><span class="p">(</span>
+<span class="normal">693</span>
+<span class="normal">694</span>
+<span class="normal">695</span>
+<span class="normal">696</span>
+<span class="normal">697</span>
+<span class="normal">698</span>
+<span class="normal">699</span>
+<span class="normal">700</span>
+<span class="normal">701</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cases</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">case_result_pairs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">,</span> <span class="n">Value</span><span class="p">]],</span>
     <span class="n">default</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -5619,8 +5649,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 79</span>
-<span class="normal"> 80</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 80</span>
 <span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
@@ -5654,7 +5683,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
-<span class="normal">114</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_type</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
+<span class="normal">114</span>
+<span class="normal">115</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_type</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Cast expression to indicated data type.</span>
 
 <span class="sd">    Parameters</span>
@@ -5684,7 +5714,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">if</span> <span class="n">op</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">is_geospatial</span><span class="p">():</span>
-        <span class="n">from_geotype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">geotype</span> <span class="ow">or</span> <span class="s1">&#39;geometry&#39;</span>
+        <span class="n">from_geotype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="o">.</span><span class="n">geotype</span> <span class="ow">or</span> <span class="s2">&quot;geometry&quot;</span>
         <span class="n">to_geotype</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">geotype</span>
         <span class="k">if</span> <span class="n">from_geotype</span> <span class="o">==</span> <span class="n">to_geotype</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span>
@@ -5775,8 +5805,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
-<span class="normal">171</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
@@ -5794,7 +5823,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">186</span>
 <span class="normal">187</span>
 <span class="normal">188</span>
-<span class="normal">189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
+<span class="normal">189</span>
+<span class="normal">190</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the first non-null value from `args`.</span>
 
 <span class="sd">    Parameters</span>
@@ -5939,15 +5969,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">695</span>
-<span class="normal">696</span>
-<span class="normal">697</span>
-<span class="normal">698</span>
-<span class="normal">699</span>
-<span class="normal">700</span>
-<span class="normal">701</span>
-<span class="normal">702</span>
-<span class="normal">703</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">703</span>
 <span class="normal">704</span>
 <span class="normal">705</span>
 <span class="normal">706</span>
@@ -6002,7 +6024,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">755</span>
 <span class="normal">756</span>
 <span class="normal">757</span>
-<span class="normal">758</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayScalar</span><span class="p">:</span>
+<span class="normal">758</span>
+<span class="normal">759</span>
+<span class="normal">760</span>
+<span class="normal">761</span>
+<span class="normal">762</span>
+<span class="normal">763</span>
+<span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">ArrayScalar</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate this expression&#39;s elements into an array.</span>
 
 <span class="sd">    This function is called `array_agg`, `list_agg`, or `list` in other systems.</span>
@@ -6089,9 +6119,9 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">861</span>
-<span class="normal">862</span>
-<span class="normal">863</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">869</span>
+<span class="normal">870</span>
+<span class="normal">871</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sort an expression descending.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">SortKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
@@ -6203,8 +6233,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">233</span>
-<span class="normal">234</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">234</span>
 <span class="normal">235</span>
 <span class="normal">236</span>
 <span class="normal">237</span>
@@ -6246,7 +6275,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">273</span>
 <span class="normal">274</span>
 <span class="normal">275</span>
-<span class="normal">276</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fillna</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">:</span> <span class="n">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
+<span class="normal">276</span>
+<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fillna</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">:</span> <span class="n">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Replace any null values with the indicated fill value.</span>
 
 <span class="sd">    Parameters</span>
@@ -6367,8 +6397,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">191</span>
-<span class="normal">192</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">192</span>
 <span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
@@ -6380,7 +6409,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">201</span>
 <span class="normal">202</span>
 <span class="normal">203</span>
-<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">greatest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
+<span class="normal">204</span>
+<span class="normal">205</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">greatest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the largest value among the supplied arguments.</span>
 
 <span class="sd">    Parameters</span>
@@ -6513,15 +6543,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">789</span>
-<span class="normal">790</span>
-<span class="normal">791</span>
-<span class="normal">792</span>
-<span class="normal">793</span>
-<span class="normal">794</span>
-<span class="normal">795</span>
-<span class="normal">796</span>
-<span class="normal">797</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">797</span>
 <span class="normal">798</span>
 <span class="normal">799</span>
 <span class="normal">800</span>
@@ -6558,7 +6580,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">831</span>
 <span class="normal">832</span>
 <span class="normal">833</span>
-<span class="normal">834</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">group_concat</span><span class="p">(</span>
+<span class="normal">834</span>
+<span class="normal">835</span>
+<span class="normal">836</span>
+<span class="normal">837</span>
+<span class="normal">838</span>
+<span class="normal">839</span>
+<span class="normal">840</span>
+<span class="normal">841</span>
+<span class="normal">842</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">group_concat</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">sep</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span>
     <span class="n">where</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -6654,8 +6684,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">67</span>
-<span class="normal">68</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">68</span>
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
@@ -6664,7 +6693,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute an integer hash value.</span>
 
 <span class="sd">    !!! info &quot;The hashing function used is backend-dependent.&quot;</span>
@@ -6764,15 +6794,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">760</span>
-<span class="normal">761</span>
-<span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">768</span>
 <span class="normal">769</span>
 <span class="normal">770</span>
 <span class="normal">771</span>
@@ -6791,7 +6813,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">784</span>
 <span class="normal">785</span>
 <span class="normal">786</span>
-<span class="normal">787</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">identical_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+<span class="normal">787</span>
+<span class="normal">788</span>
+<span class="normal">789</span>
+<span class="normal">790</span>
+<span class="normal">791</span>
+<span class="normal">792</span>
+<span class="normal">793</span>
+<span class="normal">794</span>
+<span class="normal">795</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">identical_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether this expression is identical to other.</span>
 
 <span class="sd">    Corresponds to `IS NOT DISTINCT FROM` in SQL.</span>
@@ -6903,7 +6933,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">])</span>
 <span class="go">r0 := UnboundTable: t</span>
 <span class="go">  string_col string</span>
-<span class="go">Contains(string_col): Contains(...)</span>
+<span class="go">InValues(string_col): InValues(...)</span>
 </code></pre></div>
     <p>Check whether a column's values are contained in another table's column</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">table2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">other_string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t2&quot;</span><span class="p">)</span>
@@ -6912,13 +6942,12 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="go">  string_col string</span>
 <span class="go">r1 := UnboundTable: t2</span>
 <span class="go">  other_string_col string</span>
-<span class="go">Contains(string_col, other_string_col): Contains(...)</span>
+<span class="go">InColumn(string_col, other_string_col): InColumn(...)</span>
 </code></pre></div>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">335</span>
-<span class="normal">336</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">336</span>
 <span class="normal">337</span>
 <span class="normal">338</span>
 <span class="normal">339</span>
@@ -6951,7 +6980,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">366</span>
 <span class="normal">367</span>
 <span class="normal">368</span>
-<span class="normal">369</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Check whether this expression&#39;s values are in `values`.</span>
 
 <span class="sd">    Parameters</span>
@@ -6973,7 +7010,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="sd">    &gt;&gt;&gt; table.string_col.isin([&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;])</span>
 <span class="sd">    r0 := UnboundTable: t</span>
 <span class="sd">      string_col string</span>
-<span class="sd">    Contains(string_col): Contains(...)</span>
+<span class="sd">    InValues(string_col): InValues(...)</span>
 
 <span class="sd">    Check whether a column&#39;s values are contained in another table&#39;s column</span>
 
@@ -6983,9 +7020,16 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="sd">      string_col string</span>
 <span class="sd">    r1 := UnboundTable: t2</span>
 <span class="sd">      other_string_col string</span>
-<span class="sd">    Contains(string_col, other_string_col): Contains(...)</span>
+<span class="sd">    InColumn(string_col, other_string_col): InColumn(...)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+    <span class="kn">from</span> <span class="nn">ibis.expr.types</span> <span class="kn">import</span> <span class="n">ArrayValue</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">ArrayValue</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayContains</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">Column</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">InColumn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">InValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -7041,15 +7085,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">536</span>
-<span class="normal">537</span>
-<span class="normal">538</span>
-<span class="normal">539</span>
-<span class="normal">540</span>
-<span class="normal">541</span>
-<span class="normal">542</span>
-<span class="normal">543</span>
-<span class="normal">544</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">544</span>
 <span class="normal">545</span>
 <span class="normal">546</span>
 <span class="normal">547</span>
@@ -7074,7 +7110,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">566</span>
 <span class="normal">567</span>
 <span class="normal">568</span>
-<span class="normal">569</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isnull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isnull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether this expression is NULL.</span>
 
 <span class="sd">    Examples</span>
@@ -7185,8 +7229,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
-<span class="normal">207</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
 <span class="normal">208</span>
 <span class="normal">209</span>
 <span class="normal">210</span>
@@ -7198,7 +7241,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">216</span>
 <span class="normal">217</span>
 <span class="normal">218</span>
-<span class="normal">219</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">least</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
+<span class="normal">219</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">least</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the smallest value among the supplied arguments.</span>
 
 <span class="sd">    Parameters</span>
@@ -7299,8 +7343,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
-<span class="normal">27</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
@@ -7333,7 +7376,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
-<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Rename an expression to `name`.</span>
 
 <span class="sd">    Parameters</span>
@@ -7462,30 +7506,22 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="go">│          19.3 │</span>
 <span class="go">└───────────────┘</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">bill_depth_mm</span><span class="o">.</span><span class="n">notin</span><span class="p">([</span><span class="mf">18.7</span><span class="p">,</span> <span class="mf">18.1</span><span class="p">])</span>
-<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
-<span class="go">┃ NotContains(bill_depth_mm) ┃</span>
-<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
-<span class="go">│ boolean                    │</span>
-<span class="go">├────────────────────────────┤</span>
-<span class="go">│ False                      │</span>
-<span class="go">│ True                       │</span>
-<span class="go">│ True                       │</span>
-<span class="go">│ NULL                       │</span>
-<span class="go">│ True                       │</span>
-<span class="go">└────────────────────────────┘</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Not(InValues(bill_depth_mm)) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ boolean                      │</span>
+<span class="go">├──────────────────────────────┤</span>
+<span class="go">│ False                        │</span>
+<span class="go">│ True                         │</span>
+<span class="go">│ True                         │</span>
+<span class="go">│ NULL                         │</span>
+<span class="go">│ True                         │</span>
+<span class="go">└──────────────────────────────┘</span>
 </code></pre></div>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">371</span>
-<span class="normal">372</span>
-<span class="normal">373</span>
-<span class="normal">374</span>
-<span class="normal">375</span>
-<span class="normal">376</span>
-<span class="normal">377</span>
-<span class="normal">378</span>
-<span class="normal">379</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">379</span>
 <span class="normal">380</span>
 <span class="normal">381</span>
 <span class="normal">382</span>
@@ -7520,7 +7556,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">411</span>
 <span class="normal">412</span>
 <span class="normal">413</span>
-<span class="normal">414</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">notin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">notin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Value</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Check whether this expression&#39;s values are not in `values`.</span>
 
 <span class="sd">    Parameters</span>
@@ -7551,19 +7595,19 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="sd">    │          19.3 │</span>
 <span class="sd">    └───────────────┘</span>
 <span class="sd">    &gt;&gt;&gt; t.bill_depth_mm.notin([18.7, 18.1])</span>
-<span class="sd">    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
-<span class="sd">    ┃ NotContains(bill_depth_mm) ┃</span>
-<span class="sd">    ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
-<span class="sd">    │ boolean                    │</span>
-<span class="sd">    ├────────────────────────────┤</span>
-<span class="sd">    │ False                      │</span>
-<span class="sd">    │ True                       │</span>
-<span class="sd">    │ True                       │</span>
-<span class="sd">    │ NULL                       │</span>
-<span class="sd">    │ True                       │</span>
-<span class="sd">    └────────────────────────────┘</span>
+<span class="sd">    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="sd">    ┃ Not(InValues(bill_depth_mm)) ┃</span>
+<span class="sd">    ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="sd">    │ boolean                      │</span>
+<span class="sd">    ├──────────────────────────────┤</span>
+<span class="sd">    │ False                        │</span>
+<span class="sd">    │ True                         │</span>
+<span class="sd">    │ True                         │</span>
+<span class="sd">    │ NULL                         │</span>
+<span class="sd">    │ True                         │</span>
+<span class="sd">    └──────────────────────────────┘</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">NotContains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+    <span class="k">return</span> <span class="o">~</span><span class="bp">self</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -7619,15 +7663,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">571</span>
-<span class="normal">572</span>
-<span class="normal">573</span>
-<span class="normal">574</span>
-<span class="normal">575</span>
-<span class="normal">576</span>
-<span class="normal">577</span>
-<span class="normal">578</span>
-<span class="normal">579</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">579</span>
 <span class="normal">580</span>
 <span class="normal">581</span>
 <span class="normal">582</span>
@@ -7652,7 +7688,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">601</span>
 <span class="normal">602</span>
 <span class="normal">603</span>
-<span class="normal">604</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">notnull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
+<span class="normal">604</span>
+<span class="normal">605</span>
+<span class="normal">606</span>
+<span class="normal">607</span>
+<span class="normal">608</span>
+<span class="normal">609</span>
+<span class="normal">610</span>
+<span class="normal">611</span>
+<span class="normal">612</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">notnull</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">BooleanValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether this expression is not NULL.</span>
 
 <span class="sd">    Examples</span>
@@ -7765,8 +7809,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">278</span>
-<span class="normal">279</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">279</span>
 <span class="normal">280</span>
 <span class="normal">281</span>
 <span class="normal">282</span>
@@ -7781,7 +7824,8 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">291</span>
 <span class="normal">292</span>
 <span class="normal">293</span>
-<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">nullif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">null_if_expr</span><span class="p">:</span> <span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
+<span class="normal">294</span>
+<span class="normal">295</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">nullif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">null_if_expr</span><span class="p">:</span> <span class="n">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Set values to null if they equal the values `null_if_expr`.</span>
 
 <span class="sd">    Commonly use to avoid divide-by-zero problems by replacing zero with</span>
@@ -7926,15 +7970,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">477</span>
-<span class="normal">478</span>
-<span class="normal">479</span>
-<span class="normal">480</span>
-<span class="normal">481</span>
-<span class="normal">482</span>
-<span class="normal">483</span>
-<span class="normal">484</span>
-<span class="normal">485</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">485</span>
 <span class="normal">486</span>
 <span class="normal">487</span>
 <span class="normal">488</span>
@@ -7983,7 +8019,15 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="normal">531</span>
 <span class="normal">532</span>
 <span class="normal">533</span>
-<span class="normal">534</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">over</span><span class="p">(</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">over</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
@@ -8177,15 +8221,7 @@ The default of <code>None</code> means leave the original value unchanged.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">416</span>
-<span class="normal">417</span>
-<span class="normal">418</span>
-<span class="normal">419</span>
-<span class="normal">420</span>
-<span class="normal">421</span>
-<span class="normal">422</span>
-<span class="normal">423</span>
-<span class="normal">424</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">424</span>
 <span class="normal">425</span>
 <span class="normal">426</span>
 <span class="normal">427</span>
@@ -8236,7 +8272,15 @@ The default of <code>None</code> means leave the original value unchanged.</p>
 <span class="normal">472</span>
 <span class="normal">473</span>
 <span class="normal">474</span>
-<span class="normal">475</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">substitute</span><span class="p">(</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">substitute</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">value</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">,</span>
     <span class="n">replacement</span><span class="p">:</span> <span class="n">Value</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -8364,15 +8408,7 @@ The default of <code>None</code> means leave the original value unchanged.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">893</span>
-<span class="normal">894</span>
-<span class="normal">895</span>
-<span class="normal">896</span>
-<span class="normal">897</span>
-<span class="normal">898</span>
-<span class="normal">899</span>
-<span class="normal">900</span>
-<span class="normal">901</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">901</span>
 <span class="normal">902</span>
 <span class="normal">903</span>
 <span class="normal">904</span>
@@ -8386,7 +8422,15 @@ The default of <code>None</code> means leave the original value unchanged.</p>
 <span class="normal">912</span>
 <span class="normal">913</span>
 <span class="normal">914</span>
-<span class="normal">915</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="normal">915</span>
+<span class="normal">916</span>
+<span class="normal">917</span>
+<span class="normal">918</span>
+<span class="normal">919</span>
+<span class="normal">920</span>
+<span class="normal">921</span>
+<span class="normal">922</span>
+<span class="normal">923</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a column expression to a pandas Series or scalar object.</span>
 
 <span class="sd">    Parameters</span>
@@ -8521,8 +8565,7 @@ as null or NaN depending on target_type and backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
-<span class="normal">117</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
 <span class="normal">120</span>
@@ -8573,7 +8616,8 @@ as null or NaN depending on target_type and backend behavior.</p>
 <span class="normal">165</span>
 <span class="normal">166</span>
 <span class="normal">167</span>
-<span class="normal">168</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">try_cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_type</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
+<span class="normal">168</span>
+<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">try_cast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_type</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Try cast expression to indicated data type.</span>
 <span class="sd">    If the cast fails for a row, the value is returned</span>
 <span class="sd">    as null or NaN depending on target_type and backend behavior.</span>
@@ -8649,11 +8693,11 @@ as null or NaN depending on target_type and backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">DataType</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the [DataType] of this expression.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">output_dtype</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">dtype</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -8702,8 +8746,7 @@ as null or NaN depending on target_type and backend behavior.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">221</span>
-<span class="normal">222</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">222</span>
 <span class="normal">223</span>
 <span class="normal">224</span>
 <span class="normal">225</span>
@@ -8712,7 +8755,8 @@ as null or NaN depending on target_type and backend behavior.</p>
 <span class="normal">228</span>
 <span class="normal">229</span>
 <span class="normal">230</span>
-<span class="normal">231</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">typeof</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">StringValue</span><span class="p">:</span>
+<span class="normal">231</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">typeof</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">StringValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the data type of the expression.</span>
 
 <span class="sd">    The values of the returned strings are necessarily backend dependent.</span>
@@ -9645,7 +9689,7 @@ as null or NaN depending on target_type and backend behavior.</p>
         <span class="k">assert</span> <span class="n">by</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">arg_table</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">by_table</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisError</span><span class="p">(</span><span class="s1">&#39;Cross-table TopK; must provide a parent joined table&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisError</span><span class="p">(</span><span class="s2">&quot;Cross-table TopK; must provide a parent joined table&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">arg_table</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">])</span>
@@ -12450,7 +12494,7 @@ If the value of <code>n</code> is greater than the number of rows in the window,
     <span class="k">assert</span> <span class="n">by</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">arg_table</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">by_table</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisError</span><span class="p">(</span><span class="s1">&#39;Cross-table TopK; must provide a parent joined table&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisError</span><span class="p">(</span><span class="s2">&quot;Cross-table TopK; must provide a parent joined table&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">(</span>
         <span class="n">arg_table</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">])</span>
@@ -12666,15 +12710,7 @@ If the value of <code>n</code> is greater than the number of rows in the window,
 
             <details class="quote">
               <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">918</span>
-<span class="normal">919</span>
-<span class="normal">920</span>
-<span class="normal">921</span>
-<span class="normal">922</span>
-<span class="normal">923</span>
-<span class="normal">924</span>
-<span class="normal">925</span>
-<span class="normal">926</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">926</span>
 <span class="normal">927</span>
 <span class="normal">928</span>
 <span class="normal">929</span>
@@ -12770,22 +12806,14 @@ If the value of <code>n</code> is greater than the number of rows in the window,
 <span class="sd">        &gt;&gt;&gt; isinstance(lit, ir.Table)</span>
 <span class="sd">        True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">ibis.expr.analysis</span> <span class="kn">import</span> <span class="p">(</span>
-            <span class="n">find_first_base_table</span><span class="p">,</span>
-            <span class="n">is_scalar_reduction</span><span class="p">,</span>
-            <span class="n">reduction_to_aggregation</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">ibis.expr.analysis</span> <span class="kn">import</span> <span class="n">find_first_base_table</span>
 
         <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">is_scalar_reduction</span><span class="p">(</span><span class="n">op</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">reduction_to_aggregation</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
-
         <span class="n">table</span> <span class="o">=</span> <span class="n">find_first_base_table</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">table</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">agg</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">Aggregation</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">table</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">(</span><span class="n">op</span><span class="p">,))</span>
+            <span class="k">return</span> <span class="n">table</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="bp">self</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">agg</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">DummyTable</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">op</span><span class="p">,))</span>
-        <span class="k">return</span> <span class="n">agg</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">DummyTable</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">op</span><span class="p">,))</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
@@ -12863,15 +12891,7 @@ If the value of <code>n</code> is greater than the number of rows in the window,
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/generic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">935</span>
-<span class="normal">936</span>
-<span class="normal">937</span>
-<span class="normal">938</span>
-<span class="normal">939</span>
-<span class="normal">940</span>
-<span class="normal">941</span>
-<span class="normal">942</span>
-<span class="normal">943</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">943</span>
 <span class="normal">944</span>
 <span class="normal">945</span>
 <span class="normal">946</span>
@@ -12930,22 +12950,14 @@ If the value of <code>n</code> is greater than the number of rows in the window,
 <span class="sd">    &gt;&gt;&gt; isinstance(lit, ir.Table)</span>
 <span class="sd">    True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">ibis.expr.analysis</span> <span class="kn">import</span> <span class="p">(</span>
-        <span class="n">find_first_base_table</span><span class="p">,</span>
-        <span class="n">is_scalar_reduction</span><span class="p">,</span>
-        <span class="n">reduction_to_aggregation</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">ibis.expr.analysis</span> <span class="kn">import</span> <span class="n">find_first_base_table</span>
 
     <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">is_scalar_reduction</span><span class="p">(</span><span class="n">op</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">reduction_to_aggregation</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
-
     <span class="n">table</span> <span class="o">=</span> <span class="n">find_first_base_table</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">table</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">agg</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">Aggregation</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">table</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">(</span><span class="n">op</span><span class="p">,))</span>
+        <span class="k">return</span> <span class="n">table</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="bp">self</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">agg</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">DummyTable</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">op</span><span class="p">,))</span>
-    <span class="k">return</span> <span class="n">agg</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">DummyTable</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">op</span><span class="p">,))</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>

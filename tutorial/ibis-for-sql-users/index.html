@@ -360,7 +360,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../blog/rendered/ibis-version-6.0.0-release/" class="md-tabs__link">
+      <a href="../../blog/rendered/ibis-version-6.1.0-release/" class="md-tabs__link">
         Blog
       </a>
     </li>
@@ -2131,6 +2131,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2144,6 +2146,20 @@
           Blog
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/rendered/ibis-version-6.1.0-release/" class="md-nav__link">
+        Ibis v6.1.0
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -5874,8 +5890,7 @@ ORDER BY
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The default for sorting is in ascending order. To reverse the sort
-direction of any key, either wrap it in <code>ibis.desc</code> or pass a tuple with
-<code>False</code> as the second value:</p>
+direction of any key, wrap it in <code>ibis.desc</code>:</p>
 </div>
 </div>
 </div>
@@ -5899,13 +5914,13 @@ direction of any key, either wrap it in <code>ibis.desc</code> or pass a tuple w
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">'event_type'</span><span class="p">),</span> <span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)]</span>
+    <span class="p">[</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">'event_type'</span><span class="p">),</span> <span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">())]</span>
 <span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">ibis</span><span class="o">.</span><span class="n">show_sql</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-35">sorted = events.order_by(
-    [ibis.desc('event_type'), (events.ts.month(), False)]
+    [ibis.desc('event_type'), ibis.desc(events.ts.month())]
 ).limit(100)
 
 ibis.show_sql(sorted)</div>
@@ -5929,14 +5944,6 @@ ORDER BY
   t0.event_type DESC,
   CAST(EXTRACT(month FROM t0.ts) AS SMALLINT) DESC
 LIMIT 100
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/home/runner/work/ibis/ibis/ibis/expr/types/relations.py:1268: FutureWarning: `table.order_by((key, True)) and table.order_by((key, False)) syntax` is deprecated as of v6.0, removed in v7.0; Use ibis.desc(key) or ibis.asc(key) instead
-  util.warn_deprecated(
 </pre>
 </div>
 </div>
@@ -9184,7 +9191,7 @@ JOIN t1
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
       
     
   </small>
