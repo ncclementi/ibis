@@ -20,11 +20,11 @@ ibis.expr.operations.arrays.ArrayColumn,True,True,True,False,False,True,False,Fa
 ibis.expr.operations.arrays.ArrayConcat,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayContains,True,True,False,False,False,True,False,False,False,False,False,False,False,True,True,False,True
 ibis.expr.operations.arrays.ArrayDistinct,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
-ibis.expr.operations.arrays.ArrayFilter,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
+ibis.expr.operations.arrays.ArrayFilter,True,True,False,False,False,True,False,False,False,False,False,False,True,True,False,False,True
 ibis.expr.operations.arrays.ArrayIndex,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayIntersect,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayLength,True,True,True,False,False,True,False,False,False,False,True,True,True,True,True,False,True
-ibis.expr.operations.arrays.ArrayMap,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
+ibis.expr.operations.arrays.ArrayMap,True,True,False,False,False,True,False,False,False,False,False,False,True,True,False,False,True
 ibis.expr.operations.arrays.ArrayPosition,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayRemove,True,True,False,False,False,True,False,False,False,False,False,False,True,True,True,False,True
 ibis.expr.operations.arrays.ArrayRepeat,True,True,True,False,False,True,False,False,False,False,True,False,True,True,True,False,True
