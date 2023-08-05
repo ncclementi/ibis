@@ -1524,6 +1524,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.intersect" class="md-nav__link">
+    intersect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.join" class="md-nav__link">
     join()
   </a>
@@ -2458,6 +2465,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.ArrayValue.index" class="md-nav__link">
     index()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.arrays.ArrayValue.intersect" class="md-nav__link">
+    intersect()
   </a>
   
 </li>
@@ -3508,7 +3522,48 @@
 <span class="normal">779</span>
 <span class="normal">780</span>
 <span class="normal">781</span>
-<span class="normal">782</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+<span class="normal">782</span>
+<span class="normal">783</span>
+<span class="normal">784</span>
+<span class="normal">785</span>
+<span class="normal">786</span>
+<span class="normal">787</span>
+<span class="normal">788</span>
+<span class="normal">789</span>
+<span class="normal">790</span>
+<span class="normal">791</span>
+<span class="normal">792</span>
+<span class="normal">793</span>
+<span class="normal">794</span>
+<span class="normal">795</span>
+<span class="normal">796</span>
+<span class="normal">797</span>
+<span class="normal">798</span>
+<span class="normal">799</span>
+<span class="normal">800</span>
+<span class="normal">801</span>
+<span class="normal">802</span>
+<span class="normal">803</span>
+<span class="normal">804</span>
+<span class="normal">805</span>
+<span class="normal">806</span>
+<span class="normal">807</span>
+<span class="normal">808</span>
+<span class="normal">809</span>
+<span class="normal">810</span>
+<span class="normal">811</span>
+<span class="normal">812</span>
+<span class="normal">813</span>
+<span class="normal">814</span>
+<span class="normal">815</span>
+<span class="normal">816</span>
+<span class="normal">817</span>
+<span class="normal">818</span>
+<span class="normal">819</span>
+<span class="normal">820</span>
+<span class="normal">821</span>
+<span class="normal">822</span>
+<span class="normal">823</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">ArrayValue</span><span class="p">(</span><span class="n">Value</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the length of an array.</span>
@@ -4218,7 +4273,48 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayUnion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ArrayValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayValue</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Intersect two arrays.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other</span>
+<span class="sd">            Another array to intersect with `self`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayValue</span>
+<span class="sd">            Intersected arrays</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import ibis</span>
+<span class="sd">        &gt;&gt;&gt; ibis.options.interactive = True</span>
+<span class="sd">        &gt;&gt;&gt; t = ibis.memtable({&quot;arr1&quot;: [[3, 2], [], None], &quot;arr2&quot;: [[1, 3], [None], [5]]})</span>
+<span class="sd">        &gt;&gt;&gt; t</span>
+<span class="sd">        ┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="sd">        ┃ arr1                 ┃ arr2                 ┃</span>
+<span class="sd">        ┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="sd">        │ array&lt;int64&gt;         │ array&lt;int64&gt;         │</span>
+<span class="sd">        ├──────────────────────┼──────────────────────┤</span>
+<span class="sd">        │ [3, 2]               │ [1, 3]               │</span>
+<span class="sd">        │ []                   │ [None]               │</span>
+<span class="sd">        │ NULL                 │ [5]                  │</span>
+<span class="sd">        └──────────────────────┴──────────────────────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.arr1.intersect(t.arr2)</span>
+<span class="sd">        ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="sd">        ┃ ArrayIntersect(arr1, arr2) ┃</span>
+<span class="sd">        ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="sd">        │ array&lt;int64&gt;               │</span>
+<span class="sd">        ├────────────────────────────┤</span>
+<span class="sd">        │ [3]                        │</span>
+<span class="sd">        │ []                         │</span>
+<span class="sd">        │ NULL                       │</span>
+<span class="sd">        └────────────────────────────┘</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayIntersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ArrayValue</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">:</span> <span class="n">ArrayValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Zip two or more arrays together.</span>
 
 <span class="sd">        Parameters</span>
@@ -5249,6 +5345,190 @@
 <span class="sd">    └──────────────────────────┘</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayPosition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.arrays.ArrayValue.intersect" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.arrays.ArrayValue.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Intersect two arrays.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>other</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Another array to intersect with <code>self</code></p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Intersected arrays</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">({</span><span class="s2">&quot;arr1&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">],</span> <span class="s2">&quot;arr2&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ arr1                 ┃ arr2                 ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int64&gt;         │ array&lt;int64&gt;         │</span>
+<span class="go">├──────────────────────┼──────────────────────┤</span>
+<span class="go">│ [3, 2]               │ [1, 3]               │</span>
+<span class="go">│ []                   │ [None]               │</span>
+<span class="go">│ NULL                 │ [5]                  │</span>
+<span class="go">└──────────────────────┴──────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arr1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">arr2</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ ArrayIntersect(arr1, arr2) ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ array&lt;int64&gt;               │</span>
+<span class="go">├────────────────────────────┤</span>
+<span class="go">│ [3]                        │</span>
+<span class="go">│ []                         │</span>
+<span class="go">│ NULL                       │</span>
+<span class="go">└────────────────────────────┘</span>
+</code></pre></div>
+
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">728</span>
+<span class="normal">729</span>
+<span class="normal">730</span>
+<span class="normal">731</span>
+<span class="normal">732</span>
+<span class="normal">733</span>
+<span class="normal">734</span>
+<span class="normal">735</span>
+<span class="normal">736</span>
+<span class="normal">737</span>
+<span class="normal">738</span>
+<span class="normal">739</span>
+<span class="normal">740</span>
+<span class="normal">741</span>
+<span class="normal">742</span>
+<span class="normal">743</span>
+<span class="normal">744</span>
+<span class="normal">745</span>
+<span class="normal">746</span>
+<span class="normal">747</span>
+<span class="normal">748</span>
+<span class="normal">749</span>
+<span class="normal">750</span>
+<span class="normal">751</span>
+<span class="normal">752</span>
+<span class="normal">753</span>
+<span class="normal">754</span>
+<span class="normal">755</span>
+<span class="normal">756</span>
+<span class="normal">757</span>
+<span class="normal">758</span>
+<span class="normal">759</span>
+<span class="normal">760</span>
+<span class="normal">761</span>
+<span class="normal">762</span>
+<span class="normal">763</span>
+<span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span>
+<span class="normal">767</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ArrayValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayValue</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Intersect two arrays.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    other</span>
+<span class="sd">        Another array to intersect with `self`</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ArrayValue</span>
+<span class="sd">        Intersected arrays</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import ibis</span>
+<span class="sd">    &gt;&gt;&gt; ibis.options.interactive = True</span>
+<span class="sd">    &gt;&gt;&gt; t = ibis.memtable({&quot;arr1&quot;: [[3, 2], [], None], &quot;arr2&quot;: [[1, 3], [None], [5]]})</span>
+<span class="sd">    &gt;&gt;&gt; t</span>
+<span class="sd">    ┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="sd">    ┃ arr1                 ┃ arr2                 ┃</span>
+<span class="sd">    ┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="sd">    │ array&lt;int64&gt;         │ array&lt;int64&gt;         │</span>
+<span class="sd">    ├──────────────────────┼──────────────────────┤</span>
+<span class="sd">    │ [3, 2]               │ [1, 3]               │</span>
+<span class="sd">    │ []                   │ [None]               │</span>
+<span class="sd">    │ NULL                 │ [5]                  │</span>
+<span class="sd">    └──────────────────────┴──────────────────────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.arr1.intersect(t.arr2)</span>
+<span class="sd">    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="sd">    ┃ ArrayIntersect(arr1, arr2) ┃</span>
+<span class="sd">    ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="sd">    │ array&lt;int64&gt;               │</span>
+<span class="sd">    ├────────────────────────────┤</span>
+<span class="sd">    │ [3]                        │</span>
+<span class="sd">    │ []                         │</span>
+<span class="sd">    │ NULL                       │</span>
+<span class="sd">    └────────────────────────────┘</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">ArrayIntersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -6881,7 +7161,7 @@
         <tr>
           <td><code>other</code></td>
           <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Array">Array</span></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6895,7 +7175,7 @@
         <tr>
           <td><code>others</code></td>
           <td>
-                <code><span title="ibis">ir</span>.<span title="ibis.Array">Array</span></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.arrays.ArrayValue" href="#ibis.expr.types.arrays.ArrayValue">ArrayValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6975,48 +7255,7 @@ array.</p>
 
           <details class="quote">
             <summary>Source code in <code>ibis/expr/types/arrays.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">728</span>
-<span class="normal">729</span>
-<span class="normal">730</span>
-<span class="normal">731</span>
-<span class="normal">732</span>
-<span class="normal">733</span>
-<span class="normal">734</span>
-<span class="normal">735</span>
-<span class="normal">736</span>
-<span class="normal">737</span>
-<span class="normal">738</span>
-<span class="normal">739</span>
-<span class="normal">740</span>
-<span class="normal">741</span>
-<span class="normal">742</span>
-<span class="normal">743</span>
-<span class="normal">744</span>
-<span class="normal">745</span>
-<span class="normal">746</span>
-<span class="normal">747</span>
-<span class="normal">748</span>
-<span class="normal">749</span>
-<span class="normal">750</span>
-<span class="normal">751</span>
-<span class="normal">752</span>
-<span class="normal">753</span>
-<span class="normal">754</span>
-<span class="normal">755</span>
-<span class="normal">756</span>
-<span class="normal">757</span>
-<span class="normal">758</span>
-<span class="normal">759</span>
-<span class="normal">760</span>
-<span class="normal">761</span>
-<span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
-<span class="normal">769</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">769</span>
 <span class="normal">770</span>
 <span class="normal">771</span>
 <span class="normal">772</span>
@@ -7029,7 +7268,48 @@ array.</p>
 <span class="normal">779</span>
 <span class="normal">780</span>
 <span class="normal">781</span>
-<span class="normal">782</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ir</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="normal">782</span>
+<span class="normal">783</span>
+<span class="normal">784</span>
+<span class="normal">785</span>
+<span class="normal">786</span>
+<span class="normal">787</span>
+<span class="normal">788</span>
+<span class="normal">789</span>
+<span class="normal">790</span>
+<span class="normal">791</span>
+<span class="normal">792</span>
+<span class="normal">793</span>
+<span class="normal">794</span>
+<span class="normal">795</span>
+<span class="normal">796</span>
+<span class="normal">797</span>
+<span class="normal">798</span>
+<span class="normal">799</span>
+<span class="normal">800</span>
+<span class="normal">801</span>
+<span class="normal">802</span>
+<span class="normal">803</span>
+<span class="normal">804</span>
+<span class="normal">805</span>
+<span class="normal">806</span>
+<span class="normal">807</span>
+<span class="normal">808</span>
+<span class="normal">809</span>
+<span class="normal">810</span>
+<span class="normal">811</span>
+<span class="normal">812</span>
+<span class="normal">813</span>
+<span class="normal">814</span>
+<span class="normal">815</span>
+<span class="normal">816</span>
+<span class="normal">817</span>
+<span class="normal">818</span>
+<span class="normal">819</span>
+<span class="normal">820</span>
+<span class="normal">821</span>
+<span class="normal">822</span>
+<span class="normal">823</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">ArrayValue</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">:</span> <span class="n">ArrayValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayValue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Zip two or more arrays together.</span>
 
 <span class="sd">    Parameters</span>
