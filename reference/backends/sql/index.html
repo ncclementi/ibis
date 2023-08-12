@@ -3795,9 +3795,24 @@ or other equivalent entities in a SQL database.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Execute a query string.</p>
-<div class="admonition warning">
-<p class="admonition-title">The returned cursor object must be <strong>manually</strong> released if results are returned.</p>
+      <p>Execute a query string and return the cursor used for execution.</p>
+<div class="admonition tip">
+<p class="admonition-title">Consider using <a class="autorefs autorefs-internal" href="#ibis.backends.base.sql.BaseSQLBackend.sql"><code>.sql</code></a> instead</p>
+<p>If your query is a SELECT statement, you should use the
+<a class="autorefs autorefs-internal" href="#ibis.backends.base.sql.BaseSQLBackend.sql"><code>.sql</code></a> method to avoid
+having to release the cursor returned from this method manually.</p>
+<details class="warning">
+<summary>The returned cursor object must be <strong>manually released</strong> if you use <code>raw_sql</code>.</summary>
+<p>To release a cursor, call the <code>close</code> method on the returned cursor object.</p>
+<p>You can close the cursor by explicitly calling its <code>close</code> method:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span><span class="s2">&quot;SELECT ...&quot;</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>Or you can use a context manager:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="k">with</span> <span class="n">con</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span><span class="s2">&quot;SELECT ...&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+</details>
 </div>
 
 
@@ -3829,6 +3844,18 @@ or other equivalent entities in a SQL database.</p>
         </tr>
     </tbody>
   </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;duckdb://&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">con</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span>
+<span class="go">[(1,)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">closed</span>
+<span class="go">True</span>
+</code></pre></div>
 
   </div>
 
