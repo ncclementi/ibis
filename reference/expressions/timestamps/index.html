@@ -3552,7 +3552,7 @@
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">|</span> <span class="n">IntervalValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TimestampValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TimestampValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an interval to a timestamp.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">TimestampAdd</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
@@ -3566,7 +3566,7 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    Value : TimestampValue | NotImplemented</span>
+<span class="sd">    Value : TimestampValue</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@annotated</span>
@@ -3590,7 +3590,7 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    Value : IntervalValue | TimestampValue | NotImplemented</span>
+<span class="sd">    Value : IntervalValue | TimestampValue</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@annotated</span>
@@ -3694,7 +3694,7 @@
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimestampValue" href="#ibis.expr.types.temporal.TimestampValue">TimestampValue</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#NotImplemented">NotImplemented</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimestampValue" href="#ibis.expr.types.temporal.TimestampValue">TimestampValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4189,7 +4189,7 @@ information.</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.IntervalValue" href="#ibis.expr.types.temporal.IntervalValue">IntervalValue</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimestampValue" href="#ibis.expr.types.temporal.TimestampValue">TimestampValue</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#NotImplemented">NotImplemented</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.IntervalValue" href="#ibis.expr.types.temporal.IntervalValue">IntervalValue</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimestampValue" href="#ibis.expr.types.temporal.TimestampValue">TimestampValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4486,7 +4486,7 @@ information.</p>
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">|</span> <span class="n">IntervalValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DateValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DateValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an interval to a date.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">DateAdd</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
@@ -4500,7 +4500,7 @@ information.</p>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    Value : DateValue | NotImplemented</span>
+<span class="sd">    Value : DateValue</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@annotated</span>
@@ -4524,7 +4524,7 @@ information.</p>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    Value : DateValue | NotImplemented</span>
+<span class="sd">    Value : DateValue</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@annotated</span>
@@ -4628,7 +4628,7 @@ information.</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.DateValue" href="#ibis.expr.types.temporal.DateValue">DateValue</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#NotImplemented">NotImplemented</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.DateValue" href="#ibis.expr.types.temporal.DateValue">DateValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4901,7 +4901,7 @@ information.</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.DateValue" href="#ibis.expr.types.temporal.DateValue">DateValue</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#NotImplemented">NotImplemented</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.DateValue" href="#ibis.expr.types.temporal.DateValue">DateValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5165,7 +5165,7 @@ information.</p>
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">|</span> <span class="n">IntervalValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TimeValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TimeValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an interval to a time expression.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">TimeAdd</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
@@ -5179,7 +5179,7 @@ information.</p>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    Value : TimeValue | NotImplemented</span>
+<span class="sd">    Value : TimeValue</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@annotated</span>
@@ -5203,7 +5203,7 @@ information.</p>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    Value : IntervalValue | TimeValue | NotImplemented</span>
+<span class="sd">    Value : IntervalValue | TimeValue</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@annotated</span>
@@ -5307,7 +5307,7 @@ information.</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimeValue" href="#ibis.expr.types.temporal.TimeValue">TimeValue</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#NotImplemented">NotImplemented</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimeValue" href="#ibis.expr.types.temporal.TimeValue">TimeValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5656,7 +5656,7 @@ as needed.</p>
     <tbody>
         <tr>
 <td><code>Value</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.IntervalValue" href="#ibis.expr.types.temporal.IntervalValue">IntervalValue</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimeValue" href="#ibis.expr.types.temporal.TimeValue">TimeValue</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/constants.html#NotImplemented">NotImplemented</a></code>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.IntervalValue" href="#ibis.expr.types.temporal.IntervalValue">IntervalValue</a> | <a class="autorefs autorefs-internal" title="ibis.expr.types.temporal.TimeValue" href="#ibis.expr.types.temporal.TimeValue">TimeValue</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -6025,7 +6025,7 @@ as needed.</p>
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">|</span> <span class="n">IntervalValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add this interval to `other`.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">IntervalAdd</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
@@ -6034,7 +6034,7 @@ as needed.</p>
     <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">|</span> <span class="n">IntervalValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract `other` from this interval.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">IntervalSubtract</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
@@ -6043,7 +6043,7 @@ as needed.</p>
     <span class="k">def</span> <span class="fm">__rsub__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">|</span> <span class="n">IntervalValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract `other` from this interval.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">IntervalSubtract</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 
@@ -6052,7 +6052,7 @@ as needed.</p>
     <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Multiply this interval by `other`.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">IntervalMultiply</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
@@ -6061,7 +6061,7 @@ as needed.</p>
     <span class="k">def</span> <span class="fm">__floordiv__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntegerValue</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span> <span class="o">|</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntervalValue</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Floor-divide this interval by `other`.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_binop</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">IntervalFloorDivide</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 
