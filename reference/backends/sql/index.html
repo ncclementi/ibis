@@ -3726,7 +3726,7 @@ or other equivalent entities in a SQL database.</p>
         <tr>
           <td><code>like</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3740,11 +3740,12 @@ or other equivalent entities in a SQL database.</p>
         <tr>
           <td><code>database</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The database to list tables of, if not the current one.</p>
+              <p>The database from which to list tables. If not provided, the
+current database is used.</p>
             </div>
           </td>
           <td>
