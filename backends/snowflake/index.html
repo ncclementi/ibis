@@ -2405,7 +2405,7 @@
 
 
 <h4 id="ibis.backends.snowflake.Backend.do_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="n">database</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">authenticator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">connect_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="n">database</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">authenticator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">connect_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">create_object_udfs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.snowflake.Backend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -2504,6 +2504,21 @@ calls fail if the authentication fails for any reason.</p>
           </td>
           <td>
                 <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>create_object_udfs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Enable object UDF extensions defined by ibis on the first
+connection to the database.</p>
+            </div>
+          </td>
+          <td>
+                <code>True</code>
           </td>
         </tr>
         <tr>
