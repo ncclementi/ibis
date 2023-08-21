@@ -3500,9 +3500,7 @@ t.string_col.julianday()</div>
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := UnboundTable: t
   string_col string
 
-Selection[r0]
-  selections:
-    JulianDay(string_col): JulianDay(r0.string_col)
+JulianDay(string_col): JulianDay(r0.string_col)
 </pre>
 </div>
 </div>
@@ -3746,9 +3744,7 @@ day</div>
   independence_date date
   independence_from string
 
-Selection[r0]
-  selections:
-    Cast(independence_date, string): Cast(r0.independence_date, to=string)
+Cast(independence_date, string): Cast(r0.independence_date, to=string)
 </pre>
 </div>
 </div>
@@ -3795,9 +3791,7 @@ julianday_expr</div>
   independence_date date
   independence_from string
 
-Selection[r0]
-  selections:
-    jday: JulianDay(Cast(r0.independence_date, to=string))
+jday: JulianDay(Cast(r0.independence_date, to=string))
 </pre>
 </div>
 </div>
