@@ -763,6 +763,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-support" class="md-nav__link">
+    File Support
+  </a>
+  
+    <nav class="md-nav" aria-label="File Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.read_parquet" class="md-nav__link">
+    read_parquet()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2267,6 +2294,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-support" class="md-nav__link">
+    File Support
+  </a>
+  
+    <nav class="md-nav" aria-label="File Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.clickhouse.Backend.read_parquet" class="md-nav__link">
+    read_parquet()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2286,6 +2340,7 @@
 
 
 <h1 id="clickhouse">ClickHouse<a class="headerlink" href="#clickhouse" title="Anchor link to this section for reference">&para;</a></h1>
+<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20Parquet-blue?style=flat-square" /> </p>
 <p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-CSV%20|%20Pandas%20|%20Parquet%20|%20PyArrow-orange?style=flat-square" /> </p>
 <h2 id="ibismemtable-support"><code>ibis.memtable</code> Support <img alt="memtable" src="https://img.shields.io/badge/native-56ae57" /><a class="headerlink" href="#ibismemtable-support" title="Anchor link to this section for reference">&para;</a></h2>
 <p>The ClickHouse backend supports <code>memtable</code>s  by natively executing queries against the underlying storage (e.g., pyarrow Tables or pandas DataFrames).</p>
@@ -2506,13 +2561,50 @@ passing a properly formatted ClickHouse connection URL to <code>ibis.connect</co
 <p>or</p>
 <div class="language-python highlight"><pre><span></span><code><span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;clickhouse://play:clickhouse@play.clickhouse.com:443?secure=True&quot;</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="file-support">File Support<a class="headerlink" href="#file-support" title="Anchor link to this section for reference">&para;</a></h2>
+<!-- prettier-ignore-start -->
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.clickhouse.Backend.read_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;File(Native)&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.clickhouse.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.clickhouse.Backend.read_parquet" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;File(Native)&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.clickhouse.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+
+  </div>
+
+</div><!-- prettier-ignore-end -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
       
     
   </small>

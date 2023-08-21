@@ -979,6 +979,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-support" class="md-nav__link">
+    File Support
+  </a>
+  
+    <nav class="md-nav" aria-label="File Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.snowflake.Backend.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.snowflake.Backend.read_parquet" class="md-nav__link">
+    read_parquet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.snowflake.Backend.read_json" class="md-nav__link">
+    read_json()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2335,6 +2369,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-support" class="md-nav__link">
+    File Support
+  </a>
+  
+    <nav class="md-nav" aria-label="File Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.snowflake.Backend.read_csv" class="md-nav__link">
+    read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.snowflake.Backend.read_parquet" class="md-nav__link">
+    read_parquet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.snowflake.Backend.read_json" class="md-nav__link">
+    read_json()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2354,7 +2422,7 @@
 
 
 <h1 id="snowflake">Snowflake<a class="headerlink" href="#snowflake" title="Anchor link to this section for reference">&para;</a></h1>
-<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV-blue?style=flat-square" /> </p>
+<p><img alt="filebadge" src="https://img.shields.io/badge/Reads-CSV%20|%20JSON%20|%20Parquet-blue?style=flat-square" /> </p>
 <p><img alt="exportbadge" src="https://img.shields.io/badge/Exports-CSV%20|%20Pandas%20|%20Parquet%20|%20PyArrow-orange?style=flat-square" /> </p>
 <div class="admonition experimental">
 <p class="admonition-title">Introduced in v4.0</p>
@@ -2601,13 +2669,252 @@ The bold blue text with a checkmark next to it is your user ID.</p>
 available databases and schema in the "Data" sidebar item in the Snowflake web
 app.</p>
 <p><img alt="Snowflake Database" src="../images/snowflake_database.png" /></p>
+<h2 id="file-support">File Support<a class="headerlink" href="#file-support" title="Anchor link to this section for reference">&para;</a></h2>
+<!-- prettier-ignore-start -->
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.snowflake.Backend.read_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.snowflake.Backend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Register a CSV file as a table in the Snowflake backend.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A string or Path to a CSV file; globs are supported</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional name for the table; if not passed, a random name will be generated</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Snowflake-specific file format configuration arguments. See the documentation for
+the full list of options: <a href="https://docs.snowflake.com/en/sql-reference/sql/create-file-format#type-csv">https://docs.snowflake.com/en/sql-reference/sql/create-file-format#type-csv</a></p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.snowflake.Backend.read_parquet" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.snowflake.Backend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Read a Parquet file into an ibis table, using Snowflake.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A string or Path to a Parquet file; globs are supported</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional table name</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments. See
+<a href="https://docs.snowflake.com/en/sql-reference/sql/create-file-format#type-parquet">https://docs.snowflake.com/en/sql-reference/sql/create-file-format#type-parquet</a>
+for the full list of options.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.snowflake.Backend.read_json" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.snowflake.Backend.read_json" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Read newline-delimited JSON into an ibis table, using Snowflake.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A string or Path to a JSON file; globs are supported</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional table name</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments. See
+<a href="https://docs.snowflake.com/en/sql-reference/sql/create-file-format#type-json">https://docs.snowflake.com/en/sql-reference/sql/create-file-format#type-json</a>
+for the full list of options.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div><!-- prettier-ignore-end -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
       
     
   </small>

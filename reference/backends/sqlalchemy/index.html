@@ -1762,6 +1762,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.read_json" class="md-nav__link">
+    read_json()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.read_parquet" class="md-nav__link">
     read_parquet()
   </a>
@@ -2468,6 +2475,13 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.read_csv" class="md-nav__link">
     read_csv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.read_json" class="md-nav__link">
+    read_json()
   </a>
   
 </li>
@@ -3550,6 +3564,108 @@ query.</p>
           <td>
             <div class="doc-md-description">
               <p>The data source. A string or Path to the CSV file.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>table_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>An optional name to use for the created table. This defaults to
+a sequentially generated name.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments passed to the backend loading function.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="ibis.Table">Table</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The just-registered table</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.backends.base.sql.alchemy.BaseAlchemyBackend.read_json" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.read_json" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register a JSON file as a table in the current backend.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The data source. A string or Path to the JSON file.</p>
             </div>
           </td>
           <td>
