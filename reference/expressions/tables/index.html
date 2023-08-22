@@ -1680,6 +1680,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.relocate" class="md-nav__link">
+    relocate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.rowid" class="md-nav__link">
     rowid()
   </a>
@@ -2889,6 +2896,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.relabel" class="md-nav__link">
     relabel()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.relocate" class="md-nav__link">
+    relocate()
   </a>
   
 </li>
@@ -6659,7 +6673,190 @@
 <span class="normal">3607</span>
 <span class="normal">3608</span>
 <span class="normal">3609</span>
-<span class="normal">3610</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
+<span class="normal">3610</span>
+<span class="normal">3611</span>
+<span class="normal">3612</span>
+<span class="normal">3613</span>
+<span class="normal">3614</span>
+<span class="normal">3615</span>
+<span class="normal">3616</span>
+<span class="normal">3617</span>
+<span class="normal">3618</span>
+<span class="normal">3619</span>
+<span class="normal">3620</span>
+<span class="normal">3621</span>
+<span class="normal">3622</span>
+<span class="normal">3623</span>
+<span class="normal">3624</span>
+<span class="normal">3625</span>
+<span class="normal">3626</span>
+<span class="normal">3627</span>
+<span class="normal">3628</span>
+<span class="normal">3629</span>
+<span class="normal">3630</span>
+<span class="normal">3631</span>
+<span class="normal">3632</span>
+<span class="normal">3633</span>
+<span class="normal">3634</span>
+<span class="normal">3635</span>
+<span class="normal">3636</span>
+<span class="normal">3637</span>
+<span class="normal">3638</span>
+<span class="normal">3639</span>
+<span class="normal">3640</span>
+<span class="normal">3641</span>
+<span class="normal">3642</span>
+<span class="normal">3643</span>
+<span class="normal">3644</span>
+<span class="normal">3645</span>
+<span class="normal">3646</span>
+<span class="normal">3647</span>
+<span class="normal">3648</span>
+<span class="normal">3649</span>
+<span class="normal">3650</span>
+<span class="normal">3651</span>
+<span class="normal">3652</span>
+<span class="normal">3653</span>
+<span class="normal">3654</span>
+<span class="normal">3655</span>
+<span class="normal">3656</span>
+<span class="normal">3657</span>
+<span class="normal">3658</span>
+<span class="normal">3659</span>
+<span class="normal">3660</span>
+<span class="normal">3661</span>
+<span class="normal">3662</span>
+<span class="normal">3663</span>
+<span class="normal">3664</span>
+<span class="normal">3665</span>
+<span class="normal">3666</span>
+<span class="normal">3667</span>
+<span class="normal">3668</span>
+<span class="normal">3669</span>
+<span class="normal">3670</span>
+<span class="normal">3671</span>
+<span class="normal">3672</span>
+<span class="normal">3673</span>
+<span class="normal">3674</span>
+<span class="normal">3675</span>
+<span class="normal">3676</span>
+<span class="normal">3677</span>
+<span class="normal">3678</span>
+<span class="normal">3679</span>
+<span class="normal">3680</span>
+<span class="normal">3681</span>
+<span class="normal">3682</span>
+<span class="normal">3683</span>
+<span class="normal">3684</span>
+<span class="normal">3685</span>
+<span class="normal">3686</span>
+<span class="normal">3687</span>
+<span class="normal">3688</span>
+<span class="normal">3689</span>
+<span class="normal">3690</span>
+<span class="normal">3691</span>
+<span class="normal">3692</span>
+<span class="normal">3693</span>
+<span class="normal">3694</span>
+<span class="normal">3695</span>
+<span class="normal">3696</span>
+<span class="normal">3697</span>
+<span class="normal">3698</span>
+<span class="normal">3699</span>
+<span class="normal">3700</span>
+<span class="normal">3701</span>
+<span class="normal">3702</span>
+<span class="normal">3703</span>
+<span class="normal">3704</span>
+<span class="normal">3705</span>
+<span class="normal">3706</span>
+<span class="normal">3707</span>
+<span class="normal">3708</span>
+<span class="normal">3709</span>
+<span class="normal">3710</span>
+<span class="normal">3711</span>
+<span class="normal">3712</span>
+<span class="normal">3713</span>
+<span class="normal">3714</span>
+<span class="normal">3715</span>
+<span class="normal">3716</span>
+<span class="normal">3717</span>
+<span class="normal">3718</span>
+<span class="normal">3719</span>
+<span class="normal">3720</span>
+<span class="normal">3721</span>
+<span class="normal">3722</span>
+<span class="normal">3723</span>
+<span class="normal">3724</span>
+<span class="normal">3725</span>
+<span class="normal">3726</span>
+<span class="normal">3727</span>
+<span class="normal">3728</span>
+<span class="normal">3729</span>
+<span class="normal">3730</span>
+<span class="normal">3731</span>
+<span class="normal">3732</span>
+<span class="normal">3733</span>
+<span class="normal">3734</span>
+<span class="normal">3735</span>
+<span class="normal">3736</span>
+<span class="normal">3737</span>
+<span class="normal">3738</span>
+<span class="normal">3739</span>
+<span class="normal">3740</span>
+<span class="normal">3741</span>
+<span class="normal">3742</span>
+<span class="normal">3743</span>
+<span class="normal">3744</span>
+<span class="normal">3745</span>
+<span class="normal">3746</span>
+<span class="normal">3747</span>
+<span class="normal">3748</span>
+<span class="normal">3749</span>
+<span class="normal">3750</span>
+<span class="normal">3751</span>
+<span class="normal">3752</span>
+<span class="normal">3753</span>
+<span class="normal">3754</span>
+<span class="normal">3755</span>
+<span class="normal">3756</span>
+<span class="normal">3757</span>
+<span class="normal">3758</span>
+<span class="normal">3759</span>
+<span class="normal">3760</span>
+<span class="normal">3761</span>
+<span class="normal">3762</span>
+<span class="normal">3763</span>
+<span class="normal">3764</span>
+<span class="normal">3765</span>
+<span class="normal">3766</span>
+<span class="normal">3767</span>
+<span class="normal">3768</span>
+<span class="normal">3769</span>
+<span class="normal">3770</span>
+<span class="normal">3771</span>
+<span class="normal">3772</span>
+<span class="normal">3773</span>
+<span class="normal">3774</span>
+<span class="normal">3775</span>
+<span class="normal">3776</span>
+<span class="normal">3777</span>
+<span class="normal">3778</span>
+<span class="normal">3779</span>
+<span class="normal">3780</span>
+<span class="normal">3781</span>
+<span class="normal">3782</span>
+<span class="normal">3783</span>
+<span class="normal">3784</span>
+<span class="normal">3785</span>
+<span class="normal">3786</span>
+<span class="normal">3787</span>
+<span class="normal">3788</span>
+<span class="normal">3789</span>
+<span class="normal">3790</span>
+<span class="normal">3791</span>
+<span class="normal">3792</span>
+<span class="normal">3793</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@public</span>
 <span class="k">class</span> <span class="nc">Table</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="n">_FixedTextJupyterMixin</span><span class="p">):</span>
     <span class="c1"># Higher than numpy &amp; dask objects</span>
     <span class="n">__array_priority__</span> <span class="o">=</span> <span class="mi">20</span>
@@ -10165,6 +10362,189 @@
                 <span class="n">aggs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span> <span class="k">if</span> <span class="n">values_fill</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">arg</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="n">values_fill</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">id_cols</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="o">**</span><span class="n">aggs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">columns</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span><span class="p">,</span>
+        <span class="n">before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">after</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Relocate `columns` before or after other specified columns.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        columns</span>
+<span class="sd">            Columns to relocate. Selectors are accepted.</span>
+<span class="sd">        before</span>
+<span class="sd">            A column name or selector to insert the new columns before.</span>
+<span class="sd">        after</span>
+<span class="sd">            A column name or selector. Columns in `columns` are relocated after the last</span>
+<span class="sd">            column selected in `after`.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional column names to relocate, renaming argument values to</span>
+<span class="sd">            keyword argument names.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Table</span>
+<span class="sd">            A table with the columns relocated.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import ibis</span>
+<span class="sd">        &gt;&gt;&gt; ibis.options.interactive = True</span>
+<span class="sd">        &gt;&gt;&gt; import ibis.selectors as s</span>
+<span class="sd">        &gt;&gt;&gt; t = ibis.memtable(dict(a=[1], b=[1], c=[1], d=[&quot;a&quot;], e=[&quot;a&quot;], f=[&quot;a&quot;]))</span>
+<span class="sd">        &gt;&gt;&gt; t</span>
+<span class="sd">        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃ f      ┃</span>
+<span class="sd">        ┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ int64 │ int64 │ int64 │ string │ string │ string │</span>
+<span class="sd">        ├───────┼───────┼───────┼────────┼────────┼────────┤</span>
+<span class="sd">        │     1 │     1 │     1 │ a      │ a      │ a      │</span>
+<span class="sd">        └───────┴───────┴───────┴────────┴────────┴────────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(&quot;f&quot;)</span>
+<span class="sd">        ┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ f      ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="sd">        ┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ string │ int64 │ int64 │ int64 │ string │ string │</span>
+<span class="sd">        ├────────┼───────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">        │ a      │     1 │     1 │     1 │ a      │ a      │</span>
+<span class="sd">        └────────┴───────┴───────┴───────┴────────┴────────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(&quot;a&quot;, after=&quot;c&quot;)</span>
+<span class="sd">        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ b     ┃ c     ┃ a     ┃ d      ┃ e      ┃ f      ┃</span>
+<span class="sd">        ┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ int64 │ int64 │ int64 │ string │ string │ string │</span>
+<span class="sd">        ├───────┼───────┼───────┼────────┼────────┼────────┤</span>
+<span class="sd">        │     1 │     1 │     1 │ a      │ a      │ a      │</span>
+<span class="sd">        └───────┴───────┴───────┴────────┴────────┴────────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(&quot;f&quot;, before=&quot;b&quot;)</span>
+<span class="sd">        ┏━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ a     ┃ f      ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="sd">        ┡━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ int64 │ string │ int64 │ int64 │ string │ string │</span>
+<span class="sd">        ├───────┼────────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">        │     1 │ a      │     1 │     1 │ a      │ a      │</span>
+<span class="sd">        └───────┴────────┴───────┴───────┴────────┴────────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(&quot;a&quot;, after=s.last())</span>
+<span class="sd">        ┏━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">        ┃ b     ┃ c     ┃ d      ┃ e      ┃ f      ┃ a     ┃</span>
+<span class="sd">        ┡━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">        │ int64 │ int64 │ string │ string │ string │ int64 │</span>
+<span class="sd">        ├───────┼───────┼────────┼────────┼────────┼───────┤</span>
+<span class="sd">        │     1 │     1 │ a      │ a      │ a      │     1 │</span>
+<span class="sd">        └───────┴───────┴────────┴────────┴────────┴───────┘</span>
+
+<span class="sd">        Relocate allows renaming</span>
+
+<span class="sd">        &gt;&gt;&gt; t.relocate(ff=&quot;f&quot;)</span>
+<span class="sd">        ┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ ff     ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="sd">        ┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ string │ int64 │ int64 │ int64 │ string │ string │</span>
+<span class="sd">        ├────────┼───────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">        │ a      │     1 │     1 │     1 │ a      │ a      │</span>
+<span class="sd">        └────────┴───────┴───────┴───────┴────────┴────────┘</span>
+
+<span class="sd">        You can relocate based on any predicate selector, such as</span>
+<span class="sd">        [`of_type`][ibis.selectors.of_type]</span>
+
+<span class="sd">        &gt;&gt;&gt; t.relocate(s.of_type(&quot;string&quot;))</span>
+<span class="sd">        ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">        ┃ d      ┃ e      ┃ f      ┃ a     ┃ b     ┃ c     ┃</span>
+<span class="sd">        ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">        │ string │ string │ string │ int64 │ int64 │ int64 │</span>
+<span class="sd">        ├────────┼────────┼────────┼───────┼───────┼───────┤</span>
+<span class="sd">        │ a      │ a      │ a      │     1 │     1 │     1 │</span>
+<span class="sd">        └────────┴────────┴────────┴───────┴───────┴───────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(s.numeric(), after=s.last())</span>
+<span class="sd">        ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">        ┃ d      ┃ e      ┃ f      ┃ a     ┃ b     ┃ c     ┃</span>
+<span class="sd">        ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">        │ string │ string │ string │ int64 │ int64 │ int64 │</span>
+<span class="sd">        ├────────┼────────┼────────┼───────┼───────┼───────┤</span>
+<span class="sd">        │ a      │ a      │ a      │     1 │     1 │     1 │</span>
+<span class="sd">        └────────┴────────┴────────┴───────┴───────┴───────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(s.any_of(s.c(*&quot;ae&quot;)))</span>
+<span class="sd">        ┏━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ a     ┃ e      ┃ b     ┃ c     ┃ d      ┃ f      ┃</span>
+<span class="sd">        ┡━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ int64 │ string │ int64 │ int64 │ string │ string │</span>
+<span class="sd">        ├───────┼────────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">        │     1 │ a      │     1 │     1 │ a      │ a      │</span>
+<span class="sd">        └───────┴────────┴───────┴───────┴────────┴────────┘</span>
+
+<span class="sd">        When multiple columns are selected with `before` or `after`, those</span>
+<span class="sd">        selected columns are moved before and after the `selectors` input</span>
+
+<span class="sd">        &gt;&gt;&gt; t = ibis.memtable(dict(a=[1], b=[&quot;a&quot;], c=[1], d=[&quot;a&quot;]))</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(s.numeric(), after=s.of_type(&quot;string&quot;))</span>
+<span class="sd">        ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">        ┃ b      ┃ d      ┃ a     ┃ c     ┃</span>
+<span class="sd">        ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">        │ string │ string │ int64 │ int64 │</span>
+<span class="sd">        ├────────┼────────┼───────┼───────┤</span>
+<span class="sd">        │ a      │ a      │     1 │     1 │</span>
+<span class="sd">        └────────┴────────┴───────┴───────┘</span>
+<span class="sd">        &gt;&gt;&gt; t.relocate(s.numeric(), before=s.of_type(&quot;string&quot;))</span>
+<span class="sd">        ┏━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">        ┃ a     ┃ c     ┃ b      ┃ d      ┃</span>
+<span class="sd">        ┡━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">        │ int64 │ int64 │ string │ string │</span>
+<span class="sd">        ├───────┼───────┼────────┼────────┤</span>
+<span class="sd">        │     1 │     1 │ a      │ a      │</span>
+<span class="sd">        └───────┴───────┴────────┴────────┘</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">columns</span> <span class="ow">and</span> <span class="n">before</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">after</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisInputError</span><span class="p">(</span>
+                <span class="s2">&quot;At least one selector or `before` or `after` must be provided&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">after</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisInputError</span><span class="p">(</span><span class="s2">&quot;Cannot specify both `before` and `after`&quot;</span><span class="p">)</span>
+
+        <span class="n">sels</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">table_columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span>
+
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">map</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">,</span> <span class="n">columns</span><span class="p">)),</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="nb">map</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">())),</span>
+        <span class="p">):</span>
+            <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">sel</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">sels</span><span class="p">:</span>
+                    <span class="c1"># make sure the last duplicate column wins by reinserting</span>
+                    <span class="c1"># the position if it already exists</span>
+                    <span class="k">del</span> <span class="n">sels</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+                <span class="n">sels</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">table_columns</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+
+        <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table_columns</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">where</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">(</span><span class="n">before</span><span class="p">)</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">after</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">where</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">(</span><span class="n">after</span><span class="p">)</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="n">ncols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">before</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">after</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="n">where</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># all columns that should come BEFORE the matched selectors</span>
+        <span class="n">front</span> <span class="o">=</span> <span class="p">[</span><span class="n">left</span> <span class="k">for</span> <span class="n">left</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">where</span><span class="p">)</span> <span class="k">if</span> <span class="n">left</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sels</span><span class="p">]</span>
+
+        <span class="c1"># all columns that should come AFTER the matched selectors</span>
+        <span class="n">back</span> <span class="o">=</span> <span class="p">[</span><span class="n">right</span> <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="n">ncols</span><span class="p">)</span> <span class="k">if</span> <span class="n">right</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sels</span><span class="p">]</span>
+
+        <span class="c1"># selected columns</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sels</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+
+        <span class="n">relocated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">*</span><span class="n">front</span><span class="p">,</span> <span class="o">*</span><span class="n">middle</span><span class="p">,</span> <span class="o">*</span><span class="n">back</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">relocated</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="n">ncols</span>
+
+        <span class="k">return</span> <span class="n">relocated</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
@@ -19240,6 +19620,596 @@ naming convention.</p>
                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">!r}</span><span class="s2"> is not an existing column&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">exprs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.relocate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">relocate</span><span class="p">(</span><span class="o">*</span><span class="n">columns</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#ibis.expr.types.relations.Table.relocate" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Relocate <code>columns</code> before or after other specified columns.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>columns</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.Selector">Selector</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Columns to relocate. Selectors are accepted.</p>
+            </div>
+          </td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>before</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.Selector">Selector</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A column name or selector to insert the new columns before.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>after</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <span title="ibis.Selector">Selector</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A column name or selector. Columns in <code>columns</code> are relocated after the last
+column selected in <code>after</code>.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional column names to relocate, renaming argument values to
+keyword argument names.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="#ibis.expr.types.relations.Table">Table</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A table with the columns relocated.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="n">e</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="n">f</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃ f      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ int64 │ int64 │ string │ string │ string │</span>
+<span class="go">├───────┼───────┼───────┼────────┼────────┼────────┤</span>
+<span class="go">│     1 │     1 │     1 │ a      │ a      │ a      │</span>
+<span class="go">└───────┴───────┴───────┴────────┴────────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ f      ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ string │ int64 │ int64 │ int64 │ string │ string │</span>
+<span class="go">├────────┼───────┼───────┼───────┼────────┼────────┤</span>
+<span class="go">│ a      │     1 │     1 │     1 │ a      │ a      │</span>
+<span class="go">└────────┴───────┴───────┴───────┴────────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ b     ┃ c     ┃ a     ┃ d      ┃ e      ┃ f      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ int64 │ int64 │ string │ string │ string │</span>
+<span class="go">├───────┼───────┼───────┼────────┼────────┼────────┤</span>
+<span class="go">│     1 │     1 │     1 │ a      │ a      │ a      │</span>
+<span class="go">└───────┴───────┴───────┴────────┴────────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ f      ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │ int64 │ int64 │ string │ string │</span>
+<span class="go">├───────┼────────┼───────┼───────┼────────┼────────┤</span>
+<span class="go">│     1 │ a      │     1 │     1 │ a      │ a      │</span>
+<span class="go">└───────┴────────┴───────┴───────┴────────┴────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">last</span><span class="p">())</span>
+<span class="go">┏━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ b     ┃ c     ┃ d      ┃ e      ┃ f      ┃ a     ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ int64 │ int64 │ string │ string │ string │ int64 │</span>
+<span class="go">├───────┼───────┼────────┼────────┼────────┼───────┤</span>
+<span class="go">│     1 │     1 │ a      │ a      │ a      │     1 │</span>
+<span class="go">└───────┴───────┴────────┴────────┴────────┴───────┘</span>
+</code></pre></div>
+    <p>Relocate allows renaming</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">ff</span><span class="o">=</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ ff     ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ string │ int64 │ int64 │ int64 │ string │ string │</span>
+<span class="go">├────────┼───────┼───────┼───────┼────────┼────────┤</span>
+<span class="go">│ a      │     1 │     1 │     1 │ a      │ a      │</span>
+<span class="go">└────────┴───────┴───────┴───────┴────────┴────────┘</span>
+</code></pre></div>
+    <p>You can relocate based on any predicate selector, such as
+<a class="autorefs autorefs-internal" href="../../selectors/#ibis.selectors.of_type"><code>of_type</code></a></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">))</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ d      ┃ e      ┃ f      ┃ a     ┃ b     ┃ c     ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string │ string │ string │ int64 │ int64 │ int64 │</span>
+<span class="go">├────────┼────────┼────────┼───────┼───────┼───────┤</span>
+<span class="go">│ a      │ a      │ a      │     1 │     1 │     1 │</span>
+<span class="go">└────────┴────────┴────────┴───────┴───────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span> <span class="n">after</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">last</span><span class="p">())</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ d      ┃ e      ┃ f      ┃ a     ┃ b     ┃ c     ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string │ string │ string │ int64 │ int64 │ int64 │</span>
+<span class="go">├────────┼────────┼────────┼───────┼───────┼───────┤</span>
+<span class="go">│ a      │ a      │ a      │     1 │     1 │     1 │</span>
+<span class="go">└────────┴────────┴────────┴───────┴───────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">any_of</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">c</span><span class="p">(</span><span class="o">*</span><span class="s2">&quot;ae&quot;</span><span class="p">)))</span>
+<span class="go">┏━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ e      ┃ b     ┃ c     ┃ d      ┃ f      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ string │ int64 │ int64 │ string │ string │</span>
+<span class="go">├───────┼────────┼───────┼───────┼────────┼────────┤</span>
+<span class="go">│     1 │ a      │     1 │     1 │ a      │ a      │</span>
+<span class="go">└───────┴────────┴───────┴───────┴────────┴────────┘</span>
+</code></pre></div>
+    <p>When multiple columns are selected with <code>before</code> or <code>after</code>, those
+selected columns are moved before and after the <code>selectors</code> input</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span> <span class="n">after</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">))</span>
+<span class="go">┏━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="go">┃ b      ┃ d      ┃ a     ┃ c     ┃</span>
+<span class="go">┡━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="go">│ string │ string │ int64 │ int64 │</span>
+<span class="go">├────────┼────────┼───────┼───────┤</span>
+<span class="go">│ a      │ a      │     1 │     1 │</span>
+<span class="go">└────────┴────────┴───────┴───────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">numeric</span><span class="p">(),</span> <span class="n">before</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">of_type</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">))</span>
+<span class="go">┏━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="go">┃ a     ┃ c     ┃ b      ┃ d      ┃</span>
+<span class="go">┡━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="go">│ int64 │ int64 │ string │ string │</span>
+<span class="go">├───────┼───────┼────────┼────────┤</span>
+<span class="go">│     1 │     1 │ a      │ a      │</span>
+<span class="go">└───────┴───────┴────────┴────────┘</span>
+</code></pre></div>
+
+          <details class="quote">
+            <summary>Source code in <code>ibis/expr/types/relations.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3612</span>
+<span class="normal">3613</span>
+<span class="normal">3614</span>
+<span class="normal">3615</span>
+<span class="normal">3616</span>
+<span class="normal">3617</span>
+<span class="normal">3618</span>
+<span class="normal">3619</span>
+<span class="normal">3620</span>
+<span class="normal">3621</span>
+<span class="normal">3622</span>
+<span class="normal">3623</span>
+<span class="normal">3624</span>
+<span class="normal">3625</span>
+<span class="normal">3626</span>
+<span class="normal">3627</span>
+<span class="normal">3628</span>
+<span class="normal">3629</span>
+<span class="normal">3630</span>
+<span class="normal">3631</span>
+<span class="normal">3632</span>
+<span class="normal">3633</span>
+<span class="normal">3634</span>
+<span class="normal">3635</span>
+<span class="normal">3636</span>
+<span class="normal">3637</span>
+<span class="normal">3638</span>
+<span class="normal">3639</span>
+<span class="normal">3640</span>
+<span class="normal">3641</span>
+<span class="normal">3642</span>
+<span class="normal">3643</span>
+<span class="normal">3644</span>
+<span class="normal">3645</span>
+<span class="normal">3646</span>
+<span class="normal">3647</span>
+<span class="normal">3648</span>
+<span class="normal">3649</span>
+<span class="normal">3650</span>
+<span class="normal">3651</span>
+<span class="normal">3652</span>
+<span class="normal">3653</span>
+<span class="normal">3654</span>
+<span class="normal">3655</span>
+<span class="normal">3656</span>
+<span class="normal">3657</span>
+<span class="normal">3658</span>
+<span class="normal">3659</span>
+<span class="normal">3660</span>
+<span class="normal">3661</span>
+<span class="normal">3662</span>
+<span class="normal">3663</span>
+<span class="normal">3664</span>
+<span class="normal">3665</span>
+<span class="normal">3666</span>
+<span class="normal">3667</span>
+<span class="normal">3668</span>
+<span class="normal">3669</span>
+<span class="normal">3670</span>
+<span class="normal">3671</span>
+<span class="normal">3672</span>
+<span class="normal">3673</span>
+<span class="normal">3674</span>
+<span class="normal">3675</span>
+<span class="normal">3676</span>
+<span class="normal">3677</span>
+<span class="normal">3678</span>
+<span class="normal">3679</span>
+<span class="normal">3680</span>
+<span class="normal">3681</span>
+<span class="normal">3682</span>
+<span class="normal">3683</span>
+<span class="normal">3684</span>
+<span class="normal">3685</span>
+<span class="normal">3686</span>
+<span class="normal">3687</span>
+<span class="normal">3688</span>
+<span class="normal">3689</span>
+<span class="normal">3690</span>
+<span class="normal">3691</span>
+<span class="normal">3692</span>
+<span class="normal">3693</span>
+<span class="normal">3694</span>
+<span class="normal">3695</span>
+<span class="normal">3696</span>
+<span class="normal">3697</span>
+<span class="normal">3698</span>
+<span class="normal">3699</span>
+<span class="normal">3700</span>
+<span class="normal">3701</span>
+<span class="normal">3702</span>
+<span class="normal">3703</span>
+<span class="normal">3704</span>
+<span class="normal">3705</span>
+<span class="normal">3706</span>
+<span class="normal">3707</span>
+<span class="normal">3708</span>
+<span class="normal">3709</span>
+<span class="normal">3710</span>
+<span class="normal">3711</span>
+<span class="normal">3712</span>
+<span class="normal">3713</span>
+<span class="normal">3714</span>
+<span class="normal">3715</span>
+<span class="normal">3716</span>
+<span class="normal">3717</span>
+<span class="normal">3718</span>
+<span class="normal">3719</span>
+<span class="normal">3720</span>
+<span class="normal">3721</span>
+<span class="normal">3722</span>
+<span class="normal">3723</span>
+<span class="normal">3724</span>
+<span class="normal">3725</span>
+<span class="normal">3726</span>
+<span class="normal">3727</span>
+<span class="normal">3728</span>
+<span class="normal">3729</span>
+<span class="normal">3730</span>
+<span class="normal">3731</span>
+<span class="normal">3732</span>
+<span class="normal">3733</span>
+<span class="normal">3734</span>
+<span class="normal">3735</span>
+<span class="normal">3736</span>
+<span class="normal">3737</span>
+<span class="normal">3738</span>
+<span class="normal">3739</span>
+<span class="normal">3740</span>
+<span class="normal">3741</span>
+<span class="normal">3742</span>
+<span class="normal">3743</span>
+<span class="normal">3744</span>
+<span class="normal">3745</span>
+<span class="normal">3746</span>
+<span class="normal">3747</span>
+<span class="normal">3748</span>
+<span class="normal">3749</span>
+<span class="normal">3750</span>
+<span class="normal">3751</span>
+<span class="normal">3752</span>
+<span class="normal">3753</span>
+<span class="normal">3754</span>
+<span class="normal">3755</span>
+<span class="normal">3756</span>
+<span class="normal">3757</span>
+<span class="normal">3758</span>
+<span class="normal">3759</span>
+<span class="normal">3760</span>
+<span class="normal">3761</span>
+<span class="normal">3762</span>
+<span class="normal">3763</span>
+<span class="normal">3764</span>
+<span class="normal">3765</span>
+<span class="normal">3766</span>
+<span class="normal">3767</span>
+<span class="normal">3768</span>
+<span class="normal">3769</span>
+<span class="normal">3770</span>
+<span class="normal">3771</span>
+<span class="normal">3772</span>
+<span class="normal">3773</span>
+<span class="normal">3774</span>
+<span class="normal">3775</span>
+<span class="normal">3776</span>
+<span class="normal">3777</span>
+<span class="normal">3778</span>
+<span class="normal">3779</span>
+<span class="normal">3780</span>
+<span class="normal">3781</span>
+<span class="normal">3782</span>
+<span class="normal">3783</span>
+<span class="normal">3784</span>
+<span class="normal">3785</span>
+<span class="normal">3786</span>
+<span class="normal">3787</span>
+<span class="normal">3788</span>
+<span class="normal">3789</span>
+<span class="normal">3790</span>
+<span class="normal">3791</span>
+<span class="normal">3792</span>
+<span class="normal">3793</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">columns</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span><span class="p">,</span>
+    <span class="n">before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">after</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">Selector</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Relocate `columns` before or after other specified columns.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    columns</span>
+<span class="sd">        Columns to relocate. Selectors are accepted.</span>
+<span class="sd">    before</span>
+<span class="sd">        A column name or selector to insert the new columns before.</span>
+<span class="sd">    after</span>
+<span class="sd">        A column name or selector. Columns in `columns` are relocated after the last</span>
+<span class="sd">        column selected in `after`.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional column names to relocate, renaming argument values to</span>
+<span class="sd">        keyword argument names.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Table</span>
+<span class="sd">        A table with the columns relocated.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import ibis</span>
+<span class="sd">    &gt;&gt;&gt; ibis.options.interactive = True</span>
+<span class="sd">    &gt;&gt;&gt; import ibis.selectors as s</span>
+<span class="sd">    &gt;&gt;&gt; t = ibis.memtable(dict(a=[1], b=[1], c=[1], d=[&quot;a&quot;], e=[&quot;a&quot;], f=[&quot;a&quot;]))</span>
+<span class="sd">    &gt;&gt;&gt; t</span>
+<span class="sd">    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃ f      ┃</span>
+<span class="sd">    ┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ int64 │ int64 │ int64 │ string │ string │ string │</span>
+<span class="sd">    ├───────┼───────┼───────┼────────┼────────┼────────┤</span>
+<span class="sd">    │     1 │     1 │     1 │ a      │ a      │ a      │</span>
+<span class="sd">    └───────┴───────┴───────┴────────┴────────┴────────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(&quot;f&quot;)</span>
+<span class="sd">    ┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ f      ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="sd">    ┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ string │ int64 │ int64 │ int64 │ string │ string │</span>
+<span class="sd">    ├────────┼───────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">    │ a      │     1 │     1 │     1 │ a      │ a      │</span>
+<span class="sd">    └────────┴───────┴───────┴───────┴────────┴────────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(&quot;a&quot;, after=&quot;c&quot;)</span>
+<span class="sd">    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ b     ┃ c     ┃ a     ┃ d      ┃ e      ┃ f      ┃</span>
+<span class="sd">    ┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ int64 │ int64 │ int64 │ string │ string │ string │</span>
+<span class="sd">    ├───────┼───────┼───────┼────────┼────────┼────────┤</span>
+<span class="sd">    │     1 │     1 │     1 │ a      │ a      │ a      │</span>
+<span class="sd">    └───────┴───────┴───────┴────────┴────────┴────────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(&quot;f&quot;, before=&quot;b&quot;)</span>
+<span class="sd">    ┏━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ a     ┃ f      ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="sd">    ┡━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ int64 │ string │ int64 │ int64 │ string │ string │</span>
+<span class="sd">    ├───────┼────────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">    │     1 │ a      │     1 │     1 │ a      │ a      │</span>
+<span class="sd">    └───────┴────────┴───────┴───────┴────────┴────────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(&quot;a&quot;, after=s.last())</span>
+<span class="sd">    ┏━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">    ┃ b     ┃ c     ┃ d      ┃ e      ┃ f      ┃ a     ┃</span>
+<span class="sd">    ┡━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">    │ int64 │ int64 │ string │ string │ string │ int64 │</span>
+<span class="sd">    ├───────┼───────┼────────┼────────┼────────┼───────┤</span>
+<span class="sd">    │     1 │     1 │ a      │ a      │ a      │     1 │</span>
+<span class="sd">    └───────┴───────┴────────┴────────┴────────┴───────┘</span>
+
+<span class="sd">    Relocate allows renaming</span>
+
+<span class="sd">    &gt;&gt;&gt; t.relocate(ff=&quot;f&quot;)</span>
+<span class="sd">    ┏━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ ff     ┃ a     ┃ b     ┃ c     ┃ d      ┃ e      ┃</span>
+<span class="sd">    ┡━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ string │ int64 │ int64 │ int64 │ string │ string │</span>
+<span class="sd">    ├────────┼───────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">    │ a      │     1 │     1 │     1 │ a      │ a      │</span>
+<span class="sd">    └────────┴───────┴───────┴───────┴────────┴────────┘</span>
+
+<span class="sd">    You can relocate based on any predicate selector, such as</span>
+<span class="sd">    [`of_type`][ibis.selectors.of_type]</span>
+
+<span class="sd">    &gt;&gt;&gt; t.relocate(s.of_type(&quot;string&quot;))</span>
+<span class="sd">    ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">    ┃ d      ┃ e      ┃ f      ┃ a     ┃ b     ┃ c     ┃</span>
+<span class="sd">    ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">    │ string │ string │ string │ int64 │ int64 │ int64 │</span>
+<span class="sd">    ├────────┼────────┼────────┼───────┼───────┼───────┤</span>
+<span class="sd">    │ a      │ a      │ a      │     1 │     1 │     1 │</span>
+<span class="sd">    └────────┴────────┴────────┴───────┴───────┴───────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(s.numeric(), after=s.last())</span>
+<span class="sd">    ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">    ┃ d      ┃ e      ┃ f      ┃ a     ┃ b     ┃ c     ┃</span>
+<span class="sd">    ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">    │ string │ string │ string │ int64 │ int64 │ int64 │</span>
+<span class="sd">    ├────────┼────────┼────────┼───────┼───────┼───────┤</span>
+<span class="sd">    │ a      │ a      │ a      │     1 │     1 │     1 │</span>
+<span class="sd">    └────────┴────────┴────────┴───────┴───────┴───────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(s.any_of(s.c(*&quot;ae&quot;)))</span>
+<span class="sd">    ┏━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ a     ┃ e      ┃ b     ┃ c     ┃ d      ┃ f      ┃</span>
+<span class="sd">    ┡━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ int64 │ string │ int64 │ int64 │ string │ string │</span>
+<span class="sd">    ├───────┼────────┼───────┼───────┼────────┼────────┤</span>
+<span class="sd">    │     1 │ a      │     1 │     1 │ a      │ a      │</span>
+<span class="sd">    └───────┴────────┴───────┴───────┴────────┴────────┘</span>
+
+<span class="sd">    When multiple columns are selected with `before` or `after`, those</span>
+<span class="sd">    selected columns are moved before and after the `selectors` input</span>
+
+<span class="sd">    &gt;&gt;&gt; t = ibis.memtable(dict(a=[1], b=[&quot;a&quot;], c=[1], d=[&quot;a&quot;]))</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(s.numeric(), after=s.of_type(&quot;string&quot;))</span>
+<span class="sd">    ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓</span>
+<span class="sd">    ┃ b      ┃ d      ┃ a     ┃ c     ┃</span>
+<span class="sd">    ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩</span>
+<span class="sd">    │ string │ string │ int64 │ int64 │</span>
+<span class="sd">    ├────────┼────────┼───────┼───────┤</span>
+<span class="sd">    │ a      │ a      │     1 │     1 │</span>
+<span class="sd">    └────────┴────────┴───────┴───────┘</span>
+<span class="sd">    &gt;&gt;&gt; t.relocate(s.numeric(), before=s.of_type(&quot;string&quot;))</span>
+<span class="sd">    ┏━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓</span>
+<span class="sd">    ┃ a     ┃ c     ┃ b      ┃ d      ┃</span>
+<span class="sd">    ┡━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩</span>
+<span class="sd">    │ int64 │ int64 │ string │ string │</span>
+<span class="sd">    ├───────┼───────┼────────┼────────┤</span>
+<span class="sd">    │     1 │     1 │ a      │ a      │</span>
+<span class="sd">    └───────┴───────┴────────┴────────┘</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">ibis.selectors</span> <span class="k">as</span> <span class="nn">s</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">columns</span> <span class="ow">and</span> <span class="n">before</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">after</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisInputError</span><span class="p">(</span>
+            <span class="s2">&quot;At least one selector or `before` or `after` must be provided&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">after</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">com</span><span class="o">.</span><span class="n">IbisInputError</span><span class="p">(</span><span class="s2">&quot;Cannot specify both `before` and `after`&quot;</span><span class="p">)</span>
+
+    <span class="n">sels</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">table_columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+        <span class="nb">zip</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">map</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">,</span> <span class="n">columns</span><span class="p">)),</span>
+        <span class="nb">zip</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="nb">map</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">())),</span>
+    <span class="p">):</span>
+        <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">sel</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">sels</span><span class="p">:</span>
+                <span class="c1"># make sure the last duplicate column wins by reinserting</span>
+                <span class="c1"># the position if it already exists</span>
+                <span class="k">del</span> <span class="n">sels</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+            <span class="n">sels</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">table_columns</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+
+    <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table_columns</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">(</span><span class="n">before</span><span class="p">)</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">after</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_to_selector</span><span class="p">(</span><span class="n">after</span><span class="p">)</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="n">ncols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">before</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">after</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># all columns that should come BEFORE the matched selectors</span>
+    <span class="n">front</span> <span class="o">=</span> <span class="p">[</span><span class="n">left</span> <span class="k">for</span> <span class="n">left</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">where</span><span class="p">)</span> <span class="k">if</span> <span class="n">left</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sels</span><span class="p">]</span>
+
+    <span class="c1"># all columns that should come AFTER the matched selectors</span>
+    <span class="n">back</span> <span class="o">=</span> <span class="p">[</span><span class="n">right</span> <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="n">ncols</span><span class="p">)</span> <span class="k">if</span> <span class="n">right</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sels</span><span class="p">]</span>
+
+    <span class="c1"># selected columns</span>
+    <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sels</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+
+    <span class="n">relocated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">*</span><span class="n">front</span><span class="p">,</span> <span class="o">*</span><span class="n">middle</span><span class="p">,</span> <span class="o">*</span><span class="n">back</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">relocated</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="n">ncols</span>
+
+    <span class="k">return</span> <span class="n">relocated</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
