@@ -3190,6 +3190,7 @@
 
 
 
+
 <h2 id="ibis.backends.base.BaseBackend" class="doc doc-heading">
           <code>BaseBackend</code>
 
@@ -3221,8 +3222,9 @@ required methods.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.db_identity" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">db_identity</span><span class="p">:</span> <span class="nb">str</span></code>
+          <code class="highlight language-python"><span class="n">db_identity</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-cached"><code>cached</code></small>
@@ -3271,8 +3273,9 @@ specify the database.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.tables" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">tables</span></code>
+          <code class="highlight language-python"><span class="n">tables</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-cached"><code>cached</code></small>
@@ -3302,8 +3305,9 @@ specify the database.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.version" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
+          <code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -3354,8 +3358,9 @@ underlying library or application.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.add_operation" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">add_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.add_operation" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -3376,8 +3381,9 @@ parameters, and returns a value depending on the backend.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.compile" class="doc doc-heading">
-<code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.compile" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -3395,8 +3401,9 @@ parameters, and returns a value depending on the backend.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">connect</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">connect</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -3486,8 +3493,9 @@ connected backend instance.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -3637,8 +3645,9 @@ default.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.create_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -3757,8 +3766,9 @@ provided the database's default is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">database</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">database</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -3830,8 +3840,9 @@ provided the database's default is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.drop_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -3911,8 +3922,9 @@ provided the database's default is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.drop_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -3992,8 +4004,9 @@ provided the database's default is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.execute" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.execute" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4011,8 +4024,9 @@ provided the database's default is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.has_operation" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">has_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">has_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -4099,8 +4113,9 @@ provided the database's default is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.list_tables" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">list_tables</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">list_tables</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -4193,8 +4208,9 @@ current database is used.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.read_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.read_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4295,8 +4311,9 @@ a sequentially generated name.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.read_json" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">read_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.read_json" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4397,8 +4414,9 @@ a sequentially generated name.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.read_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.read_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4499,8 +4517,9 @@ a sequentially generated name.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.register_options" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register_options</span><span class="p">()</span></code>
+          <code class="highlight language-python"><span class="n">register_options</span><span class="p">()</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -4522,8 +4541,9 @@ a sequentially generated name.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
@@ -4613,8 +4633,9 @@ a sequentially generated name.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.to_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.to_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4707,8 +4728,9 @@ immediately.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.to_delta" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_delta</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">to_delta</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.to_delta" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4800,8 +4822,9 @@ immediately.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.to_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.to_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -4894,8 +4917,9 @@ immediately.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.to_pyarrow" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.to_pyarrow" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5012,8 +5036,9 @@ immediately.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
@@ -5144,8 +5169,9 @@ immediately.</p>
 
 
 
+
 <h4 id="ibis.backends.base.BaseBackend.to_torch" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_torch</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">to_torch</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#ibis.backends.base.BaseBackend.to_torch" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
