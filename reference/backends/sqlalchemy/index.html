@@ -2214,6 +2214,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.rename_table" class="md-nav__link">
+    rename_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.schema" class="md-nav__link">
     schema()
   </a>
@@ -3073,6 +3080,13 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.register_options" class="md-nav__link">
     register_options()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.rename_table" class="md-nav__link">
+    rename_table()
   </a>
   
 </li>
@@ -4445,6 +4459,70 @@ a sequentially generated name.</p>
   <div class="doc doc-contents ">
   
       <p>Register custom backend options.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h4 id="ibis.backends.base.sql.alchemy.BaseAlchemyBackend.rename_table" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">rename_table</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span></code>
+
+<a href="#ibis.backends.base.sql.alchemy.BaseAlchemyBackend.rename_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Rename an existing table.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>old_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The old name of the table.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>new_name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The new name of the table.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
